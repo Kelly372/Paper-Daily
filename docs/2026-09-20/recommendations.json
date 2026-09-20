@@ -1,0 +1,1379 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-09-20",
+  "target_date": "2026-09-19",
+  "window": {
+    "from": "2026-09-17",
+    "to": "2026-09-19",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-09-20T01:59:24.268Z",
+  "retrieved_at": "2026-09-20T01:39:18.619Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "count": 418,
+      "total": 418,
+      "error": null,
+      "coverage": "2026-09-17 至 2026-09-19（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-19",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-19"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-18",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-18"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-17",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-17"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 4,
+      "url": "https://huggingface.co/papers/date/2026-09-18",
+      "date": "2026-09-18",
+      "retrieved_at": "2026-09-20T01:53:41.873Z",
+      "coverage": "网页人工核验 4 篇；非当日完整列表"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/industry",
+      "date": "2026-09-18",
+      "retrieved_at": "2026-09-20T01:53:41.875Z",
+      "coverage": "已查公开资讯列表；未补录可核验论文。公众号全文与完整日期覆盖尚未接入。"
+    }
+  ],
+  "candidates_count": 418,
+  "analysed_count": 8,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2609.20744",
+      "arxiv_id": "2609.20744",
+      "doi": "",
+      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+      "abstract": "Video diffusion models repeatedly process long spatiotemporal token sequences during denoising, making attention a major computational bottleneck. Linear attention offers an appealing alternative and has been widely adopted in recent large language models, but directly applying it to video models often fails to preserve the fine-grained interactions required for high-quality generation. We present Video DeltaNet (VDN), which combines local Softmax attention with bidirectional linear memory for long-range video context. Its linear branch introduces Video Delta Attention (VDA), which updates memory once per frame by jointly incorporating its spatial tokens. Separate output projections and learnable gates calibrate the two branches, while a staged teacher-alignment recipe progressively introduces the new pathway into pretrained models. We instantiate VDN on MiniMax H3, applying the hybrid to video-to-video interactions while retaining Softmax for interactions involving text or audio. With eight-step distillation and an optimized SGLang serving stack, VDN-H3 completes DiT denoising for a 14.3-second, 768p video in 6.70 seconds on eight NVIDIA B200 GPUs, corresponding to a 14.5x speedup over the 50-step dense H3 baseline on the same GPU count.",
+      "authors": [
+        "Haocheng Xi",
+        "Yiming Xie",
+        "Hexu Zhao",
+        "Yiwen Zhang",
+        "Michael Liu",
+        "Thomas Creavin",
+        "Kurt Keutzer",
+        "Xiuyu Li",
+        "Zhaoyang Lv",
+        "Chenfeng Xu",
+        "Haiwen Feng"
+      ],
+      "url": "https://arxiv.org/abs/2609.20744",
+      "published": "2026-09-17T17:33:15Z",
+      "topics": [
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-09-18"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.20744v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 91,
+        "title_zh": "Video DeltaNet：面向实时视频生成的原生视频混合注意力",
+        "abstract_zh": "视频扩散模型在去噪时反复处理很长的时空 token 序列，注意力因此成为主要计算瓶颈。线性注意力已在大语言模型中广泛使用，但直接用于视频模型，往往无法保留高质量生成需要的细粒度交互。本文提出 Video DeltaNet（VDN），将局部 Softmax 注意力与处理远距离视频上下文的双向线性记忆结合。其线性分支采用 Video Delta Attention（VDA）：每帧联合纳入该帧的空间 token，更新一次记忆。独立的输出投影与可学习门控校准两个分支，分阶段的教师对齐训练将新路径逐步引入预训练模型。作者在 MiniMax H3 上实现 VDN，只替换视频之间的交互，涉及文本或音频的交互仍使用 Softmax。结合八步蒸馏与优化后的 SGLang 服务栈，VDN-H3 在八张 NVIDIA B200 上，以 6.70 秒完成一段 14.3 秒、768p 视频的 DiT 去噪；相对于相同 GPU 数量下的五十步稠密 H3 基线，加速 14.5 倍。",
+        "reason": "同时讨论注意力结构、预训练模型改造与推理实现，适合研究视频生成效率；需要把结构收益与蒸馏收益分开看。",
+        "introduction_zh": "长视频的时空 token 数量使全局稠密注意力成本快速增长。语言模型中的线性记忆虽然便宜，却不一定能表达同一视频帧内密集的空间关系。作者据此将局部精细交互与远程信息传播分开：局部窗口和边界锚点保留 Softmax，远距离部分使用双向记忆，并设计按帧联合写入的更新规则。另一项实际问题是如何利用已有昂贵的预训练模型，因此论文还提供逐层对齐、端到端对齐与低秩适配流程。",
+        "framework_zh": "输入视频隐变量首先进入两个并行分支。Softmax 分支处理固定宽度的相邻帧窗口以及首尾帧锚点；VDA 分支沿时间正向与反向扫描，把一帧内的空间 token 联合写入记忆，避免逐 token 写入忽视同帧键之间的相关性。两个分支使用独立投影、归一化与门控后融合；文本和音频相关交互保持原有 Softmax。训练先让替换层对齐教师，再进行模型整体对齐与适配，随后做八步蒸馏。最终推理还加入专用核函数与多 GPU 切分。",
+        "pipeline": "视频隐变量 → 局部/边界 Softmax ＋ 双向逐帧 VDA → 门控融合 → 八步去噪",
+        "results": "作者在相同序列长度和模型调用次数下，测得单次骨干计算在一张 H200 上从 35.35 秒降至 11.16 秒，在一张 B200 上从 16.0 秒降至 6.2 秒。最终八卡 B200 的 6.70 秒结果还叠加了八步蒸馏和分布式推理。",
+        "limitations": "分析保留：14.5 倍是相同八卡条件下完整优化方案相对五十步基线的收益，不能全部归因于线性注意力。6.70 秒指 DiT 去噪，不能直接理解为消费级 GPU 的端到端视频交付耗时。迁移到其他视频骨干仍需验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "计算瓶颈与视频注意力动机"
+          },
+          {
+            "section": "S2.SS1",
+            "claim": "局部窗口与边界锚点"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "逐帧联合记忆更新"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "少步蒸馏"
+          },
+          {
+            "section": "S6.SS3",
+            "claim": "同计算次数骨干对比与完整加速条件"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "9f2f61d0006392033a942f0caf0f36c8c97d121961204a746c8656f434bbf3e3",
+        "analysed_at": "2026-09-20T01:56:52.453Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "计算瓶颈与视频注意力动机",
+          "url": "https://arxiv.org/html/2609.20744v1#S1"
+        },
+        {
+          "section": "S2.SS1",
+          "claim": "局部窗口与边界锚点",
+          "url": "https://arxiv.org/html/2609.20744v1#S2.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "逐帧联合记忆更新",
+          "url": "https://arxiv.org/html/2609.20744v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "少步蒸馏",
+          "url": "https://arxiv.org/html/2609.20744v1#S4.SS2"
+        },
+        {
+          "section": "S6.SS3",
+          "claim": "同计算次数骨干对比与完整加速条件",
+          "url": "https://arxiv.org/html/2609.20744v1#S6.SS3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F3",
+          "caption": "Figure 3: Video DeltaNet architecture. Softmax and Linear outputs are independently gated and projected; the Linear branch uses bidirectional Video Delta Attention.",
+          "url": "https://arxiv.org/html/2609.20744v1#S2.F3",
+          "source_url": "https://arxiv.org/html/2609.20744v1#S2.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.19969",
+      "arxiv_id": "2609.19969",
+      "doi": "",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "abstract": "The widespread adoption of long-horizon agents has made model workloads increasingly input-heavy. Although prior work has substantially reduced the cost of long-context computation, prefill remains computationally expensive, and large KV caches continue to strain HBM and SSD capacity and data-transfer bandwidth. Together, these compute, storage, and bandwidth demands constitute the primary bottleneck to further lowering deployment costs. To address this challenge, we introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens. With its Causal Encoder-Decoder (CED) architecture, the model activates 16B parameters per token during decode but only 8B parameters during prefill, substantially improving cost efficiency for agentic workloads. To push the limits of KV cache compression, DeepSeek-V4.1-Flash combines cross-layer KV cache reuse in Compressed Sparse Attention 2 (CSA2) with FP4 KV caching. These designs reduce its global KV cache footprint (always in HBM) to 890 bytes per token, roughly 1/4 of the corresponding footprint of DeepSeek-V4-Flash. Further, through a dedicated deployment optimization known as SWA Bounded Replay, DeepSeek-V4.1-Flash reduces its persistent KV cache footprint (always on SSD or in host memory) to roughly 1/8 of that of DeepSeek-V4-Flash. Despite its much smaller KV cache footprint, the model delivers substantially better performance than the baseline. In addition, we streamline the DeepSeek-V4 architecture and introduce several efficient architectural extensions. We pretrain DeepSeek-V4.1-Flash on a multimodal corpus comprising 45T tokens and conduct comprehensive post-training, yielding strong performance across diverse text-based and multimodal agentic scenarios. Model checkpoints are available at https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash.",
+      "authors": [
+        "DeepSeek-AI",
+        ":",
+        "Anyi Xu",
+        "B. Li",
+        "Bangcai Lin",
+        "Bing Xue",
+        "BingCheng Xian",
+        "Bingzheng Xu",
+        "Bochao Wu",
+        "Bowei Zhang",
+        "Boyi Deng",
+        "C. C. Yu",
+        "Chao Jin",
+        "Chaofan Lin",
+        "Chen Dong",
+        "Chenbing Wang",
+        "Chenfan Feng",
+        "Chengda Lu",
+        "Chenggang Zhao",
+        "Chengqi Deng",
+        "Chengyuan Zhang",
+        "Chenhao Xu",
+        "Chenqi Zhao",
+        "Chenze Shao",
+        "Chuhao Wang",
+        "Chuqi Zhang",
+        "Damai Dai",
+        "Dejian Yang",
+        "Deli Chen",
+        "Di Huang",
+        "Di Wu",
+        "Donghao Li",
+        "Erhang Li",
+        "Eric Fu",
+        "F. Zhou",
+        "Fangwei Zhou",
+        "Fangyun Lin",
+        "Fangzhou Yuan",
+        "Feiyu Xia",
+        "Fucong Dai",
+        "Guangbo Hao",
+        "Guanglin Li",
+        "Guanting Chen",
+        "Guoai Cao",
+        "Guofan Fan",
+        "Guolai Meng",
+        "Guowei Li",
+        "Haichuan Zhang",
+        "Haiyang Ma",
+        "Haiyang Shen",
+        "Han Li",
+        "Han Yu",
+        "Han Zhang",
+        "Hangyuan Deng",
+        "Hanwei Xu",
+        "Hanxiang Xu",
+        "Hanxun Zhong",
+        "Hao Guo",
+        "Hao Jiang",
+        "Hao Li",
+        "Hao Qin",
+        "Haodong Wen",
+        "Haofen Liang",
+        "Haofeng Huang",
+        "Haohua Liu",
+        "Haoling Zhang",
+        "Haoming Luo",
+        "Haoran Yang",
+        "Haotian Xu",
+        "Haotian Yuan",
+        "Haoting Huang",
+        "Haowen Luo",
+        "Haoyang Cai",
+        "Haoyu Chen",
+        "Haozhe Ji",
+        "Hengran Zhang",
+        "Hengrui Wang",
+        "Hengxu Wu",
+        "Honghui Ding",
+        "Hongxuan Tang",
+        "Huadong Wang",
+        "Huanqi Cao",
+        "Huazuo Gao",
+        "Hui Qu",
+        "Hui Zeng",
+        "J. Yang",
+        "J. H. Jin",
+        "J. H. Zhang",
+        "J. X. Zou",
+        "Jia Yu",
+        "Jiahui Zhou",
+        "Jiajun Chen",
+        "Jialiang Huang",
+        "Jialin Zhao",
+        "Jiamin Tang",
+        "Jian Zhou",
+        "Jianan Tong",
+        "Jianwen Li",
+        "Jiaqi Zhu",
+        "Jiarui Wang",
+        "Jiasheng Ye",
+        "Jiashi Li",
+        "Jiaxin Xu",
+        "Jiaying Ding",
+        "Jibai Lu",
+        "Jiewen Hu",
+        "Jin Yan",
+        "Jincheng Zhai",
+        "Jingchang Chen",
+        "Jingcheng Hu",
+        "Jingli Zhou",
+        "Jingsheng Xu",
+        "Jingting Xiang",
+        "Jingyan Yun",
+        "Jingyang Yuan",
+        "Jingyuan Cheng",
+        "Jinhua Zhu",
+        "Jinpeng Wang",
+        "Jinyi Chen",
+        "Jinyi Hu",
+        "Jiping Yu",
+        "Jueliang Guo",
+        "Junbo Pei",
+        "Junbo Sun",
+        "Junguang Jiang",
+        "Junjie Qiu",
+        "Junkang Zhou",
+        "Junqi Liu",
+        "Junren Li",
+        "Junxian Li",
+        "Junxiao Song",
+        "Junyi Guo",
+        "Kai Dong",
+        "Kaifeng Chen",
+        "Kaige Gao",
+        "Kang Guan",
+        "Kangdong Yuan",
+        "Ke Hong",
+        "Ke Xu",
+        "Kefan Zhao",
+        "Kexin Ji",
+        "Kexin Zhang",
+        "Kexing Zhou",
+        "Kuai Yu",
+        "Lan Zhang",
+        "Lean Wang",
+        "Lecong Zhang",
+        "Lei Wang",
+        "Letian Gao",
+        "Liang Zhao",
+        "Liansheng Xu",
+        "Lihua Guo",
+        "Lingxiao Luo",
+        "Lingyue Fu",
+        "Litao Deng",
+        "Litong Wang",
+        "Liyue Zhang",
+        "Longhao Chen",
+        "Lu Chen",
+        "Luotian Huang",
+        "Luyao Ma",
+        "Luyao Wang",
+        "M. S. Di",
+        "Max Mei",
+        "Menghao Ye",
+        "Miao Cui",
+        "Mingchuan Zhang",
+        "Minghua Zhang",
+        "Minghui Tang",
+        "Mingjing Zhang",
+        "Mingqi Wei",
+        "Mingshu Chen",
+        "Mingxing Liu",
+        "Mingxu Zhou",
+        "Mingyu Xu",
+        "Mingyu Yang",
+        "Mingze Wang",
+        "Muyang Chen",
+        "Ni Shentu",
+        "Ning Wang",
+        "Niufang Ning",
+        "Panpan Huang",
+        "Peixin Cong",
+        "Peiyi Wang",
+        "Peiyuan Xin",
+        "Pengfei Ren",
+        "Pengfei Yan",
+        "Pengle Zhang",
+        "Qi Kang",
+        "Qi Tang",
+        "Qiancheng Wang",
+        "Qiang Li",
+        "Qihao Zhu",
+        "Qingyang Li",
+        "Qinyu Chen",
+        "Qiushi Du",
+        "Qizhou Guo",
+        "Rongxian Xu",
+        "Rui Ding",
+        "Rui Hu",
+        "Rui Tian",
+        "Rui Yu",
+        "Ruidong Zhu",
+        "Ruifan Xu",
+        "Ruihan Yang",
+        "Ruihang Xia",
+        "Ruijie Lu",
+        "Ruilin Geng",
+        "Ruipeng Hong",
+        "Ruiqi Ge",
+        "Ruisong Zhang",
+        "Ruize Sun",
+        "Ruizhe Pan",
+        "Runji Wang",
+        "Runqian Chen",
+        "Runxin Xu",
+        "Ruohong Tian",
+        "Ruomeng Shen",
+        "Ruoyu Zhang",
+        "Ryan X.",
+        "S. H. Liu",
+        "Shanghao Lu",
+        "Shangyan Zhou",
+        "Shanhuang Chen",
+        "Shaofei Cai",
+        "Shaoheng Nie",
+        "Shaoyuan Chen",
+        "Shengding Hu",
+        "Shengkai Lin",
+        "Shengwen Ran",
+        "Shengyu Liu",
+        "Shengyuan Jia",
+        "Shi Bai",
+        "Shi Feng",
+        "Shicheng Xu",
+        "Shichun Liu",
+        "Shiqiang Hu",
+        "Shirong Ma",
+        "Shiyu Wang",
+        "Shiyuan Feng",
+        "Shufan Gong",
+        "Shuhan Lin",
+        "Shuiping Yu",
+        "Shunfeng Zhou",
+        "Shuo Yang",
+        "Shuomeng Wang",
+        "Shuting Guo",
+        "Shuting Pan",
+        "Shuying Yu",
+        "Sinuo Cao",
+        "Siyi Lin",
+        "Sizhe Chen",
+        "Songyang Chen",
+        "Songyang Zhou",
+        "Tao Ni",
+        "Tao Yun",
+        "Tian Jin",
+        "Tian Pei",
+        "Tian Ye",
+        "Tianle Lin",
+        "Tianran Ji",
+        "Tianyi Cui",
+        "Tianyuan Yue",
+        "Tingting Yu",
+        "Tongrui Xiong",
+        "Wangding Zeng",
+        "Wei Liu",
+        "Wei Zhang",
+        "Weibin Xu",
+        "Weihao Zeng",
+        "Weilin Zhao",
+        "Wen Liu",
+        "Wenfeng Liang",
+        "Wenjie Pang",
+        "Wenjing Luo",
+        "Wenjing Yao",
+        "Wenjun Gao",
+        "Wenkai Shao",
+        "Wenkai Yang",
+        "Wenli Zhang",
+        "Wenlu Wang",
+        "Wenlve Huang",
+        "Wenqian Yan",
+        "Wentao Zhang",
+        "Xi Gao",
+        "Xiang He",
+        "Xiang Li",
+        "Xiangli Li",
+        "Xiangwen Wang",
+        "Xiangying Zhang",
+        "Xiankui Wei",
+        "Xiao Bi",
+        "Xiaodong Liu",
+        "Xiaohan Wang",
+        "Xiaojian Qu",
+        "Xiaokang Chen",
+        "Xiaokang Zhang",
+        "Xiaotao Nie",
+        "Xiaoyao Zou",
+        "Xiaoyuan Li",
+        "Xicheng Guo",
+        "Xieting Chu",
+        "Xin Cheng",
+        "Xin Liu",
+        "Xin Xie",
+        "Xinbo Xu",
+        "Xingchao Liu",
+        "Xingchen Liu",
+        "Xingkai Yu",
+        "Xingyou Li",
+        "Xintong Yao",
+        "Xinyang Chen",
+        "Xinyong Jiang",
+        "Xinyu Yang",
+        "Xinyu Yang",
+        "Xu Chen",
+        "Xuanyu Wang",
+        "Xubei Zhong",
+        "Xuecheng Su",
+        "Xuejie Liu",
+        "Xuheng Lin",
+        "Xujie Fan",
+        "Xuncheng Zhao",
+        "Xuwei Fu",
+        "Y. C. Yan",
+        "Y. H. Jiang",
+        "Y. T. Wu",
+        "Y. W. M.",
+        "Y. Z. Wang",
+        "Yafei Gao",
+        "Yang Yang",
+        "Yang Zhang",
+        "Yanru Ma",
+        "Yanwen Huang",
+        "Yao Li",
+        "Yao Li",
+        "Yao Meng",
+        "Yao Zhao",
+        "Yaofeng Sun",
+        "Yaohui Wang",
+        "Yaoyang Ye",
+        "Yehang Yin",
+        "Yexinrui Wu",
+        "Yi Qian",
+        "Yi Tao",
+        "Yi Yu",
+        "Yichao Zhang",
+        "Yichen Jiang",
+        "Yicheng Wang",
+        "Yifan Ding",
+        "Yifan Shi",
+        "Yifeng Peng",
+        "Yifeng Zhai",
+        "Yijia Wu",
+        "Yiliang Xiong",
+        "Yilun Wang",
+        "Ying He",
+        "Ying Zhou",
+        "Yingjia Luo",
+        "Yinmin Zhong",
+        "Yiping Wang",
+        "Yisong Wang",
+        "Yixiang Zhang",
+        "Yixiao Chen",
+        "Yixuan Tan",
+        "Yixuan Wei",
+        "Yiyang Ma",
+        "Yiyao Yang",
+        "Yiyuan Liu",
+        "Yizai Cai",
+        "Yizhen Wei",
+        "Yizhi Wang",
+        "Yonglun Yang",
+        "Yongqi Zhuo",
+        "Yongqiang Guo",
+        "Yongtong Wu",
+        "Yu Wu",
+        "Yu Zhang",
+        "Yuan Bian",
+        "Yuan Cheng",
+        "Yuan Ou",
+        "Yuan Sun",
+        "Yuanfan Xu",
+        "Yuanhang Sun",
+        "Yuanhao Li",
+        "Yuchen Liu",
+        "Yuchen Yao",
+        "Yudong Han",
+        "Yuduan Wang",
+        "Yuhan Wu",
+        "Yuhao Meng",
+        "Yuheng Zou",
+        "YuKun Li",
+        "Yunchuan Wang",
+        "Yunfan Xiao",
+        "Yunfan Xiong",
+        "Yupeng Chen",
+        "Yuqian Cao",
+        "Yuqian Wang",
+        "Yuqing Chen",
+        "Yushun Zhang",
+        "Yutong Lin",
+        "Yuwei Xiao",
+        "Yuxian Gu",
+        "Yuxiang Chen",
+        "Yuxiang Huang",
+        "Yuxiang Luo",
+        "Yuxiang You",
+        "Yuxin Chen",
+        "Yuxin Xiang",
+        "Yuxuan Liu",
+        "Yuxuan Zhou",
+        "Yuyang Zhou",
+        "Yuzhe Guo",
+        "Yuzhen Huang",
+        "Yuzhuo Bai",
+        "Z. Y. Z.",
+        "Zanlin Ni",
+        "Zehao Wang",
+        "Zehua Zhao",
+        "Zehui Ren",
+        "Zejun Zhao",
+        "Zhangli Sha",
+        "Zhanying Wang",
+        "Zhaochen Zhang",
+        "Zhaoshuai Du",
+        "Zhe Fu",
+        "Zhean Xu",
+        "Zhenda Xie",
+        "Zheng Liu",
+        "Zhengyan Zhang",
+        "Zhenhua Dong",
+        "Zhewen Hao",
+        "Zhibang Wang",
+        "Zhibin Gou",
+        "Zhicheng Ma",
+        "Zhihao Li",
+        "Zhihong Shao",
+        "Zhihuan Huang",
+        "Zhijie Li",
+        "Zhirui Lu",
+        "Zhixian Huang",
+        "Zhixuan Chen",
+        "Zhixuan Chen",
+        "Zhixuan Pan",
+        "Zhiyu Wu",
+        "Zhizhou Ren",
+        "Zhu He",
+        "Zhuoshu Li",
+        "Zhuping Zhang",
+        "Zian Xu",
+        "Zihao Wang",
+        "Zihui Gu",
+        "Zijia Zhu",
+        "Zili Zhang",
+        "Zilin Li",
+        "Zilong Hou",
+        "Zilong Lyu",
+        "Ziqiao Wang",
+        "Ziwei Xie",
+        "Ziya Zhang",
+        "Ziyi Gao",
+        "Zizheng Pan",
+        "Zonglin Li",
+        "Zongqing Yao",
+        "Zui Chen",
+        "Zuofan Wu",
+        "Chenchen Ling",
+        "Chengyu Hou",
+        "Chong Chen",
+        "D. Li",
+        "Di Qi",
+        "Dongjie Ji",
+        "Fang Wei",
+        "Fanyi Xia",
+        "Fei Xie",
+        "Feiyi Tan",
+        "Hailong Guo",
+        "Haiyan Zhai",
+        "Hui Zhou",
+        "Huihui Tan",
+        "Huijie Li",
+        "Jia Luo",
+        "Jia Song",
+        "Jialu Cai",
+        "Jian Liang",
+        "Jiangting Zhou",
+        "Jiaqi Gao",
+        "Jiayi Shao",
+        "Jie Chen",
+        "Jieyu Yang",
+        "Jin Chen",
+        "Jingde Zhang",
+        "Jingzi Zhou",
+        "Jinqian Wang",
+        "Jinyang Liu",
+        "JinZhao Sun",
+        "Junhua Ling",
+        "Junmin Zheng",
+        "Kaicheng Yang",
+        "Ke Xu",
+        "Le Su",
+        "Leyi Xia",
+        "Liangfeng Ding",
+        "Lin Zhuo",
+        "Linwang Ma",
+        "Linyan Zhu",
+        "Liyu Cai",
+        "Luqi Yao",
+        "M. K. Zhang",
+        "Meng Li",
+        "Miao Lin",
+        "Miaojun Wang",
+        "Min Zhang",
+        "Mingming Li",
+        "Mingming Wang",
+        "Mingze Yin",
+        "Minmin Han",
+        "Nan Cao",
+        "Ning Wang",
+        "Ningxin Ma",
+        "Panpan Wang",
+        "Peihan Lin",
+        "Peng Sun",
+        "Peng Zhang",
+        "Qian Ying",
+        "Qiang Xiang",
+        "Qiao Wang",
+        "Qingmiao Mao",
+        "Qiwei Jiang",
+        "Rongli Jin",
+        "Ruyi Chen",
+        "Sha Tao",
+        "Shangmian Sun",
+        "Shaoqing Wu",
+        "Shichao Zou",
+        "Si Lei",
+        "Tianyang Zhang",
+        "Tianyu Sun",
+        "Tingting Yin",
+        "W. L. Xiao",
+        "Wei An",
+        "Wei Li",
+        "Wei Wang",
+        "Weiwei Lin",
+        "Wenqing Hou",
+        "X. Lin",
+        "Xiangfei Meng",
+        "Xianzhu Huang",
+        "Xiao Peng",
+        "Xiaoqian Li",
+        "Xiaoting Zhang",
+        "Xiaowen Sun",
+        "Xiaoxiang Wang",
+        "Xiaoyu Ye",
+        "Xinrou Zhang",
+        "Xinyu Zhang",
+        "Xue Cao",
+        "Xueyin Chen",
+        "Yanan Zhou",
+        "Yanhong Xu",
+        "Yao Xia",
+        "Yao Xu",
+        "Yi Shao",
+        "Yihong Zhang",
+        "Yiling Ma",
+        "Ying Tang",
+        "Yining Lou",
+        "Yiru Chen",
+        "Yishi Piao",
+        "Yixuan Chen",
+        "Yong Xiong",
+        "Yuchen Xuan",
+        "Yuehan Yang",
+        "Yuer Xu",
+        "Yukun Zha",
+        "Yunxian Ma",
+        "Yuping Lin",
+        "Yuting Yan",
+        "Yutong Xie",
+        "Yuwen Sheng",
+        "Yuxuan Zhu",
+        "Zekai Zhang",
+        "Zhe Ju",
+        "Zhenzhen Lin",
+        "Zheren Gao",
+        "Zheyang Sun",
+        "Zhigang Yan",
+        "Zhongyu Wu",
+        "Zi Wang",
+        "Zihua Qu",
+        "Ziling Yan",
+        "Ziyi Wan"
+      ],
+      "url": "https://arxiv.org/abs/2609.19969",
+      "published": "2026-09-17T09:43:10Z",
+      "topics": [
+        "多模态",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-09-18"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.19969v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 90,
+        "title_zh": "DeepSeek-V4.1-Flash：进一步压缩长上下文的 KV 缓存",
+        "abstract_zh": "长时程智能体的普及使模型任务越来越偏重输入。此前工作虽降低了长上下文计算成本，预填充仍昂贵，大型 KV 缓存也持续占用显存、SSD 容量和数据传输带宽。为此，作者提出支持百万 token 上下文、骨干参数为 552B 的多模态混合专家模型 DeepSeek-V4.1-Flash。其因果编码器—解码器结构在解码时每 token 激活 16B 参数，在预填充时只激活 8B。Compressed Sparse Attention 2 中的跨层 KV 复用与 FP4 缓存使常驻显存的全局 KV 缓存降至每 token 890 字节，约为 DeepSeek-V4-Flash 对应开销的四分之一。SWA Bounded Replay 部署优化进一步把 SSD 或主存中的持久 KV 缓存降至前代的约八分之一。作者报告：在缓存占用显著缩小的同时，模型整体性能优于基线。模型简化了前代架构并加入效率扩展，在含 45T token 的多模态语料上预训练，再进行全面后训练，面向文本与多模态智能体场景；检查点已公布。",
+        "reason": "重点是百万上下文下的预填充、缓存容量与恢复成本，适合大模型推理系统和长任务智能体方向。",
+        "introduction_zh": "长时程智能体反复读取长输入，部署瓶颈不再只有生成速度：预填充计算、显存中的全局 KV、持久缓存存储和恢复带宽都可能主导成本。本文以系统性降低这些开销为目标，将因果编码器—解码器、跨层压缩缓存复用、低精度缓存以及滑动窗口状态重建组合起来。主要贡献在架构与部署协同；理解这篇工作时，需区分计算量、运行时缓存和持久缓存三个不同指标。",
+        "framework_zh": "40 层网络分为各 20 层的因果编码器与解码器。预填充主要经过编码器，以较低激活参数量构建全局缓存；生成阶段再使用完整路径。CSA2 在不同层采用构建缓存、重新建立索引或复用缓存及索引等模式，减少重复保存全局 KV，并结合 FP4 表示压缩容量。各层仍保留局部滑动窗口注意力。SWA Bounded Replay 用有界重放近似重建滑动窗口状态，降低持久化成本。视觉输入通过视觉编码器与投影进入多模态模型，训练沿用大规模预训练与后训练流程。",
+        "pipeline": "文本/视觉输入 → 因果编码器 → 跨层复用的压缩 KV → 解码器＋局部滑动窗口 → 输出",
+        "results": "作者报告预填充每 token 激活 8B 参数、解码激活 16B；相同序列长度下，全局 KV 为 890 字节/token，约为前代四分之一，持久 KV 约为前代八分之一。这些是各自定义的缓存指标，并非模型总显存占用。",
+        "limitations": "作者明确指出 CSA2 的选择错误和 SWA 近似状态重建在尚未充分测试的边界输入中可能损害能力。长上下文稀疏检索和缓存恢复边界需要额外压力测试。分析保留：公开报告的基准接近不代表所有高难度任务能力相同。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "输入密集型负载与缓存问题"
+          },
+          {
+            "section": "S2.SS1",
+            "claim": "因果编码器—解码器"
+          },
+          {
+            "section": "S2.SS2",
+            "claim": "CSA2 缓存复用"
+          },
+          {
+            "section": "S6",
+            "claim": "缓存数字、鲁棒性边界与后续验证"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "493f0d915953de5b3cdefc4d1cabcf24712ca4be2798c80b23b5f4edd4f3ff76",
+        "analysed_at": "2026-09-20T01:56:52.459Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "输入密集型负载与缓存问题",
+          "url": "https://arxiv.org/html/2609.19969v1#S1"
+        },
+        {
+          "section": "S2.SS1",
+          "claim": "因果编码器—解码器",
+          "url": "https://arxiv.org/html/2609.19969v1#S2.SS1"
+        },
+        {
+          "section": "S2.SS2",
+          "claim": "CSA2 缓存复用",
+          "url": "https://arxiv.org/html/2609.19969v1#S2.SS2"
+        },
+        {
+          "section": "S6",
+          "claim": "缓存数字、鲁棒性边界与后续验证",
+          "url": "https://arxiv.org/html/2609.19969v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F3",
+          "caption": "Figure 3: Overall architecture of DeepSeek-V4.1-Flash. The 40-layer network is divided into a causal encoder and a decoder, each with 20 layers. All feed-forward layers use standard DeepSeekMoE. The first two encoder layers use sliding window attention (SWA); the rest use Compressed Sparse Attention 2 (CSA2), with CSA2(ratio, mode) specifying the compression ratio and mode. The model also uses Single-Pass mHC, Engram, DSpark, and a Hierarchical Sparse Indexer.",
+          "url": "https://arxiv.org/html/2609.19969v1#S1.F3",
+          "source_url": "https://arxiv.org/html/2609.19969v1#S1.F3"
+        },
+        {
+          "id": "S4.T1",
+          "caption": "Table 1: Comparison among DeepSeek-V4-Flash-Base, DeepSeek-V4-Pro-Base, and DeepSeek-V4.1-Flash-Base. All models are evaluated in our internal framework and share the same evaluation setting. Scores with a gap not exceeding 0.3 are considered to be at the same level. The highest score in each row is in bold font, and the second is underlined.",
+          "url": "https://arxiv.org/html/2609.19969v1#S4.T1",
+          "source_url": "https://arxiv.org/html/2609.19969v1#S4.T1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.20817",
+      "arxiv_id": "2609.20817",
+      "doi": "",
+      "title": "FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations",
+      "abstract": "Modeling articulated objects from sparse monocular views is challenging because each observation reveals only partial geometry and motion evidence. Most feed-forward methods infer articulation from a single observation and therefore rely heavily on learned category-level shape priors. We present FAMOS, a feed-forward model that predicts movable-part segmentation and joint parameters from a sparse, unordered set of partial point clouds. Our model jointly reasons over multiple observations and naturally supports a variable number of inputs, including a single view. To aggregate articulation cues across observations, we introduce a Multi-state Articulation Transformer with alternating state-wise and global attention. We further propose an observed articulation span objective that supervises the motion range each part exhibits across the input observations, encouraging the model to leverage the full observation set. To overcome the limited scale and diversity of existing datasets, we introduce a procedural data generator that synthesizes self-annotated assets during training. Experiments on PartNet-Mobility, ACD, and ArtiCraft-10K demonstrate consistent improvements over both feed-forward and optimization-based baselines. Project page: https://kevinqu7.github.io/famos",
+      "authors": [
+        "Kevin Qu",
+        "Tao Sun",
+        "Massimiliano Viola",
+        "Liyuan Zhu",
+        "Zhizhuo Zhou",
+        "Sayan Deb Sarkar",
+        "Konrad Schindler",
+        "Iro Armeni"
+      ],
+      "url": "https://arxiv.org/abs/2609.20817",
+      "published": "2026-09-17T17:59:40Z",
+      "topics": [
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-09-18"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.20817v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 88,
+        "title_zh": "FAMOS：从稀疏观测前馈预测 3D 物体关节结构",
+        "abstract_zh": "从稀疏单目视角建模可关节运动的物体很困难，因为每次观测只揭示部分几何和运动证据。多数前馈方法仅从一次观测推断关节结构，因而严重依赖学到的类别形状先验。FAMOS 从稀疏、无序的局部点云集合中预测可动部件分割与关节参数，联合推理多个观测，并自然支持包括单视图在内的可变输入数量。作者提出在状态内注意力和全局注意力之间交替的 Multi-state Articulation Transformer，汇聚不同观测中的运动线索；还以观测到的关节运动跨度作为训练目标，促使模型利用完整观测集合。为弥补现有数据规模和多样性的不足，作者引入训练期间生成自带标注资产的程序化数据生成器。在 PartNet-Mobility、ACD 和 ArtiCraft-10K 上，实验显示其相对前馈及优化方法具有一致改进。",
+        "reason": "把静态几何提升到可操作的部件与关节结构，连接 3D 重建和机器人交互；多状态信息如何真正被利用是关键看点。",
+        "introduction_zh": "单帧几何通常无法唯一确定抽屉、门等部件如何运动；只靠类别先验容易猜错，而密集跟踪或逐物体优化又需要更多观测和计算。FAMOS 选择稀疏、无序、数量可变的局部点云作为输入，利用不同关节状态相互补充信息。论文同时解决结构设计和数据不足两个问题：交替注意力聚合跨状态线索，运动跨度监督避免网络忽略额外观测，程序化资产生成补充多样性。",
+        "framework_zh": "各视图先提升到共同坐标系的局部点云，经冻结的 PartField 提取特征，再加坐标和法向等几何编码。点 token 与一组可学习部件查询进入多状态 Transformer：状态内层保留每次观测的局部结构，全局层汇聚所有观测并与部件查询交互。输出头分别预测每点的可动部件分割，以及每个部件的关节参数。额外的观测运动跨度目标监督输入集合中实际展示的关节变化范围，促使网络使用多个状态；程序化数据生成器在训练中持续产生带标注资产。",
+        "pipeline": "多状态局部点云 → PartField/几何编码 → 状态内与全局交替注意力 → 部件分割＋关节参数",
+        "results": "在论文的两状态输入评测中，ACD 部件分割 F1 为 71.9，对照同训练数据重训的 Particulate 为 43.7；更严格的运动相关 MAO F1 为 64.5，对照为 36.7。不同数据集结果与实物示例需分别解读。",
+        "limitations": "作者指出不常见的几何类别、很小或被遮挡的部件仍有困难；当前只处理各可动部件直接连接静态基座的单层运动树。分析保留：共同坐标系的上游重建质量会影响结果，不能视为任意随手拍视频都能可靠恢复完整机械结构。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "稀疏观测与单视图歧义"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "点云输入及编码"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px1",
+            "claim": "交替注意力结构"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "数据生成"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "两状态定量评测"
+          },
+          {
+            "section": "A6",
+            "claim": "运动树与遮挡局限"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "a9663e7b3b40a8cc2765636dbec29e6c6dfa9fca6d3202d22b10b352349cad49",
+        "analysed_at": "2026-09-20T01:56:52.461Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "稀疏观测与单视图歧义",
+          "url": "https://arxiv.org/html/2609.20817v1#S1"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "点云输入及编码",
+          "url": "https://arxiv.org/html/2609.20817v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px1",
+          "claim": "交替注意力结构",
+          "url": "https://arxiv.org/html/2609.20817v1#S3.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "数据生成",
+          "url": "https://arxiv.org/html/2609.20817v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "两状态定量评测",
+          "url": "https://arxiv.org/html/2609.20817v1#S4.SS3"
+        },
+        {
+          "section": "A6",
+          "claim": "运动树与遮挡局限",
+          "url": "https://arxiv.org/html/2609.20817v1#A6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: Framework Overview. We consider a sparse set of observations capturing an object in different articulation states and from different viewpoints. First, each view is lifted to 3D, resulting in partial point clouds which are encoded and tokenized via a frozen PartField [36] and geometric embeddings. The point tokens and a fixed set of learnable part queries pass through the Multi-state Articulation Transformer, whose layers alternate between state-wise and global attention. Per-query heads decode the joint parameters and a per-point head predicts the movable part segmentation.",
+          "url": "https://arxiv.org/html/2609.20817v1/method.png",
+          "source_url": "https://arxiv.org/html/2609.20817v1#S2.F2"
+        },
+        {
+          "id": "A8.F1",
+          "caption": "Figure H.1: Procedural dataset overview. Examples from all 15 procedurally generated object families and their structural variants. Movable parts are color-coded to show their ground-truth annotations.",
+          "url": "https://arxiv.org/html/2609.20817v1/family_overview.png",
+          "source_url": "https://arxiv.org/html/2609.20817v1#A8.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.20819",
+      "arxiv_id": "2609.20819",
+      "doi": "",
+      "title": "Can 4D Foundation Models Remember?",
+      "abstract": "Perceiving and remembering the visual world is fundamental to navigating and interacting with our environment. Current 4D foundation models, such as camera-controllable video models or 4D reconstruction models, can perceive and reconstruct dynamic environments, but how well they remember what they have perceived remains an open question. Existing benchmarks largely rely on pixel-level metrics and lack ground truth for objects once they leave the field of view, making them unable to evaluate visual memory in an object-centric manner against references. To fill this gap, we introduce PersistBench, a dataset and metric suite that leverages 360° videos as omniscient ground truth and proposes three evaluation aspects: object permanence, motion continuity, and appearance preservation. Evaluating various models across diverse categories reveals that current models can only maintain short-term consistency that degrades significantly once objects leave the field of view. Our findings highlight the gap between current model capabilities and robust visual memory (\"seeing is not remembering\"), providing guidance for future development of 4D foundation models. Dataset and code are available on the project page: https://guangzhaohe.com/persistbench.",
+      "authors": [
+        "Guangzhao He",
+        "Hadar Averbuch-Elor",
+        "Wei-Chiu Ma"
+      ],
+      "url": "https://arxiv.org/abs/2609.20819",
+      "published": "2026-09-17T17:59:50Z",
+      "topics": [
+        "视频生成",
+        "世界模型",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.20819v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 86,
+        "title_zh": "4D 基础模型能记住世界吗？PersistBench 视觉记忆评测",
+        "abstract_zh": "感知并记住视觉世界，是在环境中导航和交互的基础。当前可控相机的视频模型、4D 重建模型等能够感知和重建动态环境，但它们能在多大程度上记住已经看见的内容仍不清楚。现有基准主要依赖像素指标，而且物体离开视野后缺少真值，无法对照参考，以物体为中心评估视觉记忆。PersistBench 使用 360° 视频作为全知真值，并从物体恒存、运动连续性和外观保持三个方面评测。对不同类别模型的测试显示，当前模型只能维持短期一致性，物体离开视野后能力显著下降。研究揭示当前能力与可靠视觉记忆之间的距离，为后续 4D 基础模型研究提供方向；数据和代码在项目页提供。",
+        "reason": "把“生成看起来连续”与“物体离开视野后仍被记住”分开评估，适合世界模型、相机可控视频和动态重建研究。",
+        "introduction_zh": "普通视频无法记录视野外的真实状态，因此很难判断模型是在记忆还是凭先验补画。像素相似度也不足以说明某个物体是否仍存在、是否沿合理轨迹运动、外观是否一致。作者利用全景视频同时构造受限输入和保留目标的参考视角，再从物体层面检查三类记忆行为。该工作主要贡献是评测数据与指标，而不是提出一个新的生成模型；实验用于定位现有架构的不足。",
+        "framework_zh": "从 360° 动态视频中生成两组相机轨迹：输入轨迹让目标在前半段可见、随后离开视野；参考轨迹持续保留目标，提供被遮蔽状态的真值。使用视觉语言模型筛选目标，结合跟踪与平滑相机路径生成样本。评测时向模型查询相应视角，用分割跟踪及视觉语言判断衡量物体恒存，用尺度归一化的轨迹偏差衡量运动连续性，以掩码区域的 DINOv2 特征相似度衡量外观保持。三项指标分别报告，避免只凭画面质量推断记忆能力。",
+        "pipeline": "360° 视频 → 受限输入/全知参考视角 → 模型预测 → 恒存、连续性、外观三项评测",
+        "results": "论文报告被测模型在目标离开输入视野后均出现明显性能下降。显式几何投影等结构选择与表现存在关联；这是所测模型与数据上的观察，不能直接等同于机制因果结论。",
+        "limitations": "作者指出评测依赖现成的相机位姿估计、跟踪和视觉语言模型，它们的误差也会影响指标。数据来自 360° 视频，场景分布有限。分析保留：评测的是特定可观测条件下的视觉记忆，不等同于智能体所有形式的长期记忆。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "视野外真值缺失的问题"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "三项物体级指标"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "输入与参考视角构造"
+          },
+          {
+            "section": "S6.SS1",
+            "claim": "不可见阶段的表现"
+          },
+          {
+            "section": "S7",
+            "claim": "评测工具误差与数据局限"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "c38084f17b22c840bff15bb523855453a6a9012dfdc9f444556aafe76af227f0",
+        "analysed_at": "2026-09-20T01:56:52.463Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "视野外真值缺失的问题",
+          "url": "https://arxiv.org/html/2609.20819v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "三项物体级指标",
+          "url": "https://arxiv.org/html/2609.20819v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "输入与参考视角构造",
+          "url": "https://arxiv.org/html/2609.20819v1#S4.SS1"
+        },
+        {
+          "section": "S6.SS1",
+          "claim": "不可见阶段的表现",
+          "url": "https://arxiv.org/html/2609.20819v1#S6.SS1"
+        },
+        {
+          "section": "S7",
+          "claim": "评测工具误差与数据局限",
+          "url": "https://arxiv.org/html/2609.20819v1#S7"
+        }
+      ],
+      "figures": [
+        {
+          "id": "A3.T4",
+          "caption": "Table 4: Reference scores on the full benchmark. The reference video is evaluated by the same pipeline as model predictions.",
+          "url": "https://arxiv.org/html/2609.20819v1#A3.T4",
+          "source_url": "https://arxiv.org/html/2609.20819v1#A3.T4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.19600",
+      "arxiv_id": "2609.19600",
+      "doi": "",
+      "title": "WorldContact: A Contact-Centric World Model for Scalable Robot Learning",
+      "abstract": "Adapting robots to new objects and tasks requires interaction experience that can be costly to obtain. We present WorldContact, a contact-centric world model for deformable-object manipulation, constructed from a limited set of high-quality trajectories to generate additional training data efficiently. It predicts object dynamics using larger time steps than the source numerical simulator, which requires small integration steps to resolve rapid motion and prevent interpenetration. We evaluate WorldContact across 16 shopping-bag manipulation tasks. State-rollout measurements on a single H100 GPU show a $10\\times$ speedup over the source simulator, excluding rendering and disk I/O. We use the generated data to fine-tune an existing vision-language-action policy and deploy it directly on a real robot. In bag lifting, the same policy achieves 65% single-attempt success when fine-tuned on source simulation data alone, compared with 95% when fine-tuned on the dataset expanded with WorldContact. These results support efficient data generation with WorldContact for robot policy adaptation.",
+      "authors": [
+        "Caoliwen Wang",
+        "Mengdi Wang",
+        "Heng Zhang",
+        "Shixun Huang",
+        "Siyuan Chen",
+        "Chao Liu",
+        "Anpei Chen",
+        "Zhendong Wang",
+        "Peter Yichen Chen",
+        "Huamin Wang"
+      ],
+      "url": "https://arxiv.org/abs/2609.19600",
+      "published": "2026-09-17T02:27:32Z",
+      "topics": [
+        "多模态",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.19600v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 85,
+        "title_zh": "WorldContact：以接触为中心的世界模型，用于机器人训练数据扩充",
+        "abstract_zh": "机器人适应新物体与任务需要交互经验，而获取这些经验可能很昂贵。WorldContact 是面向可变形物体操作、以接触为中心的世界模型：从少量高质量轨迹学习，再高效生成更多训练数据。相比需要小积分步长以处理快速运动和防止穿透的数值仿真器，它用更大的时间步预测物体动力学。作者在 16 种购物袋操作任务上评估该方法。在单张 H100 上，不含渲染与磁盘输入输出的状态滚动预测比源仿真器快 10 倍。生成的数据用于微调现有视觉—语言—动作策略，并直接部署到真实机器人。在提袋任务上，同一策略仅用源仿真数据微调时，单次尝试成功率为 65%；使用 WorldContact 扩充的数据微调后为 95%。结果支持其用于机器人策略适配的数据生成。",
+        "reason": "世界模型服务于具体的数据扩充与真机适配，而非仅展示预测画面；接触表示和下游验证都值得阅读。",
+        "introduction_zh": "可变形物体的接触与快速运动使高精度仿真昂贵，直接收集足够多的真机轨迹也不现实。本文以少量可靠的仿真轨迹为起点，学习较大时间步的状态转移，再生成额外轨迹训练机器人策略。核心观点是将物体之间、物体与环境之间的接触显式组织到输入中。论文不仅比较预测误差和运行速度，也将扩充数据用于视觉语言动作策略微调，并在实际购物袋提起任务上验证。",
+        "framework_zh": "输入包含物体顶点的位置、速度、静止拓扑与属性，以及机器人给定的下一步控制状态。接触中心 tokenizer 汇总四类邻域：跨物体空间邻域、物体表面的拓扑邻域、受控部分与环境接触。分层模型合并 token，并通过全局注意力传播接触信息；完整分辨率的顶点查询再从压缩特征中取回信息，输出位置与速度变化。训练包含多步自回归滚动，并在滚动时使用拓扑投影约束变形。生成状态轨迹经过渲染后成为视觉语言动作策略的微调数据。",
+        "pipeline": "少量仿真轨迹 → 接触表示/分层状态模型 → 多步扩充轨迹 → 渲染＋VLA 微调 → 真机评估",
+        "results": "单张 H100 的状态滚动约为每墙钟秒 0.4 秒物理时间，源仿真约为 0.04 秒，即 10 倍；不含渲染与磁盘开销。提袋实验中，两种训练条件各尝试 20 次，成功数由 13/20 提升至 19/20。",
+        "limitations": "10 倍相对加速仍不表示该测量条件下达到实时仿真。真机验证集中在购物袋提起且每条件仅 20 次，不能据此推断所有可变形操作任务的成功率。作者将分布偏移、视觉仿真到现实差异和新物体泛化列为后续方向。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "数据成本与接触建模动机"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "四类接触信息"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "分层 token 聚合"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "自回归训练"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "速度测量口径"
+          },
+          {
+            "section": "S5",
+            "claim": "真机提袋实验"
+          },
+          {
+            "section": "S6",
+            "claim": "泛化边界"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "bf8403a2b42da18a4d66904252bca970184110834976a6763be7cd7da1dcdf3f",
+        "analysed_at": "2026-09-20T01:56:52.465Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "数据成本与接触建模动机",
+          "url": "https://arxiv.org/html/2609.19600v1#S1"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "四类接触信息",
+          "url": "https://arxiv.org/html/2609.19600v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "分层 token 聚合",
+          "url": "https://arxiv.org/html/2609.19600v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "自回归训练",
+          "url": "https://arxiv.org/html/2609.19600v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "速度测量口径",
+          "url": "https://arxiv.org/html/2609.19600v1#S4.SS4"
+        },
+        {
+          "section": "S5",
+          "claim": "真机提袋实验",
+          "url": "https://arxiv.org/html/2609.19600v1#S5"
+        },
+        {
+          "section": "S6",
+          "claim": "泛化边界",
+          "url": "https://arxiv.org/html/2609.19600v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Fig. 1: WorldContact overview. (Left): an agent-verified physical-simulation dataset, where an automated simulation agent samples the object and prescribed state and executes the resulting controls in the physical simulator. (Middle): contact-centric world model prediction and rendering of object-state trajectories into the observation modality consumed by the VLA. (Right): VLA fine-tuning for task-specific policy adaptation and subsequent real-robot deployment.",
+          "url": "https://arxiv.org/html/2609.19600v1/teaser.png",
+          "source_url": "https://arxiv.org/html/2609.19600v1#S0.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Fig. 2: WorldContact pipeline. Given the current object state and prescribed state, WorldContact proceeds through four stages: the contact-centric vertex tokenizer encodes spatial, topological, controllable, and environmental contact information into vertex tokens; the hierarchical encoder merges vertex tokens into global tokens for long-range communication; and the global-token decoder refines vertex tokens to produce vertex-level state corrections. A differentiable projection is used to improve long-horizon rollout stability during fine-tuning.",
+          "url": "https://arxiv.org/html/2609.19600v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2609.19600v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.20800",
+      "arxiv_id": "2609.20800",
+      "doi": "",
+      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
+      "abstract": "World modeling enables intelligence to anticipate consequences, guide interventions, and learn from interaction. Yet predictive models remain domain-specific: can a common learning principle support world modeling across radically different systems? We introduce JEPA-Anything, a domain-agnostic framework based on orthogonal predictive factorization (OPF). Extending joint-embedding predictive architectures, OPF decomposes latent targets into complementary factors, learns them through dedicated pathways, and recombines them within a shared predictive design. We evaluate JEPA-Anything across seven domains: vision, biology, clinical trajectories, control, molecular dynamics, physical fields, and weather. Experiments span representation learning, intervention prediction, out-of-distribution generalization, and long-horizon dynamics, including 10 matched dynamics tasks, forecasting of over 1,000 clinical events, and 100-step molecular rollouts across four systems. Against matched JEPA baselines, JEPA-Anything improves reported metrics on all 10 dynamics tasks and reduces single-intervention prediction error on Interventional Pong by 34.8%. It achieves the lowest one-step and 100-step molecular errors among compared methods in all four systems. Beyond prediction, a factor-nominated biological intervention receives experimental support in cell co-cultures, patient-derived organoids, tumor fragments, and mice; latent orbital modes recover the Keplerian scaling exponent with a fitted slope of -1.4991. These results support a common factorized predictive principle across heterogeneous worlds, connecting world modeling with intervention and experimentally grounded scientific discovery. Code: https://github.com/Gen-Verse/JEPA-Anything",
+      "authors": [
+        "Taoyong Cui",
+        "Zhongyao Wang",
+        "Xinyue Xu",
+        "Weiyang Liu",
+        "Zhaochen Yu",
+        "Yuying Zhang",
+        "Qiang Gao",
+        "Mengyue Yang",
+        "Wanli Ouyang",
+        "Pheng Ann Heng",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Ling Yang"
+      ],
+      "url": "https://arxiv.org/abs/2609.20800",
+      "published": "2026-09-17T17:55:57Z",
+      "topics": [
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-09-18"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.20800v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "score": 82,
+        "title_zh": "JEPA-Anything：以正交预测分解统一不同领域的世界建模",
+        "abstract_zh": "世界建模帮助智能系统预判后果、指导干预并从交互中学习，但预测模型通常针对特定领域。JEPA-Anything 探索共同学习原则能否支持差异很大的系统。该框架基于正交预测分解（OPF）：将联合嵌入预测架构中的潜在目标分成互补因子，通过专门路径学习，再在共享的预测设计中重组。作者在视觉、生物、临床轨迹、控制、分子动力学、物理场和天气七个领域测试表示学习、干预预测、分布外泛化与长程动力学。实验涉及十个配对动力学任务、超过一千个临床事件的预测及四个分子系统的一百步滚动。相对匹配的 JEPA 基线，该方法在十个动力学任务上改进所报告指标，并将 Interventional Pong 的单干预预测误差降低 34.8%；在四个分子系统中取得对照方法里最低的单步与百步误差。作者还报告因子提名的生物干预获得多类实验支持，潜在轨道模式拟合得到 -1.4991 的开普勒标度指数。这些结果支持跨异质系统共享因子化预测原则的可能性。",
+        "reason": "关注可复用的潜在预测结构，兼顾干预与长时程滚动；适合寻找世界模型方法选题，但“跨领域”不能误读成单一通用预训练模型。",
+        "introduction_zh": "传统 JEPA 把多种可预测结构放在一个目标向量和一条预测路径中，容易让强信号支配训练、弱信号相互干扰。作者将问题表述为潜在预测容量如何分配，提出多个互补子空间及对应预测器。不同领域仍自行定义观测、编码器和上下文—目标关系，共享的是因子化预测原则。贡献因此是可在多领域实例化的方法框架，而非一个无需适配即可处理所有世界的模型。",
+        "framework_zh": "领域适配器将图像、序列、图或场映射为 token 与结构描述，采样器定义上下文和目标。在线编码器表示上下文，指数滑动平均的目标编码器提供停止梯度的目标状态。可学习投影将目标分成多个因子，各自的预测分支从共享上下文估计对应坐标；通过投影矩阵的伪逆重组成完整潜在状态，用于读出、规划或多步滚动。训练在原领域损失上增加预测误差、子空间内及子空间间正交约束、因子活跃度和编码器方差项，以减少重复方向与表示坍塌。",
+        "pipeline": "领域观测 → 上下文/目标编码 → 正交因子＋独立预测分支 → 潜在状态重组 → 读出或滚动",
+        "results": "Interventional Pong 在相同数据、模型预算和五组配对种子下，单干预一步 MSE 由 0.009541 降至 0.006218，降低 34.83%；组合干预降低 12.90%，六步自由滚动降低 8.58%。不能把单步最大收益套用到所有任务。",
+        "limitations": "作者明确说明正交因子本身不证明因果机制，共享架构也不保证不同领域的表示对齐。分布外不确定性校准以及模型何时可靠到足以指导实验仍待研究。分析保留：各领域仍需要单独适配与训练，应检查收益是否依赖编码器和任务配置。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "单路径预测的容量分配问题"
+          },
+          {
+            "section": "S2.SS1",
+            "claim": "领域适配与共享核心的边界"
+          },
+          {
+            "section": "S2.SS2",
+            "claim": "正交预测与伪逆合成"
+          },
+          {
+            "section": "S2.SS3",
+            "claim": "防坍塌正则"
+          },
+          {
+            "section": "S3.SS3.SSS1.Px2",
+            "claim": "配对种子实验的三种误差"
+          },
+          {
+            "section": "S6",
+            "claim": "跨领域与因果解释边界"
+          }
+        ],
+        "decision": "include",
+        "fulltext_hash": "5785076795a49290ac9bfc7e0d1dc56c722a02a579961d6d56fe85493c6c6e6b",
+        "analysed_at": "2026-09-20T01:56:52.467Z"
+      },
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "单路径预测的容量分配问题",
+          "url": "https://arxiv.org/html/2609.20800v1#S1"
+        },
+        {
+          "section": "S2.SS1",
+          "claim": "领域适配与共享核心的边界",
+          "url": "https://arxiv.org/html/2609.20800v1#S2.SS1"
+        },
+        {
+          "section": "S2.SS2",
+          "claim": "正交预测与伪逆合成",
+          "url": "https://arxiv.org/html/2609.20800v1#S2.SS2"
+        },
+        {
+          "section": "S2.SS3",
+          "claim": "防坍塌正则",
+          "url": "https://arxiv.org/html/2609.20800v1#S2.SS3"
+        },
+        {
+          "section": "S3.SS3.SSS1.Px2",
+          "claim": "配对种子实验的三种误差",
+          "url": "https://arxiv.org/html/2609.20800v1#S3.SS3.SSS1.Px2"
+        },
+        {
+          "section": "S6",
+          "claim": "跨领域与因果解释边界",
+          "url": "https://arxiv.org/html/2609.20800v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of JEPA-Anything. Upper section: Diverse domains share the same predictive problem: inferring unobserved, intervened, or future states from context. Standard JEPA mixes multiple predictive modes in a monolithic target embedding. In contrast, JEPA-Anything uses orthogonal predictive factorization (OPF) to allocate predictive capacity across complementary, orthogonal factors, each with a dedicated predictor, and synthesize a complete latent world state. The shared factorized core supports representation reuse, out-of-distribution and intervention prediction, long-horizon dynamics, and factor-level scientific analysis. Lower section: Three evaluation groups illustrate these capabilities. Group I (terminal readout) examines controlled visual binding and single-cell state representations. Group II (latent world dynamics) evaluates intervention-conditioned prediction and factor intervention in locomotion. Group III (scientific analysis) investigates wet-lab intervention nomination and the recovery of an orbital scaling law. Within each group, experiments A and B are arranged from left to right.",
+          "url": "https://arxiv.org/html/2609.20800v1/figures/JEPA-Anything-final.png",
+          "source_url": "https://arxiv.org/html/2609.20800v1#S0.F1"
+        },
+        {
+          "id": "S3.T2",
+          "caption": "Table 2: Overview of JEPA-Anything instantiations and evaluation protocols. In Groups I and II, each implementation combines its base loss with ℒOPF\\mathcal{L}_{\\mathrm{OPF}} as specified in Equation (10). Numerical OPF entries use the compact form d;K×rd;\\,K\\!\\times\\!r, where K​r=dKr=d; symbolic entries denote domain-configured widths. Group III reports the factor interface used for analysis and external validation.",
+          "url": "https://arxiv.org/html/2609.20800v1#S3.T2",
+          "source_url": "https://arxiv.org/html/2609.20800v1#S3.T2"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2609.20819",
+      "title": "Can 4D Foundation Models Remember?",
+      "decision": "include",
+      "reason": "把“生成看起来连续”与“物体离开视野后仍被记住”分开评估，适合世界模型、相机可控视频和动态重建研究。"
+    },
+    {
+      "key": "arxiv:2609.19600",
+      "title": "WorldContact: A Contact-Centric World Model for Scalable Robot Learning",
+      "decision": "include",
+      "reason": "世界模型服务于具体的数据扩充与真机适配，而非仅展示预测画面；接触表示和下游验证都值得阅读。"
+    },
+    {
+      "key": "arxiv:2609.20744",
+      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+      "decision": "include",
+      "reason": "同时讨论注意力结构、预训练模型改造与推理实现，适合研究视频生成效率；需要把结构收益与蒸馏收益分开看。"
+    },
+    {
+      "key": "arxiv:2609.19969",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "decision": "include",
+      "reason": "重点是百万上下文下的预填充、缓存容量与恢复成本，适合大模型推理系统和长任务智能体方向。"
+    },
+    {
+      "key": "arxiv:2609.20817",
+      "title": "FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations",
+      "decision": "include",
+      "reason": "把静态几何提升到可操作的部件与关节结构，连接 3D 重建和机器人交互；多状态信息如何真正被利用是关键看点。"
+    },
+    {
+      "key": "arxiv:2609.20800",
+      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
+      "decision": "include",
+      "reason": "关注可复用的潜在预测结构，兼顾干预与长时程滚动；适合寻找世界模型方法选题，但“跨领域”不能误读成单一通用预训练模型。"
+    },
+    {
+      "key": "arxiv:2609.19793",
+      "title": "AI Smart Glasses for Wearable Intelligence: From Egocentric Sensing to Agentic Personalization",
+      "decision": "exclude",
+      "reason": "摘要粗筛：以智能眼镜系统综述与应用梳理为主，本期优先原创方法和可核对实验；可留作入门背景阅读。"
+    },
+    {
+      "key": "arxiv:2609.20594",
+      "title": "Recursive Quantum Long Short-Term Memory for Stable Short-Horizon Temperature Forecasting",
+      "decision": "exclude",
+      "reason": "摘要粗筛：重点是小规模量子循环网络的城市气温预测，与当前通用 AI、视觉和具身方向的直接相关性较低。"
+    }
+  ],
+  "digest_id": "e0ace10c53cb11711651"
+}
