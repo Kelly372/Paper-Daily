@@ -9,15 +9,15 @@
         "to": "2026-09-19",
         "timezone": "Asia/Shanghai"
       },
-      "generated_at": "2026-09-20T01:59:24.268Z",
-      "retrieved_at": "2026-09-20T01:39:18.619Z",
+      "generated_at": "2026-09-20T03:43:00.694Z",
+      "retrieved_at": "2026-09-20T03:21:50.078Z",
       "sources": [
         {
           "source": "arXiv",
-          "status": "ok",
-          "count": 418,
+          "status": "partial",
+          "count": 150,
           "total": 418,
-          "error": null,
+          "error": "export.arxiv.org: The operation was aborted due to timeout",
           "coverage": "2026-09-17 至 2026-09-19（API 提交日期回查；不等同于公告日）"
         },
         {
@@ -45,12 +45,19 @@
           "url": "https://huggingface.co/api/daily_papers?date=2026-09-17"
         },
         {
+          "source": "本地缓存",
+          "status": "cached_fallback",
+          "count": 267,
+          "cached_at": "2026-09-20T01:39:18.587Z",
+          "coverage": "本次接口仅返回 150/418 条；从首轮缓存补回窗口内缺失记录，网页另核验 HF 推荐。缓存时间 2026-09-20T01:39:18.587Z"
+        },
+        {
           "source": "Hugging Face",
           "status": "browser_assisted",
           "count": 4,
           "url": "https://huggingface.co/papers/date/2026-09-18",
           "date": "2026-09-18",
-          "retrieved_at": "2026-09-20T01:53:41.873Z",
+          "retrieved_at": "2026-09-20T03:23:38.335Z",
           "coverage": "网页人工核验 4 篇；非当日完整列表"
         },
         {
@@ -58,15 +65,550 @@
           "status": "browser_assisted",
           "count": 0,
           "url": "https://www.jiqizhixin.com/industry",
-          "date": "2026-09-18",
-          "retrieved_at": "2026-09-20T01:53:41.875Z",
-          "coverage": "已查公开资讯列表；未补录可核验论文。公众号全文与完整日期覆盖尚未接入。"
+          "date": "2026-09-19",
+          "retrieved_at": "2026-09-20T03:23:38.335Z",
+          "coverage": "检查 09-18 至 09-19 公开产业列表与重点论文站内搜索；未补录可核验论文，非完整公众号覆盖。"
+        },
+        {
+          "source": "Hugging Face",
+          "status": "browser_assisted",
+          "count": 1,
+          "url": "https://huggingface.co/papers/date/2026-09-17",
+          "date": "2026-09-17",
+          "retrieved_at": "2026-09-20T03:23:38.335Z",
+          "coverage": "从 09-17 日期页核实补录 Zing-0.5；原论文首次提交为 09-15，属社区推荐补漏，非新稿。非完整列表。"
         }
       ],
-      "candidates_count": 418,
-      "analysed_count": 8,
+      "candidates_count": 419,
+      "analysed_count": 15,
       "quality_threshold": 70,
       "papers": [
+        {
+          "key": "arxiv:2609.17909",
+          "arxiv_id": "2609.17909",
+          "doi": "",
+          "title": "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control",
+          "abstract": "We introduce Zing-0.5, a 5B autoregressive world model designed for playability: users can explore generated worlds, influence unfolding events, and respond to the resulting feedback through joint keyboard and online text control. Our approach brings together three technical contributions: (1) Unified action and text conditioning, combining magnitude-aware keyboard inputs with temporally aligned text instructions and jointly annotated videos to learn navigation and event control within the same sequence; (2) Event-scale supervision for incremental generation, using a segment-level teacher trained on connected multi-prompt videos to supervise a block-level causal student through distribution-matching distillation; and (3) Low-cost real-time interaction, combining four-step generation with context-preserving streaming to support 832 x 480 inference at 24 FPS at an estimated server rental cost of approximately USD 0.009 per stream-minute. Zing-0.5 achieves an overall score of 81.0 and a consistency score of 88.5 across 158 WBench Navigation cases. A joint-control demonstration shows a text-directed event change during continued navigation without restarting generation. We release the model weights, inference code, and Zing-SGLang serving implementation to support further work on playable generated worlds.",
+          "authors": [
+            "Mingyang Chen",
+            "Shengdong Chen",
+            "Xiaoxiao Fu",
+            "Bosheng Gong",
+            "Haoyuan Guo",
+            "Bowen Li",
+            "Jiawen Li",
+            "Kejun Li",
+            "Tianpeng Li",
+            "Yin Liu",
+            "Haoze Sun",
+            "Zeyang Tian",
+            "Meng Wang",
+            "Xinmiao Wu",
+            "Jiangqiao Yan",
+            "Zining Zhao"
+          ],
+          "url": "https://arxiv.org/abs/2609.17909",
+          "published": "2026-09-15T23:05:39Z",
+          "topics": [
+            "流式生成",
+            "大模型",
+            "世界模型",
+            "相机控制",
+            "主体控制"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-09-17"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2609.17909v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "score": 91,
+            "priority_topics": [
+              "流式生成",
+              "相机控制",
+              "主体控制"
+            ],
+            "title_zh": "Zing-0.5：用实时动作与文本联合控制构建可交互世界",
+            "abstract_zh": "本文介绍 Zing-0.5，一个以可交互性为目标的 50 亿参数自回归世界模型：用户通过键盘与在线文本联合控制，探索生成世界、影响正在发生的事件，并根据反馈继续操作。方法包含三项贡献：其一，将感知力度的键盘输入、时间对齐的文本指令与联合标注视频结合，在同一序列内学习导航和事件控制；其二，以连接多段提示的视频训练片段级教师，通过分布匹配蒸馏监督块级因果学生，为增量生成提供事件尺度监督；其三，结合四步生成与保留上下文的流式服务，实现 832×480、24 FPS 的实时交互，作者估算服务器租赁成本约为每路每分钟 0.009 美元。在 158 个 WBench Navigation 案例中，总分为 81.0，一致性为 88.5。联合控制演示展示了在持续导航时用文本改变事件而不重启生成。作者发布模型权重、推理代码及 Zing-SGLang 服务实现。",
+            "reason": "重点匹配流式生成，并支持不中断视频的导航、视角及事件/主体动作控制。由 HF 09-17 推荐页补漏；论文首次提交为 09-15，不标成 09-19 新稿。",
+            "introduction_zh": "可交互世界需要让用户的操作影响接下来的画面，并在不中断生成的情况下继续接收反馈。已有方法往往把键盘导航与文本指定事件分开处理，长事件的语义又容易在短块生成中被切断。论文围绕“可以玩”的生成系统，统一连续力度动作与在线提示，利用跨多个生成块的事件级教师监督短块学生，再将模型蒸馏和保留上下文的推理服务结合。目标是让导航、视角变化与文本控制共享一条连续生成序列，而不是逐次重新生成短视频。",
+            "framework_zh": "键盘的八个移动/视角通道用非负连续值表达相对力度，经轻量因果编码器注入视觉 token；文本按生效时间区间进入交叉注意力，更新提示时只替换文本缓存并保留视觉缓存。训练由双向适配逐步转为片段级教师和每块四个隐帧的因果学生，再做四步分布匹配蒸馏。长展开采用先无梯度 rollout、后重放计算梯度的方式控制训练显存。服务端每张 RTX 5090 运行一路完整模型，使用轻量解码、固定首段锚点、滑动近期窗口，以及提示变化后固定的参考隐帧，在有界缓存内持续输出；该视觉缓存仍不等价于显式持久世界状态。",
+            "pipeline": "首图＋连续键盘输入＋在线文本 → 联合条件因果生成器 → 四步去噪与有界视觉缓存 → 连续视频及交互反馈",
+            "results": "作者的八卡 RTX 5090 服务器每卡一路，单路服务为 832×480、客户端 24 FPS；WBench Navigation 的 158 案例评测使用 1248×704，报告总分 81.0、一致性 88.5。两种分辨率对应不同设置，不能合并为“704p 实时 24 FPS”。键盘与文本联合改变事件主要以演示支持。",
+            "limitations": "作者指出视觉历史并不完整指定世界状态，固定容量缓存也不能保证长期隐藏事实、实体状态和交互后果持续存在。分析保留：导航基准不能代替全面的联合事件控制评测；服务器费用为作者特定租赁条件下的估算。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "可交互世界的任务目标与联合控制动机"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px2",
+                "claim": "连续力度键盘移动与视角控制"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px3",
+                "claim": "在线文本按时间区间生效"
+              },
+              {
+                "section": "S3.SS3.SSS2.Px1",
+                "claim": "片段级教师与事件监督"
+              },
+              {
+                "section": "S3.SS3.SSS4.Px1",
+                "claim": "长展开 rollout 与重放"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "5090 服务与 480p 实时条件"
+              },
+              {
+                "section": "S5.SS1.SSS0.Px1",
+                "claim": "导航基准分辨率、规模和结果"
+              },
+              {
+                "section": "S6.SS0.SSS0.Px3",
+                "claim": "视觉历史不足以保证世界状态"
+              }
+            ],
+            "decision": "include",
+            "fulltext_hash": "6d1bdf5dea5c7b684e858a655a20ec95ad703920c3d731d9f379e9b892ebe686",
+            "analysed_at": "2026-09-20T03:38:04.377Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 101,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "可交互世界的任务目标与联合控制动机",
+              "url": "https://arxiv.org/html/2609.17909v1#S1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px2",
+              "claim": "连续力度键盘移动与视角控制",
+              "url": "https://arxiv.org/html/2609.17909v1#S3.SS2.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px3",
+              "claim": "在线文本按时间区间生效",
+              "url": "https://arxiv.org/html/2609.17909v1#S3.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS3.SSS2.Px1",
+              "claim": "片段级教师与事件监督",
+              "url": "https://arxiv.org/html/2609.17909v1#S3.SS3.SSS2.Px1"
+            },
+            {
+              "section": "S3.SS3.SSS4.Px1",
+              "claim": "长展开 rollout 与重放",
+              "url": "https://arxiv.org/html/2609.17909v1#S3.SS3.SSS4.Px1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "5090 服务与 480p 实时条件",
+              "url": "https://arxiv.org/html/2609.17909v1#S4.SS2"
+            },
+            {
+              "section": "S5.SS1.SSS0.Px1",
+              "claim": "导航基准分辨率、规模和结果",
+              "url": "https://arxiv.org/html/2609.17909v1#S5.SS1.SSS0.Px1"
+            },
+            {
+              "section": "S6.SS0.SSS0.Px3",
+              "claim": "视觉历史不足以保证世界状态",
+              "url": "https://arxiv.org/html/2609.17909v1#S6.SS0.SSS0.Px3"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F4",
+              "caption": "Figure 4: Model architecture. A lightweight action encoder adds frame-aligned control features to visual tokens before the DiT stack. Text conditions the DiT blocks through cross-attention. Prompt updates refresh text K/V while retaining visual K/V from the preceding history.",
+              "url": "https://arxiv.org/html/2609.17909v1#S3.F4",
+              "source_url": "https://arxiv.org/html/2609.17909v1#S3.F4"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2609.19729",
+          "arxiv_id": "2609.19729",
+          "doi": "",
+          "title": "Recency Forcing: Bridging the Long-Horizon Gap in Autoregressive Video Generation",
+          "abstract": "Autoregressive (AR) video generation degrades over long horizons due to an overlooked train-inference discrepancy we term KV eviction mismatch: models train on short clips where all context frames reside in the KV cache, but at inference, memory constraints force distant frames to be evicted from the KV cache - removing context the model was conditioned on. Rather than simulating eviction via context truncation - which discards temporal information the model still needs and degrades motion coherence - we keep the context but while progressively reducing the influence of distant frames, making their eventual eviction negligible. To guide this design, we introduce the positional response $R( Δ, \\, t_{\\text{denoise}})$, a perturbation-based sensitivity measure revealing that context influence decays steeply with temporal distance and varies systematically across denoising steps. Motivated by this analysis, we propose Recency Forcing, which applies a non-positive, timestep-dependent bias, termed Temporal Response Bias (TRB), on pre-softmax attention logits derived directly from $R$, closing the train-inference gap without modifying context length or training objectives. We further introduce Biased Attention Reparameterization (BAR), an exact reformulation that moves the bias outside the softmax, making TRB a standard FlashAttention call at zero overhead. Recency Forcing operates in both training-free mode and training-based mode. Experiments on VBench and VBench-Long demonstrate state-of-the-art long-horizon generation quality at no additional inference cost.",
+          "authors": [
+            "Tri Cao",
+            "Hung Nguyen",
+            "Phong Nguyen",
+            "Khoi Nguyen"
+          ],
+          "url": "https://arxiv.org/abs/2609.19729",
+          "published": "2026-09-17T05:40:53Z",
+          "topics": [
+            "流式生成",
+            "运动与运动控制",
+            "视频生成",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/pdf/2609.19729v1",
+          "fulltext_format": "pdf",
+          "analysis": {
+            "decision": "include",
+            "score": 90,
+            "priority_topics": [
+              "流式生成"
+            ],
+            "title_zh": "Recency Forcing：缓解自回归视频生成的长时间展开退化",
+            "abstract_zh": "自回归视频生成在长时间展开时会退化。作者将一个被忽视的训练与推理差异称为 KV 缓存淘汰失配：训练短片时所有上下文帧都在缓存中，推理时却因内存限制移除远处帧，删掉了模型依赖的条件。直接截短训练上下文会损失必要时间信息并伤害运动连贯性，因此本文保留上下文，同时逐步降低远处帧的影响，使其最终移除的影响很小。作者提出基于扰动的“位置响应”，发现上下文影响随时间距离迅速衰减，并随去噪步骤系统变化。Recency Forcing 据此在注意力 Softmax 前加入非正、随去噪步骤变化的时间响应偏置 TRB，在不改变上下文长度和训练目标的情况下缓解失配。偏置注意力重参数化 BAR 将偏置移出 Softmax，使之可用标准 FlashAttention 实现。方法支持免训练与再训练两种模式；作者在 VBench 和 VBench-Long 中报告了先进的长视频质量，并称几乎不增加推理开销。",
+            "reason": "直接匹配流式视频生成：聚焦有界 KV 缓存下的长时间连续展开，并提供可插入已有自回归模型的注意力改造。HTML 不可用，本次由原始 PDF 核对。",
+            "introduction_zh": "自回归视频模型适合边生成边交互，但很多少步模型只用约五秒短片训练，延长生成后容易出现颜色、主体和运动漂移。论文指出，推理中必须淘汰旧缓存，而训练时模型始终能访问这些帧，这种条件不一致是额外误差来源。简单缩短训练窗口又会丢失维持运动的信息。作者用替换历史帧的扰动实验测量模型对不同距离、不同去噪步的敏感度，再让远处帧在被淘汰前逐渐失去影响，尝试同时保住近期运动线索和长时间展开稳定性。",
+            "framework_zh": "输入文本和已有视频上下文，因果生成器按块去噪。缓存分成首部全局锚点、近期帧与中间历史帧：前两类不衰减，仅对历史注意力加入随距离和去噪步骤变化的非正偏置，采用消融表现较好的幂律形式。BAR 对当前查询帧把指数偏置吸收到 value 的缩放中，额外附加归一化通道，调用 FlashAttention 后再按该通道归一化，从而保持与带偏置注意力的代数等价。免训练版本插入 Self-Forcing；再训练版本基于 Causal Forcing 的 DMD 阶段微调。训练继续保留完整短片上下文，长展开时在固定窗口中淘汰已被弱化的远帧。",
+            "pipeline": "文本＋已有视频缓存 → 分区与时间/去噪步衰减 → BAR 注意力 → 因果视频块 → 滑动缓存连续生成",
+            "results": "基于 Wan2.1-T2V-1.3B，在 200 条提示、832×480、16 FPS、60 秒视频设置下，VBench-Long 质量分免训练版本为 82.63，再训练版本为 84.02；后者使用四张 H100 约 12 小时 DMD 再训练。表中 Self-Forcing 为 80.11、Causal Forcing 为 78.98。注意力算子相对 FlexAttention 的约 11 倍结果是局部算子对比，不能当作整段视频的端到端加速；16 FPS 是输出视频帧率，也不是已验证的实时生成速度。",
+            "limitations": "分析保留：主要证据来自 1.3B 骨干、480p 和 60 秒展开，不能直接推出任意长交互的状态保持或更大模型上的相同收益。“零开销”需在具体实现和硬件上复测；抑制远帧可能影响需要精确回忆早期事件的任务。该方法改善连续生成，不等同于提供用户运动轨迹控制。",
+            "evidence": [
+              {
+                "section": "page-1",
+                "claim": "摘要与自回归长展开任务"
+              },
+              {
+                "section": "page-2",
+                "claim": "缓存淘汰失配与研究动机"
+              },
+              {
+                "section": "page-4",
+                "claim": "扰动位置响应测量"
+              },
+              {
+                "section": "page-5",
+                "claim": "分区上下文与时间响应偏置"
+              },
+              {
+                "section": "page-6",
+                "claim": "框架图、幂律衰减与 BAR 推导"
+              },
+              {
+                "section": "page-7",
+                "claim": "实现、训练硬件及评测条件"
+              },
+              {
+                "section": "page-8",
+                "claim": "VBench-Long 比较结果"
+              }
+            ],
+            "fulltext_hash": "9d7f4b6845376db15af55ed7a7c5c54e97b7b7e40646bcd15678a2138d791280",
+            "analysed_at": "2026-09-20T03:40:22.893Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 100,
+          "evidence": [
+            {
+              "section": "page-1",
+              "claim": "摘要与自回归长展开任务",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=1"
+            },
+            {
+              "section": "page-2",
+              "claim": "缓存淘汰失配与研究动机",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=2"
+            },
+            {
+              "section": "page-4",
+              "claim": "扰动位置响应测量",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=4"
+            },
+            {
+              "section": "page-5",
+              "claim": "分区上下文与时间响应偏置",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=5"
+            },
+            {
+              "section": "page-6",
+              "claim": "框架图、幂律衰减与 BAR 推导",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=6"
+            },
+            {
+              "section": "page-7",
+              "claim": "实现、训练硬件及评测条件",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=7"
+            },
+            {
+              "section": "page-8",
+              "claim": "VBench-Long 比较结果",
+              "url": "https://arxiv.org/pdf/2609.19729v1#page=8"
+            }
+          ],
+          "figures": []
+        },
+        {
+          "key": "arxiv:2609.19688",
+          "arxiv_id": "2609.19688",
+          "doi": "",
+          "title": "LYRIC: Language-Driven Physics-Based Character Control for Contact-Rich Whole-Body Object Interaction",
+          "abstract": "We present LYRIC, a generative flow-matching controller for language-driven physics-based contact-rich interaction control, that enables simulated characters to perform contact-rich whole-body object interactions from a free-form language instruction and a sparse terminal object goal. To obtain reliable expert trajectories from imperfect motion-capture references, a single tracking policy is trained using geometry-conditioned interaction rewards and relaxed reference tracking near hand-object contact. To guide interaction progress without prescribing a full-body kinematic reference, we factorize the controller into a task-level planner that predicts short-horizon object and humanoid-root trajectories, and an action generator that resolves whole-body motion and contacts in closed loop. After behavior cloning, we freeze the planner and post-tune the action generator on policy using the planner's predictions as stable supervision for intermediate task progression. In a controlled OMOMO evaluation, our tracker achieves 64.3% success compared with 53.2% for an InterMimic reimplementation, while a unified policy achieves 76.5% on the full OMOMO dataset. On the held-out split, LYRIC achieves 90.3% task success, compared with 74.2% for the strongest matched kinematic-planner baseline, with better semantic alignment and motion quality. Without retraining, the controller also supports test-time object-waypoint guidance. Qualitative results further demonstrate robust, natural contact-rich interactions and zero-shot transfer to novel object shapes. The webpage is available at https://neu-vi.github.io/LYRIC/",
+          "authors": [
+            "Zeyu Han",
+            "Zichong Meng",
+            "Julian Tanke",
+            "Minami Matsumoto",
+            "Sergey Bashkirov",
+            "Yingruo Fan",
+            "Selim Engin",
+            "Dongseok Shim",
+            "Takashi Shibuya",
+            "Yuki Mitsufuji",
+            "Huaizu Jiang"
+          ],
+          "url": "https://arxiv.org/abs/2609.19688",
+          "published": "2026-09-17T04:34:15Z",
+          "topics": [
+            "运动与运动控制",
+            "主体控制"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/html/2609.19688v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "score": 88,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "LYRIC：语言驱动、基于物理的全身接触式角色交互控制",
+            "abstract_zh": "本文提出 LYRIC，一种用于语言驱动、基于物理的接触密集交互的流匹配生成控制器，使仿真角色能根据自由形式语言指令和稀疏的物体终点目标，完成全身物体交互。为从不完美的动作捕捉参考中获得可靠专家轨迹，作者使用几何条件交互奖励，并在手与物体接触附近放松参考跟踪，训练统一跟踪策略。为引导任务进展而不规定完整全身运动参考，控制器被分为预测短期物体与人体根部轨迹的任务规划器，以及闭环解决全身运动和接触的动作生成器。行为克隆后，冻结规划器，用其预测作为稳定的中间进展监督，对动作生成器进行在策略后训练。受控 OMOMO 评测中，跟踪成功率为 64.3%，InterMimic 复现为 53.2%；统一策略在完整 OMOMO 上达到 76.5%。留出集上 LYRIC 为 90.3%，最强匹配运动学规划基线为 74.2%，并提升语义对齐与运动质量。无需重训即可增加物体路径点引导，定性实验还展示了自然接触交互与新物体形状零样本迁移。",
+            "reason": "直接研究语言条件下的角色运动与接触控制，符合运动控制高优先级；规划与闭环动作解耦具有可借鉴性。",
+            "introduction_zh": "让角色按语言完成搬动等全身交互，不仅要生成看起来合理的轨迹，还要在物理仿真中保持抓握、支撑和任务进度。动作捕捉的手指接触参考往往不可靠，逐帧照搬完整身体参考又会限制控制器对环境反馈的调整。LYRIC 先改进接触附近的专家跟踪，再把“物体和角色根部应该往哪里去”与“身体关节如何实现”分开。这样可以保留语言对任务的约束，同时把具体全身姿态和接触交给闭环策略决定，并通过规划器监督进一步后训练。",
+            "framework_zh": "输入为语言、角色/物体观测及物体终点目标。专家策略在接触区域放宽手指、手腕等参考约束，用物体局部厚度与几何构造抓握奖励，收集成功交互轨迹。两个流匹配 Transformer 分别承担规划与执行：规划器预测约一秒的物体和人体根部轨迹，周期性重规划；动作生成器结合最新状态、动作历史和该计划，输出全身关节目标，在物理仿真中闭环处理接触。行为克隆之后冻结规划器，以计划提供的任务中间进展监督动作生成器进行在策略优化。测试时还可在规划采样中加入物体路径点梯度引导，而不重训控制器。",
+            "pipeline": "语言＋观测＋物体终点目标 → 物体/根部短期规划 → 全身动作流匹配策略 → 物理仿真反馈与重规划",
+            "results": "受控跟踪对比为 64.3% 对 53.2%，完整 OMOMO 统一跟踪策略为 76.5%。生成控制评测使用筛出的成功专家轨迹及其留出集，LYRIC 报告 90.26%（约 90.3%），最强匹配基线为 74.16%。该指标按固定总交互预算内对序列的重复尝试计算，有一次成功即算该序列解决，并非单次尝试成功率。",
+            "limitations": "分析保留：控制器评测数据来自成功专家轨迹筛选，不能把留出集 90.3% 推广为完整原始数据集或单次成功率；新形状迁移主要为同类别对齐缩放后的定性实验。作者将关节物体、多物体任务等列为未来方向，当前结论限于仿真交互。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "语言驱动接触运动的任务与问题"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px2",
+                "claim": "接触附近放宽参考跟踪"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "规划与全身执行解耦"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "短期轨迹规划"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "冻结规划器后训练动作生成器"
+              },
+              {
+                "section": "S4.SS4.SSS0.Px1",
+                "claim": "成功轨迹筛选和重复尝试评测口径"
+              },
+              {
+                "section": "S4.SS5.SSS0.Px2",
+                "claim": "匹配基线比较结果"
+              },
+              {
+                "section": "S4.SS7",
+                "claim": "新物体形状迁移范围"
+              }
+            ],
+            "decision": "include",
+            "fulltext_hash": "cfa72283c5dae8c8f7c9ecba0dcee6bbe3ac24f78de98fbfa024df27967a986c",
+            "analysed_at": "2026-09-20T03:38:04.382Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 98,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "语言驱动接触运动的任务与问题",
+              "url": "https://arxiv.org/html/2609.19688v1#S1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px2",
+              "claim": "接触附近放宽参考跟踪",
+              "url": "https://arxiv.org/html/2609.19688v1#S3.SS2.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "规划与全身执行解耦",
+              "url": "https://arxiv.org/html/2609.19688v1#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "短期轨迹规划",
+              "url": "https://arxiv.org/html/2609.19688v1#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "冻结规划器后训练动作生成器",
+              "url": "https://arxiv.org/html/2609.19688v1#S3.SS4"
+            },
+            {
+              "section": "S4.SS4.SSS0.Px1",
+              "claim": "成功轨迹筛选和重复尝试评测口径",
+              "url": "https://arxiv.org/html/2609.19688v1#S4.SS4.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS5.SSS0.Px2",
+              "claim": "匹配基线比较结果",
+              "url": "https://arxiv.org/html/2609.19688v1#S4.SS5.SSS0.Px2"
+            },
+            {
+              "section": "S4.SS7",
+              "claim": "新物体形状迁移范围",
+              "url": "https://arxiv.org/html/2609.19688v1#S4.SS7"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S2.F2",
+              "caption": "Figure 2. Training pipeline for LYRIC. We first train a physics-based HOI tracking expert from kinematic demonstrations. We then roll out the expert to collect physically grounded state–action trajectories and train the trajectory planner and action generator offline by behavior cloning. Finally, we freeze the planner and post-tune the action generator on policy in simulation using planner-derived plan-following rewards together with interaction, style, and terminal-placement objectives. We use to mark frozen components and to mark trainable components.",
+              "url": "https://arxiv.org/html/2609.19688v1/figures/pipeline.png",
+              "source_url": "https://arxiv.org/html/2609.19688v1#S2.F2"
+            },
+            {
+              "id": "S3.F6",
+              "caption": "Figure 6. Architectures of the trajectory planner and action generator. Gray tokens denote noisy inputs. In the attention masks, P/F denote prefix/future tokens, and colored/white cells indicate allowed/blocked attention; rows are queries and columns are keys.",
+              "url": "https://arxiv.org/html/2609.19688v1/figures/flow_model_arch.png",
+              "source_url": "https://arxiv.org/html/2609.19688v1#S3.F6"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2609.20709",
+          "arxiv_id": "2609.20709",
+          "doi": "",
+          "title": "MoWAM: Explicit Future Motion Prediction for Efficient World Action Models",
+          "abstract": "World Action Models (WAMs) improve robot policy learning by incorporating future dynamics, yet explicitly generating future videos at inference introduces substantial computational overhead. Removing future generation improves efficiency, but leaves future dynamics only implicitly encoded in observation features, which can limit robustness under distribution shifts. We propose MoWAM, an efficient WAM that replaces future video generation with explicit future motion prediction. Instead of reconstructing the complete future scene, MoWAM models structured robot motion as a compact abstraction of the future, capturing how the robot is expected to evolve under the current scene and interaction constraints. A Mixture-of-Transformer architecture learns future visual dynamics during training while jointly predicting motion and action, allowing video generation to be removed entirely at inference while retaining an explicit representation of the future. The compact motion representation further enables efficient inference-time scaling by sampling multiple candidates of motion and action pairs and selecting among them with a motion-aware task-progress verifier. Experiments on LIBERO, LIBERO-Plus, and real-world manipulation tasks demonstrate that MoWAM achieves strong in-distribution performance, improved out-of-distribution robustness, and higher average real-world success than representative WAM baselines. In addition, performance improves as more candidates are explored, demonstrating that explicit future motion provides an effective and efficient basis for inference-time scaling.",
+          "authors": [
+            "Jiayu Wang",
+            "Bin Zhu",
+            "Yue Yu",
+            "Jingjing Chen"
+          ],
+          "url": "https://arxiv.org/abs/2609.20709",
+          "published": "2026-09-17T17:07:00Z",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "具身智能"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2609.20709v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "score": 85,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "MoWAM：以显式未来运动预测构建高效世界动作模型",
+            "abstract_zh": "世界动作模型通过引入未来动态改善机器人策略学习，但在推理时显式生成未来视频会产生较大计算开销。移除未来生成虽然更高效，却使动态只隐含在观测特征中，可能限制分布变化时的鲁棒性。本文提出 MoWAM，用显式未来运动预测替代未来视频生成。它不重建完整未来场景，而将结构化机器人运动作为紧凑的未来抽象，描述机器人在当前场景与交互约束下将如何运动。混合 Transformer 架构在训练时学习未来视觉动态，同时联合预测运动与动作，使推理时能完全移除未来视频生成而保留显式未来表示。紧凑运动表示还支持采样多组运动—动作候选，并通过感知运动的任务进展验证器筛选，实现推理时扩展。在 LIBERO、LIBERO-Plus 和真实操控任务中，MoWAM 展示了较强的分布内性能、改善的分布外鲁棒性，以及高于代表性世界动作基线的平均真实任务成功率。探索更多候选还能进一步改善表现。",
+            "reason": "重点匹配机器人运动控制：显式预测末端运动并用其筛选动作，把世界模型的未来推理与低延迟控制连接起来。",
+            "introduction_zh": "世界动作模型利用未来场景帮助机器人选择动作，但逐步生成完整未来视频的开销很高。直接删去未来生成分支虽然快，却可能只剩隐式动态特征，削弱场景变化下的判断。MoWAM 选择中间路线：训练时保留视频动态监督，推理时预测紧凑、可解释的机器人未来运动，并与动作共同生成。由于运动表示远小于视频，系统还能探索多组未来并评价任务进度，以更多计算换取更可靠的动作选择，核心问题是保留多少未来结构才足以帮助控制。",
+            "framework_zh": "模型将左右指尖与手掌在各视角的投影转为位移、开合与相对几何特征，形成结构化未来运动。视频 Transformer 在训练中学习视觉动态，动作—运动 Transformer 同时对两类序列进行流匹配去噪，并读取当前观测和语言条件。推理时视频分支只提取当前观测特征，无需生成未来画面；另一分支联合预测运动与低层动作。可选的扩展阶段采样多组运动—动作对，验证器结合图像、语言及候选运动估计任务进度，以成功示范和扰动负例进行排序训练，然后执行最高分候选的动作。紧凑未来减少了相对视频生成的成本，但增加候选数仍需额外计算。",
+            "pipeline": "图像＋语言 → 当前观测特征 → 联合未来运动/动作生成 → 可选多候选进展排序 → 机器人动作",
+            "results": "作者报告 LIBERO 成功率 98.9%、LIBERO-Plus 81.43%。三项真实 Franka 任务中，MoWAM 平均 80%，Fast-WAM 为 45%，Motus 为 71.67%。相同动作时域、单张 RTX 5090 的动作延迟为 293.5 ms，Fast-WAM 为 260.1 ms，Motus 为 1621.9 ms；不能理解为相比所有基线都更快。增加候选的收益展示在指定任务上，不能直接当成所有任务统一增益。",
+            "limitations": "分析保留：显式未来主要描述机器人末端运动，不是完整物体与场景状态；真实评测集中于三种操控任务。验证器依赖示范和构造负例，更多候选的搜索收益需要额外计算，跨机器人、复杂接触与长期任务泛化仍需验证。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "未来视频生成与隐式动态的取舍"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "结构化末端运动表示"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "训练视频动态与推理联合运动动作"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "任务进展验证器和多候选排序"
+              },
+              {
+                "section": "S4.SS1.SSS2",
+                "claim": "RTX 5090 延迟测量条件"
+              },
+              {
+                "section": "S4.SS2.SSS3",
+                "claim": "三项真实任务结果"
+              },
+              {
+                "section": "S4.SS2.SSS4",
+                "claim": "候选数扩展的特定任务结果"
+              }
+            ],
+            "decision": "include",
+            "fulltext_hash": "7b33121df8411543e6130e5003cefe519ff5eb350a679b9fd8d40a38dcfc292e",
+            "analysed_at": "2026-09-20T03:38:04.383Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 95,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "未来视频生成与隐式动态的取舍",
+              "url": "https://arxiv.org/html/2609.20709v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "结构化末端运动表示",
+              "url": "https://arxiv.org/html/2609.20709v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "训练视频动态与推理联合运动动作",
+              "url": "https://arxiv.org/html/2609.20709v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "任务进展验证器和多候选排序",
+              "url": "https://arxiv.org/html/2609.20709v1#S3.SS4"
+            },
+            {
+              "section": "S4.SS1.SSS2",
+              "claim": "RTX 5090 延迟测量条件",
+              "url": "https://arxiv.org/html/2609.20709v1#S4.SS1.SSS2"
+            },
+            {
+              "section": "S4.SS2.SSS3",
+              "claim": "三项真实任务结果",
+              "url": "https://arxiv.org/html/2609.20709v1#S4.SS2.SSS3"
+            },
+            {
+              "section": "S4.SS2.SSS4",
+              "claim": "候选数扩展的特定任务结果",
+              "url": "https://arxiv.org/html/2609.20709v1#S4.SS2.SSS4"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Fig. 2: Framework of MoWAM. The Video Transformer learns future dynamics during training, while the Action-Motion Transformer predicts action and motion without future video generation at inference. Structured end-effector motion provides a compact abstraction of the future, replacing dense future visual rollout at inference.",
+              "url": "https://arxiv.org/html/2609.20709v1/frame.png",
+              "source_url": "https://arxiv.org/html/2609.20709v1#S3.F2"
+            }
+          ]
+        },
         {
           "key": "arxiv:2609.20744",
           "arxiv_id": "2609.20744",
@@ -89,6 +631,7 @@
           "url": "https://arxiv.org/abs/2609.20744",
           "published": "2026-09-17T17:33:15Z",
           "topics": [
+            "流式生成",
             "视频生成",
             "大模型"
           ],
@@ -138,6 +681,8 @@
             "fulltext_hash": "9f2f61d0006392033a942f0caf0f36c8c97d121961204a746c8656f434bbf3e3",
             "analysed_at": "2026-09-20T01:56:52.453Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 91,
           "evidence": [
             {
               "section": "S1",
@@ -782,7 +1327,6 @@
             "大模型"
           ],
           "sources": [
-            "arXiv",
             "Hugging Face"
           ],
           "discovery_dates": [
@@ -823,6 +1367,8 @@
             "fulltext_hash": "493f0d915953de5b3cdefc4d1cabcf24712ca4be2798c80b23b5f4edd4f3ff76",
             "analysed_at": "2026-09-20T01:56:52.459Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 90,
           "evidence": [
             {
               "section": "S1",
@@ -879,6 +1425,7 @@
           "url": "https://arxiv.org/abs/2609.20817",
           "published": "2026-09-17T17:59:40Z",
           "topics": [
+            "运动与运动控制",
             "3D 重建"
           ],
           "sources": [
@@ -931,6 +1478,8 @@
             "fulltext_hash": "a9663e7b3b40a8cc2765636dbec29e6c6dfa9fca6d3202d22b10b352349cad49",
             "analysed_at": "2026-09-20T01:56:52.461Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 88,
           "evidence": [
             {
               "section": "S1",
@@ -992,7 +1541,8 @@
           "url": "https://arxiv.org/abs/2609.20819",
           "published": "2026-09-17T17:59:50Z",
           "topics": [
-            "视频生成",
+            "运动与运动控制",
+            "相机控制",
             "世界模型",
             "3D 重建"
           ],
@@ -1039,6 +1589,8 @@
             "fulltext_hash": "c38084f17b22c840bff15bb523855453a6a9012dfdc9f444556aafe76af227f0",
             "analysed_at": "2026-09-20T01:56:52.463Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 86,
           "evidence": [
             {
               "section": "S1",
@@ -1096,6 +1648,7 @@
           "url": "https://arxiv.org/abs/2609.19600",
           "published": "2026-09-17T02:27:32Z",
           "topics": [
+            "运动与运动控制",
             "多模态",
             "具身智能",
             "世界模型"
@@ -1104,7 +1657,7 @@
             "arXiv"
           ],
           "discovery_dates": [],
-          "from_cache": false,
+          "from_cache": true,
           "fulltext_url": "https://arxiv.org/html/2609.19600v1",
           "fulltext_format": "html",
           "analysis": {
@@ -1151,6 +1704,8 @@
             "fulltext_hash": "bf8403a2b42da18a4d66904252bca970184110834976a6763be7cd7da1dcdf3f",
             "analysed_at": "2026-09-20T01:56:52.465Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 85,
           "evidence": [
             {
               "section": "S1",
@@ -1226,9 +1781,7 @@
           ],
           "url": "https://arxiv.org/abs/2609.20800",
           "published": "2026-09-17T17:55:57Z",
-          "topics": [
-            "世界模型"
-          ],
+          "topics": [],
           "sources": [
             "arXiv",
             "Hugging Face"
@@ -1279,6 +1832,8 @@
             "fulltext_hash": "5785076795a49290ac9bfc7e0d1dc56c722a02a579961d6d56fe85493c6c6e6b",
             "analysed_at": "2026-09-20T01:56:52.467Z"
           },
+          "preference_bonus": 0,
+          "ranking_score": 82,
           "evidence": [
             {
               "section": "S1",
@@ -1335,6 +1890,12 @@
           "reason": "把“生成看起来连续”与“物体离开视野后仍被记住”分开评估，适合世界模型、相机可控视频和动态重建研究。"
         },
         {
+          "key": "arxiv:2609.19729",
+          "title": "Recency Forcing: Bridging the Long-Horizon Gap in Autoregressive Video Generation",
+          "decision": "include",
+          "reason": "直接匹配流式视频生成：聚焦有界 KV 缓存下的长时间连续展开，并提供可插入已有自回归模型的注意力改造。HTML 不可用，本次由原始 PDF 核对。"
+        },
+        {
           "key": "arxiv:2609.19600",
           "title": "WorldContact: A Contact-Centric World Model for Scalable Robot Learning",
           "decision": "include",
@@ -1347,16 +1908,34 @@
           "reason": "同时讨论注意力结构、预训练模型改造与推理实现，适合研究视频生成效率；需要把结构收益与蒸馏收益分开看。"
         },
         {
-          "key": "arxiv:2609.19969",
-          "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+          "key": "arxiv:2609.20709",
+          "title": "MoWAM: Explicit Future Motion Prediction for Efficient World Action Models",
           "decision": "include",
-          "reason": "重点是百万上下文下的预填充、缓存容量与恢复成本，适合大模型推理系统和长任务智能体方向。"
+          "reason": "重点匹配机器人运动控制：显式预测末端运动并用其筛选动作，把世界模型的未来推理与低延迟控制连接起来。"
+        },
+        {
+          "key": "arxiv:2609.17909",
+          "title": "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control",
+          "decision": "include",
+          "reason": "重点匹配流式生成，并支持不中断视频的导航、视角及事件/主体动作控制。由 HF 09-17 推荐页补漏；论文首次提交为 09-15，不标成 09-19 新稿。"
         },
         {
           "key": "arxiv:2609.20817",
           "title": "FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations",
           "decision": "include",
           "reason": "把静态几何提升到可操作的部件与关节结构，连接 3D 重建和机器人交互；多状态信息如何真正被利用是关键看点。"
+        },
+        {
+          "key": "arxiv:2609.19688",
+          "title": "LYRIC: Language-Driven Physics-Based Character Control for Contact-Rich Whole-Body Object Interaction",
+          "decision": "include",
+          "reason": "直接研究语言条件下的角色运动与接触控制，符合运动控制高优先级；规划与闭环动作解耦具有可借鉴性。"
+        },
+        {
+          "key": "arxiv:2609.19969",
+          "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+          "decision": "include",
+          "reason": "重点是百万上下文下的预填充、缓存容量与恢复成本，适合大模型推理系统和长任务智能体方向。"
         },
         {
           "key": "arxiv:2609.20800",
@@ -1375,9 +1954,27 @@
           "title": "Recursive Quantum Long Short-Term Memory for Stable Short-Horizon Temperature Forecasting",
           "decision": "exclude",
           "reason": "摘要粗筛：重点是小规模量子循环网络的城市气温预测，与当前通用 AI、视觉和具身方向的直接相关性较低。"
+        },
+        {
+          "key": "arxiv:2609.19853",
+          "title": "PACE: Precise AI Cinematic Expression: A Typed Specification for Script-Grounded Previsualization and Geometric Conformance",
+          "decision": "exclude",
+          "reason": "本轮候补：PACE 的类型化分镜与几何相机构图验证相关，但其最强保证限于编译相机和灰盒渲染，不能直接推广到生成画面；本轮约 10 篇优先连续生成和闭环运动控制。已读 Introduction、类型化编译/残差、验证方法及结论。"
+        },
+        {
+          "key": "arxiv:2609.20508",
+          "title": "Grounded Product Understanding in Livestream Videos",
+          "decision": "exclude",
+          "reason": "摘要初筛：研究直播视频中的商品理解，不是流式视频生成；livestream 词命中不能获得流式生成加分。"
+        },
+        {
+          "key": "arxiv:2609.19840",
+          "title": "KoUniTalk: A Lightweight Articulation-Centered Korean-English 3D Talking Face Benchmark",
+          "decision": "exclude",
+          "reason": "摘要初筛：韩国语音驱动身份中性的面部动作基准，不是主体身份保持或用户指定主体控制；本轮暂不推荐。"
         }
       ],
-      "digest_id": "e0ace10c53cb11711651"
+      "digest_id": "19c69b83d01cefe73534"
     }
   ]
 }
