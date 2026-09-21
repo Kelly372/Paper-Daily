@@ -1,7 +1,160 @@
 {
   "schema_version": 1,
-  "papers": [],
-  "jobs": [],
-  "last_sync": "2026-09-20T08:17:16.984Z",
-  "revision": "006c45441b8c3d137c5e"
+  "papers": [
+    {
+      "key": "arxiv:2609.17521",
+      "arxiv_id": "2609.17521",
+      "doi": "10.1145/3829340.3842176",
+      "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
+      "abstract": "Interactive control for video generation is moving from coarse prompts toward fine-grained, physically meaningful manipulation of dynamic scenes. Yet existing controllable methods either require the full control schedule before generation starts, or use pixel-space signals that dictate object positions rather than physical dynamics. To address these limitations, we propose PhysStream, an autoregressive model for physics-grounded image-to-video synthesis that incorporates structured scene memory---positional maps and object tracking maps derived online from previously generated frames---and supports fine-grained motion control via sparse velocity-increment signals that encode physical quantities, letting the model learn the underlying dynamics. We train our model in two stages: a bidirectional model is first finetuned with motion-control conditioning, then a causal autoregressive model is trained with additional structured scene memory, further improving physical consistency. PhysStream enables interactive, mid-generation control over multi-object tabletop rigid-body scenes---a capability not supported by prior methods---reducing motion distribution distance (FVMD) by 33% and trajectory error by 12% over the strongest baselines on synthetic benchmarks, and is preferred by human evaluators in over 85% of in-the-wild comparisons. Please check our website for more details: https://czzzzh.github.io/PhysStream",
+      "authors": [
+        "Chen, Chuhao",
+        "Wonka, Peter",
+        "Wang, Chaoyang",
+        "Wang, Chen",
+        "Feng, Qiao",
+        "Tulyakov, Sergey",
+        "Liu, Lingjie"
+      ],
+      "url": "https://arxiv.org/abs/2609.17521",
+      "published": "2026-09-15",
+      "report_date": "2026-09-21",
+      "topics": [
+        "流式生成",
+        "运动与运动控制",
+        "主体控制",
+        "视频生成",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv",
+        "手动提交"
+      ],
+      "source_kind": "paper",
+      "manual": true,
+      "original_url": "https://arxiv.org/abs/2609.17521",
+      "issue_url": "https://github.com/Kelly372/Paper-Daily/issues/1",
+      "fulltext_url": "https://arxiv.org/html/2609.17521",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 92,
+        "priority_topics": [
+          "流式生成",
+          "运动与运动控制",
+          "主体控制"
+        ],
+        "title_zh": "PhysStream：结合结构化场景记忆与细粒度运动控制的流式物理视频生成",
+        "abstract_zh": "视频生成的交互控制正在从粗粒度提示转向具有物理含义的精细动态场景操作，但现有方法往往要求提前给定完整控制计划，或使用直接指定对象位置而非物理动力学的像素信号。PhysStream 是一种具有物理依据的自回归图像生成视频模型：它从已生成画面在线提取位置图与对象跟踪图，形成结构化场景记忆，并用编码物理量的稀疏速度增量信号控制运动，让模型学习后续动力学。训练分两阶段，先微调双向模型学习运动控制条件，再训练带结构化场景记忆的因果自回归模型，改善物理一致性。方法支持在多对象桌面刚体场景中，生成进行到一半时继续施加控制。合成基准上，相对各项最强基线，运动分布距离 FVMD 降低约 33%、轨迹误差降低约 12%；在自然场景的人工评选中，三个维度的获选比例均超过 85%。",
+        "reason": "用户手动补录。与流式生成＋运动控制高度相关：控制信号是对象级三维速度增量，结构化记忆直接从已生成视频更新，并保持多对象对应关系。论文 09-15 首发，本次按补录收录，不受自动检索日期窗口或每日名额限制。",
+        "introduction_zh": "多数可控视频方法需要先指定完整轨迹或条件，再一次性生成整段视频，难以让用户看到当前结果后追加干预。即使可以交互，直接指定像素位置也不等于学习碰撞、惯性等动力学。PhysStream 追求稀疏控制、物理含义、生成中途可干预和多对象场景控制四个目标，把用户的速度增量与模型从历史画面估计的场景记忆分开。两阶段训练避免双向注意力从未来位置图中偷看轨迹。作者特别说明，“交互”指控制时序，尚不要求实时生成，这对评估实际可用性非常关键。",
+        "framework_zh": "以 Wan2.2-TI2V-5B 为骨干，先仅学习速度增量条件：对象三维速度变化编码到其首帧实例掩码中，避免逐帧掩码泄露未来轨迹。再转为因果教师强制训练，同时引入位置图和跟踪图；条件经 VAE 编码后沿隐时间轴后移一帧并按通道拼接，保证只读取历史。推理每提交一个隐帧，解码为四帧 RGB，Depth-Anything-3 用最近四帧估计几何，SAM2 以稳定对象颜色更新跟踪记忆，再编码为下一步条件。用户可选择当前画面中的对象，系统将交互映射回首帧身份。几何归一化锚点固定于首帧，已提交条件不回写，以维持 KV 缓存一致性。",
+        "pipeline": "初始图像＋用户对象选择/速度增量 → 因果视频生成 → 新帧解码 → 在线深度与对象跟踪 → 更新历史场景记忆 → 接收下一次干预",
+        "results": "多对象合成测试含 64 段视频：FVMD 为 787.0，对应最强基线 RealWonder 1183（约低 33.5%）；轨迹 ADE 为 40.24 像素，对应 FlashMotion 45.67（约低 11.9%）。人工评价由 25 人在 20 个案例中从 5 个匿名结果选最佳，PhysStream 在物理合理性/运动准确性/视觉质量上的获选比例为 91.8%/88.4%/91.2%，不是两两胜率。单张论文所称 B6000、832×480、49 帧：原系统 66.3 秒，加四步蒸馏与更快深度估计后 19.3 秒、2.54 FPS、峰值显存 52.8 GB。5 个场景的 301 帧长程测试中，方向一致性得分从前 100 帧的 95.2 降至最后一段的 73.7。",
+        "limitations": "作者限定主要验证于静态相机、桌面刚体，复杂翻滚仍困难；布料和软球结果依赖额外材料数据微调，实时生成留待未来。分析保留：长期误差受在线深度和跟踪器影响；长程“控制准确性”实际是响应事件的方向余弦变换均值，丢失跟踪的事件被排除，不能当成全体指令成功率。主测试中严格轨迹失败指标仍为 43.15%，说明改善不等于准确物理仿真；对象身份映射也不等于任意人物外观定制。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "交互控制定义与非实时边界"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "速度增量和首帧实例掩码"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "历史位置图、对象跟踪与在线更新"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "条件时间移位及主比较表"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "系统运行时间与显存表"
+          },
+          {
+            "section": "A7.SS9",
+            "claim": "25 人五选一的人工评价协议"
+          },
+          {
+            "section": "A7.SS10",
+            "claim": "长程方向指标及丢失跟踪的排除"
+          },
+          {
+            "section": "S5",
+            "claim": "静态刚体适用范围、翻滚和实时限制"
+          }
+        ],
+        "fulltext_hash": "4bf5dd915f2fc184625e6ed7e2bbec20d6910aef4c4f6f469e874ac6539451a6",
+        "analysed_at": "2026-09-21T02:40:49.244Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 102,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "交互控制定义与非实时边界",
+          "url": "https://arxiv.org/html/2609.17521#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "速度增量和首帧实例掩码",
+          "url": "https://arxiv.org/html/2609.17521#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "历史位置图、对象跟踪与在线更新",
+          "url": "https://arxiv.org/html/2609.17521#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "条件时间移位及主比较表",
+          "url": "https://arxiv.org/html/2609.17521#S3.SS4"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "系统运行时间与显存表",
+          "url": "https://arxiv.org/html/2609.17521#S4.SS5"
+        },
+        {
+          "section": "A7.SS9",
+          "claim": "25 人五选一的人工评价协议",
+          "url": "https://arxiv.org/html/2609.17521#A7.SS9"
+        },
+        {
+          "section": "A7.SS10",
+          "claim": "长程方向指标及丢失跟踪的排除",
+          "url": "https://arxiv.org/html/2609.17521#A7.SS10"
+        },
+        {
+          "section": "S5",
+          "claim": "静态刚体适用范围、翻滚和实时限制",
+          "url": "https://arxiv.org/html/2609.17521#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2. Autoregressive inference pipeline of PhysStream. Given an input image (t=0t{=}0), the model autoregressively generates each subsequent latent frame by denoising a noisy latent conditioned on: (1) the user-specified velocity-increment map cΔ​vc^{\\Delta v\\vphantom{\\mathrm{pk}}} (channel-concatenated with a one-frame temporal shift), and (2) the structured scene memory (cpos,ctrack)(c^{\\mathrm{pos}\\vphantom{\\mathrm{pk}}},c^{\\mathrm{track}\\vphantom{\\mathrm{pk}}}), which is estimated online from the most recently decoded frames via a monocular depth estimator and SAM2. After each latent frame is committed, the decoded RGB frames are fed back to the online estimators to update the scene memory for the next step.",
+          "url": "https://arxiv.org/html/2609.17521v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2609.17521#S3.F2"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "title": "[论文补录] arxiv.org",
+      "url": "https://arxiv.org/abs/2609.17521",
+      "issue_url": "https://github.com/Kelly372/Paper-Daily/issues/1",
+      "status": "published",
+      "message": "已收录",
+      "paper_key": "arxiv:2609.17521",
+      "submitted_at": "2026-09-21T01:31:20Z"
+    }
+  ],
+  "last_sync": "2026-09-21T02:37:53.470Z",
+  "revision": "3316600eacb45e3f86dd"
 }
