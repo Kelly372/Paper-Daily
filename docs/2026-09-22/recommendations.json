@@ -1,0 +1,1495 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-09-22",
+  "target_date": "2026-09-21",
+  "window": {
+    "from": "2026-09-19",
+    "to": "2026-09-21",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-09-21T17:52:27.740Z",
+  "retrieved_at": "2026-09-21T17:20:01.173Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "count": 0,
+      "total": 0,
+      "error": null,
+      "coverage": "2026-09-19 至 2026-09-21（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-21",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-21"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-20",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-20"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-09-19",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-09-19"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 98,
+      "url": "https://arxiv.org/list/cs.CV/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:25:51.044Z",
+      "coverage": "cs.CV：按 09-21 公告日核验 98 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 114,
+      "url": "https://arxiv.org/list/cs.RO/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:26:40.768Z",
+      "coverage": "cs.RO：按 09-21 公告日核验 114 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 125,
+      "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:27:30.830Z",
+      "coverage": "cs.AI：按 09-21 公告日核验 125 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 149,
+      "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:28:10.486Z",
+      "coverage": "cs.LG：按 09-21 公告日核验 149 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 87,
+      "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:28:18.479Z",
+      "coverage": "cs.CL：按 09-21 公告日核验 87 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "arXiv 公告",
+      "status": "browser_assisted",
+      "count": 22,
+      "url": "https://arxiv.org/list/stat.ML/recent?skip=0&show=2000",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:28:24.872Z",
+      "coverage": "stat.ML：按 09-21 公告日核验 22 条；区别于 API 提交日期。摘要元数据优先复用已核验缓存，缺项再查 API；仍按历史永久去重。"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 1,
+      "url": "https://huggingface.co/papers/2609.22069",
+      "date": "2026-09-21",
+      "retrieved_at": "2026-09-21T17:30:07.554Z",
+      "coverage": "三日 API 均连接重置；09-21 日期页经网页与浏览器工具仍无法完整读取。单篇社区页确认 OmniVBench 于 09-21 收录，仅补录此已核验条目，不代表 HF 完整覆盖。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 2,
+      "url": "https://jigou.jiqizhixin.com/industry",
+      "date": "2026-09-20",
+      "retrieved_at": "2026-09-21T17:30:07.557Z",
+      "coverage": "核验公开产业列表 09-20/21；文章正文页只返回壳页面。HSImul3R 追溯至 03-16 原论文，作为近期报道补漏；CausalWM 已找到作者项目页与 OpenReview，但原论文访问要求验证，未获得全文，不作全文解读。公众号及付费正文未覆盖。"
+    }
+  ],
+  "candidates_count": 453,
+  "analysed_count": 30,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2609.22069",
+      "arxiv_id": "2609.22069",
+      "doi": "",
+      "title": "OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation",
+      "abstract": "Reference-to-video (R2V) generation is evolving toward increasingly general and versatile reference control, giving rise to the emerging paradigm of omni R2V generation. However, existing benchmarks fall short of these emerging capabilities: their test cases cover limited reference types and compositions, and their evaluation protocols largely assess holistic reference consistency, overlooking whether reference factors are properly preserved, disentangled, and routed. Meanwhile, the high cost of constructing omni R2V training data makes suitable training resources scarce. To address these gaps, we introduce OmniVBench and the Omni-R2V Dataset for evaluating and training omni R2V models. OmniVBench expands R2V evaluation across broader reference types, fine-grained control tasks, and richer reference compositions, covering 7 task families and 18 fine-grained tasks spanning content, motion, style, structure, narrative, and multi-reference settings. We introduce factor-grounded evaluation with 12,172 case-specific checklist items, assessing whether intended reference factors are faithfully preserved, correctly disentangled and bound to their targets, and properly realized according to the instruction. We further introduce the Omni-R2V Dataset, bringing industrial-grade training resources for diverse R2V tasks to the broader research community. Drawing primarily on a large-scale corpus of professional video footage, it comprises 340K processed training samples spanning diverse reference types and multi-reference compositions. We develop task-specific pipelines for reference-target pair construction, offering a practical and scalable recipe for omni R2V data construction. Extensive evaluation of advanced open- and closed-source R2V models reveals clear performance gaps across task families and evaluation dimensions on OmniVBench, highlighting remaining limitations of current R2V models.",
+      "authors": [
+        "Wenxue Li",
+        "Peiyan Guan",
+        "Haoyang Jiang",
+        "Junxian Cai",
+        "Hualuo Liu",
+        "Chunjie Zhang",
+        "Chong Guan",
+        "Kai Huang",
+        "Songlian Li",
+        "Taiyi Wu",
+        "Yongjian Yu",
+        "Xiaotong Zhao",
+        "Alan Zhao",
+        "Eric Liu",
+        "Xi Chen",
+        "Yu Liu",
+        "Lei Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2609.22069",
+      "published": "2026-09-18T17:55:49Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "相机控制",
+        "主体控制"
+      ],
+      "sources": [
+        "arXiv 公告",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.22069v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 90,
+        "priority_topics": [
+          "运动与运动控制",
+          "相机控制",
+          "主体控制"
+        ],
+        "title_zh": "OmniVBench：面向全能参考视频生成的评测基准与大规模数据集",
+        "abstract_zh": "参考到视频生成正从有限条件控制走向更通用的多类参考控制，但现有基准的参考类型和组合有限，整体相似度评估也难以判断参考中的因素是否被正确保留、分离并分配给目标。为此，作者提出 OmniVBench 及 Omni-R2V 训练集。基准包含内容、运动、风格、结构、叙事和多参考组合等 7 个任务族、18 个细分任务，以 12,172 条样例专属检查项评估参考保真、因素绑定和指令实现。训练集以专业视频素材为主，包含约 34 万条处理后的样本，并提供针对不同任务构造参考—目标配对的流程。对开放和闭源模型的评测发现，各任务及能力维度仍存在明显差异。",
+        "reason": "直接覆盖动作迁移、运镜迁移、主体身份保持和多参考控制；最值得借鉴的是把“看起来像”拆成可定位的因素绑定检查，而非新增一个生成骨干。",
+        "introduction_zh": "视频参考里往往同时包含人物、动作、背景和镜头轨迹，用户却可能只想迁移其中一个因素。现有评测如果只问整体是否相似，会把错误复制背景、把动作绑定给错误人物等问题掩盖掉。与此同时，多参考训练数据不仅要有视频，还要明确每个参考控制哪个对象或属性。本文把这两个困难统一到参考因素及其目标对应关系上，分别提供细粒度评测和大规模配对数据。",
+        "framework_zh": "核心思路\n这是一篇评测与数据构造论文，主要贡献并非一个新的视频生成网络。它要检查的不是“生成视频像不像参考”，而是“应该借用什么、应该丢弃什么、借来的因素最后作用在谁身上”。例如动作参考需要保留抬手的节奏，却不应把参考演员的脸也复制过去；相机参考要迁移视角运动，不能把人物运动误当成运镜。\n\n输入与任务组织\n一个评测样例由一段指令、一份或多份图片/视频参考，以及明确的参考角色组成。七个任务族包括内容、运动、风格、结构、叙事、多内容和跨因素组合。内容还细分到人物身份、局部材质等；运动区分主体动作与相机运动；结构允许线稿、灰盒和粗分镜。作者刻意避免在提示词中把本应从参考推断的动作等信息直接说出来，否则模型可能只凭文本完成任务，测不到真正的参考理解能力。\n\n如何评判“借对了因素”\n先把每个样例拆成原子问题，例如“目标人物是否保持指定参考的身份”“动作是否来自运动视频”“另一参考的背景是否被错误复制”。这些检查项和参考—目标对应关系经过人工检查；同一样例评不同模型时使用同一份清单。参考保真度检查应保留的内容是否稳定呈现，指令实现度则检查因素有没有正确分离、分配，以及修改要求有没有实现。指令明确要求改变衣服时，换衣不算身份保真失败。\n\n评价模型分别看到指令、参考、生成视频和相应清单，对保真度给 1–5 分，对指令实现给 1–3 分。先在同一评价准则内平均，再在有效子维度间等权汇总，最后映射到百分制，避免某类样例因为问题多而获得更大权重。画质另外用技术质量、美学和物理一致性指标评价。因此，一段漂亮的视频仍可能因动作或身份绑定错误而失分，读者也能看出失败发生在哪一层。\n\n训练数据怎样得到\n作者从视频素材切分出时间连贯、事件完整的目标片段，随后按任务选择两条配对路线。一条是从已有素材中寻找同人物、同风格等适当参考；另一条是从目标反向构造参考，例如提取线稿、简化结构或生成经过变化的参考图。每份参考都被指定为控制某个实体或因素，经过筛选后才组成多参考样本。接着先独立描述参考和目标，再把描述改写成明确对应关系的训练指令。最终得到 339,570 条训练记录。数据构造与评测是两种用途，本文的模型排名不等于“用这批数据训练后的统一消融”。\n\n帮助理解的示意例子\n给人物照片 A 和另一个人跳舞的视频 B，要求 A 中人物按 B 的动作跳舞。模型接收两份参考和指令后生成视频；检查清单分别问身份是否来自 A、动作节奏是否来自 B、B 中人物和背景是否被错误带入。只复制 B 并把衣服改得像 A，可能画质很高，却会暴露身份或因素路由错误。这一例子说明评测机制，不代表额外实测样例。\n\n证据与使用边界\n813 个评测样例共配置 12,172 条检查项。作者在覆盖各任务的 100 个样例、965 个模型输出上做人工验证；清单评价的保真度 Spearman 相关性为 0.77，整体判断为 0.67。它支持更细的诊断，但仍是与人工判断的相关性证据，不能把自动裁判当成绝对真值。本文也没有提供流式生成缓存、逐帧延迟或在线控制算法。",
+        "pipeline": "参考图片/视频＋指令与因素角色 → 生成模型输出 → 样例专属检查清单 → 保真、指令实现与画质分开评分",
+        "results": "基准含 813 个样例、7 个任务族和 18 个细分任务；训练集为 339,570 条。论文表 3 中 Seedance 2.5 总分 72.68、MiniMax H3 为 72.41，但不同任务排序不同。100 个样例的 965 个输出由 3 位标注者评估，清单法在保真/指令实现上的 Spearman 相关性为 0.77/0.74，高于整体判断的 0.67/0.69。",
+        "limitations": "分析性保留：自动裁判及辅助画质指标仍有偏差；专业素材分布未必代表手机随拍或所有复杂交互。论文主要验证评测诊断能力，不能据此推断某个数据构造步骤单独带来多少生成质量提升，也未建立真实在线控制与延迟表现。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS1",
+            "claim": "动作、运镜、主体等任务定义"
+          },
+          {
+            "section": "S3.SS3.SSS2",
+            "claim": "样例清单及评分"
+          },
+          {
+            "section": "S3.SS3.SSS2.Px1",
+            "claim": "分层聚合"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "参考—目标数据配对"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px4",
+            "claim": "人工评价验证"
+          }
+        ],
+        "fulltext_hash": "240553787361df7ae3cbac0abd342e9a6643ae6a203ed0b0ef2160756ff1dc86",
+        "analysed_at": "2026-09-21T17:51:57.606Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS1",
+          "claim": "动作、运镜、主体等任务定义",
+          "url": "https://arxiv.org/html/2609.22069v1#S3.SS1.SSS1"
+        },
+        {
+          "section": "S3.SS3.SSS2",
+          "claim": "样例清单及评分",
+          "url": "https://arxiv.org/html/2609.22069v1#S3.SS3.SSS2"
+        },
+        {
+          "section": "S3.SS3.SSS2.Px1",
+          "claim": "分层聚合",
+          "url": "https://arxiv.org/html/2609.22069v1#S3.SS3.SSS2.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "参考—目标数据配对",
+          "url": "https://arxiv.org/html/2609.22069v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px4",
+          "claim": "人工评价验证",
+          "url": "https://arxiv.org/html/2609.22069v1#S5.SS2.SSS0.Px4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of OmniVBench and the Omni-R2V Dataset.",
+          "url": "https://arxiv.org/html/2609.22069v1#S0.F1",
+          "source_url": "https://arxiv.org/html/2609.22069v1#S0.F1"
+        },
+        {
+          "id": "S3.F5",
+          "caption": "Figure 5: Overview of the Omni-R2V Dataset construction pipeline.",
+          "url": "https://arxiv.org/html/2609.22069v1/data_pipe.png",
+          "source_url": "https://arxiv.org/html/2609.22069v1#S3.F5"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.22075",
+      "arxiv_id": "2609.22075",
+      "doi": "",
+      "title": "LIMBO: Learning and Internalizing Model-Free Barrier Objectives for Agile and Safe Whole-Body Control",
+      "abstract": "Safe whole-body control requires coordinating collision avoidance and balance under high-dimensional, nonlinear dynamics--making safety certificates difficult to design and reuse across behaviors. We present LIMBO, a framework for synthesizing a state-action control barrier function and distilling its safety structure into a task policy. LIMBO learns the safety certificate from black-box transitions and a state-based failure specification over residual actions around a frozen base controller, making Q-CBF synthesis tractable in the full control dimension while placing the certificate in the task policy's control space. During synthesis, the learned safety value drives risk-guided sampling near the estimated boundary of recoverability; during task learning, it serves as a teacher that provides action-level safety feedback, yielding a robust task policy and alleviating the need for an online safety filter at deployment. We demonstrate LIMBO on a 29-degree-of-freedom humanoid performing dodgeball avoidance and locomotion beneath low obstacles. Beyond scaling learned Q-CBFs to whole-body control, we show that risk-guided boundary sampling provides a theoretically grounded way to explore the edge of recoverability. Under the same safety specification, ceteris paribus, varying the sampling concentration produces strategies ranging from crouching to a novel backward-leaning limbo maneuver. In both settings, the learned policies transfer to hardware without online safety filtering, showing that learned safety synthesis scales to agile whole-body control.",
+      "authors": [
+        "Jake Gonzales",
+        "Arturo Flores Alvarez",
+        "Yu-Ming Chen",
+        "Aaron D. Ames",
+        "Lillian J. Ratliff",
+        "Manikantan Nambi"
+      ],
+      "url": "https://arxiv.org/abs/2609.22075",
+      "published": "2026-09-18T17:57:56Z",
+      "topics": [
+        "运动与运动控制"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.22075v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "LIMBO：学习安全屏障并将其融入敏捷全身控制策略",
+        "abstract_zh": "高维人形机器人的安全控制需要同时协调避碰、平衡和非线性动力学，手工设计安全证书困难。LIMBO 从黑箱状态转移和基于状态的失败定义学习状态—动作控制屏障函数，并在冻结基础控制器上的残差动作空间中进行学习。它用安全价值引导接近可恢复边界的采样，再将动作层面的安全反馈用于任务策略训练，使部署不必依赖在线安全过滤。作者在 29 自由度人形机器人的躲球和低障碍穿越上验证；在相同安全规则下改变采样集中程度，可得到下蹲或后仰式穿越行为，两类任务均展示了无在线过滤的实机迁移。",
+        "reason": "重点是全身运动控制中的“未来还能否恢复”，以及怎样把昂贵的安全动作判断移到训练阶段；还展示采样分布能改变出现的运动策略。",
+        "introduction_zh": "人形机器人躲开球的一瞬间可能同时失去平衡，单看眼前有没有碰撞并不足以判断动作安全。传统屏障函数往往需要人工简化动力学，学习到的安全函数又常被留在部署环节实时纠正动作。LIMBO 将两条路线接起来：先学哪些状态和动作仍有恢复空间，再用这个判断训练完成任务的策略。它关心的是高维全身协调，不是只为末端轨迹加一道局部避障约束。",
+        "framework_zh": "要学的是“做完这一步，还救得回来吗”\n控制屏障函数用一个数刻画状态离危险边界的余量。本文把它扩展到状态—动作对，称为 Q-CBF：不仅看当前是否安全，还评估采取某个动作后，未来能否继续通过合适控制保持安全。理想正值对应仍可恢复的区域；实际系统只能从数据近似这个值，不能把网络给出的正分直接当成已证明安全。\n\n先把探索建立在会站、会走的控制器上\n输入包含机器人状态和任务相关障碍信息，输出是 29 维残差关节控制。冻结基础控制器持续负责名义站立或行走，残差与基础输出相加、缩放后得到关节目标。零残差恢复基础行为。这样安全学习仍能使用全身自由度，又不必从随机关节动作重新学平衡；训练和部署保持同一基础控制与残差接口，避免安全价值面对完全不同的动力学。\n\n第一阶段：从黑箱转移学安全价值\n仿真提供“状态、残差动作、下一状态”，作者只需给出碰撞和平衡等失败对应的状态安全余量，不要求把完整动力学写成解析公式。安全评论网络用类似贝尔曼递推的目标更新：当前余量和未来可恢复余量取较差者，再用逐渐接近 1 的折扣稳定学习。多个评论网络取最小值，安全策略则尝试找到分数较高的残差，并保留探索熵。这里优化的是安全余量，尚不是最终任务速度或动作风格。\n\n为什么专门采“快要救不回来”的状态\n普通轨迹大多位于很安全的区域，难以教会网络分清危险边界。LIMBO 按安全价值离零的距离调整回放采样，价值越接近零越容易被抽到；集中参数越大，越强调边界附近的数据。这不是奖励机器人冒险撞击，而是让训练更了解可恢复与不可恢复之间的分界。作者发现，在相同低障碍规则下，改变这种集中程度，会影响最终选择下蹲还是后仰通过。\n\n第二阶段：把安全知识变成任务习惯\n冻结安全评论网络和安全策略，另训练完成任务的策略。它每次提出残差，安全教师寻找满足屏障条件、同时尽量接近原提议的修正。关键细节是：训练环境真正执行的仍是任务策略原动作，教师修正只是反事实监督。奖励会惩罚原动作违反屏障条件的程度，以及它离教师建议有多远，再结合任务奖励、物理正则和动作先验，用 PPO 更新任务策略。这样策略要从自己的动作后果学习，而不是一直由过滤器替它兜底。\n\n部署时省去什么\n运行时由训练好的任务策略与冻结基础控制器组合给出关节目标，不再逐步求解教师的最小修正问题。省去在线安全过滤降低了对实时优化的依赖，但其理论保证仍要求安全价值近似误差、蒸馏误差和安全余量满足条件。训练样本上表现好并不证明整个状态空间都符合这些条件；找不到可行教师修正时，安全策略也只是尽力参考。\n\n原文场景走一遍\n机器人向前走近低横杆。基础策略继续提供行走动作，残差策略调整膝、髋、躯干等关节以降低身体最高点，同时避免失衡。偏重边界的学习可能形成后仰通过，另一采样设定则形成下蹲。后仰并非额外写死的轨迹命令，而且代价也真实存在：论文报告它比下蹲更易产生位置漂移和朝向偏差。\n\n读实验时保留边界\n仿真已见投球条件下命中率由比较方法的 3.58% 降至 1.48%，但未见部位投球仍有 38.11% 命中。实机真人投球各 26 次，躲开 20 次与基线 18 次的差异未达统计显著。更稳的躯干和较小漂移有支持，但不能将这些结果扩展成任意突发场景都安全。",
+        "pipeline": "基础控制＋残差探索 → 黑箱转移学习 Q-CBF → 可恢复边界采样 → 教师安全反馈训练任务策略 → 无在线过滤的全身动作",
+        "results": "仿真同分布投球：QCBF-PD 命中率 1.48%、摔倒 0%，CBF-RL 为 3.58%/4.08%；未见投球部位时为 38.11%/0%，基线 59.50%/1.60%。实机 59 条合成球轨迹下两者命中率均 10.2%，本方法漂移中位数 0.162 m，基线 0.944 m。真人投球分别避开 20/26 与 18/26，命中差异未显著。后仰穿杆与下蹲获得不同姿态，但后仰漂移更大。",
+        "limitations": "作者明确区分训练鼓励与全域保证：无过滤策略的形式安全性依赖误差界、余量及整个运行域的屏障条件。实机投球数量有限、球位置使用运动捕捉；后仰策略有路径漂移和偏航代价。经验上的零摔倒不等于无限时域安全证明。",
+        "evidence": [
+          {
+            "section": "S3.SS3",
+            "claim": "29 维残差及冻结基础控制"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "黑箱安全价值学习"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "边界回放采样"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "反事实教师与任务训练"
+          },
+          {
+            "section": "S5.SS3",
+            "claim": "保证成立条件"
+          },
+          {
+            "section": "S7.SS2.SSS3",
+            "claim": "实机结果"
+          },
+          {
+            "section": "S7.SS3.SSS0.Px1",
+            "claim": "下蹲与后仰取舍"
+          }
+        ],
+        "fulltext_hash": "3b0874c0607a7313371e0426e7e94c07790db42821b9d421837c53d4c9459749",
+        "analysed_at": "2026-09-21T17:51:57.612Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S3.SS3",
+          "claim": "29 维残差及冻结基础控制",
+          "url": "https://arxiv.org/html/2609.22075v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "黑箱安全价值学习",
+          "url": "https://arxiv.org/html/2609.22075v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "边界回放采样",
+          "url": "https://arxiv.org/html/2609.22075v1#S4.SS3"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "反事实教师与任务训练",
+          "url": "https://arxiv.org/html/2609.22075v1#S5.SS2"
+        },
+        {
+          "section": "S5.SS3",
+          "claim": "保证成立条件",
+          "url": "https://arxiv.org/html/2609.22075v1#S5.SS3"
+        },
+        {
+          "section": "S7.SS2.SSS3",
+          "claim": "实机结果",
+          "url": "https://arxiv.org/html/2609.22075v1#S7.SS2.SSS3"
+        },
+        {
+          "section": "S7.SS3.SSS0.Px1",
+          "claim": "下蹲与后仰取舍",
+          "url": "https://arxiv.org/html/2609.22075v1#S7.SS3.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: LIMBO Overview. Stage I: Q-CBF synthesis via black-box transitions using the residual formulation and risk-guided boundary replay. Stage II: learned Q-CBF is a safety teacher, shaping task-policy rewards via constraint violations and corrections. Deployment: compose task policy with the frozen base controller, with optional filtering. Hardware demonstrations operate without online filtering, relying on the safety behavior internalized during Stage II.",
+          "url": "https://arxiv.org/html/2609.22075v1/figure2_overview.png",
+          "source_url": "https://arxiv.org/html/2609.22075v1#S2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.21948",
+      "arxiv_id": "2609.21948",
+      "doi": "",
+      "title": "GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments",
+      "abstract": "Learning large-scale vision-language-action (VLA) models from multi-embodiment datasets remains challenging due to heterogeneous action spaces across end effectors. Although latent action models (LAMs) can learn embodiment-agnostic action representations from diverse video data, existing image-based LAMs often fail to capture fine-grained end-effector articulation, particularly finger-level geometric changes in human and dexterous robot hands. To address this limitation, we propose GALA, a Geometry-Aware Latent-Action modeling framework that augments image-based latent actions with 3D end-effector geometric motion. However, naively incorporating point clouds yields fine-grained action representations with limited shared semantics, hindering cross-embodiment pretraining. To address this issue, we introduce the Unified End-effector Motion Representation (UEMR), which preserves fine-grained motion information while improving the cross-embodiment generalizability of latent actions. Building upon UEMR, GALA combines visual latent actions that capture scene-level dynamics with geometric latent actions that capture shared fine-grained end-effector articulation, providing effective supervision for VLA pretraining from multi-embodiment data, including action-free ego-centric human videos. Experiments on fine-grained motion probing, cross-embodiment retrieval, and downstream VLA evaluation demonstrate GALA's effectiveness in modeling generalizable fine-grained motions across embodiments, achieving 68.3% RoboCasa-GR1 success rate and 75.5% real-world success rate. Code, appendix, and demos are available at https://puzhenyuan.github.io/GALA-website/.",
+      "authors": [
+        "Yichen Liu",
+        "Puzhen Yuan",
+        "Xiang Zhu",
+        "Yanjiang Guo",
+        "Jianyu Chen"
+      ],
+      "url": "https://arxiv.org/abs/2609.21948",
+      "published": "2026-09-18T16:05:03Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.21948v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "GALA：以几何感知潜在动作实现跨形态 VLA 预训练",
+        "abstract_zh": "从视频学习潜在动作有利于利用人类和多种机器人的数据，但纯视觉动作表示容易忽略细微手指运动，也难以跨形态对应动作语义。GALA 将场景视觉变化与末端执行器三维几何变化联合建模，并通过统一末端运动表示促进跨形态共享。模型先学习量化的视觉与几何动作表示，再将其作为视觉语言动作模型的辅助监督，同时保留各形态的原生动作输出。实验显示，该表示改善细粒度动作信息与跨形态对齐，在多形态 RoboCasa 设定中达到 68.3% 成功率，在实机任务中平均达到 75.5%。",
+        "reason": "运动控制贡献在于显式保留手部几何变化，并把共享动作语义与各机器人原生控制接口分开；有手指探测、表示检索及跨形态消融支撑。",
+        "introduction_zh": "人手、灵巧机械手和夹爪可以完成相似操作，却拥有不同关节数和外观。仅用前后图像学习动作编码，模型可能主要记住场景变化，而遗漏抓取是否成立所依赖的细小指节运动；直接混合不同机器人动作，又面临坐标与维度不一致。GALA 用末端执行器表面几何补充视觉，并通过共享运动编码和形态专属输出头，在共享经验的同时保留实际可执行的动作接口。",
+        "framework_zh": "先理解要共享什么\n把人手握紧和夹爪闭合都写成同一组关节角并不合理。GALA 的想法是先学习“末端执行器从当前状态变成目标状态”的紧凑代码，再让每种机器人用自己的动作头实现操作。潜在动作就是这种经过压缩的变化表示；它是训练监督，不等于可以直接下发给所有硬件的统一关节指令。\n\n第一步：把手和夹爪都变成三维表面\n训练样本包含起始/目标图像、语言，以及左右末端执行器在两个时刻的点云。人手由手部模型估计网格，机器人由自身几何模型与关节状态计算表面，再各采样 1,024 个点。点云按末端的局部坐标和统一轴约定组织，重点表现手指、夹爪及掌部的相对形状，不要求不同形态逐点对应。这样，视觉上很小的手指弯曲也能在几何分支中被单独看到。\n\n第二步：联合编码场景与局部运动\n冻结的图像编码器提取前后画面的语义和外观，冻结的点云编码器提取末端几何；共享时空 Transformer 将这些特征与语言结合，输出视觉变化代码和双手共享的几何代码。代码通过向量量化进入离散码本，即用有限个可学习的“动作词”描述变化。视觉重建要求代码保留场景变化；几何解码器则接收运动代码和起始手形，重建目标点云，几何误差用点集之间的距离约束。\n\n怎样减少代码记住“这是哪只手”\n统一末端运动表示包含三项设计。其一，左右手共享编码和几何解码器，初始手形单独提供，鼓励运动代码描述变化而非静态形态；单臂输入按协议复制到双分支，损失使用有效手掩码。其二，同一个样本的起始与目标点云一起做旋转、平移、缩放扰动，保留相对变化而弱化特定坐标习惯。其三，前向和反向变化都参与训练，但没有强制两个代码互为数学意义上的负数。三项共同促进共享语义，而不是证明形态信息被完全剥离。\n\n第三步：把表示教给可执行的策略\n第一阶段完成后冻结 GALA。第二阶段以 GR00T 的视觉语言骨干和流匹配动作专家为基础：当前图像、机器人状态与指令进入策略，额外的视觉/几何查询位置预测离散动作代码，目标代码来自训练样本的前后状态。交叉熵损失让策略学会预判动作语义；流匹配损失让带噪动作逐渐还原成真实动作块。不同形态共用主要动作网络，但使用轻量专属输出头，分别产生机器人原生控制量或人手代理动作。这避免为迁就统一表示而丢弃某种手的可控自由度。\n\n实际运行时与训练不同\n部署时策略接收当前观测、状态和指令，生成该机器人的动作块，再按执行循环更新观测。未来图像与目标点云用于训练教师，不是运行时提前提供的答案；也不能把此流程解读成无需目标机器人动作头的零样本迁移。它控制的是末端与关节动作，本文并不研究视频首帧延迟或流式画面生成。\n\n帮助理解的示意例子\n在“拿起小物体”的场景中，图像分支告诉模型手接近了物体，几何分支补充拇指与食指何时收拢。人手和夹爪可由共享代码学习相关的闭合变化，但人手输出多个关节动作，夹爪输出自身接口允许的开合量。这只是机制演示，不意味着两种形态的动作必然一一对应。\n\n创新证据\n在保持策略架构和数据条件一致的 GR1 实验中，完整 GALA 成功率 55.7%，去掉点云降为 50.9%，去掉统一表示降为 54.4%；多形态训练下完整方法 68.3%，去掉统一表示为 58.6%。这些消融比单看与不同骨干模型的排行榜比较，更直接支持几何与跨形态表示的作用。",
+        "pipeline": "前后图像与末端点云 → 量化视觉/几何动作代码 → 辅助监督共享 VLA → 形态专属动作头输出控制量",
+        "results": "论文在单形态受控比较中报告 GALA 55.7%、无点云 50.9%、无统一末端表示 54.4%；多形态 RoboCasa 为 68.3%，无统一表示为 58.6%。实机灵巧手 4 个任务各 50 次，平均 75.5%，无统一表示 68.5%。表示探测的手指误差为 7.585°，无点云为 15.113°。不同骨干的实机基线不能作为单一组件的严格因果对照。",
+        "limitations": "分析性保留：人手点云依赖估计精度，表面几何不直接表达接触力；训练与实验形态覆盖仍有限。原生动作头保留了形态依赖，不能将其概括成未见机器人无需适配即可执行。共享编码也不等于已完全分离形态与动作。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS1",
+            "claim": "点云构建"
+          },
+          {
+            "section": "S3.SS1.SSS3",
+            "claim": "统一末端表示三项设计"
+          },
+          {
+            "section": "S3.SS2.SSS1",
+            "claim": "潜在动作辅助监督"
+          },
+          {
+            "section": "S3.SS2.SSS3",
+            "claim": "共享动作专家和原生输出头"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "模拟与跨形态消融"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "实机结果"
+          }
+        ],
+        "fulltext_hash": "c2967fd48eb37edf747a2cc861476e73e51bca3c959ad472234f9f839e0137f4",
+        "analysed_at": "2026-09-21T17:51:57.607Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 97,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS1",
+          "claim": "点云构建",
+          "url": "https://arxiv.org/html/2609.21948v1#S3.SS1.SSS1"
+        },
+        {
+          "section": "S3.SS1.SSS3",
+          "claim": "统一末端表示三项设计",
+          "url": "https://arxiv.org/html/2609.21948v1#S3.SS1.SSS3"
+        },
+        {
+          "section": "S3.SS2.SSS1",
+          "claim": "潜在动作辅助监督",
+          "url": "https://arxiv.org/html/2609.21948v1#S3.SS2.SSS1"
+        },
+        {
+          "section": "S3.SS2.SSS3",
+          "claim": "共享动作专家和原生输出头",
+          "url": "https://arxiv.org/html/2609.21948v1#S3.SS2.SSS3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "模拟与跨形态消融",
+          "url": "https://arxiv.org/html/2609.21948v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "实机结果",
+          "url": "https://arxiv.org/html/2609.21948v1#S4.SS4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Fig. 1: Overview of GALA. Geometry complements image-based latent actions with generalizable fine-grained end-effector motion, enabling more shared manipulation semantics across heterogeneous end-effectors, therefore enhancing VLA pretraining performance across embodiments.",
+          "url": "https://arxiv.org/html/2609.21948v1/Teaser_v2.png",
+          "source_url": "https://arxiv.org/html/2609.21948v1#S0.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.21220",
+      "arxiv_id": "2609.21220",
+      "doi": "",
+      "title": "Safe Real-Time Policy Steering via Noise-Space Trajectory Optimization for One-Step Generative Policies",
+      "abstract": "Generative robot policies can represent diverse, multimodal behaviors, but adapting pretrained policies to deployment-time constraints such as collision avoidance and orientation maintenance remains challenging. Existing inference-time steering methods typically apply gradient guidance through iterative diffusion or flow processes, which can be computationally expensive for real-time control. We propose INSPO, which formulates inference-time steering of one-step generative policies as trajectory optimization in the policy's input noise space. By optimizing the input noise while evaluating constraints on the induced state trajectory, INSPO searches the policy-induced behavior space without directly modifying generated actions. The optimization includes a regularization term that encourages solutions to remain consistent with the policy's input distribution and is solved online using population-based particle optimization. We evaluate INSPO on state- and image-based task-specific policies and generalist vision-language-action policies across Push-T, Can pick-and-place, and LIBERO-Spatial. INSPO improves task success and constraint satisfaction over best-of-N sampling and action projection, while comparing favorably with gradient-guided generation at lower runtime.",
+      "authors": [
+        "Qingyi Chen",
+        "Joseph Ruan",
+        "Zachary Kingston"
+      ],
+      "url": "https://arxiv.org/abs/2609.21220",
+      "published": "2026-09-18T02:08:12Z",
+      "topics": [
+        "多模态",
+        "具身智能",
+        "运动与运动控制"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2609.21220v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 86,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "INSPO：在输入噪声空间优化单步机器人策略，以满足部署时约束",
+        "abstract_zh": "生成式机器人策略能表示多种动作，但在部署时适应避障、姿态保持等新约束仍有困难；对多步扩散或流模型逐步施加梯度引导，计算成本较高。INSPO 将单步策略的推理引导转化为输入噪声空间中的轨迹优化，在策略生成的状态轨迹上评估约束，而不直接修改动作。目标还包含使噪声保持接近原输入分布的正则项，并通过在线粒子群式并行优化求解。作者在状态和图像条件策略及通用 VLA 上验证，覆盖 Push-T、Can 和 LIBERO-Spatial，较候选采样和动作投影改善任务完成与约束满足，并以较低运行开销获得与梯度引导生成有竞争力的表现。",
+        "reason": "可在不重训策略的情况下加入避障和末端姿态约束；关键区别是优化生成器的输入噪声，保留原策略学到的动作结构。实际求解仍使用梯度，并非无梯度粒子搜索。",
+        "introduction_zh": "机器人示范通常只覆盖既定环境，真实运行时却可能突然出现障碍，或要求运输物体时保持直立。直接修改已生成动作可能破坏接触与操作顺序，反复引导多步扩散又增加延迟。单步生成策略虽然快，却没有可逐层干预的去噪过程。INSPO 把每份输入噪声视为原策略行为分布中的一个入口，在这些入口上优化，寻找既像原有熟练动作、又满足新增约束的输出。",
+        "framework_zh": "先区分“生成一次”和“规划一轮”\n冻结的单步策略接收观测历史和一份高斯噪声，一次前向就输出一段未来动作。不同噪声会得到不同可行操作方式。INSPO 调整的是这份噪声，策略权重不动；一轮规划仍可能多次调用策略和计算梯度，因此“单步策略”不等于整个规划只有一次网络计算。\n\n约束在哪一层判断\n给定当前机器人状态，策略输出动作块后，通过系统运动模型展开成状态轨迹，再计算障碍距离、末端姿态等约束是否违反。每项违反量形成惩罚，并加上噪声正则：高维标准高斯的长度通常靠近维数平方根，优化后的噪声也应尽量留在这一区域。这个正则只是避免明显偏离输入分布，不能保证所有输出都在训练数据覆盖内。\n\n为什么不直接改动作\n例如熟练推物动作包含接近、接触、持续推动，若把碰撞点简单投影到障碍边缘，可能改变施力关系，让物体不再按预期移动。优化噪声时，每次候选仍由原策略完整生成，能更好利用其学到的动作关联。不过它也因此受原策略行为范围限制，不能凭空发明原模型不会的绕行技能。\n\n在线优化怎样进行\n每个控制周期并行维护多份噪声粒子。先分别生成动作、展开轨迹并算代价，再通过单步策略和轨迹计算链路对噪声反向传播，以一阶梯度下降更新。论文中的“粒子”指一组同时优化的候选，不是无需梯度的随机筛选。优化评估整个动作块，但真正执行的是前面较短的一段；达到最少迭代次数后，只要有候选的待执行前缀满足约束，就可以提前停止，避免为暂不执行的远期动作耗尽时间。\n\n如何选择与接续\n在满足前缀约束的候选中，选择相对原始噪声改动最小的一份，而非直接选最激进的动作。执行短前缀后读取新观测，重新规划。上一轮代价最低的一半粒子及其参考噪声保留作热启动，另一半重新采样，兼顾已有解和环境变化。这份缓存保存的是优化种子，不是未来观测；未来状态是模型预测，需要在后续闭环中不断修正。\n\n训练与部署条件\n基础策略先从示范学习动作分布，INSPO 是附加的推理阶段优化，不为新障碍更新网络权重。部署必须提供可计算的约束与适当状态/动力学信息，不能把它理解为仅凭自然语言自动发现所有安全限制。图像专用策略的一些实验没有把新增障碍画入输入图像，障碍通过外部约束通道提供；VLA 实验则另外比较了图像中能否看见障碍。\n\n原文场景走一遍\nCan 任务要求机器人拿起罐子，绕开横穿运输路径的运动障碍，同时保持罐子直立。策略先产生多条动作候选，优化器检查预测运输轨迹的碰撞与方向偏差，把对应噪声调整到更合适的位置；找到满足当前待执行段的方案后只执行前缀，随后更新状态再算。若原策略能表达的所有行为都不满足约束，文中流程本身没有给出充分的故障保护，不能继续假定一定存在解。\n\n结果应怎样理解\nPush-T 状态输入下 32 粒子版本得到 69.3 的任务分数、测试中 0% 约束违反，平均规划约 0.03 秒；这不是理论安全证明。实机 10 次测试成功 8 次、仍碰撞 2 次。跟踪误差会让真实执行偏离满足约束的预测路径，这是作者明确保留的限制。",
+        "pipeline": "观测＋噪声粒子 → 冻结单步策略生成动作 → 轨迹约束与噪声正则 → 梯度更新噪声 → 执行可行前缀并重规划",
+        "results": "Push-T 状态条件、32 粒子：分数 69.3、违反率 0%、平均 0.03 秒；图像条件、16 粒子：70.2、0%、0.03 秒。LIBERO-Spatial 障碍可见且 8 粒子时成功率 90%、违反率 2%、平均 0.50 秒。实机抬升任务各方法 10 次，INSPO 成功 8 次/碰撞 2 次，Best-of-N 成功 4 次，未引导策略 2 次。不同任务的延迟不能混用。",
+        "limitations": "作者指出优化受预训练策略行为范围限制，规划点满足约束不保证真实执行满足约束；不存在可行解时仍需故障保护。实机样本少，部署依赖约束和状态建模；一轮优化可多次前向/反向，不能将 NFE=1 当成单次规划总计算量。",
+        "evidence": [
+          {
+            "section": "S4.SS1",
+            "claim": "噪声空间目标与正则"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "梯度粒子优化、前缀执行与热启动"
+          },
+          {
+            "section": "S5",
+            "claim": "评价条件及 NFE 定义"
+          },
+          {
+            "section": "S5.SS4",
+            "claim": "实机及 VLA 结果"
+          },
+          {
+            "section": "S6",
+            "claim": "执行误差与无解边界"
+          }
+        ],
+        "fulltext_hash": "f6df5ae42f75fde2c2331c30f6cbd99bc247cef6a577a3c6f9ebd9014ac88836",
+        "analysed_at": "2026-09-21T17:51:57.611Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 96,
+      "evidence": [
+        {
+          "section": "S4.SS1",
+          "claim": "噪声空间目标与正则",
+          "url": "https://arxiv.org/html/2609.21220v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "梯度粒子优化、前缀执行与热启动",
+          "url": "https://arxiv.org/html/2609.21220v1#S4.SS2"
+        },
+        {
+          "section": "S5",
+          "claim": "评价条件及 NFE 定义",
+          "url": "https://arxiv.org/html/2609.21220v1#S5"
+        },
+        {
+          "section": "S5.SS4",
+          "claim": "实机及 VLA 结果",
+          "url": "https://arxiv.org/html/2609.21220v1#S5.SS4"
+        },
+        {
+          "section": "S6",
+          "claim": "执行误差与无解边界",
+          "url": "https://arxiv.org/html/2609.21220v1#S6"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2609.21467",
+      "arxiv_id": "2609.21467",
+      "doi": "",
+      "title": "Learning Distance-Conditioned Object Transport for Humanoid Loco-Manipulation from a Single Motion Clip",
+      "abstract": "Motion tracking can reproduce humanoid loco-manipulation from a single retargeted motion clip, but a policy trained on a fixed reference primarily reproduces its demonstrated transport outcome. Although the source trajectory visits intermediate object displacements, transport termination is demonstrated only at its endpoint. We identify this mismatch as the termination-versus-passage gap: intermediate displacements are observed as passage states rather than termination-complete outcomes. We introduce Distance-Conditioned Reference Recomposition (DCRR), which relocates the demonstrated termination segment to intermediate transport states. A frozen tracking teacher replays the recomposed references under closed-loop dynamics, and the retained trajectories are relabeled by their achieved object placements and distilled into a reference-free policy. This procedure constructs distance-conditioned supervision from the interaction behavior encoded in the source motion. Across Carry, Kick-Push, Crouch-Push, and Drag, DCRR-BC produces command-dependent transport with an overall normalized distance mean absolute error (MAE) of 0.15, compared with 0.28 for source-only behavior cloning. RL fine-tuning further improves the command response and execution robustness in the training simulator and under sim-to-sim transfer. Finally, hardware experiments demonstrate transport-distance modulation across all four interaction modes.",
+      "authors": [
+        "Yuhyeon Hwang",
+        "Daniel Sungho Jung",
+        "YongHyeok Seo",
+        "Mingi Jung",
+        "Chang Nho Cho",
+        "Jung-Hoon Hwang",
+        "Dongin Shin"
+      ],
+      "url": "https://arxiv.org/abs/2609.21467",
+      "published": "2026-09-18T08:17:17Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2609.21467v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 85,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "DCRR：从单段动作学习可指定距离的人形机器人搬运",
+        "abstract_zh": "单段动作跟踪能够复现人形机器人搬运，却通常只能达到示范中的终点。示范虽然经过中间位置，但这些位置并未展示停止、放置或脱离接触的完整结束行为。作者将其定义为“结束与经过的差距”，提出距离条件参考重组 DCRR：把原示范的结束片段移到中间搬运状态，用冻结跟踪教师在闭环物理环境中回放、筛选，并以实际达到的终点重新标注，再蒸馏为不依赖参考轨迹的策略。四种搬运模式下，该方法改善距离控制；强化学习微调进一步提高稳定性，并在跨仿真和实机中展示按指令调节搬运距离。",
+        "reason": "抓住运动控制数据里常被忽略的问题：经过某个位置，不代表学会在该位置安全结束。单示范重组与物理回放的组合具有可迁移的设计启发。",
+        "introduction_zh": "让机器人完整模仿一次搬箱并不等于能要求它只搬一半距离。原轨迹的中点还在行走、推物或保持接触，简单截断动作可能让物体没放稳、机器人失衡。给这些中间状态换上目标标签也不会凭空产生收尾动作。本文不先生成全新的动作，而是利用原示范中已经存在的结束阶段，通过重组和闭环回放补出不同距离下的完整操作监督，再训练部署时不需要参考轨迹的控制策略。",
+        "framework_zh": "关键直觉：教它如何停，而不只是如何到\n一段搬运示范含有启动、持续运输和收尾。中途经过目标位置时，机器人可能还抱着物体或正在迈步；真正完成任务还需要放下、松手、脱离接触或恢复站稳。DCRR 因此把“原示范的收尾方式”接到不同运输位置，构造能在较短距离完成任务的训练材料。\n\n控制信号具体是什么\n每段源动作同时记录机器人和物体状态。作者用物体起终点在地面上的位移定义运输方向及距离尺度，将目标距离归一化为 d；例如 d=1 对应原示范终点。但策略并不直接接收这个标量，而是接收三维的“目标位置减当前物体位置”向量，加上机器人自身状态和观测历史。目标主要沿源示范的平面方向变化，高度继承原结束状态，因此这不是任意三维路线规划器。\n\n先训练一个会跟踪的教师\n针对每种源动作，用 PPO 强化学习训练跟踪教师。教师既看到机器人自身感知，也看到按动作阶段索引的参考关节位置、速度、朝向和物体到目标的相对量。奖励同时鼓励跟随机器人/物体参考与到达目标，训练时在源方向及其横向扰动目标以提高鲁棒性。教师训练完后冻结；后面的每个新拼接片段不会再单独训练一个教师。\n\n怎样拼接，而不胡乱剪视频\n首先根据平滑后的物体运动识别可运输区间，在其中枚举接合位置。对每个位置，选择持续时间足够、物体高度兼容的结束尾段，优先考虑尾段剩余运输量较小且机器人状态、相对物体姿态和速度衔接较好的候选。然后对尾段整体做地面旋转与平移，使机器人朝向及物体位置与前段对齐，再直接串接。这里没有时间混合，也没有新动作生成模型；它得到的只是一条候选参考，不能保证动力学可行。\n\n为什么必须闭环回放\n冻结教师把候选参考放到带接触的仿真中真正执行。系统滤掉摔倒、运输不足、结束状态无效或跟踪误差过大的轨迹。由于惯性、接触和恢复平衡会让实际终点偏离名义终点，保留的状态—动作序列再按实际到达的物体位置改写目标标签。状态和动作本身不变，只把“它完成了什么”标准确。这样避免强迫学生把同一段动作解释为它实际未达到的目标。\n\n从教师变成可部署策略\n学生先用行为克隆拟合教师动作，但输入去掉按阶段给定的参考轨迹，仅保留自身感知、历史和物体到目标向量。随后用 PPO 优化目标进度、完成度、稳定性等；奖励不再包含参考跟踪。训练同时用冻结的克隆策略和已有示范约束更新，减少为了短期奖励偏离已学动作的风险。部署时反复观测物体位置并输出控制动作，不需要播放源示范给策略。实机依赖第三人称相机和物体标记估计物体位置，不能误读为纯机载视觉方案。\n\n帮助理解的示意例子\n假设源示范是将箱子搬到前方终点并放下，用户要求一半距离。训练阶段从前半段行走接入对齐后的“放下并站稳”，教师回放后若箱子略多移动一些，就按实际终点标注该样本。学生由大量这样的可行回放学习何时收尾；真实使用时只给它相应位置目标，而不是再做在线剪接。这是机制示意，文中并未证明任意途中改目标都稳定。\n\n证据应怎样读\n四类任务包含搬运、踢推、蹲推和拖动。参考无关的克隆策略将平均归一化距离误差从仅用源回放的 0.28 降到 0.15，但仍有 9.07% 摔倒率。实达目标重标注的单独增益较小，误差 0.17 到 0.16，且并非各距离都改善；主要结论不能全部归功于重标注。",
+        "pipeline": "单段完整动作 → 训练并冻结跟踪教师 → 重组结束片段 → 闭环回放筛选与实达目标标注 → 克隆＋强化学习 → 距离条件控制",
+        "results": "四种交互的 DCRR-BC 平均归一化距离 MAE 为 0.15，源回放克隆为 0.28，单纯中间目标重标注为 0.44。另一组六档距离评测中，强化学习微调将训练仿真摔倒率从 8.83% 降至 2.22%，跨仿真从 17.78% 降至 8.50%。实机每模式每距离 5 次，指令增大时平均运输距离增加，但大距离和踢推误差、摔倒仍较明显。",
+        "limitations": "作者指出源动作的空间与时间覆盖限制了泛化，训练目标主要集中在原运输方向；远超源距离需要额外持续运输动作。学生稳定性仍逊于依赖参考的教师，实机每配置仅 5 次且使用外部相机与标记。未验证任意方向、任意中途指令切换或无标记运行。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "目标与坐标定义"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "经过和结束的区别"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "重组、回放、筛选及重标注"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "学生训练与无参考运行"
+          },
+          {
+            "section": "S5.SS3",
+            "claim": "克隆对比"
+          },
+          {
+            "section": "S5.SS6",
+            "claim": "实机条件"
+          },
+          {
+            "section": "S6",
+            "claim": "局限"
+          }
+        ],
+        "fulltext_hash": "4276643e74a5ab2105ff38948c503a3e88e3b632b5cb7a0d62d9b9e4688516c6",
+        "analysed_at": "2026-09-21T17:51:57.608Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 95,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "目标与坐标定义",
+          "url": "https://arxiv.org/html/2609.21467v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "经过和结束的区别",
+          "url": "https://arxiv.org/html/2609.21467v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "重组、回放、筛选及重标注",
+          "url": "https://arxiv.org/html/2609.21467v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "学生训练与无参考运行",
+          "url": "https://arxiv.org/html/2609.21467v1#S4.SS3"
+        },
+        {
+          "section": "S5.SS3",
+          "claim": "克隆对比",
+          "url": "https://arxiv.org/html/2609.21467v1#S5.SS3"
+        },
+        {
+          "section": "S5.SS6",
+          "claim": "实机条件",
+          "url": "https://arxiv.org/html/2609.21467v1#S5.SS6"
+        },
+        {
+          "section": "S6",
+          "claim": "局限",
+          "url": "https://arxiv.org/html/2609.21467v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S4.F3",
+          "caption": "Fig. 3: Three-stage DCRR pipeline: goal-conditioned teacher training; reference recomposition, closed-loop replay, filtering, and achieved-goal relabeling; reference-free policy learning through distillation and RL fine-tuning.",
+          "url": "https://arxiv.org/html/2609.21467v1/figures/figure3.png",
+          "source_url": "https://arxiv.org/html/2609.21467v1#S4.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.21983",
+      "arxiv_id": "2609.21983",
+      "doi": "",
+      "title": "SkelWAM: A Skeleton-Guided World-Action Model for Zero-Shot Cross-Embodiment Manipulation",
+      "abstract": "Reusing manipulation experience across robot embodiments is important for scaling robot learning and reducing repeated task-specific data collection. However, changes in embodiment alter visual appearance, action dimensionality and semantics, and the whole-body configurations that can realize the same tool pose. We present SkelWAM, a skeleton-guided world-action model that couples perception and control through one explicit geometric representation for single-source cross-embodiment manipulation. Arm centerline geometry, tool-center-point (TCP) pose, and parallel-jaw commands form a shared 25-D state. The same definition underlies canonical third-person and wrist observations and future whole-body action targets. Trained with predictive visual supervision, a video-action mixture of transformers predicts canonical skeleton action chunks, which embodiment-specific constrained decoders convert into joint or continuum-robot controls. This formulation requires no one-to-one joint correspondence and uses no target-task demonstrations or target policy updates. We introduce LIBERO-Cross10, a source-only cross-embodiment transfer benchmark covering ten tasks and ten target embodiments across four morphological groups. On this benchmark, Franka-trained SkelWAM achieves 43.3% success over 1,000 episodes, exceeding the best-performing evaluated baseline by 36.2 percentage points. We further deploy a JAKA mini2-trained policy on the Feagine A03 continuum robot for three tabletop manipulation tasks, illustrating the approach's potential for real-world cross-embodiment manipulation. Project page: http://www.liukepku.com/skelwam/index.html",
+      "authors": [
+        "Pengjun Niu",
+        "Yujia Xie",
+        "Rui Peng",
+        "Hang Zhao",
+        "Ke Liu"
+      ],
+      "url": "https://arxiv.org/abs/2609.21983",
+      "published": "2026-09-18T16:44:42Z",
+      "topics": [
+        "具身智能",
+        "运动与运动控制"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.21983v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 84,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "SkelWAM：以统一机械臂骨架连接视觉与动作的跨形态世界动作模型",
+        "abstract_zh": "跨机器人复用操作经验受到外观、动作维度及全身可达构型差异的限制。SkelWAM 用机械臂中心线、工具中心位姿和平行夹爪命令组成共享 25 维状态，并用同一定义构造规范化第三人称/腕部视觉和未来动作目标。视频—动作 Transformer 在预测视觉监督下学习规范骨架动作块，再由形态专属约束解码器转换为关节或连续体控制。该方法不需关节逐一对应，不使用目标任务示范或目标策略更新。在十任务、十目标机器人的 LIBERO-Cross10 中，Franka 源训练模型在 1,000 回合达到 43.3% 成功率，比所评最佳基线高 36.2 个百分点，并展示从 JAKA mini2 到 Feagine A03 连续体机器人的三项实机迁移。",
+        "reason": "新意在于同一骨架同时统一“模型看见的机器人”和“模型输出的动作”；与此前已收录的灵巧手 Skel-WAM（2609.21514）是不同论文，本篇研究机械臂及连续体机器人。",
+        "introduction_zh": "只把两个机器人的末端移动到同一位置，不能保证整条机械臂的构型合理；只替换视觉外观，又未解决动作空间不一致。本文研究只在一个源机器人上学习任务，再部署到其他形态的场景。作者以沿机械臂中心线取样的几何代替关节编号，把它同时画进观测图像和用作动作监督，再让目标机器人的运动学解码器处理自身关节限制与可达性。",
+        "framework_zh": "统一接口为何要包括整条机械臂\n两个机器人可以让夹爪到达同一点，却采用截然不同的肘部或连续体弯曲形状。只预测末端位姿会丢失这部分姿态意图。SkelWAM 把“从基座到工具中心的中心线”作为共同语言，不要求一个机器人的第三关节对应另一个的第三关节。这里的 whole-body 指机械臂整体几何，不是人形机器人全身骨架。\n\n25 维表示具体装了什么\n沿中心线按归一化弧长取六个点，最后一点是工具中心。前五点相对工具中心的位置除以中心线长度，形成 15 维形状量；再加任务坐标系中的工具位置 3 维、旋转表示 6 维和夹爪开合 1 维。相对位置和长度归一化减轻尺寸差异，工具全局位置保留实际接触目标。统计归一化只从源数据拟合，在目标机器人上保持冻结。\n\n视觉也按同一骨架改写\n第三人称图像先遮去原机器人并填补背景，再投影规范中心线；腕部视图用固定的工具相对相机框架表现规范夹爪。模型因此同时收到场景、规范骨架图、数值状态和语言。关键是图中姿态与将要预测的数值动作使用同一定义，而不是一边看源机器人外观，一边输出另一套坐标。真实部署要做相机、工具和任务坐标标定，遮挡与背景填补质量仍影响表现。\n\n世界动作模型如何训练\n模型有成对的视频专家和动作专家，使用 Wan2.2 初始化的 Transformer。第一阶段在源示范上联合学习未来视频与 25 维动作轨迹；第二阶段冻结视频专家，继续训练动作路径。连续的 24 维几何用流匹配学习，也就是让噪声状态逐渐变成目标动作；夹爪另用离散事件头预测是否切换以及首次切换时间，避免把开合硬混成连续数值。每次产生 32 个未来规范状态，一个动作块最多一次夹爪切换，之后靠重规划继续。\n\n未来视频有没有泄漏到控制\n动作查询只能读取当前画面的视觉特征缓存和动作特征，注意力明确屏蔽未来视频。未来视频分支只是训练时的辅助预测监督。实际运行只编码当前观测一次，把当前帧的键值特征缓存给动作专家反复采样，无需生成未来视频。论文仿真使用 20 步流匹配，每块先执行 10 个状态再重新观测；这不是声称 32 帧实时视频生成。\n\n规范动作怎样变成真实命令\n目标专属解码器优先满足工具位姿和夹爪命令，同时以中心线跟随和动作连续性作为软约束。刚性机械臂用带约束的逆运动学，连续体机械臂在分段恒曲率参数中求解。预测中心线是姿态意图，不要求目标硬件完全复刻其形状。下一次策略输入还混合之前的姿态意图与实际工具位置、夹爪等反馈；解码器自身使用实测硬件状态检查可行性。这区分了模型想做什么与机器人实际做到什么。\n\n帮助理解的示意例子\n源机械臂学会把瓶子放进篮子后，策略预测“夹爪保持闭合、工具向篮子移动、臂身保持相应弯曲趋势”的骨架块。换成连续体机械臂，策略权重不变，解码器把这份意图转换为段曲率和工具控制。用户仍须提供目标几何模型、标定和控制接口，所以零样本指无需目标任务示范和策略微调，并不等于零工程适配。\n\n证据不要过度归因\n移除规范骨架视觉后成功率从 43.3% 降至 0%，说明视觉接口在本设定中关键；去掉身体动作监督的变体同时改变了解码器，因此不能单独隔离监督贡献。腕部输入的总体增益仅 0.3 个百分点且分任务有正有负。实机部分是三任务定性展示，没有给出同规模实机成功率。",
+        "pipeline": "源机器人数据 → 25 维规范骨架与双视图 → 视频辅助训练动作模型 → 32 步骨架意图 → 目标约束解码器 → 反馈重规划",
+        "results": "LIBERO-Cross10 的 10 任务×10 目标×10 次试验共 1,000 回合，平均成功率 43.3%（95% Wilson 区间 40.3–46.4%），最佳所评基线 7.1%。去掉骨架视觉为 0%，去掉身体监督及相应解码项为 0.1%，仅去掉解码器身体目标为 40.9%。实机展示三项任务，未报告对应的大样本成功率。",
+        "limitations": "目标端仍需几何、相机标定和专属逆运动学/曲率解码器；可达性、夹爪接触形状和背景填补会限制迁移。基线预训练与源适配预算不同，比较的是完整系统。Cross-Goal 和 Cross-Long 成功率仅 15%/18%，动作消融存在耦合改动。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "25 维骨架"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "视觉规范化"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "训练分期、未来屏蔽与动作块"
+          },
+          {
+            "section": "S3.SS5",
+            "claim": "解码及反馈"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "评测与执行协议"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "消融归因"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "实机定性展示"
+          }
+        ],
+        "fulltext_hash": "b0c6fd1cff4eb5fb3470e8338e5c2c5ae531a251b022fefb9780b36d37fc6fed",
+        "analysed_at": "2026-09-21T17:51:57.613Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 94,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "25 维骨架",
+          "url": "https://arxiv.org/html/2609.21983v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "视觉规范化",
+          "url": "https://arxiv.org/html/2609.21983v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "训练分期、未来屏蔽与动作块",
+          "url": "https://arxiv.org/html/2609.21983v1#S3.SS4"
+        },
+        {
+          "section": "S3.SS5",
+          "claim": "解码及反馈",
+          "url": "https://arxiv.org/html/2609.21983v1#S3.SS5"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "评测与执行协议",
+          "url": "https://arxiv.org/html/2609.21983v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "消融归因",
+          "url": "https://arxiv.org/html/2609.21983v1#S4.SS4"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "实机定性展示",
+          "url": "https://arxiv.org/html/2609.21983v1#S4.SS5"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2609.21709",
+      "arxiv_id": "2609.21709",
+      "doi": "",
+      "title": "SignGPT: Toward LLM-Mediated Sign Language Interaction through Gloss-Free Translation and Generation",
+      "abstract": "Large language models (LLMs) provide limited support for sign language interaction. Unifying sign language translation (SLT) and generation (SLG) to enable sign language as both input and output can reduce switching between separate models during sign-text interaction. We present SignGPT, a unified, pose-based framework for gloss-free SLT and SLG. SignGPT integrates part-aware hierarchical representations of body, hand, and facial motion into a shared language model and employs asymmetric multi-token prediction and progressive training for bidirectional modeling. We evaluate SignGPT on How2Sign (ASL) and Phoenix-2014T (DGS) through benchmark comparisons, qualitative analyses, and component ablations. An exploratory study with 12 Deaf ASL signers assesses an LLM-mediated sign-to-sign response pipeline, highlighting the potential of unified modeling to support sign language conversation (SLC).",
+      "authors": [
+        "Ronghui Li",
+        "Jun Dong",
+        "Zhongyuan Hu",
+        "Zunnan Xu",
+        "Jun Zhou",
+        "Liyuan Chen",
+        "Shuoling Liu",
+        "Jiangpeng Yan",
+        "Jie Guo",
+        "Xiu Li",
+        "Linchao Bao"
+      ],
+      "url": "https://arxiv.org/abs/2609.21709",
+      "published": "2026-09-18T12:46:50Z",
+      "topics": [
+        "运动与运动控制",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2609.21709v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 84,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "SignGPT：以分部位动作编码统一手语翻译与生成",
+        "abstract_zh": "大语言模型对手语交互支持有限，统一手语到文本和文本到手语能减少独立系统间切换。SignGPT 是不依赖 gloss 中间标注的姿态框架，将身体、手部和面部的分部位层次动作表示接入共享语言模型，用非对称多 token 预测与渐进训练学习双向映射。作者在 How2Sign 美国手语和 Phoenix-2014T 德国手语数据集上进行基准、定性及消融评估，并让 12 位聋人美国手语使用者参与探索性单轮手语回应流程评估，展示潜力同时保留交互与语义准确性限制。",
+        "reason": "细粒度运动生成与多模态语言建模结合紧密，重点解释手部为何单独编码、三部位如何同步预测；其离线双向动作编码并非实时流式生成。",
+        "introduction_zh": "手语是具有自身词汇和语法的自然语言，不只是一般人体动作。细微手形、手的位置和非手部标记都可能改变含义，通用运动编码容易丢失这些信息；把动作编号作为全新词汇塞进语言模型，又会浪费动作编码器已经学到的结构。SignGPT 用身体到手部的条件编码保留协调关系，并复用码本特征连接动作与语言，让同一数据集上的一个模型承担翻译和生成两个方向。",
+        "framework_zh": "输入输出先说清楚\nSignGPT 核心处理三维姿态与文本，而非直接端到端读取任意原始手语视频。每帧用 230 维描述：根节点转动和平面速度、高度、72 个非根关节相对根的位置，以及 10 维面部表情。文本生成手语时输出连续姿态序列；手语翻译时先把已有姿态编码再生成文本。gloss-free 指不要求逐个手语词的中间标签，仍需要动作与句子配对监督。\n\n第一部分：把完整动作压缩成三个同步码流\n动作被拆为身体＋面部、左手、右手。时间卷积先压缩各流，再把连续特征映射到离散码本，也就是从有限的动作原型中选择编号。作者先量化身体与面部，让左右手编码以这个全局姿态为条件，避免手指只顾局部形状却与手臂位置不协调。这里“层次”指身体条件传到手部，不是叠很多层残差码本；每个时间位置分别只有三份部位代码。\n\n为什么时间编码是双向的\n手语动作有提前准备和结束过渡。编码完整已录制序列时，卷积同时看前后时间，多个膨胀尺度覆盖短手指变化和较长动作模式。这个选择改善离线表示，却明确用到了未来帧，因此不能把输入端称为因果实时识别。统一解码器把三个量化特征融合后还原整段姿态，训练用整体重建、手关节位置、角度和量化约束保留细节。\n\n第二部分：让语言模型接收有结构的动作特征\n不是为每个动作编号重新随机初始化一个向量，而是从已训练码本取出对应连续特征，经可训练投影映射到 LLaMA 隐藏空间。可选的文本空间对齐用冻结词嵌入的句子平均表示作余弦约束；这是辅助正则，不能理解为已经证明动作与语言语义完全等价。投影让模型有机会利用原动作表示中的几何关系。\n\n同一骨干怎样兼顾两种方向\n手语生成时，将上一步身体/面部、左手、右手的嵌入按权重融合成一个输入，语言骨干前向一次后，由三个不同输出头同时预测当前时间位置的三部位 token。它们共享历史上下文，但在该隐藏状态下分别输出；“多 token”指同一时间的三部位，不是一次预测多个未来时刻。翻译时，整段融合动作作为前缀，原文本输出头按普通自回归方式生成句子。\n\n训练与推理分工\n先训练动作量化与重建系统，再冻结它的编码器、码本和完整重建路径。第二阶段平衡采样翻译/生成任务，用 LoRA 更新语言模型适配参数，同时训练动作投影，原骨干及文本词嵌入保持冻结；第三阶段再做统一指令微调。推理时按任务指示选择文本或动作输出，动作流同步自回归到结束条件，再由冻结重建路径恢复连续姿态。论文没有由此建立从摄像头到交互响应的完整实时延迟指标。\n\n原文的交互流程\n探索性单轮对话先将输入手语姿态翻成英文，再由另一个冻结 LLM 生成英文回答，最后把回答变成手语姿态。若从原视频开始，还要外部关键点检测、三维提升和骨架拟合。每层都可能累积错误，所以它是经文本中介的串联系统，不是端到端手语对话模型。动作流畅也可能语义不对，评价应分别检查。\n\n模块证据与边界\nPhoenix 数据的累计消融中，替换动作为分部位编码后，生成误差从 9.45 到 8.13；再加入联合动作语言建模后到 4.48。后一步包含特征初始化和同步预测等多项变化，不能把全部增益只归给某一输出头。用户研究中回复合适度 3.67/5，动作平滑度 4.35/5，正好说明视觉连贯与有效表达是不同目标。",
+        "pipeline": "三维身体/手/面部动作 → 三路条件量化 → 码本特征投影至共享 LLM → 文本或同步动作 token → 连续手语姿态",
+        "results": "带可选文本对齐的版本在 How2Sign 上平均 DTW-JPE 为 4.76，对照适配 MotionGPT 为 9.82；翻译 BLEU-4 为 16.77，对照 8.72。Phoenix 上平均生成误差为 4.32，但并非所有身体/手部子指标都最佳。12 位参与者的探索性研究报告回复合适度 3.67/5、动作平滑度 4.35/5；自动回译相关性协议下相关回答约 52.2%，只是带评价误差的代理。",
+        "limitations": "作者定位为基于预提取姿态的研究原型与单轮串联流程，尚非实时多轮手语系统；姿态提取、翻译、文本回应和生成会层层传递错误。离线编码使用未来上下文，自动几何或回译指标不等于语言自然性与语义准确性。不同数据集分别训练，不能直接视作通用多语手语模型。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "230 维输入"
+          },
+          {
+            "section": "S3.SS2.SSS0.P0.SPx1",
+            "claim": "身体到手部量化"
+          },
+          {
+            "section": "S3.SS2.SSS0.P0.SPx2",
+            "claim": "双向离线时间编码"
+          },
+          {
+            "section": "S3.SS3.SSS0.P0.SPx2",
+            "claim": "同步多部位预测"
+          },
+          {
+            "section": "S3.SS4.SSS0.P0.SPx1",
+            "claim": "冻结重建路径"
+          },
+          {
+            "section": "S3.SS5",
+            "claim": "串联回应流程"
+          },
+          {
+            "section": "S4.SS4.SSS0.P0.SPx2",
+            "claim": "累计消融"
+          },
+          {
+            "section": "S5.SS0.SSS0.P0.SPx1",
+            "claim": "交互局限"
+          }
+        ],
+        "fulltext_hash": "3a2d44d5839dac68a354f5ef1238380ef9f7720348c01539ee83fed606238baf",
+        "analysed_at": "2026-09-21T17:51:57.616Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 94,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "230 维输入",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.P0.SPx1",
+          "claim": "身体到手部量化",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS2.SSS0.P0.SPx1"
+        },
+        {
+          "section": "S3.SS2.SSS0.P0.SPx2",
+          "claim": "双向离线时间编码",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS2.SSS0.P0.SPx2"
+        },
+        {
+          "section": "S3.SS3.SSS0.P0.SPx2",
+          "claim": "同步多部位预测",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS3.SSS0.P0.SPx2"
+        },
+        {
+          "section": "S3.SS4.SSS0.P0.SPx1",
+          "claim": "冻结重建路径",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS4.SSS0.P0.SPx1"
+        },
+        {
+          "section": "S3.SS5",
+          "claim": "串联回应流程",
+          "url": "https://arxiv.org/html/2609.21709v1#S3.SS5"
+        },
+        {
+          "section": "S4.SS4.SSS0.P0.SPx2",
+          "claim": "累计消融",
+          "url": "https://arxiv.org/html/2609.21709v1#S4.SS4.SSS0.P0.SPx2"
+        },
+        {
+          "section": "S5.SS0.SSS0.P0.SPx1",
+          "claim": "交互局限",
+          "url": "https://arxiv.org/html/2609.21709v1#S5.SS0.SSS0.P0.SPx1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1. A central SignGPT model connects translation and generation. On the left, a text instruction is converted into a sequence of signing avatars. In the middle, an input signing sequence is translated into text. On the right, a signed question is translated, answered in English, and converted into a signed response, illustrating the one-turn response pipeline.SignGPT jointly models sign-to-text translation and text-to-sign generation within each dataset-specific model, and we explore how these complementary capabilities can be composed in a one-turn sign-to-sign response pipeline.",
+          "url": "https://arxiv.org/html/2609.21709v1/mm.png",
+          "source_url": "https://arxiv.org/html/2609.21709v1#S0.F1"
+        },
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2. Overview of SignGPT’s three training stages: (1) PHVQ discretizes continuous body and hand motion, with an optional text-alignment objective; (2) GHMLM is jointly trained on SLG and SLT and uses AMTP to decode text or part-aware motion tokens; and (3) instruction fine-tuning supports prompted translation and generation.A three-stage pipeline. Stage 1 trains PHVQ encoders, codebooks, a projector–reconstructor path, and a decoder; an optional frozen text-embedding branch supplies the alignment target. Stage 2 freezes the tokenizer and trains a heterogeneous motion-aware language model on text-to-sign and sign-to-text directions, using separate motion heads and a standard text head. Stage 3 freezes selected components and instruction-tunes text and motion prompts for translation and generation use. Flame and snowflake icons distinguish trainable and frozen modules.",
+          "url": "https://arxiv.org/html/2609.21709v1/overview.png",
+          "source_url": "https://arxiv.org/html/2609.21709v1#S2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.21938",
+      "arxiv_id": "2609.21938",
+      "doi": "",
+      "title": "Info3R: Information-Adaptive Test-Time Training for 3D Reconstruction",
+      "abstract": "Transformer-based models have recently achieved strong performance on 3D reconstruction from images, and recent works extend them to process video streams in an online manner for real-world deployment. However, existing methods overlook two key signals when handling long image streams: the importance of each incoming frame and the information saturation of the model's internal state. In this paper, we propose Info3R, a novel information-adaptive test-time training method for the online 3D reconstruction. We introduce an information-aware state update that modulates the state update strength based on the redundancy and informativeness of each incoming frame. To restore the state's plasticity -- its capacity to incorporate new observations -- we propose a dynamic state reset, triggered by the cumulative magnitude of state updates and the model's prediction confidence and accompanied by an anchor-to-world alignment. Our method achieves consistent improvements on camera pose estimation, video depth estimation, and 3D reconstruction, while substantially mitigating the performance degradation in the long sequence evaluation. Notably, on KITTI Odometry, our method achieves on average 1.68x lower ATE than LongStream, demonstrating its robustness on extended outdoor sequences.",
+      "authors": [
+        "Sunghyun Baek",
+        "Hanna Bae",
+        "Minchan Kwon",
+        "Junmo Kim"
+      ],
+      "url": "https://arxiv.org/abs/2609.21938",
+      "published": "2026-09-18T15:55:00Z",
+      "topics": [
+        "相机控制",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.21938v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 86,
+        "priority_topics": [],
+        "title_zh": "Info3R：根据信息量自适应更新状态的在线三维重建",
+        "abstract_zh": "已有 Transformer 三维重建方法可以在线处理视频，但常忽略新帧的重要程度以及内部状态的信息饱和。Info3R 提出信息感知的状态更新，按相邻帧冗余程度和当前帧的信息丰富度调整更新强度；同时用动态状态重置恢复吸收新观测的能力，并通过锚点到世界坐标的对齐保持全局几何连续。方法无需专门再训练重建骨干，在长序列相机轨迹、深度和三维重建评估中改善表现，KITTI 里程计平均轨迹误差较 LongStream 低约 1.68 倍。",
+        "reason": "给流式感知提供清晰的记忆管理方案：重复帧少写入、低质帧少污染、饱和时重置并对齐。属于在线三维重建，不将其误标为流式视频生成或相机轨迹控制。",
+        "introduction_zh": "在线三维模型把历史压缩进固定数量的状态特征，省去了反复处理全部图像的开销，但长序列会不断写入重复观测，最终出现状态饱和、置信度降低和轨迹漂移。固定更新幅度无法区分新的有效视角与模糊画面，固定周期重置又难以适应转弯和场景变化。Info3R 在已有 CUT3R 模型上调整状态写入与重置规则，目标是在有限记忆下延长可靠重建时间。",
+        "framework_zh": "把内部状态理解成一份有限容量的场景笔记\n输入是一帧帧到来的图像，输出是每帧的三维点图、相机位姿及置信度。点图表示每个像素对应的三维位置。骨干 CUT3R 先把图像编码成特征，再让当前特征与历史状态通过交叉注意力交换信息，产生新的候选状态以及几何预测。Info3R 不改变这一基本结构，主要决定候选状态应写入多少，以及何时重新建立笔记。\n\n第一道判断：新画面重复吗\n系统比较当前帧与上一帧相同位置特征的余弦相似度。若两帧非常相近，新信息少，更新权重就低；特征变化大时，允许更强更新。这避免静止相机连续拍到同一面墙时，让重复内容反复占据状态。但变化大也可能只是运动模糊或噪声，因此不能只用“不相似”作为信息价值。\n\n第二道判断：变化里有多少可用结构\n作者对当前图像特征做奇异值分解，计算解释 95% 特征能量需要多少个独立方向，称为有效秩。直观上，若描述一帧需要较多独立特征，通常包含更丰富结构；若特征集中在少数方向，可能是纹理少或退化画面。它经过归一化形成第二个权重，与去冗余权重及基础更新率相乘，并将最终幅度限制到 1。新状态是旧状态向候选状态移动一部分，而非每帧全部覆盖。有效秩是代理指标，不是对所有噪声类型都可靠的质量检测器。\n\n为什么还需要重置\n再谨慎地写入，固定容量的状态在很长序列中仍会变得不适合当前视角。作者累计“本次更新幅度除以世界点图平均置信度”的量：写入越多、置信度越低，触发量增加越快。超过阈值时，用当前图像重新初始化状态和相应位姿表示，恢复学习新场景的空间。它不按固定帧数清空，而是随图像内容和模型状态变化触发。\n\n重置后怎样不把地图坐标弄丢\n重置前模型先估计当前相机相对旧锚点的位置；重置后当前视图成为新的局部锚点。系统把历次锚点间刚体变换串起来，得到当前锚点到第一帧世界坐标的变换。之后新输出的点和相机姿态先在当前锚点坐标中预测，再变换回统一世界坐标。因此清空的是神经网络的内部状态，不是把已输出的世界几何全部移到另一个坐标系；但变换自身有误差时，累计漂移仍可能存在。\n\n训练与运行的区别\n这里“测试时训练”主要是将状态更新理解成在线适应，并非拿每个新视频反复反向传播训练整个骨干。实验直接使用 CUT3R 的预训练权重；运行时按帧执行编码、计算权重、必要时重置、输出几何并累计触发量。更新只使用当前及历史信息，不需要未来帧。存储内容是压缩场景状态和坐标变换，而不是视频生成中的去噪缓存。\n\n帮助理解的示意例子\n相机沿走廊缓慢前进，连续相似帧只让状态小幅变化；快速转头产生模糊时，结构权重抑制写入；转向另一个房间后，较多新内容被吸收，若置信度降低且状态累计变化已大，就以当前视角重置，再将新房间点云对齐到原世界坐标。这是对机制的演示，并不承诺每次转弯都触发或完全消除漂移。\n\n证据与取舍\nKITTI 平均绝对轨迹误差为 30.48，去掉去冗余权重为 45.03，去掉结构信息权重为 32.47，支持两项各有作用。但完整方法并非所有局部相对位姿指标最佳。RTX 4090 上测得 13.27 帧/秒、3.24 GB 显存，较 CUT3R 略慢；这是重建吞吐，不能当作流式视频生成速度。",
+        "pipeline": "逐帧图像 → 冗余与结构信息判断 → 加权写入场景状态 → 饱和时重置并维护锚点变换 → 全局点图与相机轨迹",
+        "results": "KITTI 里程计平均 ATE：Info3R 30.48，LongStream 51.24，TTT3R 179.08。ScanNet 1,000 帧时 ATE 从 TTT3R 的 0.394 降至 0.176。单张 RTX 4090、KITTI 序列 00 上为 13.27 FPS/3.24 GB，CUT3R 为 15.27 FPS/3.23 GB。完整方法改善全局误差，但部分局部误差与噪声条件下指标并非最优。",
+        "limitations": "分析性保留：有效秩和模型置信度是信息质量代理，不能保证覆盖所有退化画面；重置后的全局对齐依赖预测位姿，仍可能累计误差。速度略慢于原骨干，没有显式回环保证，也没有提供相机控制或视频生成能力。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "骨干输入输出"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "信息感知状态写入"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "动态重置与坐标连续"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "主结果"
+          },
+          {
+            "section": "S6.SS4",
+            "claim": "效率"
+          },
+          {
+            "section": "S6.SS5",
+            "claim": "模块消融"
+          }
+        ],
+        "fulltext_hash": "135fd082a3adb3d9f1dfd48d13263a22ed02bc4e34e12f3e7e7cf1fd9c87cc17",
+        "analysed_at": "2026-09-21T17:51:57.609Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 86,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "骨干输入输出",
+          "url": "https://arxiv.org/html/2609.21938v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "信息感知状态写入",
+          "url": "https://arxiv.org/html/2609.21938v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "动态重置与坐标连续",
+          "url": "https://arxiv.org/html/2609.21938v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "主结果",
+          "url": "https://arxiv.org/html/2609.21938v1#S5.SS2"
+        },
+        {
+          "section": "S6.SS4",
+          "claim": "效率",
+          "url": "https://arxiv.org/html/2609.21938v1#S6.SS4"
+        },
+        {
+          "section": "S6.SS5",
+          "claim": "模块消融",
+          "url": "https://arxiv.org/html/2609.21938v1#S6.SS5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S4.F2",
+          "caption": "Fig. 2: Overview of Info3R. For each incoming frame, the Information-Aware State Update modulates the state update with an adaptive learning rate αt\\alpha_{t} derived from information redundancy and informativeness. The Dynamic State Reset re-initializes the saturated state when the trigger metric Γt\\Gamma_{t} exceeds a threshold, and preserves global geometry through anchor-to-world alignment.",
+          "url": "https://arxiv.org/html/2609.21938v1/figs/method_kitti2_2x.png",
+          "source_url": "https://arxiv.org/html/2609.21938v1#S4.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2609.21827",
+      "arxiv_id": "2609.21827",
+      "doi": "",
+      "title": "RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding",
+      "abstract": "Speculative decoding accelerates LLM inference by drafting multiple tokens in parallel, with tree-based methods further improving efficiency through hierarchical structures. Dynamic-tree methods such as EAGLE-3 perform well under greedy decoding via deterministic top-K expansion and global pruning. However, in stochastic decoding (T>0), this mechanism collapses the draft distribution into one-hot probabilities, causing a severe drop in acceptance rate. This creates a dilemma: dynamic-tree methods sacrifice stochastic sampling to preserve context-aware topology, while static-tree methods preserve stochastic sampling with context-agnostic structures. The issue arises because the same probability distribution is used for two conflicting tasks: constructing the tree and verifying tokens. This coupling makes direct injection of randomness challenging due to the resulting stochastic process. We resolve this by decoupling these roles: RheoSampling assigns a token sampled from the draft distribution a proxy probability for tree expansion and pruning alongside its true sampling probability for verification. Specifically, we inject a sampled token among the deterministic top-K slots and treat it with different probabilities during construction and verification, making RheoSampling the first dynamic-tree method with both context-aware top-K construction and stochastic sampling while maintaining losslessness. We establish the lossless guarantee through an equivalence-class analysis that compresses the stochastic tree space into tractable classes. An OT-based verification strategy and a sparse draft mechanism ensure that theoretical gains translate into practical efficiency. Experiments across LLMs and benchmarks demonstrate improvements in acceptance rate and speedup over state-of-the-art dynamic tree methods. This framework may provide a template for analyzing stochastic tree structures.",
+      "authors": [
+        "Qiao Hu",
+        "Yepeng Weng",
+        "Bo Zhang",
+        "Takehisa Yairi"
+      ],
+      "url": "https://arxiv.org/abs/2609.21827",
+      "published": "2026-09-18T14:28:28Z",
+      "topics": [
+        "大模型"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2609.21827v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 83,
+        "priority_topics": [],
+        "title_zh": "RheoSampling：解耦建树与验证概率，改善随机推测解码",
+        "abstract_zh": "树形推测解码能加速大模型推理，但 EAGLE-3 等动态树采用确定性的 top-K 扩展与裁剪，在随机生成时难以充分利用草稿分布尾部。直接加入随机候选又会让建树与验证概率相互耦合，破坏无损采样。RheoSampling 为同一个随机候选赋予两种概率身份：建树时用受控代理分数，验证时用真实采样概率。作者以等价类分析证明输出分布保持目标模型分布，并设计基于最优传输思想的验证与稀疏草稿采样。在多模型和任务上，平均接受长度及实际速度均较原动态树提升。",
+        "reason": "对大模型推理有明确算法贡献：区分搜索排序分数与正确性验证概率，并给出分布无损证明。收益属于解码效率，不按流式视频生成加权。",
+        "introduction_zh": "推测解码用便宜的草稿模型一次提出多步候选，再让大模型批量验证；动态树能把预算投到更可能的分支。然而随机生成的接受率取决于目标与草稿概率之比，并非草稿概率大就一定好。若随机抽出候选后又按其自身概率决定能否留下，留下者的分布会改变，继续使用原采样概率验证就会出错。本文从这个条件分布问题入手，把候选如何竞争树预算与如何被正确验证分开设计。",
+        "framework_zh": "先理解一轮推测解码\n输入是已有文本和目标大模型。较小的草稿模型预测多个可能的后续 token，组织成树；目标模型一次计算树中候选的概率，再沿被接受的路径输出多个 token。所谓“无损”指最终采样分布与直接从目标模型采样一致，不是每次随机运行都输出完全相同的一句话，也不是提高模型知识能力。\n\n原方法卡在什么地方\n动态树按草稿概率扩展并裁剪，适合保留高概率分支，但随机解码需要探索尾部。简单抽样再按该 token 的真实概率排队，会导致高概率抽样更容易留下、低概率抽样更容易被删。于是“已留下的随机 token”不再服从最初的分布，验证阶段若仍按原分布计算接受率，就可能改变目标输出分布。\n\n一个随机位置，两套用途\nRheoSampling 在每次扩展的 K 个名额中先保留 m 个最高概率 token，再从剩余概率质量中抽一个随机 token，其余名额继续填入高排名候选。随机位置在建树时得到一个与抽到哪个具体 token 无关的代理分数：取第 m 名概率与剩余总概率中的较小者。它保证随机位置排在后续填充候选之前，避免该位置是否生存直接取决于抽样身份；全树仍有更复杂的随机耦合，作者另用等价类证明处理，不能仅凭这一局部直觉宣称证明完成。\n\n代理分数绝不能拿来做接受判断\n目标模型验证时，若随机候选仍在树中，先按目标概率除以真实尾部分布采样概率进行拒绝采样，接受率上限为 1。若它被拒绝，就从目标分布扣去已被这次随机提案覆盖的概率质量并重新归一化，再验证其余确定性候选；若都拒绝，则从最终残余分布抽样。随机候选被裁掉时，退回确定性 top-K 的验证流程。这样建树优化结构，验证负责保留概率正确性，两者没有混用同一个人为排名值。\n\n怎样控制实际开销\nm 控制随机位置在队列中的优先级：过大时它常被裁掉，随机探索形同虚设；过小时更扰动原有高概率树。实验中 m=1 多数情况较好。为避免全词表随机采样过慢，草稿 logits 只保留前 128 项再归一化；验证必须使用同一个截断后的草稿分布，目标模型分布并没有因此一并截断。建树保持原始草稿分数，温度作用于采样和验证。低温时分布趋于尖锐，随机机制收益会变化，不能默认所有温度都相同。\n\n训练与使用\n它是推理算法，实验直接使用已有 EAGLE-3 草稿权重，没有为该方法重新微调模型。每轮仍包括草稿扩展、全局预算裁剪、目标批量计算和逐层验证，然后把接受文本接到上下文后继续。新增的是随机候选插槽、正确的双概率处理和相应验证程序，并不是训练一个新语言模型。\n\n用原文的小例子理解\n草稿对 A、B、C 给出 0.5、0.3、0.2，先固定 A，再从 B/C 中按 0.6/0.4 抽样。若随机位置总以 0.5 的代理分数排在第二，抽到 B 或 C 都有相同的名额地位；验证仍分别用 0.6 或 0.4。若随意把代理设成 0.25，抽到 B 时可能留下、抽到 C 时却被 B 挤掉，于是幸存随机项被偏向 B，原采样概率就不再正确。\n\n收益量级\nLlama-3.1-8B 上平均接受长度由 5.04 增到 5.25，相对普通自回归的速度从 2.84 倍增到 2.93 倍。真正相对原 EAGLE-3 的新增加速约 3.2%，不是额外快 2.93 倍；随机采样与验证也有成本，因此接受长度增幅略大于实际速度增幅。",
+        "pipeline": "草稿分布 → 确定性候选＋随机尾部候选 → 代理分数建树裁剪 → 真实概率验证 → 保持目标分布的多 token 输出",
+        "results": "单张 A6000、默认温度 1.0、树预算 60/深度 8，三个模型各在六任务评测：Vicuna-13B 速度从自回归基准的 3.37× 到 3.43×，Llama-3.1-8B 从 2.84× 到 2.93×，DeepSeek-R1-Distill-Llama-8B 从 2.89× 到 2.99×。对应平均接受长度增加 0.14、0.21、0.22。每数据集 80 个问题、3 个随机种子。",
+        "limitations": "分析性保留：额外收益较温和，来自特定草稿—目标组合和单 GPU 设置；温度、树预算、硬件及草稿拟合程度都会影响结果。无损证明要求严格遵循代理排序与真实验证分布，不能随意替换裁剪分数。未报告面向视频生成的任何效果。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS0.Px2",
+            "claim": "裁剪造成条件分布偏差"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "双概率身份"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px1",
+            "claim": "验证步骤"
+          },
+          {
+            "section": "S4",
+            "claim": "无损定理与三 token 例子"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "实验协议"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "实际增益"
+          },
+          {
+            "section": "S5.SS4",
+            "claim": "温度差异"
+          }
+        ],
+        "fulltext_hash": "7f1aa6dea126e165cf8f00558df16c9c079b41073768aa70cd92a091b81ecbb4",
+        "analysed_at": "2026-09-21T17:51:57.614Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS0.Px2",
+          "claim": "裁剪造成条件分布偏差",
+          "url": "https://arxiv.org/html/2609.21827v1#S3.SS1.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "双概率身份",
+          "url": "https://arxiv.org/html/2609.21827v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px1",
+          "claim": "验证步骤",
+          "url": "https://arxiv.org/html/2609.21827v1#S3.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4",
+          "claim": "无损定理与三 token 例子",
+          "url": "https://arxiv.org/html/2609.21827v1#S4"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "实验协议",
+          "url": "https://arxiv.org/html/2609.21827v1#S5.SS1"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "实际增益",
+          "url": "https://arxiv.org/html/2609.21827v1#S5.SS2"
+        },
+        {
+          "section": "S5.SS4",
+          "claim": "温度差异",
+          "url": "https://arxiv.org/html/2609.21827v1#S5.SS4"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2609.22005",
+      "arxiv_id": "2609.22005",
+      "doi": "",
+      "title": "Abstention and Noise Filtering: Two Missing Primitives of Softmax Attention",
+      "abstract": "Gating the value pathway of attention reportedly improves language model pretraining, and prior studies disagree on why. We argue and provide experimental evidence that such gates supply two different things that softmax attention lacks: abstention and noise filtering. The first is abstention, which allows an attention head to output nothing, bypassing the requirement that attention weights must sum to one. The second is noise filtering, which allows the value pathway of an attention head to suppress interference from superposed features in the residual stream. In our experiments in matched models from 10M to 350M parameters, we supply abstention through a learned per-head sink logit in the softmax and noise filtering through a gate on each value. We report three empirical findings. First, the benefit of abstention, measured as the reduction in validation loss relative to a matched baseline, declines as models grow, whereas the benefit of noise filtering increases with scale. In particular, abstention accounts for nearly all of the gain from gating at 10M and filtering for most of it at 350M. Second, the best model at every scale is the one with both primitives built in. Third, injecting controlled interference into the values a head reads confirms that the gate removes such interference, and reveals that each of the two gate forms we study has a characteristic blind spot. Supplying both primitives adds negligible parameters and remains compatible with the key-value cache.",
+      "authors": [
+        "Richard Zhe Wang"
+      ],
+      "url": "https://arxiv.org/abs/2609.22005",
+      "published": "2026-09-18T17:03:58Z",
+      "topics": [
+        "大模型"
+      ],
+      "sources": [
+        "arXiv 公告"
+      ],
+      "discovery_dates": [
+        "2026-09-21"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2609.22005v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 83,
+        "priority_topics": [],
+        "title_zh": "弃权与噪声过滤：Softmax 注意力缺少的两种能力",
+        "abstract_zh": "注意力 value 路径上的门控可以改善语言模型预训练，但原因尚有不同解释。作者将其分解为两种能力：弃权允许注意力头不输出内容，突破权重和必须为一的限制；噪声过滤则压制残差流中叠加特征的干扰。在 1,000 万至 3.5 亿非嵌入参数的匹配模型中，作者分别用每头可学习的零值 sink logit 和逐 value 门控提供这两种能力。实验显示，弃权的收益随规模下降，过滤收益总体增大；两者结合在各规模上最好。受控干扰注入支持过滤机制，也揭示基于幅度和基于投影的门控各自存在盲点。额外参数很少，设计兼容键值缓存。",
+        "reason": "适合关注大模型机制与架构设计：通过匹配实验和人为干预，区分“这一头没必要读东西”与“读到的内容有噪声”，比只比较门控排行榜更有解释力。",
+        "introduction_zh": "标准注意力先把读取权重归一化到总和为一，再线性加权各位置的 value。即使当前没有值得读取的信息，它仍必须把全部权重放在某处；即使某个 value 主要是干扰，也缺少按内容过滤的非线性环节。已有门控可能同时缓解这两个问题，因此难以判断改进来源。本文把两种能力用不同模块单独提供，再通过组合、控制组和干扰注入分析收益。",
+        "framework_zh": "先把注意力拆成“去哪里读”和“读进来什么”\n查询和键决定各位置的权重，value 是实际带回的信息。标准 softmax 让一行权重加起来总是 1，相当于无论有没有好内容都要花完读取额度；随后 value 被线性加权，没有专门判断其内容是否主要是噪声。本文的两项改动分别针对这两个环节，研究目标是解释门控为何有效。\n\n弃权：给一个真正输出零的位置\n作者在每个注意力头的 softmax 分母加入一个可学习分数对应的额外位置，但这个虚拟位置的 value 永远为零。查询可以把部分权重分给它，于是实际读取总量变少，必要时几乎不输出。它与在文本前加一个可学习 sink token 不完全相同：后者的 value 也会学习，可能残留内容；零值虚拟位置则让“什么都不读”在结构上成立。\n\n过滤：逐个检查带回来的 value\n第一种门看 value 向量的长度，通过阈值和 sigmoid 将小幅值读取压低。它不关心方向，便于检验仅凭强度是否有用。第二种门对 value 做可学习线性投影，再经 sigmoid 决定放行比例，因此能够按特征方向筛选。二者都给每个 value 乘一个 0 到 1 的标量。初始化接近全放行，并避免权重衰减主动把门推向过滤，尽量让收益来自数据学习而非初始设置。\n\n为什么需要特殊控制组\n单独 value 门既会改变哪些内容被读入，也会让整头输出变小，天然混合过滤和部分弃权。作者构造一个重新归一化的路由控制：使用相同门信号调整注意力权重，但再让权重和恢复到 1，从而拿掉缩小总输出这一部分。再比较“只有零值位置”和“零值位置＋门”，在已提供明确弃权能力的条件下观察过滤的额外收益。这不是仅比较两个命名不同的网络，而是有针对性地拆分机制。\n\n怎样训练与做干预\n不同注意力变体从头训练，使用相同语料顺序、骨干、优化器和日程；三个较小规模采用配对种子，最大 3.5 亿规模只有一个种子。评估时还把来自另一句子的 value 特征，注入本来幅度较小的读取中。这种干扰有真实特征的统计形态，却与当前上下文无关；再与同幅度高斯噪声、固定方向噪声等比较。若模型只是在整体输出缩小，不能充分解释它对不同结构干扰的差异反应。\n\n运行时怎样使用\n训练好后，零值位置参与每次注意力归一化，门先处理每个 value 再进入聚合。门只依赖该 value 本身，因此可计算一次后放入键值缓存，不需要未来 token 或每个查询重复生成门值。论文据结构讨论缓存兼容和少量新增参数，但没有实际吞吐测量，不能据此承诺完全零延迟开销。\n\n帮助理解的示意例子\n假设某注意力头想读取句子中的地点，但上下文没有地点信息。弃权让它减少整个头的输出；若存在一个合适地点及一些杂乱特征，过滤则帮助压低无关读取。这个类比不是论文定位到的真实语义头，只用于说明整头少读与逐项筛选的区别。\n\n过滤也会被骗\n幅度门会被足够大的垃圾特征打开；投影门会被恰好沿其学习方向的干扰打开。作者通过定向注入验证这两个盲点。因此组合模块降低预训练损失，并不意味着建立了通用抗攻击能力。主要收益还只有千分之几到百分之几 nat，必须连同种子方差、规模和数据范围一起读。",
+        "pipeline": "匹配语言模型训练 → 分别提供零值弃权与 value 门控 → 组合/归一化控制组 → 定向干扰注入 → 分析损失收益与盲点",
+        "results": "10M 规模仅 sink logit 相对基线降低验证损失 0.0185 nat；到 350M 为 0.0013 nat。sink＋投影门在四个规模均为最低损失，350M 相对基线改善 0.0128 nat，其中相对已有 sink 的增益 0.0114 nat。作者强调 350M 为单种子，其弃权增益处于较小规模观察到的种子噪声量级。",
+        "limitations": "仅在 FineWeb-Edu、最高 350M 非嵌入参数和有限训练预算验证，不能直接外推到数十亿参数；最大规模只有单种子，没有吞吐测量。投影门方向盲点由刻意构造的干扰揭示，未测自然输入触发频率；门控不保证彻底过滤所有噪声。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "value 门控与路由控制的分解"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "零值 sink"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px4",
+            "claim": "幅度门"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px6",
+            "claim": "投影门"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "匹配训练协议"
+          },
+          {
+            "section": "S5",
+            "claim": "组合效应"
+          },
+          {
+            "section": "S6.SS4",
+            "claim": "两类盲点"
+          },
+          {
+            "section": "S7.SS0.SSS0.Px2",
+            "claim": "规模与测量限制"
+          }
+        ],
+        "fulltext_hash": "6f367f17d5558b82830b9d7b116fa081f80f197ffdcba95316c0ef09736b0494",
+        "analysed_at": "2026-09-21T17:51:57.615Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "value 门控与路由控制的分解",
+          "url": "https://arxiv.org/html/2609.22005v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "零值 sink",
+          "url": "https://arxiv.org/html/2609.22005v1#S3.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px4",
+          "claim": "幅度门",
+          "url": "https://arxiv.org/html/2609.22005v1#S3.SS3.SSS0.Px4"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px6",
+          "claim": "投影门",
+          "url": "https://arxiv.org/html/2609.22005v1#S3.SS3.SSS0.Px6"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "匹配训练协议",
+          "url": "https://arxiv.org/html/2609.22005v1#S4.SS1"
+        },
+        {
+          "section": "S5",
+          "claim": "组合效应",
+          "url": "https://arxiv.org/html/2609.22005v1#S5"
+        },
+        {
+          "section": "S6.SS4",
+          "claim": "两类盲点",
+          "url": "https://arxiv.org/html/2609.22005v1#S6.SS4"
+        },
+        {
+          "section": "S7.SS0.SSS0.Px2",
+          "claim": "规模与测量限制",
+          "url": "https://arxiv.org/html/2609.22005v1#S7.SS0.SSS0.Px2"
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2609.22069",
+      "title": "OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation",
+      "decision": "include",
+      "reason": "直接覆盖动作迁移、运镜迁移、主体身份保持和多参考控制；最值得借鉴的是把“看起来像”拆成可定位的因素绑定检查，而非新增一个生成骨干。"
+    },
+    {
+      "key": "arxiv:2609.21948",
+      "title": "GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments",
+      "decision": "include",
+      "reason": "运动控制贡献在于显式保留手部几何变化，并把共享动作语义与各机器人原生控制接口分开；有手指探测、表示检索及跨形态消融支撑。"
+    },
+    {
+      "key": "arxiv:2609.21467",
+      "title": "Learning Distance-Conditioned Object Transport for Humanoid Loco-Manipulation from a Single Motion Clip",
+      "decision": "include",
+      "reason": "抓住运动控制数据里常被忽略的问题：经过某个位置，不代表学会在该位置安全结束。单示范重组与物理回放的组合具有可迁移的设计启发。"
+    },
+    {
+      "key": "arxiv:2609.21938",
+      "title": "Info3R: Information-Adaptive Test-Time Training for 3D Reconstruction",
+      "decision": "include",
+      "reason": "给流式感知提供清晰的记忆管理方案：重复帧少写入、低质帧少污染、饱和时重置并对齐。属于在线三维重建，不将其误标为流式视频生成或相机轨迹控制。"
+    },
+    {
+      "key": "arxiv:2609.21220",
+      "title": "Safe Real-Time Policy Steering via Noise-Space Trajectory Optimization for One-Step Generative Policies",
+      "decision": "include",
+      "reason": "可在不重训策略的情况下加入避障和末端姿态约束；关键区别是优化生成器的输入噪声，保留原策略学到的动作结构。实际求解仍使用梯度，并非无梯度粒子搜索。"
+    },
+    {
+      "key": "arxiv:2609.22075",
+      "title": "LIMBO: Learning and Internalizing Model-Free Barrier Objectives for Agile and Safe Whole-Body Control",
+      "decision": "include",
+      "reason": "重点是全身运动控制中的“未来还能否恢复”，以及怎样把昂贵的安全动作判断移到训练阶段；还展示采样分布能改变出现的运动策略。"
+    },
+    {
+      "key": "arxiv:2609.21983",
+      "title": "SkelWAM: A Skeleton-Guided World-Action Model for Zero-Shot Cross-Embodiment Manipulation",
+      "decision": "include",
+      "reason": "新意在于同一骨架同时统一“模型看见的机器人”和“模型输出的动作”；与此前已收录的灵巧手 Skel-WAM（2609.21514）是不同论文，本篇研究机械臂及连续体机器人。"
+    },
+    {
+      "key": "arxiv:2609.21827",
+      "title": "RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding",
+      "decision": "include",
+      "reason": "对大模型推理有明确算法贡献：区分搜索排序分数与正确性验证概率，并给出分布无损证明。收益属于解码效率，不按流式视频生成加权。"
+    },
+    {
+      "key": "arxiv:2609.22005",
+      "title": "Abstention and Noise Filtering: Two Missing Primitives of Softmax Attention",
+      "decision": "include",
+      "reason": "适合关注大模型机制与架构设计：通过匹配实验和人为干预，区分“这一头没必要读东西”与“读到的内容有噪声”，比只比较门控排行榜更有解释力。"
+    },
+    {
+      "key": "arxiv:2609.21709",
+      "title": "SignGPT: Toward LLM-Mediated Sign Language Interaction through Gloss-Free Translation and Generation",
+      "decision": "include",
+      "reason": "细粒度运动生成与多模态语言建模结合紧密，重点解释手部为何单独编码、三部位如何同步预测；其离线双向动作编码并非实时流式生成。"
+    },
+    {
+      "key": "arxiv:2603.15612",
+      "title": "HSImul3R: Physics-in-the-Loop Reconstruction of Simulation-Ready Human-Scene Interactions",
+      "decision": "exclude",
+      "reason": "已追溯原论文，其首发为 2026-03-16；本次仅因近期报道检出，超出自动日报时效，未占用本轮推荐名额。手动补录不受此年限限制。"
+    },
+    {
+      "key": "arxiv:2609.21502",
+      "title": "Adaptive World Memory 3D Foundation Model for Scalable 3D Mapping, Localization, and Rendering",
+      "decision": "exclude",
+      "reason": "全文抓取未成功，本轮不依据摘要补写方法，留待可读原文后再评估。"
+    },
+    {
+      "key": "arxiv:2609.22040",
+      "title": "PRIME: Perception Feedback with Situational Memory Embeddings in VLA Models",
+      "decision": "exclude",
+      "reason": "初筛涉及自动驾驶感知反馈；本轮优先完成更贴近运动控制与生成评测的精读，未完成本篇逐节核验，不据摘要发布方法结论。"
+    },
+    {
+      "key": "arxiv:2609.21449",
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "decision": "exclude",
+      "reason": "初筛涉及触觉世界动作模型，有后续阅读价值；本轮已选择多篇控制与跨形态方法，未完成本篇逐节核验，暂不推荐。"
+    },
+    {
+      "key": "arxiv:2609.21176",
+      "title": "4DGS-Fixer: Generative Sparse-View 4D Gaussian Splatting with Iterative Refinement Guided by Video Diffusion Priors",
+      "decision": "exclude",
+      "reason": "初筛涉及稀疏视角重建与视频先验；本轮优先选择长序列记忆机制的 Info3R，未完成本篇逐节核验，暂不推荐。"
+    },
+    {
+      "key": "arxiv:2609.22085",
+      "title": "SeeQ: Training Generalist Value Functions for Long-Horizon Robotic Manipulation",
+      "decision": "exclude",
+      "reason": "初筛涉及长任务子任务价值函数，有后续阅读价值；本轮已完成 10 篇精读，未完成本篇逐节核验，不将摘要视作方法证据。"
+    },
+    {
+      "key": "arxiv:2609.21849",
+      "title": "The Weight Is Over - Interactive Diffusion on Consumer GPUs",
+      "decision": "exclude",
+      "reason": "摘要为消费级 GPU 图像生成与首图延迟优化，并非流式视频生成；本轮未进一步精读，保留为相关候选。"
+    },
+    {
+      "key": "arxiv:2609.21967",
+      "title": "NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities",
+      "decision": "exclude",
+      "reason": "摘要为全双工语音及工具调用，并非流式视频生成；本轮优先动作—语言与视频控制内容，未完成本篇逐节核验。"
+    },
+    {
+      "key": "arxiv:2609.21497",
+      "title": "FORTE: Task-Adaptive Force Capability Optimization for Mobile Manipulators",
+      "decision": "exclude",
+      "reason": "摘要研究任务力需求与移动机械臂力能力优化；本轮优先精读已选控制方案，本篇未核验全文，不做质量定论。"
+    },
+    {
+      "key": "arxiv:2609.21229",
+      "title": "KnowDemo: Knowledge-Guided Robot Demonstration Generation from Human Videos",
+      "decision": "exclude",
+      "reason": "摘要研究从人类视频抽取操作知识并生成示范；本轮未完成原文核验，暂不纳入精读。"
+    },
+    {
+      "key": "arxiv:2609.21358",
+      "title": "FAN: Foresight Action Normalization for Continual Adaptation of Vision-Language-Action Models",
+      "decision": "exclude",
+      "reason": "摘要研究持续 VLA 适配的动作归一化；属于相关实现问题，本轮未精读，不能仅凭初筛分数归入重点控制贡献。"
+    },
+    {
+      "key": "arxiv:2609.21838",
+      "title": "PopNavShift: Stress-Testing Social Navigation under Behavioral Population Shift",
+      "decision": "exclude",
+      "reason": "摘要主要为合成人群变化下的社会导航评测，和本轮视频生成/运动方法偏好较远，未精读。"
+    },
+    {
+      "key": "arxiv:2609.21818",
+      "title": "LunaDrive: A Delay-Compensated High-Voltage GaN FET-Based Motor Driver for Dynamic Robots with Flat BLDC Motors",
+      "decision": "exclude",
+      "reason": "主要贡献为电机驱动硬件与延迟补偿，AI 模型和生成方向相关性较低，初筛排除。"
+    },
+    {
+      "key": "arxiv:2609.21803",
+      "title": "Contact-Rich Motion Planning via GPU-Parallel Mode Evaluation",
+      "decision": "exclude",
+      "reason": "摘要研究 GPU 并行接触模式规划；本轮未完成全文核验，留作后续候选。"
+    },
+    {
+      "key": "arxiv:2609.21792",
+      "title": "AcousticDiffusion: Semantically Conditioned Audio-Guided Diffusion Policy for Search-and-Rescue Assistance",
+      "decision": "exclude",
+      "reason": "摘要研究声音引导救援导航，实机与合成条件差异较大，需专门核验；本轮未精读。"
+    },
+    {
+      "key": "arxiv:2609.21707",
+      "title": "NeuRIO: A Streaming Neural Estimator for Zero-Shot Sim-to-Real Multi-Robot Relative Inertial Odometry",
+      "decision": "exclude",
+      "reason": "摘要中的 streaming 指惯性里程计在线估计，并非视频流式生成；本轮优先其他重建与控制方法。"
+    },
+    {
+      "key": "arxiv:2609.21609",
+      "title": "Potential-Field Action Representation for Reinforcement Learning in Contact-Rich Manipulation",
+      "decision": "exclude",
+      "reason": "摘要研究势场动作表示与插孔强化学习；相关但本轮未完成逐节核验，暂不推荐。"
+    },
+    {
+      "key": "arxiv:2609.21416",
+      "title": "A Unified Dynamic Force Guidance Framework for Performance-Optimized Kinesthetic Teaching",
+      "decision": "exclude",
+      "reason": "摘要主要为拖动示教中的力引导与机械臂可操作性，离生成模型偏好较远，初筛排除。"
+    },
+    {
+      "key": "arxiv:2609.21226",
+      "title": "AirSplan: Risk-Aware Motion Planning for Quadrotors in Cluttered 3D Gaussian Splats",
+      "decision": "exclude",
+      "reason": "摘要研究 3D 高斯场景中的四旋翼规划，相关但本轮未完成全文核验，暂不推荐。"
+    },
+    {
+      "key": "title:causalwmcausalchainofthoughtreasoningforembodiedworldmodel",
+      "title": "CausalWM: Causal Chain-of-Thought Reasoning for Embodied World Model",
+      "decision": "exclude",
+      "reason": "机器之心公开列表与作者项目页可核验，但 OpenReview 原文返回验证页面，未获得正文；不从新闻标题推断方法，等待可读原论文。"
+    }
+  ],
+  "digest_id": "ac45ec0e3ba97767439f"
+}
