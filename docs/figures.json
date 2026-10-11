@@ -1077,6 +1077,48 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.11791": {
+      "asset": "assets/figures/2610.11791-483cdd5e60f5.webp",
+      "sha256": "483cdd5e60f5999c967d7c2795c36f48d80a46b865e11d6885afcefc7b45fe44",
+      "width": 2048,
+      "height": 1152,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "关键是先预测固体与气体的轨迹，再将轨迹交给视频生成器；固体分支向气体分支传递影响，而非让一个视频模型自行学会全部物理过程。",
+      "source_url": "https://arxiv.org/html/2610.11791v1#S4.F2",
+      "source_hash": "c05c43978b93afc54c7a5353d28509f5a410011a43284cb6c19c793e54c3162e",
+      "fulltext_hash": "3485c420ec41fdeaf9f211e9d61cb6b5b1c12d6a901fe82f7c4480a779c32cf6",
+      "extraction": "original-figure",
+      "figure_id": "S4.F2"
+    },
+    "arxiv:2610.12007": {
+      "asset": "assets/figures/2610.12007-8ffef9f16dae.webp",
+      "sha256": "8ffef9f16daec0f2e4594793efd7e5b184da7e2030c53db391060995310492d9",
+      "width": 1600,
+      "height": 900,
+      "label": "Figure 1",
+      "kind": "方法机制与比较图",
+      "reading_tip": "沿左侧彩色边框追踪同一动作块如何逐步去噪：每轮吸收最新观测，执行已经完成的动作块，再滚动更新缓冲区；右侧比较观测更新频率、动作吞吐与轨迹平滑之间的取舍。",
+      "source_url": "https://arxiv.org/html/2610.12007v1#S0.F1",
+      "source_hash": "45e9619e551334c5883a935e8327c7d205f219cd8ef0a38149edb60f6924289f",
+      "fulltext_hash": "1b1ad8434e9cbd52084e2a783f2d08a1b7474fc788ce88ab2f802238396537e6",
+      "extraction": "original-figure",
+      "figure_id": "S0.F1"
+    },
+    "arxiv:2610.12104": {
+      "asset": "assets/figures/2610.12104-23bb28855baf.webp",
+      "sha256": "23bb28855bafd2bd59e2c7f623a42354616f49f648a538284b7690193bb0fcea",
+      "width": 2044,
+      "height": 1077,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "按“原视频→关键帧编辑→整段视频编辑”阅读；编辑后的关键帧提供明确的外观目标，共享模型将这个目标传播到视频时序中。",
+      "source_url": "https://arxiv.org/html/2610.12104v1#S3.F2",
+      "source_hash": "c4d25915416082c4d46e7de8bfcefe391b362f49504a9ef85b907b8b3c3e56d4",
+      "fulltext_hash": "11dc270109e88560222fbdebb164a0740319c7bb4dae3674580e95e567253d23",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12156": {
       "asset": "assets/figures/2610.12156-d368a5c31f55.webp",
       "sha256": "d368a5c31f5512fb7e26a5b1e3005ad41360ed603b08d9037a4b96a43b9b40f8",
@@ -1147,6 +1189,54 @@
       "extraction": "original-figure",
       "figure_id": "S1.F1"
     },
+    "arxiv:2610.12382": {
+      "asset": "assets/figures/2610.12382-87dd560fcfb5.webp",
+      "sha256": "87dd560fcfb5efc7fb0e9fe765d1338a1a4514ada73a65b3121d9501967db86c",
+      "width": 1230,
+      "height": 485,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "生成视频先按语义拆成静态背景和动态主体：静态部分检查跨帧几何，动态部分检查运动与外观；奖励用于训练生成器，而不是在每次生成后修补视频。",
+      "source_url": "https://arxiv.org/pdf/2610.12382#page=3",
+      "source_hash": "32a7dc1682308baad3e18d3653c10fc11c15ff7d2c7fabbbdd67472970c4b479",
+      "fulltext_hash": "db550d77709a5c38cdf0e7d7e2938995072d16c2c751cfd02b96f7405d9eff56",
+      "extraction": "pdf-crop",
+      "page": 3,
+      "crop": {
+        "left": 315,
+        "top": 245,
+        "width": 1230,
+        "height": 485
+      }
+    },
+    "arxiv:2610.12388": {
+      "asset": "assets/figures/2610.12388-dfc0a0630afa.webp",
+      "sha256": "dfc0a0630afa03f13322e66e1d7745679a4a4d08b19cec69c5bed5ee74ea8807",
+      "width": 845,
+      "height": 312,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先用深度与相机估计对齐物体姿态，再结合可见性融合多帧外观；渲染误差引导生成过程修正，避免逐帧独立重建导致漂移。",
+      "source_url": "https://arxiv.org/html/2610.12388v1#S2.F2",
+      "source_hash": "50fbef3d3fa67dac3eaaa0356982ace1bd183ba3cb3937f1c29365479b17162c",
+      "fulltext_hash": "df58ab04e1db967f3a1683a4521ac3ef9590a10b57e50f4766a35310768716b1",
+      "extraction": "original-figure",
+      "figure_id": "S2.F2"
+    },
+    "arxiv:2610.12407": {
+      "asset": "assets/figures/2610.12407-2e72bb6814f0.webp",
+      "sha256": "2e72bb6814f0e3cb7c48382c07facba34cc970385de532d7225332faf8d6ddb8",
+      "width": 2200,
+      "height": 594,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "图中展示共享潜在空间内的前向预测、反向预测、动作推断和策略学习。推理时另在策略的噪声输入空间搜索，以预测的未来状态是否接近目标来选择动作。",
+      "source_url": "https://arxiv.org/html/2610.12407v1#S3.F2",
+      "source_hash": "ea257fd2c0ccb9a93e7605f0d85fb259c73dd9434f11bed3aedcf569704b2fd9",
+      "fulltext_hash": "3a81ad71c971f0f02e604555a0e1e14996215758948e89cb9f73cb4c5f0df319",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12412": {
       "asset": "assets/figures/2610.12412-201242ed5939.webp",
       "sha256": "201242ed5939427088ed5c1c7c32af0a381094710df7aa6561343583239a7421",
@@ -1161,6 +1251,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F3"
     },
+    "arxiv:2610.12435": {
+      "asset": "assets/figures/2610.12435-8a182879fce3.webp",
+      "sha256": "8a182879fce33b106aa69eed7ccf0c00d32c1f5bd66ab0634f865f5bd60ef755",
+      "width": 2200,
+      "height": 689,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "重点看人体与机器人如何映射到共同的身体、手部动作表示；视觉语言策略预测这个表示，再由固定的机器人控制器执行。",
+      "source_url": "https://arxiv.org/html/2610.12435v1#S3.F2",
+      "source_hash": "ae343bbd0630bede3eec7d541722b9aa2e89906c97e7c40582c00870925f33ad",
+      "fulltext_hash": "6513183217912f067a3224bd78b360eb231eacba54c7825cbba5c9994b57bbbd",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12442": {
       "asset": "assets/figures/2610.12442-1d937cd3febd.webp",
       "sha256": "1d937cd3febd498daece3bdbbbb10add57e53ff15de732d35c45b039ebd7ce49",
@@ -1172,6 +1276,20 @@
       "source_url": "https://arxiv.org/html/2610.12442v1#S3.F2",
       "source_hash": "d3c078a81c7cca7da5ebf9fec2c7d810fbb08305d8489b07e378f5b3a8e3e261",
       "fulltext_hash": "3789abfec90ab8b1705b1a264a614b811026921d710d95959031c7b6fca9f241",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.12459": {
+      "asset": "assets/figures/2610.12459-9e6786550a1c.webp",
+      "sha256": "9e6786550a1cc2a195738ff66dafd6a0c054df7b44300f86e41ee89fc33fdf78",
+      "width": 2040,
+      "height": 797,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看规划器如何根据目标和最近执行结果提出下一条动作，再看执行器如何结合分层历史记忆生成后续视频；生成结果回到规划器形成闭环。",
+      "source_url": "https://arxiv.org/html/2610.12459v1#S3.F2",
+      "source_hash": "c985dca0155f1baa0a829f51176d22f82b48f53bf4971dee9233d8308c6c61f5",
+      "fulltext_hash": "1ac901b16b0d9df28e9a15b1fd4bd13a4f16a3e39e04485cd6fd698d01dc74d1",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
@@ -1189,6 +1307,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F3"
     },
+    "arxiv:2610.12467": {
+      "asset": "assets/figures/2610.12467-b0584dbea08f.webp",
+      "sha256": "b0584dbea08ffaef513bf7caf37c3d39fe1a96286e40dc49ba8acce29af6980d",
+      "width": 2200,
+      "height": 1144,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "先用安全与不安全参考动作构造约束，再由上下文决定是否启用；过滤器只修正可能违规的动作部分，并与已执行动作平滑衔接。",
+      "source_url": "https://arxiv.org/html/2610.12467v1#S3.F2",
+      "source_hash": "7e9d0cea80ca14e5770291ded9afbc643b4db1f5808e2708f89124832983cc79",
+      "fulltext_hash": "ba4f7b7ee0704937dcb643844d9ebc8c7b89e1f8f4efa89eb3764974ae478e95",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12468": {
       "asset": "assets/figures/2610.12468-116043559e6d.webp",
       "sha256": "116043559e6d640cba4b2016ad2f515451876997d0c6d632021d0872ef0a065c",
@@ -1202,7 +1334,21 @@
       "fulltext_hash": "b4576688fabef256e2f797ee5043cc1bfed2d3f92043611e50b0a51a53fb6e75",
       "extraction": "original-figure",
       "figure_id": "S1.F1"
+    },
+    "arxiv:2610.12470": {
+      "asset": "assets/figures/2610.12470-aeecd335a9c4.webp",
+      "sha256": "aeecd335a9c4c5291c2f7c1fdcbf5e9087c63ea24d24499ffe55439779c8896e",
+      "width": 1599,
+      "height": 860,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "从示范提取任务阶段与条件，再为每个阶段构造奖励和多样起始状态；这样训练控制策略时，不必每次从长任务的第一步重新探索。",
+      "source_url": "https://arxiv.org/html/2610.12470v1#S2.F2",
+      "source_hash": "09a97b3c4814e16797661c51c1cefe5256a458d12e2c00b83717e504b9027ffd",
+      "fulltext_hash": "45b8a09e783abd1bc029f4947aa28c46b422daa7b412dcaa2f1adb5e0897b5da",
+      "extraction": "original-figure",
+      "figure_id": "S2.F2"
     }
   },
-  "revision": "cff423e7cececfedf694"
+  "revision": "23597dee2f32b8f75e24"
 }
