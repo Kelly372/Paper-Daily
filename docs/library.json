@@ -2,6 +2,1347 @@
   "reports": [
     {
       "schema_version": 1,
+      "report_date": "2026-10-13",
+      "target_date": "2026-10-12",
+      "window": {
+        "from": "2026-10-10",
+        "to": "2026-10-12",
+        "timezone": "Asia/Shanghai"
+      },
+      "generated_at": "2026-10-12T17:31:08.484Z",
+      "retrieved_at": "2026-10-12T17:12:36.700Z",
+      "sources": [
+        {
+          "source": "arXiv",
+          "status": "ok",
+          "count": 0,
+          "total": 0,
+          "error": null,
+          "coverage": "2026-10-10 至 2026-10-12（API 提交日期回查；不等同于公告日）"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-12",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-12"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-11",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-11"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-10",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-10"
+        },
+        {
+          "source": "arXiv",
+          "status": "browser_assisted",
+          "count": 37,
+          "url": "https://arxiv.org/list/cs.CV/recent",
+          "date": "2026-10-12",
+          "retrieved_at": "2026-10-12T17:18:44.403Z",
+          "coverage": "网页辅助读取10月12日cs.CV公告前150项，选取38项相关候选并逐篇核验摘要页；当前已取得37篇，失败1篇。以公告日补漏，保留真实投稿日；非全类别完整覆盖。ID批量API超时。"
+        },
+        {
+          "source": "机器之心",
+          "status": "browser_assisted",
+          "count": 0,
+          "url": "https://jigou.jiqizhixin.com/industry",
+          "date": "2026-10-12",
+          "retrieved_at": "2026-10-12T17:18:44.403Z",
+          "coverage": "已查看公开资讯，追踪10月12日UNITAS报道时仅返回登录入口，原论文未核验，未纳入；未覆盖私有公众号。"
+        }
+      ],
+      "candidates_count": 37,
+      "analysed_count": 18,
+      "quality_threshold": 70,
+      "papers": [
+        {
+          "key": "arxiv:2610.12625",
+          "arxiv_id": "2610.12625",
+          "doi": "",
+          "title": "ForcingBooster: Adaptive Patch-wise Denoising for Fast Autoregressive Video Diffusion",
+          "abstract": "Autoregressive video diffusion models have become a leading approach to real-time interactive video generation and video world modeling. However, existing methods typically allocate computation uniformly across space when generating the next video chunk, updating all patches with the same denoising schedule and number of function evaluations. This ignores the spatial heterogeneity of video content: static, simple, or recurring regions are often easier to denoise, while other regions require further refinement or additional context. A uniform budget thus leads to redundant computation on easy patches, whereas reducing the fixed step count can leave difficult patches insufficiently refined. We introduce \\methodname{}, a general framework that dynamically allocates denoising steps to individual patches: easy patches stop early to improve efficiency, while difficult patches receive more refinement steps. This design accelerates generation with negligible quality degradation. Our method is compatible with most existing few-step autoregressive diffusion models, requiring only a lightweight routing module with modest training. Experiments demonstrate that \\methodname{} reduces the total number of denoising steps applied across video patches by about 50\\% while maintaining visual quality comparable to the four-step baseline.",
+          "authors": [
+            "Gu, Zekai",
+            "Wang, Peng",
+            "Lu, Jiahao",
+            "Mao, Yongsen",
+            "Lin, Cheng",
+            "Liu, Yuan"
+          ],
+          "url": "https://arxiv.org/abs/2610.12625",
+          "published": "2026-10-08",
+          "topics": [
+            "流式生成",
+            "视频生成"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.12625v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "流式生成"
+            ],
+            "score": 91,
+            "title_zh": "ForcingBooster：让简单区域提前停止去噪，加速自回归视频生成",
+            "abstract_zh": "自回归视频扩散模型通常对当前片段的所有空间块使用相同去噪步数，但静态、简单或重复区域往往较早收敛，复杂区域仍需细化。ForcingBooster 为不同块动态分配步数，让简单块提前退出、困难块继续计算。方法只需训练轻量路由器，可接入多种少步自回归模型。实验中，块级去噪计算次数约减少一半，视觉质量接近四步基线。",
+            "reason": "直接针对流式视频生成的延迟，核心贡献是空间块级提前退出；有跨模型评测及同预算随机、整块路由对照。",
+            "introduction_zh": "少步蒸馏已把视频生成压缩到四步左右，但每一步仍要处理整片画面。天空可能第一步就已成形，手指和新露出的建筑却还需要细化；统一减步会牺牲这些困难区域。作者把问题从“整段视频跑几步”改成“每个位置何时已经足够好”，并解决提前停止后如何输出干净表示、如何保留上下文、没有停止标签时怎样训练这三个问题。",
+            "method_takeaway": "每一步判断哪些画面块已经接近完整去噪结果，让它们输出当前干净预测并保留缓存，只给困难区域继续分配计算。",
+            "framework_zh": "可以把生成一段视频想成逐轮修整同一幅画：平坦背景很快成形，运动中的手和新出现的细节却仍模糊。ForcingBooster 的关键，是让已完成的区域提前交卷。它接在现有少步自回归生成器上，生成器权重和原有时间步安排保持不变，仅训练一个轻量路由器。\n\n每次去噪后，路由器读取生成器最后一层的特征，为仍在计算的每个空间块预测停止概率。超过阈值的块不再参加后续 Transformer 更新。它不是直接把带噪中间状态当结果，而是取这一时刻估计出的干净潜变量；即使底座预测的是噪声或速度，也能换算出这种干净预测。与此同时，退出块的键值缓存仍留下，让未完成区域和后续视频片段继续读取它们。这样省掉的是重复计算，而不是把背景信息删掉。\n\n训练时没有人工标注“这个块第二步就够了”。作者用冻结生成器跑完所有步所得结果作参考：某块当前预测离完整结果越远，过早停止的代价越大；另一个计算代价则鼓励尽早结束。训练会按当前路由策略展开，记录各块实际何时退出，使继续计算的成本估计跟随策略变化。参考结果来自模型自身，不需要额外视频或退出标签。\n\n因此，方法能记成“固定生成器，学习哪里已经画完”。首个视频片段仍完整跑四步，之后才自适应减少更新。它降低的是块级去噪总量，整段视频还要支付路由、缓存和解码成本，所以计算次数减半不能理解成速度翻倍。",
+            "pipeline": "历史视频与当前条件 → 逐块判断是否收敛 → 完成块缓存、困难块继续去噪 → 输出下一视频片段",
+            "results": "作者在单 A800、BF16、批量1、81帧480×832的 Causal Forcing 1.3B 上报告：总耗时11.15秒降至8.56秒（1.30倍），块级NFE减少50.19%；VBench总分82.08降至81.55。Wan2.1 14B、LingBot-World-V2和LongLive的加速分别为1.31、1.25、1.15倍。等耗时下优于随机分配和整片段路由。",
+            "limitations": "解读提醒：并非无损加速，主实验总分有小幅下降；低运动视频通常获益更大。早停参考是模型自己的完整输出，不能保证真实物理或控制准确性。首次片段仍跑满步数，吞吐收益也不能直接等同首帧延迟收益。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "动机与冻结生成器的路由方案"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "退出块保留KV上下文但停止更新"
+              },
+              {
+                "section": "S3.SS4.SSS0.Px3",
+                "claim": "当前策略展开估计继续计算成本"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "四步基线、耗时和质量比较"
+              },
+              {
+                "section": "S4.SS5.SSS0.Px3",
+                "claim": "运动程度影响加速"
+              }
+            ],
+            "fulltext_hash": "a7b77810da7e5b58199775d7cce93b7e710df7ac757162cedc3c47692430e79c",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:21:25.669Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 101,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "动机与冻结生成器的路由方案",
+              "url": "https://arxiv.org/html/2610.12625v1#S1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "退出块保留KV上下文但停止更新",
+              "url": "https://arxiv.org/html/2610.12625v1#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS4.SSS0.Px3",
+              "claim": "当前策略展开估计继续计算成本",
+              "url": "https://arxiv.org/html/2610.12625v1#S3.SS4.SSS0.Px3"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "四步基线、耗时和质量比较",
+              "url": "https://arxiv.org/html/2610.12625v1#S4.SS2"
+            },
+            {
+              "section": "S4.SS5.SSS0.Px3",
+              "claim": "运动程度影响加速",
+              "url": "https://arxiv.org/html/2610.12625v1#S4.SS5.SSS0.Px3"
+            }
+          ],
+          "figures": []
+        },
+        {
+          "key": "arxiv:2610.13300",
+          "arxiv_id": "2610.13300",
+          "doi": "",
+          "title": "Sonic-AMG: Streaming Human Motion Generation from Spatial Audio",
+          "abstract": "Modeling human reactions to spatial audio requires understanding both what is heard and where it comes from. Prior work generates motion offline from complete acoustic and spatial input sequences. Humans, however, react to sounds without knowing what they will hear next. We present Sonic-AMG, to our knowledge the first framework for streaming human motion generation from spatial audio. The model encodes acoustic content and body-relative source geometry as separate tokens. Conditioned on these tokens, a causal transformer with a flow head generates continuous motion latents, from which a causal decoder reconstructs motion segments. Standard teacher-forced training derives motion histories and body-relative source locations from ground-truth motion, whereas streaming inference relies on generated motion for both, resulting in a training-inference mismatch. To reduce this history discrepancy, we introduce rehearsal training, which combines full-sequence teacher-forced supervision with supervised prediction along short autoregressive self-rollouts. To keep spatial conditioning consistent with generated motion, we propose spatial feedback, which recomputes body-relative source locations from generated root poses during both rehearsal training and inference. On SAM, Sonic-AMG achieves state-of-the-art FID and R-precision. It further supports real-time online generation of coherent reactions across sound events and source locations. Project page: this https URL.",
+          "authors": [
+            "Ni, Jingcheng",
+            "Li, Zekun",
+            "Dou, Zhiyang",
+            "Cong, Xiaoyan",
+            "Zeng, Ziyao",
+            "Du, Hongyang",
+            "Balestriero, Randall",
+            "Komura, Taku",
+            "Sridhar, Srinath"
+          ],
+          "url": "https://arxiv.org/abs/2610.13300",
+          "published": "2026-10-09",
+          "topics": [
+            "运动与运动控制"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13300v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 91,
+            "title_zh": "Sonic-AMG：边听空间声音边生成反应动作",
+            "abstract_zh": "人对声音的反应同时取决于声音内容和声源位置。以往方法读取完整声音与空间序列后离线生成动作，无法模拟人类未知未来声音时的即时反应。Sonic-AMG将声音内容和身体相对声源几何编码成独立token，以因果Transformer和流匹配头生成连续动作潜变量，再用因果解码器恢复动作段。为减轻训练用真实历史而推理用生成历史的差异，方法将完整序列教师强制与短程自回归排练结合；空间反馈再根据生成的身体根姿态更新相对声源位置。方法在SAM上取得有竞争力的FID和R-precision，并支持跨声音事件的实时在线动作反应。",
+            "reason": "核心贡献是因果、在线的音频条件人体运动生成，符合运动控制优先方向；不是像素视频流式生成，故不额外标注流式视频优先项。",
+            "introduction_zh": "听见背后有人叫你，身体会先转向，转动又使声源从“身后”变成“身侧”。离线模型把整段相对声源位置提前输入，容易隐含未来真实身体运动；简单改成自回归后，训练中的真实姿态和推理中的生成姿态又会失配。论文因此同时处理历史误差和空间条件变化，让动作生成跟随已听到的声音，并对自己刚产生的运动作出反馈。",
+            "method_takeaway": "生成一小段动作后，立即用新身体姿态重算声源方向，再接着听、接着生成，并在训练时排练这种自我反馈。",
+            "framework_zh": "理解这篇论文可以一直记着“转身听声音”的例子：声源没有移动，但身体一转，它相对身体的方向就变了。如果模型仍沿用原先的方向，下一步可能继续朝错误方向转。Sonic-AMG把动作生成做成闭环：每生成一段，都根据刚生成的身体位置和朝向更新声音的空间条件。\n\n输入包括陆续到来的双耳声音、已知的世界坐标声源位置、反应风格及初始动作段。模型把“听到了什么”和“声音在哪里”分开编码：前者提取已经到达的音频特征，后者表示相对方向、距离及其变化。因果Transformer把这两类token与过去动作交错读取，流匹配头从噪声采样下一动作潜变量，冻结的因果解码器将其还原为四帧动作。已输出的帧不回头修改，新的根姿态则被用于下一轮空间反馈。\n\n训练的重点不只是加一个因果掩码。若一直喂真实动作历史，模型从未练习过如何接续自己略有偏差的动作。作者保留完整真实序列的教师强制监督作为稳定学习信号，同时从序列中启动短程排练：前一次采样真正成为后一次的历史，再用对应真实下一潜变量监督。生成采样本身停止梯度，但预测网络继续学习如何在这些历史下延续动作。排练过程中也按生成姿态更新声源方向，尽量复现部署时的条件。\n\n所以最关键的创新是把“听觉条件随身体运动变化”纳入训练和在线生成闭环。它输出的是人体动作表示，并非直接合成真人视频；实时性也要连同音频等待、特征提取和解码的计时口径理解。已知声源坐标是主实验的输入条件，不能把主结果描述成只靠麦克风就完成定位与反应。",
+            "pipeline": "当前声音与声源位置 → 条件化生成四帧动作 → 根据新姿态更新相对声源 → 接续下一段动作",
+            "results": "SAM上，使用真实空间条件时FID为6.505、R@1为0.957；真正在线更新条件时FID为8.066、R@1为0.943，MOSPA真实条件基线为8.242/0.942。RTX A6000在线每步平均50.2毫秒、RTF0.376；步时从预计算音频token起算，包含动作解码和空间反馈。作者估计首次反应约193毫秒，包含输入等待与平均生成时间，非完整端到端实测延迟。",
+            "limitations": "作者指出主实验推理需要已知世界坐标声源位置；仅在SAM评测，对复杂真实声场的泛化未确认。长时一致性与事件切换主要为定性证据。No-SSL仅为探索性结果，不能替代主实验条件；物理仿真演示也不是实体机器人验证。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "因果反应动机和两类训练推理差异"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "分块因果生成与历史缓存"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "递归排练历史和监督"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "以生成根姿态更新空间条件"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "实时测量口径"
+              },
+              {
+                "section": "A1",
+                "claim": "已知声源与数据覆盖限制"
+              }
+            ],
+            "fulltext_hash": "d70be170961677cf859998859dba6b5e0551e3ad54636fafdb3dea0d8c2af6cc",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:23:18.323Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 101,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "因果反应动机和两类训练推理差异",
+              "url": "https://arxiv.org/html/2610.13300v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "分块因果生成与历史缓存",
+              "url": "https://arxiv.org/html/2610.13300v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "递归排练历史和监督",
+              "url": "https://arxiv.org/html/2610.13300v1#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "以生成根姿态更新空间条件",
+              "url": "https://arxiv.org/html/2610.13300v1#S3.SS4"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "实时测量口径",
+              "url": "https://arxiv.org/html/2610.13300v1#S4.SS2"
+            },
+            {
+              "section": "A1",
+              "claim": "已知声源与数据覆盖限制",
+              "url": "https://arxiv.org/html/2610.13300v1#A1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Sonic-AMG architecture. A causal transformer and flow head generate motion latents from interleaved acoustic (what), spatial (where), and motion tokens. Spatial feedback updates body-relative SSL from decoded root poses. XkX_{k}, zkz_{k}, and mkm_{k} denote a four-frame motion block, its latent, and its projected token, respectively.",
+              "url": "https://arxiv.org/html/2610.13300v1/pipeline.png",
+              "source_url": "https://arxiv.org/html/2610.13300v1#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.12514",
+          "arxiv_id": "2610.12514",
+          "doi": "",
+          "title": "CORAL-KV: Compact Cross-Layer Prediction and Residual Coding for Autoregressive Video KV Caches",
+          "abstract": "Autoregressive video diffusion models maintain a growing attention key-value (KV) cache, making memory a key bottleneck for long video generation. Recently, clustering-based quantization has emerged as an effective method to compress video KV caches by grouping similar key and value vectors then quantizing residual errors. However, when later frames attend to the compressed history, small reconstruction errors can compound as the video grows. Beyond the within-layer similarity exploited by clustering, we find strong dependencies across cache layers in video models. This motivates Coral-KV - Calibrated Offline, Residual-coded, and Adapted Locally - a KV-cache compression framework that uses cache states in each layer to predict keys and values in subsequent layers, then quantizes the remaining prediction residuals. We construct compact block-diagonal-plus-low-rank (block-DPLR) predictors: block-diagonal components model channel relationships within each attention head, while a global low-rank term models dependencies between heads. Coral-KV exposes a flexible fidelity-memory trade-off: it can reuse its predictors across videos or refit lightweight block-diagonal predictors to the current video for higher fidelity. Across extensive evaluations on both HY-WorldPlay and MAGI-1, our reusable configuration improves PSNR over QVG-4 by 0.32 dB and 4.95 dB, respectively, while using 48% and 37% less cache memory. Against QVG-Pro, our video-adapted configuration improves MAGI-1 PSNR by 3.77 dB while using 33.7% less cache memory. Coral-KV also maintains higher reconstruction fidelity over extended generation and reduces temporal discontinuities while retaining comparable generation latency.",
+          "authors": [
+            "Ge, Albert",
+            "Haridas, Akash",
+            "Saxena, Utkarsh",
+            "Yang, Ruijing",
+            "Colbert, Ian",
+            "Sala, Frederic",
+            "Appia, Vikram",
+            "Barsoum, Emad"
+          ],
+          "url": "https://arxiv.org/abs/2610.12514",
+          "published": "2026-10-07",
+          "topics": [
+            "流式生成",
+            "视频生成",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.12514v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "流式生成"
+            ],
+            "score": 90,
+            "title_zh": "CORAL-KV：跨层预测加残差编码，压缩自回归视频历史缓存",
+            "abstract_zh": "长视频自回归生成需要不断增长的键值缓存，显存因此成为瓶颈。现有聚类量化在长序列中会累积重建误差。作者发现视频模型不同层的缓存具有较强依赖，据此用前层缓存预测后层键和值，再量化预测残差。预测器由头内块对角映射与跨头低秩映射组成，可离线校准后跨视频复用，也可在线轻量适配。相对QVG-4，复用配置在HY-WorldPlay和MAGI-1上的PSNR分别提升0.32和4.95 dB，缓存内存分别减少约48%和37%。适配配置相对QVG-Pro在MAGI-1上提升3.77 dB并减少33.7%缓存内存。",
+            "reason": "解决长程自回归视频的历史缓存瓶颈；明确统计预测器自身开销，并区分缓存存储和整机显存。",
+            "introduction_zh": "视频越生成越长，需要记住的注意力键和值就越多。直接量化虽能省内存，却可能在缓存块切换时造成突变，随后误差继续传播。作者发现相邻网络层其实重复保留了许多结构信息，于是把每层独立压缩改成逐层预测与纠错。重点不是删除历史帧，而是在保留历史位置的前提下，用少量残差补足可预测的信息。",
+            "method_takeaway": "用已重建的前层缓存预测当前层，只存预测误差，并把预测器拆成头内小映射与跨头低秩补充以控制自身开销。",
+            "framework_zh": "把每一层的视频缓存都完整保存，相当于在多层笔记中反复抄写相近内容。CORAL-KV 的想法是：下一层有多少可以从上一层推出来，就不必再原样保存；只记录推错的部分。这里预测的是模型内部的键和值，并不是预测下一帧像素。\n\n当一个历史缓存块写满，编码器保存量化后的残差及缩放系数。之后生成新片段需要读取历史时，从最底层开始重建。第一层没有前层可参考，直接用INT4量化。更高层先利用已重建的前层键预测当前键，加上解码后的键残差；再结合刚恢复的当前键和前层值预测当前值，并加回值残差。所有预测输入都是解码端真实可获得的重建结果，避免依赖实际上没有保存的原始缓存。\n\n若用一个巨大的全连接映射做预测，预测器本身就可能吃掉节省的内存。作者把它分为两部分：每个注意力头内部用小矩阵描述局部联系，再用低秩项补足头与头之间的关联。残差经过分组Hadamard变换，把少数突出的数值分散后进行约两比特编码。这样同时压小“可预测部分的规则”和“不可预测部分的误差”，而不是只降低数值精度。\n\n常用配置先用校准视频拟合预测器，之后不同视频共享；高保真配置保留全局低秩部分，仅为当前缓存块重拟合头内小矩阵，代价是更多在线计算和存储。实验中的PSNR比较的是压缩生成与同条件BF16生成的接近程度，不是与真实视频的距离。最值得记住的是“跨层复用信息，再存小误差”，它保留历史token位置，但没有消除长历史注意力本身的成本。",
+            "pipeline": "已满视频缓存块 → 跨层预测并编码残差 → 按层重建键和值 → 后续视频读取压缩历史",
+            "results": "355个提示的比较中，复用版本相对QVG-4在HY-WorldPlay/MAGI-1上分别提升0.32/4.95 dB，缓存内存减少48.4%/37.3%。MAGI-1适配版本相对QVG-Pro提升3.77 dB，内存减少33.7%，量化边界不连续指标由2.527降至1.328。更高保真的在线适配有额外拟合开销。",
+            "limitations": "作者仅评测两个自回归模型和一个留出提示来源；没有证明对任意模型及更长时域都有效。内存数据是已存缓存状态而非进程峰值GPU显存；16视频统计采用共享参数核算，不能当作16路并发吞吐实测。延迟测于MI355X。所有历史token仍保留。",
+            "evidence": [
+              {
+                "section": "S3",
+                "claim": "跨层可预测性与量化边界问题"
+              },
+              {
+                "section": "S4.SS1",
+                "claim": "先重建键再重建值且仅使用已重建状态"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "块对角加低秩预测和残差量化"
+              },
+              {
+                "section": "S6",
+                "claim": "量化保真与缓存比较"
+              },
+              {
+                "section": "S8",
+                "claim": "模型、显存口径与并发限制"
+              }
+            ],
+            "fulltext_hash": "ae92d7febb9275ea711cfd1f603cceb7304fdaf1bb670144ca313ad5a6f0fcea",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:21:25.678Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 100,
+          "evidence": [
+            {
+              "section": "S3",
+              "claim": "跨层可预测性与量化边界问题",
+              "url": "https://arxiv.org/html/2610.12514v1#S3"
+            },
+            {
+              "section": "S4.SS1",
+              "claim": "先重建键再重建值且仅使用已重建状态",
+              "url": "https://arxiv.org/html/2610.12514v1#S4.SS1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "块对角加低秩预测和残差量化",
+              "url": "https://arxiv.org/html/2610.12514v1#S4.SS2"
+            },
+            {
+              "section": "S6",
+              "claim": "量化保真与缓存比较",
+              "url": "https://arxiv.org/html/2610.12514v1#S6"
+            },
+            {
+              "section": "S8",
+              "claim": "模型、显存口径与并发限制",
+              "url": "https://arxiv.org/html/2610.12514v1#S8"
+            }
+          ],
+          "figures": []
+        },
+        {
+          "key": "arxiv:2610.12963",
+          "arxiv_id": "2610.12963",
+          "doi": "",
+          "title": "MotionCoach: Constructing Multimodal Guidance for Video Professional Motion Editing",
+          "abstract": "Video editing models achieve strong performance in modifying appearance, backgrounds, styles, and motions, empowered by large-scale training data. Beyond general scenarios, professional motions are significant in performance, sports, and martial arts. This paper focuses on professional motion editing, which involves fine-grained motion technique and temporal structure. Given professional motion names but lacking detailed descriptions, existing models often fail to generate professional motions, such as incorrectly lifting the front wheel under a Stoppie instruction. To address this challenge, we introduce MotionCoach, a trained multimodal agent that uses multi-turn tools and performs self-verification, producing a grounded prompt and a reference clip as reliable and sufficient multimodal guidance to inject external professional motion knowledge into video editing models. To supply training data, we build a data pipeline to construct trajectories. We cold-start the agent on MotionCoach-SFT-10k and apply Group Relative Policy Optimization (GRPO) on MotionCoach-RL-2k with rewards on the motion guidance prompt, the motion outcome video, and the format. For evaluation, we introduce VPMEBench, comprising 314 professional motion editing tasks with fine-grained references and annotations. Extensive experiments show that MotionCoach improves the overall score from 55.1 to 65.6 on Seedance 2.0 and from 51.2 to 64.5 on MiniMax-H3. Learning to construct multimodal guidance enables precise professional motion editing without retraining video editing models.",
+          "authors": [
+            "Qian, Siyi",
+            "Yang, Hanqing",
+            "Lin, Weihuang",
+            "Yang, Zihao",
+            "Lu, Yichen",
+            "Zheng, Yuanhong",
+            "Li, Sheng"
+          ],
+          "url": "https://arxiv.org/abs/2610.12963",
+          "published": "2026-10-09",
+          "topics": [
+            "运动与运动控制",
+            "多模态"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.12963v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 88,
+            "title_zh": "MotionCoach：先找到并核验专业动作示范，再指导视频编辑",
+            "abstract_zh": "视频编辑模型能改变外观与一般运动，但只给专业动作名称时，往往无法把握细微技术和阶段顺序。MotionCoach是经过训练的多模态智能体，通过多轮搜索、检查、裁剪及自我核验，输出有依据的动作提示和参考片段，将外部专业动作知识交给视频编辑模型。作者构建SFT-10k和RL-2k轨迹数据，先监督微调，再用GRPO结合提示质量、生成视频结果和格式奖励训练。314项VPMEBench任务中，Seedance 2.0综合分从55.1升到65.6，MiniMax-H3从51.2升到64.5，而视频编辑模型保持冻结。",
+            "reason": "直接针对细粒度专业运动编辑，将运动知识获取和验证变成可训练过程；应关注动作正确性提升及编辑保留的代价。",
+            "introduction_zh": "“单鞭”或某个自行车特技的名称，对人是明确动作，对生成模型却可能是模糊词语。仅扩写提示也未必知道哪个阶段、哪只轮子或哪种身体姿态才正确。作者把瓶颈定位到指导信息是否可靠、是否足够，训练一个会找示范、核验片段并组织说明的智能体，让已有视频编辑器获得专业动作知识，而不用重新训练大型生成器。",
+            "method_takeaway": "训练一个会搜索、裁剪并核验动作示范的教练，把可靠参考视频和动作分解一起交给冻结的视频编辑器。",
+            "framework_zh": "这篇论文最容易记成“先请教练弄懂动作，再让编辑器执行”。例如论文提到，模型面对自行车Stoppie时可能抬错轮子；继续强调动作名称并不能补上专业知识。MotionCoach不直接修改视频生成网络，而是在它前面增加一个能查证动作的智能体。\n\n给定原视频和简短编辑要求，智能体先提取动作名称，搜索完整示范视频，再结合可见动作、解说和字幕判断是否确实为目标动作。完整教程太长且杂，它会选出清晰、完整、干扰少的时间区间并裁剪。随后再检查这个片段的动作正确性、可见性和完整性；不合格就换片段或重新裁剪。由此得到的参考不是搜索结果第一条，而是经过一个可反复修正的核验过程。\n\n智能体同时把示范转写为适合生成器的说明，按动作特点选择密集时间描述、阶段描述或关键姿态描述，写清技术要点、先后顺序和应避免的错误，并要求保留原视频中不需改变的内容。最终原视频、说明和已核验参考片段一起交给冻结的视频编辑模型。视频参考提供难以用文字说清的姿态和节奏，文字则明确编辑范围和专业约束。\n\n这个“教练”本身也要学习。监督微调先教会多轮工具调用；强化学习再根据指导文本、实际生成的视频和输出格式打分。视频奖励来自冻结编辑器真正生成的结果，因此智能体要学的是哪些指导能让编辑器做对，而不只是写出看似专业的文字。训练只更新智能体，推理仍会搜索和核验，所以收益伴随着外部检索、参考处理和生成调用成本。",
+            "pipeline": "原视频与动作名称 → 搜索并核验示范片段 → 组织动作说明与参考 → 冻结编辑器生成修改视频",
+            "results": "VPMEBench含314任务、25类专业动作。Seedance 2.0综合分55.1→65.6，动作专业度29.6→53.0；MiniMax-H3综合分51.2→64.5。Seedance的视频质量/编辑保留综合维度由77.1降至72.2，因此并非每项都提升。仅套流程而不训练的Seedance综合分54.0，说明训练对收益很重要。",
+            "limitations": "解读提醒：主要评分依赖多模态裁判，虽报告与人工判断的一致性，仍受评价器偏差影响。参考检索可用性、教程质量和推理成本影响实际使用；专业度仍远非满分。训练依赖教师轨迹与昂贵的视频奖励，冻结编辑器不等于零训练成本。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "专业动作知识不足的动机"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "搜索、裁剪、核验和组合提示流程"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "冻结编辑器反馈训练智能体"
+              },
+              {
+                "section": "S4.SS1",
+                "claim": "比较、消融与各维度取舍"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "专业动作基准主结果"
+              }
+            ],
+            "fulltext_hash": "d81ff185bec7bf59c64d8cad356801be6d869419701190665c0635234014de41",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:23:18.332Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 98,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "专业动作知识不足的动机",
+              "url": "https://arxiv.org/html/2610.12963v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "搜索、裁剪、核验和组合提示流程",
+              "url": "https://arxiv.org/html/2610.12963v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "冻结编辑器反馈训练智能体",
+              "url": "https://arxiv.org/html/2610.12963v1#S3.SS3"
+            },
+            {
+              "section": "S4.SS1",
+              "claim": "比较、消融与各维度取舍",
+              "url": "https://arxiv.org/html/2610.12963v1#S4.SS1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "专业动作基准主结果",
+              "url": "https://arxiv.org/html/2610.12963v1#S4.SS2"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S2.F2",
+              "caption": "Figure 2: Illustration of the data pipeline. (1) Data preparation prepares source videos and edit prompts. (2) Agentic trajectory construction acquires and verifies motion references to produce MotionCoach-SFT-10k and MotionCoach-RL-2k. (3) Human-verified benchmark construction establishes VPMEBench.",
+              "url": "https://arxiv.org/html/2610.12963v1/data_pipeline.png",
+              "source_url": "https://arxiv.org/html/2610.12963v1#S2.F2"
+            },
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Overview of VPMEBench. 314 professional motion editing tasks under a hierarchical taxonomy over dance, sports, and martial arts. Each task provides visual references and textual annotations of the target motion for evaluation along motion professionalism (MP), physical plausibility (PP), and overall video quality (VQ).",
+              "url": "https://arxiv.org/html/2610.12963v1/bench.png",
+              "source_url": "https://arxiv.org/html/2610.12963v1#S3.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13301",
+          "arxiv_id": "2610.13301",
+          "doi": "",
+          "title": "PAGE: Parts-Aware Guidance for Co-Speech Gesture Portrait Video Generation",
+          "abstract": "Co-speech gesture video generation aims to synthesize realistic, audio-driven portrait videos from a single reference image and a speech signal. Despite advances in visual quality, diffusion-based approaches still suffer from degraded local details and imperfect audio-visual alignment. We present PAGE (Parts-Aware GuidancE), a general, backbone-agnostic optimization framework for diffusion-based generation that enhances local spatial fidelity and global audio-visual consistency at both the training-objective and denoising-trajectory levels. During training, we propose Parts-Specific Reweighting (PSR), which adaptively increases supervision in semantically important regions such as lips, eyes, and hands, improving visual fidelity in perceptually critical areas. During inference, we introduce Consistency Classifier Guidance (CCG), an audio-conditioned latent classifier that identifies and corrects audio-visual inconsistencies in the generated video. We further design Differential Guidance (DG), an efficient inference strategy that refines facial and body motion separately while avoiding cross-region interference. To enable large-scale evaluation, we construct the Chinese Announcer Speech (CAS) dataset, the first comprehensive Chinese benchmark for co-speech gesture portrait video generation. Compared with the widely used PATS dataset, CAS includes substantially more identities, video clips, and scene diversity. Extensive experiments on both PATS and CAS demonstrate that PAGE achieves state-of-the-art performance in perceptual quality, gesture diversity, and audio-visual alignment. Project page: this https URL.",
+          "authors": [
+            "Wang, Yabiao",
+            "Wu, Jiafu",
+            "Xu, Yicheng",
+            "Hu, Teng",
+            "Zhou, Shengzhe",
+            "Sun, Yanxiao",
+            "Zhang, Jiangning",
+            "Tai, Ying",
+            "Liu, Yong",
+            "Yang, Ming-Hsuan"
+          ],
+          "url": "https://arxiv.org/abs/2610.13301",
+          "published": "2026-10-09",
+          "topics": [
+            "运动与运动控制",
+            "视频生成"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13301v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 84,
+            "title_zh": "PAGE：训练时照顾嘴唇和手，生成时分别纠正脸部与身体的语音同步",
+            "abstract_zh": "伴随语音的手势人像视频生成仍存在嘴唇、眼睛和手部细节退化，以及动作与语音不同步的问题。PAGE是适用于多种扩散底座的优化框架：训练时依据姿态关键点为重要部位提高监督权重；推理时用音频条件潜空间分类器判断并修正音画不一致，再用差分引导分别改善脸部和非脸部动作，减少相互干扰。作者构建中文播报者CAS数据集，并在PATS与CAS评测，报告感知质量、手势多样性和音画同步改善。",
+            "reason": "聚焦语音驱动的脸部与身体运动协调，区域监督和分区推理引导都有实验支撑；属于动作生成优化，非实时流式方法。",
+            "introduction_zh": "一张人像和一段语音足以让扩散模型生成说话视频，但看起来清楚并不代表嘴、手和身体动作与声音一致。嘴唇和指缝面积小，均匀像素损失容易低估它们；对整幅画面施加同一种同步引导又可能让脸和身体互相牵制。论文围绕“重要部位单独照顾”组织训练与推理，把局部清晰和音画节奏协调起来。",
+            "method_takeaway": "先提高嘴唇、手指等小区域的训练权重，再用脸部和身体各自的音画一致性梯度交替纠正生成。",
+            "framework_zh": "可以把PAGE理解成给说话视频安排两种不同的纠错：训练时提醒模型“这些小地方画错很显眼”，生成时再检查“画出来的动作有没有跟上这段声音”。两者都围绕部位展开，因为嘴形、眼睛和手势在画面中占地不大，却决定了人物是否自然。\n\n训练阶段先从姿态关键点及其置信度得到脸、手和身体的区域掩码。嘴唇和指缝使用最高权重，其他手部与五官次之，身体和脸部皮肤适度增强，背景保持普通权重。这个权重图被缩放到潜变量分辨率后乘进扩散误差，让小区域对训练更新产生更大影响。它只改变训练损失，并不要求部署时另行输入完整人体姿态来驱动视频。\n\n单纯画得清晰仍可能出现嘴动得不对、手势错拍。作者另外训练两个带音频条件的分类器，分别只看脸部和非脸部区域；真实音画配对作正例，生成器产生的样例作负例。推理时，分类器读取带噪视频潜变量和声音特征，给出去噪应往哪个方向调整的梯度，使输出更像训练中协调的音画组合。分类器需要额外训练，不能把这部分描述成无需训练的通用判官。\n\n若每一步把两个区域的纠正直接合并，改善嘴形的变化可能扰动身体。差分引导因此在去噪步骤间交替处理脸和非脸部，并加入对互补区域的补偿，减少交叉干扰。核心主线就是“按部位分配学习关注，再按部位纠正声音对应动作”。它适合固定镜头的播报式人物，不能直接推出能控制任意复杂全身动作或移动相机。",
+            "pipeline": "参考人像与语音 → 部位加权训练的视频生成器 → 脸部/身体一致性引导交替修正 → 同步手势人像视频",
+            "results": "PATS上PAGE-DG的FVD为181.32、FGD为0.93；CAS上为193.43、0.26，CAS的FVD相对Hallo3下降34.76%。相同实验条件下生成10秒视频耗时140.6秒，去掉CCG为139.4秒，因此该工作不是实时生成。",
+            "limitations": "作者指出部位划分仍粗，单指动作、微表情、自遮挡和复杂姿势仍困难；主要假设固定相机与播报构图，卡通等分布迁移可能需重校准分类器。解读提醒：用真实/生成区分训练的一致性分数也可能受视觉伪影影响，不应视作纯粹的语义同步测量。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "局部退化及音画失配动机"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "姿态区域加权只作用于训练"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "区域分类器及其训练数据"
+              },
+              {
+                "section": "S3.SS4.SSS2",
+                "claim": "交替差分引导减少干扰"
+              },
+              {
+                "section": "S4.SS6",
+                "claim": "推理耗时边界"
+              },
+              {
+                "section": "S7",
+                "claim": "姿态、固定相机和分布迁移限制"
+              }
+            ],
+            "fulltext_hash": "e1be683e1bfb2a70207532f0a590e5c2c01c7ff648e4720dfef9363fa27746b4",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:24:46.443Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 94,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "局部退化及音画失配动机",
+              "url": "https://arxiv.org/html/2610.13301v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "姿态区域加权只作用于训练",
+              "url": "https://arxiv.org/html/2610.13301v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "区域分类器及其训练数据",
+              "url": "https://arxiv.org/html/2610.13301v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4.SSS2",
+              "claim": "交替差分引导减少干扰",
+              "url": "https://arxiv.org/html/2610.13301v1#S3.SS4.SSS2"
+            },
+            {
+              "section": "S4.SS6",
+              "claim": "推理耗时边界",
+              "url": "https://arxiv.org/html/2610.13301v1#S4.SS6"
+            },
+            {
+              "section": "S7",
+              "claim": "姿态、固定相机和分布迁移限制",
+              "url": "https://arxiv.org/html/2610.13301v1#S7"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F1",
+              "caption": "Fig. 1: (a) Limitations of existing methods include degraded local fidelity (e.g., hands, facial regions) and audio–visual misalignment (e.g., motion that does not match speech). (b) Qualitative ablation. Parts-Specific Reweighting (PSR) improves local visual quality in critical regions, while Consistency Classifier Guidance (CCG) refines the generated sequence at inference time to enhance audio–visual alignment. The full PAGE framework combines both, producing high-quality and temporally consistent co-speech gesture videos.",
+              "url": "https://arxiv.org/html/2610.13301v1/figs/teaser.png",
+              "source_url": "https://arxiv.org/html/2610.13301v1#S1.F1"
+            },
+            {
+              "id": "S3.F2",
+              "caption": "Fig. 2: Overview of the proposed PAGE with three components: (a) Backbone: a video generation model 𝑮\\bm{G} (e.g., Wan2.1). Video frames are encoded with a VAE; reference-image latents are extracted using CLIP and the VAE. These features, together with noise from a conditional first frame or a noised video clip, are concatenated along the channel dimension. Audio embeddings from a pretrained audio encoder are injected into GG via cross-attention. (b) Parts-Specific Reweighting (PSR): a dynamic, region-aware loss weighting scheme constructed from pose-keypoint confidences, which upweights supervision for critical regions during training. (c) Consistency Classifier Guidance (CCG): at inference, consistency gradients derived from joint audio–video features guide denoising to improve temporal audio–visual coherence. The VAE decoder then maps denoised latents back to pixel space.",
+              "url": "https://arxiv.org/html/2610.13301v1/pipeline.png",
+              "source_url": "https://arxiv.org/html/2610.13301v1#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13706",
+          "arxiv_id": "2610.13706",
+          "doi": "",
+          "title": "GLIMPSE: Global-Local Indexing with Multi-Precision Spectral Encoding for Explorable Video World Models",
+          "abstract": "A camera-controlled video world model must keep a scene consistent when the camera returns to it. Memories that render stored features into the target frame can turn depth and pose errors into ghosting or duplicated structure. Positional transport avoids that resampling by relocating a historical patch's address rather than its content, but assigns full positional precision even to inaccurate projections. We present GLIMPSE, a global-local memory interface with band-wise multi-precision coordinates and geometry-conditioned spectral attenuation to reduce sensitivity to inaccurate projected addresses. Local patch memory supplies view-specific appearance, while recurrent global memory provides scene context. Footprint-guided retrieval selects historical patches under a fixed local read budget. Under matched retrieval and read budgets, GLIMPSE improves geometric correspondence and photometric consistency over deterministic positional transport.",
+          "authors": [
+            "Xu, Zhufeng",
+            "Lv, Henglei",
+            "Deng, Bailin",
+            "Ding, Yikang",
+            "Liu, Xiaoqiang",
+            "Zhang, Guoxin",
+            "Fu, Hongbo",
+            "Gao, Lin"
+          ],
+          "url": "https://arxiv.org/abs/2610.13706",
+          "published": "2026-10-09",
+          "topics": [
+            "世界模型",
+            "相机控制"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13706v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "相机控制"
+            ],
+            "score": 88,
+            "title_zh": "GLIMPSE：给历史画面更可靠的空间地址，让相机回访时保持场景一致",
+            "abstract_zh": "相机控制的视频世界模型需要在回到旧视角时保持场景一致。把历史特征直接重投影成目标画面，会让深度和姿态误差变成重影；只搬运位置地址虽避免重采样，却仍可能对错误投影赋予过高精度。GLIMPSE结合全局与局部记忆，为位置编码使用分频段的不同坐标精度，并根据几何可靠性衰减高频信息。局部记忆保存视角相关外观，全局递归记忆补充场景上下文，在固定读取预算下按投影覆盖选择历史块。匹配检索与读取预算的实验显示，它优于确定性位置搬运的几何与外观一致性。",
+            "reason": "真正以相机探索与旧场景回访为核心，贡献落在历史信息如何按不确定几何被读取，而非仅添加相机条件。",
+            "introduction_zh": "相机先看左边、再看右边，最后后退看全景，模型必须把不同时间见过的内容拼回同一个场景。把旧特征投影成新图像容易带来重影；即使不修改旧特征，深度稍有误差也可能把它标到错误位置。论文把记忆问题推进一步：除了记住什么，更要决定历史内容的空间地址有多可信。",
+            "method_takeaway": "保留历史图块的原始内容，只调整它们在新视角中的地址，并对不可靠地址降低高频定位精度。",
+            "framework_zh": "想象相机先看到房间左墙，再看到右墙，最后后退，希望两侧都仍是原来的样子。GLIMPSE把历史画面当成可检索证据，但不先把所有旧图块扭曲、平均成一张新视图。它保留原图块内容，让新视角通过空间地址找到相关证据，以减少几何估计误差被直接烙进外观。\n\n系统有两种互补记忆。局部记忆记录历史图块、相机和时间等信息，按它们投到目标视角后能覆盖多少区域来选择，读取数量固定。全局记忆则用冻结的递归模型维护场景摘要，通过独立注意力通道补充上下文，避免与局部细节争抢同一份注意力。生成一个窗口后，新观察被加入历史，并更新全局状态和几何估计。\n\n最关键的改动发生在位置编码。历史图块由估计深度和相机位姿投到新视角，这个坐标可能并不准确。如果所有频率都用同样精细的地址，微小位置误差也会显著改变注意力。作者让高频位置分量使用较粗的网格坐标，中频用半格，低频保留连续坐标；再依据深度局部平滑程度和历史时间间隔，衰减更敏感的高频分量。相当于知道位置不太准时，避免装作知道它精确到哪个细小位置。图块特征本身不做空间重采样或相互平均。\n\n训练以Wan2.2-TI2V-5B初始化，并加入回访、快速运动和“未来观察作记忆”的增强；最后一种只用于训练。推理可用的仍只有源观察和已生成窗口，不能偷看未来。方法改善了回访一致性，但固定的是每次读取预算，历史存储、索引及几何估计仍会增长；论文也明确当前还不是实时世界模型。",
+            "pipeline": "目标相机视角与历史观察 → 按覆盖检索原图块 → 可靠性调节位置编码并融合全局记忆 → 生成新视图、更新历史",
+            "results": "作者相机控制实验的平均旋转误差为0.77°，WorldScore九项均值66.669；100个Y形回访样例的十项均值66.552，高于ReWorld的63.994。并非所有指标最好：UCM平移NRMSE更低，ReWorld的FVD更低。匹配预算消融支持两种地址调节与两路记忆的互补作用。",
+            "limitations": "作者明确没有显式建模物体运动，也没有少步蒸馏以支持实时推理。几何估计仍可能出错，局部检索没有目标深度遮挡检验；固定读取长度不等于固定总存储成本。未来观察仅供训练增强。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "相机动作、生成与记忆更新"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "全局与局部记忆分工"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "几何条件频谱衰减"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "分频带多精度坐标且不重采样内容"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "训练未来记忆与因果推理边界"
+              },
+              {
+                "section": "S5",
+                "claim": "动态物体和实时性限制"
+              }
+            ],
+            "fulltext_hash": "4827464deef9cf83cda67573c1058b714df69bf2fb7c0bebd975535650e5f17d",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:24:46.435Z"
+          },
+          "preference_bonus": 2.5,
+          "ranking_score": 90.5,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "相机动作、生成与记忆更新",
+              "url": "https://arxiv.org/html/2610.13706v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "全局与局部记忆分工",
+              "url": "https://arxiv.org/html/2610.13706v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "几何条件频谱衰减",
+              "url": "https://arxiv.org/html/2610.13706v1#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "分频带多精度坐标且不重采样内容",
+              "url": "https://arxiv.org/html/2610.13706v1#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "训练未来记忆与因果推理边界",
+              "url": "https://arxiv.org/html/2610.13706v1#S3.SS4"
+            },
+            {
+              "section": "S5",
+              "claim": "动态物体和实时性限制",
+              "url": "https://arxiv.org/html/2610.13706v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Overview of GLIMPSE. Geometry-guided greedy retrieval selects local context from the source history. STaPE aligns the positions of retrieved latent tokens with the requested target view, while recurrent global context provides complementary scene memory to the video generation model.",
+              "url": "https://arxiv.org/html/2610.13706v1/figures/method.png",
+              "source_url": "https://arxiv.org/html/2610.13706v1#S3.F3"
+            },
+            {
+              "id": "A2.T12",
+              "caption": "Table 11: Retrieval support (%). Sources are equally weighted, and brackets give 95% source-cluster bootstrap intervals. Source share denotes tokens from original observations.Table 12: Median component times over six rollouts. DA3 inputs include source and generated observations. Other pipeline stages are excluded.",
+              "url": "https://arxiv.org/html/2610.13706v1#A2.T12",
+              "source_url": "https://arxiv.org/html/2610.13706v1#A2.T12"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13929",
+          "arxiv_id": "2610.13929",
+          "doi": "",
+          "title": "Chronos Policy: Learning Robot Policies on Physical Time",
+          "abstract": "Robot policies often convert sensing and control into fixed-rate observation-action sequences, leaving physical time implicit in sequence position. This assumption breaks when observation rates or delays vary, or when inference latency changes. We introduce Chronos Policy, which makes physical time explicit by conditioning on observation capture times and desired action execution times. We study two ways to incorporate time into a diffusion transformer: adding timestamp embeddings to token features, or encoding physical time in positional encoding through time-aware rotary positional encodings (time-aware RoPE). We find that time-aware RoPE is more robust, allowing attention to depend directly on physical time while keeping token content unchanged. During training, we temporally randomize which observations are sampled and when the action chunk begins, exposing the policy to a wider range of sensing and execution schedules that may occur during deployments. This also enables learning from asynchronous, multi-rate data without forcing all measurements onto a fixed temporal grid. Across simulation and real-world experiments, Chronos Policy improves performance on dynamic tasks, where observation-to-action timing is critical, and on multisensory tasks, where the relative timing between observations matters. On standard quasi-static tasks, it preserves nominal performance while improving robustness to changes in sensing and inference timing.",
+          "authors": [
+            "Wang, Changhao",
+            "Clark, Jaden",
+            "Song, Shuran"
+          ],
+          "url": "https://arxiv.org/abs/2610.13929",
+          "published": "2026-10-09",
+          "topics": [
+            "具身智能"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13929v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 86,
+            "title_zh": "Chronos Policy：让机器人知道观察发生在何时、动作将在何时执行",
+            "abstract_zh": "机器人策略常把感知与控制表示成固定频率序列，以序号隐含时间；当观测频率、延迟或推理耗时变化时，这一假设会失效。Chronos Policy将观测采集时间和目标动作执行时间显式输入策略。作者比较时间嵌入与时间感知RoPE，发现后者让注意力直接依赖真实时间差且保持token内容不变，更能抵抗时序扰动。训练随机改变观测采样和动作块起始时间，使模型学习异步、多频率数据。在仿真和真实机器人中，该方法改善动态与多传感器任务，并在准静态任务中保持正常性能、提高时序变化下的鲁棒性。",
+            "reason": "具身控制中非常清晰、可迁移的机制改动：用真实时间差替代序列位置。它研究机器人时序鲁棒性，不作为视频运动控制关键词加分。",
+            "introduction_zh": "传送带上的物体在两张图中移动同样距离，如果图像相隔20毫秒和200毫秒，速度判断应完全不同；机械手还必须瞄准动作真正执行时的位置。固定频率训练往往把这些差别藏在序号里。论文让时间成为策略可读取的信息，并用时序随机化教会模型解释传感器不同步与推理延迟，避免把所有观测强行对齐到同一个采样网格。",
+            "method_takeaway": "把观测采集时刻和动作执行时刻作为注意力的位置坐标，让策略按真实时间差理解运动并预测未来动作。",
+            "framework_zh": "Chronos Policy的出发点很朴素：机器人看到的画面已经是过去，算完后执行的动作又属于未来。单看一串“第1帧、第2帧、第3帧”无法知道物体动得多快，也无法知道手该提前伸到哪里。因此作者让每个观察带上采集时间，让每个待预测动作带上希望执行的时间。\n\n网络仍是生成动作块的扩散Transformer，主要改变时间进入注意力的方式。图像块继承相机拍摄时刻，本体状态和力传感器保留各自测量时刻，动作token则使用目标执行时刻。时间感知RoPE用这些时刻旋转查询和键，使两者的注意力关系取决于实际经过多少时间。它不把时间直接混进内容特征；所有时间相对本次策略请求表达，因此整体时钟起点变了不会改变相对关系。\n\n只有时间戳还不够，模型还需要见过不同时间安排。训练从同一示范中随机选择不同频率和交付延迟下可用的观测，同时随机平移动作块起始时刻，保留每条数据的原始采集时间。这样相同序号可对应不同时间间隔，却不再是歧义样本。损失仍监督对应执行时刻的真实动作，而不是让网络凭空补造传感器数据。\n\n部署时机器人一边执行上一块动作，一边计算下一块。仿真知道注入的延迟，真实机器人则用先前请求估计本次推理耗时，据此查询未来的动作时刻。结果到达后，已经错过执行时间的动作被丢弃，其余按时间表执行。最关键的是“观察有年龄，动作有预约时刻”；它缓解时序失配，但并不能预知每次延迟，也不等于已经学会任意加速或减速完成任务。",
+            "pipeline": "异步观测及采集时间 → 以真实时间差计算注意力 → 预测指定未来时刻的动作块 → 丢弃过时动作并执行",
+            "results": "仿真Conveyor正常时序成功率73.1%→82.0%；中等观测扰动下15.6%→77.6%；推理延迟最高200毫秒时1.8%→76.4%。组合扰动下仍只有32.7%，基线为0。真实Dynamic Cup、Peg Insertion、Pivoting中，作者报告Chronos在各测试条件任务分最高。",
+            "limitations": "解读提醒：真实部署仍需可靠时间戳及延迟估计，突发延迟并不会自动消失。强组合扰动下仍有大量失败。作者把变控制频率及动作时间缩放列为未来工作，当前结果不能直接说明可按任意速度执行同一行为。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "观测与执行真实时间的动机"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "物理时间RoPE及相对时间性质"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "时间随机化训练"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "异步部署、延迟估计及过时动作处理"
+              },
+              {
+                "section": "S4.SS2.SSS0.Px1",
+                "claim": "动态任务量化结果"
+              },
+              {
+                "section": "S5",
+                "claim": "变控制频率仍为后续方向"
+              }
+            ],
+            "fulltext_hash": "cd51b760f89649bc5084ac0351824110e4f3801a12745df67012ddc9e3f613e0",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:27:45.695Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 86,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "观测与执行真实时间的动机",
+              "url": "https://arxiv.org/html/2610.13929v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "物理时间RoPE及相对时间性质",
+              "url": "https://arxiv.org/html/2610.13929v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "时间随机化训练",
+              "url": "https://arxiv.org/html/2610.13929v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "异步部署、延迟估计及过时动作处理",
+              "url": "https://arxiv.org/html/2610.13929v1#S3.SS4"
+            },
+            {
+              "section": "S4.SS2.SSS0.Px1",
+              "claim": "动态任务量化结果",
+              "url": "https://arxiv.org/html/2610.13929v1#S4.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S5",
+              "claim": "变控制频率仍为后续方向",
+              "url": "https://arxiv.org/html/2610.13929v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Overview of Chronos Policy. Tokens are paired with their physical times. Time-aware RoPE uses these physical timestamps as positional coordinates, so attention depends on elapsed time rather than sequence index. The diffusion transformer then predicts an action chunk at the requested execution times.",
+              "url": "https://arxiv.org/html/2610.13929v1/figs/method.png",
+              "source_url": "https://arxiv.org/html/2610.13929v1#S3.F2"
+            },
+            {
+              "id": "A1.F6",
+              "caption": "Figure 6: Architecture of Chronos Policy. Proprioceptive, optional force/torque, and noisy action tokens interact through self-attention and attend to image features through cross-attention. Time-aware RoPE encodes observation capture times and queried action times in attention. The transformer iteratively denoises the action chunk.",
+              "url": "https://arxiv.org/html/2610.13929v1/figs/architecture.png",
+              "source_url": "https://arxiv.org/html/2610.13929v1#A1.F6"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13945",
+          "arxiv_id": "2610.13945",
+          "doi": "",
+          "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+          "abstract": "A user who brings a generalist manipulation policy into their home or office wants it to pick up their objects from their shelves, counters, and tables. Yet even a strong generalist like $\\pi_{0.5}$ achieves 0% pickup success in our captured deployment scenes without adaptation, and collecting real demonstrations in every user's environment is prohibitively expensive. We present Splat2Act, an automated real-to-sim-to-real pipeline that personalizes a pretrained vision-language-action (VLA) policy to a specific scene and object set using only a handheld phone scan and images of the user's objects. Unlike prior real-to-sim work that reconstructs individual tabletops, Splat2Act operates on building-scale indoor environments: it builds a photorealistic digital twin with 3D Gaussian Splatting and collision geometry, automatically discovers tabletop and non-tabletop receptacles, constructs feasible pickup tasks, and generates successful demonstrations with a privileged simulation oracle, with only scene and object capture required from a human. Applied to 101 scanned campus environments with a median navigable area of 104.87 m$^2$ and 7 receptacles, the pipeline yields 852 receptacles and over 68,000 pickup demonstrations. We fine-tune $\\pi_{0.5}$ in two stages: Stage 1 adapts to hundreds of public object assets, drawn either from the deployment scene alone or from all 101 scenes; Stage 2 personalizes to the user's own objects on the deployment scene's receptacles. Our strongest personalized policy reaches 62.5% aggregate pickup success in the target scene. Deployed on a real Stretch 3, the same policy achieves 63.9% success on a 12-task subset, closely tracking its 66.7% simulated success on those tasks. These results suggest that automated real-to-sim-to-real training can personalize VLA manipulation policies using only simulation-oracle data.",
+          "authors": [
+            "Ye, Xiaomeng",
+            "Jaganathan, Krishna",
+            "Lim, Gyubeum",
+            "Chhablani, Gunjan",
+            "Irshad, Muhammad Zubair",
+            "Kira, Zsolt"
+          ],
+          "url": "https://arxiv.org/abs/2610.13945",
+          "published": "2026-10-09",
+          "topics": [
+            "多模态",
+            "具身智能"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13945v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 85,
+            "title_zh": "Splat2Act：扫描自己的房间，用仿真示范个性化训练VLA抓取",
+            "abstract_zh": "通用机器人策略进入用户环境后仍可能难以抓取特定物品，逐户收集真实示范成本很高。Splat2Act用手持场景扫描及用户物体图像构建照片级数字孪生、碰撞几何和可行抓取任务，并通过拥有仿真特权状态的规划器自动生成成功示范。系统在101个室内场景中发现852个承载面，生成超过6.8万条抓取示范。它先用公共物体作广泛适配，再用用户物品和目标场景个性化微调π0.5。最佳策略目标场景综合抓取成功率62.5%；12项真实Stretch 3任务子集成功率63.9%，对应仿真66.7%。",
+            "reason": "给出从用户扫描到可部署机器人策略的完整链路，并明确通用仿真适配与具体场景个性化的作用及迁移边界。",
+            "introduction_zh": "通用VLA并不意味着拿到陌生办公室就能抓起所有物品。若每个房间、桌面和用户物体都要重新遥操作示范，部署成本会不断累积。论文把真实环境先变成数字孪生，在仿真里自动找承载面、放置物体并生成抓取数据，再训练回真实机器人。它研究的是大型环境中的局部抓取个性化，不是已经完成任意长程家务。",
+            "method_takeaway": "把用户场景扫描成可仿真的数字孪生，自动生成抓取示范，再先适配场景、后适配用户物体。",
+            "framework_zh": "Splat2Act最关键的想法是把重复的人工示范换成一次场景采集后可批量生成的仿真练习。用户扫描房间，并为目标物体提供图片和尺寸。系统用3D高斯保留接近真实的视觉外观，再提取网格负责碰撞和几何分析：一套表示让机器人“看起来像在原房间”，另一套让物体可以落稳、碰撞并被抓取。\n\n接下来系统自动找可放物品的桌面、架子等区域，根据高度、面积、表面稳定性和机器人的可达范围过滤位置，再改变机器人起点、物体位置和干扰物组成任务。物体作为独立可移动资产插入场景，不是假设手机扫描已经准确重建了每个物品的完整力学属性。\n\n仿真里的示范规划器知道物体真实位置、几何和机器人状态，可以筛选抓取姿态、尝试接近与抬升，失败后回滚重试，只记录成功轨迹。这些特权信息属于数据生成器。训练出的VLA在真实部署时读取头部与腕部RGB、本体状态和用户指令，并不获得仿真真值。\n\n策略微调分两段：先在大量公共物体上适配目标场景或多场景数据，再用用户自己的物体在目标场景中个性化。论文最有启发性的结果是，场景匹配本身很重要：在错误场景做个性化甚至会伤害目标部署效果。因此不是“生成越多通用数据越好”，而是用场景几何和视觉条件贴近最终任务，再补足具体物体。真实验证支持这条路径的可行性，但还不能推广为整栋楼内任意任务都可靠。",
+            "pipeline": "房间扫描与物体图片/尺寸 → 数字孪生及可行抓取任务 → 特权规划器生成仿真示范 → 两阶段微调并部署VLA",
+            "results": "101个扫描场景、852个自动发现承载面、68,021条成功抓取示范。最佳个性化策略目标场景综合成功率62.5%。真实办公室12任务、每任务3次共36试验，成功率63.9%；相同任务仿真12次成功率66.7%。64并行环境平均每A40 GPU小时约60条成功示范，场景和重试情况影响速度。",
+            "limitations": "解读提醒：真实验证仅一个办公室的12任务子集，样本量有限；建筑级场景覆盖不等于长程导航操作已解决。用户仍需约20–30分钟扫描以及物体图像与尺寸，仿真生成和微调有计算成本。作者将长时域移动操作列为未来方向，数据计划接收后公开，不能当作现已完整开放。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "扫描输入、数据规模与个性化动机"
+              },
+              {
+                "section": "S3.SS1",
+                "claim": "高斯外观与网格碰撞混合表示"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "特权规划器自动试错生成示范"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "广泛适配加场景物体个性化"
+              },
+              {
+                "section": "S3.SS5",
+                "claim": "真实策略可用观测"
+              },
+              {
+                "section": "S5.SS5",
+                "claim": "真实试验规模与仿真对照"
+              }
+            ],
+            "fulltext_hash": "39734cf115d25e0633e99a191f430a29ad3e61c50b7c753aac826c6444778adc",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:27:45.713Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 85,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "扫描输入、数据规模与个性化动机",
+              "url": "https://arxiv.org/html/2610.13945v1#S1"
+            },
+            {
+              "section": "S3.SS1",
+              "claim": "高斯外观与网格碰撞混合表示",
+              "url": "https://arxiv.org/html/2610.13945v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "特权规划器自动试错生成示范",
+              "url": "https://arxiv.org/html/2610.13945v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "广泛适配加场景物体个性化",
+              "url": "https://arxiv.org/html/2610.13945v1#S3.SS4"
+            },
+            {
+              "section": "S3.SS5",
+              "claim": "真实策略可用观测",
+              "url": "https://arxiv.org/html/2610.13945v1#S3.SS5"
+            },
+            {
+              "section": "S5.SS5",
+              "claim": "真实试验规模与仿真对照",
+              "url": "https://arxiv.org/html/2610.13945v1#S5.SS5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F1",
+              "caption": "Fig. 1: An overview of Splat2Act. From a handheld scan of a deployment scene and images of user-selected objects, Splat2Act builds a simulation-ready digital twin, generates pickup demonstrations without any teleoperation, and fine-tunes a VLA for deployment in the captured scene.",
+              "url": "https://arxiv.org/html/2610.13945v1/figs/splat2act-teaser.png",
+              "source_url": "https://arxiv.org/html/2610.13945v1#S1.F1"
+            },
+            {
+              "id": "S2.T1",
+              "caption": "TABLE I: Comparison with capture-conditioned manipulation pipelines",
+              "url": "https://arxiv.org/html/2610.13945v1#S2.T1",
+              "source_url": "https://arxiv.org/html/2610.13945v1#S2.T1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13217",
+          "arxiv_id": "2610.13217",
+          "doi": "",
+          "title": "Golden Anchor for Video Generation",
+          "abstract": "Video generation supports digital content creation, with applications in virtual avatars, AI-driven filmmaking, interactive game engines, and world models. State-of-the-art systems achieve controllability primarily through image-to-video (I2V) generation, in which an injected anchor image determines the identity, composition, and style of the resulting video. In modern pipelines, this anchor is synthesized by a text-to-image (T2I) generator. This raises a largely overlooked question: Are images obtained directly from the T2I model truly suitable for current video models? Our analysis shows that anchor aesthetic and quality scores are weakly correlated with downstream video quality. The structure-and-texture score is negatively correlated with I2V video quality in both the visual and motion dimensions. Fine-tuning the T2I model on an image reward accordingly yields anchors with visibly denser structural and character detail: they score higher on image metrics, yet lower the video reward on every I2V model we test and change downstream motion unpredictably. We therefore introduce Golden Anchor Learning (GAL), to our knowledge the first framework for learning golden anchors by optimizing a T2I generator with downstream video feedback. GAL evaluates candidate anchors through the videos they induce under a frozen I2V model and converts video rewards into image-level preferences for DPO fine-tuning of the T2I generator. On all four I2V models, GAL raises the VBench average by $2.97\\%$--$8.46\\%$ over the untuned generator. The rendered clips also score higher under VideoReward-Overall, and their extracted frames under HPSv3 and UniPercept. GAL yields consistent motion gains across all four I2V models, as measured by a $5.62\\%$--$38.24\\%$ increase in VBench dynamic degree. Although GAL is trained only on HunyuanVideo-1.5 renders, these gains extend to the other three I2V models.",
+          "authors": [
+            "Xu, Jinyuan",
+            "Shao, Shitong",
+            "Bai, Lichen",
+            "Zhou, Zikai",
+            "Huang, Guoxi",
+            "Anantrasirichai, Nantheera",
+            "Xie, Zeke"
+          ],
+          "url": "https://arxiv.org/abs/2610.13217",
+          "published": "2026-10-09",
+          "topics": [
+            "运动与运动控制",
+            "视频生成"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13217v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 84,
+            "title_zh": "Golden Anchor：用生成后的视频评价，反过来训练更合适的参考图",
+            "abstract_zh": "图生视频常以文生图模型产生的图像作锚点，但单图的美观与清晰未必对应好视频。作者发现图像美学与质量分和下游视频质量相关性很弱，结构纹理分甚至与视频视觉和运动质量负相关。Golden Anchor Learning将冻结图生视频模型生成的视频评分转成图像偏好对，再用DPO微调上游文生图模型。四个图生视频模型上的VBench平均指标相对未调生成器提升2.97%–8.46%，动态程度提升5.62%–38.24%；虽然偏好仅由HunyuanVideo-1.5生成，这些收益也迁移到其他三种视频模型。",
+            "reason": "视频流水线中容易忽视的接口问题：把“好看参考图”改为“能诱导好视频的参考图”。有跨视频底座结果，但不是显式轨迹或主体控制方法。",
+            "introduction_zh": "许多工作流先挑一张漂亮图片，再让视频模型把它动起来。论文指出，图片纹理越精细不一定越适合运动：生成器可能过分依赖参考外观，得到锐利却僵硬的片段。作者因此把优化目标向后推一步，用图片最终产生的视频来评价它，再把这种偏好学回文生图模型，让参考图从静态展示品变成适合下游生成的条件。",
+            "method_takeaway": "把参考图送进冻结的视频模型，看最终视频谁更好，再用这个排序训练上游图像生成器。",
+            "framework_zh": "Golden Anchor最重要的转变是评价对象不变、评价依据变了：我们仍在训练图片生成器，但判断一张图好不好，要看它能生成什么视频。论文中的“锚点图”是图生视频的条件图，不一定就是输出视频的字面第一帧。\n\n离线收集训练偏好时，同一提示先生成四张有差异的候选图。每张分别交给冻结的图生视频模型生成一次，再由冻结的视频奖励模型评分。分差足够大的候选才组成赢家和输家图像对；接近的分数可能只是视频随机采样带来的波动，因此用间隔阈值去掉不确定比较。整个过程产生的是带视频质量标签的图片数据集，并不需要穿过视频渲染器反向传播。\n\n接着使用DPO进行偏好优化：在相同加噪条件下比较赢家、输家的流匹配误差，以及冻结参考图像模型的误差，鼓励训练模型相对参考更偏向能带来好视频的图片。只更新上游图像模型的任务LoRA，视频模型和评分器保持冻结。少步Z-Image-Turbo的实现还依赖差分LoRA支架：训练时挂载的冻结预设适配器在推理时移除。消融表明，省略这个支架可能让图像指标变好却逆转运动收益，因此它是当前实现的重要条件。\n\n部署时无需再为每张图额外生成多段视频来挑选，而是直接用调好的文生图模型产出锚点，再接原有视频模型。可以记成“用下游成绩教上游出题”。这是一种把下游偏好提前学进去的接口优化；运动指标变高不代表用户得到了精确轨迹控制，也不保证增加的运动都是目标物体的合理动作。",
+            "pipeline": "同提示采样候选锚点图 → 冻结视频模型生成并评分 → 视频偏好转成图像DPO训练 → 调好的图像模型接原视频模型",
+            "results": "作者报告四个I2V模型的VBench平均指标相对提升2.97%–8.46%；动态程度在HunyuanVideo-1.5、LTX-Video、CogVideoX-1.5、Kling v3 Pro上分别提升5.62%、15.97%、7.05%、38.24%。这是相对变化，非成功率或百分点；仍存在小幅运动平滑性回退。",
+            "limitations": "作者指出奖励模型选择与可靠性会强烈影响结果，只用单一视频底座构建偏好。每候选只渲染一次，间隔过滤只能减轻随机性，不能消除。解读提醒：动态程度可能受镜头运动影响，不等同动作正确性；离线视频渲染与训练成本仍存在。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "单图评分与视频效果不一致"
+              },
+              {
+                "section": "S4.SS1",
+                "claim": "视频奖励构建图像偏好"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "离线数据DPO且冻结视频模型"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "少步模型差分LoRA实现条件"
+              },
+              {
+                "section": "S6.SS3.SSS0.Px2",
+                "claim": "四底座相对提升"
+              },
+              {
+                "section": "S6.SS6.SSS0.Px1",
+                "claim": "奖励依赖与平滑度限制"
+              }
+            ],
+            "fulltext_hash": "9dc8cd597027d81ec7220ec31310691eacefd27dcb94e15901b1c22b954982d5",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:27:45.703Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 84,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "单图评分与视频效果不一致",
+              "url": "https://arxiv.org/html/2610.13217v1#S1"
+            },
+            {
+              "section": "S4.SS1",
+              "claim": "视频奖励构建图像偏好",
+              "url": "https://arxiv.org/html/2610.13217v1#S4.SS1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "离线数据DPO且冻结视频模型",
+              "url": "https://arxiv.org/html/2610.13217v1#S4.SS2"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "少步模型差分LoRA实现条件",
+              "url": "https://arxiv.org/html/2610.13217v1#S4.SS3"
+            },
+            {
+              "section": "S6.SS3.SSS0.Px2",
+              "claim": "四底座相对提升",
+              "url": "https://arxiv.org/html/2610.13217v1#S6.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S6.SS6.SSS0.Px1",
+              "claim": "奖励依赖与平滑度限制",
+              "url": "https://arxiv.org/html/2610.13217v1#S6.SS6.SSS0.Px1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S4.F3",
+              "caption": "Figure 3: Overview of GAL. Training (top): For each prompt, we sample K=4K=4 anchor images from the T2I generator, render each into a video with a frozen I2V model, and score the videos with a frozen video-reward model. We use these scores to construct image-level preference pairs and fine-tune only the upstream T2I generator with cross-modal DPO. Video rendering, scoring, and pair construction are performed offline. Inference (bottom): The fine-tuned T2I generator produces anchor images that improve video quality, while the downstream I2V model remains unchanged.",
+              "url": "https://arxiv.org/html/2610.13217v1/diff_lora_dpo_pipeline_1200dpi.png",
+              "source_url": "https://arxiv.org/html/2610.13217v1#S4.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.13681",
+          "arxiv_id": "2610.13681",
+          "doi": "",
+          "title": "PhysForge: Material-Controllable 3D Reconstruction with Separable Components",
+          "abstract": "Recent advances in physical 3D generation have enabled visually faithful assets with simulatable mechanical behavior. However, existing methods provide limited control over material behavior beyond appearance-based inference and struggle to estimate physical properties from complex interactions between objects and semantic parts. Therefore, we present PhysForge, a Video Diffusion Model (VDM)-based framework for addressing these challenges, comprising two complementary modules for material-controllable physical fitting and componentlevel interaction modeling. The first, PhysFit, leverages material-conditioned VDM dynamics as references for physical-property fitting, introducing windowed fitting to focus on material-revealing interactions and Hallucinated Forcing to disentangle nonphysical motion hallucinated by the VDM from material responses. The second, PhysComp decomposes complex interactions into individual objects and semantic components, enabling their physical parameters to be optimized independently and flexibly composed for joint simulation. Experiments on PhysAssets and Google Scanned Objects demonstrate that, compared with existing methods, PhysForge provides stronger control over material-dependent physical responses while supporting component-level physical modeling for complex interactions. It achieves the best CLIP and physical controllability scores on both common and uncommon materials, with qualitative comparisons, component-level ablations, and a user study further supporting these improvements. Our project page is available at this https URL .",
+          "authors": [
+            "Wang, Yuchen",
+            "Bao, Yanqi",
+            "Gu, Zheng",
+            "Chen, Zhengqing",
+            "Shi, Jieqi",
+            "Huo, Jing"
+          ],
+          "url": "https://arxiv.org/abs/2610.13681",
+          "published": "2026-10-09",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-12"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.13681v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 83,
+            "title_zh": "PhysForge：从材料条件视频中提取可仿真的部件物性",
+            "abstract_zh": "现有物理3D生成通常按外观推断材料，难以让同一物体表现出用户指定的不同材料，也难以分离复杂部件交互。PhysForge用材料条件视频扩散模型提供运动参考。PhysFit只在能揭示物性的接触和形变窗口拟合参数，并用Hallucinated Forcing区分生成视频中的非物理整体运动与材料反应；PhysComp将交互拆成语义部件，分别优化物性后组合仿真。在PhysAssets与Google Scanned Objects等实验中，作者报告常见和非常见材料的CLIP及物理可控性分数均优于比较方法，部件消融和用户研究也支持该设计。",
+            "reason": "连接视频生成先验与物理3D资产，重点在如何利用不完全可信的视频、避免把运动幻觉全部拟合成材料属性。",
+            "introduction_zh": "一个苹果模型可以看起来逼真，却不知道受压时该像硬塑料还是硅胶。同一外观对应不同材料时，仅看图像估参数很困难；视频生成器虽能想象不同材料的形变，也会产生无缘由的加速或减速。论文因此不照抄整段生成轨迹，而是挑接触与形变等有信息的片段，分清整体运动和材料响应，并保留不同部件的独立身份来拟合可仿真资产。",
+            "method_takeaway": "只从生成视频中最能揭示材料的交互片段拟合物性，并将部件与非物理整体运动分开处理。",
+            "framework_zh": "这篇论文可以围绕“同一个苹果换成硅胶后会怎样”理解。作者先让视频模型按用户指定材料生成一段交互，再把其中的形变和接触现象转成3D资产的物理参数。但视频不是测量数据：物体可能突然被莫名加速，因此不能把整段运动都当成真实物理规律。\n\nPhysFit首先找出真正包含材料证据的窗口。借助部件掩码的相交和相对接近趋势，保留接触前的入射状态，直到接触结束或物体静止。比起长时间无交互的漂移，这段碰撞或挤压更能说明软硬程度。同时，方法利用分割和深度跟踪物体中心，估计位置、速度与参考加速度，将无法仅由物性解释的整体运动显式记作Hallucinated Forcing。它是一种对生成参考的运动解释与补偿，不是证明已经恢复真实外力。\n\n另一侧的PhysComp给对象和语义部件建立持续身份，再将这些标签映射到重建的3D高斯。根据连接关系和相对运动，把部件组织成模拟身体；外观由3D高斯表示，力学由粒子与网格之间交换信息的材料点法处理。这样看起来相连的桌子、杯子或柔性部件，不必被粗暴合并成一块不可分物体。\n\n最终在选定窗口内，以形变响应、接触时长和穿透惩罚拟合各部件物理参数，并以视觉语言模型给出的初始物性作弱先验，避免信息不足时参数任意漂移。核心可以记成“先找有用的接触，再分部件解释材料”。输出是能组合进共同仿真的资产；换一种材料仍要重新生成参考视频并拟合，而生成视频本身的物理可靠性仍决定上限。",
+            "pipeline": "指定材料与交互 → 生成参考并选择物性窗口 → 部件重建、分组与物性拟合 → 可组合仿真的3D资产",
+            "results": "作者主表平均物理可控性PC为4.3，最强对照3.8；平均CLIP为0.261，对照0.249。用户研究胜出比例60.56%。去掉窗口拟合降低拟合效率与质量，去掉部件建模会丢失相对运动。以上反映本文评测中的可控性与观感，不是实测材料常数恢复精度。",
+            "limitations": "作者指出每次更改材料都需额外视频生成和物理拟合，最终质量仍依赖生成视频的物理行为。解读提醒：分割、单目深度和生成3D几何的误差可能传递到接触判断；运动幻觉分离并不保证参数唯一或真实。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "外观推断材料和复杂部件不足"
+              },
+              {
+                "section": "S3.SS2.SSS1",
+                "claim": "交互窗口选择"
+              },
+              {
+                "section": "S3.SS2.SSS2",
+                "claim": "参考运动与Hallucinated Forcing"
+              },
+              {
+                "section": "S3.SS3.SSS2",
+                "claim": "仿真身体分组及物理参数拟合"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "量化与消融结果"
+              },
+              {
+                "section": "S5",
+                "claim": "重拟合开销和视频物理可靠性限制"
+              }
+            ],
+            "fulltext_hash": "e75ba7cc753323f5e1f61703332e1b11c898ab1239e45cbfee16944d8d4a2810",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-12T17:27:45.708Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 83,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "外观推断材料和复杂部件不足",
+              "url": "https://arxiv.org/html/2610.13681v1#S1"
+            },
+            {
+              "section": "S3.SS2.SSS1",
+              "claim": "交互窗口选择",
+              "url": "https://arxiv.org/html/2610.13681v1#S3.SS2.SSS1"
+            },
+            {
+              "section": "S3.SS2.SSS2",
+              "claim": "参考运动与Hallucinated Forcing",
+              "url": "https://arxiv.org/html/2610.13681v1#S3.SS2.SSS2"
+            },
+            {
+              "section": "S3.SS3.SSS2",
+              "claim": "仿真身体分组及物理参数拟合",
+              "url": "https://arxiv.org/html/2610.13681v1#S3.SS3.SSS2"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "量化与消融结果",
+              "url": "https://arxiv.org/html/2610.13681v1#S4.SS2"
+            },
+            {
+              "section": "S5",
+              "claim": "重拟合开销和视频物理可靠性限制",
+              "url": "https://arxiv.org/html/2610.13681v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Overview of PhysForge. The framework comprises PhysFit and PhysComp. PhysFit receives a material-conditioned video generated by a VLM-supervised VDM. The generated video is analyzed to select windows for physical-property fitting. PhysComp constructs component-level 3DGS through semantic recognition, 3D reconstruction, component segmentation, and scene placement. Each component is associated with material properties and an initial state, and is then fitted within the windows selected by PhysFit.",
+              "url": "https://arxiv.org/html/2610.13681v1/overview.png",
+              "source_url": "https://arxiv.org/html/2610.13681v1#S3.F2"
+            }
+          ]
+        }
+      ],
+      "screening": [
+        {
+          "key": "arxiv:2610.12514",
+          "title": "CORAL-KV: Compact Cross-Layer Prediction and Residual Coding for Autoregressive Video KV Caches",
+          "decision": "include",
+          "reason": "解决长程自回归视频的历史缓存瓶颈；明确统计预测器自身开销，并区分缓存存储和整机显存。"
+        },
+        {
+          "key": "arxiv:2610.13681",
+          "title": "PhysForge: Material-Controllable 3D Reconstruction with Separable Components",
+          "decision": "include",
+          "reason": "连接视频生成先验与物理3D资产，重点在如何利用不完全可信的视频、避免把运动幻觉全部拟合成材料属性。"
+        },
+        {
+          "key": "arxiv:2610.12625",
+          "title": "ForcingBooster: Adaptive Patch-wise Denoising for Fast Autoregressive Video Diffusion",
+          "decision": "include",
+          "reason": "直接针对流式视频生成的延迟，核心贡献是空间块级提前退出；有跨模型评测及同预算随机、整块路由对照。"
+        },
+        {
+          "key": "arxiv:2610.12963",
+          "title": "MotionCoach: Constructing Multimodal Guidance for Video Professional Motion Editing",
+          "decision": "include",
+          "reason": "直接针对细粒度专业运动编辑，将运动知识获取和验证变成可训练过程；应关注动作正确性提升及编辑保留的代价。"
+        },
+        {
+          "key": "arxiv:2610.13301",
+          "title": "PAGE: Parts-Aware Guidance for Co-Speech Gesture Portrait Video Generation",
+          "decision": "include",
+          "reason": "聚焦语音驱动的脸部与身体运动协调，区域监督和分区推理引导都有实验支撑；属于动作生成优化，非实时流式方法。"
+        },
+        {
+          "key": "arxiv:2610.13217",
+          "title": "Golden Anchor for Video Generation",
+          "decision": "include",
+          "reason": "视频流水线中容易忽视的接口问题：把“好看参考图”改为“能诱导好视频的参考图”。有跨视频底座结果，但不是显式轨迹或主体控制方法。"
+        },
+        {
+          "key": "arxiv:2610.13732",
+          "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：人类视频潜动作预训练，和本期机器人主题部分重叠；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13187",
+          "title": "Destination-Conditioned Adaptation with Semantic-Geometric Alignment for Generative Inbetweening",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：首尾帧插值控制有相关性，但本期保留音频、专业动作和相机三类重点解读；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13300",
+          "title": "Sonic-AMG: Streaming Human Motion Generation from Spatial Audio",
+          "decision": "include",
+          "reason": "核心贡献是因果、在线的音频条件人体运动生成，符合运动控制优先方向；不是像素视频流式生成，故不额外标注流式视频优先项。"
+        },
+        {
+          "key": "arxiv:2610.13549",
+          "title": "ELMA: Benchmarking Anaphoric Compositions for Long-Term Text-to-Motion Generation",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：长程动作指代基准相关，暂优先具有更直接在线机制的Sonic-AMG；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13470",
+          "title": "GraftOOD: Grafting Out-of-Distribution Exemplars into Advantage-Weighted Rectification for Video Reward Optimization",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：外部分布示范缓解运动塌缩值得后续读，本期视频优化已有多篇；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13945",
+          "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+          "decision": "include",
+          "reason": "给出从用户扫描到可部署机器人策略的完整链路，并明确通用仿真适配与具体场景个性化的作用及迁移边界。"
+        },
+        {
+          "key": "arxiv:2610.13706",
+          "title": "GLIMPSE: Global-Local Indexing with Multi-Precision Spectral Encoding for Explorable Video World Models",
+          "decision": "include",
+          "reason": "真正以相机探索与旧场景回访为核心，贡献落在历史信息如何按不确定几何被读取，而非仅添加相机条件。"
+        },
+        {
+          "key": "arxiv:2610.13929",
+          "title": "Chronos Policy: Learning Robot Policies on Physical Time",
+          "decision": "include",
+          "reason": "具身控制中非常清晰、可迁移的机制改动：用真实时间差替代序列位置。它研究机器人时序鲁棒性，不作为视频运动控制关键词加分。"
+        },
+        {
+          "key": "arxiv:2610.13174",
+          "title": "PreCoG: Preview-Edit for Efficient Video Correction in Generation-Time",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：生成中预览纠错与本期视频优化主题重叠，优先明确接口问题的Golden Anchor；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13832",
+          "title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：主动空间推理有价值，但本期优先更直接关联生成和控制的研究；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13944",
+          "title": "InstantFusion: A Shared Latent Interface for Heterogeneous Image Generators",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：跨图像生成器潜空间接口，和本期流式视频、运动控制核心偏好距离较远；未完成独立方法精读。"
+        },
+        {
+          "key": "arxiv:2610.13781",
+          "title": "SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models",
+          "decision": "exclude",
+          "reason": "初筛后暂缓：驾驶轨迹与视频联合后训练有价值，本期优先音频动作、流式视频及相机记忆；未完成独立方法精读。"
+        }
+      ],
+      "digest_id": "db732fbe2a0da09fce6f"
+    },
+    {
+      "schema_version": 1,
       "report_date": "2026-10-12",
       "target_date": "2026-10-11",
       "window": {
@@ -16556,7 +17897,7 @@
         "submitted_at": "2026-09-21T01:31:20Z"
       }
     ],
-    "last_sync": "2026-10-12T07:15:40.584Z",
-    "revision": "a7a2b905a98733d7be72"
+    "last_sync": "2026-10-12T17:12:22.688Z",
+    "revision": "fbf591ef299e8d9cbcf8"
   }
 }
