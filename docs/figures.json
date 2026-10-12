@@ -1029,6 +1029,34 @@
       "extraction": "original-figure",
       "figure_id": "S4.F2"
     },
+    "arxiv:2610.11287": {
+      "asset": "assets/figures/2610.11287-615669fa21a5.webp",
+      "sha256": "615669fa21a5ff012710085ec5bc94e94e67f7092536fee823e6eae094e71010",
+      "width": 2200,
+      "height": 883,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "文字摘要与残差记忆一起交给执行模型；残差网络以摘要为条件，重点补回摘要没有保留的信息。",
+      "source_url": "https://arxiv.org/html/2610.11287v1#S2.F3",
+      "source_hash": "2e63eb139b78954fdff0af5d4d09365e1e83ac9c37c892e18cc9ba3a7f4da05d",
+      "fulltext_hash": "6d797f7ae9675542e38a3057e3f7434a90010aaf210b72b60da5a017d2c427e4",
+      "extraction": "original-figure",
+      "figure_id": "S2.F3"
+    },
+    "arxiv:2610.11322": {
+      "asset": "assets/figures/2610.11322-7f60f054446b.webp",
+      "sha256": "7f60f054446b34b15b9815936aff1a8a2842c8e87a027ef54b8e6b80eb7e7672",
+      "width": 2035,
+      "height": 921,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "重点看几何测量如何转成反馈，再回到资产程序修改；物理参数和可动关节也需要在编译后核验。",
+      "source_url": "https://arxiv.org/html/2610.11322v1#S3.F2",
+      "source_hash": "585829d385cecf6140909277770e4f3a09648e62b5df80987bc1186bf105a897",
+      "fulltext_hash": "2387132826c89cf0a1b2dd717c63690254854c1446a6e42e41f612366c9820aa",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.11479": {
       "asset": "assets/figures/2610.11479-36eb34f239e3.webp",
       "sha256": "36eb34f239e36bcc128844dd4a5e8840a9f7572ef34f0eb8aab8eedf192c8533",
@@ -1119,6 +1147,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.12126": {
+      "asset": "assets/figures/2610.12126-6dba60caae7f.webp",
+      "sha256": "6dba60caae7f4c2d9ea91d36884ad69ad78de29d492d5f9a188c50d2f0754891",
+      "width": 2029,
+      "height": 1296,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿选点、工具执行、新画面反馈的闭环阅读；导航技能和任务记录帮助把多次局部运动组成完整任务。",
+      "source_url": "https://arxiv.org/html/2610.12126#S3.F2",
+      "source_hash": "5e72152bb66f6d74376684ac6198b7d2606edbf682c9f07d2cd727e2dd06acdd",
+      "fulltext_hash": "2db289c3af364554d731d946294e6c76f9eda21c7793d6c9911aa4eab8225bc1",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12156": {
       "asset": "assets/figures/2610.12156-d368a5c31f55.webp",
       "sha256": "d368a5c31f5512fb7e26a5b1e3005ad41360ed603b08d9037a4b96a43b9b40f8",
@@ -1175,6 +1217,34 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.12355": {
+      "asset": "assets/figures/2610.12355-4091876c4742.webp",
+      "sha256": "4091876c4742abfaa275aa02854ac6e3934f6322a1be1c7d86b2dae719d88f3d",
+      "width": 1159,
+      "height": 645,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "先按问题选三维线索，再由带额外信息的教师纠正学生错误；测试时只保留普通输入的学生。",
+      "source_url": "https://arxiv.org/html/2610.12355#S2.F1",
+      "source_hash": "ab0e7159911ccb233637ccecad8a006aeab7de5f7fbf3b266b62355615d67255",
+      "fulltext_hash": "85ff9ba2e0c5d4c52f06dcc693d2c92b3caeb4bee366e2704e121b73caec3954",
+      "extraction": "original-figure",
+      "figure_id": "S2.F1"
+    },
+    "arxiv:2610.12369": {
+      "asset": "assets/figures/2610.12369-0c09a349f85c.webp",
+      "sha256": "0c09a349f85caa281056fd7394a7956f63cb96364b4447154d4b0beb084d4755",
+      "width": 756,
+      "height": 468,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "左边是离线编码和验证，中间是共享库，右边运行固定代码；不要把离线智能体成本误算成零。",
+      "source_url": "https://arxiv.org/html/2610.12369#S3.F3",
+      "source_hash": "ef697070d29ebc2ae3b03b7b91b0a1a11dc23d3b73d3aecd138433e3ac1b9254",
+      "fulltext_hash": "f1e101d4b308fbb1954bcef0114e6c18e96b73c8c1f6684e142a82124ef0e5a5",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
     "arxiv:2610.12374": {
       "asset": "assets/figures/2610.12374-0b46c456f48d.webp",
       "sha256": "0b46c456f48d840a42a145b0b9245516d9858db56aa23253c69b04147a6697a2",
@@ -1223,6 +1293,20 @@
       "extraction": "original-figure",
       "figure_id": "S2.F2"
     },
+    "arxiv:2610.12399": {
+      "asset": "assets/figures/2610.12399-3133ddac40ec.webp",
+      "sha256": "3133ddac40ec49c2b52ef8d3888ff753c7039375cfe88e009cb479fc6052df4d",
+      "width": 2040,
+      "height": 651,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看不同部件的几何约束如何注入结构生成，再看部件匹配把材质提示送到对应区域。",
+      "source_url": "https://arxiv.org/html/2610.12399#S3.F2",
+      "source_hash": "e01d0d3323ecaf906c572e2698cb1ef7e8bf4356dd354bbb44c36cfb489b5fa0",
+      "fulltext_hash": "2655f09f7df7f1729868a82db656fefb6c1a11662c1876a7b6431ad5baca6bdf",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.12407": {
       "asset": "assets/figures/2610.12407-2e72bb6814f0.webp",
       "sha256": "2e72bb6814f0e3cb7c48382c07facba34cc970385de532d7225332faf8d6ddb8",
@@ -1250,6 +1334,34 @@
       "fulltext_hash": "192cee98b3bf3927ea5c6acaec290ec62575a462511bae3e5c6bc1cc23928a96",
       "extraction": "original-figure",
       "figure_id": "S3.F3"
+    },
+    "arxiv:2610.12416": {
+      "asset": "assets/figures/2610.12416-5e875c179390.webp",
+      "sha256": "5e875c179390e1c3d27872868a709765e8bd8f2bbb04d3ab42bb10221ae145bc",
+      "width": 1572,
+      "height": 761,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "A预测可交互区域，B查询人体、物体和目标附近空间，C据此分段生成协调动作；两部分由不同数据独立训练。",
+      "source_url": "https://arxiv.org/html/2610.12416v1#S3.F2",
+      "source_hash": "e5008cda5c41b38bfa790354835684556ff62bbc26dc8e0d58ad6644e12cc872",
+      "fulltext_hash": "fbe54cad485b145e7843809c1ad6cd5e0235764efc5a32cdd0808667fa98d3f4",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.12421": {
+      "asset": "assets/figures/2610.12421-cc5bc453dc98.webp",
+      "sha256": "cc5bc453dc9894d414e588295bb21a0fe373aa47910069a906cc25a09ed2c4ae",
+      "width": 576,
+      "height": 197,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看两幅图如何融合生成模型与语义特征，再看输出的对应场和共同可见区域；这些结果用于对齐后检查主体细节。",
+      "source_url": "https://arxiv.org/html/2610.12421#S3.F2",
+      "source_hash": "294fcffff67a311a2d7b1c16c68ed6d674621071fb07cb8d21e06f3d974b0ce3",
+      "fulltext_hash": "cd7f6826640c4d6643e4815fca787e064ad3644ab0491f6cb99355751351175f",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     },
     "arxiv:2610.12435": {
       "asset": "assets/figures/2610.12435-8a182879fce3.webp",
@@ -1350,5 +1462,5 @@
       "figure_id": "S2.F2"
     }
   },
-  "revision": "23597dee2f32b8f75e24"
+  "revision": "eee52426f3fbab0001f0"
 }
