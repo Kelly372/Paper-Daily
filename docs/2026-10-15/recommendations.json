@@ -1,0 +1,1300 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-15",
+  "target_date": "2026-10-14",
+  "window": {
+    "from": "2026-10-12",
+    "to": "2026-10-14",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-15T03:30:43.885Z",
+  "retrieved_at": "2026-10-15T03:03:33.164Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "failed",
+      "count": 0,
+      "total": 0,
+      "error": "export.arxiv.org: HTTP 429",
+      "coverage": "2026-10-12 至 2026-10-14（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-14",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-14"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-13",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-13"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-12",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-12"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 19,
+      "url": "https://huggingface.co/papers/date/2026-10-14",
+      "date": "2026-10-14",
+      "retrieved_at": "2026-10-15T03:08:01.631Z",
+      "coverage": "API连接重置，网页辅助查看10月14日榜单并追踪19篇相关候选；社区发现日不等于原始投稿日，未覆盖所有条目。"
+    },
+    {
+      "source": "arXiv",
+      "status": "browser_assisted",
+      "count": 13,
+      "url": "https://arxiv.org/list/cs.CV/recent",
+      "date": "2026-10-14",
+      "retrieved_at": "2026-10-15T03:08:01.633Z",
+      "coverage": "API限流HTTP429。网页工具返回10月14日cs.CV公告首页，追踪13篇相关候选；宿主直连页面已转为10月15日公告，本期未将其当作14日更新纳入。非全学科完整覆盖。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://jigou.jiqizhixin.com/industry",
+      "date": "2026-10-14",
+      "retrieved_at": "2026-10-15T03:08:01.633Z",
+      "coverage": "查看10月14日公开资讯；Natura-1及Ego全身数据两篇报道正文仅返回登录入口，没有核验原论文，未据标题编写解读；不覆盖私有公众号。"
+    }
+  ],
+  "candidates_count": 30,
+  "analysed_count": 13,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.17552",
+      "arxiv_id": "2610.17552",
+      "doi": "",
+      "title": "FlashVSR+: Efficient Video Super-Resolution via Hybrid Attention and Reward-Yield Distribution Matching",
+      "abstract": "Recent video super-resolution (VSR) models achieve efficient one-step generation through diffusion distillation. However, high-resolution inference remains costly, and distilled models are difficult to align with human preferences. These challenges call for improvements in both model architecture and training strategy. We present \\textbf{FlashVSR+} to address both limitations. On the architecture side, we introduce hybrid attention based on the strong locality observed in pretrained VSR models, while retaining sparse global interaction for long-range consistency. It achieves up to $2\\times$ DiT speedup and 45\\% lower peak memory, enabling spatially untiled 4K VSR on a single 24GB RTX 4090. On the training side, we propose Reward-Yield Distribution Matching Distillation (Ry-DMD) for preference-aligned one-step generation. Ry-DMD uses reward-weighted teacher rollouts to incorporate black-box rewards into distribution matching, without backpropagating through the reward model. We further show that Ry-DMD generalizes beyond VSR to T2I generation. Together, FlashVSR+ delivers stronger restoration quality and substantially improves high-resolution efficiency, with consistent gains in user preference. We release our code, models, and training data at \\href{this https URL}{\\textcolor{FlashBlue}{\\textbf{this http URL}}}.",
+      "authors": [
+        "Yao, Ruchang",
+        "Guo, Shi",
+        "Zhuang, Junhao",
+        "Yao, Mingde",
+        "Cai, Xin",
+        "Zhan, Jiahao",
+        "Fu, Bin",
+        "Chen, Xinyuan",
+        "Qiao, Yu",
+        "Xue, Tianfan"
+      ],
+      "url": "https://arxiv.org/abs/2610.17552",
+      "published": "2026-10-13",
+      "topics": [
+        "大模型",
+        "流式生成"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.17552v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "流式生成"
+        ],
+        "score": 91,
+        "title_zh": "FlashVSR+：局部计算保速度，奖励蒸馏补回文字和细节",
+        "abstract_zh": "近期视频超分辨率模型通过扩散蒸馏实现高效一步生成，但高分辨率推理仍昂贵，蒸馏模型也难以对齐人类偏好。FlashVSR+同时改进架构与训练：利用预训练VSR模型的强局部性构建混合注意力，保留少量全局交互维持长程一致性，报告最高2倍DiT加速和45%峰值显存降低，使单张24GB RTX4090能够进行不做空间切块的4K视频超分辨率。训练方面，奖励引导分布匹配蒸馏Ry-DMD以奖励加权的教师续写将黑盒奖励引入分布匹配，无需对奖励模型反向传播；方法还扩展到文本生成图像。整体提升恢复质量、高分辨率效率与用户偏好表现，作者发布代码、模型和训练数据。",
+        "reason": "直接研究因果视频恢复、流式缓存和一步生成，属于关注的流式生成效率方向；需明确其任务是视频超分辨率。",
+        "introduction_zh": "视频超分辨率不仅要把已有像素放大，还要补出合理细节。扩散模型擅长恢复纹理，却可能因全局注意力和多步采样过慢；压成一步后，文字等结构又容易损坏。本文同时解决两件事：减少每次计算所看的区域，以及在一步蒸馏中让高质量细节得到更强的训练信号。",
+        "method_takeaway": "把大部分计算限制在局部、用少量全局层保持连贯，再以奖励重新加权教师的多个续写，把细节质量蒸馏进一个因果一步恢复模型。",
+        "framework_zh": "可以把方法记成“少看无关区域，向更好的答案学习”。输入是连续到来的低清视频块，输出是对应的高清帧。普通全局注意力让每个位置都读取大量远处内容；作者观察到恢复任务的大量有效信息集中在附近，因此在30个块中将25个改为局部时空注意力，每隔若干层保留全局交流。局部层读取当前及之前的视频块，保留因果处理方式。\n\n这个替换需要训练适配，不能直接删掉大部分全局连接就期待质量不变。训练先获得14B多步教师，再训练1.3B混合注意力学生的初始化，最后蒸馏成一步学生。少量保留下来的全局层承担更广的沟通，局部层集中恢复邻域细节，从结构上分配计算。\n\n奖励蒸馏负责第二个难点：如何让一步模型学会更清楚的文字。由同一个加噪的学生状态出发，教师随机生成多个后续结果，再用文字识别等奖励给它们打分。算法将高分结果赋予更大权重，用加权平均相对普通平均的变化修正教师目标。奖励只需给分，不必能求导；这些昂贵的教师续写发生在训练时，部署时仍使用一步学生。\n\n工程实现把部分全局历史缓存转移到CPU并异步预取，同时适配消费级GPU算子，支持不做空间切块的整帧4K恢复。因而实际速度来自注意力、蒸馏和缓存三者共同作用；论文的网络加速比例不能直接当作所有硬件上整段视频的加速比例，更不等于文本到视频的实时生成速度。",
+        "pipeline": "低清视频流 → 混合局部/全局注意力的一步学生 → 连贯高清帧；奖励教师仅用于训练",
+        "results": "论文在89帧4K、H200等效GPU设置下报告Base耗时46.34秒、峰值45GB，Turbo耗时30.59秒、26.33GB。相同初始化的奖励后训练消融中，OCR分数由0.624升至0.776，PSNR由23.94升至24.86。注意力骨干可约加速2倍，但不应等同于端到端统一加速。",
+        "limitations": "性能依赖显卡、算子与CPU缓存调度；优化的奖励也可能偏向其覆盖的细节。论文观察到延长DMD训练并不总能持续改善质量。该任务已有低清视频条件，不代表无条件实时生成任意长视频。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "教师、初始化、一步蒸馏三阶段"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "因果混合注意力"
+          },
+          {
+            "section": "S3.SS3.SSS2",
+            "claim": "多个教师续写的奖励加权"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "效率与缓存实现"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "奖励后训练结果"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "训练扩展的非单调性"
+          }
+        ],
+        "fulltext_hash": "398d6897f995bd8104c0e830ac9d478c2325217a8752ed05656b69818e77cc38",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.877Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 101,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "教师、初始化、一步蒸馏三阶段",
+          "url": "https://arxiv.org/html/2610.17552v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "因果混合注意力",
+          "url": "https://arxiv.org/html/2610.17552v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3.SSS2",
+          "claim": "多个教师续写的奖励加权",
+          "url": "https://arxiv.org/html/2610.17552v1#S3.SS3.SSS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "效率与缓存实现",
+          "url": "https://arxiv.org/html/2610.17552v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "奖励后训练结果",
+          "url": "https://arxiv.org/html/2610.17552v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "训练扩展的非单调性",
+          "url": "https://arxiv.org/html/2610.17552v1#S4.SS5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of the FlashVSR+ training pipeline. Stage 1 trains a 14B full-attention multi-step teacher on image and video data. Stage 2 trains the hybrid-attention student to obtain a strong initialization. Stage 3 distills the student into a one-step generator using Ry-DMD, where reward feedback modifies the teacher term estimation without requiring reward gradients.",
+          "url": "https://arxiv.org/html/2610.17552v1/flashvsr_plus_pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.17552v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.17201",
+      "arxiv_id": "2610.17201",
+      "doi": "",
+      "title": "Multics: Generative Multi-Player World Model with Hierarchical Communication",
+      "abstract": "Multi-player interactive world models aim to simulate shared environments from multiple players' perspectives, but achieving robust generation while scaling to more players remains challenging. Existing approaches that rely on fully-connected communication (e.g., Solaris) incur quadratic attention costs as the number of players grows, while centralized approaches (e.g., $\\gamma$-World) suffer from interference between unrelated events in a shared global representation. To address these challenges, we present Multics, a multi-player video generation framework with hierarchical communication that structures information exchange across player, group, and global levels. This hierarchy introduces group tokens into self-attention as intermediate group-level representations that aggregate locally relevant player information. These tokens connect to global tokens for cross-group communication, while the hierarchical topology limits direct mixing between unrelated local events. Group-token parameters are shared across group slots, allowing the same communication module to accommodate varying numbers of players without introducing new group-specific parameters. We further propose budget-constrained dynamic grouping based on recent camera trajectories, which adaptively groups relevant players while limiting unnecessary communication. Experiments demonstrate that Multics achieves state-of-the-art performance in 4- and 6-player settings, with improved cross-player consistency, player-specific action and camera controllability, and interference robustness. Moreover, Multics generalizes from 4-player training to 6-, 8-, and 10-player inference without retraining, while reducing self-attention computation compared with fully-connected communication.",
+      "authors": [
+        "Huang, Kaiyi",
+        "Yu, Wangbo",
+        "Huang, Yukun",
+        "Yu, Jiwen",
+        "Liu, Kunhao",
+        "Yang, Donglin",
+        "Hu, Wenbo",
+        "Shan, Ying",
+        "Liu, Xihui"
+      ],
+      "url": "https://arxiv.org/abs/2610.17201",
+      "published": "2026-10-12",
+      "topics": [
+        "视频生成",
+        "世界模型",
+        "运动与运动控制",
+        "相机控制"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.17201v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制",
+          "相机控制"
+        ],
+        "score": 89,
+        "title_zh": "Multics：让相关玩家先局部交流，再共享世界信息",
+        "abstract_zh": "多人交互世界模型需要从多个玩家视角模拟共同环境，但完整连接的通信成本随人数平方增长，单一全局表示又容易混合互不相关的事件。Multics提出玩家、组、全局三级通信：组token先聚合局部相关玩家的信息，再通过全局token跨组交流。不同组共享参数，可在不增加组专属参数的情况下适应不同人数；根据近期相机轨迹在预算内动态分组。实验在4人和6人设置下改善跨玩家一致性、动作与相机控制及抗干扰能力；4人训练模型可不经重训用于6、8、10人推理，相比全连接降低自注意力计算。",
+        "reason": "直接研究多人动作与相机条件视频生成，重点是保留各自控制同时维持共同场景；不将通信加速直接等同于实时流式出帧。",
+        "introduction_zh": "多人共享一个世界时，每个人的画面既要服从自己的操作，又必须和其他人的视角对得上。让所有人无差别交流不仅昂贵，还会把远处事件混入当前画面；把一切压进同一全局表示也有干扰。本文将通信结构变成可学习生成过程的一部分，根据玩家的空间关系决定哪些信息先局部整合，再跨组交换。",
+        "method_takeaway": "用近期相机轨迹把相关玩家分组，先通过共享参数的组表示聚合局部信息，再做全局交流，减少不相关事件对动作和画面的干扰。",
+        "framework_zh": "想象四名玩家中，两人在同一房间，另两人在远处行动（示意）。房内两人必须对彼此和房间布局形成一致画面，但远处玩家的一次开火不应该改变房内人物的动作。Multics的关键不是让通信越多越好，而是为相关与不相关的信息安排不同路径。\n\n每名玩家输入首帧、文本、动作序列和相机轨迹。动作通过条件模块进入对应玩家的视频特征，相机位姿统一到共享坐标系后影响注意力的查询和键。模型同时生成多个玩家的视频，但注意力掩码限制它们如何交换信息：同组玩家可以直接交流，也通过组token形成局部汇总；组表示再与全局token连接，未分组玩家则直接使用全局通道。因而跨组信息仍能流通，却不必把每个局部细节都直接混在一起。\n\n谁属于同一组并非固定。系统仅根据已经发生和当前的相机位置、朝向估计相关性，在通信预算允许的人数与组容量内组织玩家。所有组由同一套可学习参数初始化，但随后读取不同玩家，形成不同内容。这样增加组数不用增加一套新的专属权重，也为四人训练迁移到更多玩家提供了结构基础。\n\n训练使用带因果时间约束的视频生成，分组定期随轨迹更新；实验中的俯视地图只用于展示，并非模型额外输入。最值得记住的是“局部先对齐，再全局协调”。它改善的是有限视频内的一致性和独立控制，还没有解决任意长时间的持久世界状态。",
+        "pipeline": "各玩家首帧、动作与相机 → 预算内动态分组与分层通信 → 一致且分别可控的多视角视频",
+        "results": "同骨干同训练设置下，4人GeoKPM从Solaris的48.51%升至54.17%，FVD从171.9降至162.3。4人训练迁移10人时GeoKPM为51.54%；10人自注意力计算为9.6 TFLOPs，对比全连接69.1。不是所有指标最佳，例如6人SSIM低于两项基线。EgoTeam结果来自在其训练集上训练，不是直接跨域零样本。",
+        "limitations": "作者指出长时持久世界状态仍未解决，且继承视频骨干在大幅动态人体运动中的伪影。分析保留意见：主要验证游戏及重建室内环境；注意力计算下降不能直接换算为端到端实时帧率。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "动作相机条件接口"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "分层连接与组参数共享"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "因果动态分组"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "比较条件和结果"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "人数泛化及计算量"
+          },
+          {
+            "section": "A4",
+            "claim": "长时状态限制"
+          }
+        ],
+        "fulltext_hash": "622604b713820757b3bd09efad27fe80d6e16609b090b8b3701645ce36e5892d",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:14:52.800Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "动作相机条件接口",
+          "url": "https://arxiv.org/html/2610.17201v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "分层连接与组参数共享",
+          "url": "https://arxiv.org/html/2610.17201v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "因果动态分组",
+          "url": "https://arxiv.org/html/2610.17201v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "比较条件和结果",
+          "url": "https://arxiv.org/html/2610.17201v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "人数泛化及计算量",
+          "url": "https://arxiv.org/html/2610.17201v1#S4.SS3"
+        },
+        {
+          "section": "A4",
+          "claim": "长时状态限制",
+          "url": "https://arxiv.org/html/2610.17201v1#A4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of Multics. Left: The training pipeline of Multics. The video diffusion model is trained to jointly generate multi-player videos 𝒱={Vi}i=1N\\mathcal{V}=\\{V_{i}\\}_{i=1}^{N}, conditioned on each player ii’s initial image IiI_{i}, action sequence AiA_{i}, camera trajectory CiC_{i}, and text prompt PiP_{i}. Right: Comparison of different communication methods. (a) Hierarchical communication in our method; (b) Fully-connected communication in Savva et al. (2026); (c) Centralized communication in Liu et al. (2026a); (d) Group-based extension of centralized communication with direct intra-group player connections. The matrices illustrate attention connectivity at one latent timestep; block-causal temporal masking and spatial-token expansion are omitted for clarity.",
+          "url": "https://arxiv.org/html/2610.17201v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.17201v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.18871",
+      "arxiv_id": "2610.18871",
+      "doi": "",
+      "title": "Cepheid: Decoupling Scale from Structure for Cross-Family Motion Completion",
+      "abstract": "Sparse-to-dense motion completion recovers dense mesh motion from sparse vertex displacements. Residual priors trained on one geometry family frequently fail to beat parameter-free harmonic extension off-family. Moreover, cross-family training meets a scaling barrier: residual amplitude varies by more than an order of magnitude across geometry families and collapses as observations become denser. Since this scale depends on unknown target motion, it cannot be measured directly at test time. We decouple residual structure from physical scale by learning a dimensionless prior, estimating amplitude from observables and a lightweight correction fitted only on training sources. Our unified model surpasses harmonic extension across all evaluated families, including unseen cloth and legged bodies, without skeletons, registration, or cross-mesh correspondence. The same prior applies without retraining to point-tracked animal video and a robot grasping a soft body. Project page: this https URL",
+      "authors": [
+        "Su, Chih-Hai",
+        "Ke, Tsung-Wei",
+        "Liu, Yu-Lun"
+      ],
+      "url": "https://arxiv.org/abs/2610.18871",
+      "published": "2026-10-13",
+      "topics": [
+        "运动与运动控制",
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face",
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.18871v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "score": 88,
+        "title_zh": "Cepheid：把运动形态与幅度分开，从少量点补全整张网格的运动",
+        "abstract_zh": "稀疏到稠密运动补全根据少数顶点位移恢复完整网格运动。只在某类几何上训练的残差先验跨类别时常不如无参数的调和延拓，联合训练又受不同物体与观测密度间巨大幅度差异影响。Cepheid将残差结构与物理尺度分离：学习无量纲运动先验，并从可观察输入和仅用训练源拟合的轻量修正规则估计幅度。统一模型在全部评估几何类别的汇总误差上优于调和延拓，包括训练未见的布料和多足身体，无须骨架、配准或跨网格对应；同一先验可接入动物视频跟踪和软物体抓取演示。",
+        "reason": "直接研究稀疏运动控制点到稠密形变，尺度解耦比单纯堆大生成模型更值得借鉴。",
+        "introduction_zh": "给定少数点怎样移动，如何让未观测部分也合理运动？简单的几何平滑传播已经是强基线，某类物体上学到的先验换到另一类反而可能有害。尤其布料、人体和机械臂的位移幅度不同，观测点越密，待补的残差又越小。本文先保留可解析的基础运动，再让模型专门学习经过尺度处理的剩余变化。",
+        "method_takeaway": "先用几何平滑补出基础运动，再预测去掉幅度差异的残差形态，最后用仅依赖已知点的尺度估计还原真实位移。",
+        "framework_zh": "可以把少数被追踪的点理解为牵动网格的把手（示意）。第一步并不使用神经网络，而是在固定这些点位移的条件下，通过网格连接求解调和延拓：让未观测点的运动尽可能平滑。这提供一个可计算的基础答案，学习模型只负责补上它遗漏的弯曲、关节变化等残差。\n\n难点在于残差的“形状”与“有多大”纠缠在一起。相似运动结构在不同物体上可能相差很多倍，而且控制点变多时，基础答案更准确，残差幅度也随之缩小。作者用已观测位移的变化尺度提供物理单位，再结合观测密度、图结构和基础运动的统计量，通过预先拟合并冻结的修正规则估计残差幅度。部署时不读取未知目标运动；知道真值的最优幅度仅用于对照分析。\n\n流匹配网络接收几何、已知点、位移和基础运动，学习归一化残差。推理从噪声生成多个残差样本并取平均，乘回估计幅度，再加到基础运动上，得到稠密位移。一个网络因而可以侧重共享的形变结构，而不是同时适应每个类别悬殊的量级。观测点越多时，尺度规则也会相应调整。\n\n这不是从任意视频直接恢复真实三维物理：核心实验假设已知准确的顶点位移。动物视频和机器人演示说明它可以接入跟踪或本体感知信号，其中动物背面补全没有真值，不能据可视化断言准确。方法最有价值的启发是先给学习器一个可靠的解析基线，再把跨域变化最大的物理尺度单独处理。",
+        "pipeline": "网格与少量已知位移 → 调和基础场和可观察尺度估计 → 无量纲残差生成 → 稠密运动补全",
+        "results": "统一模型在未见布料和多足身体上，汇总误差较调和延拓降低15.6%和10.1%；布料不同密度下的幅度恢复误差接近需真值的最优标量方案，差距1.4–8.1%。并非所有条件都优于基线：多足身体仅0.5%观测密度时仍略差。",
+        "limitations": "定量评估假设准确、无噪的顶点位移，大部分运动来源为动画、运动学或仿真；训练使用随机观测掩码。固定传感器布局可从微调获得显著额外收益，噪声、丢失跟踪和扫描误差仍待验证。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "调和延拓与残差定义"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "目标无关幅度恢复"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "残差生成和采样平均"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "跨族结果及例外"
+          },
+          {
+            "section": "S6",
+            "claim": "应用演示范围"
+          },
+          {
+            "section": "S7.SS0.SSS0.Px1",
+            "claim": "无噪评测限制"
+          }
+        ],
+        "fulltext_hash": "516386bbdb649025766339fb89eedced0f4eed7575b2b290516eb86ce45cbc8f",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:14:52.809Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "调和延拓与残差定义",
+          "url": "https://arxiv.org/html/2610.18871v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "目标无关幅度恢复",
+          "url": "https://arxiv.org/html/2610.18871v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "残差生成和采样平均",
+          "url": "https://arxiv.org/html/2610.18871v1#S3.SS4"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "跨族结果及例外",
+          "url": "https://arxiv.org/html/2610.18871v1#S5.SS2"
+        },
+        {
+          "section": "S6",
+          "claim": "应用演示范围",
+          "url": "https://arxiv.org/html/2610.18871v1#S6"
+        },
+        {
+          "section": "S7.SS0.SSS0.Px1",
+          "claim": "无噪评测限制",
+          "url": "https://arxiv.org/html/2610.18871v1#S7.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.14293",
+      "arxiv_id": "2610.14293",
+      "doi": "",
+      "title": "GeoFix: Geometry Fixing for 4D Consistent Generation",
+      "abstract": "Video diffusion models increasingly serve as priors for 4D generation, but the generated videos often lack geometric consistency. Recent approaches address this through post-training by designing geometric rewards, yet this can degrade texture and fine detail, requiring auxiliary appearance rewards and careful reward balancing. To address this challenge, we propose GeoFix, a unified framework that improves geometric consistency and visual quality with a single geometric reward, applicable to both training and inference-time reward alignment. Our reward measures cross-view depth consistency in static scene regions, targeting structural inconsistencies without directly constraining appearance or penalizing valid object motion. Crucially, depth agreement increases with camera field-of-view overlap even in real videos and 4D datasets, allowing a smaller camera movement to be mistaken for better geometry. We account for this effect by calibrating the reward against the overlap-dependent trend. GeoFix achieves a 39% improvement in WorldScore 3D consistency and a 4% increase in VBench Quality Score.",
+      "authors": [
+        "Hong, Yeobin",
+        "Go, Hyojun",
+        "Lee, Dohun",
+        "Lee, Jeongjae",
+        "Hong, Sunghwan",
+        "Tombari, Federico",
+        "An, Zhaochong",
+        "Ye, Jong Chul",
+        "Schindler, Konrad",
+        "Narnhofer, Dominik"
+      ],
+      "url": "https://arxiv.org/abs/2610.14293",
+      "published": "2026-10-09",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "相机控制"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.14293v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "相机控制"
+        ],
+        "score": 87,
+        "title_zh": "GeoFix：先消除少运镜的评分捷径，再奖励真正稳定的几何",
+        "abstract_zh": "视频扩散模型作为4D生成先验时常存在几何不一致。现有几何奖励后训练可能损害纹理细节，需要额外外观奖励和权重平衡。GeoFix以单一几何奖励同时改善结构和视觉质量，支持训练与推理时对齐：在静态区域测量跨视角深度一致性，避免直接约束外观或惩罚合法物体运动。作者发现，即使真实视频中，视场重叠越大，深度一致性也越高，较少相机运动因此可能冒充更好几何；方法根据重叠相关趋势校准奖励。作者报告WorldScore三维一致性改善39%，VBench质量分提升4%。",
+        "reason": "核心贡献直接消除相机运动缩小带来的奖励投机，并验证相机控制精度；需区分“没有奖励错误地惩罚运动”和“保证运动物理正确”。",
+        "introduction_zh": "相机绕场景移动时，模型常把墙面或背景画得漂移变形。奖励跨帧一致性看似能解决问题，但相机少动甚至画面变模糊，也更容易获得高分。本文抓住评分中的观测条件偏差：先判断在当前视角重叠程度下本来应该得到多少一致性，再奖励超出这一预期的结构质量。",
+        "method_takeaway": "只检查静态区域的跨视角深度一致性，并扣除视场重叠带来的天然高分，使模型难以靠减少相机运动冒充几何改善。",
+        "framework_zh": "设想两段视频，一段绕桌子转动，另一段几乎原地不动（示意）。后者的相邻画面更容易对齐，但不能据此说它更懂三维结构。GeoFix先把这个评分偏差处理掉，再用几何奖励改进视频模型，这是它最关键的区别。\n\n系统把视频潜变量通过一个轻量连接层送入4D重建器的后半部分，估计深度、相机和动态高斯表示，省去常规的完整RGB解码再重建路径。比较两个视角时，将前一帧的深度点变换到后一相机，检查预测深度是否吻合。独立运动物体会被运动分割排除，主要约束静态背景；因此正常走动的人不会仅因位置变化被当成几何错误。\n\n作者用真实视频和4D数据拟合“视场重叠程度—原始深度得分”的关系，在后续优化中冻结这一关系。生成视频的奖励减去重叠带来的预期增益，相当于在相近观测难度下判断结构是否更可靠。奖励不要求颜色逐像素相等，从而允许反光和纹理细节变化，也减少为了好匹配而把画面抹平的压力。\n\n同一评分既可用于后训练，也可在推理时从多个完整候选中挑选，或用梯度修正生成过程。这三种用法的计算成本不同：后训练模型日常生成不必继续打分，推理挑选或引导则仍需要额外计算。静态几何稳定为动态场景提供了更可靠背景，但被遮掉的运动区域并没有因此得到物理正确性保证。",
+        "pipeline": "视频潜变量 → 深度与相机重建 → 静态重投影并校准视场偏差 → 训练反馈或推理筛选",
+        "results": "同Wan2.2-TI2V-5B训练比较中，WorldScore三维一致性44.39→61.60，约提高39%；运动幅度45.17→35.44，表明校准并不保证所有运动指标上升。推理Best-of-20使相机旋转误差2.040→1.751，但需生成20个候选。与VGGRPO比较采用各自论文相对基础模型的增益，不是相同底座的直接复现。",
+        "limitations": "分析保留意见：奖励依赖重建深度、相机与动态区域分割是否可靠，校准关系也可能受域变化影响；主要检查静态结构，不能保证动态对象物理合理。推理筛选与梯度引导增加计算，几何提升不等于所有指标同时提升。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "潜变量重建与连接层"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "静态区域深度重投影"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "冻结视场校准"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "训练和推理用途"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "指标与对比条件"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px1",
+            "claim": "Best-of-20设置"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "训练对齐几何与质量结果"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px2",
+            "claim": "推理时对齐结果"
+          }
+        ],
+        "fulltext_hash": "7a4e6f36405bd5f1a37108c31608483d6b6cef774f5c09f40a6b9c5d3d0c6768",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:14:52.814Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 89.5,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "潜变量重建与连接层",
+          "url": "https://arxiv.org/html/2610.14293v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "静态区域深度重投影",
+          "url": "https://arxiv.org/html/2610.14293v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "冻结视场校准",
+          "url": "https://arxiv.org/html/2610.14293v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "训练和推理用途",
+          "url": "https://arxiv.org/html/2610.14293v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "指标与对比条件",
+          "url": "https://arxiv.org/html/2610.14293v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px1",
+          "claim": "Best-of-20设置",
+          "url": "https://arxiv.org/html/2610.14293v1#S4.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "训练对齐几何与质量结果",
+          "url": "https://arxiv.org/html/2610.14293v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px2",
+          "claim": "推理时对齐结果",
+          "url": "https://arxiv.org/html/2610.14293v1#S4.SS3.SSS0.Px2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of GeoFix. (a) FOCAL is computed directly from video latents using a stitched 4D reconstructor. (b) We measure cross-view depth reprojection error in static regions and (c) calibrate it to remove overlap bias.",
+          "url": "https://arxiv.org/html/2610.14293v1/method.png",
+          "source_url": "https://arxiv.org/html/2610.14293v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.18779",
+      "arxiv_id": "2610.18779",
+      "doi": "",
+      "title": "GAD: Geometry Attention Distillation for Consistent Video Generation",
+      "abstract": "Video diffusion models generate visually compelling short-term sequences but often struggle to preserve scene geometry and object structure over time. In this paper, we first demonstrate that current video attention cannot identify reliable correspondences across frames, with responses dispersed across multiple regions even after recognizable scene structure has emerged. We argue that reliable cross-frame associations are essential for information exchange as scene structure forms in video generation. Thus, we introduce Geometry Attention Distillation (GAD), which transfers correspondences from a frozen geometry model's attention to video attention. Extracted from clean videos, these correspondences link the same static surface or moving object across frames. Since structure formation begins in deeper layers at higher noise and shallower layers at lower noise, we apply attention distillation at a student layer selected according to the noise timestep. After training, video attention focuses more consistently on corresponding locations. Experiments across all three video backbones demonstrate improved long-range scene consistency and dynamic temporal consistency, with geometric gains across generation lengths. On Wan2.2 5B, GAD improves cross-frame matching accuracy by at least 30% over the Wan baseline on both long-range benchmarks. Notably, GAD achieves these gains without additional inference modules, offering a promising approach to efficient and consistent video-based world simulation. Project page: this https URL.",
+      "authors": [
+        "Ni, Junfeng",
+        "Zhu, Ziyu",
+        "Jiang, Fan",
+        "Liu, Yu",
+        "Wang, Chiyu",
+        "Zhang, Jiawei",
+        "Sun, Zhaoxu",
+        "Xu, Mu",
+        "Huang, Siyuan",
+        "Chen, Yixin"
+      ],
+      "url": "https://arxiv.org/abs/2610.18779",
+      "published": "2026-10-13",
+      "topics": [
+        "视频生成",
+        "大模型",
+        "相机控制",
+        "主体控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.18779v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "相机控制",
+          "主体控制"
+        ],
+        "score": 86,
+        "title_zh": "GAD：在结构刚形成的层，教视频注意力找到同一个物体",
+        "abstract_zh": "视频扩散模型能生成逼真片段，却难以持续保留场景几何和运动物体结构。作者发现即使场景已可辨认，视频注意力仍可能分散到多个无关区域。GAD从冻结几何模型在干净视频上的注意力提取对应关系，让视频模型学习跨帧关联同一静态表面或运动对象。由于高噪声时结构在深层开始形成、低噪声时在较浅层形成，方法按噪声时刻选择蒸馏层。三个视频骨干均改善长程场景和动态一致性；Wan2.2 5B在两个长程基准的匹配准确率相对提升至少30%，无需新增推理模块。",
+        "reason": "直接面向相机受控视频的几何和运动主体结构保持；仅有双向视频实验，自回归扩展在未来工作中，不能标为已验证的流式生成改进。",
+        "introduction_zh": "画面看起来清楚，不代表网络知道不同帧里哪一块是同一张桌子或同一个人物。错误跨帧关联会混入不相关特征，引发漂移和形变。GAD不再增加部署时的三维控制模块，而是让已有视频注意力在训练中学会几何对应，并把监督放在当前噪声下结构刚开始成形的网络层。",
+        "method_takeaway": "用几何教师给出的跨帧对应关系监督视频注意力，并随噪声程度选择结构正在形成的层，把一致性能力留在视频模型内部。",
+        "framework_zh": "假设镜头绕过一把椅子，下一帧椅背的位置变了，但它仍应接收来自同一椅背的信息（示意）。普通注意力可能把它和颜色相似的墙面混在一起。GAD要教会的正是“该向谁取信息”，而不是要求两帧的颜色或内部特征全部相同。\n\n训练时，冻结的几何教师先读取干净视频，找出一个源位置在其他帧最可能对应的位置。教师对目标帧分配的注意力总量被用作可靠性线索：模糊或不可信的关系权重较低；对应点周围保留柔和邻域，容忍小幅定位误差。学生只学习这些位置关系，不机械复制教师的完整注意力分布。\n\n监督也不是撒到所有层。作者观察到高噪声阶段需要较深层才开始显露结构，低噪声阶段较浅层已经形成结构，因此每次训练按噪声选择一个层。该层一方面比较两帧中完整的空间候选，学会排除相似但错误位置；另一方面让同一源点对应多个时间位置，扩大时间覆盖。它们与原本的视频流匹配目标一起训练，让生成质量与跨帧关联兼顾。\n\n推理时移除教师、对应缓存和训练用注意力聚合模块，只运行训练后的视频骨干。新能力因此不是外接几何处理器带来的临时纠正，而是模型自身更愿意连接正确区域。实验主要验证有限长度的双向视频；长期因果生成如何持续建立这些关系仍是下一步问题。",
+        "pipeline": "干净视频的几何对应 → 按噪声选层监督跨帧注意力 → 原骨干独立生成一致视频",
+        "results": "Wan2.2 5B在RealEstate10K和DL3DV-10K的匹配准确率相对基础模型至少提高30%。消融中完整方案匹配率0.335，未用对应监督为0.257；移除可靠性加权仅0.230。5、10、15秒分别训练的匹配模型均有几何改善，不能理解为同一模型任意延长仍保证一致。",
+        "limitations": "作者指出监督质量受几何教师的分辨率和对应能力限制，遮挡、歧义纹理及运动物体仍有困难；层选择是固定噪声规则，不随训练进度自适应。自回归视频扩展尚未验证。",
+        "evidence": [
+          {
+            "section": "S4.SS1",
+            "claim": "教师对应与置信加权"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "噪声相关层选择"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "成对与跨时对应监督"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "仅训练辅助模块"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px3",
+            "claim": "时长与消融结果"
+          },
+          {
+            "section": "A6.SS0.SSS0.Px3",
+            "claim": "自回归尚属未来方向"
+          }
+        ],
+        "fulltext_hash": "01eb048fd5ada85281d7fec009b40d3a3e61a8f04714828908373abd5c2716ba",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:14:52.818Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 88.5,
+      "evidence": [
+        {
+          "section": "S4.SS1",
+          "claim": "教师对应与置信加权",
+          "url": "https://arxiv.org/html/2610.18779v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "噪声相关层选择",
+          "url": "https://arxiv.org/html/2610.18779v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "成对与跨时对应监督",
+          "url": "https://arxiv.org/html/2610.18779v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "仅训练辅助模块",
+          "url": "https://arxiv.org/html/2610.18779v1#S4.SS3"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px3",
+          "claim": "时长与消融结果",
+          "url": "https://arxiv.org/html/2610.18779v1#S5.SS2.SSS0.Px3"
+        },
+        {
+          "section": "A6.SS0.SSS0.Px3",
+          "claim": "自回归尚属未来方向",
+          "url": "https://arxiv.org/html/2610.18779v1#A6.SS0.SSS0.Px3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Overview of GAD. Correspondences extracted by a frozen geometry teacher from clean videos guide the video model’s attention during denoising. The correspondence supervision complements the generation objective during training, without changing the inference procedure.",
+          "url": "https://arxiv.org/html/2610.18779v1/3-method-v3.png",
+          "source_url": "https://arxiv.org/html/2610.18779v1#S3.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.12818",
+      "arxiv_id": "2610.12818",
+      "doi": "",
+      "title": "LeWAM: End-to-End World and Action Modeling with JEPAs",
+      "abstract": "Joint-embedding predictive architectures (JEPAs) learn compact latent world models without pixel reconstruction. Existing JEPA pipelines typically train visual representations and action-conditioned dynamics before adding a control policy or solver. We introduce LeWAM, an end-to-end JEPA for control with: (1) a joint training objective over next latent state prediction and action flow matching, and (2) an isotropic Gaussian constraint on the latent state, enabling a single model to support direct policy execution and efficient planning by evaluating sampled actions with its learned latent dynamics. Compared with prior JEPAs in visual planning, LeWAM improves success rate from 28.6% to 89.7% on contact-rich tasks and from 10.9% to 46.2% on long-horizon tasks, and plans 32.3 times faster. On behavior cloning tasks in simulation and physical robots, LeWAM is also competitive with established methods. Interpretability analyses show that LeWAM learns control-relevant representations and action distributions effectively guiding test-time planning and control.",
+      "authors": [
+        "Fu, Minghao",
+        "Siebert, Tavis",
+        "Halicki, Eryk",
+        "Balestriero, Randall"
+      ],
+      "url": "https://arxiv.org/abs/2610.12818",
+      "published": "2026-10-08",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.12818v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 86,
+        "title_zh": "LeWAM：让动作提案和世界预测一起学，再在想象中修正动作",
+        "abstract_zh": "联合嵌入预测架构JEPA无需像素重建即可学习紧凑潜空间世界模型，但既有流程通常先训练视觉表示与动作条件动力学，再添加控制策略或求解器。LeWAM提出端到端控制JEPA：联合下一潜状态预测和动作流匹配，并约束潜状态接近各向同性高斯分布，使同一模型既能直接执行策略，也能利用学到的动力学评价采样动作进行高效规划。相较既有视觉规划JEPA，接触密集任务成功率由28.6%升至89.7%，长时距任务由10.9%升至46.2%，规划快32.3倍。在仿真和实体机器人行为克隆任务中也具有竞争力；解释性分析表明模型学到了与控制有关的表示及能指导测试时规划的动作分布。",
+        "reason": "世界模型与具身控制的直接结合，方法能清晰说明“预测世界”如何转化为动作规划；不因动作一词将其归作视频运动控制。",
+        "introduction_zh": "仅能预测未来的视觉模型，并不自然知道哪些动作值得尝试。传统潜空间规划常在庞大的动作空间搜索，而单独训练的策略又未必能利用世界模型。LeWAM把动作提案和状态预测放进同一训练体系，让策略先给出有希望的方案，再让动力学判断和修改这些方案。",
+        "method_takeaway": "先由学到的策略提出可行动作，再让潜空间世界模型预测后果并用梯度修正动作，使规划从“盲目试动作”变成“修改已有方案”。",
+        "framework_zh": "以看到一张目标摆放照片为例（示意），机器人需要找到一串能把当前物体摆成目标样子的动作。LeWAM不先生成一段未来视频再从视频猜动作，而是把当前观察和目标都编码为紧凑状态，在这些状态之间预测和规划。\n\n训练中，一个共享视觉编码器连接两个Transformer分支。动力学分支读取历史与干净的真实动作，学习预测之后的状态；策略分支读取历史、目标和带噪动作，学习逐步把噪声变成动作。注意力掩码规定两个分支能看到什么，尤其避免策略偷看到用作动力学条件的正确答案。潜在表示还受正则约束，防止编码器把所有画面压成同一个没有信息的状态。\n\n执行时可以直接使用策略生成动作块，也可以进一步规划。规划先从策略采样多个候选方案，让学到的动力学逐段预测其后果，再根据预测终点与目标状态的差距，对动作求梯度并反复修正。模型参数保持冻结，改变的是本次准备执行的动作。由此，策略负责提供合理起点，世界模型负责指出应该如何调整，两者各有所长。\n\n系统只执行选定方案的前几个动作，获得新观察后再规划，避免一次想象的误差不断累积。核心不是17M参数能完成所有机器人任务，而是把“会做的动作分布”和“动作带来的后果”共同学好，可以大幅降低规划搜索难度。",
+        "pipeline": "当前与目标图像 → 策略提出动作、潜空间动力学修正方案 → 执行前段并重新观察规划",
+        "results": "论文报告10项规划任务平均成功率93.5%，比较方法为50.9%；长达100步目标间隔的四项任务均值46.2%对10.9%。报告的规划吞吐量为52.50对1.62 plans/s，约32.3倍；这些是具体实验配置，不能直接换算成任意真实机器人的执行频率。",
+        "limitations": "检查点按任务或具身配置训练，尚非统一多任务基础模型。潜空间预测误差和训练数据覆盖仍限制长时规划；没有重建像素不意味着掌握完整真实物理。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "联合训练、注意力掩码与表示正则"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "策略候选和冻结动力学梯度规划"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "规划成功率与效率"
+          },
+          {
+            "section": "S5",
+            "claim": "任务范围和局限"
+          }
+        ],
+        "fulltext_hash": "707baf92edbe0b09bb3de9a546d78db57401fc37727ac303afc74f8bb041d1bf",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.886Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 86,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "联合训练、注意力掩码与表示正则",
+          "url": "https://arxiv.org/html/2610.12818v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "策略候选和冻结动力学梯度规划",
+          "url": "https://arxiv.org/html/2610.12818v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "规划成功率与效率",
+          "url": "https://arxiv.org/html/2610.12818v1#S4.SS2"
+        },
+        {
+          "section": "S5",
+          "claim": "任务范围和局限",
+          "url": "https://arxiv.org/html/2610.12818v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: LeWAM Training. A shared encoder encodes observed frames with SIGReg (Balestriero and LeCun, 2025) regularization. The Mixture-of-Transformers (Liang et al., 2025) learns latent-state prediction from clean actions and action flow matching from noisy actions with goal information. Results Overview. The mean of (a) planning success on contact-rich tasks; (b) planning success on a 100-step goal offset; (c) plans/s versus CEM (Rubinstein, 1999); (d) action chunks per TFLOP versus π0.5\\pi_{0.5} (Physical Intelligence et al., 2025). Full results are in Section 4.",
+          "url": "https://arxiv.org/html/2610.12818v1/lewam_figure1_python.png",
+          "source_url": "https://arxiv.org/html/2610.12818v1#S0.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.18846",
+      "arxiv_id": "2610.18846",
+      "doi": "",
+      "title": "WorldRecon: Generative Multi-View Mesh Reconstruction for Large-Scale 3D World",
+      "abstract": "Reconstructing complete, high-quality meshes of large-scale scenes from unposed multi-view images requires faithful geometric grounding while plausibly completing surfaces that are unobserved or only sparsely captured. We present WorldRecon, a generative multi-view reconstruction framework for recovering complete, large-scale 3D scene meshes from unposed RGB images. WorldRecon uses a coarse, noisy global point cloud and camera poses estimated from the input images by a reconstruction model as a global scaffold for whole-scene generation and partitions it into overlapping spatial blocks. To robustly leverage these imperfect geometric priors, we equip the native 3D generative model TRELLIS.2 with a dedicated reconstruction-based conditioning architecture that generates each block from its local point-cloud crop and block-relevant image observations, producing sparse structure, detailed geometry, and PBR materials. To maintain scene-level coherence, we introduce neighbour-aware latent inpainting and a causal world-generation procedure that propagates structural, geometric, and material context across overlapping blocks. Together, these designs scale multi-view generative reconstruction to large-scale scenes, yielding coherent, unified meshes. Extensive experiments demonstrate that WorldRecon achieves state-of-the-art reconstruction performance, reducing Chamfer distance by 14.9% and 43.1% while improving F-score by 17.3% and 12.0% over the strongest baselines on synthetic and real-world indoor scenes, respectively, thereby demonstrating faithful and complete generative reconstruction as well as strong sim-to-real generalization. Project page: this https URL.",
+      "authors": [
+        "Zhang, Mengchen",
+        "Li, Yang",
+        "Wang, Chunshi",
+        "Wu, Tong",
+        "Guo, Chunchao"
+      ],
+      "url": "https://arxiv.org/abs/2610.18846",
+      "published": "2026-10-13",
+      "topics": [
+        "3D 重建"
+      ],
+      "sources": [
+        "Hugging Face",
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.18846v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "WorldRecon：以粗点云定位房间，让相邻生成块沿共同边界接上",
+        "abstract_zh": "从无位姿多视角图像重建完整大尺度网格，需要忠实的几何依据，也需要合理补全未观察或稀疏拍摄的表面。WorldRecon先由重建模型估计带噪全局点云和相机位姿作为场景骨架，并切分重叠空间块。为利用不完美几何先验，方法为原生3D生成模型TRELLIS.2设计重建条件架构，由局部点云和相关图像生成每块的稀疏结构、细节几何与PBR材质。邻居感知潜空间补全及因果世界生成过程在重叠块之间传播结构、几何和材质上下文，形成一致统一的场景网格。作者报告相对最强比较基线，在合成和真实室内场景中Chamfer距离分别降低14.9%和43.1%，F-score分别提高17.3%和12.0%，显示几何完整性与仿真到真实泛化能力。",
+        "reason": "将无位姿多视角重建与3D生成先验结合，核心是场景尺度的块间一致性，符合3D重建和世界建模方向。",
+        "introduction_zh": "多视角重建忠于可见区域，却容易留下遮挡空洞；3D生成能够补全，但一次生成整套房间会遇到容量和空间对齐问题。WorldRecon让粗重建负责提供空间依据，让生成模型负责补细节，并解决逐块生成时门、墙和材质边界接不上的问题。",
+        "method_takeaway": "用重建得到的粗点云给每个空间块定位，再把已生成邻居的重叠潜变量当作约束逐块补全，拼成连贯的场景网格。",
+        "framework_zh": "可以把它想成装修一套房（示意）：先有粗略户型，再逐个区域补齐细节，但新区域必须与已经完成的墙和门接得上。输入只是不同视角的RGB图像；VGGT-Ω先估计相机并给出全局点云。点云经过清理和坐标对齐后切成水平重叠、覆盖完整高度的空间块，避免每个块各自猜自己位于哪里。\n\n每个块读取与其相关的图像特征、相机射线信息及局部点云。生成过程沿用三阶段3D表示：先生成稀疏占据结构，再生成几何，最后生成材质。图像提供外观与局部内容，点云提供空间约束；它们帮助模型在不完美的相机估计下生成较完整网格，而不是要求粗点云已经精确描述所有表面。\n\n决定能否扩展到整间房的关键是邻居感知补全。系统先生成点云占据较多的块，再沿连通边界扩展；新块读取最多两个已完成邻居。结构生成时，已知重叠区域被约束在相应的加噪轨迹上，避免每一步都重新改写邻居；几何和材质的重叠潜变量则平滑融合，并及时写回共享世界表示。\n\n等世界潜变量完成后，各块才解码并合并成带PBR材质的网格。这样一致性不是最后拼接时才补救，而是在生成时就传播。需要牢记的是，未拍到的内容来自生成先验：模型可以补出合理的桌后墙面，却不能保证那就是现实中的真实结构。",
+        "pipeline": "无位姿多视角图像 → 粗点云与重叠块 → 邻居约束的结构/几何/材质生成 → 场景网格",
+        "results": "在论文的ScanNet++真实场景评估中，Chamfer距离为0.0638，对比VGGT-Ω加TSDF为0.1121；F-score为0.8363对0.7467。评估使用32张输入视图，覆盖合成和真实室内场景，不能把这些数值直接外推到任意室外城市尺度。",
+        "limitations": "缺少观察的区域仍会生成错误内容；粗点云与相机估计错误也会传递到最终网格。主要实验为室内场景，分块带来的可扩展性不等于无限场景的质量保证。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "场景与块数据构建"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "点云和多视角条件、邻居补全"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "因果块顺序与共享潜变量传播"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "几何定量评估"
+          },
+          {
+            "section": "A4.SS3",
+            "claim": "失败情况和观察缺失"
+          }
+        ],
+        "fulltext_hash": "c1efdc001142e982dbbc8a10754b6a0107373fda5fd8d5f3b1b590dcd9f18532",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.896Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "场景与块数据构建",
+          "url": "https://arxiv.org/html/2610.18846v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "点云和多视角条件、邻居补全",
+          "url": "https://arxiv.org/html/2610.18846v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "因果块顺序与共享潜变量传播",
+          "url": "https://arxiv.org/html/2610.18846v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "几何定量评估",
+          "url": "https://arxiv.org/html/2610.18846v1#S4.SS2"
+        },
+        {
+          "section": "A4.SS3",
+          "claim": "失败情况和观察缺失",
+          "url": "https://arxiv.org/html/2610.18846v1#A4.SS3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: WorldRecon Overview. Given unposed multi-view RGB images of an indoor scene, WorldRecon reconstructs a complete scene-scale PBR mesh block-by-block via a native 3D generative prior at arbitrary scene scales, yielding high-fidelity geometry, depth, normal, and texture. From left to right, we demonstrate WorldRecon on real-world captures, synthetic images, and frames from generated videos, highlighting generalization across diverse input domains.",
+          "url": "https://arxiv.org/html/2610.18846v1#S0.F1",
+          "source_url": "https://arxiv.org/html/2610.18846v1#S0.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: WorldRecon Pipeline. Left: Given unposed multi-view RGB images, VGGT-Ω\\Omega reconstructs a global point cloud. The point cloud is divided into overlapping blocks, each paired with local RGBA images and predicted camera poses. Middle: For each block, DINOv3 image tokens and Plücker-ray camera tokens are fused into fixed-length multi-view tokens, while a point-cloud encoder extracts geometric tokens. Right: Three cascaded flow models progressively generate the sparse structure, detailed geometry, and PBR materials.",
+          "url": "https://arxiv.org/html/2610.18846v1/pipeline_pdf.png",
+          "source_url": "https://arxiv.org/html/2610.18846v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.14726",
+      "arxiv_id": "2610.14726",
+      "doi": "",
+      "title": "LightVAE: Towards Compact and Efficient Video Autoencoders",
+      "abstract": "Latent diffusion models enable high-quality video generation, but video VAE encoding and decoding remain computationally expensive. Existing methods use stage-specific lightweight operators, yet either constrain spatial and temporal computation jointly or remove temporal computation altogether, without distinguishing their compression sensitivities in pretrained Conv3D. To address these limitations, we present LightVAE, a compression framework that exploits redundancy in temporal modeling and network depth. LightVAE exactly reparameterizes eligible causal Conv3D layers into an aggregate spatial response and a difference-driven temporal correction. Based on their distinct compression sensitivities, temporal low-rank compression (TLR) keeps the aggregate spatial kernel dense and applies layer-specific low-rank approximation only to the temporal correction. An algebraically equivalent folded implementation converts the arithmetic savings into practical acceleration. LightVAE further uses width-preserving block pruning to reduce depth and probe-guided feature alignment, guided by feedback from a frozen teacher suffix, to recover quality after compression. The framework also extends to video encoders. Across three video VAE backbones and two GPU platforms, LightVAE consistently accelerates decoding. For the Wan VAE family, it achieves up to $2.24\\times$ and $1.11\\times$ the decoding throughput of state-of-the-art efficient VAE decoders on NVIDIA H100 and RTX~5090, respectively, with higher DAVIS PSNR and lower LPIPS. On MiniMax-H3, it achieves up to $2.97\\times$ the original decoding throughput while retaining 99.51\\% of the original model's overall VBench-2.0 score. Our code is available at this https URL.",
+      "authors": [
+        "Gu, Shiqiao",
+        "Yong, Yang",
+        "Zhong, Fengjun",
+        "Gong, Ruihao",
+        "Lv, Chengtao",
+        "Fan, Xiangyu",
+        "Yang, Lei",
+        "Liu, Xianglong"
+      ],
+      "url": "https://arxiv.org/abs/2610.14726",
+      "published": "2026-10-10",
+      "topics": [
+        "视频生成"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.14726v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 84,
+        "title_zh": "LightVAE：保住当前画面的表达，只压缩历史带来的修正",
+        "abstract_zh": "潜空间扩散支持高质量视频生成，但视频VAE编解码仍昂贵。既有轻量算子往往同时限制空间与时间计算，或完全删除时间计算，没有区分预训练3D卷积中两者的压缩敏感度。LightVAE利用时间建模和网络深度冗余，将符合条件的因果3D卷积精确改写为聚合空间响应与差分驱动的时间修正；时间低秩压缩保留稠密空间核，仅按层近似时间修正，并用代数等价的折叠实现取得实际加速。方法还以保宽块剪枝减少深度，并由冻结教师后半网络反馈指导特征对齐、恢复质量，也扩展到编码器。在三个VAE骨干和两种GPU上均加速解码；Wan家族在H100和RTX5090上相对先进轻量解码器最高达到2.24和1.11倍吞吐，同时改善DAVIS PSNR与LPIPS。MiniMax-H3最高达到原吞吐2.97倍，保留99.51%的VBench-2.0整体分数。",
+        "reason": "与视频生成效率密切相关，贡献针对VAE解码瓶颈；不把解码器吞吐量直接当作整个视频生成系统速度。",
+        "introduction_zh": "视频生成最后需要把潜变量解码成画面。直接压缩整个3D卷积容易同时伤害空间细节和时间一致性；完全去掉时间建模又会出现闪烁。LightVAE的出发点是：当前画面和前后变化对压缩的敏感度不同，应当把两者拆开后分配计算。",
+        "method_takeaway": "把因果3D卷积拆成完整保留的空间响应与可压缩的时间修正，优先省掉历史变化中的冗余，再用缓存和恢复训练兑现速度。",
+        "framework_zh": "连续两帧中，许多内容没有明显变化。LightVAE利用的不是“时间信息没用”，而是“与当前特征相比，历史额外提供的修正往往更容易压缩”。这是整个方法最值得记住的区别。\n\n对满足时间卷积条件的层，作者先做一个精确代数改写：把多个时间核的和作用在当前特征上，剩下的部分作用在历史特征与当前特征的差上。改写本身不损失信息。接着只对后者做低秩近似，保留完整的稠密空间核，使主要画面表达不必和时间分支一起变窄。各层按权重谱选择不同秩，因此压缩不是全网统一删掉相同数量的时间信息。\n\n为了让实现也更快，方法把当前帧的修正折叠进空间权重，并缓存历史特征的低维投影。下一块视频到来时直接复用投影，避免反复生成大体积差分和中间张量。缓存沿同一视频延续，在新视频开始时重置；这属于解码器内部状态管理，不是新增一个文本到视频的流式生成器。\n\n更激进的Lite版本还删除部分网络块，但保留剩余块的宽度。恢复训练借助冻结教师的后半段，判断哪些中间特征差异会伤害最终重建，减少那些会妨碍重建的盲目特征匹配。教师探针仅在训练时使用。对于Transformer型VAE，论文验证的是块剪枝，不应把卷积的时间低秩机制直接套用过去。",
+        "pipeline": "原视频VAE → 空间/时间修正分离与低秩压缩 → 缓存、可选剪枝和恢复训练 → 更快解码",
+        "results": "Wan2.1的Lite在H100/RTX5090上相对Flash-VAED吞吐为1.12/1.11倍，并改善DAVIS的PSNR和LPIPS。Wan2.2 Lite在H100上相对Turbo-VAED为2.24倍。MiniMax-H3最多达到原解码器2.97倍吞吐，保留99.51%的VBench整体分数；重建指标仍有下降，不能表述为无损。",
+        "limitations": "卷积时间低秩主要在Wan家族验证；秩来自权重谱、删块数量有预设配额，实际延迟依赖硬件。教师探针的局部特征空间性质不是全网络优化必然下降的保证。",
+        "evidence": [
+          {
+            "section": "S4.SS1.SSS0.Px1",
+            "claim": "精确空间与时间修正分解"
+          },
+          {
+            "section": "S4.SS1.SSS0.Px3",
+            "claim": "仅对时间修正低秩近似"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "联合卷积和历史投影缓存"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px2",
+            "claim": "教师探针恢复"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px1",
+            "claim": "吞吐与重建、生成质量"
+          },
+          {
+            "section": "A1",
+            "claim": "适用范围与局限"
+          }
+        ],
+        "fulltext_hash": "79556c0f69e9a579887cdc61f3eb24e83b890e9907eb5bf13be0fc62413401b7",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.891Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 84,
+      "evidence": [
+        {
+          "section": "S4.SS1.SSS0.Px1",
+          "claim": "精确空间与时间修正分解",
+          "url": "https://arxiv.org/html/2610.14726v1#S4.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS1.SSS0.Px3",
+          "claim": "仅对时间修正低秩近似",
+          "url": "https://arxiv.org/html/2610.14726v1#S4.SS1.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "联合卷积和历史投影缓存",
+          "url": "https://arxiv.org/html/2610.14726v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px2",
+          "claim": "教师探针恢复",
+          "url": "https://arxiv.org/html/2610.14726v1#S4.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px1",
+          "claim": "吞吐与重建、生成质量",
+          "url": "https://arxiv.org/html/2610.14726v1#S5.SS2.SSS0.Px1"
+        },
+        {
+          "section": "A1",
+          "claim": "适用范围与局限",
+          "url": "https://arxiv.org/html/2610.14726v1#A1"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.12843",
+      "arxiv_id": "2610.12843",
+      "doi": "",
+      "title": "APEX: Asynchronous Prefix Denoising for Extreme Compression",
+      "abstract": "Fewer latent tokens promise cheaper diffusion. Yet aggressive latent compression creates a reconstruction-generation dilemma: adding channels improves reconstruction but makes generation harder. We introduce APEX, short for Asynchronous Prefix denoising for EXtreme compression, which pairs a hierarchical latent space with asynchronous denoising over channel groups. Our autoencoder orders channel prefixes from structure to detail, while one shared denoiser generates them at staggered local times without adding tokens. On ImageNet-512, APEX outperforms existing methods at every evaluated channel count under 64x and 128x compression. At matched training and guided sampling compute, it also outperforms a 256-token model at every evaluated budget, with larger gains at lower compute. Code is available at this https URL.",
+      "authors": [
+        "Dinkevich, David",
+        "Chiprut, Nisan",
+        "HaCohen, Yoav",
+        "Lischinski, Dani"
+      ],
+      "url": "https://arxiv.org/abs/2610.12843",
+      "published": "2026-10-09",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.12843v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 83,
+        "title_zh": "APEX：先生成结构通道，再让细节通道接着完善图像",
+        "abstract_zh": "更少的潜空间token有望降低扩散成本，但激进压缩产生重建与生成的矛盾：增加通道能改善重建，却使生成更难。APEX将层级潜空间与通道组的异步去噪结合，自编码器把通道前缀按结构到细节排列，一个共享去噪器在错开的局部时间生成各组，不增加token。在ImageNet-512的64倍和128倍压缩下，APEX在所有评估通道数上优于比较方法；匹配训练和带引导采样计算时，也在各项预算上优于256-token模型，计算越低收益越大。作者提供代码。",
+        "reason": "潜空间表示与扩散生成效率的重要机制；异步发生在图像通道组上，不能误标为视频流式生成。",
+        "introduction_zh": "把图像压成更少的空间token可以让注意力更便宜，但如果用很多通道储存细节，生成器又必须同时猜出复杂内容。APEX不继续丢信息来降低难度，而是让潜变量有明确顺序：先组织布局和形状，再生成依赖这些结构的纹理。",
+        "method_takeaway": "通过低分辨率监督让早期通道专门承载结构，再错开各通道组的去噪进度，让细节始终依赖更干净的结构。",
+        "framework_zh": "想象先画出一只鸟的轮廓和姿势（示意），再补羽毛纹理。APEX把这个顺序放到同一潜变量的通道内部，而不是先生成小图再增加更多空间token。一个512×512图像在128倍空间压缩后只有4×4个token，每个token可以很宽，但这些通道不再一视同仁。\n\n训练自编码器时，系统随机保留一个累计通道前缀，把后面的通道置零。解码器仍输出完整尺寸，但损失在与该前缀对应的较低分辨率上计算。于是少量早期通道无需费力保存孤立高频边缘，而被鼓励先表达完整布局；更宽的后续前缀再学习更高分辨率细节。\n\n生成阶段给各通道组安排错开的局部时钟。前一组更早开始去噪，后一组启动时可读取它已经形成的较干净结构。尚未启动的组置零，正在去噪的组接受更新，已完成的组保持不动。所有组共用一个Transformer和同一空间网格，因此每步不是为每组各跑一个独立生成器。\n\n训练还要合理分配时钟采样，使负责从零建立结构的早期阶段获得足够学习机会。消融说明，单独加入通道层级，或给不合适的层级机械套用异步时钟，都不能得到同样效果。最关键的创新是让“通道承载什么”和“何时生成这些通道”彼此配合；这里的异步是图像内部生成顺序，不是视频连续出帧。",
+        "pipeline": "分辨率监督形成结构到细节的通道层级 → 共享模型错时去噪 → 完整图像",
+        "results": "ImageNet-512中，16-token、f128c512设置的guided gFID为8.98，对比DC-AE为14.44、DC-AE1.5为11.86。64-token层级模型在匹配训练计算下，优于比较中的256-token模型各档guided推理预算；比较范围受论文架构和数据设置限制。",
+        "limitations": "通道边界、目标分辨率、错开间隔和时钟采样分布仍需人工选择。验证集中于ImageNet图像生成，尚不能据此保证文本到视频或其他模型同样获益。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "分辨率监督通道前缀"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px1",
+            "claim": "各通道组的三种状态"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px3",
+            "claim": "训练分配"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px4",
+            "claim": "共享网络错时采样"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "各通道数生成结果"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "匹配计算比较和消融"
+          },
+          {
+            "section": "S5",
+            "claim": "超参数局限"
+          }
+        ],
+        "fulltext_hash": "44b0bc20bb09e49882b76871d61170efda264ff3a8263342d09f9fca959b85ca",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.899Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "分辨率监督通道前缀",
+          "url": "https://arxiv.org/html/2610.12843v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px1",
+          "claim": "各通道组的三种状态",
+          "url": "https://arxiv.org/html/2610.12843v1#S3.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px3",
+          "claim": "训练分配",
+          "url": "https://arxiv.org/html/2610.12843v1#S3.SS2.SSS0.Px3"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px4",
+          "claim": "共享网络错时采样",
+          "url": "https://arxiv.org/html/2610.12843v1#S3.SS2.SSS0.Px4"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "各通道数生成结果",
+          "url": "https://arxiv.org/html/2610.12843v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "匹配计算比较和消融",
+          "url": "https://arxiv.org/html/2610.12843v1#S4.SS2"
+        },
+        {
+          "section": "S5",
+          "claim": "超参数局限",
+          "url": "https://arxiv.org/html/2610.12843v1#S5"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.17227",
+      "arxiv_id": "2610.17227",
+      "doi": "",
+      "title": "AReA: Adaptive Receptive-Field Attention for Efficient High-Resolution Diffusion Transformers",
+      "abstract": "Generating images beyond the training resolution of Diffusion Transformers (DiTs) remains challenging, as the number of tokens grows rapidly with resolution, full attention becomes expensive, and outputs often suffer from structural distortions and degraded detail. We identify uniform full attention as the common source of both problems. Attending to all tokens at every step causes quadratic cost and exposes the model to more tokens and relative distances beyond the training range, pushing the model out of distribution. We observe that attention's effective receptive field narrows during denoising, from global in early steps that form structure to local in later steps that refine details. We propose AReA, a training-free attention mechanism whose receptive field evolves from coarse to fine, following the denoising progression. In early steps, AReA applies cross-scale coarse attention over downsampled keys and values, capturing global context, while in later steps it applies local attention within progressively shrinking windows. Without additional parameters or training, experiments show that AReA consistently outperforms state-of-the-art training-free baselines across target resolutions and different models, while also being faster and more efficient.",
+      "authors": [
+        "Rajabi, Javad",
+        "Roohi, Koorosh",
+        "Lindell, David B.",
+        "Taati, Babak"
+      ],
+      "url": "https://arxiv.org/abs/2610.17227",
+      "published": "2026-10-12",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-14"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.17227v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 82,
+        "title_zh": "AReA：先看整幅图定布局，再缩小视野画细节",
+        "abstract_zh": "扩散Transformer生成超出训练分辨率的图像仍有困难：token数量随分辨率迅速增长，全注意力昂贵，输出易出现结构失真和细节退化。作者认为统一全注意力是两个问题的共同来源：每一步读取全部token既产生平方成本，也让模型接触超出训练范围的token数量和相对距离。观察显示，有效注意力感受野随去噪从建立结构的全局范围缩小为细化细节的局部范围。AReA据此提出无需训练的机制：早期对降采样键值进行跨尺度粗注意力以捕捉全局上下文，后期在逐渐缩小的窗口内进行局部注意力。不增加参数或训练，实验在不同目标分辨率和模型上报告优于先进免训练基线的质量与效率。",
+        "reason": "关注扩散模型的高分辨率生成与注意力效率；它优化单张图像空间计算，不是主体身份控制或视频流式生成。",
+        "introduction_zh": "将训练在较小图像上的模型直接用于大图，不仅注意力昂贵，模型还会遇到陌生的token数量和位置跨度，导致重复物体或布局破碎。AReA依据去噪过程从布局到细节的变化，让每个阶段只看需要的范围，并尽量保持模型熟悉的空间关系。",
+        "method_takeaway": "让注意力随去噪从低成本的全局粗视野过渡到局部细视野，并保留少量跨窗口信息，兼顾整体构图、细节和速度。",
+        "framework_zh": "画大图时，开始需要知道主体在哪里，最后才需要仔细处理一小片纹理。AReA把这种需求变化落实为两阶段注意力，而且从头到尾都保留目标分辨率的查询和输出，不靠先生成一张小图再放大。\n\n早期阶段，每个高分辨率位置仍能看整幅图，但键和值被按块压成代表token，默认取块中心。查询与键的坐标同时映射到较粗网格，减少模型面对的陌生相对距离；文本token不压缩。随着结构形成，代表网格逐渐变细。转入第二阶段的时机按噪声水平选定，而非对所有采样器固定同一个步数。\n\n后期阶段改为局部窗口，窗口先较大以维持连贯，再逐步缩小。在平滑、细节少的区域，可以进一步把窗口分成四块节省计算；细节复杂区域保留较大范围。注意这里不是“复杂处窗口越小越好”，因为过小窗口反而看不全应保持的结构。\n\n局部窗口也可能产生接缝或各自重复画同一物体，所以方法让边界随步骤移动，并让边缘读取邻近一圈键值；另外加入少量分布在全图的代表性键值，让窗口了解别处已有的突出内容。所有这些设计共同维持“局部细化但不彼此失联”。它不需要模型训练，却仍需要按模型、采样器和分辨率设定切换与窗口参数。",
+        "pipeline": "高分辨率噪声 → 稀疏全局视野确定构图 → 收缩窗口并补充邻域/全局信息 → 高分辨率图像",
+        "results": "论文在FLUX.1和Qwen-Image等实验中报告，高分辨率语义与感知指标多数领先或第二。FLUX.1的4096×4096消融中完整方法耗时151秒；把第一阶段改回全注意力为201秒，把第二阶段改回全注意力为248秒。固定小窗口虽更快至123秒，但FID为152.15，完整方法为148.50，显示速度与质量仍有权衡。",
+        "limitations": "阶段切换和窗口调度带有经验选择；更小窗口未必更便宜，也可能破坏结构。论文主要验证图像生成，未验证视频时间一致性；相邻去噪步骤的冗余尚留待后续加速。",
+        "evidence": [
+          {
+            "section": "S3",
+            "claim": "两阶段和按噪声切换"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "全分辨率查询、粗键值与坐标"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "内容自适应窗口、Halo和全局桥"
+          },
+          {
+            "section": "S4.SS1.SSS0.Px2",
+            "claim": "质量与延迟消融"
+          },
+          {
+            "section": "S5",
+            "claim": "未处理的去噪步骤冗余"
+          }
+        ],
+        "fulltext_hash": "2f031807d98602659268996b00f11c0d1a9a75a3aa0f36b5749cf173dae768f8",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-15T03:25:02.903Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 82,
+      "evidence": [
+        {
+          "section": "S3",
+          "claim": "两阶段和按噪声切换",
+          "url": "https://arxiv.org/html/2610.17227v1#S3"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "全分辨率查询、粗键值与坐标",
+          "url": "https://arxiv.org/html/2610.17227v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "内容自适应窗口、Halo和全局桥",
+          "url": "https://arxiv.org/html/2610.17227v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1.SSS0.Px2",
+          "claim": "质量与延迟消融",
+          "url": "https://arxiv.org/html/2610.17227v1#S4.SS1.SSS0.Px2"
+        },
+        {
+          "section": "S5",
+          "claim": "未处理的去噪步骤冗余",
+          "url": "https://arxiv.org/html/2610.17227v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F4",
+          "caption": "Figure 4: Pipeline of AReA. AReA follows the coarse-to-fine progression of denoising, switching from Phase I to Phase II at noise level σ⋆\\sigma^{\\star}. In Phase I, full-resolution queries attend to keys and values pooled to one token per f×ff\\times f block, with ff ramped over steps, and positioned on a grid matching the training resolution. In Phase II, attention is restricted to progressively shrinking local windows, and those over smooth regions of the DWT map are further split to reduce cost.",
+          "url": "https://arxiv.org/html/2610.17227v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.17227v1#S2.F4"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.14293",
+      "title": "GeoFix: Geometry Fixing for 4D Consistent Generation",
+      "decision": "include",
+      "reason": "核心贡献直接消除相机运动缩小带来的奖励投机，并验证相机控制精度；需区分“没有奖励错误地惩罚运动”和“保证运动物理正确”。"
+    },
+    {
+      "key": "arxiv:2610.18871",
+      "title": "Cepheid: Decoupling Scale from Structure for Cross-Family Motion Completion",
+      "decision": "include",
+      "reason": "直接研究稀疏运动控制点到稠密形变，尺度解耦比单纯堆大生成模型更值得借鉴。"
+    },
+    {
+      "key": "arxiv:2610.17201",
+      "title": "Multics: Generative Multi-Player World Model with Hierarchical Communication",
+      "decision": "include",
+      "reason": "直接研究多人动作与相机条件视频生成，重点是保留各自控制同时维持共同场景；不将通信加速直接等同于实时流式出帧。"
+    },
+    {
+      "key": "arxiv:2610.18779",
+      "title": "GAD: Geometry Attention Distillation for Consistent Video Generation",
+      "decision": "include",
+      "reason": "直接面向相机受控视频的几何和运动主体结构保持；仅有双向视频实验，自回归扩展在未来工作中，不能标为已验证的流式生成改进。"
+    },
+    {
+      "key": "arxiv:2610.17552",
+      "title": "FlashVSR+: Efficient Video Super-Resolution via Hybrid Attention and Reward-Yield Distribution Matching",
+      "decision": "include",
+      "reason": "直接研究因果视频恢复、流式缓存和一步生成，属于关注的流式生成效率方向；需明确其任务是视频超分辨率。"
+    },
+    {
+      "key": "arxiv:2610.14726",
+      "title": "LightVAE: Towards Compact and Efficient Video Autoencoders",
+      "decision": "include",
+      "reason": "与视频生成效率密切相关，贡献针对VAE解码瓶颈；不把解码器吞吐量直接当作整个视频生成系统速度。"
+    },
+    {
+      "key": "arxiv:2610.15357",
+      "title": "UniForge3D: Joint 3D Reconstruction and Generation in a Shared Anchor-Guided Space",
+      "decision": "exclude",
+      "reason": "已获取正文，初筛后本日优先精读流式视频、运动控制及更贴近偏好的方法，未完成本篇充分全文复核，暂不推荐；不是对论文质量的否定。"
+    },
+    {
+      "key": "arxiv:2610.18846",
+      "title": "WorldRecon: Generative Multi-View Mesh Reconstruction for Large-Scale 3D World",
+      "decision": "include",
+      "reason": "将无位姿多视角重建与3D生成先验结合，核心是场景尺度的块间一致性，符合3D重建和世界建模方向。"
+    },
+    {
+      "key": "arxiv:2610.12843",
+      "title": "APEX: Asynchronous Prefix Denoising for Extreme Compression",
+      "decision": "include",
+      "reason": "潜空间表示与扩散生成效率的重要机制；异步发生在图像通道组上，不能误标为视频流式生成。"
+    },
+    {
+      "key": "arxiv:2610.12818",
+      "title": "LeWAM: End-to-End World and Action Modeling with JEPAs",
+      "decision": "include",
+      "reason": "世界模型与具身控制的直接结合，方法能清晰说明“预测世界”如何转化为动作规划；不因动作一词将其归作视频运动控制。"
+    },
+    {
+      "key": "arxiv:2610.13990",
+      "title": "DoSA: Dots Sparse Attention",
+      "decision": "exclude",
+      "reason": "已获取正文，初筛后本日优先精读流式视频、运动控制及更贴近偏好的方法，未完成本篇充分全文复核，暂不推荐；不是对论文质量的否定。"
+    },
+    {
+      "key": "arxiv:2610.18773",
+      "title": "Jeva: System One Models from First Principles",
+      "decision": "exclude",
+      "reason": "已获取正文，初筛后本日优先精读流式视频、运动控制及更贴近偏好的方法，未完成本篇充分全文复核，暂不推荐；不是对论文质量的否定。"
+    },
+    {
+      "key": "arxiv:2610.17227",
+      "title": "AReA: Adaptive Receptive-Field Attention for Efficient High-Resolution Diffusion Transformers",
+      "decision": "include",
+      "reason": "关注扩散模型的高分辨率生成与注意力效率；它优化单张图像空间计算，不是主体身份控制或视频流式生成。"
+    }
+  ],
+  "digest_id": "8830e072e0a490b9be24"
+}
