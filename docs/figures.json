@@ -931,6 +931,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.09055": {
+      "asset": "assets/figures/2610.09055-ec607d187884.webp",
+      "sha256": "ec607d1878844fbd3a6178c25841980939762d6d3ea82908ffc249914c3ce8bb",
+      "width": 1274,
+      "height": 810,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "执行失败决定奖励与练习窗口怎样修改；候选从同一起点等预算训练，再按多次执行表现决定保留谁。",
+      "source_url": "https://arxiv.org/html/2610.09055v1#S1.F2.fig1",
+      "source_hash": "3632a24a183e8073090efeab5ff6014a51bc9d3191ef8c94648baaed81b3b4a1",
+      "fulltext_hash": "fb4e76fe5ad421e841132b8864e7dd9ae82547d0dbf137d1593db73531896c8e",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2.fig1"
+    },
     "arxiv:2610.09326": {
       "asset": "assets/figures/2610.09326-73923b88753a.webp",
       "sha256": "73923b88753a0f68bcd60c23cc79a45d719a5f20bb8ad25936c0e98091e65372",
@@ -1797,6 +1811,34 @@
       "extraction": "original-figure",
       "figure_id": "S4.F1"
     },
+    "arxiv:2610.15112": {
+      "asset": "assets/figures/2610.15112-8d57786f364f.webp",
+      "sha256": "8d57786f364fecb077dc5210864c1b60cee3f8e5aa0e4d18af831398ebac9c1c",
+      "width": 2200,
+      "height": 832,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "相机射线先进入图像编码，短块内多视图交流，块间复用历史；可信度低时需重置并重锚定，不是永久相信缓存。",
+      "source_url": "https://arxiv.org/html/2610.15112v1#S3.F3",
+      "source_hash": "a1efcf4fbc065df403df5d8486227f424ae00c40a087373a7187fe6c63ea6520",
+      "fulltext_hash": "9b1b4170414964c55f08d4362e2da012b180ae2b3edea35fe702b8979e2640cc",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.16302": {
+      "asset": "assets/figures/2610.16302-d39cede6e32c.webp",
+      "sha256": "d39cede6e32c5ccb947169818c71b1e507859d3f20240446c78dd560864cfe68",
+      "width": 2048,
+      "height": 780,
+      "label": "Figure 2",
+      "kind": "时间位置编码机制图",
+      "reading_tip": "这是时间位置编码的机制图：比较不同采样步长下同一物理时刻的位置；视频和控制必须使用同一累积时间坐标。",
+      "source_url": "https://arxiv.org/html/2610.16302v1#S3.F2",
+      "source_hash": "f2d231830c9f98e213af401a8223a1a0a3e7614536a2b752f48084316e642b59",
+      "fulltext_hash": "90a3972b1f64b186993bf0dce7782f0942e7ae2cdd7945d79e0d68dc5a72cbe0",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.17201": {
       "asset": "assets/figures/2610.17201-0f960500e38b.webp",
       "sha256": "0f960500e38b8ffb3a2febb82f7cba21af9fbe1e4d3470941db4224b0db8fafc",
@@ -1880,7 +1922,105 @@
       "fulltext_hash": "516386bbdb649025766339fb89eedced0f4eed7575b2b290516eb86ce45cbc8f",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
+    },
+    "arxiv:2610.20111": {
+      "asset": "assets/figures/2610.20111-1c27b7c38866.webp",
+      "sha256": "1c27b7c38866654e31fdd3dd079db66c60197eb5887fd7a66c00814484622cf1",
+      "width": 1967,
+      "height": 500,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "预测视频和目标视频进入同一冻结教师提特征；梯度只通过预测分支回到学生，教师不会进入最终推理。",
+      "source_url": "https://arxiv.org/html/2610.20111v1#S4.F3",
+      "source_hash": "ba6b6d09a14aff4574e07319b7bb17cdc82ea53c87fe1da6c536d17c13849c63",
+      "fulltext_hash": "33aad5a29bf75015faa364b4cb8d284818450e68ad837187407673764c34622f",
+      "extraction": "original-figure",
+      "figure_id": "S4.F3"
+    },
+    "arxiv:2610.20137": {
+      "asset": "assets/figures/2610.20137-39366fbe7706.webp",
+      "sha256": "39366fbe770617d3fa83d5127c18eae1a432497c71077474d8387ec383fdc313",
+      "width": 2037,
+      "height": 997,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "沿双向教师、因果初始化、一步蒸馏看擦除能力如何迁移；推理时只用输入视频、掩码与有限历史，不需要干净背景。",
+      "source_url": "https://arxiv.org/html/2610.20137v1#S3.F3",
+      "source_hash": "778478adb91af5a4ee43031060d771e589df8a4280e14f88744b1d184233eb40",
+      "fulltext_hash": "492cde760164268305c06fc4d9c46b3ecdeabf67e7af0edb2a5f2f9500620312",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.20220": {
+      "asset": "assets/figures/2610.20220-cedc44041703.webp",
+      "sha256": "cedc44041703d62bbffd105c51bcdf74afaa106f6762e60a011bf8cd707701df",
+      "width": 2038,
+      "height": 757,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "先看高噪声 Slow-LoRA 定布局与运动，再看低噪声 Fast-LoRA 补细节；单轨迹只用于初始化，之后仍有分布匹配训练。",
+      "source_url": "https://arxiv.org/html/2610.20220v1#S3.F3",
+      "source_hash": "919843e61213ba9bc606a7f79ee1c223f07071c9445dd9d963a0b3f2cc041783",
+      "fulltext_hash": "5f05dceb27cca15b33031a0ca6107530b06f428cd3ba9c2b33ad5d33b2bcc693",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.20240": {
+      "asset": "assets/figures/2610.20240-d94790c2b80c.webp",
+      "sha256": "d94790c2b80c63c8862742c3dcc52362ae846493337ec1b8cfa37a5eb1fb226a",
+      "width": 1800,
+      "height": 600,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "先找第一人称与全景两个塔，再追踪同一世界方向的交叉注意力；玩家编码标记流，外观属性决定长相。",
+      "source_url": "https://arxiv.org/html/2610.20240v1#S4.F3",
+      "source_hash": "7cb0f330b8ed9a771e9e5a0ceda1c6fbc54ffb07dcc38eabf13e54d949036eac",
+      "fulltext_hash": "51c37471dd0ffcd1fec19e88c90e732ccc948713d166671ad5f32e60bf2dcde1",
+      "extraction": "original-figure",
+      "figure_id": "S4.F3"
+    },
+    "arxiv:2610.20556": {
+      "asset": "assets/figures/2610.20556-a081cbe3e088.webp",
+      "sha256": "a081cbe3e0886f11ceeeae118acb513d66604a267fe3058042cee82dce718e40",
+      "width": 1512,
+      "height": 1040,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "区分后台长块预测与前台小段交付；用户更新只改可替换未来，正在运行的生成不会被无限打断。",
+      "source_url": "https://arxiv.org/html/2610.20556v1#S3.F3",
+      "source_hash": "3df94d99eeac35d2195a60e8cab87abed30f444036d504e7cce5e66069b50f7f",
+      "fulltext_hash": "39c260740daed8d625b229b2d45c75e90208132e904fe083390fe515d72f2d0d",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.20571": {
+      "asset": "assets/figures/2610.20571-a5d10600514a.webp",
+      "sha256": "a5d10600514a18ac145bc9b4933c6ad0ab48542109a5d998b03ac66579dc532a",
+      "width": 2048,
+      "height": 470,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "场景记忆回答在哪里，事件记忆回答哪次动作；注意审查后的成片可保留，但只有配准和状态检查通过才写入记忆。",
+      "source_url": "https://arxiv.org/html/2610.20571v1#S3.F2",
+      "source_hash": "e104b89347d9b620d649546d92f9d40711f312acf2b488b7f325f095306ae988",
+      "fulltext_hash": "258e6148e3b224782d936758520ee0a5d4ff908b3f41baee7a1c0a519534e2a6",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.20584": {
+      "asset": "assets/figures/2610.20584-ee682e11f2c0.webp",
+      "sha256": "ee682e11f2c030188d8642b9a62a566bc57eda7aed80b0c4c8979095e5b0ecb3",
+      "width": 1488,
+      "height": 1133,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "示范先教会统一键鼠动作，合成练习场再提供可验证反馈；相机和控制增益随机化帮助经验迁移。",
+      "source_url": "https://arxiv.org/html/2610.20584v1#S1.F1",
+      "source_hash": "c1ed021df41e3892e0ad26a3d33eaaa11845155a533fdb218de8cb12cac044c8",
+      "fulltext_hash": "95ada59a7e6e9899023a0dfb238d65f313d9ab92eeb83e0b8ad8f6c5efd1996e",
+      "extraction": "original-figure",
+      "figure_id": "S1.F1"
     }
   },
-  "revision": "c6f56c4b80f5e840b706"
+  "revision": "d541e4aacc5def57444e"
 }
