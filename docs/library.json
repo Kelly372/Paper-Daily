@@ -2,6 +2,1462 @@
   "reports": [
     {
       "schema_version": 1,
+      "report_date": "2026-10-19",
+      "target_date": "2026-10-18",
+      "window": {
+        "from": "2026-10-16",
+        "to": "2026-10-18",
+        "timezone": "Asia/Shanghai"
+      },
+      "generated_at": "2026-10-19T03:27:57.971Z",
+      "retrieved_at": "2026-10-19T03:06:23.300Z",
+      "sources": [
+        {
+          "source": "arXiv",
+          "status": "failed",
+          "count": 0,
+          "total": 0,
+          "error": "export.arxiv.org: The operation was aborted due to timeout",
+          "coverage": "2026-10-16 至 2026-10-18（API 提交日期回查；不等同于公告日）"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-18",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-18"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-17",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-17"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-16",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-16"
+        },
+        {
+          "source": "Hugging Face",
+          "status": "browser_assisted",
+          "count": 24,
+          "url": "https://huggingface.co/papers/date/2026-10-16",
+          "date": "2026-10-16",
+          "retrieved_at": "2026-10-19T03:09:08.479Z",
+          "coverage": "今日重新核对10月16日公开榜单，选取相关条目；原论文元数据来自arXiv，部分复用10月18日已核验缓存。10月17、18日API连接失败且日期网页不可读，不代表当日没有论文。社区发现时间与投稿日期分别保留；本期为72小时窗口补漏。"
+        },
+        {
+          "source": "arXiv",
+          "status": "browser_assisted",
+          "count": 15,
+          "url": "https://arxiv.org/list/cs.CV/recent",
+          "date": "2026-10-16",
+          "retrieved_at": "2026-10-19T03:09:08.481Z",
+          "coverage": "复用10月18日保存的10月16日cs.CV公告候选和arXiv元数据（当时只检查前50/165条）。今日recent列表已转为10月19日公告；为遵守前一天已公开的要求，不将新公告冒充10月18日论文。非完整覆盖。"
+        },
+        {
+          "source": "机器之心",
+          "status": "browser_assisted",
+          "count": 0,
+          "url": "https://www.jiqizhixin.com/industry",
+          "date": "2026-10-18",
+          "retrieved_at": "2026-10-19T03:09:08.481Z",
+          "coverage": "检查10月17—18日公开产业列表及站点检索；10月18日VAST世界模型、双榜第一及视觉骨干三篇链接仅返回登录页面，未能核验正文或原论文，不据标题编造解读。公众号非完整覆盖。"
+        }
+      ],
+      "candidates_count": 38,
+      "analysed_count": 23,
+      "quality_threshold": 70,
+      "papers": [
+        {
+          "key": "arxiv:2610.22362",
+          "arxiv_id": "2610.22362",
+          "doi": "",
+          "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+          "abstract": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
+          "authors": [
+            "Yu, Tianjiao",
+            "Ou, Zhilin",
+            "Shen, Yifan",
+            "Li, Xinzhuo",
+            "Liu, Yuanzhe",
+            "Susladkar, Onkar Kishor",
+            "Wang, Fan",
+            "Lourentzou, Ismini"
+          ],
+          "url": "https://arxiv.org/abs/2610.22362",
+          "published": "2026-10-15",
+          "topics": [
+            "多模态",
+            "具身智能",
+            "运动与运动控制"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.22362v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 88,
+            "title_zh": "CoDA：让仿真数据引擎与机器人动作策略共同进化",
+            "abstract_zh": "生成式仿真能够自动构造机器人环境，但物理上有效的环境不一定有训练价值。关键在于找到能针对策略弱点的环境，以及帮助策略克服弱点的监督。CoDA让仿真数据引擎与动作策略通过共享异构记忆共同进化，记忆涵盖环境构造、策略失败和学习进展。系统把视觉语言评判器的已验证诊断编译为复现困难的生成程序和解决困难的训练程序；Text2potential进一步将诊断转为分阶段势函数，为动作块价值学习提供稠密监督，在标准奖励塑形假设下保持原任务的最优策略。实测学习进展继续指导生成与程序修订。四类操作任务中，分布外成功率由监督微调后的5.3%升至27.6%，在相同生成预算下高于最强闭环基线9.5个百分点；LIBERO-Pro上15轮训练将位置扰动成功率从25%提升至84%，指令扰动从1%提升至76%。",
+            "reason": "直接研究动作策略如何从自身失败中改进，重点是可验证的失败诊断如何同时改变训练场景和动作学习信号，符合运动控制优先方向。",
+            "introduction_zh": "当仿真场景可以自动生成，瓶颈就从“有没有数据”变成“下一批数据该教什么”。只看任务成功率，无法区分策略为什么失败，也可能反复生成已经学会或暂时学不会的环境。CoDA把失败证据、可复用困难模式和学习进展放进同一记忆，让数据生成与策略优化围绕同一个具体弱点协作，而不是各自独立扩大规模。",
+            "method_takeaway": "把机器人一次失败诊断同时变成“复现困难的场景程序”和“教会动作的进度奖励”，再按实际学会多少决定下一轮练什么。",
+            "framework_zh": "可以把CoDA理解为会检查教学效果的机器人教练。假设机器人总在靠近杯子时被旁边的物体挡住，这是示意场景：单纯增加随机场景未必能解决这个问题。CoDA先读取执行录像和场景信息，定位失败发生在哪一阶段、可能由布局还是物体属性造成，并把证据保存下来。它不会直接把语言模型的解释当成事实，而是生成改变被怀疑因素的实验组，以及改变另一因素的对照组；只有前者确实让策略更容易失败，才把诊断沉淀为可复用的困难模式。\n\n同一条诊断随后产生两种程序。场景程序负责在不同任务中重新制造类似困难；训练程序把任务拆成可检查的中间进展，例如靠近、抓取、搬运和放置。Text2potential把这些进展写成作用于仿真状态的势函数。这里不是把“接近目标就有奖励”随意叠加，而是用动作执行前后势能的折扣差来塑造价值学习目标；对一个动作块，相关项可以化为两个端点的差，因此不必逐步重复评估整套程序。原来的任务成功判定仍保留。\n\n价值网络据此学习哪些动作块更有希望，策略再通过优势加权的监督学习，更重视高价值的自身执行样本；成功的规划器示范也可辅助训练。每轮之后，系统用真实的前后成功率变化衡量是否学会，决定继续训练、修改教学程序还是换新困难。部署时只运行训练后的动作策略，不需要在线调用场景生成器、诊断器或用价值网络反复挑动作。\n\n最值得记住的是“失败原因→定向出题和教学→实测进步”这个闭环。势函数保持最优策略的结论依赖固定有界势函数、正确终止处理和精确价值等假设；它不保证近似神经网络训练一定成功，所以作者仍用后续学习进展检验程序是否有用。",
+            "pipeline": "策略执行与失败证据 → 对照验证困难模式 → 定向场景与势函数监督 → 动作策略更新并反馈学习进展",
+            "results": "作者在相同环境生成预算下报告：四类操作任务的OOD成功率27.6%，成功率反馈基线18.1%，无记忆的诊断器19.2%；仅稀疏奖励为22.3%。达到25% OOD成功率所需策略更新从31k降至21k。LIBERO-Pro的15轮结果为位置扰动84%、指令扰动76%，标准LIBERO为97.4%。这些是指定仿真任务及训练预算下的结果。",
+            "limitations": "阅读判断：收益依赖仿真器可读取的状态、可靠成功判定与可执行场景程序；语言诊断仍会被对照实验否定，不能等同真实因果证明。当前证据集中于仿真操作和LIBERO-Pro，不能据此断言真实机器人或任意长任务同样改善。奖励塑形的理论不等于有限数据下策略优化的保证。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "数据可用性与训练价值的区别、闭环动机"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "共享记忆与生成、训练两类程序；部署仅策略"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "目标因素与对照因素验证诊断"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "分阶段势函数及程序校验"
+              },
+              {
+                "section": "S3.SS5",
+                "claim": "动作块端点塑形、优势加权更新及理论条件"
+              },
+              {
+                "section": "S4",
+                "claim": "固定预算效果与消融"
+              }
+            ],
+            "fulltext_hash": "b629517ec6b2106739c3ac4c3f254d1450db9d09d04507d1b54cdd267210a5ab",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:15:54.445Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 98,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "数据可用性与训练价值的区别、闭环动机",
+              "url": "https://arxiv.org/html/2610.22362v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "共享记忆与生成、训练两类程序；部署仅策略",
+              "url": "https://arxiv.org/html/2610.22362v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "目标因素与对照因素验证诊断",
+              "url": "https://arxiv.org/html/2610.22362v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "分阶段势函数及程序校验",
+              "url": "https://arxiv.org/html/2610.22362v1#S3.SS4"
+            },
+            {
+              "section": "S3.SS5",
+              "claim": "动作块端点塑形、优势加权更新及理论条件",
+              "url": "https://arxiv.org/html/2610.22362v1#S3.SS5"
+            },
+            {
+              "section": "S4",
+              "claim": "固定预算效果与消融",
+              "url": "https://arxiv.org/html/2610.22362v1#S4"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S2.F1",
+              "caption": "Figure 1: The 0.64314 0.68627 0.84706C0.34902 0.7451 0.88235o\\__color_backend_reset:\\__color_backend_reset:0.44706 0.78039 0.59608D0.5451 0.81176 0.3098A\\__color_backend_reset:\\__color_backend_reset: framework. The data engine 𝒢\\mathcal{G} generates executable scenes with independently editable task, spatial, and object-attribute factors (τ,σ,α)(\\tau,\\sigma,\\alpha) and a sparse success verifier ν\\nu. Construction traces and rollout-grounded failure diagnoses enter a shared memory, which organizes them into reusable difficulty modes. Validated modes are compiled into generation programs that reproduce the diagnosed conditions and training programs that specify subgoals, potentials, and learning tools. Text2potential supplies dense feedback through chunk-level value targets that guide policy updates, and measured learning progress guides the next generation round.",
+              "url": "https://arxiv.org/html/2610.22362v1/method.png",
+              "source_url": "https://arxiv.org/html/2610.22362v1#S2.F1"
+            },
+            {
+              "id": "A3.T7",
+              "caption": "Table 7: Transfer of shared memory across policy backbones. OOD success (%), with rows identifying the backbone used to collect memory and columns identifying the backbone trained and evaluated. Off-diagonal entries use frozen memory from the other backbone, with no additional environment generation. Diagonal entries report the full CoDA framework run with the corresponding backbone. The final row gives each backbone’s SFT baseline without memory. Best and second best results in each column are highlighted.",
+              "url": "https://arxiv.org/html/2610.22362v1#A3.T7",
+              "source_url": "https://arxiv.org/html/2610.22362v1#A3.T7"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.22215",
+          "arxiv_id": "2610.22215",
+          "doi": "",
+          "title": "FutureLift: Lifting Trajectory Proposals into Bidirectional Future Graphs for Motion Forecasting",
+          "abstract": "Accurate motion prediction is critical for safe autonomous driving, yet even strong forecasters leave residual errors in their multimodal proposals. Existing refiners compress complete proposals or update their segments sequentially, preventing the full proposed future from serving as explicit relational context for correction. We introduce FutureLift, a backbone-agnostic refiner that represents each multimodal proposal as a heterogeneous future graph, with spatially grounded temporal nodes connected to agent histories, map elements, alternative modes, and, for joint prediction, other agents future trajectories. Bidirectional temporal edges allow later evidence to revise earlier segments in a single pass, and the updated nodes predict residual coordinate and confidence corrections. Requiring only proposals, scores, and scene context, FutureLift provides a common refinement interface for structurally different forecasting backbones. On Argoverse2 and the Waymo Open Motion Dataset, it consistently improves frozen proposals and outperforms native and specialized refiners across marginal and joint forecasting. On the WOMD motion-prediction leaderboard, FutureLift ranks first in minADE (0.5049m) and minFDE (0.9942m) among the compared standard-input methods, without LiDAR or ensembling, while achieving a competitive 0.4874 Soft mAP.",
+          "authors": [
+            "Grimm, Daniel",
+            "Zöllner, J. Marius"
+          ],
+          "url": "https://arxiv.org/abs/2610.22215",
+          "published": "2026-10-15",
+          "topics": [
+            "运动与运动控制",
+            "运动预测"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/html/2610.22215v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 85,
+            "title_zh": "FutureLift：把候选轨迹变成双向未来图，以整段未来修正运动预测",
+            "abstract_zh": "准确运动预测对自动驾驶很重要，但强预测器给出的多模态候选仍有残差误差。既有修正器压缩整条轨迹或按顺序修正片段，使完整候选未来难以成为显式关系上下文。FutureLift将每个候选表示成异构未来图：空间定位的时间节点连接历史、地图、其他候选模式，以及联合预测时其他参与者的未来轨迹。双向时间边让后段信息在一次图处理里修正前段，更新节点再预测坐标和置信度残差。模块只依赖候选、分数和场景上下文，可接不同预测骨干。Argoverse2和WOMD实验显示，它改善冻结的候选预测，在边缘与联合预测中优于原生和专门修正器。论文所比较的标准输入、无LiDAR且非集成方法中，其WOMD minADE为0.5049米、minFDE为0.9942米，Soft mAP为0.4874。",
+            "reason": "聚焦运动轨迹的结构化修正，清晰解释“后段约束如何帮助前段”，是运动方向实质贡献；需区分预测精度和实际控制安全。",
+            "introduction_zh": "预测器通常输出多条可能轨迹，例如直行或转弯。修正时若把整条路径压成一个向量，会失去各时刻在地图上的位置；若只从前向后处理，后段暴露出的道路或交互冲突又无法及时修正前段。FutureLift把候选本身展开为可定位的未来场景，在不改动原预测器的前提下，统一考虑整段路径与周围环境的关系。",
+            "method_takeaway": "先把整条候选未来展开成地图上的时间节点，再让前后片段双向交流，使后段的道路和交互约束也能修正前段轨迹。",
+            "framework_zh": "这里的“未来信息”是模型已经提出的假设，并不是提前看到了真实未来。设想车辆的候选轨迹几秒后进入一条弯道，这是示意：如果修正器只看当前片段，可能来不及提前调整转弯；若把整个假设轨迹摊在地图上，就能把后段的道路约束传回前段。FutureLift正是围绕这点设计。\n\n冻结的基础预测器先给出多条轨迹及分数。FutureLift把每条轨迹分成若干时间段，每段在预测终点建立一个节点，同时编码该段完整运动形状。节点因此既知道“可能走到哪里”，又保留“怎样走过去”。围绕这些预测位置，它重新连接附近地图、历史观察和同一对象的其他可能路线；时间段之间双向连接，所以晚一些的节点可以影响早一些的节点。\n\n对于多个对象的联合预测，只有同属一个一致未来场景的轨迹才连接社会交互边。若各车只是分别输出自己的若干可能路线，编号相同并不代表它们会同时发生，因此这类边被关闭。图网络在同一张初始图上进行多层消息传递，最后一次性输出坐标和分数的修正量，叠加到原候选；“一次修正”指不反复改坐标、重建图，并非只有一个神经网络层。\n\n训练使用真实未来轨迹监督修正，但梯度不会回到原预测器；部署只需要候选、分数、历史与地图。接口能够接不同骨干，不代表一套修正权重能零样本通用，论文为不同骨干和数据设置分别训练。应记住的创新是“让完整假设未来成为显式推理上下文”，而不是扩大模型或偷看未来。",
+            "pipeline": "冻结预测器产生候选轨迹 → 按预测位置构建未来图 → 双向关系推理 → 坐标与置信度残差修正",
+            "results": "作者报告WOMD测试minADE 0.5049米、minFDE 0.9942米、Soft mAP 0.4874，并限定比较为论文列出的标准输入方法。Argoverse2与WOMD的不同骨干均需分别训练修正器；时间方向消融显示，单次双向处理优于最多三次单向修正，长时域收益更明显。",
+            "limitations": "作者的证据来自依赖高清地图的离线预测基准，尚未证明无地图场景或闭环规划更安全。阅读判断：它修正既有候选而不增加候选数量，严重遗漏的未来模式可能仍无法恢复；错误初始轨迹也会影响图的邻接关系。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "完整候选未来与前向修正的缺口"
+              },
+              {
+                "section": "S3.SS1",
+                "claim": "冻结骨干、独立接口与残差输出"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px1",
+                "claim": "空间锚点和片段形状"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px3",
+                "claim": "双向时间边和仅联合预测的社会边"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "一次固定图上的多层更新"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "监督训练边界"
+              },
+              {
+                "section": "S5",
+                "claim": "结果范围和离线地图局限"
+              }
+            ],
+            "fulltext_hash": "3e906378ecf6f4059cf4bf20c0ec7ce69fbc81d8ffdb62251864337d3b6e852e",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:15:54.454Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 95,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "完整候选未来与前向修正的缺口",
+              "url": "https://arxiv.org/html/2610.22215v1#S1"
+            },
+            {
+              "section": "S3.SS1",
+              "claim": "冻结骨干、独立接口与残差输出",
+              "url": "https://arxiv.org/html/2610.22215v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px1",
+              "claim": "空间锚点和片段形状",
+              "url": "https://arxiv.org/html/2610.22215v1#S3.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px3",
+              "claim": "双向时间边和仅联合预测的社会边",
+              "url": "https://arxiv.org/html/2610.22215v1#S3.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "一次固定图上的多层更新",
+              "url": "https://arxiv.org/html/2610.22215v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "监督训练边界",
+              "url": "https://arxiv.org/html/2610.22215v1#S3.SS4"
+            },
+            {
+              "section": "S5",
+              "claim": "结果范围和离线地图局限",
+              "url": "https://arxiv.org/html/2610.22215v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S2.F2",
+              "caption": "Figure 2: FutureLift method overview. (a) Scene history and map context flow through an arbitrary frozen forecasting backbone, which exposes only multimodal trajectory proposals 𝐘^\\widehat{\\mathbf{Y}} and logits ℓ\\boldsymbol{\\ell}; FutureLift does not access backbone queries or intermediate features. (b) Each proposal is partitioned into RR intervals and lifted into spatially anchored future nodes. For clarity, the panel visualizes one representative mode kk of the KK instantiated modes. Typed relations connect the full node set to agent histories, map context, other modes, and for coherent joint-scenes proposals also to other predicted agents, while bidirectional temporal edges expose the complete horizon before correction. (c) Relation-specific attention updates all future nodes on this fixed graph and simultaneously decodes coordinate residuals, uncertainty parameters, and confidence residuals. Thus, later evidence can revise earlier segments in one graph pass without a causal sweep or graph reconstruction.",
+              "url": "https://arxiv.org/html/2610.22215v1#S2.F2",
+              "source_url": "https://arxiv.org/html/2610.22215v1#S2.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.22177",
+          "arxiv_id": "2610.22177",
+          "doi": "",
+          "title": "Motion- and Gravity-Aware Feedforward 3D Reconstruction",
+          "abstract": "Feed-forward transformer models have recently achieved strong performance in multi-view 3D reconstruction, but they still rely primarily on appearance-based attention and often struggle in dynamic scenes with weak geometric cues. In this work, we introduce a motion- and gravity-aware framework under the Learning Using Privileged Information (LUPI) paradigm. During training, residual optical flow and gravity direction are provided as privileged signals to guide geometric representation learning; during inference, the model uses standard visual inputs only. We integrate these priors into transformer backbones with lightweight architectural changes, preserving feed-forward efficiency. Experiments on standard benchmarks show consistent gains in reconstruction accuracy and robustness, especially in scenes with dynamic objects, ambiguous structure, and challenging camera motion. Our analysis further shows that the optimal injection stage is backbone-dependent: middle-layer integration is generally preferable for VGGT, while late-stage integration is more effective for {\\pi}3. These results suggest that LUPI offers a practical way to inject motion and physical priors into feed-forward 3D reconstruction without increasing test-time complexity.",
+          "authors": [
+            "Qian, Shiyao",
+            "Ren, Yuan",
+            "Bai, Dongfeng"
+          ],
+          "url": "https://arxiv.org/abs/2610.22177",
+          "published": "2026-10-15",
+          "topics": [
+            "运动与运动控制",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/html/2610.22177v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "score": 83,
+            "title_zh": "让前馈3D重建在训练中学会运动与重力先验",
+            "abstract_zh": "前馈Transformer在多视图3D重建上表现强劲，但主要依赖外观注意力，在动态场景和几何线索弱时仍容易出错。本文采用特权信息学习范式，在训练时以残差光流和重力方向指导几何表示，推理时仅使用常规视觉输入。通过轻量结构改动将这些先验接入Transformer骨干，保持前馈效率。标准基准显示重建精度和鲁棒性改善，尤其涉及动态物体、模糊结构和困难相机运动。分析表明，最佳注入位置依赖骨干：VGGT通常适合中层，π3更适合后层。这提供了一种将运动和物理先验转移到3D重建、又不增加测试时复杂度的途径。",
+            "reason": "运动残差是方法的核心监督，而非摘要中的附带词；适合关注运动与3D重建交叉的阅读。它改进运动感知的重建，不是视频动作控制器。",
+            "introduction_zh": "同一物体在多张图像中应有一致几何，但动态物体、视差和相机姿态歧义会破坏仅凭外观建立的对应。额外计算光流和重力能提供帮助，却可能增加部署开销。本文把它们当作训练老师：先教重建网络使用这些信号，再让网络在信号缺失时也能作出较好的几何判断，将额外知识留在视觉表示中。",
+            "method_takeaway": "训练时用残差光流指出难重建区域、用重力固定整体方向，再反复撤掉这些提示，教模型部署时只看图像也能保留几何收益。",
+            "framework_zh": "关键不是让重建模型在每次推理前都运行光流网络，而是把运动和重力当成只在学习阶段使用的提示。比如街景中一辆车在移动，墙面却静止：外观相似并不意味着多张图像里的像素都来自同一个静态三维点。如果训练时明确告诉模型哪些区域不服从整体运动，它就有机会学会更谨慎地聚合这些位置。\n\n作者先计算相邻帧光流，再减去一个全局仿射模型估计的运动，得到残差光流。残差表示“全局运动解释不了的部分”，不能简单等同于移动物体：明显视差、遮挡和深度突变也会留下残差，而这些恰好也是几何容易出错的区域。另一条提示是离线估计的重力方向，用来约束整体朝向。残差特征加入图像区域token，重力特征进入相机相关表示；两者分别提供局部难点和整体方向。\n\n训练分两步。第一步冻结注入点前的主干，让新增编码器和相关解码层先学会使用这些提示。第二步解冻主干并频繁丢弃提示，让它从图像自身补足缺失信息；因此部署仍然只输入图像，不需要真实重力传感器或额外光流。不同主干的特征组织不同，VGGT有专门的相机token，中层融合后还能继续跨视图推理；π3没有相同隔离结构，靠近对应输出头注入更合适。\n\n可以记作“老师先指出哪里动、哪边朝下，再撤掉答案提示”。实验支持残差光流比直接注入完整光流更有用，但这不意味着残差是精确的运动分割。方法目前服务于无序多视图重建；对严格按时间运行的流式几何，如何使用相机自身速度仍是后续问题。",
+            "pipeline": "训练图像及离线运动/重力提示 → 特征对齐 → 丢弃提示训练视觉主干 → 仅图像前馈重建",
+            "results": "作者在VGGT和π3上评测。8视图光流消融中，π3深度相对误差从无注入0.116降至残差流0.107，完整光流为0.113；VGGT对应0.121、0.114、0.124。并非所有指标均提升：π3该组位姿AUC由42.14变为40.94。两类先验组合和更多输入视图的收益见正文图3、4。",
+            "limitations": "作者指出，当前无序图像输入难以利用刚性流中蕴含的相机速度与角速度。阅读判断：全局仿射只是相机运动近似，残差包含视差等非物体运动；训练先验质量和骨干注入位置都会影响结果。本文没有证明可控制物体运动或生成流式视频。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "动态场景与外观注意力的局限"
+              },
+              {
+                "section": "S3.SS1.SSS1",
+                "claim": "光流分解及残差不只来自动态物体"
+              },
+              {
+                "section": "S3.SS1.SSS2",
+                "claim": "重力离线估计"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "第一阶段特权特征对齐"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "第二阶段模态丢弃与仅图像推理"
+              },
+              {
+                "section": "S4.SS4.SSS1",
+                "claim": "残差/完整光流比较"
+              },
+              {
+                "section": "S5",
+                "claim": "无序输入与相机运动先验限制"
+              }
+            ],
+            "fulltext_hash": "ab1ee9c392ccfbcec307050259c3193b83ea32d33cccb91be859565021be77e9",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:15:54.451Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 93,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "动态场景与外观注意力的局限",
+              "url": "https://arxiv.org/html/2610.22177v1#S1"
+            },
+            {
+              "section": "S3.SS1.SSS1",
+              "claim": "光流分解及残差不只来自动态物体",
+              "url": "https://arxiv.org/html/2610.22177v1#S3.SS1.SSS1"
+            },
+            {
+              "section": "S3.SS1.SSS2",
+              "claim": "重力离线估计",
+              "url": "https://arxiv.org/html/2610.22177v1#S3.SS1.SSS2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "第一阶段特权特征对齐",
+              "url": "https://arxiv.org/html/2610.22177v1#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "第二阶段模态丢弃与仅图像推理",
+              "url": "https://arxiv.org/html/2610.22177v1#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S4.SS4.SSS1",
+              "claim": "残差/完整光流比较",
+              "url": "https://arxiv.org/html/2610.22177v1#S4.SS4.SSS1"
+            },
+            {
+              "section": "S5",
+              "claim": "无序输入与相机运动先验限制",
+              "url": "https://arxiv.org/html/2610.22177v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Architecture Overview.",
+              "url": "https://arxiv.org/html/2610.22177v1/figures/pppg1_2.png",
+              "source_url": "https://arxiv.org/html/2610.22177v1#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.22070",
+          "arxiv_id": "2610.22070",
+          "doi": "",
+          "title": "Memory as Weights: Internalizing Long-Term History for Streaming Videos",
+          "abstract": "Streaming vision-language models (VLMs) must continuously integrate information from the past while remaining responsive to current observations and user queries. Existing memory mechanisms typically compress, retrieve, or cache historical observations and reintroduce them into the input context, forcing historical memory and current observations to compete for limited context. We propose MaLoW, a streaming memory framework that instead internalizes historical context into evolving lightweight parameter updates. MaLoW uses a recurrent HyperNetwork to incrementally consolidate incoming video observations into fixed-size LoRA weights, allowing historical information to be carried forward without revisiting the full video stream. In doing so, MaLoW represents history as weights, while keeping the current observation as input. To support training, we further construct MaLoW-Instruct, a large-scale streaming video dataset containing 381K question-answer pairs over 56K videos. We conduct extensive experiments to demonstrate that MaLoW achieves strong performance on OVO-Bench, StreamingBench, and StreamArena. On the backward split of OVO-Bench, MaLoW outperforms prior memory approaches by 3.9% to 11.8% across different video backbones while incurring only modest latency overhead. Beyond streaming video understanding, MaLoW also generalizes to vision-language-action models, improving the action success rate on Simpler WidowX by 9.3%.",
+          "authors": [
+            "Liu, Zhuoming",
+            "Lin, Jinhong",
+            "Zhang, Lin",
+            "Zhong, Yiwu",
+            "Li, Yin"
+          ],
+          "url": "https://arxiv.org/abs/2610.22070",
+          "published": "2026-10-15",
+          "topics": [
+            "流式视频理解",
+            "多模态",
+            "具身智能"
+          ],
+          "sources": [
+            "Hugging Face",
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/html/2610.22070v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 87,
+            "title_zh": "Memory as Weights：把流式视频历史写进持续更新的轻量权重",
+            "abstract_zh": "流式视觉语言模型需要持续整合历史，同时及时处理当前观察和问题。既有记忆方法往往压缩、检索或缓存历史，再放回输入上下文，导致历史与当前观察争夺有限空间。MaLoW将历史内化为不断演变的轻量参数更新：循环超网络逐步把新视频观察整合进固定大小的LoRA权重，无需重新访问完整视频流，让历史由权重携带、当前观察仍作为输入。作者构建含5.6万视频、38.1万问答对的MaLoW-Instruct训练集，并在OVO-Bench、StreamingBench和StreamArena上评测。摘要报告，不同骨干在OVO-Bench回溯部分比既有记忆方案高3.9%—11.8%，额外时延较小；方法还扩展到VLA，改善Simpler WidowX动作成功率。摘要所写9.3%与正文表中59.4%至68.8%略有差异，结果栏按表列值说明。",
+            "reason": "提供与外部检索记忆不同的长期历史承载机制，可借鉴于流式系统；主体是视频理解而非视频生成，因此不给流式生成加权。",
+            "introduction_zh": "流式模型无法把不断增长的视频历史都放进上下文。丢弃历史会忘记已发生的事，持续回放又占用显存和计算。MaLoW提出换一种保存位置：历史不再作为额外输入token，而是实时生成一组影响主干计算的低秩权重。这样当前画面保留直接视觉通道，过去则以参数化记忆改变当前问题的回答。",
+            "method_takeaway": "用循环超网络把已看过的视频持续压成固定大小的LoRA权重，让主干只读当前画面和问题，也能受到过去经历的影响。",
+            "framework_zh": "可以把常规记忆看成随身携带的笔记：回答前还得翻阅，笔记越长越挤占输入空间。MaLoW更像把看过的内容转成一副不断更新的“阅读眼镜”，改变模型理解当前画面的方式。这个比喻只描述信息路径：权重并不是永久知识，也不保证完整记住每一帧。\n\n每当一个视频片段成为历史，冻结主干的视觉与文本编码器先把画面和时间信息变为特征，一组可学习查询把它们压缩。循环超网络随后更新两种固定大小的状态：一种跟踪局部时间变化，另一种积累更长期语义，并用相邻画面的相似度门控，减少重复内容的无效累加。读出网络把这些状态变成LoRA，也就是附着在主干参数上的低秩增量，而不是继续追加历史token。\n\n下一时刻，基础VLM只显式接收当前画面和用户问题，历史通过刚生成的参数增量影响回答。训练时主干参数冻结，问答损失必须经过这些LoRA权重反向传给超网络，迫使它保存对后续回答有用的历史；训练还约束权重幅度。部署时是超网络前向生成参数，不需要为了每一个片段重新做梯度优化，也不重新读取整段旧视频。\n\n示意地说，画面里的人先把钥匙放进抽屉，后来站到桌旁，回答“钥匙在哪里”就需要历史而非当前外观。MaLoW试图把这种影响留在权重里。它解决的是有限计算下的历史压缩，并不是无损存档；论文也用机器人动作预测作扩展验证，但这不能推导出它已经是流式视频生成方法。",
+            "pipeline": "历史片段与时间编码 → 循环状态更新并生成LoRA → 当前画面及问题进入带记忆主干 → 回答或动作预测",
+            "results": "作者表1报告MaLoW配Qwen3-VL-4B时StreamingBench(R)84.8、OVO-Bench平均69.3；配MOSS-VL-Real-11B时OVO平均74.5。不同骨干与任务不能横向混为同一设置。SimplerEnv-Bridge的WidowX四任务均值由59.4%升至68.8%，按表列值为9.4个百分点；摘要写9.3%，存在轻微报告差异。",
+            "limitations": "阅读判断：固定大小权重仍是有损压缩，长时精细检索和记忆可解释性不能等同保留原帧；实验没有证明任意长视频都不遗忘。不同论文的StreamingBench版本、任务子集和骨干不一致，不直接与DeltaStreamer分数排序。VLA结果是特定模拟任务扩展。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "历史权重化，主干仅显式读取当前上下文"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "局部状态、门控语义状态与LoRA读出"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "冻结主干的训练目标"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "数据构建规模与时间约束"
+              },
+              {
+                "section": "S4",
+                "claim": "不同骨干的主要结果"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "机器人扩展及59.4至68.8的表列数据"
+              }
+            ],
+            "fulltext_hash": "a4390280fd94daf2d30efae3105e7092903262c69b4b43e5c943591d38b25ca5",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:15:54.458Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 87,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "历史权重化，主干仅显式读取当前上下文",
+              "url": "https://arxiv.org/html/2610.22070v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "局部状态、门控语义状态与LoRA读出",
+              "url": "https://arxiv.org/html/2610.22070v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "冻结主干的训练目标",
+              "url": "https://arxiv.org/html/2610.22070v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "数据构建规模与时间约束",
+              "url": "https://arxiv.org/html/2610.22070v1#S3.SS4"
+            },
+            {
+              "section": "S4",
+              "claim": "不同骨干的主要结果",
+              "url": "https://arxiv.org/html/2610.22070v1#S4"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "机器人扩展及59.4至68.8的表列数据",
+              "url": "https://arxiv.org/html/2610.22070v1#S4.SS2"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Overview of MaLoW. (1) MaLoW internalizes history into LoRA weights applied to a base VLM that processes only the current observation. (2) Context encoding compresses visual tokens Vt−1V_{t-1} and timestamp tokens Tt−1T_{t-1} into a compact representation qt−1q_{t-1} using a learnable query QQ. (3) Hidden state updates mtm_{t} that captures local dynamics and sts_{t} that preserves global semantics. (4) LoRA weights are decoded from the hidden states. (5) sts_{t} is updated through gated summation.",
+              "url": "https://arxiv.org/html/2610.22070v1/Method.png",
+              "source_url": "https://arxiv.org/html/2610.22070v1#S3.F2"
+            },
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Overview of the MaLoW data pipeline and statistics of MaLoW-Instruct. (1): Our data pipeline consists of a Question Generator, an Answer Generator, and a Verifier. (2): The distribution of the streaming question timing, the question type, and video source in MaLoW-Instruct.",
+              "url": "https://arxiv.org/html/2610.22070v1/dataset.png",
+              "source_url": "https://arxiv.org/html/2610.22070v1#S3.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.19849",
+          "arxiv_id": "2610.19849",
+          "doi": "",
+          "title": "DeltaStreamer: Towards Human-Like Agentic Streaming Video Understanding",
+          "abstract": "We propose DeltaStreamer, a novel agentic framework for streaming video understanding inspired by how humans observe, remember, and investigate. Streaming video understanding requires a system to retain evidence before knowing which details future queries will need. Existing approaches often obscure event transitions and omit relevant details when compressing video history, and cannot recover missing visual evidence. DeltaStreamer addresses these limitations by combining change-aware memory with query-driven planning and targeted evidence gathering with replay. Before a query arrives, it continuously observes the stream and explicitly records visual changes in structured memory, preserving how events unfold rather than only what is present. When a query arrives, a query-driven planner identifies the required evidence and guides memory retrieval and targeted replay. By revisiting historical frames, the agent can recover visual details omitted during observation and ground its answer in evidence beyond the retained descriptions. This connects continuous observation with active investigation tailored to each question. Experiments on OVO-Bench and StreamingBench demonstrate improvements over representative streaming video understanding methods, with overall scores of 66.07% and 59.53%, respectively. Project page: this https URL",
+          "authors": [
+            "Sun, Boyuan",
+            "Miao, Deshui",
+            "Gao, Wenzhao",
+            "Jia, Shaoyong",
+            "Jiao, Shaohui",
+            "Liu, Chi",
+            "Shu, Yan",
+            "Li, Derek",
+            "Dai, Bryan",
+            "Qian, Shengsheng",
+            "Hou, Qibin"
+          ],
+          "url": "https://arxiv.org/abs/2610.19849",
+          "published": "2026-10-14",
+          "topics": [
+            "流式视频理解",
+            "多模态",
+            "大模型"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.19849v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 84,
+            "title_zh": "DeltaStreamer：先记变化，再带着问题回看证据的流式视频理解",
+            "abstract_zh": "DeltaStreamer是受人类观察、记忆和调查方式启发的流式视频理解智能体框架。系统必须在不知道未来问题的情况下保存证据，既有历史压缩常模糊事件转折、遗漏细节，也难以找回被舍弃的视觉信息。本文结合变化感知记忆、问题驱动规划以及带回放的定向取证。问题到来之前持续观察，并在结构化记忆中记录视觉变化，保存事件如何演进；问题到来后，规划器识别所需证据，指导检索和定向回放。回看历史帧可恢复初次观察遗漏的细节，使答案获得文本记忆之外的视觉依据。实验在OVO-Bench与StreamingBench分别取得66.07%和59.53%的总体分数，优于文中比较的多种流式理解方法。",
+            "reason": "展示可追溯记忆与按需回放的具体协作方式，适合理解在线系统如何补救压缩遗漏；这是流式理解，不属于流式视频生成加权。",
+            "introduction_zh": "在线观察视频时，系统并不知道用户稍后会问哪个细节。若只存每帧的静态描述，两个相似场景之间的重要变化可能被压掉；若摘要漏写了细节，单纯检索摘要无法恢复。DeltaStreamer让记忆保留“变化”和来源指针，把回答变成有针对性的取证过程，并允许回看已经到达的历史帧。",
+            "method_takeaway": "观察时明确记录相邻画面发生了什么变化，回答时沿记忆中的来源指针回放相关旧帧，补齐摘要遗漏的证据。",
+            "framework_zh": "设想一个人先拿起红杯子、后来换成蓝杯子，这是示意：如果两次观察都压成“人在桌前喝水”，之后问“换杯子之前拿的是什么”就很难回答。DeltaStreamer首先改变记录方式，让视觉语言模型同时看当前帧和上一采样帧，既描述现在有什么，也写出出现、消失或状态改变等差异。变化因此成为记忆里的显式对象，而不是只能从两段摘要间猜测。\n\n这些记录组织成可追溯的层级结构：细粒度观察形成事件摘要，长期摘要再指向其来源事件和原始帧。输入模型的可见记忆仍受文本预算限制，但没有显示出来的记录并未删除。问题出现后，规划器判断应该寻找过去、当前还是后续到达的证据，再根据对象、时间和变化线索追溯相关记录。这一点不同于每次把整段历史重新塞进提示词。\n\n关键补救发生在文本不够用时。智能体可以主动请求回放，规则校验器也可在不同记忆层对同一对象状态的记录冲突时提出回看候选。系统重新检查指定旧帧后，再回到当前时刻继续调查并回答。回放只能访问已经到达的帧；若问题需要等待事件发生，系统继续接收新画面，而不是提前访问真实未来。\n\n因此这不是把摘要写得更长，而是让摘要成为能找回视觉证据的索引。它保留了压缩后的响应效率，也保留了补救遗漏的途径，但代价是历史帧和记录仍需存储，多轮规划与工具调用也会增加延迟。其优势主要体现在事件顺序和上下文理解，精准判断何时主动开口仍是独立难题。",
+            "pipeline": "相邻帧变化观察 → 带来源指针的层级记忆 → 问题驱动检索与历史回放 → 基于证据回答",
+            "results": "作者报告OVO-Bench总体66.07，比EventMemAgent高5.32个百分点；动作序列识别79.05、幻觉检测69.89。StreamingBench总体59.53，比STRIDE高1.95个百分点，但主动输出PO仅10.40。仅反映论文中的共享骨干、采样及评测协议，不与不同版本或任务子集的分数直接对比。",
+            "limitations": "作者明确指出：多次模型及工具调用有时延成本，可见记忆紧凑并不消除历史帧存储；错误观察与时间锚点会影响检索，记忆层间一致也不能保证正确。只在同一骨干的两个基准验证，主动响应时机仍弱。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "在线可访问时间范围与整体流程"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "相邻帧变化观察"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "来源指针及未展示记录仍保留"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "问题规划与后续取证"
+              },
+              {
+                "section": "S3.SS5",
+                "claim": "主动或冲突触发回放"
+              },
+              {
+                "section": "S4.SS2.SSS2",
+                "claim": "基准结果及主动输出弱项"
+              },
+              {
+                "section": "A4.SS1",
+                "claim": "存储、延迟与泛化限制"
+              }
+            ],
+            "fulltext_hash": "9b1e1f0c65d6188a2e748c9a48ab55594e3f467b44e0d6d453df15c1b84953f8",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:15:54.461Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 84,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "在线可访问时间范围与整体流程",
+              "url": "https://arxiv.org/html/2610.19849v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "相邻帧变化观察",
+              "url": "https://arxiv.org/html/2610.19849v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "来源指针及未展示记录仍保留",
+              "url": "https://arxiv.org/html/2610.19849v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "问题规划与后续取证",
+              "url": "https://arxiv.org/html/2610.19849v1#S3.SS4"
+            },
+            {
+              "section": "S3.SS5",
+              "claim": "主动或冲突触发回放",
+              "url": "https://arxiv.org/html/2610.19849v1#S3.SS5"
+            },
+            {
+              "section": "S4.SS2.SSS2",
+              "claim": "基准结果及主动输出弱项",
+              "url": "https://arxiv.org/html/2610.19849v1#S4.SS2.SSS2"
+            },
+            {
+              "section": "A4.SS1",
+              "claim": "存储、延迟与泛化限制",
+              "url": "https://arxiv.org/html/2610.19849v1#A4.SS1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Fig. 2: Overview of DeltaStreamer. Before the query, adjacent-frame comparison produces delta-augmented observations stored in hierarchical memory. After the query, the planner guides evidence retrieval and tool use, while targeted replay recovers visual details for verification.",
+              "url": "https://arxiv.org/html/2610.19849v1/overview.png",
+              "source_url": "https://arxiv.org/html/2610.19849v1#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.20693",
+          "arxiv_id": "2610.20693",
+          "doi": "",
+          "title": "Orbia: Do Generated Videos Form a Consistent 3D World?",
+          "abstract": "Video generators serve as interactive worlds for exploration and simulation, yet realistic and visually appealing frames do not necessarily depict a consistent 3D world. Existing benchmarks assess selected geometric properties or use vision-language models to judge memory and consistency, leaving systematic 3D evaluation underexplored. We introduce Orbia, the first benchmark dedicated to a systematic and comprehensive evaluation of 3D consistency in interactive world models. Through controlled exploration and revisit, we organize the evaluation into three dimensions: input preservation, generated-content persistence, and 3D self-consistency. For input preservation, registered RGB-D references and annotated anchors support appearance, geometry, and spatial stability measurements. For generated-content persistence, we compare revisits to regions absent from the input image with their first generated observations to test whether models preserve what they create. For 3D self-consistency, cross-view depth and feature correspondence, regional scale agreement, and held-out Gaussian rendering test whether generated views describe the same 3D scene. Minute-long exploration and revisits further test long-term consistency. Our construction and annotation pipeline brings together public datasets, self-captured scenes, and simulation, yielding 720 instances across indoor and outdoor environments and six exploration-and-revisit protocols. Evaluation spans 27 text-, action-, and camera-conditioned models through native-interface adapters. Our Orbia benchmark provides a systematic basis for diagnosing 3D inconsistency and developing more persistent video world models.",
+          "authors": [
+            "Lu, Dongyue",
+            "Fang, Guian",
+            "Lim, Hur",
+            "Wu, Yonggang",
+            "Wang, Yanrong",
+            "Chen, Hongshan",
+            "Qian, Shengju",
+            "Liao, Yue",
+            "Chow, Wei",
+            "Kong, Lingdong",
+            "Huang, Tianxin",
+            "Yang, Yu",
+            "Yang, Hongji",
+            "Huang, Junchao",
+            "Liang, Ao",
+            "Wang, Yihao",
+            "Wang, Zihan",
+            "Li, Rong",
+            "Chen, Hanlin",
+            "Wang, Xin",
+            "Ooi, Wei Tsang",
+            "Shou, Mike Zheng",
+            "Yan, Shuicheng"
+          ],
+          "url": "https://arxiv.org/abs/2610.20693",
+          "published": "2026-10-14",
+          "topics": [
+            "世界模型",
+            "视频生成",
+            "3D 重建"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.20693v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 83,
+            "title_zh": "Orbia：用探索后回访检验视频世界的三维一致性",
+            "abstract_zh": "视频生成器正成为探索和仿真的交互世界，但逼真、好看的画面不一定属于一致的三维世界。既有基准多只检查部分几何性质，或用视觉语言模型判断记忆与一致性，缺少系统的三维评价。Orbia 通过受控探索和回访，将评测分为输入保持、新生成内容持续性和三维自洽性。输入保持利用配准 RGB-D 参考及锚点测量外观、几何和空间稳定性；新区域回访与其第一次生成比较，检查模型是否保留自己创造的内容；自洽性使用跨视角深度与特征对应、局部尺度一致和留出视角高斯渲染。分钟级路线进一步检查长期一致性。构建流程整合公开数据、自采场景与仿真，得到覆盖室内外和六种探索回访协议的 720 个实例，并通过原生接口适配器评测 27 个文本、动作或相机条件模型，为定位三维不一致和发展持续世界模型提供基础。",
+            "reason": "适合判断世界模型是否真正维护场景；评测直接揭示好看的视频为何仍可能在回头时改变物体。",
+            "introduction_zh": "生成一段局部顺畅的视频并不意味着模型构造了稳定世界：相机返回原地时，原有物体可能消失，刚生成的区域也可能变样。直接与一张真值图比较又不公平，因为未观察区域本来就允许多种合理生成。作者因此先区分哪些内容有外部真值、哪些只能要求模型兑现自己的承诺。",
+            "method_takeaway": "把“世界一致”拆成三次核对：守住输入、记住自己生成的内容、让所有视角共同解释同一个三维场景。",
+            "framework_zh": "Orbia 最关键的设计是为不同区域使用不同的参照，而不是给整段视频打一个笼统的相似度分数。输入中已经看见的表面有明确依据，回访时应还原它们；初次探索的新区域没有唯一正确答案，模型可以自由生成，但之后返回时应与自己的第一次生成保持一致。第三个问题则不依赖某张参考图：不同视角能否同时属于一个合理的三维场景。这样，“合理地创造新内容”和“忘记已经创造的内容”就能被分开。\n\n为了让这三次核对可执行，作者先从带配准关系的 RGB-D 数据构建场景，选择可重复定位的物体锚点，再安排离开、探索、回到原区域的相机路线。锚点经过分割、跟踪、几何检查和人工复核。对输入内容，比较只覆盖初始可见表面，并对锚点分别计分，避免大片背景的高相似度掩盖重要物体的消失。对新区域，则把首次生成的视图当作承诺，利用深度重投影对齐后续回访中的同一表面，再检验是否维持外观和结构。\n\n自洽性检查更进一步：局部匹配良好不代表整段视频存在共同的三维解释，因此除了跨视角特征和深度对应，系统还用 64 个上下文帧恢复高斯场景，并在 16 个留出视角上检查渲染。这部分采用恢复出的相机，而不直接把要求模型执行的轨迹当作事实；否则，走错路线但几何自洽的模型会把控制错误和世界错误混在一起。相机控制准确度另行评价。\n\n最终分数汇总视觉、控制、三类一致性和时间维度，并按时间窗口观察分钟级视频的退化。它提供的是一套发现世界不稳定原因的诊断工具，而不是一种新的生成器。阅读结果时应同时看分项：高画质不能替代回访保持，高局部对应也不能替代整场景可重建。",
+            "pipeline": "构建配准场景与可复访锚点 → 执行探索—返回路线 → 分别核对输入、新内容和跨视角几何 → 结合长时退化报告分项能力",
+            "results": "作者报告视觉质量与三维一致性的排名相关性有限：世界模型组为 0.33，文生/图生视频组为 0.21。\n在人类评测的 90 个案例、6 个模型和 20 名评审设置中，相关分项与人类排序的相关系数为 0.859–0.921。",
+            "limitations": "阅读判断：几何与锚点评价仍依赖深度、分割和相机恢复器，估计错误可能影响分数。\n受控路线和可配准场景不能覆盖所有开放环境交互。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "三类一致性的任务分解。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "场景、锚点和路线构建。"
+              },
+              {
+                "section": "S4",
+                "claim": "三类一致性指标。"
+              },
+              {
+                "section": "S5.SS3",
+                "claim": "视觉、控制与一致性相关性。"
+              },
+              {
+                "section": "S5.SS7",
+                "claim": "人类评测。"
+              }
+            ],
+            "fulltext_hash": "0588d1587ced27cb4a27b6b0545921948df65a7d8f89a1600e320d5321ed0a9e",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:23:53.854Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 83,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "三类一致性的任务分解。",
+              "url": "https://arxiv.org/html/2610.20693v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "场景、锚点和路线构建。",
+              "url": "https://arxiv.org/html/2610.20693v1#S3.SS2"
+            },
+            {
+              "section": "S4",
+              "claim": "三类一致性指标。",
+              "url": "https://arxiv.org/html/2610.20693v1#S4"
+            },
+            {
+              "section": "S5.SS3",
+              "claim": "视觉、控制与一致性相关性。",
+              "url": "https://arxiv.org/html/2610.20693v1#S5.SS3"
+            },
+            {
+              "section": "S5.SS7",
+              "claim": "人类评测。",
+              "url": "https://arxiv.org/html/2610.20693v1#S5.SS7"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.tab1",
+              "caption": "Table 1: Comparison with representative benchmarks. We compare input formats, data sources, evaluation references, and five consistency tests: 1local 3D self-consistency, 2global 3D self-consistency, 3input-object preservation, 4revisit consistency, and 5long-term drift. Inputs: text, action, camera pose. Data: R public real imagery, C self-captured, S simulated, G generated. References: RGB color images, Depth depth maps, Pose camera poses, Action reference actions.Figure 1: Data construction and annotation pipeline. 1Reference selection uses geometry and template constraints. 2Anchor verification combines VLM proposals, segmentation, tracking, and cross-view surface checks. 3Trajectory synthesis defines geometrically valid exploration and revisits. 4Quality review includes ranking, human curation, and captioning.Table 2: Comparison across six evaluation tiers. Gen. Persist. denotes generated-content persistence. Temp. Stab. denotes temporal stability. 3D Repr. indicates scene geometry used by the generator (\\checkmark\\checkmark: present, ×\\times: absent, –: unconfirmed). Models are sorted by Overall within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Figure 2: Input preservation and generated persistence expose different failures. Top two rows: reference input P0P_{0} and query PqP_{q} versus model returns and queries. Cyan contours mark anchors. Bottom two rows: first visits and revisits on another case. Headers report the evaluated models and their corresponding case-level tier scores for each example.Table 3: Tier 3: Detailed input preservation results. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Table 4: Tier 4: Detailed generated-content persistence results. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group. Same and Diff. denote direct comparisons at identical and different requested poses. Reproj. denotes geometry-aligned comparison.Figure 3: 3D self-consistency reveals reconstruction failures. Top two rows: held-out generated views and their Gaussian reconstructions. Bottom: depth, feature, scale, and reconstruction metrics. Header and bar colors identify models. Header values summarize the case-level tier scores for the corresponding evaluated videos.Figure 4: Cross-tier ranking correlations. Top: world models. Bottom: TI2V models. Left: short videos. Right: long videos. Cells show Spearman correlations between model-level tier scores.Figure 5: Performance across trajectory templates. Top: world models. Bottom: TI2V models. Left: short videos. Right: long videos. Cells show mean tier scores with equal model weights within each evaluated model group.Figure 6: Temporal performance for world models. Top: short videos. Bottom: long videos. Rows follow the model order in Table 2. Time increases from left to right. Cells show mean window scores for quality, control, and local geometry on a shared 0–100 scale, rounded to integers. Darker colors indicate higher scores within each evaluated time window.Figure 7: Temporal performance for TI2V models. Top: short videos. Bottom: long videos. Rows follow the model order in Table 2. Time increases from left to right. Cells show mean window scores for quality, control, and local geometry on a shared 0–100 scale, rounded to integers. Darker colors indicate higher scores within each evaluated time window.Figure 8: Performance across data sources. Top: world models. Bottom: TI2V models. Left: short videos. Right: long videos. Cells show mean tier scores with equal model weights. Dashes indicate unavailable groups.Figure 9: Dataset gallery. Selected input images from the \\texorpdfstring\\pdfxformAOrbia benchmark illustrate diverse indoor and outdoor environments.Figure 10: Dataset gallery. Selected input images from the \\texorpdfstring\\pdfxformAOrbia benchmark illustrate diverse indoor and outdoor environments.Table 5: Dataset composition.Figure 11: Exploration-and-revisit templates. Blue arrows show outward motion and rose arrows show return motion. In yaw return, the camera stays at a fixed center and the symbols along the arc indicate viewing directions.Figure 12: Examples of the forward–backward (top) and lateral return (bottom) templates from ScanNet++.Figure 13: Examples of the forward–backward template from Sekai (top) and the lateral return template from MiraData (bottom).Figure 14: Examples of the forward–backward (top) and lateral return (bottom) templates from UE.Figure 15: Examples of the forward–backward (top) and lateral return (bottom) templates from self-captured videos.Figure 16: VLM prompt for initial anchor selection. The preceding task-purpose and initial scene-gate instructions are omitted here. The full prompt also rejects unsuitable scenes before proposing anchors.Figure 17: Anchor selection in the UE editor. A cart is selected as a bounded static landmark, with its scene Actor highlighted in yellow. Its location and bounds guide the initial camera framing and trajectory design.Figure 18: Manual review of a MiraData forward–backward case. The interface combines scene review, annotation scores, per-anchor decisions, reference overlays, sampled frames, and camera trajectories.Figure 19: VLM prompt for dedicated scene filtering. The illustrative description value in the JSON schema is shortened for display. The decision instructions are reproduced in full.Figure 20: VLM prompt for final scene captions. This separate captioning pass describes the persistent architecture, objects, and surroundings used to condition model generation on the initial scene.Table 8: Annotation-quality ranking for public-video candidates. The SpatialVID scoring scheme assigns up to 7070 points.Figure 21: Kling3.0 prompt for short-horizon lateral return. The scene caption is represented by a placeholder.Figure 22: Kling3.0 prompt for long-horizon lateral return. The same scene caption precedes each segment. Continuation requests use the preceding generated last frame.Table 9: Tier 1: Detailed control alignment results. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Figure 23: Control alignment on a UE orbit example. Requested and recovered camera trajectories are shown on shared axes, with arrows indicating viewing direction. Astra fails to recover the requested trajectory. Displayed scores are for this case.Figure 24: Control alignment on a UE orbit example. Requested and recovered camera trajectories are shown on shared axes, with arrows indicating viewing direction. Astra fails to recover the requested trajectory. Displayed scores are for this case.Table 10: Tier 2: Detailed visual quality results. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Figure 25: Visual quality on a MiraData orbit example. Rows show three matched timestamps, with models arranged in columns. Displayed scores are for this case.Figure 26: Visual quality on a ScanNet++ forward–backward example. Rows show three matched timestamps, with models arranged in columns. Displayed scores are for this case.Figure 27: Visual quality on a SpatialVID lateral-return example. Rows show three matched timestamps, with models arranged in columns. Displayed scores are for this case.Figure 28: Generated-content persistence on a Sekai yaw-return example. Each column compares a model’s first visit (top) and revisit (bottom) at registered matching requested poses. Displayed scores are for this case.Figure 29: Input preservation on a UE yaw-return example. The left column shows the input and registered query references. The other columns show model returns (top) and queries (bottom). Ideally, Return reproduces the input, while Query preserves the reference anchor’s position and appearance. Cyan contours mark the wooden-crate anchor in the input and its input-visible query region. Displayed scores are for this case.Figure 30: Input preservation on a UE lateral-return example. The left column shows the input and registered query references. The other columns show model returns (top) and queries (bottom). Ideally, Return reproduces the input, while Query preserves the reference anchor’s position and appearance. Cyan contours mark the input anchor and its input-visible query region. Displayed scores are for this case.Table 11: Tier 5: Detailed 3D self-consistency results. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Table 12: Tier 6: Detailed temporal stability results. Short- and long-video means receive weights of 30% and 70%, respectively. Scores use a 0–100 scale (↑\\uparrow). Models are ordered by Tier Score within each group. 1st, 2nd, 3rd mark the top three scores per column and group.Figure 31: Temporal stability on a Sekai forward–backward example. Rows show models and columns show five timestamps from the minute-long sequence. Displayed scores are for this case.Figure 32: Temporal stability on a UE arc-return example. Rows show models and columns show five timestamps from the minute-long sequence. Displayed scores are for this case.Figure 33: Temporal stability on a SpatialVID arc-return example. Rows show models and columns show five timestamps from the minute-long sequence. Displayed scores are for this case.Figure 34: Examples of the yaw return (top) and arc return (bottom) templates from ScanNet++.Figure 35: Examples of the orbit around an anchor (top) and peek-and-return (bottom) templates from ScanNet++.Figure 36: Examples of the yaw return template from Sekai (top) and the arc return template from SpatialVID (bottom).Figure 37: Examples of the orbit around an anchor (top) and peek-and-return (bottom) templates from Sekai.Figure 38: Examples of the yaw return (top) and arc return (bottom) templates from UE.Figure 39: Examples of the orbit around an anchor (top) and peek-and-return (bottom) templates from UE.Figure 40: Examples of the yaw return (top) and arc return (bottom) templates from self-captured videos.Figure 41: Examples of the orbit around an anchor (top) and peek-and-return (bottom) templates from self-captured videos.Figure 42: Manual review of a Sekai orbit case. The interface combines scene review, annotation scores, per-anchor decisions, reference overlays, sampled frames, and camera trajectories.",
+              "url": "https://arxiv.org/html/2610.20693v1/assets/icon_text.png",
+              "source_url": "https://arxiv.org/html/2610.20693v1#S1.tab1"
+            },
+            {
+              "id": "S3.F1",
+              "caption": "Figure 1: Data construction and annotation pipeline. 1Reference selection uses geometry and template constraints. 2Anchor verification combines VLM proposals, segmentation, tracking, and cross-view surface checks. 3Trajectory synthesis defines geometrically valid exploration and revisits. 4Quality review includes ranking, human curation, and captioning.",
+              "url": "https://arxiv.org/html/2610.20693v1/construction.png",
+              "source_url": "https://arxiv.org/html/2610.20693v1#S3.F1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.20818",
+          "arxiv_id": "2610.20818",
+          "doi": "",
+          "title": "Intern Lumina U2: A Multi-Codebook Diffusion Large Language Model for Omni-Visual Understanding and Image Generation",
+          "abstract": "Unified multimodal generation covers discrete, continuous, and hybrid paradigms. Discrete approaches with single-codebook visual tokenizers align naturally with text modeling but have limited representational capacity. Continuous and hybrid approaches retain richer visual representations, but they model text and images in heterogeneous spaces with different training objectives, potentially introducing optimization conflicts between modalities with misaligned representation spaces. These choices expose a central question: how to efficiently model high-capacity visual representations alongside textual content in a shared optimization space within a single backbone. We present Intern Lumina U2, to our knowledge the first diffusion language model to represent multi-codebook visual tokens in a fully discrete space. Each visual position is represented by a group of codes from complementary codebooks, increasing its representational capacity while preserving compatibility with discrete text modeling. At the input, the embeddings are concatenated at each position; at the output, a lightweight multi-codebook autoregressive head predicts the codes within each position sequentially, while the diffusion backbone processes all positions in parallel. Built on the unified 4D representation of AToken, Intern Lumina U2 supports image, video, and 3D inputs within a single backbone and achieves leading performance among unified models in visual understanding, image generation, and image editing. We further build a full-stack training, inference, and evaluation system on both Ascend and NVIDIA platforms to verify the cross-platform effectiveness of our model. We also improve the inference efficiency through a stability-aware sampling strategy, which combines confidence-plateau-guided unmasking approach with drift-triggered cache refreshing mechanisms, accelerating image generation by 4.45x.",
+          "authors": [
+            "Yu, Qian",
+            "Qiu, Zongyang",
+            "Yan, Juncheng",
+            "Li, Hongliang",
+            "Qin, Qi",
+            "Wang, Keqi",
+            "Luo, Siqi",
+            "Ju, Junkui",
+            "Mi, Yapeng",
+            "Lu, Tiantian",
+            "Liu, Tian",
+            "Xie, Pengyu",
+            "Ji, Chenhao",
+            "Zhang, Minghui",
+            "Zhao, Yiang",
+            "Yan, Siyu",
+            "Xu, Haiying",
+            "Wang, Yanbo",
+            "Shen, Jianghan",
+            "Pu, Yuandong",
+            "Lei, Jiayi",
+            "Zhang, Borui",
+            "Shi, Jinxin",
+            "Zhang, Bo",
+            "Zang, Yuhang",
+            "Ye, Shenglong",
+            "Gu, Lixin",
+            "Zhang, Hongjie",
+            "Liu, Linghan",
+            "Chen, Xinyuan",
+            "Cao, Yuewen",
+            "Zhang, Lihe",
+            "Liu, Xiaohong",
+            "He, Junjun",
+            "Liu, Qiangwei",
+            "Zhang, Qi",
+            "Cheng, Yu",
+            "Xue, Tianfan",
+            "Xiong, Hui",
+            "Xu, Chang",
+            "Qiao, Yu",
+            "Liu, Yihao",
+            "Fu, Bin"
+          ],
+          "url": "https://arxiv.org/abs/2610.20818",
+          "published": "2026-10-14",
+          "topics": [
+            "多模态",
+            "大模型"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.20818v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 82,
+            "title_zh": "InternLumina-U2：一个视觉位置用多码表达，主干仍保持一个词元",
+            "abstract_zh": "统一多模态生成包含离散、连续和混合路线。单码本离散表示容易与文本统一，但容量有限；连续和混合表示更丰富，却可能因表示空间和训练目标不同造成优化冲突。InternLumina-U2 探索在一个主干和共同优化空间中高效建模高容量视觉表示，是作者所知首个在全离散空间表达多码本视觉词元的扩散语言模型。每个视觉位置由互补码本的一组码表示；输入端逐位置拼接嵌入，输出端用轻量自回归头顺序预测该位置内各码，而扩散主干并行处理所有位置。借助 AToken 的统一四维表示，同一主干支持图像、视频和三维输入，并在统一模型中的视觉理解、图像生成和编辑任务取得领先结果。作者在昇腾与 NVIDIA 平台构建训练、推理和评价系统，并以置信度平台期指导解掩码、以漂移触发缓存刷新，报告图像生成加速 4.45 倍；具体适用条件见原文采样实验。",
+            "reason": "关键在于解决视觉表示丰富度、序列长度和多码解码一致性之间的取舍，是理解统一多模态模型的一条清晰技术路线。",
+            "introduction_zh": "一个离散视觉码可能装不下足够细节，而把多个码全部展开成序列又会显著增加主干计算。多个码若互相独立预测，还可能拼出不协调的视觉表示。论文用“主干看一个位置，小头解开多个码”的分工处理这一矛盾。",
+            "method_takeaway": "主干一次看一个视觉位置，小头再依次解开八个码：把丰富的视觉细节留在位置内部，而不是拉长整条序列。",
+            "framework_zh": "InternLumina-U2 的核心可以理解为把视觉位置做成一个装有八个码的包。冻结的 AToken 编码器为每个位置产生八组互补离散码，每个码本有 4096 个取值。输入模型时，八组嵌入先拼接并投影成一个主干表示，因此空间上的一个位置仍然只占一个词元。相较把八个码全部铺成序列，这种做法保留多码的信息容量，同时控制主干序列长度。\n\n难点在输出端：既然八个码共同描述同一位置，就不宜把它们当作彼此无关的分类问题。作者给主干连接一个小型六层自回归头，按码本顺序生成后面的码，并让后一个码看到前面已经确定的码。训练时使用正确前序码进行监督，推理时使用自己的前序预测。它顺序处理的是同一位置内部的码本维度，不是把整张图的所有位置重新改回逐位置自回归生成。\n\n在图像生成时，外层仍然执行扩散语言模型的迭代掩码恢复：各空间位置并行预测，置信度较高的内容逐步确定，较低的内容继续修正；每轮内部再由小头处理八个码之间的依赖。文本和视觉任务采用相应的注意力与掩码安排，条件信息保持干净。于是这套结构同时具有大范围并行更新与局部有序解码，但不能被理解为整张图一次前向就能完成。\n\n这种分工的价值通过相近训练预算下的输出头对比来检验：独立并行预测容易丢失码间协调，自回归小头则改善若干生成指标。模型的视觉编码接口可以接受图像、视频和三维数据，但论文当前展示的生成与编辑能力针对图像；能够理解视频或三维输入，并不意味着已经实现视频生成或三维生成。",
+            "pipeline": "将视觉位置编码为八个离散码 → 合并嵌入后作为一个主干词元 → 外层并行迭代恢复视觉位置 → 内层小头顺序生成相互依赖的码",
+            "results": "在论文相近训练预算的 512 分辨率对照中，自回归码本头的 GenEval 为 82.78，独立并行头为 68.94，Q-Former 头为 69.67。\n该对照中 TIIF 从并行头的 70.1 提升到 73.2，而 DPG 为 83.27 对 83.22，收益并非每项指标同样明显。",
+            "limitations": "阅读判断：小头仍有顺序解码成本，高分辨率也会增加主干序列与迭代成本。\n当前生成结果不能直接外推到视频或三维生成；不同硬件运行也不是完全等预算的性能对照。",
+            "evidence": [
+              {
+                "section": "S3.SS2",
+                "claim": "视觉编码器与多码本。"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "压缩表示和解码头。"
+              },
+              {
+                "section": "S6.SS1.SSS0.Px2",
+                "claim": "迭代掩码采样。"
+              },
+              {
+                "section": "S7",
+                "claim": "输出头消融。"
+              },
+              {
+                "section": "S8",
+                "claim": "局限与尚未实现的生成能力。"
+              }
+            ],
+            "fulltext_hash": "e5ca0bc1ff92fe8566acea63d7c588fa510908cb5791f8a2e5c79c102c096e00",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:23:53.869Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 82,
+          "evidence": [
+            {
+              "section": "S3.SS2",
+              "claim": "视觉编码器与多码本。",
+              "url": "https://arxiv.org/html/2610.20818v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "压缩表示和解码头。",
+              "url": "https://arxiv.org/html/2610.20818v1#S3.SS4"
+            },
+            {
+              "section": "S6.SS1.SSS0.Px2",
+              "claim": "迭代掩码采样。",
+              "url": "https://arxiv.org/html/2610.20818v1#S6.SS1.SSS0.Px2"
+            },
+            {
+              "section": "S7",
+              "claim": "输出头消融。",
+              "url": "https://arxiv.org/html/2610.20818v1#S7"
+            },
+            {
+              "section": "S8",
+              "claim": "局限与尚未实现的生成能力。",
+              "url": "https://arxiv.org/html/2610.20818v1#S8"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Overall architecture of Intern Lumina U2. Visual inputs are encoded into visual tokens by AToken and text into text tokens; the MoE diffusion LLM recovers masked text tokens through the text head, with text answers generated by block diffusion, and masked visual tokens through the multi-codebook AR head, which predicts the KK codes of each visual token sequentially.",
+              "url": "https://arxiv.org/html/2610.20818v1/main.png",
+              "source_url": "https://arxiv.org/html/2610.20818v1#S3.F3"
+            },
+            {
+              "id": "S4.F7",
+              "caption": "Figure 7: Data construction pipeline. Six data categories are built with category-specific rules, converted to one record format, encoded offline, and re-weighted at each training stage. Bars show backbone-position shares (Table 2).",
+              "url": "https://arxiv.org/html/2610.20818v1#S4.F7",
+              "source_url": "https://arxiv.org/html/2610.20818v1#S4.F7"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.19063",
+          "arxiv_id": "2610.19063",
+          "doi": "",
+          "title": "WorldMemBench: A Comprehensive Benchmark for Memory of Video World Models",
+          "abstract": "As video models enable longer and more realistic interactive experiences, maintaining a world consistent with its history becomes essential. This requires both preserving previously observed content and ensuring coherent world evolution over time. World memory is a critical capability to evaluate alongside visual fidelity and video duration. We introduce WorldMemBench, a benchmark for systematically evaluating world memory in video world models. Across 260 test cases, it assesses static memory through the retention of human identity and appearance, object appearance and geometry, and environmental content and geometry, and dynamic memory through event progression and state persistence. Using controlled camera departures and multi-revisit trajectories, the benchmark evaluates static content against fixed initial references and dynamic events against expected state transitions. It combines appearance and geometry metrics with event-specific assessments, and reports video quality and camera-following accuracy as complementary diagnostics. Evaluation of nine representative models shows that strong static retention does not imply reliable dynamic state evolution, while repeated revisits reveal memory degradation beyond the first return. Human studies support the alignment between our automatic evaluations and human judgments. WorldMemBench provides a systematic testbed for diagnosing memory failures and guiding the development of persistent, temporally coherent video worlds.",
+          "authors": [
+            "Zhou, Nan",
+            "Gao, Jianxiong",
+            "Wang, Qiuyu",
+            "Wang, Wen",
+            "Wang, Jiahao",
+            "Yuan, Yufeng",
+            "Li, Shuaiting",
+            "Ouyang, Hao",
+            "Shen, Yujun",
+            "Lu, Weiming",
+            "Xiao, Jun",
+            "Zhuang, Yueting",
+            "Shen, Yongliang"
+          ],
+          "url": "https://arxiv.org/abs/2610.19063",
+          "published": "2026-10-13",
+          "topics": [
+            "世界模型",
+            "视频生成"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.19063v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 82,
+            "title_zh": "WorldMemBench：反复回头，检验世界模型是否记住场景与事件",
+            "abstract_zh": "随着视频模型支持更长、更逼真的交互体验，维持与历史一致的世界愈加重要。这既要求保留已观察内容，也要求世界随时间合理演化，因此世界记忆应与画质和时长共同评价。WorldMemBench 在 260 个案例中，通过人物身份和外观、物体外观和几何、环境内容和几何的保持评价静态记忆，通过事件推进和状态持续评价动态记忆。受控相机离开与多回访轨迹使静态内容始终对照固定初始参考，动态事件则对照预期状态转换。基准结合外观、几何和事件专用指标，并单列视频质量和相机跟随准确度作为诊断。对九个代表模型的评价显示，较强静态保持不意味着可靠动态演化，多次回访能揭示首次返回之后的退化。人类研究支持自动评价与人的判断相符，为诊断记忆失败提供系统测试平台。",
+            "reason": "与 Orbia 形成互补：重点观察反复回访和事件状态，避免把复制静态画面误判为世界记忆。",
+            "introduction_zh": "回头时重新画出相似场景，看起来似乎有记忆，但这种评价遗漏了两件事：第三次回访是否还记得最初内容，以及镜头离开期间发生的事件是否继续推进。论文把记忆理解为既保留世界身份，也维护世界状态。",
+            "method_takeaway": "每次回头都对同一个初始参照核对，同时检查事件是否继续发展；记忆不是简单复制旧画面。",
+            "framework_zh": "WorldMemBench 的核心是把回访变成重复且有固定参照的测试。相机先看到人物、物体或环境，随后离开并多次返回。每次返回都和最初的参考状态比较，而不是只和上一段生成比较；后者可能让逐步积累的漂移看起来始终很小。测试路线包括平移回环、左右转动、上下转动和跨轴返回，因此也能观察错误是否随着回访次数增长。\n\n静态部分不是只算整张图的相似度。人物需要保持身份和外观，物体既要保持外观，也要保持轮廓几何；环境则分别检查可见内容、深度结构以及重建后表面的对应。目标被漏掉或没有成功观察到时不能直接从统计中删除，否则模型反而可能通过不返回目标逃避记忆测试。相机轨迹误差另外记录，用于判断差异有多少来自没走回同一视角，而不是直接归因于遗忘。\n\n动态部分特意打破“记住就是复原旧帧”的直觉。一个事件开始后，相机暂时离开；再回来时，正确世界应当呈现事件推进后的状态，并在后续回访中维持已经发生的变化。作者把每个案例写成固定的二元检查清单，覆盖推进、状态保持或重置、最终状态、因果与物理合理性。先检查事件是否启动；没有启动就不能靠静态画面获得动态记忆分数。启动后再按各问题的回答计分。\n\n因此，静态与动态分数需要一起阅读：擅长保留外观的模型未必会维护事件进程，反之亦然。论文还在相同上下文预算下比较不同历史保留策略，说明记住哪些视角会影响回访表现。它主要提供评测和诊断，并没有把某种缓存策略直接等同于解决长期世界记忆。",
+            "pipeline": "设定初始场景与事件状态 → 执行多次离开—返回轨迹 → 每次回访核对固定参照 → 分开评价静态保持、事件推进及相机误差",
+            "results": "9 个模型的平均值从第一次到第三次回访持续下降：物体外观下降 0.229，人物身份下降 0.217，物体几何下降 0.205。\n论文中 HY-WorldPlay 静态项目表现突出，但动态分数为 0.294；LingBot-World 与 YUME 的动态分数分别为 0.808 与 0.775，提示两种能力不能互相替代。",
+            "limitations": "阅读判断：测试以受控相机运动和数百帧序列为主，不能直接代表长时间自由探索或复杂具身行动。\n动态问题依赖视觉语言模型判定，其中因果和物理合理性的判断仍较困难。",
+            "evidence": [
+              {
+                "section": "S3.SS2",
+                "claim": "260 个实例的划分。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "多回访轨迹。"
+              },
+              {
+                "section": "S4.SS1",
+                "claim": "固定参照和失败观测处理。"
+              },
+              {
+                "section": "S4.SS5",
+                "claim": "动态检查清单。"
+              },
+              {
+                "section": "S5.SS2",
+                "claim": "静态动态结果。"
+              },
+              {
+                "section": "S5.SS3",
+                "claim": "重复回访退化。"
+              }
+            ],
+            "fulltext_hash": "0d7ba8cacaa8e67c0a4b08cd28c27fa17a18c4bc7bef1f644ab1dde2f5a2ef73",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:23:53.862Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 82,
+          "evidence": [
+            {
+              "section": "S3.SS2",
+              "claim": "260 个实例的划分。",
+              "url": "https://arxiv.org/html/2610.19063v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "多回访轨迹。",
+              "url": "https://arxiv.org/html/2610.19063v1#S3.SS3"
+            },
+            {
+              "section": "S4.SS1",
+              "claim": "固定参照和失败观测处理。",
+              "url": "https://arxiv.org/html/2610.19063v1#S4.SS1"
+            },
+            {
+              "section": "S4.SS5",
+              "claim": "动态检查清单。",
+              "url": "https://arxiv.org/html/2610.19063v1#S4.SS5"
+            },
+            {
+              "section": "S5.SS2",
+              "claim": "静态动态结果。",
+              "url": "https://arxiv.org/html/2610.19063v1#S5.SS2"
+            },
+            {
+              "section": "S5.SS3",
+              "claim": "重复回访退化。",
+              "url": "https://arxiv.org/html/2610.19063v1#S5.SS3"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S0.F1",
+              "caption": "Figure 1: Overview of WorldMemBench. Top: case coverage across humans, objects, environments, and dynamic events. Bottom left: controlled departure-and-revisit evaluation compares each return against a fixed initial reference. Bottom right: capability profiles of nine video world models.",
+              "url": "https://arxiv.org/html/2610.19063v1/teaser.png",
+              "source_url": "https://arxiv.org/html/2610.19063v1#S0.F1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.22276",
+          "arxiv_id": "2610.22276",
+          "doi": "",
+          "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
+          "abstract": "Spatial intelligence lets an agent perceive and act in the physical world, and many of its judgments must be made at interaction rates: which spatial relation holds, how far an object is, or where to place it. Vision-language models (VLMs) produce these answers by free-form text generation, paying for autoregressive decoding and answer parsing even though the output space is compact: one of a few options, a scalar, or a 2D point. In light of this, we introduce MJev-Spatial, a System 1 multimodal decision model that tackles all three types of spatial understanding tasks within a unified classification framework. Specifically, MJev-Spatial treats each candidate as a class and scores it using the backbone's pretrained query and key projections, without adding parameters. The candidates are the given options for choice tasks, or value bins and image regions refined through coarse-to-fine classification for numerical and point prediction, respectively. At inference, each classification decision takes a single forward pass and generates no answer tokens. To train on heterogeneous spatial data efficiently, we supervise all coarse-to-fine stages jointly with teacher forcing in one forward pass, and combine this with length-aware global batching and cross-GPU load balancing, raising training throughput by 30.8% over the original batching strategy. Built on Qwen3.5-4B and trained on 12.3M question-answer pairs converted from existing spatial datasets, MJev-Spatial achieves the highest overall score (65.64%) among eight tested models, ranks first on seven of twelve benchmarks, and outperforms its unmodified autoregressive base model on all twelve, while running 2.5 times faster than the fastest autoregressive baseline and 5.6 times faster than the base model.",
+          "authors": [
+            "Qin, Luozheng",
+            "Zhu, Yuhan",
+            "Zhou, Changhai",
+            "Qiao, Qian",
+            "Gao, Jun",
+            "Zhou, Yuhua",
+            "Zhang, Harry",
+            "Zeng, Xiangyu",
+            "Liu, Yuxuan",
+            "Chen, Kaijie",
+            "Chen, Andrew",
+            "Ma, Pony"
+          ],
+          "url": "https://arxiv.org/abs/2610.22276",
+          "published": "2026-10-15",
+          "topics": [
+            "多模态",
+            "空间推理"
+          ],
+          "sources": [
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.22276v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 81,
+            "title_zh": "MJev-Spatial：把空间回答改写成少量选择，减少逐字生成",
+            "abstract_zh": "空间智能需要以交互速度判断关系、距离和放置位置，但视觉语言模型通常为紧凑答案仍付出自回归解码和答案解析成本。MJev-Spatial 将选择、数值和二维点三类空间任务统一成分类：利用主干预训练的查询、键投影给候选评分，不新增参数；选择题使用原选项，数值和点位分别通过粗到细的数值分档和图像区域细化。推理中每次分类只需一次前向，不生成答案词元。训练把所有细化阶段以教师强制联合监督于同一次前向，并结合长度感知全局分批和跨 GPU 负载均衡，相比原分批策略提升吞吐 30.8%。基于 Qwen3.5-4B、使用由现有空间数据转换的 1230 万问答训练后，模型在八个比较系统中总体得分最高，为 65.64%；十二项基准中七项第一，全部优于未经改造的基础模型，相对最快自回归对照与基础模型分别加速 2.5 倍和 5.6 倍。",
+            "reason": "将空间任务的输出形式与计算方式一起设计，核心思路比单纯增加空间训练数据更值得借鉴。",
+            "introduction_zh": "很多空间问题只需要返回一个类别、长度或二维点，但通用视觉语言模型仍要逐字生成答案，并承担格式错误和多步解码开销。作者认为这些任务应直接在合法候选中决策，同时用逐层细化保留数值与定位精度。",
+            "method_takeaway": "空间答案很短，就把“写答案”改成“选答案”：一次注意力比较作决策，精细坐标再逐层放大。",
+            "framework_zh": "这篇论文最重要的变化发生在输出端：把空间推理任务转成有明确答案集合的决策。选择题直接选择候选，数值先选粗区间再细化，二维点则逐步选局部网格。这样模型不必先想好一个答案、再用多个词元把它拼出来，而是让已有表示直接参与候选之间的比较。改动针对的是答案紧凑、格式可预先约定的任务，并不是替代所有开放式语言生成。\n\n具体实现利用了预训练模型已经学过的注意力结构。每个候选末尾放一个 End 标记，问题之后放 Decide 标记；前面的层负责结合图像、问题与候选形成表示，最后一层取 Decide 的查询和各 End 的键计算分数，再在合法候选间归一化。它不新增一个随机初始化的分类头，但保留的语言模型权重仍需要微调，视觉编码器被冻结，因此不能理解成零训练就可获得同样效果。\n\n精细输出采用粗到细的选择链。点位预测先把图像划成 3×3 区域，选择后在对应区域继续细分，三阶段得到 27×27 的位置划分。每次裁剪都从原始图像取像素，并保留全局视图，避免只看越来越小的局部而失去物体关系。数值任务也使用约定单位和分档，但分档精度本身不等于预测准确度，前一步选错区域仍会影响之后的细化。\n\n训练时可以把各阶段放在同一次带因果遮罩的计算中，并用正确的前序选择提供后续监督；推理时则必须沿模型自己选出的路径逐步求解。因此，“每个决策一次前向”不意味着所有答案都一次完成：单个点通常有三次决策，多点输出还可能扩展分支。其收益来自用少量结构化决策替代冗长词元生成，同时通过分阶段任务设计维持空间精度。",
+            "pipeline": "定义紧凑输出候选 → 用 Decide 查询比较候选 End 键 → 对精细输出逐阶段裁剪与细化 → 返回合法答案",
+            "results": "论文报告 12 项空间基准平均分 65.64，其中 7 项达到比较系统中的最佳结果，12 项均高于基础模型。\nB200、批量为 1 的设置下平均延迟为 160.6 毫秒；作者报告相对最快自回归对照约 2.5 倍加速，相对基础模型约 5.6 倍。",
+            "limitations": "阅读判断：适用于预先定义的紧凑输出协议，不能直接推广到长篇解释生成。\n离散分档和前序选区错误会限制精度；裁剪、多点分支和训练数据规模仍有成本。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "粗到细输出。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "查询键评分结构。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "联合训练。"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "质量与延迟。"
+              }
+            ],
+            "fulltext_hash": "bf71e150979f8ad54a4eb20b67a5d7db94e1f15115126c61ec0f6cda3bc0ba48",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:23:53.865Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 81,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "粗到细输出。",
+              "url": "https://arxiv.org/html/2610.22276v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "查询键评分结构。",
+              "url": "https://arxiv.org/html/2610.22276v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "联合训练。",
+              "url": "https://arxiv.org/html/2610.22276v1#S3.SS3"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "质量与延迟。",
+              "url": "https://arxiv.org/html/2610.22276v1#S4.SS2"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S0.F1",
+              "caption": "Figure 1: \\captionleadOverview of the proposed MJev-Spatial. (a) Top scores on 7 of 12 spatial understanding benchmarks. (b) The highest mean score and lowest mean latency among eight evaluated models. (c) Direct option selection and coarse-to-fine numerical and point prediction. MJev-Spatial unifies these three spatial task types within a classification framework, enabling fast-thinking decisions with high accuracy and low inference latency.",
+              "url": "https://arxiv.org/html/2610.22276v1#S0.F1",
+              "source_url": "https://arxiv.org/html/2610.22276v1#S0.F1"
+            },
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: \\captionleadArchitecture of MJev-Spatial. Each candidate is followed by the same End marker. After contextualization by the language backbone, the state at each End position is passed through the same pretrained WKW_{K} to form a separate candidate key; the final Decide state supplies the query through WQW_{Q}. Their similarities determine the selected candidate, with no added prediction head or new parameters. Native normalization, rotary transformations, and head averaging are retained but omitted from the diagram. Probability bars are schematic.",
+              "url": "https://arxiv.org/html/2610.22276v1/jev_spatial_architecture.png",
+              "source_url": "https://arxiv.org/html/2610.22276v1#S3.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.22356",
+          "arxiv_id": "2610.22356",
+          "doi": "",
+          "title": "DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models",
+          "abstract": "Vision-language models still struggle to understand 3D spatial relations across views and update spatial judgments as the observer moves. A common approach fuses 3D reconstruction features into visual tokens, but aligning these features with pretrained semantic representations remains challenging under limited spatial supervision. We propose DK-VLM with Dual-Kernel Attention, which computes attention from both a visual token's input position and its geometric position in the scene. A semantic kernel retains the pretrained model's native attention and positional encoding, while a separate geometric kernel uses estimated 3D points and camera poses to directly modulate attention through point displacements and relative view transformations. Then, a learned gate fuses their outputs. Geometry thus enters attention as position rather than as fused reconstruction features. We further introduce Reference-Frame Composition (RC) supervision to train the model to update its reference frame across successive judgments. It provides stepwise turn and heading targets derived from verified single-step annotations. Among the compared methods, DK-VLM-8B achieves the highest average score across six spatial benchmarks and the highest overall scores on VSI-Bench (74.33) and ReVSI-32 (58.28). RC supervision further improves multi-step spatial reasoning, while the full model preserves general video understanding. Project page: this https URL.",
+          "authors": [
+            "Su, Han",
+            "Tian, Meng",
+            "Huang, Tianyu",
+            "Gao, Mingyu",
+            "Wei, Lennox",
+            "Li, Dongxu",
+            "Han, Jianhua",
+            "Xu, Hang",
+            "Wu, Xiaohe",
+            "Zuo, Wangmeng"
+          ],
+          "url": "https://arxiv.org/abs/2610.22356",
+          "published": "2026-10-15",
+          "topics": [
+            "多模态",
+            "空间推理",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-10-16"
+          ],
+          "from_cache": true,
+          "fulltext_url": "https://arxiv.org/html/2610.22356v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "priority_topics": [],
+            "score": 81,
+            "title_zh": "DK-VLM：让三维关系直接参与注意力，而不只拼接几何特征",
+            "abstract_zh": "视觉语言模型仍难以理解跨视角三维关系，并随观察者移动更新空间判断。常见做法将重建特征融合进视觉词元，但在有限空间监督下难以对齐预训练语义表示。DK-VLM 的双核注意力同时利用词元的输入位置和场景几何位置：语义核保留原生注意力与位置编码，独立几何核用估计三维点及相机位姿，通过点位移和相对视角变换直接调整注意力，再由可学习门控融合。因此几何作为位置结构进入注意力，而不只是融合的重建特征。参考系组合监督由已核验单步标注生成逐步转向和朝向目标，训练模型在连续判断中更新参考系。比较方法中，DK-VLM-8B 在六个空间基准平均分及 VSI-Bench、ReVSI-32 总分最高，后两者分别为 74.33、58.28；组合监督进一步提升多步空间推理，同时保留一般视频理解能力。",
+            "reason": "将几何视为关系与位置结构，而非另一组普通特征，适合关注三维感知如何帮助多模态推理的读者。",
+            "introduction_zh": "同一个三维点在不同视角中会落到不同二维位置，直接拼接几何特征不一定让模型学会这些坐标变化之间的关系。作者希望注意力比较两个视觉位置时，就能利用它们的三维位移和相机关系，同时尽量保留已有语义能力。",
+            "method_takeaway": "保留原来的语义注意力，再加一条“懂相对三维位置”的注意力支路，让几何关系参与信息选择。",
+            "framework_zh": "DK-VLM 的核心不是把深度图再当一张图片喂给模型，而是改变视觉位置之间交换信息的方式。几何前端先从输入图像估计对齐的三维点和相机位姿。原有语义注意力照常处理内容，旁边增加几何注意力支路；后者在比较两个视觉词元时利用它们的相对点位移和相对相机变换。几何因而成为决定关系的结构，而不只是等待语言模型自行理解的一串额外特征。\n\n两条分支各司其职。语义支路保留原生位置编码与注意力规则，几何支路使用独立的查询、键和值，并由预训练权重初始化。PointGTA 和 CameraGTA 通过相应变换使注意力携带点关系与视角关系，再由每层可学习门控把几何结果融合回主干。没有有效几何的文本词元继续依靠语义支路；几何分支的全局交互范围是已经提供的观测视觉词元，不能解读为实时系统能够访问尚未发生的未来帧。\n\n为了让这种结构真正服务推理，作者增加关系链训练：将可核验的单步地标与视角关系连接为多步问题，并根据前一朝向和转向计算下一朝向。模型由此学习如何把局部空间事实连续组合，而不是只回答孤立的一步关系。训练中还用成对点的距离和方向约束几何表示，帮助支路学到可用的空间结构。\n\n部署时移除的是用于训练监督的成对几何预测头，并不是把所有几何计算都取消。输入图像仍需要几何前端估计点与相机，之后再由双分支模型完成回答。理解这一区别很重要：论文通过结构和监督改善空间推理，但结果仍受到前端几何估计质量影响，也不能直接当作已经验证的闭环机器人或流式世界模型。",
+            "pipeline": "从观测图像估计点云与相机 → 语义与几何注意力并行计算 → 门控融合两条支路 → 借助关系链训练完成多步空间回答",
+            "results": "论文报告 VSI-Bench 为 74.33，ReVSI 为 58.28，六个空间基准平均分为 64.09。\n加入关系链训练后，VSI 路线相关分数从 51.21 升至 60.31，ReVSI 从 43.48 升至 47.67；未见四步关系链的准确率为 20.6%，对照为 0.0%。",
+            "limitations": "阅读判断：依赖估计出的三维几何和相机关系，几何输入存在误差时不保证同样收益。\n空间问答提升不等于闭环行动能力；一般视频理解也并非所有指标都上涨。",
+            "evidence": [
+              {
+                "section": "S3.SS1.SSS0.Px1",
+                "claim": "双分支注意力。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "关系链构造。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "训练期几何监督。"
+              },
+              {
+                "section": "S4.SS2.SSS0.Px1",
+                "claim": "空间基准结果。"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "关系链消融与长链泛化。"
+              }
+            ],
+            "fulltext_hash": "7dc8e5d7ba9856e02f6568e5f5f6cd698b98215d26463a6d9498bbf853fcb082",
+            "method_style": "core-idea-v1",
+            "analysed_at": "2026-10-19T03:23:53.872Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 81,
+          "evidence": [
+            {
+              "section": "S3.SS1.SSS0.Px1",
+              "claim": "双分支注意力。",
+              "url": "https://arxiv.org/html/2610.22356v1#S3.SS1.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "关系链构造。",
+              "url": "https://arxiv.org/html/2610.22356v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "训练期几何监督。",
+              "url": "https://arxiv.org/html/2610.22356v1#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS2.SSS0.Px1",
+              "claim": "空间基准结果。",
+              "url": "https://arxiv.org/html/2610.22356v1#S4.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "关系链消融与长链泛化。",
+              "url": "https://arxiv.org/html/2610.22356v1#S4.SS3"
+            }
+          ],
+          "figures": []
+        }
+      ],
+      "screening": [
+        {
+          "key": "arxiv:2610.22070",
+          "title": "Memory as Weights: Internalizing Long-Term History for Streaming Videos",
+          "decision": "include",
+          "reason": "提供与外部检索记忆不同的长期历史承载机制，可借鉴于流式系统；主体是视频理解而非视频生成，因此不给流式生成加权。"
+        },
+        {
+          "key": "arxiv:2610.22177",
+          "title": "Motion- and Gravity-Aware Feedforward 3D Reconstruction",
+          "decision": "include",
+          "reason": "运动残差是方法的核心监督，而非摘要中的附带词；适合关注运动与3D重建交叉的阅读。它改进运动感知的重建，不是视频动作控制器。"
+        },
+        {
+          "key": "arxiv:2610.19849",
+          "title": "DeltaStreamer: Towards Human-Like Agentic Streaming Video Understanding",
+          "decision": "include",
+          "reason": "展示可追溯记忆与按需回放的具体协作方式，适合理解在线系统如何补救压缩遗漏；这是流式理解，不属于流式视频生成加权。"
+        },
+        {
+          "key": "arxiv:2610.22215",
+          "title": "FutureLift: Lifting Trajectory Proposals into Bidirectional Future Graphs for Motion Forecasting",
+          "decision": "include",
+          "reason": "聚焦运动轨迹的结构化修正，清晰解释“后段约束如何帮助前段”，是运动方向实质贡献；需区分预测精度和实际控制安全。"
+        },
+        {
+          "key": "arxiv:2610.20693",
+          "title": "Orbia: Do Generated Videos Form a Consistent 3D World?",
+          "decision": "include",
+          "reason": "适合判断世界模型是否真正维护场景；评测直接揭示好看的视频为何仍可能在回头时改变物体。"
+        },
+        {
+          "key": "arxiv:2610.22276",
+          "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
+          "decision": "include",
+          "reason": "将空间任务的输出形式与计算方式一起设计，核心思路比单纯增加空间训练数据更值得借鉴。"
+        },
+        {
+          "key": "arxiv:2610.20818",
+          "title": "Intern Lumina U2: A Multi-Codebook Diffusion Large Language Model for Omni-Visual Understanding and Image Generation",
+          "decision": "include",
+          "reason": "关键在于解决视觉表示丰富度、序列长度和多码解码一致性之间的取舍，是理解统一多模态模型的一条清晰技术路线。"
+        },
+        {
+          "key": "arxiv:2610.22362",
+          "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+          "decision": "include",
+          "reason": "直接研究动作策略如何从自身失败中改进，重点是可验证的失败诊断如何同时改变训练场景和动作学习信号，符合运动控制优先方向。"
+        },
+        {
+          "key": "arxiv:2610.22356",
+          "title": "DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models",
+          "decision": "include",
+          "reason": "将几何视为关系与位置结构，而非另一组普通特征，适合关注三维感知如何帮助多模态推理的读者。"
+        },
+        {
+          "key": "arxiv:2610.22131",
+          "title": "Intern-Decision: Efficient Multimodal Decision Making with Autoregressive Masked Language Modeling",
+          "decision": "exclude",
+          "reason": "已取得全文，本期按摘要和贡献范围初筛后暂缓，未完成逐节深读；优先当前十篇。"
+        },
+        {
+          "key": "arxiv:2610.22217",
+          "title": "Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models",
+          "decision": "exclude",
+          "reason": "已取得全文，本期按摘要和贡献范围初筛后暂缓，未完成逐节深读；优先当前十篇。"
+        },
+        {
+          "key": "arxiv:2610.22360",
+          "title": "Grounding Generative Verification in 3D Content",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.20731",
+          "title": "WorldCast: Exploring Intelligent Visual Generation in World State Prediction",
+          "decision": "exclude",
+          "reason": "已阅读主要方法与实验；本期优先选取两篇互补世界一致性评测及运动方向论文，控制总篇数，暂不收录。"
+        },
+        {
+          "key": "arxiv:2610.22355",
+          "title": "OmniVerifier-C1: Decomposed Graded Verifier for Rule-Governed Generative World Modeling",
+          "decision": "exclude",
+          "reason": "原文获取未成功，无法提供符合要求的方法与章节证据，本期不推荐。"
+        },
+        {
+          "key": "arxiv:2610.22352",
+          "title": "SUPRA-TEX: 3D Generation with Super-Aligned Texture",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.18829",
+          "title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
+          "decision": "exclude",
+          "reason": "已取得全文，本期按摘要和贡献范围初筛后暂缓，未完成逐节深读；优先当前十篇。"
+        },
+        {
+          "key": "arxiv:2610.17665",
+          "title": "RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.17959",
+          "title": "Virtual Head Attention",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.17901",
+          "title": "FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.22328",
+          "title": "ACEdit: Stable Multi-Turn Image Editing via Asymmetric Conditioning",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.22321",
+          "title": "AVC-Reward: Event-Centric Audio-Video Consistency Evaluation",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.22282",
+          "title": "Routing Policy Optimization for Online Diffusion Reinforcement Learning",
+          "decision": "exclude",
+          "reason": "标题与摘要初筛后暂缓；本期优先十篇已完成原文解读的相关论文，未对本篇作完整方法评价。"
+        },
+        {
+          "key": "arxiv:2610.19063",
+          "title": "WorldMemBench: A Comprehensive Benchmark for Memory of Video World Models",
+          "decision": "include",
+          "reason": "与 Orbia 形成互补：重点观察反复回访和事件状态，避免把复制静态画面误判为世界记忆。"
+        }
+      ],
+      "digest_id": "a4f4ff906461e57272ce"
+    },
+    {
+      "schema_version": 1,
       "report_date": "2026-10-18",
       "target_date": "2026-10-17",
       "window": {
@@ -23231,7 +24687,7 @@
         "submitted_at": "2026-09-21T01:31:20Z"
       }
     ],
-    "last_sync": "2026-10-19T01:16:40.929Z",
-    "revision": "7e501be468dfb20e3790"
+    "last_sync": "2026-10-19T03:05:00.637Z",
+    "revision": "8ef7e73a9a4084984ac1"
   }
 }
