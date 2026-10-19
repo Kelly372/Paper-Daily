@@ -2119,6 +2119,20 @@
       "extraction": "original-figure",
       "figure_id": "S2.F2"
     },
+    "arxiv:2610.21783": {
+      "asset": "assets/figures/2610.21783-9793a170f6ba.webp",
+      "sha256": "9793a170f6baf1c6df1ab075947103a6ab20b0e2a7cba477ab8653524c371026",
+      "width": 1165,
+      "height": 883,
+      "label": "Figure 1",
+      "kind": "交互推理示意图",
+      "reading_tip": "关注模型如何因问题而选择下一视角，获得新证据后再回答；完整三维场景留在环境中。",
+      "source_url": "https://arxiv.org/html/2610.21783v1#S0.F1",
+      "source_hash": "9a16737798d4c2092e76ea7f2a5a96d44bab2817da56e4cefc4f9588cf3fa9ed",
+      "fulltext_hash": "aa193e8c9f9faece063b8921d04f91197146d57652540bafad70ae70b995a66b",
+      "extraction": "original-figure",
+      "figure_id": "S0.F1"
+    },
     "arxiv:2610.22070": {
       "asset": "assets/figures/2610.22070-e192aa337a33.webp",
       "sha256": "e192aa337a33d894707a85e9bc325d0c59a7eb387b5fdf49e62ded59fca0b5fb",
@@ -2306,7 +2320,157 @@
       "fulltext_hash": "c7c53e758dfdc002cedd243640911cc88f05ae69751bc3ab08a934cccc39d62e",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
+    },
+    "arxiv:2610.22471": {
+      "asset": "assets/figures/2610.22471-17806c4e0535.webp",
+      "sha256": "17806c4e05351282451d0044f5b420c21901d7be17f58f8bfcab86a0fce0bca9",
+      "width": 990,
+      "height": 205,
+      "label": "Figure 2",
+      "kind": "评测协议图",
+      "reading_tip": "知识包在训练示范准备阶段形成，测试时冻结；每个测试实例独立，增加的是同一实例的动作预算。",
+      "source_url": "https://arxiv.org/pdf/2610.22471#page=4",
+      "source_hash": "214b6be05460302abdb269e47f11c4c55f413c42c83470b4d993f12e8b025c30",
+      "fulltext_hash": "b8aed8586d98949e029edb21bc045c517eaf5f1015a62f75ff596685271959eb",
+      "extraction": "pdf-crop",
+      "page": 4,
+      "crop": {
+        "left": 145,
+        "top": 155,
+        "width": 990,
+        "height": 205
+      }
+    },
+    "arxiv:2610.22744": {
+      "asset": "assets/figures/2610.22744-b28ee44dc23c.webp",
+      "sha256": "b28ee44dc23c1d4602a642b8b5e8f75e8dae4dd03bcab6f8c3db5eb34757a99b",
+      "width": 1260,
+      "height": 852,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "每个参考库都有不同任务，先形成语义上下文，再与源视频、参考视觉信息和噪声共同进入单流 DiT。",
+      "source_url": "https://arxiv.org/html/2610.22744v1#S3.F2",
+      "source_hash": "27177caab7c9bb69f9e43cb801459921cbe47db43691fef22970802bb17c0140",
+      "fulltext_hash": "e0a45314c254a14c6febadac3694d2178e2437d454d7a14d4c872077e4c708b5",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.23036": {
+      "asset": "assets/figures/2610.23036-a801530f868f.webp",
+      "sha256": "a801530f868f59e61656387deb88e200fefb753fdb876f2d3467f3879e5e31bb",
+      "width": 960,
+      "height": 600,
+      "label": "Figure 3",
+      "kind": "架构比较图",
+      "reading_tip": "对比整栈重复与只重复中间核心；前导表示反复注入不等于所有计算都重复，也不保证每项任务都更好。",
+      "source_url": "https://arxiv.org/pdf/2610.23036#page=4",
+      "source_hash": "b9454c83583ba0ba6b1097cfc1e0238c54c2ea3fc0f41fd5c6191f2a8d7fdc81",
+      "fulltext_hash": "3128b942c7e6578c090cf08d533eba092e919d2fd03ea824acd688df5a744c56",
+      "extraction": "pdf-crop",
+      "page": 4,
+      "crop": {
+        "left": 160,
+        "top": 108,
+        "width": 960,
+        "height": 600
+      }
+    },
+    "arxiv:2610.23250": {
+      "asset": "assets/figures/2610.23250-14001d1a3359.webp",
+      "sha256": "14001d1a335900bac76865cba49f69087cef2edb69750ade8a27673e2550204c",
+      "width": 1600,
+      "height": 685,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "沿点轨迹找到重复表面，再将对应高斯合成代表；片段外的深度过滤承担另一类伪影清理。",
+      "source_url": "https://arxiv.org/html/2610.23250v1#S3.F3",
+      "source_hash": "fd2cd8c2a2288f97f3e2a9f50ee426e6251caabc3de4ed36e8a836e5bfebec63",
+      "fulltext_hash": "57f72b8e3353c1b68619c5acc941c8d8c36f39bd6c90f3e2c822d548fa2215f9",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.23423": {
+      "asset": "assets/figures/2610.23423-ad114acdc8d4.webp",
+      "sha256": "ad114acdc8d48ff59e4ec119cace4c5d3058686a186eb9e20dc746a17c744a57",
+      "width": 840,
+      "height": 360,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看 WorldUpdate 如何推进参考相机的同步动态，再看 WorldInteract 如何从同一世界状态生成用户视角。",
+      "source_url": "https://arxiv.org/pdf/2610.23423#page=4",
+      "source_hash": "cfb6ef45aea961364a9ef989f8ff8af926c18c6e23cafa575d499148d28fede9",
+      "fulltext_hash": "b0bd292e1016648e72b99983913e1f5488078cfc35ec5335b2c6e1e697c4b309",
+      "extraction": "pdf-crop",
+      "page": 4,
+      "crop": {
+        "left": 220,
+        "top": 162,
+        "width": 840,
+        "height": 360
+      }
+    },
+    "arxiv:2610.23479": {
+      "asset": "assets/figures/2610.23479-10d861423c3f.webp",
+      "sha256": "10d861423c3f833f9064189804682c7b16c94c572fc92d878f0a3bcf89f041db",
+      "width": 990,
+      "height": 310,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "上半部是单次操作，下半部是开发期间失败后的修复循环；正式新布局测试时工具冻结。",
+      "source_url": "https://arxiv.org/pdf/2610.23479#page=4",
+      "source_hash": "c0a1543091b5f9040c5b1226487250011b77ee749e36c92bfc76fa96f4fe571f",
+      "fulltext_hash": "82fda93cd406933df80fea08db01bbea3f0638bec8d889b7cce5ff4eaebb55bf",
+      "extraction": "pdf-crop",
+      "page": 4,
+      "crop": {
+        "left": 147,
+        "top": 144,
+        "width": 990,
+        "height": 310
+      }
+    },
+    "arxiv:2610.23772": {
+      "asset": "assets/figures/2610.23772-edb9894e625c.webp",
+      "sha256": "edb9894e625c5b010d4df1f918d8e763083f90d232a3b8896ce64ed15fc7c7f9",
+      "width": 2037,
+      "height": 731,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "把表情通路与相机/上半身代理渲染分开看：前者去掉驱动视角，后者负责指定输出姿态与相机。",
+      "source_url": "https://arxiv.org/html/2610.23772v1#S3.F2",
+      "source_hash": "885d5e6225f907ae7a5f0c74bad0d47d6d401a4416ae8d033f6b544479241178",
+      "fulltext_hash": "caf3dc136db17f72fc6e7420f6d30d81ca259b3cd760c677e5e7d1696c21a680",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.23795": {
+      "asset": "assets/figures/2610.23795-8881d0e0ee7d.webp",
+      "sha256": "8881d0e0ee7d2373c899e2861af9245acd0a914aec52ea6f712ffe9d241a7f22",
+      "width": 2039,
+      "height": 622,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿平面池→目标相机深度→视频生成→新平面回写的环路读图；几何分支在 RGB 去噪结束后额外运行。",
+      "source_url": "https://arxiv.org/html/2610.23795v1#S3.F2",
+      "source_hash": "82e53ac8cc278af04903528d340d410f06c53c837dfaf4b4022df7ff76424ebb",
+      "fulltext_hash": "5ae59f85310bd5f18d978ff9dcb2e66b389180b8d722b421753e5c1ca2e4b12b",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.23856": {
+      "asset": "assets/figures/2610.23856-5019578dc4f8.webp",
+      "sha256": "5019578dc4f89be41ec4589a82796aee6f6df561d861db204eccf6c5be905d02",
+      "width": 1920,
+      "height": 1050,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "真实视频提供目标，关键帧约束的合成视频提供错误输入；光流来自错误输入，图中的三维重建仅作展示。",
+      "source_url": "https://arxiv.org/html/2610.23856v1#S3.F3",
+      "source_hash": "a53f2952d0fc606a8732d54f2c2ebbe11d4e74731d2a6036ccbd8caf64ccc3df",
+      "fulltext_hash": "811e727f3d6719fce5fb4fe93967c9ee94d9254792b02fb5fa5efdbf8266d0b7",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
     }
   },
-  "revision": "796d315751d2d5e9c8ab"
+  "revision": "4815f4722e4bb2909acb"
 }
