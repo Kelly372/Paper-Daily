@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-23",
+  "target_date": "2026-10-22",
+  "window": {
+    "from": "2026-10-20",
+    "to": "2026-10-22",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-23T04:15:12.761Z",
+  "retrieved_at": "2026-10-23T03:09:02.526Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "truncated",
+      "count": 1500,
+      "total": 1613,
+      "error": null,
+      "coverage": "2026-10-20 至 2026-10-22（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-22",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-22"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-21",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-21"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-20",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-20"
+    },
+    {
+      "source": "本地缓存",
+      "status": "cached_fallback",
+      "count": 102,
+      "cached_at": "2026-10-22T03:04:57.687Z",
+      "coverage": "接口失败或部分返回；仅补回窗口内缺失记录，缓存时间 2026-10-22T03:04:57.687Z"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 4,
+      "url": "https://huggingface.co/papers/date/2026-10-22",
+      "date": "2026-10-22",
+      "retrieved_at": "2026-10-23T03:13:32.887Z",
+      "coverage": "API超时；浏览公开日期页并核对四条相关记录，非完整榜单；StreamEval已在历史推荐中，不重复入选。"
+    },
+    {
+      "source": "arXiv",
+      "status": "browser_assisted",
+      "count": 138,
+      "url": "https://arxiv.org/list/cs.CV/recent?show=2000",
+      "date": "2026-10-22",
+      "retrieved_at": "2026-10-23T03:13:32.893Z",
+      "coverage": "读取10月22日cs.CV公告段并与已取得API元数据核对；含交叉分类，非全学科完整覆盖。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-10-22",
+      "retrieved_at": "2026-10-23T03:13:32.896Z",
+      "coverage": "文章库返回登录界面；10月22日日期站点搜索未找到可核验结果，未覆盖公众号私有内容。"
+    }
+  ],
+  "candidates_count": 1602,
+  "analysed_count": 30,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.30036",
+      "arxiv_id": "2610.30036",
+      "doi": "",
+      "title": "Attn-Forcing: Learning Full-Context Attention Proxies for Streaming Video Generation",
+      "abstract": "Increasing the attention context length significantly improves streaming video generation quality, while incurring prohibitive memory and computational costs as the context grows. Existing methods attempt to capture this contextual information through attention selection or compression, but remain limited by bounded representations and lack explicit attention-level supervision to retain historical contributions to current queries. To address this, we introduce Attn-Forcing, a novel framework that preserves full-context attention contributions for streaming video generation under bounded memory and computation. We achieve this by introducing attention proxies that continuously approximate the attention responses induced by the historical context. Specifically, we implement the proxies as learnable visual latents and employ a Proxy Update Module to incorporate visual context from historical latents. Moreover, we propose an Attention Matching Loss to explicitly constrain the attention behavior of the learned proxies using full-context attention supervision. Extensive qualitative and quantitative experiments demonstrate that Attn-Forcing consistently improves streaming video generation quality and achieves state-of-the-art performance over existing baseline methods.",
+      "authors": [
+        "Junyao Gao",
+        "Sibo Liu",
+        "Jiaxing Li",
+        "Yanan Sun",
+        "Hanxin Zhu",
+        "Weidong Zhang",
+        "Jun Zhang",
+        "Cairong Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2610.30036",
+      "published": "2026-10-21T16:59:51Z",
+      "topics": [
+        "流式生成",
+        "视频生成"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.30036v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "流式生成"
+        ],
+        "score": 90,
+        "title_zh": "Attn-Forcing：学习全历史注意力的代理，实现有界缓存下的流式视频生成",
+        "abstract_zh": "增加注意力上下文长度能够改善流式视频生成质量，但历史增长会带来难以承受的存储和计算成本。现有选择或压缩历史的方法仍受有限表示容量约束，也缺少直接保留历史对当前查询贡献的注意力监督。作者提出 Attn-Forcing，在有界内存与计算下，用注意力代理持续近似历史上下文产生的注意力响应。代理由可学习的视觉潜变量实现，更新模块将旧视觉内容纳入代理；注意力匹配损失则用全历史注意力目标明确约束其行为。作者通过定性和定量实验报告流式视频生成质量改善，并在所比较基线上取得领先结果。",
+        "reason": "直接命中流式生成：记忆的学习目标从“压缩旧画面”改为“保留旧画面对当前查询的作用”，机制与训练、推理边界清晰。",
+        "introduction_zh": "逐块生成视频时，窗口外的历史被丢弃，人物与场景容易失去长时联系；把窗口无限扩大又不可行。压缩成几个记忆令牌并不自动意味着生成器会有效读取它们。本文把问题移到注意力层：当前画面提出一个查询时，少量代理应该给出接近完整历史的回答。这样，记忆保存的重点不是逐帧复原历史，而是保留对后续生成有用的影响，同时让缓存大小保持固定。",
+        "method_takeaway": "让少量可更新的视觉代理学习“完整历史会怎样回答当前注意力查询”，用固定大小的记忆替代不断增长的视频缓存。",
+        "framework_zh": "可以把旧视频想成一本不断增厚的笔记。常见压缩方法只要求把笔记缩短，Attn-Forcing则进一步规定：新一页提出问题时，缩写版应尽量给出与原笔记一样的回答。这里的问题是生成器的注意力查询，回答是历史特征经注意力加权得到的结果。因此代理不必保存每个像素，而要保存历史怎样影响下一段生成。\n\n模型保留三个可学习的视觉潜变量作为代理。当局部窗口中的旧片段即将被移出时，更新模块通过交叉注意力读取这些片段，再用门控融合进代理。代理经过原视频Transformer，形成各层可读取的键和值；下一块同时读取开头锚点、代理和最近窗口。它们使用生成器熟悉的视觉特征空间，而不是要求主干临时理解一套完全不同的记忆格式。\n\n关键在于怎样教会代理回答得对。训练中，作者为历史键和值维护固定维度的核统计量，借助随机特征近似完整历史的注意力响应，再约束代理产生相近响应。这个近似统计量只负责制造训练目标；推理时真正读取的仍是视觉代理，不能把方法理解为直接用近似线性注意力替换生成器。论文消融显示，只有代理而没有这种匹配监督，收益很小。\n\n训练还让生成器在自己生成的历史上滚动，减少部署时错误累积带来的分布差异。最终部署不需要储存所有旧帧，代理随历史更新，局部窗口维持近期细节。代价是额外更新与计算，而且有限代理必然有信息损失；60秒视频上的改善说明这种取舍有用，并不构成无限长身份一致性的保证。",
+        "pipeline": "即将移出窗口的历史 → 更新少量视觉代理 → 锚点、代理与近期窗口共同参与注意力 → 继续生成下一块",
+        "results": "在Wan2.1-1.3B设置下，30秒VBench-Long总分83.85，对比LongLive的83.15；但语义分78.18低于79.05。60秒MovieGen六维汇总82.37对79.26，动态程度72.14对35.55，主体一致性97.11略低于97.93。消融中基线80.03、加代理80.16、再加注意力匹配82.37。作者报告H20上相对LongLive端到端开销约13%。",
+        "limitations": "有限代理仍为有损记忆，实验主要验证到60秒、1.3B主干；没有证明任意长视频都稳定。更高动态分伴随部分一致性指标下降，不能表述为所有维度同时提升。核近似目标也不等于精确完整注意力。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "视觉代理更新和注意力匹配目标"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "训练目标与滚动训练"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "主要比较"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "消融"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "运行代价"
+          }
+        ],
+        "fulltext_hash": "7cf64cb5aa0c28aacb24ec817c312b5e4a0d679de7bf5428128571dc7d47e28d",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.142Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "视觉代理更新和注意力匹配目标",
+          "url": "https://arxiv.org/html/2610.30036v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "训练目标与滚动训练",
+          "url": "https://arxiv.org/html/2610.30036v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "主要比较",
+          "url": "https://arxiv.org/html/2610.30036v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "消融",
+          "url": "https://arxiv.org/html/2610.30036v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "运行代价",
+          "url": "https://arxiv.org/html/2610.30036v1#S4.SS4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: The framework of Attn-Forcing. During training, learnable proxy latents are continuously updated using visual latents evicted from the local attention window through a Proxy Update Module. Attention Matching Loss further aligns the proxy-induced attention responses with historical attention responses approximated using online accumulated statistics.",
+          "url": "https://arxiv.org/html/2610.30036v1/framework.png",
+          "source_url": "https://arxiv.org/html/2610.30036v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.29408",
+      "arxiv_id": "2610.29408",
+      "doi": "",
+      "title": "LiveAct: Towards Real-Time Multi-Agent World Models with Heterogeneous Action Interfaces",
+      "abstract": "Interactive video world models predict how an environment evolves under user actions, but most existing systems assume one controlled agent and one task-specific action interface. We study multi-agent video world modeling, where one model generates a joint visual future for multiple controlled agents while interpreting heterogeneous controls ranging from binary game buttons to continuous robot commands. This task presents two complementary challenges. First, every agent-indexed action stream must control its intended visual entity independently. Second, the model must adapt the meaning of each control variable across different tasks, where the same tensor dimension may denote an attack, steering command, or robot command. We introduce LiveAct, centered on a Heterogeneous Action Interface (HAI) whose two components mirror this decomposition. To support independent control, Agent-Aware Spatial Modulation uses language-driven spatial gates and agent-specific attention to bind each action stream to its intended visual agent. To accommodate heterogeneous controls, Schema-Guided Action Adaptation describes each control variable in language and modulates its semantic token with the synchronized numerical value. We further transfer the complete interface to a blockwise causal generator through teacher forcing and rollout-aware distribution matching, enabling efficient streaming generation while retaining agent-specific control and action semantics. We instantiate the formulation on six multi-agent sources spanning games and multi-robot manipulation, and evaluate visual quality, action following, agent attribution, and latency. Across games and robot manipulation, LiveAct reaches 0.898 and 0.942 agent-attribution accuracy without agent locations or identity crops, and the causal generator attains 17.70 FPS at $512\\times 448$.",
+      "authors": [
+        "Xinyu Wang",
+        "Huafeng Shi",
+        "Yue Ma",
+        "Zijie Meng",
+        "Teng Xi",
+        "Yuzhuo Chen",
+        "Yucheng Wang",
+        "Ruicheng Zhang",
+        "Guoxin Zhang",
+        "Pengfei Wan",
+        "Xiu Li",
+        "Fangneng Zhan"
+      ],
+      "url": "https://arxiv.org/abs/2610.29408",
+      "published": "2026-10-21T08:34:03Z",
+      "topics": [
+        "流式生成",
+        "运动与运动控制",
+        "主体控制",
+        "视频生成",
+        "世界模型",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29408v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "流式生成",
+          "运动与运动控制",
+          "主体控制"
+        ],
+        "score": 90,
+        "title_zh": "LiveAct：用异构动作接口实现实时多主体世界模型",
+        "abstract_zh": "交互式视频世界模型根据动作预测环境变化，但多数系统假定单个受控主体和任务专用动作接口。本文研究多主体视频世界建模：一个模型为多个主体生成共同的视觉未来，同时理解游戏二值按键和机器人连续命令等异构控制。关键难题是把每条动作流绑定到正确视觉实体，并解释不同任务中各控制维度的含义。LiveAct的异构动作接口以语言驱动的空间门控和主体专属注意力完成绑定，再用语言描述每个控制变量，以同步数值调制其语义令牌。作者通过教师强制与感知滚动分布的匹配训练，将接口迁移到分块因果生成器。在游戏和多机器人六个数据来源上，模型无需主体位置或身份裁剪图，主体归属准确率分别达到0.898和0.942，512×448因果生成速度为17.70 FPS。",
+        "reason": "同时切中流式、运动与主体控制：解决“这条动作指挥谁”和“这个数值表示什么”，并明确流式加速带来的控制精度取舍。",
+        "introduction_zh": "两个角色同时出现时，把两组动作数值送进视频模型，并不能保证左边角色只听自己的命令。不同游戏或机器人中，同一动作维度的含义也可能完全不同。本文将这两个难点拆为动作接收者的视觉绑定，以及动作语义与数值的联合表示，再通过逐块生成支持交互。重点不在给每个主体另造一个视频，而在同一画面中分别施加控制并保留主体之间的关系。",
+        "method_takeaway": "先用主体描述确定动作该作用于谁，再把每个控制变量的含义和数值一起送入对应主体的注意力分支。",
+        "framework_zh": "以两个格斗角色为示意：输入不只是两串按键，还要说明每串属于哪个角色，以及各个按键分别代表移动、攻击或防御。LiveAct认为，动作失控有两种根源：模型没找对接受命令的角色，或者不知道某一维数值在当前任务中意味着什么。它因此从注意力的两端同时改造接口，把这两件事分别讲清。\n\n在画面这一端，模型将主体描述编码成语义向量，与每个位置的视觉特征共同计算一个软门控，形成该主体专用的查询。门控可以随位置和时间变化，但不是人为给定的分割掩码，也没有保证形成精确轮廓。在动作这一端，每个控制维度先有独立的文字说明，再由该时刻的数值调制成动作令牌。于是“攻击=1”和“转向=1”不会只因数值相同而失去区别。\n\n每个主体的视觉查询只读取自己的动作令牌，得到独立的控制更新；所有更新再合并进同一份视觉状态。这样模型仍生成一个共同世界，却不必把各主体的指令提前混成一个向量。接口插入视频Transformer的各层，动作时间窗严格对应视频潜帧覆盖的真实时间，避免缓存向前滚动后发生指令与画面对不齐。\n\n训练先让双向视频模型学会这个接口，再改为只看过去的分块因果模型，最后用分布匹配蒸馏在自身生成的历史上训练少步去噪。部署时沿用相同的主体与动作绑定，缓存过去并不断接收新控制。实验显示去掉任一接口组件都会伤害动作遵循；加速也不是免费午餐，机器人连续控制精度在最后蒸馏后有所下降。",
+        "pipeline": "初始画面、主体描述与逐维动作说明/数值 → 主体专属查询读取自身控制 → 多主体更新合并 → 因果视频块持续输出",
+        "results": "108个留出轨迹片段上，游戏Act-F1为0.594、主体归属准确率0.898；机器人动作NRMSE为0.558、归属准确率0.942。去掉空间调制后游戏Act-F1降到0.172，去掉逐维语义适配降到0.225。最后蒸馏把速度从1.66提升到17.70 FPS，但机器人NRMSE由0.430升到0.558（越低越好）。",
+        "limitations": "主要评价为六来源、108个81帧片段，不代表开放世界任意主体与任意长时控制。部分基线是单视角改造或作者复现，比较应保留这一条件。17.70 FPS为论文配置下的吞吐量，不能直接等同于用户设备的按键响应延迟。",
+        "evidence": [
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "主体空间查询与软门控"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "语义与数值调制"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "按主体交叉注意力"
+          },
+          {
+            "section": "S3.SS5.SSS0.Px3",
+            "claim": "因果滚动与蒸馏"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "组件和速度消融"
+          }
+        ],
+        "fulltext_hash": "89b50b376d97cad3e7a475e1393190125355c40e9a820084a3ba531ad4db657d",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.165Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "主体空间查询与软门控",
+          "url": "https://arxiv.org/html/2610.29408v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "语义与数值调制",
+          "url": "https://arxiv.org/html/2610.29408v1#S3.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "按主体交叉注意力",
+          "url": "https://arxiv.org/html/2610.29408v1#S3.SS4"
+        },
+        {
+          "section": "S3.SS5.SSS0.Px3",
+          "claim": "因果滚动与蒸馏",
+          "url": "https://arxiv.org/html/2610.29408v1#S3.SS5.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "组件和速度消融",
+          "url": "https://arxiv.org/html/2610.29408v1#S4.SS4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Overview of LiveAct. (a) Foundational Ability Acquisition trains a bidirectional teacher with a Heterogeneous Action Interface, which integrates Agent-Aware Spatial Modulation and Schema-Guided Action Adaptation. (b) Teacher Forcing for AR Tuning transfers the same HAI to causal attention. (c) DMD for Streaming Video distills few-step streaming rollouts.",
+          "url": "https://arxiv.org/html/2610.29408v1/Framework-v7.png",
+          "source_url": "https://arxiv.org/html/2610.29408v1#S3.F3"
+        },
+        {
+          "id": "S4.F4",
+          "caption": "Figure 4: Data curation pipeline. Game and robotic episodes are curated into aligned samples containing a scene prompt, per-agent action streams, agent descriptions, and task-specific schemas.",
+          "url": "https://arxiv.org/html/2610.29408v1/DataPipeline-v2.png",
+          "source_url": "https://arxiv.org/html/2610.29408v1#S4.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.30129",
+      "arxiv_id": "2610.30129",
+      "doi": "",
+      "title": "Rethinking Video Autoencoders for Interactive World Models",
+      "abstract": "Video world models predict future frames from past frames and actions. They serve as simulators in which agents train, plan or are evaluated, and that humans can control interactively. They generate in the latent space of a video autoencoder, whose compression sets their cost per frame and how long each action waits to take effect. Yet world models often reuse the autoencoders of text-to-video generators, built for offline generation with no agent waiting and, without their training data and code, not retrainable at another compression. We therefore ask how, where and how much a world model should compress. We build CADRE, an open family of causal diffusion representation autoencoders spanning multiple spatio-temporal compressions. Its members differ only in a small bottleneck on frozen features and share a diffusion decoder self-distilled to one or a few steps. We train the same world model on each autoencoder in two domains, manipulation and navigation, with two environments each. CADRE forms most of the latency-quality frontier, especially with a moving camera. Our study also leads to four findings. At strong compression, a diffusion decoder is sharper than perceptual regression. In robot manipulation, temporal compression is more effective in the autoencoder than in the world model. Manipulation and navigation call for opposite compressions: temporal compression costs little when the camera is still, and spatial compression when it moves. Surprisingly, with a still camera, coarser spatial tokens hurt motion far more than image quality. Code, models and a live demo are at https://kyutai.org/blog/2026-10-21-cadre",
+      "authors": [
+        "Adrien Ramanana Rahary",
+        "Yutong Bai",
+        "Nicolas Dufour",
+        "Patrick Pérez",
+        "David Picard"
+      ],
+      "url": "https://arxiv.org/abs/2610.30129",
+      "published": "2026-10-21T17:58:11Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.30129v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "流式生成"
+        ],
+        "score": 89,
+        "title_zh": "CADRE：重新思考交互式世界模型的视频压缩方式",
+        "abstract_zh": "视频世界模型根据历史帧和动作预测未来，既可供智能体训练、规划和评价，也可让人直接交互。模型通常在视频自编码器的潜空间生成，其压缩方式决定每帧成本和动作生效等待时间，却经常沿用面向离线文生视频的自编码器。作者研究应该如何、在哪里以及压缩多少，并构建开放的因果扩散表示自编码器系列CADRE，覆盖多种时空压缩。各成员通过冻结特征上的小型瓶颈改变压缩，采用相同的扩散解码器设计并自蒸馏到一步或少步。作者在操作和导航各两个环境中，用各编码器训练同一架构的世界模型。CADRE占据延迟与质量折中前沿的大部分，移动相机下尤其明显。研究还发现：强压缩时扩散解码比感知回归更锐利；操作任务中时间压缩放在自编码器更有效；静止与移动相机适合相反的时空压缩取舍；静止相机下，粗空间令牌对运动的损害远大于对画质的损害。作者声明公开代码、模型与演示。",
+        "reason": "流式交互的重要机制研究：不是只比FPS，而是把动作等候时间、运动保真和压缩位置放在同一实验框架中。",
+        "introduction_zh": "离线视频可以先积累一段动作再统一生成，交互世界却要尽快响应刚输入的命令。时间压缩越强，每个潜变量覆盖的帧越多，往往计算更省，但动作可能要等待更久。已有自编码器常来自离线视频生成，压缩比例固定，也难以公平重训比较。CADRE提供可控制变量的编码器系列，研究不同环境应把压缩预算放在时间还是空间，并提醒单帧画质可能掩盖运动质量的退化。",
+        "method_takeaway": "用同一套编码与解码设计系统改变时空压缩，揭示交互世界模型应按相机运动在响应延迟、运动细节和计算量之间取舍。",
+        "framework_zh": "这篇论文最关键的视角是：视频压缩比例不只是存储设置，它直接影响交互。若一个潜变量覆盖八帧，模型通常要先收齐这段对应的动作，才能生成这一块。在20帧每秒的时间尺度上，八帧本身就对应400毫秒；即使去噪很快，也无法忽略动作积累的等待。因此作者同时看画质、动作遵循、吞吐量和响应延迟，而不是只挑重建分数最高的编码器。\n\n为公平改变压缩，CADRE先用冻结的DINOv3提取逐帧特征，再由小型三维卷积瓶颈决定压缩多少时间和空间。扩散解码器把潜变量与带噪视频结合，逐步恢复像素，并通过自蒸馏学会用一两步完成解码。不同压缩成员采用相同架构和训练配方，主要调整瓶颈及相应接口，但分别训练，并不是一份权重随意切换所有压缩率。\n\n随后作者在每种编码器上训练相同架构的世界模型，覆盖手部/机器人操作和驾驶/室内导航。示意地说，桌前相机不动时，背景在多帧中高度重复，沿时间压缩较划算；视角快速移动时，连续画面变化大，长时间块容易跨块跳变，反而较适合缩短时间块并减少空间令牌。这里是受控实验观察与作者解释，不能把相机运动当成已经排除所有环境因素的唯一原因。\n\n另一个值得记住的结果是“看着清楚不等于动作准确”。静态视角中，把空间网格变粗后，图像指标可能只小幅变化，但手部或物体运动信息显著丢失；把同等时间压缩放进世界模型内部的补丁化操作，也不如先由自编码器压缩。CADRE因此给出设计方法：先确定交互响应与任务运动需求，再选潜空间，而非直接借用文生视频编码器。",
+        "pipeline": "逐帧冻结特征 → 可变时空压缩与少步扩散解码 → 相同世界模型架构跨四环境训练 → 比较延迟、画质及动作遵循",
+        "results": "论文在288×512、20 FPS设置下比较四环境。单H100、世界模型八步去噪时，满足20 FPS且延迟低于230毫秒的包括CADRE的2×32×32、2×16×16配置及MIRA。相同压缩下，CADRE一步解码的FVD相对MIRA改善约1.4–2.5倍，动作遵循相近；回归解码的PSNR可能更高。移动视角下较长时间块的FVD恶化最高约64%。",
+        "limitations": "每个环境和编码器分别训练，尚不能直接推论统一通用世界模型的最优配置。静态相机操作与移动相机导航还伴随动作和场景差异。动作恢复率来自逆动力学探针，不能当作机器人任务成功率；FPS与端到端动作延迟也不能互换。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "编码器设计"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "扩散解码与训练"
+          },
+          {
+            "section": "S4",
+            "claim": "实验协议"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "解码与质量比较"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "压缩位置"
+          },
+          {
+            "section": "S5.SS3",
+            "claim": "时空压缩取舍"
+          },
+          {
+            "section": "S7",
+            "claim": "讨论与限制"
+          }
+        ],
+        "fulltext_hash": "2d7b17b24566cdcf043215ad3d8d95897c37268f16c80290a8eab7373ca3fd63",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.386Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "编码器设计",
+          "url": "https://arxiv.org/html/2610.30129v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "扩散解码与训练",
+          "url": "https://arxiv.org/html/2610.30129v1#S3.SS2"
+        },
+        {
+          "section": "S4",
+          "claim": "实验协议",
+          "url": "https://arxiv.org/html/2610.30129v1#S4"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "解码与质量比较",
+          "url": "https://arxiv.org/html/2610.30129v1#S5.SS1"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "压缩位置",
+          "url": "https://arxiv.org/html/2610.30129v1#S5.SS2"
+        },
+        {
+          "section": "S5.SS3",
+          "claim": "时空压缩取舍",
+          "url": "https://arxiv.org/html/2610.30129v1#S5.SS3"
+        },
+        {
+          "section": "S7",
+          "claim": "讨论与限制",
+          "url": "https://arxiv.org/html/2610.30129v1#S7"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.29989",
+      "arxiv_id": "2610.29989",
+      "doi": "",
+      "title": "Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation",
+      "abstract": "Autoregressive video diffusion models generate videos chunk by chunk, yet producing plausible continuations does not guarantee that they capture how scenes evolve. Under teacher forcing, strong temporal redundancy may allow local visual continuity to serve as a shortcut for current-chunk denoising, reducing the pressure to model visual evolution. We introduce Future Chunk Prediction (FCP), an auxiliary objective jointly optimized with teacher-forced denoising that predicts temporally separated chunks without access to the intervening visual context. Drawing supervision directly from training videos, FCP requires no additional pretrained visual encoder and leaves autoregressive inference unchanged. Our method achieves superior physical plausibility over standard teacher-forced autoregressive training with a lower overall training compute budget, highlighting the effectiveness and efficiency of future-chunk supervision for modeling visual evolution. Intriguingly, our visualizations suggest that FCP fosters a more structured representation space, which may be valuable for building autoregressive world models.",
+      "authors": [
+        "Ruopeng Gao",
+        "Yukun Huang",
+        "Jiarui Hu",
+        "Shuai Wang",
+        "Wenbo Hu",
+        "Ying Shan",
+        "Limin Wang"
+      ],
+      "url": "https://arxiv.org/abs/2610.29989",
+      "published": "2026-10-21T16:28:46Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29989v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "流式生成"
+        ],
+        "score": 88,
+        "title_zh": "Looking Ahead：用未来片段预测学习自回归视频的场景演化",
+        "abstract_zh": "自回归视频扩散模型逐块生成视频，但合理的续接并不意味着学会了场景如何演化。教师强制训练下，视频的高时间冗余可能使局部视觉连续性成为去噪捷径，减弱学习演化规律的压力。作者提出未来片段预测FCP，与常规教师强制去噪联合优化：在看不到中间视觉上下文的情况下，预测时间上隔开的片段。监督直接来自训练视频，无需额外预训练视觉编码器，也不改变自回归推理过程。作者报告其在更低总体训练计算预算下取得更好的物理合理性；可视化还提示表示空间形成更明显的结构，可能有助于自回归世界模型。",
+        "reason": "为流式视频提供可迁移的训练思路：用跨越中间帧的预测打破近邻外观捷径，推理阶段不增加分支。",
+        "introduction_zh": "下一小段视频往往与前一段很像，模型只靠延续纹理也可能得到较低训练损失，却未必理解多米诺骨牌会如何继续倒下。教师强制还总提供正确历史，使这种捷径更容易成立。本文让主干的内部表示承担更远期预测的责任，在不引入外部视觉教师的前提下，从同一段视频挖出额外监督。关键价值是改变学习压力，而不是部署时让模型一次性生成所有未来。",
+        "method_takeaway": "训练时让当前内部表示隔着看不见的中间片段预测更远未来，逼主干学习场景演化；推理时删掉这些辅助预测器。",
+        "framework_zh": "想象模型看到多米诺骨牌刚开始倾倒。如果只要求它补紧接着的几帧，复制附近轮廓并稍作移动可能就够了；若要求它预测更远处发生什么，却不许看到中间几块，当前表示就更需要保存运动进程。FCP把这种直觉变成辅助训练任务，目的不是提高单帧细节，而是减少模型依赖近邻外观连续性的捷径。\n\n具体地，主视频生成器仍按教师强制方式学习逐块去噪。作者从当前块抽取中间隐藏状态，送给额外的小型Transformer预测器，预测不同时间偏移的未来块。各偏移有独立参数、直接读取同一源表示，不串成预测链。这样较近分支的带噪目标不会经隐藏状态泄露给更远分支，避免辅助任务自己又获得一条近邻捷径。\n\n这些预测器不再单独读取文本，也只读取当前块对应的隐藏状态，而不是整个历史表示。文本信息仍可能已经进入主干，不能说任务完全无文本；限制的是额外输入渠道。每个未来目标独立加噪并以流匹配学习去噪，辅助误差沿源表示传回主生成器。因而预测器虽然专门负责远期任务，它要求保留的演化信息会真正写进主干，而不是只训练出一个与主干无关的小模型。\n\n部署时所有辅助预测器被移除，生成器继续沿原来的逐块流程运行。实验中并行分支优于串联分支，与“减少中间信息泄漏”的设计动机相符。不过物理基准提升并不证明模型已发现完整物理定律；表示可视化只提供结构化趋势的线索。最值得记住的是：在训练时把未来问题问得更难，可以让原本不变的推理流程学到更有用的状态。",
+        "pipeline": "标准逐块视频训练 → 当前隐藏状态独立预测多个远期块 → 辅助误差塑造主干 → 移除辅助分支后照常自回归生成",
+        "results": "匹配数据和设置的Wan2.2-5B对照中，Physics-IQ Verified的I2V分数从30.4到33.8，V2V从40.6到44.4；五偏移串联版本仅为31.0/39.9。1.3B分数27.6到30.9。与读取全部历史表示的FCP变体相比，达到IQ 29/30所需估计训练计算分别减少42.6%/50.7%；这不是部署速度提升。",
+        "limitations": "物理合理性基准与表示可视化不构成真实动力学正确性的保证。辅助分支增加训练结构，计算节约须以达到指定分数的对照口径理解。未来预测分支在推理被移除，本工作没有额外提供动作控制或永久长时记忆。",
+        "evidence": [
+          {
+            "section": "S4.SS1",
+            "claim": "跨时间预测与信息限制"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "并行分支避免链式泄漏"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px1",
+            "claim": "联合训练"
+          },
+          {
+            "section": "S5.SS4",
+            "claim": "匹配条件下的结果"
+          },
+          {
+            "section": "S5.SS5.SSS0.Px3",
+            "claim": "训练计算比较"
+          }
+        ],
+        "fulltext_hash": "c05c5213f9a6b58ef3bc94b524fd6cefbf3dc4294f821e8b34c97f2444edae40",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.182Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S4.SS1",
+          "claim": "跨时间预测与信息限制",
+          "url": "https://arxiv.org/html/2610.29989v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "并行分支避免链式泄漏",
+          "url": "https://arxiv.org/html/2610.29989v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px1",
+          "claim": "联合训练",
+          "url": "https://arxiv.org/html/2610.29989v1#S4.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S5.SS4",
+          "claim": "匹配条件下的结果",
+          "url": "https://arxiv.org/html/2610.29989v1#S5.SS4"
+        },
+        {
+          "section": "S5.SS5.SSS0.Px3",
+          "claim": "训练计算比较",
+          "url": "https://arxiv.org/html/2610.29989v1#S5.SS5.SSS0.Px3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S4.F1",
+          "caption": "Figure 1: Overview of Future Chunk Prediction (FCP). Intermediate representations from the autoregressive backbone condition auxiliary transformer blocks for future-chunk prediction.",
+          "url": "https://arxiv.org/html/2610.29989v1#S4.F1",
+          "source_url": "https://arxiv.org/html/2610.29989v1#S4.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.29997",
+      "arxiv_id": "2610.29997",
+      "doi": "",
+      "title": "DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations",
+      "abstract": "Despite recent progress in dexterous reference tracking, existing models focus primarily on single-hand manipulation and a limited range of interactions, leaving the bimanual dexterous behaviors common in real life unaddressed. The scarcity of contact-rich bimanual manipulation data and the increased complexity of coordinating contacts make developing a generalist bimanual tracker particularly challenging. Therefore, we present 1) DONIC, the first generalist bimanual tracker jointly trained across operation categories and human-motion sources, together with 2) BiHOI, a multi-view dataset of 1,575 sequences spanning 229 objects and emphasizing sustained bimanual interaction, where reconstructed interactions are retargeted into robot references. DONIC combines proximal policy optimization with behavioral cloning in a feedback loop that recycles verified successful executions into training demonstrations. An object-centered per-hand reward maintains object-motion feedback while supervising each hand according to its reference contact role. Clip-Centered Advantages remove reference-dependent advantage offsets while preserving within-trajectory differences. Together, these designs enable one single policy to learn coordinated manipulation across heterogeneous references. Without finetuning, a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects, surpassing the state-of-the-art bimanual tracking baselines by 77.36 and 45.73 percentage points.",
+      "authors": [
+        "Mingze Sun",
+        "Ziang Cao",
+        "Yuan Fei",
+        "Qiankuan Tao",
+        "Zihan Wang",
+        "Tianqi Liu",
+        "Junhao Chen",
+        "Haiwen Diao",
+        "Fangzhou Hong",
+        "Zhaoxi Chen",
+        "Ziwei Liu"
+      ],
+      "url": "https://arxiv.org/abs/2610.29997",
+      "published": "2026-10-21T16:36:02Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29997v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "score": 88,
+        "title_zh": "DONIC：从人类示范学习通用双手灵巧动作跟踪",
+        "abstract_zh": "现有灵巧参考动作跟踪主要关注单手和有限交互，尚不足以覆盖现实中常见的双手协同。持续接触的双手数据稀缺，协调接触也更复杂。作者提出跨操作类别与人类动作来源训练的通用双手跟踪器DONIC，并发布强调持续双手交互的多视角数据集BiHOI，含229个物体的1,575段序列，重建后重定向为机器人参考动作。DONIC把PPO与行为克隆结合，在反馈循环中回收经验证成功的执行作为示范。以物体为中心、分手计算的奖励同时保留物体运动反馈和各手参考接触角色；片段中心化优势去除参考片段相关的整体偏移，保留片段内部差异。单一策略无需微调，在训练物体的未见轨迹上成功率86.79%，未见物体上57.32%，分别比所比较双手基线高77.36和45.73个百分点。",
+        "reason": "重点运动控制论文：奖励如何表达双手不同角色、难片段如何得到有效更新，比单纯扩大策略更值得借鉴。",
+        "introduction_zh": "一只手托住物体、另一只手转动它，要求两手在不同时间承担不同角色。只追踪手指姿态，可能手动了而物体没动；把双手接触绑成一个条件，又可能一只手失败就抹掉另一只手的进步。混合训练还有难片段总得负反馈的问题。DONIC把学习信号按物体结果、各手接触职责和片段相对表现重新组织，并用验证过的成功轨迹支持共同策略训练。",
+        "method_takeaway": "按每只手在参考动作中的接触职责分别奖励，再让困难片段的动作与同片段表现比较，使一个策略学会多种双手协作。",
+        "framework_zh": "理解DONIC，可以一直想着“一手扶稳、一手旋转”这个示意任务。策略的目标不只是摆出正确手势，还要让物体确实沿参考轨迹运动。输入包含双手自身状态、物体姿态与速度、即将到来的参考目标、跟踪误差和物体形状；输出则是对下一步参考关节位置的小幅修正，由底层控制器执行。每一步重新以参考为锚点，修正不会无限累加。\n\n关键改变首先是奖励。物体位置、方向和速度提供共同的任务结果反馈，手部跟踪约束姿态；接触奖励则只要求当前本来应该接触的手指完成职责。两只手的反馈按各自角色计算再汇总，一只手失误不会把另一只手的有效反馈全部遮掉，参考中应该松开的手也不会因继续粘住物体而获奖。接近物体的距离帮助学会建立接触，实际接触覆盖帮助维持支撑。\n\n第二个改变针对不同参考片段的训练难度。强化学习的优势量表示某次动作比预期好多少，但价值估计误差可能让一个困难片段的所有动作都显得差。作者按参考片段分组，减去该组优势均值，使策略仍能识别困难片段中相对更好的动作。它不改变原奖励或价值回归目标，也不除以片段标准差，因此保留片段内部差异尺度。\n\n训练把这种强化学习与成功动作的行为克隆结合：专门策略和逐渐改进的通用策略所产生的成功执行，经过回放验证后加入示范库。人类多视角动作先重建、再重定向成机器人参考，最终一个检查点可跟踪未见参考而无需再次训练。这里输出的是物理仿真中的双手控制，不能把它误读为已完成真实机器人部署，或从任意单张人类照片直接学会操作。",
+        "pipeline": "重建并重定向的人类参考 → 分手接触奖励与片段中心化强化学习 → 回收验证成功的示范 → 单策略双手参考跟踪",
+        "results": "仿真留出测试中，DONIC未见轨迹/未见物体成功率86.79%/57.32%，强基线Dexplore-bi为9.43%/11.59%。去掉片段中心化后为81.13%/48.17%；额外加入BiHOI数据为88.68%/59.76%。单检查点、无测试时微调；成功率和轨迹完成度是不同指标。",
+        "limitations": "作者明确量化评价限于仿真单物体交互，依赖重建与重定向参考；多物体、长时任务和真实双手迁移仍待研究。接触力结合距离只能近似识别接触对象。性能差距来自特定适配基线与测试划分，不代表所有双手控制任务。",
+        "evidence": [
+          {
+            "section": "S4.SS2",
+            "claim": "参考锚定动作接口"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px2",
+            "claim": "每只手接触监督"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px3",
+            "claim": "奖励组合"
+          },
+          {
+            "section": "S4.SS4.SSS0.Px1",
+            "claim": "片段中心化优势"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "实验与消融"
+          },
+          {
+            "section": "S6",
+            "claim": "仿真等限制"
+          }
+        ],
+        "fulltext_hash": "b5cca0f7068a1512c00a1dbd54b0a4a57f7be98a21765c93e71459fb526e6a78",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.410Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S4.SS2",
+          "claim": "参考锚定动作接口",
+          "url": "https://arxiv.org/html/2610.29997v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px2",
+          "claim": "每只手接触监督",
+          "url": "https://arxiv.org/html/2610.29997v1#S4.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px3",
+          "claim": "奖励组合",
+          "url": "https://arxiv.org/html/2610.29997v1#S4.SS3.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS4.SSS0.Px1",
+          "claim": "片段中心化优势",
+          "url": "https://arxiv.org/html/2610.29997v1#S4.SS4.SSS0.Px1"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "实验与消融",
+          "url": "https://arxiv.org/html/2610.29997v1#S5.SS2"
+        },
+        {
+          "section": "S6",
+          "claim": "仿真等限制",
+          "url": "https://arxiv.org/html/2610.29997v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.T1",
+          "caption": "Table 1: Dataset overview: source statistics and simultaneous-contact rates on analyzed recordings.",
+          "url": "https://arxiv.org/html/2610.29997v1#S3.T1",
+          "source_url": "https://arxiv.org/html/2610.29997v1#S3.T1"
+        },
+        {
+          "id": "S4.F2",
+          "caption": "Figure 2: Overview of DONIC. Top: BiHOI captures are reconstructed and retargeted, then combined with public-data references to form the training pool. Middle: A shared bimanual policy learns through simulated interaction and verified demonstrations in an iterative PPO+BC loop. Bottom: An object-centered per-hand reward, Clip-Centered Advantages (CCA), and behavioral cloning provide complementary learning signals.",
+          "url": "https://arxiv.org/html/2610.29997v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.29997v1#S4.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.29107",
+      "arxiv_id": "2610.29107",
+      "doi": "",
+      "title": "PhyMo: Learning Physical Dynamics with Accurate and Continuous Motion from Multi-View Videos",
+      "abstract": "Recovering dynamic 3D scene geometry, appearance, and the physical motion states that govern scene evolution from multi-view videos is important yet challenging. A key difficulty is that appearance can be deceptive. Under rendering supervision alone, a model may fit the observed images by changing color or opacity to compensate for inaccurate deformation, rather than recovering the true evolving geometry and motion. This issue is especially severe in scenes with fast or locally complex motion, where inaccurate trajectories can still produce plausible images over the observed frames, but lead to unreliable reconstruction and discontinuous future prediction. In this paper, we propose PhyMo, a framework for learning evolving dynamics from multi-view videos. We introduce a Motion-Aware Trajectory Representation that drives the model to recover accurate motion from deformation, rather than relying on appearance shortcuts to explain observed motion. On top of this, we propose a Continuous Motion Evolution module with bidirectional kinematic continuity constraint to promote temporally consistent evolution of displacement, velocity, and acceleration. Together, these designs yield geometrically faithful interpolation and continuous motion extrapolation. Experiments on four dynamic scene benchmarks demonstrate state-of-the-art performance.",
+      "authors": [
+        "Shangjia Liu",
+        "Jinxi Li",
+        "Siyuan Zhou",
+        "Bo Yang",
+        "Bing Wang"
+      ],
+      "url": "https://arxiv.org/abs/2610.29107",
+      "published": "2026-10-21T02:49:38Z",
+      "topics": [
+        "运动与运动控制",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29107v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "score": 84,
+        "title_zh": "PhyMo：从多视角视频学习准确且连续的3D运动演化",
+        "abstract_zh": "从多视角视频恢复动态场景的几何、外观以及支配演化的运动状态具有挑战。单靠渲染监督，模型可能通过改变颜色或透明度补偿错误形变，在快速或复杂局部运动中尤其容易出现：观察帧看似合理，重建轨迹和未来预测却不可靠。PhyMo首先引入运动感知轨迹表示，促使模型用正确形变解释运动，而不是依赖外观捷径；再通过带双向运动学连续性约束的演化模块，保持位移、速度和加速度在时间上的一致。二者结合，支持几何忠实的插值和连续运动外推，作者在四个动态场景基准报告领先结果。",
+        "reason": "运动建模重点：揭示“画面拟合很好却没有学对运动”的捷径，并把位置、速度和加速度联系起来。",
+        "introduction_zh": "动态高斯重建中，一个物体位置放错后，优化器可以让它变透明，或改变背景颜色，仍然降低图像误差。这样的结果也许渲染好看，却无法可信地预测未来。本文先限制这种外观补偿，让形变承担解释运动的责任，再学习连续的运动状态。它关注从观察恢复轨迹并向短期未来外推，区别于给定用户动作生成新运动或模拟完整物理受力。",
+        "method_takeaway": "先限制颜色和透明度替错误运动“遮丑”，再用双向位置—速度—加速度一致性约束，让重建轨迹能够连续外推。",
+        "framework_zh": "想象一个快速移动的滑冰者。若高斯点没有跟上身体，最容易降低渲染误差的办法可能是把错位的点变透明，而不是修正运动。PhyMo先处理这个捷径：用规范时刻的3D高斯表示外观，形变网络决定各时刻的位置、旋转和尺度；颜色与透明度的可学习残差则受每个高斯的运动门控调节。门控由相邻时刻形变变化计算，停止梯度回传，避免它成为随意讨好损失的另一条通道。\n\n当局部形变还没有表现出活跃运动时，外观残差受抑制，模型更需要调整几何；运动逐渐建立后，门控允许外观细化。训练先在初始时刻热身，再逐步扩大可见时间范围，让复杂运动不必一次性全部拟合。需要注意，这个门控依据的是局部运动幅度，不是有真值验证的准确率，不能把它理解成“已证明轨迹正确后才开放外观”。\n\n有了轨迹，第二步才学习如何继续运动。运动网络预测高斯的线速度、加速度以及角运动状态。从某观察时刻的左右两侧各取一个邻近状态，分别向前、向后积分到同一时刻，两边不仅要渲染成同一观察，还要满足加速度到速度、速度到位移的连续关系。用两个方向互相约束，比只要求一张渲染图像正确更能限制运动状态的歧义。\n\n因此整个方法形成一条因果主线：先得到少用外观作弊的轨迹，再让这些轨迹服从连续的运动学变化，最后才能向未观察时间外推。实验采用观察前75%、预测后25%的时间划分。它学习了适合该场景的连续运动表示，并没有显式恢复力、质量和接触定律；对新外力或任意长时间的预测仍不应作保证。",
+        "pipeline": "多视角视频与相机 → 运动门控下学习高斯形变 → 双向运动学连续性训练 → 新时间渲染与短期外推",
+        "results": "观察[0,0.75]、预测[0.75,1]协议下，PhysInOne外推Chamfer距离为0.073米，TRACE为0.491、FreeGave为0.718。去掉运动门控后外推距离0.358，去掉运动网络直接用形变场为0.547。四基准中作者报告总体更好结果，但个别指标存在持平。",
+        "limitations": "方法依赖多视角、相机信息与逐场景优化；演化部分采用高斯粒子尺度固定等简化。分析提醒：连续运动学约束不等于完整物理定律，也不直接提供动作条件控制。实验验证有限时间外推，未证明遭遇新接触、新外力或长期运行时可靠。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS0.Px1",
+            "claim": "外观捷径与运动门控"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "双向积分和连续性"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "渐进训练"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "外推协议"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "消融"
+          }
+        ],
+        "fulltext_hash": "1424491bd8ba8ac04c69c7ad1b8c92c2b6b0d70889e655ab248cf663586ccb5d",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.649Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 94,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS0.Px1",
+          "claim": "外观捷径与运动门控",
+          "url": "https://arxiv.org/html/2610.29107v1#S3.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "双向积分和连续性",
+          "url": "https://arxiv.org/html/2610.29107v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "渐进训练",
+          "url": "https://arxiv.org/html/2610.29107v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "外推协议",
+          "url": "https://arxiv.org/html/2610.29107v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "消融",
+          "url": "https://arxiv.org/html/2610.29107v1#S4.SS3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of PhyMo. The left module, Motion-Aware Trajectory , starts from a canonical 3D representation and uses deformation network Fd​e​f​oF_{defo} to derive a motion-confidence gate qiq_{i} that guides canonical appearance learning, encouraging motion to be explained by deformation rather than appearance shortcuts. The right module, Continuous Motion Evolution, bi-directionally sampling from the trajectory, Motion Network MθM_{\\theta} predicts velocity and acceleration and performs RK2 evolution , where bidirectional kinematic continuity loss and render loss are applied.",
+          "url": "https://arxiv.org/html/2610.29107v1/overview_nips26_0507_2.png",
+          "source_url": "https://arxiv.org/html/2610.29107v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.29915",
+      "arxiv_id": "2610.29915",
+      "doi": "",
+      "title": "CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion",
+      "abstract": "Diffusion-based video generation models (VGMs) can produce visually plausible videos, yet their camera ego-motion often drifts over long horizons. Camera ego-motion determines how the viewpoint changes between frames and is essential for maintaining consistent geometry and trajectories. To address this problem, we propose CausalAlign, a causal alignment framework with two components. First, we diagnose how precise ego motion is represented, used, and retained within VGMs using linear probes and causal interventions, revealing a rise-and-fall pattern during denoising. Second, we strengthen ego-motion state in VGM by aligning the representations at the identified layers to a 3D foundation model through delta-token space. This space encodes the changes between consecutive frames, allowing the alignment to focus on ego-motion dynamics rather than static scene content. With Wan2.2 fine-tuned on DL3DV and RealEstate10K, CausalAlign can largely improve motion accuracy, geometric consistency, and temporal smoothness, while preserving visual quality. For example, it improves geometric consistency by more than 20% relative to the base model. Moreover, with the fine-tuned VGM, CausalAlign improves the success rate of world action models (WAMs) by 10 points on mobile manipulation tasks of RoboCasa365 benchmark. Overall, CausalAlign improves ego-motion consistency in diffusion-based VGMs and yields noticeable gains in embodied models.",
+      "authors": [
+        "Kai Zhu",
+        "Yintianrun Zhang",
+        "Shuwei Jiang",
+        "Ruolin Zuo",
+        "Yixin Chen",
+        "Duomin Wang",
+        "Miao Liu",
+        "Yin Li",
+        "Daquan Zhou",
+        "Yiwu Zhong"
+      ],
+      "url": "https://arxiv.org/abs/2610.29915",
+      "published": "2026-10-21T15:54:57Z",
+      "topics": [
+        "相机控制",
+        "视频生成",
+        "世界模型",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29915v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "相机控制"
+        ],
+        "score": 85,
+        "title_zh": "CausalAlign：通过因果诊断与差分令牌对齐保留视频模型的相机运动状态",
+        "abstract_zh": "扩散视频模型能生成可信画面，但长时相机自运动可能漂移，破坏跨帧几何与轨迹一致性。CausalAlign包含两个部分：先用线性探针和因果干预诊断精确相机运动信息如何被表示、使用和保留，发现其在去噪过程中先升后降；再在定位的层上，通过编码相邻帧变化的差分令牌空间，把视频模型表示对齐到3D基础模型，重点学习运动变化而非静态场景。Wan2.2在DL3DV与RealEstate10K微调后，运动准确性、几何一致性和时间平滑性改善，同时维持视觉质量，几何一致性指标相对改善超过20%。以此初始化世界动作模型还在RoboCasa365移动操作中带来约10个百分点成功率提升。",
+        "reason": "与相机方向紧密相关的状态保留方法；需明确它改善相机运动一致性，并非新增显式用户轨迹控制接口。",
+        "introduction_zh": "视频模型有时能从内部特征读出相机姿态，生成画面却仍出现视角漂移。这意味着问题未必是从未学过几何，也可能是中间形成的状态在后续去噪中被覆盖。本文先同时检查“能否读出”和“干预是否影响输出”，找到运动信息衰退的位置，再定向补强。作者用相邻帧变化作为监督对象，避免把大量静态场景信息一起搬进模型，却没有真正加强运动状态。",
+        "method_takeaway": "先找出相机运动信息开始丢失的层与去噪阶段，再用3D教师的相邻帧变化监督这些位置，保住已有的运动状态。",
+        "framework_zh": "这篇论文可以理解为给视频模型做一次“先定位、再修补”的几何诊断。仅从某层特征读出相机运动，并不能说明生成器真的使用了它。作者一方面用线性探针测量可读出的信息，另一方面在提示、噪声与随机种子固定时，对时间特征进行遮蔽、打乱、替换或注入，观察生成轨迹变化，并设置匹配范数的随机干预对照。两种信号共同帮助定位运动状态形成后又开始衰退的位置。\n\n修补并不直接复制整幅3D特征。冻结的3D教师先提供连续帧几何状态，一个可学习编码器把它们压成表示变化的差分令牌。令牌通过恢复下一状态、预测下一变化和估计相对相机姿态等任务学习，目的是让它确实携带时间过渡，而不是只记住背景。这里的“差分”是学习到的紧凑变化表示，并不等于简单把两帧特征逐元素相减。\n\n接着，作者先冻结视频主干，训练投影器把选定位置的帧间特征映射到教师空间；再冻结教师和投影器，只更新这些层上的低秩适配参数。损失要求变化令牌接近教师，并能恢复正确相对姿态。冻结投影器让误差必须推动视频表示改善，而不只是让映射层迁就错误特征。相机轨迹真值在这里是训练或诊断依据，不作为部署时用户输入。\n\n生成时删去教师与辅助模块，仍给首帧和文字、按原流程去噪。因而它的价值是让模型更稳定地维持自身运动推断，而不是任意指定运镜曲线。作者还把适配后的视频专家用于动作模型，检验几何状态是否帮助移动操作；这一迁移结果提供实用证据，但也依赖后续动作模型训练。",
+        "pipeline": "探针与干预定位状态衰退 → 3D教师学习帧间变化令牌 → 在选定位置监督LoRA → 原流程视频生成及动作模型迁移",
+        "results": "作者报告重投影误差相对降低22.6%、轨迹平滑性改善23.9%。VBench质量0.805到0.806，FVD182.4到182.7，视觉指标并非全改善。RoboCasa365 Target100的Fast-WAM平均成功率43.5%到54.2%，Atomic Seen为59.1%到78.1%；这是完成指定预训练和任务微调后的结果。",
+        "limitations": "主要基于Wan2.2、特定训练集及姿态估计评价；诊断依赖探针、干预与估计器质量。分析提醒：没有提供测试时显式相机轨迹输入，也没有证明无限长视频几何正确。世界动作模型收益不能视为仅替换权重即可跨任意任务零样本提升。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "诊断和定位"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "三阶段差分对齐"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "推理无需辅助输入"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "状态保留实验"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "动作模型迁移"
+          }
+        ],
+        "fulltext_hash": "61d690126d941132bc86eedda00b80bed79bf4885e57d50e6ebe31535f48e766",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.427Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 87.5,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "诊断和定位",
+          "url": "https://arxiv.org/html/2610.29915v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "三阶段差分对齐",
+          "url": "https://arxiv.org/html/2610.29915v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "推理无需辅助输入",
+          "url": "https://arxiv.org/html/2610.29915v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "状态保留实验",
+          "url": "https://arxiv.org/html/2610.29915v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "动作模型迁移",
+          "url": "https://arxiv.org/html/2610.29915v1#S4.SS2.SSS0.Px2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview of CausalAlign. Left: Existing approaches rely on external 3D caches that may propagate errors, optimize output-level preferences without directly supervising ego-motion states, or align 3D features at randomly selected layers. Middle: Our CausalAlign first identifies the targeted layers through causal diagnosis and then strengthens ego-motion states through delta-token alignment. Right: CausalAlign consistently improves camera ego-motion consistency in video generation and largely boosts downstream mobile manipulation performance.",
+          "url": "https://arxiv.org/html/2610.29915v1/teaser.png",
+          "source_url": "https://arxiv.org/html/2610.29915v1#S1.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.30125",
+      "arxiv_id": "2610.30125",
+      "doi": "",
+      "title": "PhysiCalWorld: In-Context Physics Calibration for World Models",
+      "abstract": "Existing world models typically perceive a scene through current visual frame or a narrow history window. However, these observations may not reveal the physics properties that determine transition dynamics, such as an object's mass distribution, joint damping, or surface friction. Without calibrating these physics factors for world models, predictions tend to regress toward an empirical prior and induce severe drift in novel test scenes. To this end, we propose PhysiCalWorld, which calibrates action-conditioned world models to the instance-specific dynamics via in-context prompting, without fine-tuning or analytical physics modeling. Our method encodes an exploratory interaction clip collected within the test scene into a compact physics descriptor token, which grounds subsequent predictions in the scene's actual physical behavior. PhysiCalWorld is trained end-to-end with the latent prediction loss alone, without physics labels. At inference time, the descriptor token is extracted once and can be reused across rollouts with negligible compute overhead. We evaluate PhysiCalWorld across four environments covering diverse physics variations and show that it substantially improves rollout prediction accuracy and visual planning success rate. The learned descriptors also form a physically structured latent space and generalize beyond the physics ranges seen during training.",
+      "authors": [
+        "Yunhao Luo",
+        "Wentao He",
+        "Yinpei Dai",
+        "Hyelin Nam",
+        "Hongze Fu",
+        "Joyce Chai",
+        "Nima Fazeli",
+        "Jeong Joon Park"
+      ],
+      "url": "https://arxiv.org/abs/2610.30125",
+      "published": "2026-10-21T17:57:59Z",
+      "topics": [
+        "世界模型",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.30125v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "PhysiCalWorld：通过一次交互上下文校准世界模型的物理行为",
+        "abstract_zh": "现有世界模型通常依据当前画面或短历史观察场景，但这些观察难以揭示质量分布、关节阻尼、摩擦等决定转移规律的物理属性。缺少针对具体场景的校准时，预测容易退回训练经验中的平均规律，在新环境严重漂移。PhysiCalWorld通过上下文提示校准动作条件世界模型，无需微调或解析物理建模。方法将测试场景中的探索交互片段编码为紧凑物理描述令牌，使后续预测适应该场景实际行为；训练只用潜空间预测损失，不需要物理标签。推理时令牌提取一次，可在多次滚动中复用，额外开销很小。作者在四个物理变化环境中报告预测与视觉规划改善，并发现描述空间具有物理相关结构及对训练范围之外参数的泛化。",
+        "reason": "世界模型校准的清晰思路：用实际交互辨认看不见的动力学，并把场景经验压成可复用条件。",
+        "introduction_zh": "两个外观相同的物体可能重心不同，同样一推就会产生不同轨迹。仅看图像，模型无法可靠猜出这种隐藏属性；每次都附带长交互录像又会增加规划成本。本文把新场景中的探索过程压成一个描述令牌，用它持续调节预测，而非显式估计质量、摩擦等参数。训练需要知道哪些轨迹来自同一物理配置，让不同交互共享的动力学成为可学习的信息。",
+        "method_takeaway": "先在新场景中做一段能显露物理特性的交互，把动作与响应压成一个令牌，再用它反复校准后续世界预测。",
+        "framework_zh": "以推动两个长相相同、重心不同的T形物块为例，单张照片并不能告诉模型它们会怎样转。PhysiCalWorld的办法不是先猜一个质量参数，而是先实际推几下，看动作导致什么响应。探索录像与同步动作一起输入上下文编码器，逐时刻融合后由一个可学习查询汇总成物理描述令牌。这个令牌表达的是对预测有用的场景动力学线索，不要求每一维对应人类命名的物理量。\n\n怎样保证它学到物理而非仅记住某段视频？训练数据按相同物理配置分组。模型要预测某条轨迹的下一状态时，描述令牌来自同组另一个独立采样片段；两段具体动作不同，共享的却是环境动力学。预测误差同时训练上下文编码器和世界模型，迫使描述提取能够跨轨迹复用的信息。监督只需未来视觉潜变量，不需给出真实质量或阻尼，但按物理配置组织数据这一条件仍不可省略。\n\n测试时先采集一段探索交互，再计算一次令牌。之后每一步预测都把近期状态、候选动作和这个固定令牌一起送入潜空间动力学模型。规划器需要比较许多候选动作序列时，它们也可共享同一令牌，因此不必在每次滚动中重复处理整段探索视频。这是方法效率的来源：把长观察转换成小型场景条件，而不是让每个预测都重新研究原始录像。\n\n这种一次校准能够成立，有两个前提：探索必须确实触发运动或接触，物理属性也应在后续保持不变。没碰到桌子的球无法充分透露桌面的碰撞耗散；环境阻尼突然变化后，旧令牌也可能失效。实验中稀疏碰撞场景的完整上下文规划略好，说明压缩并非处处无损，但在多次预测与规划中，它提供了很实用的成本取舍。",
+        "pipeline": "同场景探索动作及响应 → 压缩物理描述令牌 → 条件化潜空间滚动 → 比较候选动作并规划",
+        "results": "DINO-WM上的BeerPong规划成功率由44.0%到80.0%，FetchSlide由26.7%到56.0%；完整上下文基线分别为82.7%和54.7%，并非所有任务均胜。Push-T成功率53.3%到62.7%；另在LeWM及训练范围外Reacher阻尼上检验。数值来自作者四环境协议，未复现实验。",
+        "limitations": "作者明确要求按物理配置分组训练，真实杂乱视频中不易获得；效果依赖探索信息量，且假定物理属性在一段任务内不变。没有物理参数标签不等于无需交互数据。单令牌在稀疏碰撞线索下可能损失有用信息，未证明真实开放环境全面泛化。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS0.Px2",
+            "claim": "描述令牌与复用"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "同配置分组训练"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px1",
+            "claim": "探索需揭示动力学"
+          },
+          {
+            "section": "S4.SS1.SSS0.Px3",
+            "claim": "碰撞场景与结果"
+          },
+          {
+            "section": "S5",
+            "claim": "限制"
+          }
+        ],
+        "fulltext_hash": "e0b8e890ccdc99cc653a0c1967eae99ab93f442cc64c6dda39e204edfa83285a",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.626Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS0.Px2",
+          "claim": "描述令牌与复用",
+          "url": "https://arxiv.org/html/2610.30125v1#S3.SS1.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "同配置分组训练",
+          "url": "https://arxiv.org/html/2610.30125v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px1",
+          "claim": "探索需揭示动力学",
+          "url": "https://arxiv.org/html/2610.30125v1#S3.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS1.SSS0.Px3",
+          "claim": "碰撞场景与结果",
+          "url": "https://arxiv.org/html/2610.30125v1#S4.SS1.SSS0.Px3"
+        },
+        {
+          "section": "S5",
+          "claim": "限制",
+          "url": "https://arxiv.org/html/2610.30125v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Method Overview. PhysiCalWorld calibrates action-conditioned world models to the actual dynamics of a test scene via prompting with in-context interaction. In (a), the current visual observation alone cannot identify the physical dynamics of the test scene 𝒯\\mathcal{T}, forcing the world model to guess among multiple potential future states. In (b), starting from the top left, exploratory actions a1:Tcca_{1:T_{c}}^{c} are first executed in the test scene 𝒯\\mathcal{T}, yielding observations o1:Tcc{o}_{1:T_{c}}^{c}. The context encoder gϕg_{\\phi} then extracts physics information from this obs-action sequence and compresses it into a physics descriptor token 𝐳phy\\mathbf{z}_{\\text{phy}}. Conditioned on zphy\\textbf{z}_{\\text{phy}}, the world model is able to generate future predictions o^t+1\\hat{o}_{t+1} consistent with the test scene’s dynamics.",
+          "url": "https://arxiv.org/html/2610.30125v1/2-method-v10-local.png",
+          "source_url": "https://arxiv.org/html/2610.30125v1#S3.F2"
+        },
+        {
+          "id": "A1.T1",
+          "caption": "Table A1: Model Architectures and Training Hyperparameters. The base configurations used by the DINO-WM and LeWM model families, corresponding to results shown in Table 1 and Table 2.",
+          "url": "https://arxiv.org/html/2610.30125v1#A1.T1",
+          "source_url": "https://arxiv.org/html/2610.30125v1#A1.T1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.29866",
+      "arxiv_id": "2610.29866",
+      "doi": "",
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "abstract": "Geometric structure is essential for robotic manipulation and understanding the 3D world. Most VLA models rely on 2D representations of current observations, while geometry-aware approaches often require additional 3D information. However, geometry inferred independently from individual observations is often discarded rather than accumulated into a persistent task representation. Our key insight is that action generation needs a compact, task-relevant geometric abstraction that can be continuously updated, rather than a complete, renderable 3D reconstruction at every step. We introduce GeoMem-VLA, a VLA framework that internalizes explicit 3D supervision into dedicated geometric tokens and maintains them as temporal memory for action generation, without directly aligning the VLM's native visual embeddings with the teacher feature space. During training, a frozen geometry foundation model supervises learnable GeoPlan tokens through a geometric flow-matching objective over the current scene point map and future end-effector tracks. These tokens are integrated with the memory of observation representations, where historical information is retrieved, adaptively fused with current observations, and consolidated to retain event frames as the task progresses. At inference, the policy retrieves historical representations and fuses them with the current working representation to predict actions, without invoking the 3D teacher or explicitly reconstructing the scene. After benchmark-specific downstream adaptation, GeoMem-VLA achieves 98.9% average success on LIBERO and 91.10% / 91.24% on RoboTwin's clean/randomized settings. Across five real-world tasks, GeoMem-VLA achieves 78.0% average success. These results suggest that internalizing and remembering 3D scene understanding is a promising approach to robot control.",
+      "authors": [
+        "Qinfan Zhang",
+        "Yifan Luo",
+        "Haoyuan Shi",
+        "Guanlin Liu",
+        "Han Dong",
+        "Haozhe Shan",
+        "Yong Dai",
+        "Xiangcong Ren",
+        "Xiaozhu Ju"
+      ],
+      "url": "https://arxiv.org/abs/2610.29866",
+      "published": "2026-10-21T15:23:18Z",
+      "topics": [
+        "多模态",
+        "具身智能",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.29866v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 83,
+        "title_zh": "GeoMem-VLA：将3D场景理解内化为动作模型的时序记忆",
+        "abstract_zh": "机器人操作需要几何结构，但多数VLA主要依赖当前2D观察；几何感知方法也常将逐次推断的3D信息丢弃，未积累为持续任务表示。本文认为动作生成更需要可更新、任务相关的紧凑几何抽象，而非每步完整重建。GeoMem-VLA把显式3D监督内化到专用GeoPlan令牌，并保留为时序记忆，不直接将VLM原生视觉嵌入对齐到教师特征。训练时，冻结几何模型以当前场景点图和未来末端轨迹的流匹配目标监督令牌；历史表示经检索、自适应融合和整合保留任务事件。推理无需调用3D教师或显式重建。在按基准适配后，LIBERO平均成功率98.9%，RoboTwin干净/随机设置91.10%/91.24%，五个真实任务平均78.0%。",
+        "reason": "几何与记忆的结合方式值得借鉴：训练时学3D，部署时记住紧凑空间线索，关注遮挡和多阶段操作。",
+        "introduction_zh": "苹果被毛巾遮住后，当前画面可能不再提供位置，机器人却应记得此前看到的空间关系。只增强单帧3D理解不够，堆积所有历史图像又冗余。GeoMem-VLA让专用令牌在训练时学习场景与目标运动的几何关系，再通过有界时序记忆保留这些信息。重点是把可用于行动的空间理解延续下来，而非要求机器人每一步都运行完整3D重建流程。",
+        "method_takeaway": "用训练期3D监督教会专用令牌表示场景与动作几何，再把这些令牌存成因果记忆，部署时无需重新构建显式3D场景。",
+        "framework_zh": "可以把GeoMem-VLA的目标理解为让机器人留下“与任务有关的空间笔记”。视觉语言模型读当前观察和指令时，额外加入一组可学习的GeoPlan令牌。它们的输出既供动作决策使用，也在训练时接受几何辅助任务：从噪声恢复当前场景点图和未来末端执行器轨迹。点图由冻结的VGGT教师给出，未来轨迹来自示范，并统一到当前场景坐标中，迫使令牌同时表达环境结构与拟采取的运动。\n\n这些未来轨迹只用于训练监督。部署时，令牌仍由当前观察和指令计算，模型既不知道未来示范动作，也不需要输出完整点图。辅助几何解码器和教师被移除，只保留它们塑造过的紧凑表示。因此论文不是让机器人每一步先重建再规划，也不是把预测未来当作已知输入。\n\n空间笔记还要能跨时间保留。模型分别维护观察与几何表示的记忆流，先用当前表示查询同一任务中更早的内容，再把当前条目写入。容量超限时，找到时间相邻且最相似的两个条目取均值合并，使重复的稳定阶段占用更少空间，变化明显的阶段更容易保留。这种“事件”由特征变化形成，并非人工标注的抓取、放置事件，也不是每个关键细节都保证不会遗忘。\n\n检索出的几何内容通过门控融入当前视觉上下文，再交给动作专家。以遮挡苹果为示意，当前图像负责告诉机器人毛巾在哪里，历史几何线索补充之前苹果的位置。实验中的记忆消融在长任务上影响更明显，与设计动机一致。不过几何令牌、检索和合并仍在部署中运行，不能把删掉教师说成完全没有额外计算。",
+        "pipeline": "当前观察与指令 → 3D辅助监督塑造GeoPlan令牌 → 检索并压缩历史空间记忆 → 融合上下文预测动作",
+        "results": "按基准适配后，LIBERO平均98.9%，去掉几何分支97.9%、去掉时序记忆98.2%；Long任务由完整96.6%降为无记忆94.2%。RoboTwin两设置平均91.17%，基线StarVLA-GR00T为88.25%。真实五任务每项10次，共50次，平均78%；样本较少，跨论文排名也受数据和输入协议差异影响。",
+        "limitations": "结果包含下游基准适配，不能称同一策略零样本覆盖所有任务。真实实验每任务仅10次；几何监督质量受教师影响，有界平均合并可能丢失罕见细节。分析提醒：未来末端轨迹只作训练目标，部署记忆不含未来观察或示范动作。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "专用几何令牌"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px1",
+            "claim": "点图和未来轨迹监督"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "因果写入与合并"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px3",
+            "claim": "部署去除教师"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px1",
+            "claim": "匹配消融"
+          },
+          {
+            "section": "S4.SS5.SSS0.Px1",
+            "claim": "真实实验样本"
+          }
+        ],
+        "fulltext_hash": "76444a757814ac4218973e8bcb7dd16598c9ff095b668abc6b11fa27f41a2afc",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.665Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "专用几何令牌",
+          "url": "https://arxiv.org/html/2610.29866v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px1",
+          "claim": "点图和未来轨迹监督",
+          "url": "https://arxiv.org/html/2610.29866v1#S3.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "因果写入与合并",
+          "url": "https://arxiv.org/html/2610.29866v1#S3.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px3",
+          "claim": "部署去除教师",
+          "url": "https://arxiv.org/html/2610.29866v1#S3.SS3.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px1",
+          "claim": "匹配消融",
+          "url": "https://arxiv.org/html/2610.29866v1#S4.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS5.SSS0.Px1",
+          "claim": "真实实验样本",
+          "url": "https://arxiv.org/html/2610.29866v1#S4.SS5.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview of GeoMem-VLA. Top: In the illustrative cover and pick up the apple task, the current observation alone may not reveal the apple’s location once it is occluded by the towel, motivating the retention of spatial context over time. Middle: GeoMem-VLA learns geometry-supervised GeoPlan representations and retains them in causal episode memory for action generation. Bottom: Performance comparisons across manipulation benchmarks and real-world tasks.",
+          "url": "https://arxiv.org/html/2610.29866v1/Teaser_Geo.png",
+          "source_url": "https://arxiv.org/html/2610.29866v1#S1.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Architecture of GeoMem-VLA. Images, language, and learnable 3D marker tokens are encoded by the VLM. The geometry branch is trained with scene-geometry targets and demonstration-derived future end-effector tracks, whereas the action expert is trained to predict robot actions. Geometric and observational features are retained in episodic memory and fused to form the context for action generation. The geometry teacher and reconstruction head are used only during training.",
+          "url": "https://arxiv.org/html/2610.29866v1/GeoMemVLA_v4.png",
+          "source_url": "https://arxiv.org/html/2610.29866v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.28827",
+      "arxiv_id": "2610.28827",
+      "doi": "",
+      "title": "WorldStream: Streaming Interactive 3D Worlds with Hierarchical Planning and Persistent State",
+      "abstract": "We present WorldStream, an open-ended 3D world model with three simultaneous capabilities: it extends playable terrain beyond any pre-specified map, acts on open-ended language in the running world, and restores visited places with their edits. A hierarchical planner over a typed decision model emits structured decision state: Macro fixes settlement, ecology, transport, and hydrological structure across a group of tiles; Micro specializes that contract into tile semantics under measured terrain and accepted neighbor commitments. Deterministic local code compiles accepted plans into terrain, roads, settlements, vegetation, and entities. Streaming separates their reach: plans run ahead along the predicted corridor, compilation only where movement will soon need it, geometry behind the user released. One world record retains plans, seeds, object identities and mutable state, boundary commitments, and edits by attribute, revised as the user advances and edits; returning tiles recompile from it. The same record grounds interaction: the model acts on existing entities, including stateful NPCs that update as they act, edits the present region, or attaches intent to unplanned regions. Together they yield a world expanding under bounded budgets, connected across independently planned tiles, and interactive.",
+      "authors": [
+        "Xiaoxiao Ma",
+        "Weiyang Jin",
+        "Yanwen Ma",
+        "Haoran Li",
+        "Zhixiang Wei",
+        "Songchun Zhang",
+        "Yaowei Li",
+        "Junhao Zhuang",
+        "Zeyue Xue",
+        "Yuming Li",
+        "Zheming Fu",
+        "Haoyang Huang",
+        "Nan Duan",
+        "Feng Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2610.28827",
+      "published": "2026-10-20T18:47:26Z",
+      "topics": [
+        "世界模型",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-22"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.28827v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 79,
+        "title_zh": "WorldStream：以层级规划和持久状态持续扩展交互式3D世界",
+        "abstract_zh": "WorldStream是开放式3D世界系统，同时支持超出预设地图扩展可玩地形、在运行世界中响应开放语言，以及恢复访问过的地点和编辑。层级规划器输出结构化决策：宏观层确定区域聚落、生态、交通与水系，微观层根据地形和已接受的邻接约束形成地块语义，再由确定性本地代码编译为地形、道路、建筑、植被与实体。系统沿预测移动路径提前规划，只编译即将需要的几何，释放身后几何；持久记录保留计划、种子、对象身份和可变状态、边界承诺及编辑。重访时从记录重建，同一记录也支持实体交互、当前区域编辑和未来区域意图，从而在有界运行预算下持续扩展相连且可交互的世界。",
+        "reason": "作为世界模型的互补路线：把长期记忆放进明确的世界记录，解决卸载后重访和编辑保留；它是程序化3D流送，并非流式视频扩散。",
+        "introduction_zh": "一个世界不能只在下一帧看起来合理：玩家离开、修改再返回时，地点和对象身份也应保持。全地图预生成不利于开放扩展，只在视觉潜变量中记忆又难以精确保留编辑。WorldStream让语义规划、程序化几何、交互和渲染共用持久记录，并把“提前决定内容”和“实际构造几何”安排在不同距离范围内。这是一套系统组织方法，重点在状态与调度，不是新的像素视频模型。",
+        "method_takeaway": "把世界身份保存在可重建的地块记录中，远处先规划、近处再造几何，卸载时只释放显示资源而保留地点及编辑。",
+        "framework_zh": "示意地说，玩家在森林里移动过一棵树，走远后再回来，它应该仍在新位置。WorldStream把“这片地方是什么”与“此刻显示它需要哪些几何资源”分开。每块土地有权威记录，保存接受的计划、种子、边界连接、对象状态、用户编辑和版本。渲染用几何由记录编译而来，卸载只丢掉几何；重访读取同一记录和兼容生成器版本，重新造出已接受的地点。\n\n内容规划分两层：宏观层决定一片区域哪里是城镇、道路走廊和生态带，微观层再按地形与相邻地块已承诺的接口安排局部内容。模型给各字段输出候选及概率后，还要由约束求解器联合选择可执行组合，不能每个字段各取最大概率。例如道路必须接上邻地块端口，住宅不能落在不适合建设的地形上，区域意图与局部实现必须一致。\n\n为了边走边生成，系统把语义规划的范围放得较远，实际几何构建的范围放得较近。移动方向、速度和相机朝向给出候选需求，再以不同预算决定哪些地块先规划、哪些必须完成构建。两个地块共享边界记录，避免各自生成后路口接不上；后台任务还带来源版本号，用户已经编辑后，旧任务的结果不能覆盖新状态。\n\n自然语言交互也修改同一记录：可以作用于已有实体、编辑当前区域，或给尚未生成的区域留下意图。它的可记忆之处是“世界是记录，画面是记录的临时实现”。有界的是活动几何和调度预算，探索越多，持久记录仍会增长；生成范围也受资产、规则和执行器能力约束，因此不能将其解释为无限存储、任意真实内容的自由生成。",
+        "pipeline": "地理信息与语言意图 → 宏观/微观计划及约束验证 → 按移动需求编译和加载 → 持久记录支持交互与重访",
+        "results": "100组相同模型概率输出中，独立选择的全部约束通过率37%，联合求解为100%。80条双语交互请求正确执行或正确不执行76条（95%）。100条路线回放中方向预取把4公里累计等待降至3.52秒；本地密林编译由10.780秒到3.323秒，输出对象记录保持一致。",
+        "limitations": "作者明确生成词汇、控制器和规则有限；重建依赖持久记录及兼容资产/生成器版本。长时间世界仍需存储策略和未加载区域动态实体的模拟策略。小规模系统实验不等于通用世界模型基准优势；本篇不计流式视频生成优先权重。",
+        "evidence": [
+          {
+            "section": "S2",
+            "claim": "权威记录与几何分离"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "联合约束"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "双预算调度"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "边界和版本一致性"
+          },
+          {
+            "section": "S6.SS1",
+            "claim": "规划实验"
+          },
+          {
+            "section": "S7.SS1",
+            "claim": "边界与限制"
+          }
+        ],
+        "fulltext_hash": "aa0cb307f54322fcbc5f2da30ba51a767e25b330e05b3588f522a0c70e784252",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-23T03:38:32.683Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 79,
+      "evidence": [
+        {
+          "section": "S2",
+          "claim": "权威记录与几何分离",
+          "url": "https://arxiv.org/html/2610.28827v1#S2"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "联合约束",
+          "url": "https://arxiv.org/html/2610.28827v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "双预算调度",
+          "url": "https://arxiv.org/html/2610.28827v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "边界和版本一致性",
+          "url": "https://arxiv.org/html/2610.28827v1#S4.SS4"
+        },
+        {
+          "section": "S6.SS1",
+          "claim": "规划实验",
+          "url": "https://arxiv.org/html/2610.28827v1#S6.SS1"
+        },
+        {
+          "section": "S7.SS1",
+          "claim": "边界与限制",
+          "url": "https://arxiv.org/html/2610.28827v1#S7.SS1"
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.30036",
+      "title": "Attn-Forcing: Learning Full-Context Attention Proxies for Streaming Video Generation",
+      "decision": "include",
+      "reason": "直接命中流式生成：记忆的学习目标从“压缩旧画面”改为“保留旧画面对当前查询的作用”，机制与训练、推理边界清晰。"
+    },
+    {
+      "key": "arxiv:2610.29408",
+      "title": "LiveAct: Towards Real-Time Multi-Agent World Models with Heterogeneous Action Interfaces",
+      "decision": "include",
+      "reason": "同时切中流式、运动与主体控制：解决“这条动作指挥谁”和“这个数值表示什么”，并明确流式加速带来的控制精度取舍。"
+    },
+    {
+      "key": "arxiv:2610.29989",
+      "title": "Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation",
+      "decision": "include",
+      "reason": "为流式视频提供可迁移的训练思路：用跨越中间帧的预测打破近邻外观捷径，推理阶段不增加分支。"
+    },
+    {
+      "key": "arxiv:2610.30129",
+      "title": "Rethinking Video Autoencoders for Interactive World Models",
+      "decision": "include",
+      "reason": "流式交互的重要机制研究：不是只比FPS，而是把动作等候时间、运动保真和压缩位置放在同一实验框架中。"
+    },
+    {
+      "key": "arxiv:2610.29997",
+      "title": "DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations",
+      "decision": "include",
+      "reason": "重点运动控制论文：奖励如何表达双手不同角色、难片段如何得到有效更新，比单纯扩大策略更值得借鉴。"
+    },
+    {
+      "key": "arxiv:2610.29915",
+      "title": "CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion",
+      "decision": "include",
+      "reason": "与相机方向紧密相关的状态保留方法；需明确它改善相机运动一致性，并非新增显式用户轨迹控制接口。"
+    },
+    {
+      "key": "arxiv:2610.30125",
+      "title": "PhysiCalWorld: In-Context Physics Calibration for World Models",
+      "decision": "include",
+      "reason": "世界模型校准的清晰思路：用实际交互辨认看不见的动力学，并把场景经验压成可复用条件。"
+    },
+    {
+      "key": "arxiv:2610.29107",
+      "title": "PhyMo: Learning Physical Dynamics with Accurate and Continuous Motion from Multi-View Videos",
+      "decision": "include",
+      "reason": "运动建模重点：揭示“画面拟合很好却没有学对运动”的捷径，并把位置、速度和加速度联系起来。"
+    },
+    {
+      "key": "arxiv:2610.29866",
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "decision": "include",
+      "reason": "几何与记忆的结合方式值得借鉴：训练时学3D，部署时记住紧凑空间线索，关注遮挡和多阶段操作。"
+    },
+    {
+      "key": "arxiv:2610.28827",
+      "title": "WorldStream: Streaming Interactive 3D Worlds with Hierarchical Planning and Persistent State",
+      "decision": "include",
+      "reason": "作为世界模型的互补路线：把长期记忆放进明确的世界记录，解决卸载后重访和编辑保留；它是程序化3D流送，并非流式视频扩散。"
+    },
+    {
+      "key": "arxiv:2610.28192",
+      "title": "Offline Makes Online Better: Calibrated Cache Compression for Video Generation",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31670",
+      "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31320",
+      "title": "Stream4D: Streaming 4D Reconstruction with Training-free Motion Decoupling via Causal KV-Cache Attention",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31121",
+      "title": "RGraph-Eval: Task-Grounded Scene Graphs for Evaluating Robot Video Generation",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.30540",
+      "title": "Motion Retargeting with Spatiotemporal Preferences for Humanoid Loco-Manipulation",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.30044",
+      "title": "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.30781",
+      "title": "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.28954",
+      "title": "Pair-Free Coarse-to-Real Video Generation via Real-to-Coarse Image Supervision",
+      "decision": "exclude",
+      "reason": "取得全文并完成摘要与章节初筛，尚未完成全部方法和实验核读；本轮优先交付10篇已核读重点论文，暂不推荐。"
+    },
+    {
+      "key": "arxiv:2610.29716",
+      "title": "Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.28613",
+      "title": "Physical Canvas: A Vision Tactile World Model For Robot Policy Evaluation And Learning",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.28259",
+      "title": "Large Multimodal Models for Direct Robot Control: GPT-6 as a Beginning",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.27877",
+      "title": "Gaze2HOI: Gaze-Aware Intention Disambiguation for Egocentric Hand-Object Interaction Forecasting",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31640",
+      "title": "WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31635",
+      "title": "HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31617",
+      "title": "DiffDreamer: Coupling World Models with Differentiable Simulation for Agile Quadrotor Control",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31518",
+      "title": "SCOPE: Scene-graph Construction Optimized by Plan Error-correction for Robot Long-term Planning Datasets",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31494",
+      "title": "AgentVQA: A Unified Benchmark for Agentic Visual Understanding",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31476",
+      "title": "Point-Level Refinable Semantic Mapping for Spatial Understanding",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31474",
+      "title": "Skeleton-Grounded Latent Action Model for Robot World Models",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    },
+    {
+      "key": "arxiv:2610.31433",
+      "title": "Drift Says When, Budget Says How Much: Rate-Controlled KV Re-selection for Long-Form Multimodal Generation",
+      "decision": "exclude",
+      "reason": "完成标题与摘要初筛，尚未完成全文核读；本轮优先交付10篇证据充分的论文，不据此判定其质量。"
+    }
+  ],
+  "digest_id": "c964a4d967ed96576e96"
+}
