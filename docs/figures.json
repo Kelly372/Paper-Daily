@@ -2945,6 +2945,34 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.30717": {
+      "asset": "assets/figures/2610.30717-ae3d9e6f90df.webp",
+      "sha256": "ae3d9e6f90df06ee64dda24aab1a8f391e240dc90bf1fdf9bc23596f4621d96c",
+      "width": 835,
+      "height": 624,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先分清物理动作与可见性变化，再推演遮挡期间的状态；提示检查发生在生成视频之前。",
+      "source_url": "https://arxiv.org/html/2610.30717v1#S1.F2",
+      "source_hash": "83c89c67065c64d68580db688a93544f273588c35f63ff66c9e49b19b972b887",
+      "fulltext_hash": "961ec53337919490761cc84db507c60ed1f289e0f1c420a651a6b2c6b3b2c8cf",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2"
+    },
+    "arxiv:2610.30753": {
+      "asset": "assets/figures/2610.30753-9371642000b2.webp",
+      "sha256": "9371642000b2af0f8946dbb42cfa5048748e3c69cb11bb7090a6fd38acb0758e",
+      "width": 2040,
+      "height": 1012,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先选开场视点，再编排可重叠的运镜操作；评论器根据真实渲染反馈修改计划。",
+      "source_url": "https://arxiv.org/html/2610.30753v1#S3.F2",
+      "source_hash": "240c38d1782437b11d383937283bffd4f45ec1012c4afb7409c8486846f167ff",
+      "fulltext_hash": "356f62ef030d9cf12cf83ae1923a0fc82effab96f18c80eb9843a18a1f82d670",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.30781": {
       "asset": "assets/figures/2610.30781-a84510b501fe.webp",
       "sha256": "a84510b501fe08f1955b7f8f1feaaef05f7da9a938fa28574fa2552011678929",
@@ -2958,6 +2986,34 @@
       "fulltext_hash": "1c8444b8e029f0e138a428e99fd856be67a3d74cb741332487aa37b666991a91",
       "extraction": "original-figure",
       "figure_id": "S4.F2"
+    },
+    "arxiv:2610.30817": {
+      "asset": "assets/figures/2610.30817-07cf0f0691e7.webp",
+      "sha256": "07cf0f0691e75c3c738a8a90e4be69b1cd03bc6c884401aa88e0ab39654937be",
+      "width": 2000,
+      "height": 1037,
+      "label": "Fig. 1",
+      "kind": "方法框架图",
+      "reading_tip": "先在人体空间选择后段的位置、朝向和时长，再补中间动作，最后回到机器人训练跟踪。",
+      "source_url": "https://arxiv.org/html/2610.30817v1#S4.F1",
+      "source_hash": "a97f34dcf9ae08717e29bf0afa73c8caf083024cbf3bf87dde2ac7ece2ba8c55",
+      "fulltext_hash": "5c3f3d4fbc25a0c343ad87e2eb59f13591b783a720845bab603c268b2765d2f1",
+      "extraction": "original-figure",
+      "figure_id": "S4.F1"
+    },
+    "arxiv:2610.30854": {
+      "asset": "assets/figures/2610.30854-24cb8a42f73c.webp",
+      "sha256": "24cb8a42f73c9906ee3a429fed9f08737bff960f94f8347962bb59475cbabdf0",
+      "width": 1579,
+      "height": 754,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿采样时间看联合预热、缓存音频预测、末尾联合纠偏；视频始终逐步精修。",
+      "source_url": "https://arxiv.org/html/2610.30854v1#S1.F2",
+      "source_hash": "ffc63543104fea5edd870adc9f052bbf6c4ece2f41246162d2c44ef0e86a252a",
+      "fulltext_hash": "d5a2e69228efb9f16ffd87d70cf8c0d6b1df701b90235ddefb57752d21caa937",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2"
     },
     "arxiv:2610.30861": {
       "asset": "assets/figures/2610.30861-fbd87f1d3d78.webp",
@@ -2986,6 +3042,34 @@
       "fulltext_hash": "9fb6e3a3e49c0088c0e338de51bc0b9d7ca06ed92ac14388a584049b9ecf8073",
       "extraction": "original-figure",
       "figure_id": "S3.F3"
+    },
+    "arxiv:2610.31121": {
+      "asset": "assets/figures/2610.31121-c786335b54cf.webp",
+      "sha256": "c786335b54cfdc8439a80dde4267c58fc3861d76434ef0056c08018bea1843b6",
+      "width": 1657,
+      "height": 2042,
+      "label": "Figure 1",
+      "kind": "评测框架图",
+      "reading_tip": "参考和生成视频分别变成场景图，再比较对象、交互关系和运动；路径形状不能单独认证放置终点。",
+      "source_url": "https://arxiv.org/html/2610.31121v1#S1.F1",
+      "source_hash": "6ce0cf244472b3016e831b14ae2b1b25577c93ecb08c6eab818f54f391d6e73c",
+      "fulltext_hash": "b0d46ddfaf3f78bceb0f7f41d01589d76bdbc5180bf579960c0c1f5dd4dcf3f9",
+      "extraction": "original-figure",
+      "figure_id": "S1.F1"
+    },
+    "arxiv:2610.31299": {
+      "asset": "assets/figures/2610.31299-204ca2b612e2.webp",
+      "sha256": "204ca2b612e22466122d7e08eb0c0a485e1b1e31efed4cf68d2cbd1acfdc30de",
+      "width": 2200,
+      "height": 983,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "按专家训练、交互先验蒸馏、潜在残差探索三阶段读；后两阶段复用接触知识，新任务仍需训练。",
+      "source_url": "https://arxiv.org/html/2610.31299v1#S3.F2",
+      "source_hash": "aee6b4e323c6ec47674dabcdc55eb58558eb14867168374721ef1f50cd60dd87",
+      "fulltext_hash": "55e468f8e00a42996d262d5d014b93d2d70adb46a7f83e9ceb89385a01782616",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     },
     "arxiv:2610.31320": {
       "asset": "assets/figures/2610.31320-ea8946e5a973.webp",
@@ -3029,6 +3113,34 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.31474": {
+      "asset": "assets/figures/2610.31474-e5fe03cbea5c.webp",
+      "sha256": "e5fe03cbea5c003607b48e5dbbc0ecfc14969ca3e76fc2da3524f0745ed2038d",
+      "width": 1059,
+      "height": 610,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "从骨架监督与交换重建看运动/残差分工；注意最右侧推理残差为空，仅输入当前观测和动作。",
+      "source_url": "https://arxiv.org/html/2610.31474v1#S2.F1",
+      "source_hash": "b91a3df63bfceb7e9b725e8d022044ab46b4e248227eaf77575477c460c194d0",
+      "fulltext_hash": "27680ecce4292e0074146c9170f503fb0ec19a10d3fb07a052b7c2e7685122e6",
+      "extraction": "original-figure",
+      "figure_id": "S2.F1"
+    },
+    "arxiv:2610.31617": {
+      "asset": "assets/figures/2610.31617-a943738beab2.webp",
+      "sha256": "a943738beab243dd07926626d972f68200259c363246a8111b987a0aa964b814",
+      "width": 2200,
+      "height": 524,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "同一控制动作同步推进外部潜在预测和自身物理轨迹；两条奖励路径共同更新策略。",
+      "source_url": "https://arxiv.org/html/2610.31617v1#S3.F2",
+      "source_hash": "22c24abd054b80a9c1a7133a3fe91d1c0e475c175e98d42f7f2a0e3e43c5fd10",
+      "fulltext_hash": "af7243172acf697ef48a930496e54bf15d6367c4247353badaf5f308644d4a61",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.31640": {
       "asset": "assets/figures/2610.31640-313842a2ce09.webp",
       "sha256": "313842a2ce09753b7866f0158bb4eb3554380819d77818f7d3b4293175966681",
@@ -3042,7 +3154,35 @@
       "fulltext_hash": "bca2e6bc75bb2461d4700a0aa0ad03e4f6e8e252b274eb48b450a07abaff59bf",
       "extraction": "original-figure",
       "figure_id": "S1.F2"
+    },
+    "arxiv:2610.31645": {
+      "asset": "assets/figures/2610.31645-1739d0549f7a.webp",
+      "sha256": "1739d0549f7af37baac6943e32fe6bccc69ba6e64256bb368d9bdad713f71df7",
+      "width": 2200,
+      "height": 1281,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "光线方向先经过径向基底与两层修正，再乘径向距离得到点云；输出只有相对尺度。",
+      "source_url": "https://arxiv.org/html/2610.31645v1#S3.F2",
+      "source_hash": "609b41b8b9a579bb77f072c2cf0f62a4a2469bd71eb6d514844cc773316e3f79",
+      "fulltext_hash": "bef8a3f81b3fd43cab287443fd0dda6fe6612c585f3dd276531dbf0261b554cb",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.31671": {
+      "asset": "assets/figures/2610.31671-6d453a2feba2.webp",
+      "sha256": "6d453a2feba284915d66e9189c91f1b7241468b09c9816d3c2338259ff2beae4",
+      "width": 1353,
+      "height": 842,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "上方提示进入生成器；辅助几何对齐仅在训练时让密集提示指导稀疏点，部署仍以点为基本条件。",
+      "source_url": "https://arxiv.org/html/2610.31671v1#S3.F2",
+      "source_hash": "1773b2712621d5815dae237451a1bae6d574ee051a886e976f1105901696c465",
+      "fulltext_hash": "104e667bcde663e4d6272f03a02f35d4d9544a9642395a28561421253bf189fa",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     }
   },
-  "revision": "42a16de2bd7e07ef92d6"
+  "revision": "3b3789e546542c89725c"
 }
