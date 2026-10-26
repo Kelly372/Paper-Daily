@@ -1,0 +1,1373 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-26",
+  "target_date": "2026-10-25",
+  "window": {
+    "from": "2026-10-23",
+    "to": "2026-10-25",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-26T17:29:25.933Z",
+  "retrieved_at": "2026-10-26T03:00:33.361Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "failed",
+      "count": 0,
+      "total": 0,
+      "error": "export.arxiv.org: HTTP 429",
+      "coverage": "2026-10-23 至 2026-10-25（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-25",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-25"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-24",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-24"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-23",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-23"
+    },
+    {
+      "source": "本地缓存",
+      "status": "cached_fallback",
+      "count": 2,
+      "cached_at": "2026-10-25T09:32:08.202Z",
+      "coverage": "接口失败或部分返回；仅补回窗口内缺失记录，缓存时间 2026-10-25T09:32:08.202Z"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 31,
+      "url": "https://huggingface.co/papers/date/2026-10-23",
+      "date": "2026-10-23",
+      "retrieved_at": "2026-10-26T03:14:59.871Z",
+      "coverage": "网页核对 10 月 23 日榜单，与既有 arXiv 元数据匹配的部分条目补录；10 月 24–25 日 API 连接失败，arXiv API 限流；非完整覆盖。论文发表日期保持原值，窗口依据社区发现日期。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-10-25",
+      "retrieved_at": "2026-10-26T03:14:59.874Z",
+      "coverage": "公开列表要求登录，站内日期搜索未核验到目标日原论文；没有将旧搜索缓存作为当日文章，公众号覆盖有缺口。"
+    }
+  ],
+  "candidates_count": 31,
+  "analysed_count": 10,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.28950",
+      "arxiv_id": "2610.28950",
+      "doi": "",
+      "title": "HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second",
+      "abstract": "We present HyperDrone, an extremely fast quadrotor simulator focused on high-performance batch rendering that is more than 20x faster than existing state-of-the-art batch quadrotor simulators. HyperDrone combines highly optimized multirotor dynamics with HyperLux, a new ray-tracing engine that supports Nvidia OptiX, Vulkan, Apple Metal and WebGPU backends that takes full advantage of modern ray-tracing hardware, capable of running both components entirely on the GPU. HyperLux renders RGB, depth, semantic/instance segmentation, surface normals and optical flow observations at configurable levels of fidelity, including reflections, realistic lighting, motion blur, anti-aliasing, and Physically Based Rendering (PBR). Even in the highest-fidelity settings, HyperLux achieves millions of Frames Per Second (FPS) on consumer-grade GPUs while rendering realistic 3D scenes. We demonstrate the merits of HyperDrone by training a vision-based yaw-control policy purely in simulation and transferring it to a real small-scale quadrotor (Crazyflie) with a camera, running completely onboard.",
+      "authors": [
+        "Jonas Eschmann",
+        "Giuseppe Loianno"
+      ],
+      "url": "https://arxiv.org/abs/2610.28950",
+      "published": "2026-10-20T22:03:11Z",
+      "topics": [
+        "运动与运动控制"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.28950v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "score": 82,
+        "title_zh": "HyperDrone：以百万帧吞吐支持无人机视觉控制的仿真到现实迁移",
+        "abstract_zh": "作者提出面向四旋翼视觉控制的高速仿真器 HyperDrone，将优化后的多旋翼动力学与批量光线追踪引擎 HyperLux 结合。引擎支持多种硬件后端，可输出 RGB、深度、分割、法线和光流，并提供反射、照明、运动模糊及抗锯齿等可调效果。在特定消费级 GPU 和批量设置下，渲染吞吐达到百万帧每秒。作者进一步仅用合成图像训练偏航估计策略，并将其部署到配备相机的 Crazyflie 小型无人机。",
+        "reason": "与运动控制直接相关：展示以当前/目标图像驱动偏航的真实闭环。重点在视觉控制数据生成和迁移，不是视频生成模型。",
+        "introduction_zh": "视觉无人机策略训练需要大量图像，既有仿真器常被渲染速度、动力学与渲染之间的数据搬运拖慢；真实数据又成本高、难以控制分布。本文把问题转为如何高效地产生与飞行动力学同步的视觉经验，再用一个范围明确的偏航任务验证这种经验能否迁移到实机。",
+        "method_takeaway": "把动力学、批量光线追踪和策略训练放在同一 GPU 数据闭环中，持续生成新视角，并用目标图像与当前图像的偏差学习无人机偏航控制。",
+        "framework_zh": "可以把 HyperDrone 理解为一台边飞边拍、直接喂给策略的虚拟训练场。过去即使渲染器很快，CPU 上的动力学与 GPU 上的视觉计算仍可能反复搬运数据。本文在 OptiX 路径上把动力学、渲染、教师策略和学生网络放到同一 GPU，让姿态变化马上转成新的相机图像，减少系统之间的等待。\n\n视觉真实性并非只靠漂亮贴图。HyperLux 从像素发射光线，与场景网格求交后计算颜色；对一个像素发射多条光线可做抗锯齿，在曝光期间多个时刻采样可模拟运动模糊。这些因素直接影响快速转动时相机看见的边缘。作者还用少量探测射线筛选与障碍物保持距离的出生位置，使程序化室内场景可以批量使用。\n\n迁移实验刻意只检验一个控制环节：学生网络同时看目标画面和当前画面，估计两者的相对偏航角。训练时，已有 RAPTOR 教师用仿真中的特权状态驾驶无人机，轨迹提供各种偏航、姿态及模糊条件；角度真值来自仿真。训练逐渐扩大初始姿态偏差，并随机化相机安装、亮度和动力学，避免学生记住某一相机或房间。\n\n部署时，学生在机载相机板的 NPU 上输出偏航命令，RAPTOR 继续承担底层和位置控制。因而这不是仅凭图像完成全部自主飞行：实验仍使用外部位置参考。真正值得记住的贡献，是把合成视觉经验的产生速度与控制训练接起来，并用一个受控实机任务证明其可迁移性。",
+        "pipeline": "场景与动力学批量仿真 → 同 GPU 渲染当前/目标图像 → 学习相对偏航 → 机载偏航估计配合底层控制",
+        "results": "作者在 64×64 分辨率、大批量环境的吞吐比较中报告百万级 FPS；该数值是并行模拟总吞吐，并非单台实机控制频率。实机展示在两个目标视角之间切换的偏航跟踪；高频稳定与位置控制由已有 RAPTOR 和状态估计承担。",
+        "limitations": "作者明确将实机验证限定为较简单、低频的偏航控制，仍依赖外部位置参考。渲染的高保真模式不包含所有光照现象；这些速度与迁移结果不能直接外推为复杂自主导航能力。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "同 GPU 架构与硬件光线追踪"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "偏航学生及实机控制依赖"
+          },
+          {
+            "section": "A3.SS0.SSS0.Px2",
+            "claim": "教师轨迹和仿真角度监督"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "模糊、抗锯齿与吞吐实验条件"
+          }
+        ],
+        "fulltext_hash": "790999846ca8ca02551ebe10ac4f1996b05b863a3b3f48546c1713cd6a3d88a5",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:23:36.588Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 92,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "同 GPU 架构与硬件光线追踪",
+          "url": "https://arxiv.org/html/2610.28950v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "偏航学生及实机控制依赖",
+          "url": "https://arxiv.org/html/2610.28950v1#S3.SS2"
+        },
+        {
+          "section": "A3.SS0.SSS0.Px2",
+          "claim": "教师轨迹和仿真角度监督",
+          "url": "https://arxiv.org/html/2610.28950v1#A3.SS0.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "模糊、抗锯齿与吞吐实验条件",
+          "url": "https://arxiv.org/html/2610.28950v1#S4.SS1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: HyperDrone Architecture.",
+          "url": "https://arxiv.org/html/2610.28950v1/gpu.png",
+          "source_url": "https://arxiv.org/html/2610.28950v1#S3.F2"
+        },
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Control Architecture Overview.",
+          "url": "https://arxiv.org/html/2610.28950v1/inference.png",
+          "source_url": "https://arxiv.org/html/2610.28950v1#S3.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.27851",
+      "arxiv_id": "2610.27851",
+      "doi": "",
+      "title": "LaLa-World: Scaling Latent World Models with Natural Language Actions",
+      "abstract": "This paper shows that JEPA-style latent world models (LWMs) can learn across diverse domains and data sources by adopting the language-conditioned interface of video generation models. We establish this approach as an effective and efficient basis for planning with imagination and downstream policy fine-tuning. To this end, we introduce LaLa-World, a Language-conditioned Latent World model that learns from simulation and robot trajectories together with broader image and video data. Two designs make this work. First, we describe both numerical actions and visual changes in language, enabling joint training of a single future predictor across heterogeneous datasets. Second, we build the predictor on a language model, allowing it to interpret language conditions while predicting future latent states. The resulting predictor achieves higher average MPC planning performance than existing LWMs trained separately for each domain or task. Adding image and video data further improves average planning performance and robustness to action phrasing. In a matched comparison with an RAEv2-based video generation model baseline, LaLa-World reaches comparable planning performance with $6\\times$ less training cost and $13.9\\times$ faster planning. Beyond planning, the pretrained LaLa-World serves as an initialization for LaLa-Policy, which jointly predicts actions and future visual representations. LaLa-Policy performs competitively with Cosmos Policy on LIBERO and RoboCasa, with up to $5.5\\times$ faster inference.",
+      "authors": [
+        "Junha Song",
+        "Geonmo Gu",
+        "Jeongeun Park",
+        "Heejeong Nam",
+        "Lucas Maes",
+        "Byeongho Heo",
+        "Dongyoon Han",
+        "Sangdoo Yun"
+      ],
+      "url": "https://arxiv.org/abs/2610.27851",
+      "published": "2026-10-20T08:32:14Z",
+      "topics": [
+        "视频生成",
+        "大模型",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.27851v2",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 88,
+        "title_zh": "LaLa-World：用自然语言动作统一潜在世界模型",
+        "abstract_zh": "本文让 JEPA 式潜在世界模型采用语言条件接口，从异构控制轨迹、图像与视频数据中共同学习。数值动作和视觉变化都被描述为语言，基于预训练语言模型的预测器据此预测未来视觉表示。联合训练模型的平均 MPC 规划表现优于分别训练的基线；补充图像、视频数据改善规划与措辞鲁棒性。在匹配的 RAEv2 比较中，达到相近规划水平所需训练成本更低，规划更快。预训练模型还可微调为同时预测动作和未来表示的 LaLa-Policy。",
+        "reason": "提供把视频知识引入控制任务的清晰接口，且区分潜在预测、像素生成与下游策略；适合研究世界模型如何服务规划。",
+        "introduction_zh": "不同机器人和仿真环境的动作向量维度、单位和物理意义各不相同，普通视频又没有动作标签，使跨域世界模型难以共享数据。作者用语言把这些条件统一起来，同时保留潜在空间预测的效率：模型只需判断行动后的视觉状态，而不必生成完整视频像素。",
+        "method_takeaway": "把不同域的数值动作和视频中的视觉变化都写成语言，让同一个语言模型预测未来视觉特征，再用特征与目标的距离选择动作。",
+        "framework_zh": "LaLa-World 的关键是先统一“动作怎么表达”。机器人轨迹中的数值动作按模板转成带方向、幅度的文字，数值没有被丢掉；没有控制信号的视频，则用描述变化的字幕，图像编辑数据用编辑指令。于是这些数据都变成“过去看到了什么、发生了什么变化、接下来看到什么”的同一种训练样本。\n\n图像先经过冻结的视觉编码器，得到保留场景信息的特征。预训练语言模型同时读取这些特征和文字条件，再从查询 token 输出下一状态的特征。训练目标是让预测特征接近真实下一帧的编码，而不是重建像素。冻结编码器避免表示随预测器一起塌缩，但也意味着视觉表征不能在这一步适配控制需求。\n\n规划时，系统采样多组候选动作，把每组动作写成同样的语言格式，并在潜在空间逐步想象结果。最后的预测状态离目标图像的特征越近，该动作序列越值得执行。规划器执行选中序列的前段，再根据新观测重新规划。这里预测器使用语言，机器人实际执行的仍是对应数值动作；不是把一句话直接当电机命令。\n\n另一路用法是将预训练模型微调为 LaLa-Policy：加入动作查询，向扩散动作头提供条件，同时继续预测未来视觉状态。这样既利用世界模型学到的动力学，又不必每次做候选搜索。要注意，本文世界模型主要接受单步未来监督，MPC 评测的规划时域至多六步，不能把其高效潜在想象等同于已解决长视频或长期控制。",
+        "pipeline": "数值动作/视觉变化转成语言 → 预测下一视觉特征 → 比较候选未来与目标 → 执行动作并重新规划",
+        "results": "匹配视觉编码器、语言条件和数据的比较中，LaLa-World 用 2 小时达到五步去噪 RAEv2 的 12 小时规划表现，最终规划分数为 59.4% 对 48.0%；相对完整五步 RAEv2，规划快 13.9 倍。LaLa-Policy 在 LIBERO、RoboCasa 的所测设置下具有竞争力，轨迹平均推理最高快 5.5 倍。",
+        "limitations": "作者指出数据与模型扩展规律尚未建立；冻结视觉编码器限制适配，单步训练下的长时滚动预测尚待验证。策略实验主要在仿真中，真实机器人部署仍是后续工作。速度倍数只适用于文中的匹配设置。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS0.Px1",
+            "claim": "数值动作语言化保留方向和幅度"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "语言模型预测特征及训练目标"
+          },
+          {
+            "section": "S4.SS0.SSS0.Px1",
+            "claim": "MPC 候选搜索与动作执行"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "匹配生成式基线结果"
+          },
+          {
+            "section": "A2",
+            "claim": "单步训练、短时规划及实机限制"
+          }
+        ],
+        "fulltext_hash": "861901eb7e936b03a64f68de9be6726f608fd887cad8f98474ffb1ac003ee5f7",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:23:36.597Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 88,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS0.Px1",
+          "claim": "数值动作语言化保留方向和幅度",
+          "url": "https://arxiv.org/html/2610.27851v2#S3.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "语言模型预测特征及训练目标",
+          "url": "https://arxiv.org/html/2610.27851v2#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS0.SSS0.Px1",
+          "claim": "MPC 候选搜索与动作执行",
+          "url": "https://arxiv.org/html/2610.27851v2#S4.SS0.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "匹配生成式基线结果",
+          "url": "https://arxiv.org/html/2610.27851v2#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "A2",
+          "claim": "单步训练、短时规划及实机限制",
+          "url": "https://arxiv.org/html/2610.27851v2#A2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview of LaLa-World. (a) Language provides a shared interface for numerical actions and visual change, enabling joint training on control and video data. (b) A single predictor built on a language model uses encoded observations and language conditions to predict future visual representations. Fine-tuning the pretrained LaLa-World yields LaLa-Policy, which predicts actions as well as future visual representations. (c) The jointly trained predictor achieves higher average MPC planning performance than both separately trained LWM baselines and the generative world model baseline, RAEv2. (d) LaLa-Policy performs competitively with our adapted Cosmos Policy baseline on RoboCasa, while reducing average inference time per trajectory by a factor of 5.5×5.5\\times.",
+          "url": "https://arxiv.org/html/2610.27851v2/teaser.png",
+          "source_url": "https://arxiv.org/html/2610.27851v2#S1.F1"
+        },
+        {
+          "id": "A3.F6",
+          "caption": "Figure F: Predictor backbone, initialization, and architecture ablations. (a) Validation loss for language model backbones, including pretrained and randomly initialized Qwen3.5. (b) Language reliance S⁡(z)−S⁡(∅)S(z)-S(\\varnothing) for positional encoding and readout variants. 3D input positional embeddings with learned queries yield the highest reliance.",
+          "url": "https://arxiv.org/html/2610.27851v2#A3.F6",
+          "source_url": "https://arxiv.org/html/2610.27851v2#A3.F6"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31574",
+      "arxiv_id": "2610.31574",
+      "doi": "",
+      "title": "Rethinking Sequence Compression with Test-time Regression",
+      "abstract": "Sequence compression is a fundamental operation and a critical information bottleneck in efficient language and multimodal models, and yet prevailing approaches based on pooling or learned projections remain underperforming. We revisit sequence compression through the lens of test-time regression: input tokens define a regression problem whose fitted coefficients form the compressed representation. Importantly, the regression problem is learned end-to-end via backpropagation, while its coefficients are computed efficiently in closed form during the forward pass. This leads to TTR-Compressor, a general alternative to conventional pooling and projection-based compression. We evaluate TTR-Compressor as the compressor for block-wise sparse attention and the visual token merger for multimodal large language models. On block-wise sparse attention, TTR-Compressor improves RULER performance over attention-based compressors by a large margin. For visual token merging, it consistently outperforms the standard MLP merger and matches its performance with 55.6% fewer visual tokens. These results establish test-time regression as an effective primitive for sequence compression in efficient language and multimodal models.",
+      "authors": [
+        "Sihan Yang",
+        "Jie Huang",
+        "Hanxuan Li",
+        "Yifan Guo",
+        "Weigao Sun",
+        "Yiran Zhong",
+        "Weiyang Liu"
+      ],
+      "url": "https://arxiv.org/abs/2610.31574",
+      "published": "2026-10-22T17:14:38Z",
+      "topics": [
+        "多模态"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31574v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 87,
+        "title_zh": "TTR-Compressor：通过测试时回归重新理解序列压缩",
+        "abstract_zh": "序列压缩是高效语言和多模态模型的重要信息瓶颈。本文把输入 token 构造成一个回归问题，以拟合得到的系数作为压缩表示；回归问题的参数通过任务梯度端到端学习，而系数在每次前向传播中高效求解。TTR-Compressor 用于块稀疏注意力和视觉 token 合并，在长上下文检索及多模态任务上优于所比较的常规压缩器；其视觉合并配置能以少 55.6% 的 token 达到接近标准 MLP 合并器的平均表现。",
+        "reason": "把压缩从静态混合改为联合拟合当前输入，机制有可解释性；多模态压缩实验明确给出同分组和跨压缩比比较。",
+        "introduction_zh": "把几个视觉 token 合成一个时，大面积重复背景可能压过小但关键的文字或物体。固定投影或简单加权只给出一种混合规则，不充分考虑这一组 token 的相关结构。作者将压缩改写为小规模回归，让压缩结果随当前输入的冗余程度变化，同时保持端到端可训练。",
+        "method_takeaway": "不直接平均 token，而是联合拟合它们之间的关系，用回归系数作为压缩表示，使重复信息的影响不再简单累加。",
+        "framework_zh": "TTR-Compressor 问的是：能否找出一个短向量，同时解释这一组 token？它先把每个 token 变成一个归一化的“键”，再用可学习投影从原 token 产生一个标量目标。然后求一个带正则约束的回归解，使这个短向量与各个键的内积尽可能接近对应目标。求出的系数向量本身，就是交给后续网络的压缩表示。\n\n这个过程为什么不同于池化？回归求解会看所有键之间的相似性。如果多个 token 都表达同一种背景，它们会通过相关矩阵被共同考虑，影响不会像简单相加那样无限叠加；不同于背景的细节则有机会保留相对影响。这是由目标和相关结构共同决定的效果，不是强制识别并删除重复 token，也不保证任何细节都不会丢失。\n\n回归问题并非手工固定。生成目标的投影和各特征维度的正则强度，都由下游任务训练学到，梯度能够穿过求解过程。推理时这些模型参数固定，只为当前输入重新计算回归系数，不需要测试标签，也不是对整个语言模型再次做梯度微调。作者还刻意让键归一化、目标保留原始幅度，防止回归解退化成与输入无关的常量。\n\n计算上，实际压缩的常是四个、九个或几十个高维 token。作者因此在 token 数量对应的小矩阵上求解，并用 Cholesky 分解避免显式矩阵求逆。用于视觉合并时，每个局部组先得到一个回归向量，再投影到语言模型空间。效率优势依赖“组内 token 数远小于特征维度”，不能将它直接当作任意超长序列的一次性低成本压缩。",
+        "pipeline": "局部 token 构造键与目标 → 联合求解小型正则回归 → 将系数作为压缩表示 → 下游注意力或语言模型",
+        "results": "在论文的 Qwen 视觉编码器与 4B 语言模型训练设置中，2×2 合并的平均分由 MLP 的 54.93 提高至基础 TTR 的 55.92；3×3 带卷积版本为 54.85，接近 2×2 MLP 的 54.93，同时少用 55.6% 视觉 token。这里“接近”不是每个基准均持平。",
+        "limitations": "分析性保留：主要验证局部或块级压缩，代价包含 token 间相关矩阵构造与求解，对大分组不再近似便宜。实验是在特定模型与训练配方下完成，尚不能声称无需训练即可替换所有已有模型的压缩模块。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "压缩回归目标及测试时参数含义"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "键归一化和学习正则"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "对偶求解效率条件"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "相关结构抑制冗余影响"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "视觉合并结果与条件"
+          }
+        ],
+        "fulltext_hash": "0027e330bff0ec777ea6ff809a49858fa7abd23cdaf9ae4e294e423c99efac6b",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:26:11.771Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 87,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "压缩回归目标及测试时参数含义",
+          "url": "https://arxiv.org/html/2610.31574v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "键归一化和学习正则",
+          "url": "https://arxiv.org/html/2610.31574v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "对偶求解效率条件",
+          "url": "https://arxiv.org/html/2610.31574v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "相关结构抑制冗余影响",
+          "url": "https://arxiv.org/html/2610.31574v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "视觉合并结果与条件",
+          "url": "https://arxiv.org/html/2610.31574v1#S5.SS2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of TTR-Compressor. (a) Unlike pooling and projection, which process tokens independently, TTR-Compressor fits all tokens jointly and thereby captures the interplay among them. (b) TTR-Compressor outperforms existing methods on both block-wise sparse attention and visual token merging.",
+          "url": "https://arxiv.org/html/2610.31574v1#S0.F1",
+          "source_url": "https://arxiv.org/html/2610.31574v1#S0.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of TTR-Compressor. (a) Bilevel learning: The inner solve formulates sequence compression as test-time ridge regression with an exact dual Cholesky solve to obtain the representation 𝒉∗\\bm{h}^{*}, while the regression parameters are learned end-to-end via task gradients. (b) Input-dependent second-order adaptation: By jointly coupling tokens through the Gram matrix, TTR naturally diminishes the relative influence of redundant tokens compared to additive pooling. For intuitive illustration, we set 𝑫=𝑰\\bm{D}=\\bm{I} and uniform targets 𝒗=𝟏\\bm{v}=\\mathbf{1}; as typically learned in practice, a smaller regularizer 𝑫\\bm{D} further amplifies this deduplication effect, yielding an even higher relative share for distinct tokens.",
+          "url": "https://arxiv.org/html/2610.31574v1#S3.F2",
+          "source_url": "https://arxiv.org/html/2610.31574v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.27712",
+      "arxiv_id": "2610.27712",
+      "doi": "",
+      "title": "RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting",
+      "abstract": "Feed-forward 3D Gaussian Splatting (FF3DGS) reconstructs 3D scenes from images in a single forward pass, making it well-suited to applications that must operate within limited resource budgets. To further improve its practicality, recent budget-controllable FF3DGS methods allow the number of Gaussians to be adjusted at inference, so that the output meets a given storage limit or rendering-latency constraint. However, these methods overlook the cost of inference itself: to produce a representation with the target number of Gaussians, they first predict a dense set of Gaussians and then prune or select from it, requiring nearly constant latency and peak memory regardless of the budget. We therefore propose RLSplat, a resource-linear budget-controllable FF3DGS framework whose representation size, inference latency, and peak memory all decrease linearly as the Gaussian budget is reduced. Instead of pruning or selection, RLSplat learns a Gaussian allocation policy that distributes the budget across local scene regions, so that exactly the requested number of Gaussians is generated. These Gaussians are then refined through resource-linear Gaussian decoding, in which each Gaussian attends only to nearby Gaussians found via an efficient hierarchical neighbor search, so that the decoding cost decreases linearly with fewer Gaussians. In zero-shot evaluation, RLSplat outperforms prior budget-controllable methods at every budget, surpassing the strongest baseline even with 4$\\times$ fewer Gaussians, while running up to 4.1$\\times$ faster with 9.6$\\times$ less peak memory at low budgets.",
+      "authors": [
+        "Injae Kim",
+        "Minseok Joo",
+        "Jihwan Park",
+        "Sehyung Kim",
+        "Minseong Bae",
+        "Hyunwoo J. Kim"
+      ],
+      "url": "https://arxiv.org/abs/2610.27712",
+      "published": "2026-10-20T06:30:48Z",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.27712v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 87,
+        "title_zh": "RLSplat：让高斯预算同时控制重建规模、推理时间与显存",
+        "abstract_zh": "现有可调预算的前馈 3D 高斯重建通常先预测密集高斯，再剪枝，因此减少输出数量并不能明显降低生成成本。RLSplat 学习将指定预算分配到局部场景区域，直接生成准确数量的高斯，并以层次邻域搜索与局部注意力精修。作者报告该设计让表示大小及可变解码成本随预算降低，在所测零样本设置中各预算均优于先前可控预算方法；低预算下相对比较基线最高快 4.1 倍、峰值显存少 9.6 倍。",
+        "reason": "把重建资源控制前移到生成阶段，机制直接、消融明确；特别适合关注有限显存下 3D 表示的读者。",
+        "introduction_zh": "如果先建出一百万个高斯再删到一万个，最终文件虽小，最昂贵的生成过程已经发生。本文把预算视为输入的一部分，让模型一开始就决定有限的高斯应花在哪里，同时避免后续全局交互重新引入平方级成本。它优化的是输出大小与产生输出所需资源之间的关系。",
+        "method_takeaway": "先把总高斯预算分给最需要细节的局部区域，再只生成这些高斯并在近邻内精修，避免“全部生成后再剪枝”的固定开销。",
+        "framework_zh": "RLSplat 把有限预算看成需要分配的建模名额。多张未标定图像先经过几何主干，形成代表局部三维区域的锚点，并估计相机。给定总预算 B，分配策略为每个锚点预测份额，最后转换成整数数量，保证所有区域加起来恰好是 B。平坦墙面可以少分，细栏杆可以多分；这个取舍由重建质量反馈学出来，而不是手工规定纹理阈值。\n\n难点在于“给某处几个名额”是离散决策。训练时，策略为同一场景采样多种分配方案，生成并渲染各自的高斯，用相对重建质量比较方案好坏，再更新分配策略。推理不再反复抽样试验，而是确定性地把预测份额取整分配，因此最终仍是一次前馈重建。\n\n分到名额后，每个锚点只产生对应数量的高斯 token。为了让邻近高斯协调几何和外观，模型先查找附近锚点，再在这些锚点所属的高斯中找邻居，仅对局部邻居做注意力精修。空间正则限制高斯远离所属区域或精修时漂移过大，避免层次搜索漏掉真正相关的邻居。\n\n两阶段训练先让解码器适应随机分配和各种预算，再训练分配策略并联合微调。这样节省的不是文件导出后的空间，而是高斯生成与精修本身的工作量。不过图像编码始终要做，属于不随 B 缩小的固定成本；“资源线性”主要说明可变解码部分及实测趋势，不能理解成预算趋零时总耗时也趋零。",
+        "pipeline": "多视图编码为几何锚点 → 按总预算分配名额 → 直接生成指定数量高斯 → 层次近邻精修与渲染",
+        "results": "在匹配预算的比较中，RLSplat 在所测视图数量和预算下取得更好的 PSNR、SSIM、LPIPS。8 个上下文视图时，相对 F4Splat 的 PSNR 优势从每视图 4K 高斯的 0.74 dB 增至 1K 的 1.22 dB。低预算速度与显存优势需结合原文硬件、输入和预算条件理解。",
+        "limitations": "作者明确指出图像编码成本不随预算降低，限制小预算加速上限；实验分辨率为 256×256，跨数据集设置较单一。对更高分辨率、机器人或 3D 语言模型下游任务的收益仍待验证。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "离散预算分配的策略训练及确定性推理"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "分层邻域搜索与局部精修"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "两阶段训练"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "匹配预算的重建结果"
+          },
+          {
+            "section": "A1",
+            "claim": "固定图像编码成本和实验边界"
+          }
+        ],
+        "fulltext_hash": "d8feb77e2d5a361815eb236ee0c1faa57ca8406278231a6df8164ded4e97bdb0",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:23:36.601Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 87,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "离散预算分配的策略训练及确定性推理",
+          "url": "https://arxiv.org/html/2610.27712v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "分层邻域搜索与局部精修",
+          "url": "https://arxiv.org/html/2610.27712v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "两阶段训练",
+          "url": "https://arxiv.org/html/2610.27712v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "匹配预算的重建结果",
+          "url": "https://arxiv.org/html/2610.27712v1#S4.SS1"
+        },
+        {
+          "section": "A1",
+          "claim": "固定图像编码成本和实验边界",
+          "url": "https://arxiv.org/html/2610.27712v1#A1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of RLSplat. Given uncalibrated context images, the geometry backbone predicts camera parameters and extracts anchor tokens {𝐚n}\\{\\mathbf{a}_{n}\\} representing local 3D regions. The Gaussian allocation policy distributes the budget BB across anchors, assigning knk_{n} Gaussians to each anchor with ∑kn=B\\sum k_{n}=B. Each anchor then spawns knk_{n} Gaussian tokens, which are decoded into BB Gaussians and locally refined using hierarchical neighbor search.",
+          "url": "https://arxiv.org/html/2610.27712v1/fig2_main.png",
+          "source_url": "https://arxiv.org/html/2610.27712v1#S3.F2"
+        },
+        {
+          "id": "S4.T3",
+          "caption": "Table 3: Architecture and loss ablations. †Without the projection loss, the model fails to reconstruct the scene.",
+          "url": "https://arxiv.org/html/2610.27712v1#S4.T3",
+          "source_url": "https://arxiv.org/html/2610.27712v1#S4.T3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31623",
+      "arxiv_id": "2610.31623",
+      "doi": "",
+      "title": "F2G-Pose: Geometry-Aware Foundation Feature Lifting for Direct RGB-D Category-Level Object Pose Estimation",
+      "abstract": "This paper studies category-level RGB-D object pose estimation, which recovers an object's 3D rotation and translation without instance-specific CAD models or reference views. This task is highly ambiguous due to intra-class variations, symmetries, and partial observations. Current solutions struggle to balance reliability and efficiency: methods based on intermediate structures are prone to error propagation, while diffusion models suffer from high inference latency and complex post-hoc candidate extraction. To address this, we present F2G-Pose, a real-time direct, single-pass framework that predicts category-level pose, metric size, and camera-frame completed shape from a single RGB-D observation in one feed-forward pass. F2G-Pose lifts dense visual foundation features to partial point clouds, encodes local geometry with DGCNN tokenization, and integrates object-level structure with a Mixture-of-Experts Transformer. Joint size prediction and camera-frame shape completion encourage metric consistency through dense geometric supervision. With its task-specific network trained only on pose-annotated synthetic SOPE data and its frozen RADIO backbone externally pretrained, F2G-Pose achieves state-of-the-art accuracy on SOPE and ROPE while running at 28 FPS for pose-only inference, and further demonstrates strong camera-frame geometry on HouseCat6D and real-object transfer on HANDAL. Analyses of latency, robustness, shape completion, and GenPose++ candidate behavior further demonstrate the efficiency and reliability of F2G-Pose, with real-world manipulation experiments demonstrating deployment potential under segmented RGB-D inputs. The project page, code, and pretrained models are made available at https://jrryzh.github.io/F2G-Pose/.",
+      "authors": [
+        "Jinyu Zhang",
+        "Haitao Lin",
+        "Jiashu Hou",
+        "Xiangyang Xue",
+        "Yanwei Fu"
+      ],
+      "url": "https://arxiv.org/abs/2610.31623",
+      "published": "2026-10-22T17:43:34Z",
+      "topics": [
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31623v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "F2G-Pose：将视觉基础特征映射到三维点，直接预测物体位姿与形状",
+        "abstract_zh": "本文研究无实例 CAD 模型或参考视图的类别级 RGB-D 位姿估计。F2G-Pose 将密集视觉基础特征映射到局部点云，以动态图卷积编码局部几何，用混合专家 Transformer 聚合对象表示，再单次预测六自由度位姿、真实尺寸和相机坐标系中的完整形状。任务网络仅用带位姿标注的合成 SOPE 数据训练，冻结的 RADIO 主干使用外部预训练。作者报告了多数据集精度、约 28 FPS 的仅位姿推理，以及真实抓取放置中的部署效果。",
+        "reason": "把几何监督用于提高直接回归的可靠性，同时清楚区分感知能力与机器人控制；具有真实操作验证。",
+        "introduction_zh": "同类物体尺寸、形状不同，遮挡和对称性又会让单次观察对应多个可能姿态。生成多个候选再聚类虽能缓解歧义，却增加延迟。本文选择直接输出最终位姿，并把二维语义与三维几何紧密结合，以完整形状监督约束表示，尝试兼顾速度与精度。",
+        "method_takeaway": "把图像基础模型的特征逐点贴到真实深度点云上，并用形状补全共同监督，让一次前馈就能给出可用的位姿和尺寸。",
+        "framework_zh": "F2G-Pose 的关键不是先猜很多姿态再挑一个，而是让直接回归之前的物体表示更有几何依据。输入必须是已经分割好的 RGB 图像裁剪和局部深度点云。每个三维点投影回图像后，取得对应的 RADIO 视觉特征；点的位置说明“在哪里”，特征则补充颜色、语义和外观线索。两者逐点结合后，局部图网络把邻域结构编码成对象 token。\n\n这些局部 token 再通过 Transformer 汇总成全局对象表示。混合专家层按 token 选择少量专家处理，以增加条件建模容量，但核心仍是图像特征与实测三维位置对齐，而不是让语言模型凭常识猜一个姿态。共享表示随后分成两条输出路径：一条直接回归旋转、平移和尺寸，另一条补全相机坐标系中的物体形状。\n\n补全分支先预测粗点云，再与真实观测点融合、筛选可靠点，最后预测局部偏移生成更密集形状。它在训练时提供密集几何约束，使共享表示不只满足几个位姿数值，还要解释一个完整物体。姿态监督同时考虑对称等价的旋转，避免把同样合理的对称姿态当作错误。推理不需要反复采样或后处理候选，两个分支都可直接运行。\n\n在机器人实验中，位姿和尺寸决定抓取方向及放置目标，补全形状只用于碰撞检查。这个分工很重要：论文证明的是感知结果能帮助操作，并没有提出新的动作控制器。若深度缺失或掩码错了，贴到点云上的视觉证据也会出错；对于高精度装配，直接输出仍可能需要后续精修。",
+        "pipeline": "分割 RGB-D 输入 → 逐点融合视觉与几何 → 聚合对象表示 → 直接预测位姿、尺寸及补全形状",
+        "results": "ARX 机械臂实验中，每个方法 80 次试验，完整模型成功抓取 74 次、放置 68 次，平均感知延迟 36 ms；去掉形状补全时为 68 次和 57 次。跨数据集 HANDAL 上高精度 IoU75 仍很低，显示一般迁移改善不等于精密对齐已解决。",
+        "limitations": "依赖分割后的 RGB-D 输入；薄结构、严重遮挡、损坏深度及对称低纹理物体仍困难。作者明确指出没有校准的不确定性或拒绝机制，高精度任务可能需要后续精修。冻结基础视觉模型的外部预训练不能被描述为完全仅用合成数据。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "二维特征提升到三维点及几何编码"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "直接位姿回归与形状补全分工"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "对称性和密集形状监督"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "真实机器人结果及形状用途"
+          },
+          {
+            "section": "S5",
+            "claim": "输入依赖和歧义限制"
+          }
+        ],
+        "fulltext_hash": "72ab43c4829b3c28362c6b89b71651f25ff307583fbb04240ab3b9524f832bdc",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:21:49.216Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "二维特征提升到三维点及几何编码",
+          "url": "https://arxiv.org/html/2610.31623v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "直接位姿回归与形状补全分工",
+          "url": "https://arxiv.org/html/2610.31623v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "对称性和密集形状监督",
+          "url": "https://arxiv.org/html/2610.31623v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "真实机器人结果及形状用途",
+          "url": "https://arxiv.org/html/2610.31623v1#S4.SS3"
+        },
+        {
+          "section": "S5",
+          "claim": "输入依赖和歧义限制",
+          "url": "https://arxiv.org/html/2610.31623v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F1",
+          "caption": "Figure 1: F2G-Pose Overview. Given a cropped RGB image and segmented partial point cloud, F2G-Pose extracts dense RADIOv2.5 features [13] and lifts them onto 3D points by projection. DGCNN tokenization produces fused RGB-D object tokens, and a MoE Transformer encodes a global object representation. Two parallel decoder branches directly predict (i) 6D pose and metric size and (ii) camera-frame completed shape through coarse-to-fine refinement. The pipeline produces a pose-size-shape estimate in one feed-forward pass.",
+          "url": "https://arxiv.org/html/2610.31623v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.31623v1#S3.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31329",
+      "arxiv_id": "2610.31329",
+      "doi": "",
+      "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+      "abstract": "Existing vision-language models (VLMs) remain unreliable for fine-grained visual perception. In this report, we present WeVisOne-VL (WeChat Vision All-in-One), a powerful VLM that unifies object-level and pixel-level perception through structured next-token prediction. It supports multiple visual tasks including object detection, referring localization, counting, OCR, segmentation, and matting, enabling localization at any user-specific granularity, from points and boxes to masks and alpha mattes. Architecturally, we integrate a lightweight pixel decoder into the VLM via a special <OBJ> token to generate instance-level pixel outputs. We train the model with a three-stage curriculum SFT followed by mixed-task RL. Across over 30 benchmarks, WeVisOne-VL demonstrates leading performance on both object-level and pixel-level tasks, while maintaining robust rejection for object-absent queries. By releasing WeVisOne-VL to the open-source community, we hope to advance VLMs from broad visual understanding toward truly reliable perception systems for real-world deployment.",
+      "authors": [
+        "Tianming Liang",
+        "Junyi Pan",
+        "Yuxi Li",
+        "Canmiao Fu",
+        "Zhipeng Huang",
+        "Chong Sun",
+        "Chen Li",
+        "Jing Lyu"
+      ],
+      "url": "https://arxiv.org/abs/2610.31329",
+      "published": "2026-10-22T14:19:50Z",
+      "topics": [
+        "多模态"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31329v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "WeVisOne-VL：把对象定位与像素级感知接入同一个视觉语言模型",
+        "abstract_zh": "WeVisOne-VL 通过结构化下一 token 预测，统一检测、指代表达定位、计数、OCR、分割和抠图。它在视觉语言模型中加入特殊 <OBJ> token，并用轻量像素解码器生成实例掩码或透明度图。训练采用三阶段监督微调与混合任务强化学习。在三十多个基准中，作者报告了较强的对象级、像素级表现，同时强调对不存在目标的拒绝能力，旨在让视觉语言模型从宽泛理解走向可靠定位。",
+        "reason": "核心是让语言模型产生的实例表示真正驱动像素输出；适合观察统一多模态模型如何衔接离散语言和密集视觉。",
+        "introduction_zh": "视觉语言模型能够描述画面，却未必能准确指出对象位置，更难画出发丝或半透明边界。简单接上大型分割模型会增加系统复杂度，也可能在目标根本不存在时仍输出掩码。本文用统一结构化输出、共享视觉特征和实例 token，把定位、分割及明确拒绝串成同一感知流程。",
+        "method_takeaway": "先让视觉语言模型输出对象框和实例 token，再用这个实例表示与框引导一个共享视觉特征上的轻量解码器，生成对应掩码或透明度图。",
+        "framework_zh": "WeVisOne-VL 的桥梁是每个对象对应的 <OBJ> token。给定图片和指令，模型按统一格式输出对象及坐标；若要分割或抠图，就在对象框后追加这个 token。它不是一句供外部模型解析的文字标签，而是携带隐藏表示的实例标记：后面的像素解码器用它判断“该处理的是哪一个对象”。如果对象不存在，模型应直接返回 None。\n\n解码器同时接收三类信息：实例 token 表示目标内容，预测框提供空间范围，原视觉编码器的多层特征提供图像细节。框引导的查询到视觉特征中取信息，并与其他实例查询交互；更新后的查询再产生实例专属的动态权重，作用于共享像素特征，形成掩码。浅层图像特征和逐级细化补回边缘细节，抠图分支进一步预测连续透明度，因此能表示半透明区域，而不只是前景/背景二分类。\n\n训练也围绕这座桥分步建立。前两阶段先学结构化定位，并逐渐提高输入分辨率及可处理对象密度；第三阶段引入像素解码器，再交替优化 token 输出与像素预测，避免学会分割后损伤定位能力。抠图专门微调时冻结 VLM，重点适配像素解码器。\n\n最后的强化学习按完整响应评估定位质量，鼓励准确框、避免漏检和重复，并挑选有学习空间的样本。一个容易误读的边界是：分割和抠图在 RL 阶段使用的仍是框奖励，并没有直接用掩码或透明度质量打分。模型的统一能力来自数据、分阶段训练和桥接解码器的共同作用，不能只归功于增加了一个 token。",
+        "pipeline": "图像与指令 → 对象框及实例 token → 框引导查询共享视觉特征 → 实例掩码或透明度图",
+        "results": "原文 Ref-ZOM 比较中，4B 版本 cIoU 为 72.2、拒绝率为 86.0；2B 版本分别为 73.4、62.4，显示分割重叠质量和拒绝能力并非同步变化。轻量像素解码器约 9.6M 参数；这一数字不包含整个 VLM。",
+        "limitations": "作者指出感知专用训练可能削弱基础模型通用能力；当前不使用显式思维链且局限于单轮预测。现实中含糊指令仍比标准基准困难。本文不是主体一致性视频生成方法，因此不加主体控制偏好分。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "结构化坐标、None 和对象 token"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "轻量像素桥接架构"
+          },
+          {
+            "section": "S3.SS2.SSS3",
+            "claim": "动态掩码及细化"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "RL 只使用框奖励的边界"
+          },
+          {
+            "section": "S5.SS1.SSS6",
+            "claim": "分割与拒绝结果"
+          },
+          {
+            "section": "S8",
+            "claim": "能力和单轮限制"
+          }
+        ],
+        "fulltext_hash": "53cd9b2da3cd31dff5cc64399601a0ef42a8cf46f92971d83eac76ac5d85a33c",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:26:11.762Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "结构化坐标、None 和对象 token",
+          "url": "https://arxiv.org/html/2610.31329v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "轻量像素桥接架构",
+          "url": "https://arxiv.org/html/2610.31329v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS2.SSS3",
+          "claim": "动态掩码及细化",
+          "url": "https://arxiv.org/html/2610.31329v1#S3.SS2.SSS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "RL 只使用框奖励的边界",
+          "url": "https://arxiv.org/html/2610.31329v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS1.SSS6",
+          "claim": "分割与拒绝结果",
+          "url": "https://arxiv.org/html/2610.31329v1#S5.SS1.SSS6"
+        },
+        {
+          "section": "S8",
+          "claim": "能力和单轮限制",
+          "url": "https://arxiv.org/html/2610.31329v1#S8"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: Overview of the WeVisOne-VL Data Engine (WDE).",
+          "url": "https://arxiv.org/html/2610.31329v1/data_engine.png",
+          "source_url": "https://arxiv.org/html/2610.31329v1#S2.F2"
+        },
+        {
+          "id": "S3.F4",
+          "caption": "Figure 4: Overview of the lightweight pixel decoder. Qwen3-VL provides multi-level ViT features, the hidden state of each generated <OBJ> token, and its predicted box. The decoder builds shared visual features, updates a box-guided target query, and converts the two representations into a full-resolution mask or alpha matte.",
+          "url": "https://arxiv.org/html/2610.31329v1/model.png",
+          "source_url": "https://arxiv.org/html/2610.31329v1#S3.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.30340",
+      "arxiv_id": "2610.30340",
+      "doi": "",
+      "title": "Foundation4D: Towards a unified perception and reconstruction model for autonomous vehicles",
+      "abstract": "We introduce Foundation4D, a unified feed-forward model for geometry estimation, 3D detection, semantic occupancy, and Gaussian reconstruction from multi-camera driving video. A shared backbone uses factorized spatiotemporal attention to efficiently combine observations across cameras and time. Our video inference pipeline uses pose graph optimization to refine camera trajectories and assembles object tracks across input windows. We also develop a data annotation pipeline and release PAI-Foundation4D, a benchmark with dense depth and semantic occupancy labels for 1,253 driving clips. With benchmark-specific fine-tuning, Foundation4D achieves the lowest depth AbsRel on Waymo and nuScenes, the highest detection mAP on nuScenes, and the highest occupancy mIoU on OpenOccupancy among the compared methods. Our task-combination study shows benefits for both detection and geometry: co-training detection with geometry and occupancy improves top-class mAP by 1.2 points over detection-only training, while co-training geometry with detection reduces camera-to-rig translation error by $13.4\\%$ relative to geometry-only training. We further use the predicted geometry and trajectories as priors for lidarless NuRec, supporting reconstruction of driving scenes for simulation.",
+      "authors": [
+        "NVIDIA",
+        ":",
+        "Sérgio Agostinho",
+        "Maximilian Apodaca",
+        "Emmanuel Attia",
+        "Guillem Braso",
+        "George Dong",
+        "Ilya Fedorov",
+        "Michele Fenzi",
+        "Gang Huang",
+        "Jiahui Huang",
+        "Shengyu Huang",
+        "Bingxin Ke",
+        "Laura Leal-Taixé",
+        "Kuan-Ting Lee",
+        "Mingxuan Liu",
+        "Tian Liu",
+        "Tim Meinhardt",
+        "Aljoša Ošep",
+        "Naveen Kumar Rai",
+        "Kefei Ren",
+        "Cristiano Saltori",
+        "Keqiang Wu",
+        "Ning Xu",
+        "Fei Xue",
+        "Jin-Bey Yu",
+        "Lei Zhang",
+        "Qunjie Zhou"
+      ],
+      "url": "https://arxiv.org/abs/2610.30340",
+      "published": "2026-10-21T19:00:46Z",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.30340v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "Foundation4D：统一自动驾驶场景的感知与重建",
+        "abstract_zh": "Foundation4D 用共享前馈模型从多相机驾驶视频估计几何、检测三维物体、预测语义占据并重建高斯场景。分解式时空注意力聚合多视角及时间信息，视频推理流程进一步对齐窗口、优化相机轨迹并连接目标轨迹。作者发布含 1,253 段驾驶片段的密集深度与占据标注基准。在针对各公开基准微调后，模型在所比较方法中取得较强结果；任务组合研究同时显示联合学习的收益与取舍。预测几何和轨迹也可为无激光雷达 NuRec 重建提供先验。",
+        "reason": "展示共享视频表示如何同时服务几何、目标、占据和可渲染重建；特别注意窗口内前馈和跨窗口离线处理的区别。",
+        "introduction_zh": "自动驾驶感知需要知道物体在哪里、空间是否被占据；仿真重建还需要把场景外观与运动恢复出来。分别运行多个模型会重复处理同一批视频，并产生彼此不一致的几何。本文尝试共享多相机时空表示，再用任务专属输出与跨窗口对齐把局部预测组成完整驾驶场景。",
+        "method_takeaway": "让多相机视频先形成共享时空表示，再同时解码几何、目标、占据和高斯，并通过跨窗口轨迹对齐把局部结果拼成可重建的驾驶场景。",
+        "framework_zh": "Foundation4D 的统一首先发生在“看视频”这一层。每张相机图像提取特征后，模型交替在同一时刻的不同相机之间、同一相机的不同时间之间交换信息。这样既能整合侧前方视角，也能利用前后帧，又避免一次对窗口内所有 token 做昂贵的全局注意力。保留的高分辨率图像特征还会补给需要细节的输出分支。\n\n共享表示随后被读成不同但互补的场景描述：几何头预测深度与相机运动，目标头预测物体三维框和速度，占据头回答空间中哪里是什么。高斯分支进一步把像素沿已标定相机光线放回三维，预测颜色、形状及透明度，使场景可以从新视角渲染。静态背景与运动物体分开表示，但高斯分支不自行发明物体轨迹，它使用目标检测和跟踪给出的运动。\n\n单个窗口预测还不是整段视频。相邻窗口先利用重叠观测做尺度、旋转和平移对齐；完整系统再进行位姿图优化，减少逐窗拼接累积的漂移。物体检测则被变换到共同坐标系，通过关联、滤波和离线平滑接成轨迹。因为后来的观测可以改善早先结果，这个整段处理流程不能被说成严格在线流式重建。\n\n训练先学习感知，再延长时间窗口，最后加入高斯重建。重建训练使用真实相机姿态和物体轨迹，推理使用组装后的预测结果；部分分支仍使用已知相机标定。联合监督确实让部分任务受益，但不是所有指标一起改善，理解其价值应看共享表示带来的协同与任务间竞争，而非把多个输出头的数量当作创新本身。",
+        "pipeline": "多相机视频 → 分解式时空共享特征 → 几何/目标/占据/高斯解码 → 窗口对齐与轨迹组装",
+        "results": "四相机、相同 80,000 步的任务组合研究中，检测 top-class mAP 从单任务 40.94% 提至几何+检测+占据的 42.14%；几何与检测联合训练将相机 rig 平移误差从 7.53 cm 降至 6.52 cm。但单几何的深度误差及旋转误差更优。公开数据集领先结果需注意采用了各基准专属微调。",
+        "limitations": "作者报告联合任务存在负迁移，且训练昂贵：感知约 18 天，高斯及联合微调约 9 天。高斯重建与占据仍有已知标定依赖，整段目标跟踪含离线平滑；不能将其等同于无需标定的实时闭环自动驾驶或流式生成。",
+        "evidence": [
+          {
+            "section": "S3.SS3",
+            "claim": "跨相机和时间分解注意力"
+          },
+          {
+            "section": "S3.SS7",
+            "claim": "重建训练与推理的轨迹差异"
+          },
+          {
+            "section": "S3.SS6.SSS0.Px1",
+            "claim": "占据分支使用已知标定"
+          },
+          {
+            "section": "S5.SS3",
+            "claim": "离线跟踪和平滑"
+          },
+          {
+            "section": "S7.SS5.SSS1.Px1",
+            "claim": "任务协同与取舍"
+          },
+          {
+            "section": "S9.SS0.SSS0.Px1",
+            "claim": "训练成本与限制"
+          }
+        ],
+        "fulltext_hash": "66a01872e73962e4f45a45f5955cda2891ba3de1f071d149f2d5a9e847a80ea2",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T03:26:11.776Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS3",
+          "claim": "跨相机和时间分解注意力",
+          "url": "https://arxiv.org/html/2610.30340v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS7",
+          "claim": "重建训练与推理的轨迹差异",
+          "url": "https://arxiv.org/html/2610.30340v1#S3.SS7"
+        },
+        {
+          "section": "S3.SS6.SSS0.Px1",
+          "claim": "占据分支使用已知标定",
+          "url": "https://arxiv.org/html/2610.30340v1#S3.SS6.SSS0.Px1"
+        },
+        {
+          "section": "S5.SS3",
+          "claim": "离线跟踪和平滑",
+          "url": "https://arxiv.org/html/2610.30340v1#S5.SS3"
+        },
+        {
+          "section": "S7.SS5.SSS1.Px1",
+          "claim": "任务协同与取舍",
+          "url": "https://arxiv.org/html/2610.30340v1#S7.SS5.SSS1.Px1"
+        },
+        {
+          "section": "S9.SS0.SSS0.Px1",
+          "claim": "训练成本与限制",
+          "url": "https://arxiv.org/html/2610.30340v1#S9.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Foundation4D architecture. Foundation4D unifies driving perception and reconstruction in a feed-forward model with a shared representation of multi-camera video. A common image encoder and factorized spatiotemporal attention efficiently combine observations across views and time. Task-specific decoders recover camera-to-rig calibration, ego motion, and metric depth; predict 3D objects, velocities, and high-resolution semantic occupancy; and reconstruct scene appearance with 3D Gaussians.",
+          "url": "https://arxiv.org/html/2610.30340v1/architecture-v38.png",
+          "source_url": "https://arxiv.org/html/2610.30340v1#S3.F2"
+        },
+        {
+          "id": "S6.F4",
+          "caption": "Figure 4: PAI depth and occupancy annotation pipeline. The pipeline combines temporally aggregated LiDAR, cuboid tracks, and image masks to generate camera-view depth maps and vehicle-frame occupancy grids with per-voxel semantic and velocity labels.",
+          "url": "https://arxiv.org/html/2610.30340v1/pai_label_pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.30340v1#S6.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31651",
+      "arxiv_id": "2610.31651",
+      "doi": "",
+      "title": "BrickWright: Agentic Creation of Physically Feasible Brick Builds",
+      "abstract": "Frontier coding agents are becoming increasingly adept at 3D modeling. Yet, they still face challenges when building objects meant to be assembled in the physical world, often creating invalid assemblies with floating, colliding, or disconnected parts. We argue that providing agents with tools for assembling builds and verifying their physical feasibility is sufficient for them to produce physically valid assemblies that still adhere to input prompts. Focusing on the domain of LEGO brick builds, we present BrickWright, a framework for generating physically feasible brick builds from text or image prompts using pre-trained agents, where a build is physically feasible if it uses only real parts, has no colliding or floating parts, and forms a connected structure if possible. BrickWright guides agents to create builds by writing code with BrickLayer, a Python toolkit with two main components: an ergonomic brick assembly API that halves inference cost compared to working in raw LDraw, and a validator that provides feedback on physical feasibility. Whereas baseline agents achieve physical validity rates ranging from only 9% (GPT-6 Luna) to 69% (GPT-6 Astra), BrickWright-guided agents achieve 100% validity on a sample of 512 prompts, while improving prompt adherence for lightweight agents and maintaining it for stronger agents. Additionally, they outperform specialized models on the text-to-brick task. Code is available on our project page: https://avalovelace1.github.io/brickwright/",
+      "authors": [
+        "Ava Pun",
+        "Kevin Dai",
+        "Sally Chen",
+        "Maxwell Jones",
+        "Ruixuan Liu",
+        "Kangle Deng",
+        "Changliu Liu",
+        "Maneesh Agrawala",
+        "Deva Ramanan",
+        "Jun-Yan Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2610.31651",
+      "published": "2026-10-22T17:57:20Z",
+      "topics": [
+        "大模型",
+        "世界模型"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31651v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 82,
+        "title_zh": "BrickWright：用连接件规则与验证反馈生成可行积木结构",
+        "abstract_zh": "编码智能体生成三维物体时，常出现积木悬空、穿插或不连通。BrickWright 让预训练智能体使用 BrickLayer 工具包编写并修改结构代码；工具包提供易用的装配接口和物理可行性验证器。本文将可行性限定为真实零件、无碰撞、无悬空，并尽可能连接。在 512 个提示的实验样本上，作者报告各完整系统达到 100% 有效率，同时保持或改善提示遵循。该结果不覆盖稳定性和实际装配顺序。",
+        "reason": "一个可复述的可控生成思路：把可靠约束放进可执行工具和反馈闭环，而非只要求模型“遵守物理”。",
+        "introduction_zh": "视觉上像一个物体，不代表真实零件能够这样连接。直接输出每块积木的绝对位姿既繁琐又容易产生穿插。本文把装配知识编码成类型化连接件接口，再让智能体通过验证错误修订代码，将语言生成问题变成可检查、可修改的构造过程。",
+        "method_takeaway": "用类型化连接件代替手写绝对摆放，再让智能体依据碰撞、悬空与自定义测试反复修改构造代码，直到结构通过检查。",
+        "framework_zh": "BrickWright 将“画出像积木的东西”改成“写出一份能通过验证的装配程序”。智能体先从真实零件目录中找部件，再用 Python 接口把它们组合。每个零件公开可用连接件的类型和局部坐标系，连接操作会依据兼容性对齐零件，而不是让模型独立猜测所有空间位置。子结构还能递归组合，便于把复杂物体拆成可复用部分。\n\n可靠性来自两层配合。装配接口预先减少错误，例如自动对齐凸点与插孔；验证器再检查整体是否碰撞、悬空或断开。悬空判断沿连接关系或向上的支撑接触寻找通往地面的路径，单纯侧面接触不算支撑。碰撞检查对网格作很小的内缩，避免紧密卡扣被普通网格求交误判为穿插。\n\n智能体在同一个文件中维护构造函数和自己的测试。固定验证与自定义测试失败时，错误反馈驱动代码修改；通过后再看多视角渲染，确认外观是否符合输入，必要时继续修改。因而视觉审核与几何审核各司其职，单张漂亮效果图不能代替结构检查，也不能只把“不相撞”的简单方块当作完成用户要求。\n\n方法不需要重新训练一个积木生成网络，新增能力主要来自任务工具与闭环。可动结构还可在指定关节姿态下验证，但本文物理可行性的定义没有包含重心稳定、承载能力或实际可执行的装配次序。因此实验中的全通过，表示通过了这组明确的检查，不代表任意生成物都已经可以放心拿去实体搭建。",
+        "pipeline": "文字/图片意图 → 零件目录与连接件构造代码 → 验证反馈修订 → 渲染检查与导出",
+        "results": "在 BrickNet-512 提示样本上，完整系统报告 100% 有效率；例如轻量 Luna 原始代理有效率约 8.6%。移除验证器后各测试代理有效率均低于 79%；没有装配 API 时调用验证更频繁，部分弱模型会退化为简单结构。成绩适用于该零件目录与验证定义。",
+        "limitations": "作者未验证稳定性和可执行装配序列；智能体生成通常比专门训练模型更慢。碰撞、悬空、连通检查的通过率是有限样本结果，不是对所有提示的保证。",
+        "evidence": [
+          {
+            "section": "S3",
+            "claim": "可行性的定义与边界"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px2",
+            "claim": "类型化连接件和递归装配"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px3",
+            "claim": "碰撞与悬空规则"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "计划执行验证闭环"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "装配接口与验证器消融"
+          }
+        ],
+        "fulltext_hash": "fd71ddeace16b5ca9a9d51fb8028bc1b7e42cb3b3e15eec201fb399a932ea0a8",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:21:49.227Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 82,
+      "evidence": [
+        {
+          "section": "S3",
+          "claim": "可行性的定义与边界",
+          "url": "https://arxiv.org/html/2610.31651v1#S3"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px2",
+          "claim": "类型化连接件和递归装配",
+          "url": "https://arxiv.org/html/2610.31651v1#S3.SS1.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px3",
+          "claim": "碰撞与悬空规则",
+          "url": "https://arxiv.org/html/2610.31651v1#S3.SS1.SSS0.Px3"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "计划执行验证闭环",
+          "url": "https://arxiv.org/html/2610.31651v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "装配接口与验证器消融",
+          "url": "https://arxiv.org/html/2610.31651v1#S4.SS2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: BrickWright overview. BrickWright instructs pre-trained LLM agents to generate physically feasible brick builds by writing code using a Python SDK, BrickLayer, in a plan-execute-validate loop utilizing BrickLayer’s physical validation tools (a). BrickWright accepts text or image inputs and can produce articulated and large-scale builds, all physically valid. Agents equipped with BrickWright produce higher-quality builds with fewer physical violations (b). Red outlines in insets indicate mesh intersections.",
+          "url": "https://arxiv.org/html/2610.31651v1#S0.F1",
+          "source_url": "https://arxiv.org/html/2610.31651v1#S0.F1"
+        },
+        {
+          "id": "S1.F3",
+          "caption": "Figure 3: Method overview. (a) BrickLayer supports catalog discovery, compositional construction with typed connectors, and physical validation. (b) BrickWright prompts a pre-trained LLM agent to write and revise build.py, which contains brick build creation code and agent-defined tests. The validate tool runs fixed collision and floating checks alongside the agent’s tests, while the render tool provides views for visual inspection. The agent calls finalize once all checks pass. The agent may optionally run explore at any time to investigate the BrickLayer API and written brick build. Arrows summarize information flow rather than a fixed tool-call sequence.",
+          "url": "https://arxiv.org/html/2610.31651v1#S1.F3",
+          "source_url": "https://arxiv.org/html/2610.31651v1#S1.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.28416",
+      "arxiv_id": "2610.28416",
+      "doi": "",
+      "title": "Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V",
+      "abstract": "Code-based video generation offers fine-grained control, targeted editing, and component reuse compared with direct video generation. This approach requires multimodal large language models (MLLMs) to translate visual and temporal requirements into executable programs that produce complete videos. However, existing code-based benchmarks primarily target specialized tasks, leaving complete video creation across diverse creative categories and input modalities insufficiently evaluated. We introduce Code2Video-Compass, a general-purpose benchmark for code-based video generation across text-to-video (T2V), image-to-video (I2V), and video-to-video (V2V) settings. Code2Video-Compass comprises 2,104 tasks spanning 10 categories, 24 subtypes, and three complexity dimensions covering construction, dynamic animation, and state dependency. It combines tasks curated from textual instructions and visual references with corresponding T2V, I2V, and V2V tasks derived from complete professional and user-created videos. We propose a dual-level evaluation framework combining 12 objective metrics and five subjective metrics. Objective evaluation covers operational performance, video quality, text-video alignment, and reference fidelity, while subjective evaluation uses an MLLM judge to evaluate instruction following and holistic video quality. Extensive evaluation of 15 recent proprietary and open-weight MLLMs from nine families reveals that even leading models face challenges in reliably generating high-quality complete videos aligned with textual and visual requirements, with performance generally declining as construction, dynamic animation, and state-dependency complexity increases. We anticipate that Code2Video-Compass will advance reliable, coherent, and controllable code-based video generation and inspire broader progress in programmatic visual creation.",
+      "authors": [
+        "Zhenghan Chen",
+        "Zekai Shao",
+        "Xin Lin",
+        "Leting Cheng",
+        "Siming Chen"
+      ],
+      "url": "https://arxiv.org/abs/2610.28416",
+      "published": "2026-10-20T15:51:41Z",
+      "topics": [
+        "视频生成",
+        "多模态"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.28416v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 79,
+        "title_zh": "Code2Video-Compass：评测代码生成完整视频的可靠性与时序表现",
+        "abstract_zh": "代码式视频生成便于细粒度控制、定点编辑和组件复用，但现有评测多偏向专门场景。Code2Video-Compass 提供 2,104 个任务，覆盖文生视频、图生视频和视频到视频，横跨 10 类、24 个子类及构造、动态动画、状态依赖三种复杂度。任务包含独立素材策划和从完整专业、用户视频构造的配对输入。评测结合 12 个客观指标与 5 个主观指标，对九个模型家族的十五个 MLLM 进行比较，发现执行可靠性、完整叙事和高复杂度要求仍是主要难点。",
+        "reason": "补充视频生成评测视角：既看代码能否运行，也看参考内容在完整视频中的位置、运动和前后状态是否正确。",
+        "introduction_zh": "程序化动画可以精确修改文字、布局和运动，但“成功导出视频”离“完成创作意图”还很远。图像参考可能出现在视频中段，短片参考需要被放进更长叙事，错误又可能来自代码编译或视觉理解。该工作建立成套任务与指标，以区分执行失败、画面相似和真正满足时序要求。",
+        "method_takeaway": "从同一完整视频构造文字、关键帧与片段三种配对任务，再把执行成功、参考重建和跨阶段时序要求分开评分。",
+        "framework_zh": "Code2Video-Compass 最重要的设计是评测“完整创作”，而不只比较一帧画面。模型需要把文字及可选视觉参考写成可执行项目，利用网页图形技术渲染视频。图生视频任务要求重建参考图中的视觉状态，视频到视频要求重建参考片段的外观、运动与事件；不能直接嵌入原图或重播原片段来取巧。\n\n为了比较输入模态的影响，作者从同一完整视频同时派生文字、关键帧和短片段三种任务，保持主要创意目标与事件进程一致；另外加入独立策划任务扩展内容范围。复杂度分成三个轴：画面构造有多难、运动变化有多复杂、较早状态需要跨多远继续保持。这样可以区分“不会画复杂物体”与“忘了前面发生什么”。\n\n评分先检查程序能否执行，失败作品在非运行指标上记零，避免只挑成功作品导致排名虚高。对于图像参考，系统在整段输出中寻找匹配帧；对于视频参考，先定位对应区间并对齐时间，再分别检查外观、序列和点轨迹运动。这个设计承认参考内容可能位于中段，也避免只用外观相似替代运动保真。\n\n另一层让视觉语言裁判按可验证问题检查指令，再评估叙事、设计、运动表现和吸引力。作者用人工评分检验裁判一致性。最终得到的不是一个新视频生成算法，而是一套暴露失败来源的实验框架：高分画面与可靠执行可能来自不同模型，平滑的运动也不自动意味着动作、顺序和跨阶段状态正确。",
+        "pipeline": "完整素材构造配对任务 → 模型生成可执行视频项目 → 检查运行和参考重建 → 按要求与时序质量评分",
+        "results": "基准共 2,104 项任务，其中 573 个共享源视频生成 1,719 个配对任务，另有 385 个独立任务。人工核验子集中，模型裁判与人类均分的 Pearson 相关系数为指令遵循 0.796、整体质量 0.783。论文显示部分模型只看成功视频时排名更高，计入执行失败后优势下降。",
+        "limitations": "分析性保留：范围主要是可由代码重建的动画与视觉设计，不代表写实扩散视频能力。部分质量指标依赖模型裁判，其与人类相关并非完全一致；运动匹配和外观相似也不能覆盖所有创作意图。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "参考必须由代码重建的任务定义"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "配对与独立任务构造"
+          },
+          {
+            "section": "S3.SS5.SSS1",
+            "claim": "失败记零及参考匹配"
+          },
+          {
+            "section": "S3.SS5.SSS2",
+            "claim": "主观质量与指令评测"
+          },
+          {
+            "section": "S5.SS5",
+            "claim": "人工裁判验证"
+          }
+        ],
+        "fulltext_hash": "2966d052ece3fb640a75e98cb7bde25ecbbabf8f177b83d2bf060b9a6ac5fa11",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:21:49.233Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 79,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "参考必须由代码重建的任务定义",
+          "url": "https://arxiv.org/html/2610.28416v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "配对与独立任务构造",
+          "url": "https://arxiv.org/html/2610.28416v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS5.SSS1",
+          "claim": "失败记零及参考匹配",
+          "url": "https://arxiv.org/html/2610.28416v1#S3.SS5.SSS1"
+        },
+        {
+          "section": "S3.SS5.SSS2",
+          "claim": "主观质量与指令评测",
+          "url": "https://arxiv.org/html/2610.28416v1#S3.SS5.SSS2"
+        },
+        {
+          "section": "S5.SS5",
+          "claim": "人工裁判验证",
+          "url": "https://arxiv.org/html/2610.28416v1#S5.SS5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Data construction pipeline. (A) Independent tasks are developed from curated text seeds, reference images, and video clips. (B) Paired T2V, I2V, and V2V tasks are derived from shared complete source videos. (C) Both task sets undergo prompt construction, QA checklist development, and annotation of subjects, temporal events, motion types, and three complexity dimensions, yielding 2,104 tasks.",
+          "url": "https://arxiv.org/html/2610.28416v1/dataset_construction.png",
+          "source_url": "https://arxiv.org/html/2610.28416v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.30468",
+      "arxiv_id": "2610.30468",
+      "doi": "",
+      "title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research",
+      "abstract": "Reproducing a published 3DGS paper takes weeks of expert engineering before any extension can be proposed. Prior autonomous-research systems read papers, draft hypotheses, and write code, but are limited by short fixed templates, low executability, and weak traceability, and none has been demonstrated end-to-end in a live computer-vision subfield with intense activity. SplatLab is an autonomous research system for 3D Gaussian Splatting that addresses these limitations. Given a research prompt, a target-paper URL, or no input at all, it reproduces a published baseline, proposes an extension, trains and ablates across Mip-NeRF 360 and LLFF, writes the manuscript, and binds every reported number to a logged training run. Five design choices distinguish it: (i) candidates mutate plugins from a verified-reproduction backbone matched to published baselines; (ii) a cascade-weighted Elo tournament across eight islands scores candidates on measured GPU PSNR with verbal-gradient feedback; (iii) a standing falsifier subtracts Elo on failure, integrating stress-test survival into selection; (iv) every reported number is bound to a logged training run, and the run cannot terminate while any claim is unbacked; (v) a seven-category 3DGS taxonomy wraps EVOLVE-BLOCK markers in domain-aligned scaffolds transferable across 3DGS repositories. On PSNR-targeted runs, SplatLab's manuscripts beat their reproduced targets by +0.18 to +3.78 dB, including +3.78 dB on astrophotographic nebula rendering, for which no prior 3DGS method exists. The research cycle compresses from months of graduate-student time to days of mostly autonomous compute. Code, all manuscripts, experiment ledgers, and the cross-run paper store are available on the project page.",
+      "authors": [
+        "Seemandhar Jain",
+        "Manmohan Chandraker"
+      ],
+      "url": "https://arxiv.org/abs/2610.30468",
+      "published": "2026-10-21T21:30:32Z",
+      "topics": [],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-23"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.30468v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 76,
+        "title_zh": "SplatLab：在可复现基线上进行可追溯的 3DGS 自动研究",
+        "abstract_zh": "SplatLab 面向三维高斯泼溅研究，将复现、提出扩展、实现、训练消融与论文撰写连接成自动流程。它在已验证的复现插件上修改候选方法，以实际 GPU 实验参与逐级筛选，加入持续反证测试，并把报告数字绑定到训练日志。作者在多个 3DGS 目标上报告相对复现基线的 PSNR 改善，并公开代码、论文与实验账本。其主要价值在领域化研究流程和证据追溯，不能仅凭自动生成稿件宣称完成了通用科学发现。",
+        "reason": "与 3D 重建研究实践相关，值得学习“可信基线—局部改动—实验账本”的组织方法；证据范围和成本需谨慎看待。",
+        "introduction_zh": "自动研究代理若从不可靠的复现代码开始，后续看似提升可能只是修复了错误基线；若论文数字没有对应日志，写作质量更不能代表实验可信。SplatLab 把研究建立在匹配已发表结果的领域插件上，并要求候选改动和最终论断能够追溯到真实训练，是针对这些问题的系统设计。",
+        "method_takeaway": "把研究候选限制在经过验证的复现插件上，用逐级真实实验筛选，并要求论文中的每个数字都能追溯到具体代码、配置和训练日志。",
+        "framework_zh": "SplatLab 的主线是先建立可信的“起跑线”。系统既读相关文献，也实测一个已匹配发表结果的 3DGS 基线，找出有证据的局限和性能瓶颈。提出的新想法必须关联这些证据，之后才进入实现；实现主要修改预先划定的增密、损失、渲染或剪枝等区域，尽量保留已验证的周边代码，减少把重新实现差异误当创新的风险。\n\n候选不会一开始就消耗完整基准训练预算。它们先经过短训练检查，再进入单场景、多场景和完整基准，使用真实测得的质量逐级比较。不同阶段的证据权重不同，早期小样本胜出不能压过后续多场景失败。系统还主动测试异常曝光、稀疏视角和参数扰动，失败会影响候选排名，而不是等论文写完才附上一段局限。\n\n写作之前，审计检查每个数字是否绑定实验 ID、代码提交和配置，也检查文字描述是否与实际改动一致。对于预算不匹配的提升，需要标为计算量混杂；跨代码库不能复现的结果，需要标为实现特定。写作和审稿环节还能要求新增实验，流程因此可以回到训练，而不是只润色已有说法。\n\n这套方法最可迁移的部分是证据闭环，不是代理数量。实验账本可以防止无来源数字，但不能自动保证评测设计正确、所有先前工作都已检索到或结论足够新颖。作者给出的结果集中在特定 3DGS 研究环境，仍需独立复现；阅读时应把系统可追溯性、局部 PSNR 改善和真正研究价值分别判断。",
+        "pipeline": "验证复现基线并定位瓶颈 → 生成局部代码候选 → 分级训练与反证测试 → 审计日志后撰写或补实验",
+        "results": "作者报告不同目标的 PSNR 增益为 0.18–3.78 dB；最大值来自特殊星云场景，不能当作所有常规场景平均收益。一项五种子复核中，GNS-AA 相对 GNS 提高约 0.23±0.09 dB。单次流程使用 24–48 小时墙钟预算、2–36 GPU 小时，文中估计的 API 开销为 150–250 美元。",
+        "limitations": "分析性保留：收益与领域插件、基线质量、评分目标和代理后端密切相关；小幅 PSNR 提升需看种子方差。自动审计不能代替外部复现和研究新颖性判断。所报成本为论文设置，不能视作当前服务报价。",
+        "evidence": [
+          {
+            "section": "S3.SS1.SSS0.Px3",
+            "claim": "验证插件上的受限代码改动"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px4",
+            "claim": "逐级真实实验及反证筛选"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px5",
+            "claim": "数字日志、预算与跨库审计"
+          },
+          {
+            "section": "S4.SS0.SSS0.Px4",
+            "claim": "分目标结果范围"
+          },
+          {
+            "section": "S4.SS0.SSS0.Px5",
+            "claim": "多种子结果"
+          },
+          {
+            "section": "S4.SS0.SSS0.Px3",
+            "claim": "计算成本"
+          }
+        ],
+        "fulltext_hash": "71e25d5b3eab376eaefe512cb904a48808bdbb59299ed83dd51c19e8faef0b5f",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:21:49.238Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 76,
+      "evidence": [
+        {
+          "section": "S3.SS1.SSS0.Px3",
+          "claim": "验证插件上的受限代码改动",
+          "url": "https://arxiv.org/html/2610.30468v1#S3.SS1.SSS0.Px3"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px4",
+          "claim": "逐级真实实验及反证筛选",
+          "url": "https://arxiv.org/html/2610.30468v1#S3.SS1.SSS0.Px4"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px5",
+          "claim": "数字日志、预算与跨库审计",
+          "url": "https://arxiv.org/html/2610.30468v1#S3.SS1.SSS0.Px5"
+        },
+        {
+          "section": "S4.SS0.SSS0.Px4",
+          "claim": "分目标结果范围",
+          "url": "https://arxiv.org/html/2610.30468v1#S4.SS0.SSS0.Px4"
+        },
+        {
+          "section": "S4.SS0.SSS0.Px5",
+          "claim": "多种子结果",
+          "url": "https://arxiv.org/html/2610.30468v1#S4.SS0.SSS0.Px5"
+        },
+        {
+          "section": "S4.SS0.SSS0.Px3",
+          "claim": "计算成本",
+          "url": "https://arxiv.org/html/2610.30468v1#S4.SS0.SSS0.Px3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of SplatLab: research pipeline (top) and sixteen generated manuscripts (bottom).",
+          "url": "https://arxiv.org/html/2610.30468v1/teaser_overview.png",
+          "source_url": "https://arxiv.org/html/2610.30468v1#S0.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Detailed pipeline of SplatLab. Expanding the overview in Figure 1, a research intent (or no input) passes through six stages (grounding, Elo-pre-ranked ideation, EVOLVE-BLOCK implementation, cascade-weighted Elo refinement across eight islands, integrity audit, and reviewer-driven manuscript synthesis) run by a three-level hierarchy of Professor, PhD Coordinators, and Undergrad Leaf Agents.",
+          "url": "https://arxiv.org/html/2610.30468v1/pipeline_details.png",
+          "source_url": "https://arxiv.org/html/2610.30468v1#S3.F2"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.31494",
+      "title": "AgentVQA: A Unified Benchmark for Agentic Visual Understanding",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.28950",
+      "title": "HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second",
+      "decision": "include",
+      "reason": "与运动控制直接相关：展示以当前/目标图像驱动偏航的真实闭环。重点在视觉控制数据生成和迁移，不是视频生成模型。"
+    },
+    {
+      "key": "arxiv:2610.27851",
+      "title": "LaLa-World: Scaling Latent World Models with Natural Language Actions",
+      "decision": "include",
+      "reason": "提供把视频知识引入控制任务的清晰接口，且区分潜在预测、像素生成与下游策略；适合研究世界模型如何服务规划。"
+    },
+    {
+      "key": "arxiv:2610.30043",
+      "title": "TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.28416",
+      "title": "Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V",
+      "decision": "include",
+      "reason": "补充视频生成评测视角：既看代码能否运行，也看参考内容在完整视频中的位置、运动和前后状态是否正确。"
+    },
+    {
+      "key": "arxiv:2610.31651",
+      "title": "BrickWright: Agentic Creation of Physically Feasible Brick Builds",
+      "decision": "include",
+      "reason": "一个可复述的可控生成思路：把可靠约束放进可执行工具和反馈闭环，而非只要求模型“遵守物理”。"
+    },
+    {
+      "key": "arxiv:2610.31623",
+      "title": "F2G-Pose: Geometry-Aware Foundation Feature Lifting for Direct RGB-D Category-Level Object Pose Estimation",
+      "decision": "include",
+      "reason": "把几何监督用于提高直接回归的可靠性，同时清楚区分感知能力与机器人控制；具有真实操作验证。"
+    },
+    {
+      "key": "arxiv:2610.31574",
+      "title": "Rethinking Sequence Compression with Test-time Regression",
+      "decision": "include",
+      "reason": "把压缩从静态混合改为联合拟合当前输入，机制有可解释性；多模态压缩实验明确给出同分组和跨压缩比比较。"
+    },
+    {
+      "key": "arxiv:2610.31329",
+      "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+      "decision": "include",
+      "reason": "核心是让语言模型产生的实例表示真正驱动像素输出；适合观察统一多模态模型如何衔接离散语言和密集视觉。"
+    },
+    {
+      "key": "arxiv:2610.28889",
+      "title": "Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.27712",
+      "title": "RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting",
+      "decision": "include",
+      "reason": "把重建资源控制前移到生成阶段，机制直接、消融明确；特别适合关注有限显存下 3D 表示的读者。"
+    },
+    {
+      "key": "arxiv:2610.27598",
+      "title": "Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30468",
+      "title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research",
+      "decision": "include",
+      "reason": "与 3D 重建研究实践相关，值得学习“可信基线—局部改动—实验账本”的组织方法；证据范围和成本需谨慎看待。"
+    },
+    {
+      "key": "arxiv:2610.30340",
+      "title": "Foundation4D: Towards a unified perception and reconstruction model for autonomous vehicles",
+      "decision": "include",
+      "reason": "展示共享视频表示如何同时服务几何、目标、占据和可渲染重建；特别注意窗口内前馈和跨窗口离线处理的区别。"
+    },
+    {
+      "key": "arxiv:2610.29677",
+      "title": "Toward Recursive Self-Improvement in Physical AI",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31158",
+      "title": "Beyond Watching and Searching: Benchmarking Agents for Video-centered Deep Research Reports",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31062",
+      "title": "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30949",
+      "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30882",
+      "title": "Inherited, Not Invented: Tracing the Provenance of Wait in Reasoning Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30866",
+      "title": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30755",
+      "title": "Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30418",
+      "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31576",
+      "title": "What Makes a Good Unmasking Policy? A Controlled Study of Learned Unmasking in Diffusion Language Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31372",
+      "title": "RIDAR: Safeguarding Research Integrity in Autonomous Research Agents via Automated Detection and Runtime Intervention",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31305",
+      "title": "Cola2: Co-Adaptive Hierarchical Language Modeling with Continuous Semantic Compression and Balanced Discrete Generation",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31198",
+      "title": "Different Tasks, Different Timesteps: Temporal Task-Aware Quantization for Diffusion Language Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    }
+  ],
+  "digest_id": "911aaf7ded28f1b41073"
+}

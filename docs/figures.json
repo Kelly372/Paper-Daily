@@ -2631,6 +2631,34 @@
       "extraction": "original-figure",
       "figure_id": "S4.F4"
     },
+    "arxiv:2610.27712": {
+      "asset": "assets/figures/2610.27712-d601feb283b0.webp",
+      "sha256": "d601feb283b0771b474ee9275e52f2e8ce645c89a6168f20c3e0017badc030df",
+      "width": 1722,
+      "height": 487,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先分配每个锚点的高斯数量，再直接生成并局部精修；没有先密集生成再删除。",
+      "source_url": "https://arxiv.org/html/2610.27712v1#S3.F2",
+      "source_hash": "b1f39f44de4ec565bee4cca87932b0919a82741007164900d93acb01f249b614",
+      "fulltext_hash": "d8feb77e2d5a361815eb236ee0c1faa57ca8406278231a6df8164ded4e97bdb0",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.27851": {
+      "asset": "assets/figures/2610.27851-cfaa0be3774e.webp",
+      "sha256": "cfaa0be3774ea9892fb7cbb06b5d9e5a5be048700d1cd331794e6100a9543288",
+      "width": 1862,
+      "height": 390,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "沿语言动作到未来潜在状态的路径阅读；规划比较特征距离，无须生成完整像素视频。",
+      "source_url": "https://arxiv.org/html/2610.27851v2#S1.F1",
+      "source_hash": "b89f9a2b414586773d219c572249013351a013dc5d36730b24cab2f8df6d607f",
+      "fulltext_hash": "861901eb7e936b03a64f68de9be6726f608fd887cad8f98474ffb1ac003ee5f7",
+      "extraction": "original-figure",
+      "figure_id": "S1.F1"
+    },
     "arxiv:2610.27946": {
       "asset": "assets/figures/2610.27946-a0dd16a0cb62.webp",
       "sha256": "a0dd16a0cb62ce6d29445ae715003759b742bca304960f1c4a8930ba114c2d14",
@@ -2686,6 +2714,20 @@
       "fulltext_hash": "b206dfedc6767b63bd8037678bb7268d41a39856adab3a896fa2d73981026038",
       "extraction": "original-figure",
       "figure_id": "S2.F2"
+    },
+    "arxiv:2610.28416": {
+      "asset": "assets/figures/2610.28416-a00a29430c67.webp",
+      "sha256": "a00a29430c67a4baabe0d6b0f42556edbcb053db84f2398b814e9219660d004a",
+      "width": 2039,
+      "height": 827,
+      "label": "Figure 2",
+      "kind": "评测数据构造图",
+      "reading_tip": "区分独立任务与共享源视频的三模态配对任务；目标是完整视频而非单帧匹配。",
+      "source_url": "https://arxiv.org/html/2610.28416v1#S3.F2",
+      "source_hash": "ba22c53b4811ad8763877f7287e6a4dbc216e51b7354511420707aba83689581",
+      "fulltext_hash": "2966d052ece3fb640a75e98cb7bde25ecbbabf8f177b83d2bf060b9a6ac5fa11",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     },
     "arxiv:2610.28559": {
       "asset": "assets/figures/2610.28559-0574bd83c2d3.webp",
@@ -2770,6 +2812,20 @@
       "fulltext_hash": "aa0cb307f54322fcbc5f2da30ba51a767e25b330e05b3588f522a0c70e784252",
       "extraction": "original-figure",
       "figure_id": "S3.F3"
+    },
+    "arxiv:2610.28950": {
+      "asset": "assets/figures/2610.28950-408e03f2eeea.webp",
+      "sha256": "408e03f2eeea47827ca045d9f21ca5e641a23a246361ac2ec65c939225c56648",
+      "width": 674,
+      "height": 367,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "注意动力学、渲染和策略在 GPU 内的闭环；实机实验只把偏航交给视觉学生。",
+      "source_url": "https://arxiv.org/html/2610.28950v1#S3.F2",
+      "source_hash": "e1fced63c3fb42b7bf1d2d282a2d1d65c71cc17023e243eb2c4417599e25e721",
+      "fulltext_hash": "790999846ca8ca02551ebe10ac4f1996b05b863a3b3f48546c1713cd6a3d88a5",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     },
     "arxiv:2610.29107": {
       "asset": "assets/figures/2610.29107-4c8c63c09281.webp",
@@ -2917,6 +2973,20 @@
       "extraction": "original-figure",
       "figure_id": "S2.F2"
     },
+    "arxiv:2610.30340": {
+      "asset": "assets/figures/2610.30340-18b2833fd667.webp",
+      "sha256": "18b2833fd667a842c0558fcd605916a113ee7a76c918eadae7f86195c9a30cac",
+      "width": 1012,
+      "height": 445,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看共享时空聚合，再看四类输出；整段轨迹对齐和离线跟踪发生在窗口预测之后。",
+      "source_url": "https://arxiv.org/html/2610.30340v1#S3.F2",
+      "source_hash": "a23a52907c8c4330020bbc3aeb19c1674f170c35df568285a007488522bacd96",
+      "fulltext_hash": "66a01872e73962e4f45a45f5955cda2891ba3de1f071d149f2d5a9e847a80ea2",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.30390": {
       "asset": "assets/figures/2610.30390-0087ede05170.webp",
       "sha256": "0087ede051702ff5ba64281852e72c8db9c7d2485e75196b3eb83af3c2431794",
@@ -2928,6 +2998,20 @@
       "source_url": "https://arxiv.org/html/2610.30390v1#S3.F2",
       "source_hash": "a0ce7c380e625e90661ac768f1afef2ce0db95ec1105cb621ec5acf4e5ba145d",
       "fulltext_hash": "da738fbb8f90be12fa2db26bbad75b72d23a503e49e64dc0d11c58f4adf707e4",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.30468": {
+      "asset": "assets/figures/2610.30468-46e794440dc0.webp",
+      "sha256": "46e794440dc01a4f0a726c52c250356f5cd55aed4c09375beab3999d7d588b0f",
+      "width": 2040,
+      "height": 921,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿验证基线、实际训练和日志审计阅读；审稿可触发重新实验，不能只修改文字。",
+      "source_url": "https://arxiv.org/html/2610.30468v1#S3.F2",
+      "source_hash": "140140b59edbec7efaae0c9a9a08b0294e1322602f1a5a5b49a9ef81a809276a",
+      "fulltext_hash": "71e25d5b3eab376eaefe512cb904a48808bdbb59299ed83dd51c19e8faef0b5f",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
@@ -3085,6 +3169,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F4"
     },
+    "arxiv:2610.31329": {
+      "asset": "assets/figures/2610.31329-e936281c71f4.webp",
+      "sha256": "e936281c71f4fe38c21b27a7ac15600d01b3d03cb65a7df0e199f1cca619c03d",
+      "width": 2048,
+      "height": 1014,
+      "label": "Figure 4",
+      "kind": "方法框架图",
+      "reading_tip": "对象 token 表示目标，预测框提供位置，多层视觉特征提供细节；三者共同驱动像素解码。",
+      "source_url": "https://arxiv.org/html/2610.31329v1#S3.F4",
+      "source_hash": "2e565e6500e7b325d41e9ed1d816a8e999f9a31478653ad1929ca2920e82a06b",
+      "fulltext_hash": "53cd9b2da3cd31dff5cc64399601a0ef42a8cf46f92971d83eac76ac5d85a33c",
+      "extraction": "original-figure",
+      "figure_id": "S3.F4"
+    },
     "arxiv:2610.31433": {
       "asset": "assets/figures/2610.31433-554ff0e854ef.webp",
       "sha256": "554ff0e854efddf657554009faf83edaa54e30d7848f7ec8ae4a0897d21f987e",
@@ -3127,6 +3225,20 @@
       "extraction": "original-figure",
       "figure_id": "S2.F1"
     },
+    "arxiv:2610.31574": {
+      "asset": "assets/figures/2610.31574-eab534363ec8.webp",
+      "sha256": "eab534363ec84dc7848c1ae204f7a471b55f22b720d1b3b67b8ec61f83e1bcfc",
+      "width": 1350,
+      "height": 584,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "外层训练学习回归规则，内层为当前 token 组求解；推理不更新整个模型参数。",
+      "source_url": "https://arxiv.org/html/2610.31574v1#S3.F2",
+      "source_hash": "7f38d60426b80372ae315a64b1918862cbdadf724055b1933db833e77b0e2902",
+      "fulltext_hash": "0027e330bff0ec777ea6ff809a49858fa7abd23cdaf9ae4e294e423c99efac6b",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.31617": {
       "asset": "assets/figures/2610.31617-a943738beab2.webp",
       "sha256": "a943738beab243dd07926626d972f68200259c363246a8111b987a0aa964b814",
@@ -3140,6 +3252,20 @@
       "fulltext_hash": "af7243172acf697ef48a930496e54bf15d6367c4247353badaf5f308644d4a61",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
+    },
+    "arxiv:2610.31623": {
+      "asset": "assets/figures/2610.31623-bf55a14befec.webp",
+      "sha256": "bf55a14befecd7ad11e411d3b75dc82d5bfd6751719da05008e43797dcd43c0c",
+      "width": 2044,
+      "height": 909,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "先把视觉特征贴到深度点，再看位姿与形状双分支；形状监督帮助直接回归。",
+      "source_url": "https://arxiv.org/html/2610.31623v1#S3.F1",
+      "source_hash": "a1d5e744535263bdb207424b196c1a3bc19aa2def5a29c0039c857116f4d6252",
+      "fulltext_hash": "72ab43c4829b3c28362c6b89b71651f25ff307583fbb04240ab3b9524f832bdc",
+      "extraction": "original-figure",
+      "figure_id": "S3.F1"
     },
     "arxiv:2610.31640": {
       "asset": "assets/figures/2610.31640-313842a2ce09.webp",
@@ -3169,6 +3295,20 @@
       "extraction": "original-figure",
       "figure_id": "S3.F2"
     },
+    "arxiv:2610.31651": {
+      "asset": "assets/figures/2610.31651-5cdf3022278d.webp",
+      "sha256": "5cdf3022278d5190d6c7a6f303a3b106dae5fe26186a7522eb1a18349be9577c",
+      "width": 2200,
+      "height": 751,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "装配接口减少错误，验证器给出修订反馈；几何检查与渲染审核共同构成闭环。",
+      "source_url": "https://arxiv.org/html/2610.31651v1#S1.F3",
+      "source_hash": "577a4d6e9a1f97ec359d8a084196a40c8c4b4595543b726e2c85822e298d9303",
+      "fulltext_hash": "fd71ddeace16b5ca9a9d51fb8028bc1b7e42cb3b3e15eec201fb399a932ea0a8",
+      "extraction": "original-figure",
+      "figure_id": "S1.F3"
+    },
     "arxiv:2610.31671": {
       "asset": "assets/figures/2610.31671-6d453a2feba2.webp",
       "sha256": "6d453a2feba284915d66e9189c91f1b7241468b09c9816d3c2338259ff2beae4",
@@ -3184,5 +3324,5 @@
       "figure_id": "S3.F2"
     }
   },
-  "revision": "3b3789e546542c89725c"
+  "revision": "4590cfa59c91c63a1276"
 }
