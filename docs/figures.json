@@ -2631,6 +2631,20 @@
       "extraction": "original-figure",
       "figure_id": "S4.F4"
     },
+    "arxiv:2610.27103": {
+      "asset": "assets/figures/2610.27103-03ea5fe32e3f.webp",
+      "sha256": "03ea5fe32e3fc1ac46795c9717f7db25f3c0ff3a409dc34f6f4b527a74e67385",
+      "width": 1580,
+      "height": 883,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "先诊断冲突，再分出证据与竞争方向；纠正同时作用于注意力路径和融合状态。",
+      "source_url": "https://arxiv.org/html/2610.27103v1#S3.F2",
+      "source_hash": "300f9ad6950a32d68fd756180f13c09a9efc29663cf75851e109ee65d4ef616b",
+      "fulltext_hash": "8dd240ce1b17ab4e4d93943a417967a6d2ceb05db7a5d0d779f4b8eefcfdacc2",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
     "arxiv:2610.27712": {
       "asset": "assets/figures/2610.27712-d601feb283b0.webp",
       "sha256": "d601feb283b0771b474ee9275e52f2e8ce645c89a6168f20c3e0017badc030df",
@@ -2644,6 +2658,20 @@
       "fulltext_hash": "d8feb77e2d5a361815eb236ee0c1faa57ca8406278231a6df8164ded4e97bdb0",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
+    },
+    "arxiv:2610.27782": {
+      "asset": "assets/figures/2610.27782-3b96855e888a.webp",
+      "sha256": "3b96855e888a83199831eda83f047f1d56d2339a1ae29ffa172706fbfe1d9112",
+      "width": 1449,
+      "height": 737,
+      "label": "Figure 1",
+      "kind": "评测与训练流程图",
+      "reading_tip": "分开看物理可信和任务完成；测试人工标签评价评审者，训练数据则校准评审模型。",
+      "source_url": "https://arxiv.org/html/2610.27782v1#S0.F1",
+      "source_hash": "33cd8e71e5f517c44115753cc0b74804c9620bf9ba15f9d3600a6c1811e0a2a2",
+      "fulltext_hash": "478cd0e2fa39ae8851f879f1c0090bdc9676738a8d7ffd5d9dfba93a8bf8eace",
+      "extraction": "original-figure",
+      "figure_id": "S0.F1"
     },
     "arxiv:2610.27851": {
       "asset": "assets/figures/2610.27851-cfaa0be3774e.webp",
@@ -3141,6 +3169,20 @@
       "extraction": "original-figure",
       "figure_id": "S1.F1"
     },
+    "arxiv:2610.31162": {
+      "asset": "assets/figures/2610.31162-766f43581c7d.webp",
+      "sha256": "766f43581c7d1e3acdddd9cec316845065f175133235eeb3eddb88cd223d3b85",
+      "width": 973,
+      "height": 379,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "完成检测只触发交接，高层核验后才更新记忆；底层执行仍通过视觉和键鼠。",
+      "source_url": "https://arxiv.org/html/2610.31162v1#S3.F1",
+      "source_hash": "2c907dd2336f14d6deb911e6a23ec59e87ada9de4c53254af71a8366b88496b1",
+      "fulltext_hash": "0201624ffcb2220915ac47ab54b45eacd705537c79073bbf16348ec685760943",
+      "extraction": "original-figure",
+      "figure_id": "S3.F1"
+    },
     "arxiv:2610.31299": {
       "asset": "assets/figures/2610.31299-204ca2b612e2.webp",
       "sha256": "204ca2b612e22466122d7e08eb0c0a485e1b1e31efed4cf68d2cbd1acfdc30de",
@@ -3180,6 +3222,20 @@
       "source_url": "https://arxiv.org/html/2610.31329v1#S3.F4",
       "source_hash": "2e565e6500e7b325d41e9ed1d816a8e999f9a31478653ad1929ca2920e82a06b",
       "fulltext_hash": "53cd9b2da3cd31dff5cc64399601a0ef42a8cf46f92971d83eac76ac5d85a33c",
+      "extraction": "original-figure",
+      "figure_id": "S3.F4"
+    },
+    "arxiv:2610.31423": {
+      "asset": "assets/figures/2610.31423-07d07e64378a.webp",
+      "sha256": "07d07e64378ad7bc7470e432abbf8e80b917fd64e83517ee641db19249dbd5ea",
+      "width": 1600,
+      "height": 664,
+      "label": "Figure 4",
+      "kind": "方法框架图",
+      "reading_tip": "未来意图变成逐步视角权重，调节发生在动作生成侧；未来真值仅用于训练标签。",
+      "source_url": "https://arxiv.org/html/2610.31423v1#S3.F4",
+      "source_hash": "e5e1e4d5ec05d3f238565126f0f5e2b44953e81f6b595e601e2a1cbc718b66e3",
+      "fulltext_hash": "c1e4c6265b34ee23384e595068a40673cfe469c401a6385f59bd4321c3bd833b",
       "extraction": "original-figure",
       "figure_id": "S3.F4"
     },
@@ -3224,6 +3280,20 @@
       "fulltext_hash": "27680ecce4292e0074146c9170f503fb0ec19a10d3fb07a052b7c2e7685122e6",
       "extraction": "original-figure",
       "figure_id": "S2.F1"
+    },
+    "arxiv:2610.31569": {
+      "asset": "assets/figures/2610.31569-8791ec437a89.webp",
+      "sha256": "8791ec437a89995d0375b1c9c17306543d241cbb3a8747196126a8615590e8d8",
+      "width": 2024,
+      "height": 872,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿状态先去噪、动作后细化的路径阅读；失败动作不用于模仿，恢复示范才教纠正。",
+      "source_url": "https://arxiv.org/html/2610.31569v1#S3.F2",
+      "source_hash": "780e4629203ddf7d5212cfa5688957e56a00432d5b338e0c5db83381da5cabee",
+      "fulltext_hash": "f580355978250042e833c7245ba618f35265953258a79a8e10a223af3c6b5ec1",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     },
     "arxiv:2610.31574": {
       "asset": "assets/figures/2610.31574-eab534363ec8.webp",
@@ -3322,7 +3392,83 @@
       "fulltext_hash": "104e667bcde663e4d6272f03a02f35d4d9544a9642395a28561421253bf189fa",
       "extraction": "original-figure",
       "figure_id": "S3.F2"
+    },
+    "arxiv:2610.31734": {
+      "asset": "assets/figures/2610.31734-959fdec99e4b.webp",
+      "sha256": "959fdec99e4b323e99363816ffd8bf9a2d37264364eb76e149ac546a99e2c685",
+      "width": 768,
+      "height": 248,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先粗看十路，再选镜头，最后细看并解说；未播出视角先退出缓存。",
+      "source_url": "https://arxiv.org/html/2610.31734v1#S3.F2",
+      "source_hash": "55ace7892f976583248da86358a52884a60d5cfa29f1846c36c8e9b8a1491564",
+      "fulltext_hash": "68ea391ddfdb11b043a240a28948daa960aa8158e9a32621e58b4d91b71355f7",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.32250": {
+      "asset": "assets/figures/2610.32250-6e3681c40be4.webp",
+      "sha256": "6e3681c40be4bf234c05e692873bff6c3cff6af1ec6e883a32da3fa6489a2cbf",
+      "width": 1354,
+      "height": 594,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "两条支路分别生成完整资产和局部几何，再由对应点配准连接到同一场景坐标。",
+      "source_url": "https://arxiv.org/html/2610.32250v1#S1.F2",
+      "source_hash": "ea1962e4813d589ebe22438312b6bad23580c9a99e7488995b1e3f2c3e1f603d",
+      "fulltext_hash": "0833cfec9b1def576966f4539e93aab5c91ffbe7bfc6e207a2521f637481cfe9",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2"
+    },
+    "arxiv:2610.32800": {
+      "asset": "assets/figures/2610.32800-6954f63fc352.webp",
+      "sha256": "6954f63fc352bf5c6301bb808fad39f3b0c3c1f31ccefbd5e10d0865fe79543c",
+      "width": 992,
+      "height": 638,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "压缩先验说明失真类型，局部图说明位置；跨视角对应监督只在训练中使用。",
+      "source_url": "https://arxiv.org/html/2610.32800v1#S2.F2",
+      "source_hash": "93468eda32a80a28fadf4686d23be42591d9c10342bc92e2e707e67d99d9b679",
+      "fulltext_hash": "f2fdb30d29a08cdb6a9da6acde449031fb35d72ce4877d33a1353909f7287a25",
+      "extraction": "original-figure",
+      "figure_id": "S2.F2"
+    },
+    "arxiv:2610.32909": {
+      "asset": "assets/figures/2610.32909-aff24a3a9b22.webp",
+      "sha256": "aff24a3a9b22625c0e611001b9a99658fc6bc1e2f11b4aba7c282f20fb07bcb8",
+      "width": 1080,
+      "height": 710,
+      "label": "Figure 1",
+      "kind": "方法框架图",
+      "reading_tip": "三列依次是目标表示、模仿初始化和交互训练；蓝色组件冻结复用，七分钟不包含底层预训练。",
+      "source_url": "https://arxiv.org/pdf/2610.32909#page=1",
+      "source_hash": "6b839f4561bc4c9b9564b4b024c65b0be7adb6577757f86be2baae27152944fc",
+      "fulltext_hash": "b768737bc48c1b1ddd8e0f27b1abd96e719531afe381c850482c4ed21a7ac695",
+      "extraction": "pdf-crop",
+      "page": 1,
+      "crop": {
+        "left": 160,
+        "top": 875,
+        "width": 1080,
+        "height": 710
+      }
+    },
+    "arxiv:2610.32977": {
+      "asset": "assets/figures/2610.32977-858830bdbd20.webp",
+      "sha256": "858830bdbd20b32386974012c7ebd82ecf62b1f9ee097348828d768664ef5c5d",
+      "width": 2040,
+      "height": 638,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "从动作语义与时空坐标读到联合注意力；数量校准让条件强度不随词元数简单增加。",
+      "source_url": "https://arxiv.org/html/2610.32977v1#S3.F2",
+      "source_hash": "53e47b55af040cb5ba35e1a70488a1c8059ce17811f9cd5a1805b3d55c9bb2c5",
+      "fulltext_hash": "35d511f64edd2029d494fe4a6ddb8213df2e222fa9d958b6137f20615ffb64c3",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     }
   },
-  "revision": "4590cfa59c91c63a1276"
+  "revision": "508d917948cfff4572b9"
 }

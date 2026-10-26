@@ -1,0 +1,1422 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-27",
+  "target_date": "2026-10-26",
+  "window": {
+    "from": "2026-10-24",
+    "to": "2026-10-26",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-26T17:49:47.222Z",
+  "retrieved_at": "2026-10-26T17:22:18.997Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "count": 0,
+      "total": 0,
+      "error": null,
+      "coverage": "2026-10-24 至 2026-10-26（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-26",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-26"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-25",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-25"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-24",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-24"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 28,
+      "url": "https://huggingface.co/papers",
+      "date": "2026-10-26",
+      "retrieved_at": "2026-10-26T17:26:54.557Z",
+      "coverage": "日期页与 API 不可用；读取首页明确标注的 10 月 26 日榜单，核对 28 个条目链接并由 arXiv ID 接口补全元数据。部分覆盖，保留原论文提交时间，窗口依据社区发现日期。"
+    },
+    {
+      "source": "arXiv",
+      "status": "browser_assisted",
+      "count": 3,
+      "url": "https://arxiv.org/list/cs.CV/recent",
+      "date": "2026-10-26",
+      "retrieved_at": "2026-10-26T17:26:54.557Z",
+      "coverage": "网页明确列于 10 月 26 日公告的三个定向候选；公告日不同于提交日。提交日期接口返回零条不能表示公告无更新，本批非完整公告覆盖。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-10-26",
+      "retrieved_at": "2026-10-26T17:26:54.557Z",
+      "coverage": "公开文章列表要求登录；日期检索返回旧缓存，未验证到目标日原论文，公众号覆盖有缺口。"
+    }
+  ],
+  "candidates_count": 31,
+  "analysed_count": 12,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.32977",
+      "arxiv_id": "2610.32977",
+      "doi": "",
+      "title": "UniAction: Unified Action Conditioning for World Models",
+      "abstract": "Actions that condition world models are highly heterogeneous, and thus existing action-conditioned world models are typically built for individual action types, fragmenting already limited action-annotated data across separate models. We introduce UniAction, a unified action-conditioning framework that represents any action as a sparse set of action elements, each with a discrete semantic identity and a continuous spatiotemporal grounding coordinate. By mapping these coordinates directly into the pretrained video model's native positional space, UniAction allows heterogeneous actions to condition a shared world model within the same spatiotemporal structure. We further introduce cardinality-calibrated attention to address the bias from differing action representation granularities. We evaluate UniAction on four representative action forms: force, camera control, hand pose, and robot pose. UniAction outperforms conditioning alternatives in action following, and a single jointly trained model surpasses the action-specific experts, showing that heterogeneous action data benefit from unified model and joint training.",
+      "authors": [
+        "Bowen Xue",
+        "Zizhang Li",
+        "Hong-Xing Yu",
+        "Jiajun Wu"
+      ],
+      "url": "https://arxiv.org/abs/2610.32977",
+      "published": "2026-10-23T17:59:13Z",
+      "topics": [
+        "相机控制",
+        "视频生成",
+        "具身智能",
+        "世界模型",
+        "运动与运动控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.32977v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制",
+          "相机控制"
+        ],
+        "score": 90,
+        "title_zh": "UniAction：用统一动作词元控制视频中的力、相机、手和机器人",
+        "abstract_zh": "本文研究如何让视频生成模型通过统一接口接收异构动作条件。不同控制形式在语义、时空位置和数量上差异很大，分别设计条件分支难以共享动作知识。UniAction 将动作表示为带语义身份与时空坐标的稀疏元素，通过共享语义码本、视频原生的位置编码及数量校准注意力统一接入视频生成器。在力、相机、手部和机器人动作四类控制实验中，联合模型展现出跨形式知识共享与动作跟随能力。",
+        "introduction_zh": "同一个视频模型可能需要接收一个施力点、一段相机指令或大量手部关节点。这些输入不仅含义不同，数量和坐标体系也不同：直接拼接容易让数量多的条件压过数量少的条件，分别训练又无法共享经验。论文把问题归结为一个统一接口如何同时表达“是什么动作、作用在哪里、应占多少注意力”，并以四种控制形式检验这一接口。",
+        "method_takeaway": "把各种动作都写成“语义身份＋时空坐标”的词元，并校准词元总数对注意力的影响，让同一个视频模型接收不同控制方式。",
+        "framework_zh": "可以把 UniAction 想成给视频模型设计一种通用的动作语言。施力点、相机移动指令和手部关节虽然外观不同，都被拆成若干动作元素：一部分说明它是什么，另一部分说明它在什么时间、什么位置起作用。共享的离散码本负责语义，相同身份可以出现在不同位置与时间；新动作身份则需要增加相应词汇并学习，而不是天然获得零样本支持。\n\n关键在于让这套语言进入视频模型已经理解的坐标系。作者把动作坐标映射到视频潜变量的位置，用同一套三维旋转位置编码处理，再把动作词元接入原有自注意力。这样模型能够直接关联某个动作与附近的视频区域，而不必为每类动作再搭一套独立的跨注意力接口。对于没有天然空间位置的相机按键指令，方法使用预设位置，并由语义身份区分平移与旋转。\n\n还有一个容易忽视的问题：一只手可能给出很多条件词元，一次施力却只有少数几个。如果不处理，注意力的总量会随条件数量改变。作者在动作注意力分数上加入随词元数量变化的校正，让总关注量主要取决于内容，避免仅因表示得更密集就获得更多权重；动作词元之间的相对重要性仍由模型学习。\n\n训练基于 Wan2.2，为动作分支加入可学习适配参数，让四类控制共享视频骨干。推理时，首帧、文本和指定动作共同决定后续视频。论文中联合模型在四类动作跟随指标上优于相应单类专家，去掉数量校正尤其损害稀疏的力与相机控制。应记住的创新是统一条件进入模型的方式，而不是把四个现成控制器简单装在一起。",
+        "pipeline": "异构动作 → 共享语义与视频坐标编码 → 数量校准的联合注意力 → 条件视频",
+        "results": "在每种形式训练样本与次数匹配的联合/单类专家比较中，动作跟随分数分别为：力0.7630/0.5436、相机0.6371/0.5182、手0.4119/0.3701、机器人0.6521/0.6310。并非所有画质指标改善，例如相机任务LPIPS为0.4863，略差于专家0.4780。",
+        "limitations": "阅读判断：验证集中于四类动作与指定视频骨干；新增语义需要学习，不能据此宣称任意动作零样本通用。视频动作跟随不等于真实机器人闭环稳定，也没有据此证明实时流式生成。",
+        "reason": "直接研究运动和相机控制的统一机制，且有联合训练、位置编码与条件数量消融，符合重点关注方向。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "共享动作语义码本"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "原生时空位置与自注意力接口"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "动作数量校准"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "联合模型与专家比较"
+          }
+        ],
+        "fulltext_hash": "35d511f64edd2029d494fe4a6ddb8213df2e222fa9d958b6137f20615ffb64c3",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:38:26.461Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "共享动作语义码本",
+          "url": "https://arxiv.org/html/2610.32977v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "原生时空位置与自注意力接口",
+          "url": "https://arxiv.org/html/2610.32977v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "动作数量校准",
+          "url": "https://arxiv.org/html/2610.32977v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "联合模型与专家比较",
+          "url": "https://arxiv.org/html/2610.32977v1#S4.SS5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of UniAction. Diverse action forms are represented as sparse action elements: semantic identities index tokens in a shared codebook (Sec. 3.1), spatiotemporal positions use the backbone’s native positional encoding (Sec. 3.2), and action and video tokens interact via cardinality-calibrated attention (Sec. 3.3).",
+          "url": "https://arxiv.org/html/2610.32977v1/method.png",
+          "source_url": "https://arxiv.org/html/2610.32977v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.32909",
+      "arxiv_id": "2610.32909",
+      "doi": "",
+      "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
+      "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
+      "authors": [
+        "Xihan Ma",
+        "Bo Zhang",
+        "Boxiong Li",
+        "Yuhan Bao",
+        "Ziyue Liu",
+        "Yucheng Wang"
+      ],
+      "url": "https://arxiv.org/abs/2610.32909",
+      "published": "2026-10-23T17:11:28Z",
+      "topics": [
+        "运动与运动控制"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.32909v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "score": 83,
+        "title_zh": "HoloBoxing：复用全身运动能力，以分钟级增量训练学习拳击决策",
+        "abstract_zh": "人形拳击需要根据对手决定何时、何处行动，同时保持平衡。HoloBoxing 复用冻结的 HoloMotion v2 全身控制器，通过一个紧凑的目标解码器和反馈规划器学习拳击任务。方法先以实测机器人状态进行模仿初始化，再通过站立预热和交互强化学习调整上层决策。主要方案的记账训练时间约7分钟，包含此前完成的目标表示拟合；仿真对抗及组件移除实验评估其训练开销与行为。",
+        "introduction_zh": "会执行出拳动作，并不意味着知道什么时候对对手出拳。如果从关节指令开始同时学平衡、动作和战术，任务学习会非常复杂。本文把已有的全身运动控制当作可复用基础，只学习怎样提出有用的运动目标，并在进入奖励探索前用实际执行状态初始化规划器。研究重点是已有运动能力之上的任务适配成本。",
+        "method_takeaway": "冻结已经会运动的全身控制器，让小规划器只在一个紧凑动作空间里决定下一段身体目标，再用模仿初始化减少强化学习的探索负担。",
+        "framework_zh": "理解 HoloBoxing 最重要的是分清“决定怎么打”和“把身体动起来”。后者交给预训练的 HoloMotion v2，它接收身体目标与机器人反馈，输出关节控制；拳击训练期间这部分始终冻结。新学习的上层规划器只根据当前自身状态和对手位置，选择下一段运动目标。\n\n这些目标原本包含多个身体点在未来多个时刻的位置和朝向，直接预测需要225个数。作者先用参考动作学习一个目标表示，把它压缩为32维，再训练解码器把紧凑表示还原成身体目标。随后冻结解码器，上层规划器只需选择32维动作。这相当于把探索限制在有结构的运动请求空间中，但并不保证所有解码结果都物理可执行，所以论文也检查实际跟踪表现。\n\n规划器并不是随机初始化后直接上场。冻结控制器先跟踪参考动作，收集实际机器人状态与未来目标的配对；规划器通过冻结解码器学习这些配对。这里未来参考姿态只是训练标签，部署时输入仍是当前可测状态。梯度可以穿过解码器来训练规划器，却不更新解码器本身。采用实际执行状态，而非理想参考状态，有助于让训练输入接近控制器真正遇到的反馈。\n\n最后通过站立预热和与固定站立对手的交互强化学习，调整接近、朝向、接触与平衡等任务决策。只有上层任务相关网络继续学习，原有运动接口不变。因此“七分钟”的意义是已有能力之上的快速适配：它不包含底层控制器预训练，也不是从零获得拳击能力。仿真联赛和匹配交互预算的组件对照支持这一组合方案，但不能把每个组件单独解释为已证明的训练加速原因。",
+        "pipeline": "实测状态与对手位置 → 上层紧凑运动请求 → 冻结目标解码器 → 冻结全身控制器执行",
+        "results": "主要方案记账422.2秒，其中新进程375秒、此前目标表示拟合47.2秒。六策略、150场仿真联赛中7分钟版排名第二，21.4分钟版第一；7分钟版对GGSD为7胜3负，对RoboStriker为4胜6负，后者有效接触数4:85，需结合接触与摔倒看待胜负。",
+        "limitations": "作者明确：仅仿真、主要任务训练仅一个种子；时间排除控制器及固定对手预训练、数据准备和搜索。部分胜场来自对手自行摔倒；联赛模型的状态表示与历史输入不同，不能视为完全受控的方法优劣比较。",
+        "reason": "运动控制的层级复用方案清楚，且主动披露分钟级训练的成本边界，值得理解其上层适配机制。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "压缩目标与冻结解码器"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "实测状态模仿初始化"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "交互训练仅调整任务决策"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "训练时间边界"
+          },
+          {
+            "section": "S5.SS4",
+            "claim": "仿真联赛结果"
+          },
+          {
+            "section": "S6.SS0.SSS0.Px4",
+            "claim": "局限"
+          }
+        ],
+        "fulltext_hash": "b768737bc48c1b1ddd8e0f27b1abd96e719531afe381c850482c4ed21a7ac695",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:38:26.469Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 93,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "压缩目标与冻结解码器",
+          "url": "https://arxiv.org/html/2610.32909v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "实测状态模仿初始化",
+          "url": "https://arxiv.org/html/2610.32909v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "交互训练仅调整任务决策",
+          "url": "https://arxiv.org/html/2610.32909v1#S3.SS3"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "训练时间边界",
+          "url": "https://arxiv.org/html/2610.32909v1#S5.SS2"
+        },
+        {
+          "section": "S5.SS4",
+          "claim": "仿真联赛结果",
+          "url": "https://arxiv.org/html/2610.32909v1#S5.SS4"
+        },
+        {
+          "section": "S6.SS0.SSS0.Px4",
+          "claim": "局限",
+          "url": "https://arxiv.org/html/2610.32909v1#S6.SS0.SSS0.Px4"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.31569",
+      "arxiv_id": "2610.31569",
+      "doi": "",
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "abstract": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions. However, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored. We present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions. Their combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties. To enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction. Extensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance.",
+      "authors": [
+        "Yufeng Liu",
+        "Bohao Fan",
+        "Juntu Zhao",
+        "Xinyi Wang",
+        "Hang Yu",
+        "Wenzhuan Luo",
+        "Yingzhi Wang",
+        "Qinghai Li",
+        "Yingdong Hu",
+        "Junliang Guo",
+        "Richard Wang",
+        "Dequan Wang",
+        "Yang Gao",
+        "Cheng Ma"
+      ],
+      "url": "https://arxiv.org/abs/2610.31569",
+      "published": "2026-10-22T17:12:16Z",
+      "topics": [
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31569v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 88,
+        "title_zh": "Echo：先去噪任务状态，再用更清晰的状态指导机器人动作",
+        "abstract_zh": "识别完成与失败可帮助机器人及时停止或启动恢复，但已有方法可能依赖逐帧标注、外部监控或复杂结构。Echo 在动作块中增加停止和失败两种信号，与机器人动作共同去噪。它利用成功、失败及恢复轨迹构造互补监督，无需逐帧进度标注；通过控制信号与动作的交互并更快地去噪状态，让后续动作更新利用更干净的状态估计。真实操作实验显示，方法能较准确预测任务状态，并改善策略表现。",
+        "introduction_zh": "机器人插花失败时，仅报告“失败”并不够，还应据此改变接下来的动作；成功后则应停止。Echo 把状态判断直接放进动作生成过程，同时区分“是否该停”和“是否失败”，以表达仍可恢复的失败。它的贡献是让状态成为生成动作的条件，而不只是附加的监控输出。",
+        "method_takeaway": "把停止与失败信号和动作一起生成，但让状态先变清晰，使后续动作去噪能根据“继续、恢复还是结束”调整行为。",
+        "framework_zh": "Echo 的核心是让机器人一边形成动作，一边判断这段执行意味着什么。它在每个动作块上增加停止信号和失败信号：停止低表示继续，停止高且失败低表示成功结束，两者都高表示终止性失败；停止低但失败高则表示还可以恢复。两个量合起来，避免把“出现问题”和“必须结束”混为一谈。\n\n这些状态不靠逐帧人工打分获得。作者收集成功示范、终止失败、人工接管前的失败片段和接管后的恢复示范，利用片段边界及恢复进度构造监督。失败片段用于教模型识别问题，但其中的错误动作不参与模仿；恢复示范才提供怎样纠正的动作。对边界不能确定是否应停止的位置，方法不强加停止标签，以免把一次局部修正结束误认为整个任务结束。\n\n状态和动作进入同一 Transformer，但各有自己的特征变换。动作可以读取两种状态，两种状态也能读取动作；停止与失败之间禁止直接注意力，防止它们互相抄答案而丢失不同含义。真正使状态发挥指导作用的是异步去噪：作者观察到状态比精细动作更早收敛，于是让状态沿更快的去噪日程提前到达干净端点，并在后续步骤保持不变，动作则继续细化。训练时也使用相应的不同噪声水平。\n\n以插入动作受阻为示意，模型若判断“还没结束但发生失败”，后续动作就能利用这个清晰信号和视觉反馈，生成恢复示范里学到的回撤等修正。恢复动作并非由一个手写开关直接规定，而是由条件生成模型学习。消融中阻断动作对状态的读取会明显降低任务表现，说明收益不仅来自多了一个状态显示器。",
+        "pipeline": "观测与指令 → 动作及两种状态联合去噪 → 状态先固定并指导动作 → 执行、恢复或停止",
+        "results": "五项真实任务、每模型每任务30次试验中，Echo均改善动作基线的0–10任务完成得分；插花由5.67升至8.33，插笔6.87升至8.60，开抽屉5.40升至7.90。插花消融阻断动作读取状态后得分降至5.00；这类得分不能直接当作成功率。",
+        "limitations": "阅读判断：仍需要失败样本、人工接管与恢复示范，并非无标注学习；片段边界监督并不精确标注真实失败发生时刻。主要组件消融集中在插花任务，不能保证所有异常都会被识别或自动恢复。",
+        "reason": "把失败监测转化为动作生成条件，训练与推理机制可直接借鉴到具身策略。",
+        "evidence": [
+          {
+            "section": "S3.SS2.SSS2",
+            "claim": "边界监督与失败动作排除"
+          },
+          {
+            "section": "S3.SS2.SSS3",
+            "claim": "受控注意力及异步去噪"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "真实任务得分"
+          },
+          {
+            "section": "S4.SS4.SSS2",
+            "claim": "组件消融"
+          }
+        ],
+        "fulltext_hash": "f580355978250042e833c7245ba618f35265953258a79a8e10a223af3c6b5ec1",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:38:26.473Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 88,
+      "evidence": [
+        {
+          "section": "S3.SS2.SSS2",
+          "claim": "边界监督与失败动作排除",
+          "url": "https://arxiv.org/html/2610.31569v1#S3.SS2.SSS2"
+        },
+        {
+          "section": "S3.SS2.SSS3",
+          "claim": "受控注意力及异步去噪",
+          "url": "https://arxiv.org/html/2610.31569v1#S3.SS2.SSS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "真实任务得分",
+          "url": "https://arxiv.org/html/2610.31569v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS4.SSS2",
+          "claim": "组件消融",
+          "url": "https://arxiv.org/html/2610.31569v1#S4.SS4.SSS2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of Echo. Four data types provide complementary action and signal supervision, with failed actions excluded from imitation. Stop (SS) and failure (FS) signals are appended to action chunks, with padding-based target construction illustrated on the left. The attention mask couples actions with both signals while blocking direct SS–FS interactions. Asynchronous denoising provides cleaner signals to guide subsequent action updates.",
+          "url": "https://arxiv.org/html/2610.31569v1/fig_overview_pdf.png",
+          "source_url": "https://arxiv.org/html/2610.31569v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.32250",
+      "arxiv_id": "2610.32250",
+      "doi": "",
+      "title": "Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction",
+      "abstract": "Single-image 3D scene construction is a fundamental problem in 3D vision. Recent methods such as SAM-3Dfy enable end-to-end reconstruction of 3D assets and their scene layouts, but still struggle with fine-grained scene geometry and asset quality. Meanwhile, specialized 3D object generators provide detailed object geometry, while 3D foundation models offer strong and generalizable spatial understanding. We propose Easy-3Dfy, a compositional workflow that decouples object generation from scene layout estimation, allowing specialized models to fully exploit their respective strengths. An RPF-based aligner then bridges these capabilities by establishing geometric correspondence between object-local meshes and partial scene pointmaps, recovering object layout for scene composition. Without requiring complete scene-level supervision, the proposed workflow consistently outperforms SAM-3Dfy across multiple geometric metrics on Scene-Maker and 3D-FUTURE200. Our results demonstrate that explicit geometric composition can effectively combine high-quality object generation with strong spatial understanding, while enabling the workflow to benefit independently from advances in both 3D object generation and foundation models.",
+      "authors": [
+        "Ziang Zhang",
+        "Wenyou Yi",
+        "Zehan Wang",
+        "Jiachen Xu",
+        "Xintong Han",
+        "Chunchao Guo",
+        "Zhou Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2610.32250",
+      "published": "2026-10-23T07:04:32Z",
+      "topics": [
+        "3D 重建"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.32250v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 86,
+        "title_zh": "Easy-3Dfy：把单图场景重建拆成物体生成与几何摆放",
+        "abstract_zh": "单图三维场景构建既需要高质量物体，也需要准确布局，现有端到端方法仍受细粒度几何与资产质量限制。Easy-3Dfy 将物体生成和场景布局估计分开，分别利用专用三维生成器和空间基础模型；再用基于RPF的对齐器建立局部网格与场景局部点图的几何对应，恢复物体布局。无需完整场景级监督，该方法在Scene-Maker和3D-FUTURE200的多项几何指标上优于SAM-3Dfy，并允许两类基础模型独立升级。",
+        "introduction_zh": "单张图里被遮挡的椅子既需要补出完整形状，又需要放到正确的位置。前者适合物体生成模型，后者适合场景几何估计；把两个能力硬塞进一个端到端系统未必最好。本文的核心是用显式的几何对应把它们接起来，让高质量资产与可靠布局可以分别改进。",
+        "method_takeaway": "先分别生成完整物体与场景点图，再把物体可见部分匹配到完整网格上，通过几何配准决定每件物体的位置、朝向和大小。",
+        "framework_zh": "Easy-3Dfy 可以理解为先准备模型零件，再按照片里的几何证据摆放。输入是一张图和各物体的分割掩码，掩码由上游提供。物体一侧先裁出图像，用图像编辑模型补全遮挡部分，再交给图生三维模型生成局部坐标下的完整网格；场景一侧则由单目空间模型预测每个像素对应的三维点及表面法线。\n\n难点不在于得到两份结果，而在于两者不在同一个坐标系。作者用掩码从场景点图中提取某件物体的可见表面，同时从完整网格采样锚点。RPF对齐器根据两边的坐标和法线，预测每个可见点在完整网格坐标中的对应位置。比如照片里可见的车灯，需要匹配到生成汽车上的车灯区域。这里刻意不依赖颜色和纹理，因为生成资产的外观与照片可能不同。\n\n有了这些对应点，就可以通过标准的点集拟合求出一个包含统一缩放、旋转和平移的变换，再把它施加到完整网格上。这样隐藏部分也随同可见部分被放入场景。模型学习的是对应关系，最终摆放由明确的几何变换完成，避免把布局完全隐含在生成器内部。\n\n对齐器的训练也只需单物体资产：渲染出RGB和深度，用实际单目模型产生不完美的局部点图，再用渲染深度提供真实对应点，加入遮挡及独立坐标变换。流匹配网络学习从噪声恢复对应位置，不需要完整场景的三维标注。最有说服力的比较固定了SAM-3Dfy生成的同一批网格，只替换布局方法，因而布局提升不能被误解为物体生成器本身变强。",
+        "pipeline": "图像与掩码 → 完整物体网格及场景局部点图 → 几何对应与相似变换拟合 → 场景组装",
+        "results": "固定相同SAM-3Dfy物体网格时，Scene-Maker的场景F-Score由0.615升至0.649，BBox IoU由0.366升至0.399；3D-FUTURE200分别由0.820升至0.836、0.517升至0.554。此对照的物体级指标相同，主要隔离布局收益。",
+        "limitations": "作者指出小物体、严重遮挡、掩码污染、反光透明表面的不可靠点图会使配准欠约束。输入依赖上游掩码；几何指标不充分反映材质、语义身份和场景完整性，精细纹理也不保证更准确布局。",
+        "reason": "将生成和重建通过可解释的几何接口连接，且同网格对照明确区分布局贡献与资产质量。",
+        "evidence": [
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "纯几何对应预测"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px3",
+            "claim": "相似变换与场景组装"
+          },
+          {
+            "section": "S3.SS4.SSS0.Px2",
+            "claim": "物体级监督构造"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "同网格结果"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "配准失败条件"
+          }
+        ],
+        "fulltext_hash": "0833cfec9b1def576966f4539e93aab5c91ffbe7bfc6e207a2521f637481cfe9",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:42:32.197Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 86,
+      "evidence": [
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "纯几何对应预测",
+          "url": "https://arxiv.org/html/2610.32250v1#S3.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px3",
+          "claim": "相似变换与场景组装",
+          "url": "https://arxiv.org/html/2610.32250v1#S3.SS3.SSS0.Px3"
+        },
+        {
+          "section": "S3.SS4.SSS0.Px2",
+          "claim": "物体级监督构造",
+          "url": "https://arxiv.org/html/2610.32250v1#S3.SS4.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "同网格结果",
+          "url": "https://arxiv.org/html/2610.32250v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "配准失败条件",
+          "url": "https://arxiv.org/html/2610.32250v1#S5.SS1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F2",
+          "caption": "Figure 2: Overview of Easy-3Dfy. Given object masks, a spatial model predicts a scene pointmap. For each object, an image editor produces a completed object image and a replaceable image-to-3D provider generates a local mesh. The RPF-based aligner matches its anchor point cloud to the object-specific partial query extracted from the pointmap, predicts correspondence positions, and recovers a uniform-scale similarity transform via Umeyama fitting. Transforming all complete meshes assembles the final scene.",
+          "url": "https://arxiv.org/html/2610.32250v1/framework.png",
+          "source_url": "https://arxiv.org/html/2610.32250v1#S1.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31162",
+      "arxiv_id": "2610.31162",
+      "doi": "",
+      "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+      "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
+      "authors": [
+        "Zecong Tang",
+        "Zian Guan",
+        "Yuncheng Guo",
+        "Zhanqiu Zhang",
+        "Yiwen Guo",
+        "Bo Dai"
+      ],
+      "url": "https://arxiv.org/abs/2610.31162",
+      "published": "2026-10-22T12:17:45Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31162v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "HiSTEVE：让规划、交接和记忆围绕已验证的执行结果协作",
+        "abstract_zh": "在Minecraft等开放世界中，智能体既要长期自主规划，也要可靠使用原生键鼠。HiSTEVE 将具备能力约束的调度框架与层级VLA结合：高层利用结构化记忆选择底层能够执行的子任务，策略耦合的完成检测器提供候选交接信号，单一VLA通过视觉与键鼠执行。模型用交互类型专属归一化和独立鼠标词元减少GUI与非GUI干扰，并经过知识注入、模仿和环境反馈强化学习。MineStudio平均85.0%，OpenHA平均37.4%，并能完成从零制作铁镐等长程任务。",
+        "introduction_zh": "长任务失败未必只是某个动作不准，也可能是系统误以为已经完成一步，把错误状态写进记忆后继续规划。HiSTEVE 将规划限制在底层策略已具备的能力内，并把“暂停控制、请求检查”和“确认任务完成”分开，让长期记忆以经过视觉核验的状态变化为基础。",
+        "method_takeaway": "完成检测器只请求交接，高层再用视觉证据核实结果并更新记忆，从而避免一次错误判断沿长任务不断累积。",
+        "framework_zh": "HiSTEVE 的主线是让长任务中的每次交接都可靠。以制作工具为例，高层不能只列出一个固定计划然后假定各步成功，而要依据当前画面、已确认的资源和失败记录，选择底层VLA真正会执行的下一项子任务。任务接口规定适用条件、可观察的完成条件和执行预算，但不是可以直接调用的脚本技能；执行仍由同一个VLA根据第一人称图像输出键鼠动作。\n\n执行过程中，一个读取近期画面及VLA内部策略上下文的检测器估计子任务是否可能完成。连续达到阈值或执行预算用尽时，控制权返回高层。这里最关键的区别是，检测器只发出“值得检查”的信号，不直接宣布成功。调度框架再核对当前及近期视觉证据，判定成功、失败或暂时无法确认；能局部恢复就重试，否则依据更新状态重新规划。\n\n记忆也遵循同一原则。系统保存当前目标和已确认进度、每次调用的结果、成功执行中得到的可复用依赖关系，以及视觉推断的世界位置关系。它不把完整轨迹无差别塞进上下文，也不把未经核验的中间猜测当作事实。这样长程能力来自对已有局部能力的组织，而不只是增加规划文本。\n\n底层另有一个实际问题：同样移动鼠标，在普通画面中是转动视角，在物品栏里却是移动光标。作者用不同鼠标词元和交互类型专属归一化参数分开这两种语义，其余骨干仍共享。训练依次加入世界知识、动作模仿和环境反馈强化学习；环境信息用于训练奖励和分支比较，部署执行仍以视觉和原生键鼠为接口。这个层次区分让读者能够看清哪些收益来自控制器，哪些来自交接和记忆机制。",
+        "pipeline": "目标与已验证记忆 → 能力约束的子任务 → 视觉键鼠执行及候选交接 → 视觉核验、恢复与记忆更新",
+        "results": "MineStudio四类严格pass@1平均85.0%，对照OpenHA Text/CoA为65.0%；OpenHA宏平均37.4%对36.8%，GUI和战斗仍略低于该对照。LongBench资源制作/探索记忆/恢复/开放任务成功率为42.9%/28.6%/14.3%/14.3%。",
+        "limitations": "作者指出原子任务接口仍手工定义，新能力需要数据与策略更新；系统尚不在部署中持续更新模型参数，高层依赖所用VLM。长程恢复及开放任务成功率仍低，不能据例子称为普遍自主生存能力。",
+        "reason": "把长期智能体的问题收敛到能力约束、可靠交接和验证后记忆，适合迁移到其他交互系统。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "能力约束规划"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "候选交接与核验分离"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "结构化记忆"
+          },
+          {
+            "section": "S4.SS1.SSS0.Px1",
+            "claim": "交互类型归一化"
+          },
+          {
+            "section": "S5",
+            "claim": "策略耦合检测器"
+          },
+          {
+            "section": "S6.SS2",
+            "claim": "基准结果"
+          },
+          {
+            "section": "S15",
+            "claim": "系统局限"
+          }
+        ],
+        "fulltext_hash": "0201624ffcb2220915ac47ab54b45eacd705537c79073bbf16348ec685760943",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:42:32.210Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "能力约束规划",
+          "url": "https://arxiv.org/html/2610.31162v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "候选交接与核验分离",
+          "url": "https://arxiv.org/html/2610.31162v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "结构化记忆",
+          "url": "https://arxiv.org/html/2610.31162v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1.SSS0.Px1",
+          "claim": "交互类型归一化",
+          "url": "https://arxiv.org/html/2610.31162v1#S4.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S5",
+          "claim": "策略耦合检测器",
+          "url": "https://arxiv.org/html/2610.31162v1#S5"
+        },
+        {
+          "section": "S6.SS2",
+          "claim": "基准结果",
+          "url": "https://arxiv.org/html/2610.31162v1#S6.SS2"
+        },
+        {
+          "section": "S15",
+          "claim": "系统局限",
+          "url": "https://arxiv.org/html/2610.31162v1#S15"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F1",
+          "caption": "Figure 1: System overview of HiSTEVE, illustrating the agent harness mechanism.",
+          "url": "https://arxiv.org/html/2610.31162v1/Harness_cropped.png",
+          "source_url": "https://arxiv.org/html/2610.31162v1#S3.F1"
+        },
+        {
+          "id": "S4.F2",
+          "caption": "Figure 2: Architecture of the VLA policy model and task completion state detector.",
+          "url": "https://arxiv.org/html/2610.31162v1/VLA+Detector_cropped.png",
+          "source_url": "https://arxiv.org/html/2610.31162v1#S4.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31423",
+      "arxiv_id": "2610.31423",
+      "doi": "",
+      "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+      "abstract": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation. Since reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity. The policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework. FocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization. On RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline $π_{0.5}$ by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over $π_{0.5}$. Moreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures.",
+      "authors": [
+        "Huixin Xu",
+        "Ziya Yu",
+        "Peng Li"
+      ],
+      "url": "https://arxiv.org/abs/2610.31423",
+      "published": "2026-10-22T15:25:02Z",
+      "topics": [
+        "多模态",
+        "具身智能",
+        "3D 重建"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31423v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "FocusVLA：预测下一步操作意图，动态决定动作该看全局还是腕部视角",
+        "abstract_zh": "多视角为机器人操作提供互补空间信息，但现有VLA可能持续依赖腕部局部视角，不能随任务阶段调整全局与局部信息。FocusVLA 根据多模态上下文和动作历史预测未来交互意图，并在动作生成侧动态调节不同视角的贡献。在RoboTwin 2.0上平均成功率较最强基线提高10.10个百分点，真实任务由71.7%提高至85.0%。该意图预测和路由机制可接入已有VLA而不修改其核心视觉架构。",
+        "introduction_zh": "找物体或搬运时需要全局位置，靠近接触时又需要局部细节。把两个相机画面同时送入模型，并不保证模型能适时利用它们。作者用注意力分析与遮挡干预发现基线存在持久的局部视角依赖，因而把“接下来要做什么”作为分配视觉信息的依据。",
+        "method_takeaway": "先预测未来每一步偏向大范围移动还是局部接触，再在动作生成侧按这个意图融合全局和腕部视觉信息。",
+        "framework_zh": "FocusVLA 把多视角利用问题变成一个动作需求问题。可以想象夹取后搬运再放置：移动途中需要知道物体与目标区的整体关系，接近放置时则需要看清末端与接触位置。固定融合两路画面容易延续一种视角偏好，因此作者让模型先预测即将生成的动作块中，各步更需要哪类视觉证据。\n\n预测器读取当前视觉与语言特征、机器人状态和短期动作历史，输出每一步偏向局部交互的概率。训练标签由示范轨迹自动构造：例如夹爪闭合前的短区间可作为交互线索，速度及位移结构用于识别其他交互片段。这些只是弱监督，不是真实任务阶段的完美标注。未来轨迹仅用于训练标签，推理时概率完全由当前信息与历史预测。\n\n概率随后转成有界的全局/局部权重，始终保留两路互补信息。与直接修改视觉编码器不同，动作网络先分别查询两路视觉特征，得到与当前动作步相关的上下文，再按预测权重加权，并以残差形式反馈给动作特征。整段意图还作为条件影响动作生成。于是调整发生在“这个动作需要怎样的信息”这一层，而不是给整段视频指定一个永远占优的相机。\n\n训练同时优化动作生成与意图预测，先预热意图分支，再联合训练；部署时不需要人工给出阶段。这样保留了预训练视觉骨干的基础能力，同时让未来不同动作步拥有不同的观察侧重。论文的收益应理解为视角信息利用更灵活，而非相机运动控制或新的三维感知模型。",
+        "pipeline": "当前多视角与动作历史 → 未来交互意图 → 逐步融合两路动作上下文 → 动作块",
+        "results": "RoboTwin 2.0共50任务、每任务100次：成功率76.92%，基线π0.5为66.82%。Piper机械臂六任务、每项30次：85.0%，较π0.5提高13.3个百分点。",
+        "limitations": "作者提出跨机器人、不同相机配置及复杂环境仍需扩展。阅读判断：轨迹构造的二类意图较粗，不能等同于完整子目标规划；相机路由也不等于生成视频的运镜控制，因此不加相机控制偏好分。",
+        "reason": "意图到视觉路由的因果链清楚，有全量仿真与真实机器人验证，适合关注VLA的信息选择机制。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "视角依赖诊断"
+          },
+          {
+            "section": "S3.SS2.SSS1",
+            "claim": "意图预测与弱标签"
+          },
+          {
+            "section": "S3.SS2.SSS2",
+            "claim": "动作侧动态路由"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "仿真结果"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "实机结果"
+          },
+          {
+            "section": "S6",
+            "claim": "拓展边界"
+          }
+        ],
+        "fulltext_hash": "c1e4c6265b34ee23384e595068a40673cfe469c401a6385f59bd4321c3bd833b",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:38:26.478Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "视角依赖诊断",
+          "url": "https://arxiv.org/html/2610.31423v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS1",
+          "claim": "意图预测与弱标签",
+          "url": "https://arxiv.org/html/2610.31423v1#S3.SS2.SSS1"
+        },
+        {
+          "section": "S3.SS2.SSS2",
+          "claim": "动作侧动态路由",
+          "url": "https://arxiv.org/html/2610.31423v1#S3.SS2.SSS2"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "仿真结果",
+          "url": "https://arxiv.org/html/2610.31423v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "实机结果",
+          "url": "https://arxiv.org/html/2610.31423v1#S4.SS2"
+        },
+        {
+          "section": "S6",
+          "claim": "拓展边界",
+          "url": "https://arxiv.org/html/2610.31423v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of FocusVLA. Static multi-view fusion can cause view-dependency inertia, making the policy rely on a fixed view across task stages. FocusVLA predicts future action intent from multimodal observations and action history, and uses it to guide dynamic view routing during action generation, improving multi-view utilization in both simulation and real-world tasks.",
+          "url": "https://arxiv.org/html/2610.31423v1/overview.png",
+          "source_url": "https://arxiv.org/html/2610.31423v1#S0.F1"
+        },
+        {
+          "id": "S3.F4",
+          "caption": "Figure 4: Architecture of FocusVLA. Given multi-view observations, language instructions, robot states, and action history, FocusVLA predicts future action intent and uses it to guide action-side dynamic view routing for adaptive multi-view feature modulation.",
+          "url": "https://arxiv.org/html/2610.31423v1/methods.png",
+          "source_url": "https://arxiv.org/html/2610.31423v1#S3.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.27782",
+      "arxiv_id": "2610.27782",
+      "doi": "",
+      "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
+      "abstract": "Video generation models are promising foundations for embodied world models, but only if their generated rollouts are physically valid and faithful to task instructions. Multimodal large language models (MLLMs) are increasingly used to judge these properties, yet their agreement with human judgments on embodied videos has not been systematically evaluated. To address this gap, we introduce RoboJudge-Bench, a benchmark for evaluating MLLMs as judges of embodied video generation. The benchmark measures two fundamental dimensions, Physical Adherence and Instruction Alignment, across 800 human-annotated videos from 8 source corpora and 10 video generators, spanning grippers, human hands, and dexterous hands. Experiments reveal uneven alignment between existing judges and human ratings: general-purpose MLLMs show lower agreement on physical adherence, while specialized video judges designed for general-domain physical reasoning do not consistently transfer to embodied scenarios. Motivated by these findings, we construct RoboJudge-Train, comprising 12K videos annotated with 25K human-verified scores and model-assisted rationales for Physical Adherence and Instruction Alignment. We fine-tune a 9B MLLM on this dataset with supervised learning followed by reinforcement learning, yielding RoboJudge-9B. Among the model judges evaluated on RoboJudge-Bench, RoboJudge-9B achieves the highest overall agreement, reaching a Pearson correlation of 0.719 with a statistically significant 0.089 gain over Gemini-3.7-Flash, the best-performing proprietary baseline in our evaluation. Training on RoboJudge-Train also yields gains on external benchmarks, including VideoPhy2 and Physion-Eval. We further use RoboJudge-9B as a downstream evaluator to benchmark video generation models according to Physical Adherence and Instruction Alignment.",
+      "authors": [
+        "Siyuan Ma",
+        "Yu Qi",
+        "Cheng Ye",
+        "Ruotian Peng",
+        "Xinyi Xu",
+        "Zitiantao Lin",
+        "Zedong Cai",
+        "Yijian Huang",
+        "Weiyang Liu",
+        "Siyuan Wang",
+        "Yandong Wen"
+      ],
+      "url": "https://arxiv.org/abs/2610.27782",
+      "published": "2026-10-20T07:48:41Z",
+      "topics": [
+        "视频生成",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.27782v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 85,
+        "title_zh": "RoboJudge：把物理可信与任务完成分开，校准具身视频评审模型",
+        "abstract_zh": "生成视频要成为具身世界模型的基础，需要物理合理并忠实执行指令，但多模态模型作为评审与人类判断的一致性尚缺系统检验。RoboJudge-Bench 用800个人工标注视频、8个来源与10个生成器，分别评估物理遵循和指令对齐，覆盖夹爪、人手和灵巧手。作者进一步构建约1.2万视频、约2.5万人工核验评分及模型辅助理由的训练集，先监督微调再强化学习得到RoboJudge-9B。其总体Pearson相关达到0.719，比论文最强闭源对照高0.089，并在外部基准呈现迁移收益。",
+        "introduction_zh": "一个视频可能动作完全做错却很符合物理，也可能看似完成指令却出现物体消失或多出一只手。单一“好不好”分数容易混淆这两类问题。RoboJudge 首先评测评审者与人的一致性，再用分维度且经人工核验的数据训练评审模型，服务于具身生成视频的可靠评价。",
+        "method_takeaway": "把“过程是否物理可信”和“是否完成指定任务”拆成两条评分轴，用人工核验的证据和分数教评审模型分别判断。",
+        "framework_zh": "RoboJudge 先改变评价问题的组织方式。物理遵循不依赖指令，检查执行者是否稳定、物体场景是否连续、接触和运动是否合理；指令对齐则结合文字与首帧，检查谁在行动、是否作用于正确物体、最终目标是否真正达到。这样“合理地做错事”与“靠不合理变化完成目标”会得到不同的两组分数，而不被一个平均印象掩盖。\n\n测试集的用途是评审评审者。作者从不同操作来源和生成器选择800个视频，经过标注者训练、独立复核和专家裁决形成参考评分，再比较模型分数与这些人工分数的一致性。测试集中人的判断不是自动模型投票产生的，因此能够揭示通用大模型或一般物理视频评审迁移到具身操作时的不足。\n\n训练集另用不重合的源片段扩展到12,351个视频。闭源模型先提供候选分数，由人审核修改并给出简短依据，再由模型把人工依据整理成推理文本。每个视频对应两条评分轴的监督。RoboJudge-9B 先从基础模型进行监督微调，学习带证据的评价模式，再用GRPO强化学习；后者的奖励很具体，只有预测分数与参考分数完全一致才得分。它没有直接训练视频生成器，也不在这里执行机器人动作。\n\n评测同时看相关系数、逐项精确一致率和均方误差，避免一个始终偏高的评分器仅凭排序相关性显得可靠。实验显示大部分收益来自任务专属监督，强化学习带来较小的进一步改善。最值得记住的是将两种质量分开并以人工判断校准；模型评审仍是可用但会错的测量工具，不能把高相关系数当作物理正确性的保证。",
+        "pipeline": "视频与指令 → 两轴人工核验评分及证据 → 监督微调与精确分数奖励 → 具身视频评审",
+        "results": "RoboJudge-9B总体Pearson相关0.719，最强闭源对照0.630；物理轴0.645，指令轴0.775。基础9B、SFT、SFT+RL的总体相关依次0.401/0.700/0.719；最终逐项精确一致率47.3%，不是71.9%的准确率。",
+        "limitations": "阅读判断：结果取决于特定操作视频分布和人工评价规范，不能证明所有物理过程正确。训练理由含模型辅助整理；800测试视频覆盖有限。相关性、准确率和真实机器人可执行性是不同概念，不能混用。",
+        "reason": "适合世界模型和具身视频生成研究者建立更清楚的评测标准，同时提供可训练评审器与人工一致性证据。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "两条评分轴及细则"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "测试标注与裁决"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "训练数据及去泄漏"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "SFT与精确分数RL"
+          },
+          {
+            "section": "S5.SS3",
+            "claim": "相关性与精确一致率"
+          },
+          {
+            "section": "S5.SS4",
+            "claim": "训练阶段消融"
+          }
+        ],
+        "fulltext_hash": "478cd0e2fa39ae8851f879f1c0090bdc9676738a8d7ffd5d9dfba93a8bf8eace",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:45:11.368Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 85,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "两条评分轴及细则",
+          "url": "https://arxiv.org/html/2610.27782v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "测试标注与裁决",
+          "url": "https://arxiv.org/html/2610.27782v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "训练数据及去泄漏",
+          "url": "https://arxiv.org/html/2610.27782v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "SFT与精确分数RL",
+          "url": "https://arxiv.org/html/2610.27782v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS3",
+          "claim": "相关性与精确一致率",
+          "url": "https://arxiv.org/html/2610.27782v1#S5.SS3"
+        },
+        {
+          "section": "S5.SS4",
+          "claim": "训练阶段消融",
+          "url": "https://arxiv.org/html/2610.27782v1#S5.SS4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of RoboJudge. (A) We propose RoboJudge-Bench, which evaluates MLLMs as judges of embodied videos. (B) Physical Adherence and Instruction Alignment serve as the two core evaluation dimensions for embodied judge models. (C) We benchmark 29 existing model judges, (D) and construct RoboJudge-Train, a 12K-video dataset for judge training, and fine-tune RoboJudge-9B, which achieves the strongest overall agreement among model judges.",
+          "url": "https://arxiv.org/html/2610.27782v1/overview.png",
+          "source_url": "https://arxiv.org/html/2610.27782v1#S0.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.31734",
+      "arxiv_id": "2610.31734",
+      "doi": "",
+      "title": "DirCast: Live Esports Directing and Commentary with a Single Streaming Video-Language Model",
+      "abstract": "A live esports broadcast needs a director who chooses which camera goes on air and a caster who talks over that choice, every second and without knowing what comes next. Streaming video language models have learned to commentate, but only over a broadcast that a human director has already produced. We study live broadcast production, in which a model receives the raw camera of every player and must both direct and commentate from the past alone. We present DirCast, a single streaming video language model that does both. Every second it scans all cameras at low resolution, decides with a hold-or-switch director whether and where to cut, and reads the chosen camera at high resolution before it speaks. Its context keeps what went on air and what was said and lets the other views expire, which bounds the cost of a stream of any length. We build a dataset of 27 professional Dota 2 matches with a camera for every hero, the human director's choices and the casters' commentary. DirCast directs better than rule-based and zero-shot directors including GPT-5, and its commentary wins 29.2 percent of comparisons against GPT-4o under the Proact-VL protocol, against 19.4 percent for the strongest of eleven streaming commentators that watch the human broadcast.",
+      "authors": [
+        "Zixian Gao",
+        "Lixin Xiu",
+        "Penghao Luo",
+        "Xiangcheng Cao",
+        "Ziqi Cai",
+        "Zhen Li",
+        "Erwin Wu",
+        "Kaipeng Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2610.31734",
+      "published": "2026-10-22T16:09:57Z",
+      "topics": [
+        "流式生成",
+        "大模型"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.31734v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 84,
+        "title_zh": "DirCast：同一个流式模型先导播，再根据播出画面解说",
+        "abstract_zh": "直播电竞需要每秒决定播出哪个视角并进行解说，且不能知道未来。已有流式视频语言模型多只解说人类已经选好的画面。DirCast 接收所有玩家的原始视角，每秒先以低分辨率扫描全部相机，决定保持或切换，再高分辨率读取选中画面并生成解说。上下文保留播出内容和已说内容，让其他视角过期，并以窗口限制长期成本。作者构建27场专业Dota 2比赛数据；模型在导播上优于规则与零样本对照，解说对GPT-4o的比较胜率为29.2%，高于最强基线19.4%。",
+        "introduction_zh": "导播决定观众看什么，解说应围绕已经播出的内容展开；把两者分开会使语言与画面脱节。本文把它们放进同一个因果序列，既研究如何从多路输入决定播出内容，也研究长直播中应保留什么历史。它处理实时视频理解与节目制作，不生成新的场景像素。",
+        "method_takeaway": "每秒先粗看所有视角、决定是否切镜，再细看播出视角生成解说，并只长期保留节目相关历史以控制上下文成本。",
+        "framework_zh": "DirCast 将一次直播决策拆成有先后关系的观察过程。每秒输入游戏时间、事件、十路低分辨率画面及各英雄状态，随后生成导播决策；选中的画面再以高分辨率进入上下文，最后才决定是否说话及说什么。解说因此能够直接依赖自己的导播选择，而不是同时独立猜测应该描述哪件事。游戏状态和事件也是输入，所以它并非只看原始像素的系统。\n\n导播也不是每秒重新从十路画面中硬选一个。作者先用一个门控判断是否离开当前镜头，只有需要切换时才用指针给其他视角排序。保持镜头成为默认行为，减少分类分数轻微波动导致的闪切。推理时还根据近期切镜和说话频率调整阈值，使节奏接近训练集中人类导播与解说的统计规律。\n\n长流的关键是有选择地遗忘。未播出的低分辨率视图只保留短窗口；播出画面、事件和已说文本保留更久，构成模型自己的节目记忆。但这些内容也不会无限累计，超过训练片段长度的旧条目最终同样退出缓存。训练用注意力掩码模拟这个规则，实际流式运行则移除过期的键值缓存，从而限制持续运行的成本。\n\n训练还处理人类节目与模型自身节目之间的差异：让输入视角短时偏离人工选择，学习从选错镜头的状态恢复；同时在击杀事件附近接受击杀者或受害者视角，承认同一时刻可能有多个合理镜头。理解本工作的重点是一个模型如何把选择、观察、记忆和语言串起来。这里的相机操作是已有视频源之间的切换，并不是视频生成模型中的三维运镜控制。",
+        "pipeline": "多路低分辨率画面与事件 → 保持或切换 → 高分辨率读取播出画面 → 解说与有限节目记忆",
+        "results": "测试中导播Top-1为26.95，最强规则对照25.43；击杀覆盖89.1%，切镜6.7次/分钟，人类7.9。按Proact-VL协议、GPT-5评审的解说对GPT-4o胜率29.21%，最强基线19.38%；并非全部指标最优，团战覆盖低于行动规则。",
+        "limitations": "阅读判断：数据集中于27场专业Dota 2比赛，依赖游戏状态和事件，跨游戏及仅视频输入泛化未由此建立。与人类导播一致并非唯一质量标准，解说指标含模型评审偏好；不能将它称作实时视频合成。",
+        "reason": "对有限缓存、多路视角选择和语言输出耦合有参考价值；属于流式多模态理解，不添加流式视频生成权重。",
+        "evidence": [
+          {
+            "section": "S4.SS1",
+            "claim": "先导播后解说的因果序列"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "保持或切换门控"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "分层历史保留与最终窗口截断"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "游戏状态输入"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "扰动节目与事件标签"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px1",
+            "claim": "导播结果"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px2",
+            "claim": "解说结果"
+          }
+        ],
+        "fulltext_hash": "68ea391ddfdb11b043a240a28948daa960aa8158e9a32621e58b4d91b71355f7",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:45:11.363Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 84,
+      "evidence": [
+        {
+          "section": "S4.SS1",
+          "claim": "先导播后解说的因果序列",
+          "url": "https://arxiv.org/html/2610.31734v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "保持或切换门控",
+          "url": "https://arxiv.org/html/2610.31734v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "分层历史保留与最终窗口截断",
+          "url": "https://arxiv.org/html/2610.31734v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "游戏状态输入",
+          "url": "https://arxiv.org/html/2610.31734v1#S4.SS4"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "扰动节目与事件标签",
+          "url": "https://arxiv.org/html/2610.31734v1#S4.SS5"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px1",
+          "claim": "导播结果",
+          "url": "https://arxiv.org/html/2610.31734v1#S5.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px2",
+          "claim": "解说结果",
+          "url": "https://arxiv.org/html/2610.31734v1#S5.SS2.SSS0.Px2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Framework. Each second a low-res ViT encodes the ten feeds with their state, the director holds or cuts, the chosen feed is read at high resolution, and the commentator speaks. Low-res views expire while the program stays.",
+          "url": "https://arxiv.org/html/2610.31734v1/framework_v3.png",
+          "source_url": "https://arxiv.org/html/2610.31734v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.32800",
+      "arxiv_id": "2610.32800",
+      "doi": "",
+      "title": "CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction",
+      "abstract": "Real-world 3D reconstruction pipelines often rely on multi-view images degraded by lossy compression. While compression artifacts have been extensively studied in single-image or video restoration, their impact on multi-view geometry remains largely overlooked. In this work, we identify compression-induced cross-view geometric inconsistency as a critical failure mode, where view-dependent artifacts disrupt feature matching, dense correspondence, camera parameter estimation, and downstream 3D reconstruction tasks such as novel view synthesis. To address this problem, we propose CompMVR, a compression-aware multi-view diffusion restoration framework that jointly refines compressed views while preserving cross-view consistency, and construct compressed datasets for systematic evaluation. Unlike conventional restoration methods that optimize each image independently for 2D perceptual quality, CompMVR leverages learned compression priors and cross-view correspondence to recover visual details while improving geometric reliability across views. Experiments across diverse datasets, codecs, and compression levels demonstrate gains in restoration quality and downstream 3D tasks, including novel-view synthesis, camera pose estimation, and view matching. These results establish compressed multi-view restoration as a distinct problem and highlight its importance for 3D reconstruction under lossy compression. Code and data for this paper are available at https://mchaewon.github.io/CompMVR-project-page/.",
+      "authors": [
+        "Dong-hwi Kim",
+        "Chaewon Moon",
+        "Hojun Song",
+        "Dongbeom Kim",
+        "Junyeong Jang",
+        "Aro Kim",
+        "Gahyeon Kim",
+        "Heejung Choi",
+        "Jehee Kim",
+        "Gianella Cravioto",
+        "Sohyun Lee",
+        "Gyeongjin Choi",
+        "EunHye Jeong",
+        "Soo Ye Kim",
+        "Jaehyup Lee",
+        "Sang-hyo Park"
+      ],
+      "url": "https://arxiv.org/abs/2610.32800",
+      "published": "2026-10-23T15:40:18Z",
+      "topics": [
+        "相机控制",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.32800v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 84,
+        "title_zh": "CompMVR：修复压缩图像时，同时恢复跨视角几何一致性",
+        "abstract_zh": "现实三维重建常使用有损压缩的多视角图像，而压缩对跨视角几何的影响尚未得到充分关注。本文指出不同视角的压缩伪影会破坏特征匹配、稠密对应、相机估计及后续重建。CompMVR 通过压缩感知的多视角扩散恢复，结合编码先验和跨视角对应，同时恢复细节与几何可靠性，并构造压缩数据进行系统评测。跨数据集、编码器与压缩程度的实验显示，方法改善恢复质量以及新视角合成、相机位姿和匹配等任务。",
+        "introduction_zh": "三维重建需要不同照片中的同一物体仍能互相匹配。单图去伪影即使让每张照片看起来更清晰，也可能各自补出不同纹理，反而损害几何。CompMVR 把目标从独立照片的观感转向整组输入的几何可用性，并显式考虑压缩失真在位置和视角之间的差异。",
+        "method_takeaway": "让多张压缩视图一起恢复，并用训练时的可靠三维对应约束细节，避免每个视角各自生成看似清晰却互不一致的内容。",
+        "framework_zh": "CompMVR 的出发点是：给三维系统修照片，必须考虑照片之间的关系。压缩会以不同方式破坏边缘和纹理，而单图生成式恢复又可能分别补出不同细节。作者因此让扩散恢复模型一次联合处理多张视图，实际实现使用四张，并同时告诉模型失真是什么、集中在哪里，以及哪些位置在不同视角中应当对应。\n\n前两类信息由压缩先验与空间伪影估计提供。先验学习全局编码特征；轻量网络则直接从压缩输入估计局部失真分布，将其作为空间条件送入恢复网络。这样模型不会把整张图片当作退化程度完全相同的区域。干净参考图及真实残差只在训练中提供监督，推理时这些线索都从压缩输入本身估计。\n\n跨视角一致性有两条互补路径。联合注意力让不同视图的特征互相交流；更关键的是训练时利用VGGT从高质量参考图预测三维坐标，经过置信度和几何筛选，建立同一场景点的跨视图对应。恢复后的一个视图位置要与另一视图对应的真实颜色一致，而不是只满足本视图的感知损失。不可靠对应会被降权，避免错误匹配反过来损害恢复。\n\n推理不需要再次运行用于监督的VGGT，也不需要干净图；它保留的是联合恢复过程中学到的几何约束。作者从零初始化跨视角三维模块，避免直接套用偏向相邻时间帧连续性的权重。最终评测将恢复图实际送入匹配、相机估计和高斯重建，检验“修得好看”是否真的转化为“重建可用”。这仍是有计算开销的扩散恢复，不是免费的预处理。",
+        "pipeline": "多视角压缩图 → 全局压缩先验与局部伪影线索 → 几何监督下的联合扩散恢复 → 三维重建",
+        "results": "Free数据集、HEVC QP42条件下，用恢复视图进行3D Gaussian Splatting，新视角PSNR由压缩输入22.96升至24.49，SSIM由0.687升至0.718；未压缩参考仍为28.30/0.885，说明恢复未消除全部损失。",
+        "limitations": "作者指出额外显存和计算开销、尚非完全前馈；未测试的三维下游任务仍需验证。不同编码器伪影结构不同，跨编码器泛化仍有限；生成出合理但不准确细节的风险并未消失。",
+        "reason": "把扩散恢复与三维几何可靠性直接连接，训练监督与推理输入的边界清楚。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "压缩先验学习"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px1",
+            "claim": "局部伪影条件及新视角结果表"
+          },
+          {
+            "section": "S3.SS2.SSS1.Px1",
+            "claim": "VGGT仅用于训练对应监督"
+          },
+          {
+            "section": "S3.SS2.SSS1.Px2",
+            "claim": "联合视图注意力"
+          },
+          {
+            "section": "S5.SS0.SSS0.Px1",
+            "claim": "计算与泛化局限"
+          }
+        ],
+        "fulltext_hash": "f2fdb30d29a08cdb6a9da6acde449031fb35d72ce4877d33a1353909f7287a25",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:42:32.206Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 84,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "压缩先验学习",
+          "url": "https://arxiv.org/html/2610.32800v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px1",
+          "claim": "局部伪影条件及新视角结果表",
+          "url": "https://arxiv.org/html/2610.32800v1#S3.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS1.Px1",
+          "claim": "VGGT仅用于训练对应监督",
+          "url": "https://arxiv.org/html/2610.32800v1#S3.SS2.SSS1.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS1.Px2",
+          "claim": "联合视图注意力",
+          "url": "https://arxiv.org/html/2610.32800v1#S3.SS2.SSS1.Px2"
+        },
+        {
+          "section": "S5.SS0.SSS0.Px1",
+          "claim": "计算与泛化局限",
+          "url": "https://arxiv.org/html/2610.32800v1#S5.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2. Overview of our proposed CompMVR. (a) In Stage 1, we learn a compression-aware latent representation by training a compression prior embedder. The latent is optimized through image reconstruction and supervision of coding parameters (codec type and QP). (b) In Stage 2, we perform multi-view restoration using a diffusion model conditioned on the learned compression prior. The latent is injected via cross-attention and fused with the UNet input, while a compression artifact estimator (CAE) predicts spatially varying residual maps for degradation-aware restoration. To enforce cross-view geometric consistency, we further apply a cross-view correspondence loss during training.",
+          "url": "https://arxiv.org/html/2610.32800v1/main_framework_final.png",
+          "source_url": "https://arxiv.org/html/2610.32800v1#S2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.27103",
+      "arxiv_id": "2610.27103",
+      "doi": "",
+      "title": "Omni-Woodpecker: Hallucination Correction via Evidence-Prior Rebalancing for Omni LLMs",
+      "abstract": "Recent Omni LLMs (OLLMs) have demonstrated remarkable capabilities in joint audio-visual reasoning, yet cross-modal hallucinations remain a major challenge. Existing mitigation methods mainly operate at the output level, overlooking the entanglement of grounding evidence and learned priors within fused representations. To address this issue, we propose Omni-Woodpecker (OWP), a training-free framework that shifts hallucination mitigation from output-level manipulation to conflict-conditioned representation rebalancing. Specifically, OWP first identifies cross-modal conflicts from complementary modality-specific views. It then employs orthogonal decomposition to separate grounding evidence from competing priors within the hidden states. Finally, OWP adaptively rebalances fused representations by suppressing misleading priors and restoring ignored evidence before decoding. Extensive experiments demonstrate the effectiveness and strong cross-architecture generalization of OWP. Using Qwen2.5-Omni-7B as the backbone, OWP improves performance by 12.9 and 8.6 points on CMM and AVHBench, respectively, while consistently achieving gains of 0.67-2.25 points across four general OLLM reasoning benchmarks. Furthermore, OWP generalizes effectively to VideoLLaMA2-AV, improving performance by 4.6 and 3.9 points on the same benchmarks. Code is publicly available at https://github.com/ZiiJianLiu/Omni-Woodpecker",
+      "authors": [
+        "Zijian Liu",
+        "Chaoyou Fu",
+        "Yan Yang",
+        "Caifeng Shan",
+        "Ran He"
+      ],
+      "url": "https://arxiv.org/abs/2610.27103",
+      "published": "2026-10-19T18:01:40Z",
+      "topics": [
+        "具身智能"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-26"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.27103v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "priority_topics": [],
+        "score": 83,
+        "title_zh": "Omni-Woodpecker：在融合表征中保护真实证据、压低跨模态干扰",
+        "abstract_zh": "全模态大模型的联合音视频推理仍面临跨模态幻觉。已有方法多在输出层修正，忽略融合表征中感知证据与先验的纠缠。Omni-Woodpecker 无需训练，先通过不同模态输入诊断冲突，再用正交分解区分应保护的证据与竞争成分，在解码前抑制误导先验并恢复被忽略的证据。Qwen2.5-Omni-7B在CMM和AVHBench上分别提高12.9和8.6个百分点，通用推理基准也有改善，并能迁移到VideoLLaMA2-AV。",
+        "introduction_zh": "听到鸡鸣不代表画面里一定有鸡，而看不到说话者也不代表没有语音。跨模态幻觉的一种来源是模型确实编码了相关证据，却在融合时被另一模态或语言常识压过。本文不重新训练感知能力，而是诊断这种冲突，再直接修正模型内部的证据竞争关系。",
+        "method_takeaway": "比较完整输入与单模态输入，找出融合时被压制的证据方向，再在模型内部恢复它并削弱与之竞争的成分。",
+        "framework_zh": "可以用“画面里是否有正在叫的公鸡”来理解 OWP：音频可能支持鸡鸣，却不能替代视觉证据回答公鸡是否出现。方法先判断问题需要哪种模态，再比较完整音视频、仅音频、仅视频和仅文本这几种输入下的同一冻结模型。若目标模态与完整输入答案一致，就不做纠正；若不一致，还要检查另一个来源是否既支持完整答案，又在注意力中占优势，才把它认定为竞争线索。诊断不确定时也会跳过编辑。\n\n接下来不是把另一模态整块删掉，因为其中仍可能有用。作者先减去仅文本分支的共享语言成分，以目标模态为锚构造应保留的证据方向，并谨慎加入其他分支中支持同一答案的部分。融合带来的变化再被分解为沿证据方向的部分和与之正交的竞争部分，同时测量完整表征缺少了多少目标证据。这里的“证据”是模型内部对比得到的估计，不是外部真值。\n\n纠正有两个位置：在信息汇合前，调整选定注意力头传来的内容；在已经融合的隐藏状态中，削弱竞争方向并补回证据缺口。两者共享一份纠正预算，按当前冲突程度分配，避免无差别叠加干预。编辑后的状态写回原层，语言输出头和解码规则保持不变，因此改的是产生答案前的表征，而不是事后把答案替换掉。\n\n这一机制适合“模型单独看某模态时其实知道，但合起来答错”的情形。如果目标模态自身也感知错误，就没有可靠证据可恢复。无需训练也不代表没有成本：冲突诊断和编辑需要额外前向计算，还必须能够访问模型内部，不能直接套在只开放问答接口的闭源模型上。",
+        "pipeline": "多输入视图诊断冲突 → 分离证据与竞争方向 → 自适应编辑注意力及隐藏状态 → 原解码器输出",
+        "results": "论文报告Qwen2.5-Omni-7B在CMM/AVHBench提高12.9/8.6个百分点；迁移到VideoLLaMA2-AV时准确率76.2→80.8、70.2→74.1。RTX A6000测试平均延迟约为原骨干1.71倍和1.77倍，每输入最多5次前向。",
+        "limitations": "作者明确仅针对跨模态证据被覆盖这一类幻觉；无法修复骨干本身缺乏的感知能力。需要开放内部状态，且增加推理开销；定量评分主要使用有限答案探针，自由长文本效果不能直接由此推出。",
+        "reason": "无需训练的内部表征干预有清晰的触发条件与能力边界，可借鉴到音视频多模态可靠性研究。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "输入视图对比"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px1",
+            "claim": "证据方向校准"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "正交竞争方向与缺口"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "两种干预位置的预算分配"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px5",
+            "claim": "迁移结果"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px7",
+            "claim": "推理成本"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "局限"
+          }
+        ],
+        "fulltext_hash": "8dd240ce1b17ab4e4d93943a417967a6d2ceb05db7a5d0d779f4b8eefcfdacc2",
+        "method_style": "core-idea-v1",
+        "analysed_at": "2026-10-26T17:45:11.354Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "输入视图对比",
+          "url": "https://arxiv.org/html/2610.27103v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px1",
+          "claim": "证据方向校准",
+          "url": "https://arxiv.org/html/2610.27103v1#S3.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "正交竞争方向与缺口",
+          "url": "https://arxiv.org/html/2610.27103v1#S3.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "两种干预位置的预算分配",
+          "url": "https://arxiv.org/html/2610.27103v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px5",
+          "claim": "迁移结果",
+          "url": "https://arxiv.org/html/2610.27103v1#S4.SS2.SSS0.Px5"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px7",
+          "claim": "推理成本",
+          "url": "https://arxiv.org/html/2610.27103v1#S4.SS2.SSS0.Px7"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "局限",
+          "url": "https://arxiv.org/html/2610.27103v1#S5.SS1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Fig. 2: Overview of Omni-Woodpecker (OWP). Given a query and an audio-visual input, OWP runs four views of a frozen model to find the target modality and the competing cue. It then splits token–head responses into protected evidence, competing prior, and unchanged context. Finally, it divides one correction budget between path reweighting and residual-state restoration and writes the edited state back to the same layer. Valid context is kept, and the cue that causes the hallucination is suppressed.",
+          "url": "https://arxiv.org/html/2610.27103v1#S3.F2",
+          "source_url": "https://arxiv.org/html/2610.27103v1#S3.F2"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.31162",
+      "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+      "decision": "include",
+      "reason": "把长期智能体的问题收敛到能力约束、可靠交接和验证后记忆，适合迁移到其他交互系统。"
+    },
+    {
+      "key": "arxiv:2610.31734",
+      "title": "DirCast: Live Esports Directing and Commentary with a Single Streaming Video-Language Model",
+      "decision": "include",
+      "reason": "对有限缓存、多路视角选择和语言输出耦合有参考价值；属于流式多模态理解，不添加流式视频生成权重。"
+    },
+    {
+      "key": "arxiv:2610.32977",
+      "title": "UniAction: Unified Action Conditioning for World Models",
+      "decision": "include",
+      "reason": "直接研究运动和相机控制的统一机制，且有联合训练、位置编码与条件数量消融，符合重点关注方向。"
+    },
+    {
+      "key": "arxiv:2610.32800",
+      "title": "CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction",
+      "decision": "include",
+      "reason": "把扩散恢复与三维几何可靠性直接连接，训练监督与推理输入的边界清楚。"
+    },
+    {
+      "key": "arxiv:2610.32965",
+      "title": "RynnUnify: Towards Unified Embodied Brain",
+      "decision": "exclude",
+      "reason": "本次取得的HTML仅覆盖至数据章节，缺少完整训练与实验段落，暂缓推荐；不能依据Introduction中的结果替代全文核验。"
+    },
+    {
+      "key": "arxiv:2610.31423",
+      "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+      "decision": "include",
+      "reason": "意图到视觉路由的因果链清楚，有全量仿真与真实机器人验证，适合关注VLA的信息选择机制。"
+    },
+    {
+      "key": "arxiv:2610.27782",
+      "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
+      "decision": "include",
+      "reason": "适合世界模型和具身视频生成研究者建立更清楚的评测标准，同时提供可训练评审器与人工一致性证据。"
+    },
+    {
+      "key": "arxiv:2610.32770",
+      "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.29552",
+      "title": "Generalized CycleGRPO for Fine-Grained Multimodal Understanding and Grounding",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31066",
+      "title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31569",
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "decision": "include",
+      "reason": "把失败监测转化为动作生成条件，训练与推理机制可直接借鉴到具身策略。"
+    },
+    {
+      "key": "arxiv:2610.27103",
+      "title": "Omni-Woodpecker: Hallucination Correction via Evidence-Prior Rebalancing for Omni LLMs",
+      "decision": "include",
+      "reason": "无需训练的内部表征干预有清晰的触发条件与能力边界，可借鉴到音视频多模态可靠性研究。"
+    },
+    {
+      "key": "arxiv:2610.32250",
+      "title": "Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction",
+      "decision": "include",
+      "reason": "将生成和重建通过可解释的几何接口连接，且同网格对照明确区分布局贡献与资产质量。"
+    },
+    {
+      "key": "arxiv:2610.32909",
+      "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
+      "decision": "include",
+      "reason": "运动控制的层级复用方案清楚，且主动披露分钟级训练的成本边界，值得理解其上层适配机制。"
+    },
+    {
+      "key": "arxiv:2610.32894",
+      "title": "LoCA: Enabling Multi-Modality in Geospatial Location Encoders",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.01352",
+      "title": "MMVistaReason: Toward Open-Data and Post-Training Recipes for Multimodal Reasoning",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.32978",
+      "title": "SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning",
+      "decision": "exclude",
+      "reason": "本次原文HTML返回404，尚无足够正文证据，保留候选。"
+    },
+    {
+      "key": "arxiv:2610.23234",
+      "title": "MultiAgent-OPD: End-to-End Training of Hierarchical Multi-Agent Systems with On-Policy Distillation",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30932",
+      "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31931",
+      "title": "Every Weight Is a Path of Shared Discrete Decisions",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.24481",
+      "title": "DuoLM: Fast and Effective Personalized Recommendation with Language Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31810",
+      "title": "PaperFormalizer: Author-in-the-Loop Autoformalization of Research Papers in Lean",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.14465",
+      "title": "Co-adaptive Rule Routing and Constraining for Structured Knowledge Retrieval",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31668",
+      "title": "Reading, Writing, Sharing, and Interacting with the World through Video",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.17821",
+      "title": "FLOMSS: Generative Music Source Separation by Flow Matching",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.30006",
+      "title": "Building Auditable AI Text Detectors with Sparse Autoencoders",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31819",
+      "title": "Speculative Diffusion is a Tale of Two Tradeoffs",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.31716",
+      "title": "Does LeWorldModel Preserve Local Action Geometry?",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.32253",
+      "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.32002",
+      "title": "DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.14253",
+      "title": "SliderEdit++: Improved Slider Trajectories in Instruction-Based Image Editing",
+      "decision": "pending",
+      "reason": "尚未分析"
+    }
+  ],
+  "digest_id": "f79cbc0b53a136534f52"
+}
