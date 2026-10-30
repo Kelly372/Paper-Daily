@@ -3608,7 +3608,91 @@
       "fulltext_hash": "ab593303d371fbca22c7dd645c1e9b7115babc84dd1eaa3a38fd7abc2d4ec833",
       "extraction": "original-figure",
       "figure_id": "S3.F3"
+    },
+    "arxiv:2610.36624": {
+      "asset": "assets/figures/2610.36624-de48f685d114.webp",
+      "sha256": "de48f685d1149fd6edbaf6ee64b6d4c0069237d3245ced7a4f36c12c9d0542c8",
+      "width": 1654,
+      "height": 804,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "对比动态区域与静态区域的噪声强度；训练让背景作上下文、让手和目标物成为重点预测内容。",
+      "source_url": "https://arxiv.org/html/2610.36624v1#S2.F2",
+      "source_hash": "a686c763bd54c4dacc35d337ab3f8032d5404fa5cb038ac319e0bfc3c551e681",
+      "fulltext_hash": "0e455a302e5786c52178a9461680cec4d5a89f4a26eb5700ffc89f650a14599c",
+      "extraction": "original-figure",
+      "figure_id": "S2.F2"
+    },
+    "arxiv:2610.36694": {
+      "asset": "assets/figures/2610.36694-74cd277756aa.webp",
+      "sha256": "74cd277756aa9ce3a350011c69ac2013f8faea1e73d22eb93afa39fc4d4d135b",
+      "width": 1244,
+      "height": 799,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先由指令选择任务专属噪声源，再看OT扩张方向上的前慢后快路径；网络骨干保持不变。",
+      "source_url": "https://arxiv.org/html/2610.36694v1#S3.F2",
+      "source_hash": "cbcaf79fac6a0cb853ebec37accc91c4fe23788a9c97e3b4b963914addf5a250",
+      "fulltext_hash": "c679702e18264fede140d7fd5df99bcb6cbc77bbd203a12dabf2776cf32c4060",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.37330": {
+      "asset": "assets/figures/2610.37330-e9a40fdcbc11.webp",
+      "sha256": "e9a40fdcbc118285de1965f1ef262e8170f1e5f241b236e7b5f07e97cddbfc9a",
+      "width": 1448,
+      "height": 470,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看共享动作原语怎样从轨迹切分和因子化，再看目标机器人解码器如何在执行后重新观察并选择下一步。",
+      "source_url": "https://arxiv.org/html/2610.37330v1#S3.F2",
+      "source_hash": "2f5dfba5b4dd08464b9f834c4c24a18522dc885d22413b6fdffa3ab746a05a99",
+      "fulltext_hash": "710999c8931d3f60e678a67c88f66276d6cd1278836d24b86d846b79e1ff8578",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.37381": {
+      "asset": "assets/figures/2610.37381-7bed4a3b844f.webp",
+      "sha256": "7bed4a3b844fc41c8303252cd697f65053834225cdb731c6d3ded1e3c87d6f75",
+      "width": 2045,
+      "height": 1099,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "重点看物理词元如何与末层语义特征一同送入动作专家；未来视频预测是训练监督，不属于在线控制链路。",
+      "source_url": "https://arxiv.org/html/2610.37381v1#S3.F3",
+      "source_hash": "9a341a1cc2614156aa62b55581e1a5313ff6cf6b08640d80fc752a322da6d9f4",
+      "fulltext_hash": "25e625a7948295f6c1424f6a8c095e90d3a30267e1d629d9c16353a251caa82e",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.37566": {
+      "asset": "assets/figures/2610.37566-6e64dcb034f8.webp",
+      "sha256": "6e64dcb034f80ce6fafa5c0c782c0fa183c056580ffe134d0daf22862df07628",
+      "width": 2027,
+      "height": 1906,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "从参考图进入场景潜变量开始看，再跟踪临时写入和恢复全局缓存的过程；这是“新主体进场但旧场景不被长期覆盖”的关键。",
+      "source_url": "https://arxiv.org/html/2610.37566v1#S3.F2",
+      "source_hash": "4ae12057ea4f85d6e01b034256487f713882f0a5814575f2b5a97e4450e46f0b",
+      "fulltext_hash": "6e686cebfda72d5319f9ae4b853a7233d193453e016cd729625d3e5285c80d00",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.37666": {
+      "asset": "assets/figures/2610.37666-3ca28f6aea07.webp",
+      "sha256": "3ca28f6aea07a143aa5e76a2079215e5a0e32df56c282c7976c4e8ecda22e846",
+      "width": 1252,
+      "height": 709,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿SFT、未来世界想象和强化学习三阶段阅读；CoD动作链由其预测出的真实世界变化来校验。",
+      "source_url": "https://arxiv.org/html/2610.37666v1#S3.F2",
+      "source_hash": "9caddf336ff5a0d9f0de5fd211617e357be41872491c9ec0b1cb759c95eb8c90",
+      "fulltext_hash": "3958d99b0a7d95485cf3fdb3f1e289a425d94f974a16b6f302361004330d8a05",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     }
   },
-  "revision": "38cb935497714faa3771"
+  "revision": "a243ff353b5f16cc2d74"
 }

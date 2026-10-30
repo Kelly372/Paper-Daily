@@ -1,0 +1,1389 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-30",
+  "target_date": "2026-10-29",
+  "window": {
+    "from": "2026-10-27",
+    "to": "2026-10-29",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-30T01:37:59.781Z",
+  "retrieved_at": "2026-10-30T01:08:51.655Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "failed",
+      "count": 0,
+      "total": 0,
+      "error": "export.arxiv.org: HTTP 429",
+      "coverage": "2026-10-27 至 2026-10-29（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-29",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-29"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-28",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-28"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-27",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-27"
+    },
+    {
+      "source": "本地缓存",
+      "status": "cached_fallback",
+      "count": 461,
+      "cached_at": "2026-10-30T01:07:39.540Z",
+      "coverage": "接口失败或部分返回；仅补回窗口内缺失记录，缓存时间 2026-10-30T01:07:39.540Z"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 3,
+      "url": "https://huggingface.co/papers/date/2026-10-29",
+      "date": "2026-10-29",
+      "retrieved_at": "2026-10-30T01:20:53.504Z",
+      "coverage": "浏览器搜索命中并核对 3 篇 paper card（PDRVLA、ThinkWorld、RynnWorld-Latent）；按 arXiv ID 与原文记录对应。HF API 日期接口失败，故非全量覆盖。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-10-29",
+      "retrieved_at": "2026-10-30T01:29:22.596Z",
+      "coverage": "检查公开文章库和行业资讯日期列表，并按2026-10-29与机器人/视频生成方向搜索；未确认可追溯至本期原论文的相关报道，因此不导入候选。站点检索并非全量公众号覆盖。"
+    }
+  ],
+  "candidates_count": 461,
+  "analysed_count": 10,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.37566",
+      "arxiv_id": "2610.37566",
+      "doi": "",
+      "title": "ReferStream: Interactive Subject Injection for Streaming Video Generation",
+      "abstract": "Injecting new subjects naturally during streaming video generation requires integrating newly supplied visual references into the existing video while preserving established subjects and the scene. Encoding references independently of the current scene provides little guidance for this integration, while keeping their features in persistent memory can interfere with established context. We propose ReferStream, a framework that requires no additional training and combines reference construction using the current scene with transient cache injection. Joint Latent places reference latents in target regions of the latest scene latent, allowing reference features to be extracted in context. Cache Restoration uses these features to condition the injection chunk, then restores the overwritten global cache entries while retaining the newly generated history. This procedure incorporates new visual conditions without retraining the generator or revising emitted frames. We further introduce ReferStream Bench, a new benchmark with scheduled reference arrivals, evolving instructions, and explicit annotations of subject presence for InShot and MultiShot generation. Evaluation follows the event schedule and measures both the fidelity of new subjects and the preservation of established subjects, alongside video quality, text adherence, and count accuracy. Experiments on ReferStream Bench show higher scores for text adherence, subject similarity, and count accuracy than the compared baselines, including offline methods given all references in advance. Project page: https://xushuolin.github.io/ReferStream/.",
+      "authors": [
+        "Shuolin Xu",
+        "Guanyuan Li",
+        "Boyu Li",
+        "Kelu Yao",
+        "Xiaogang Xu",
+        "Hongchuan Yu",
+        "Shuicheng Yan",
+        "Xiaobin Hu"
+      ],
+      "url": "https://arxiv.org/abs/2610.37566",
+      "published": "2026-10-27T17:12:42Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "主体控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.37566v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 94,
+        "priority_topics": [
+          "流式生成",
+          "主体控制"
+        ],
+        "title_zh": "ReferStream：流式视频生成中的交互式主体注入",
+        "abstract_zh": "在流式视频生成过程中加入新主体，需要把后来提供的视觉参考融入既有场景，同时保留已建立的主体和背景。独立编码参考图难以提供与当前场景的关系信息，而将参考特征长期保留在缓存中又可能干扰已有上下文。本文提出无需额外训练的 ReferStream，结合利用当前场景构造参考特征的 Joint Latent 与暂态缓存注入的 Cache Restoration：前者把参考潜变量放入最新场景潜变量的目标区域以提取上下文相关特征；后者用这些特征调节注入片段，随后恢复被覆盖的全局缓存条目，同时保留新生成历史。该方法不重训生成器，也不修改已输出帧。作者还提出带有参考到达时间、指令变化及主体出现标注的 ReferStream Bench。实验显示其文本遵循、主体相似度和数量准确率优于对比方法，但视频质量表现并非所有指标最佳。",
+        "reason": "直接研究生成已经开始后才到达的视觉参考如何进入流式视频，并同时处理新主体引入与旧主体保留；核心机制和基准均对应流式生成、主体控制偏好。",
+        "introduction_zh": "流式生成把视频分块输出，用户可能在看过一段画面后才补充新主体的参考图。此时模型既要让新主体以指定外观和位置进入，又不能破坏已建立的场景，也不能回改用户已经看到的帧。独立编码参考图缺少场景关系，永久写入缓存又会让参考构图持续影响后续内容。论文把任务定义为因果生成中的交互式主体注入，并提出在场景上下文中构造参考特征、再限制其缓存影响时长的办法。",
+        "method_takeaway": "先把参考图放进当前场景潜变量中提取“带场景关系”的特征，再只让这些特征影响新主体进入的那一段，生成后恢复原有全局缓存。",
+        "framework_zh": "设想视频已经生成到大厅里有一把伞，用户这时才给出猫的照片，并要求猫从右侧进入。模型不能重画大厅或改掉已经输出的片段；它只需要让接下来的生成块知道猫长什么样、应该出现在哪里，同时让原来的伞和背景继续成立。ReferStream的关键是把“参考图长什么样”与“它要进入什么场景”一起编码。Joint Latent把最近的干净场景潜变量当作画布，将参考图的潜变量放到指定区域，再用冻结的视频扩散主干做一次干净前向计算，提取参考对象在该场景布局下对应的键值特征。它不是把参考图直接贴进输出帧，而是为生成提供位置和外观线索。\n\n接下来是影响持续时间的控制。模型先备份全局缓存里将被占用的槽位，再临时写入这些参考特征，让生成器完成猫进入的那个视频块。该块提交后，恢复原来的全局缓存，但保留新生成的局部历史。这样，参考特征能帮助“猫进场”，却不会长期霸占全局记忆、让后面每一帧都像参考照片的原始构图；新生成的画面历史则接着承担后续连续性。生成器参数保持冻结，已输出帧也始终不改。\n\n作者用InShot和MultiShot两类事件时间表评估：前者在同一镜头里加入主体，后者允许声明镜头切换；指标既衡量新主体是否像参考，也衡量旧主体是否保留，并单独统计视频质量、文本遵循和数量准确率。主要结果中，新主体相似度、既有主体保留和数量准确率表现突出；消融也显示保留旧主体可能以牺牲部分新主体相似度为代价。基准自动指标及单种子消融仍有限，因此应将结果理解为一种可控缓存策略的证据，而非所有视频质量指标都领先。",
+        "pipeline": "到达时刻的参考图与当前场景 → Joint Latent场景化编码 → 临时覆盖缓存并生成注入块 → 恢复全局缓存、保留生成历史",
+        "results": "ReferStream Bench等权案例结果中，GME-T为62.41、New-ID为52.86、Existing-ID为73.18、Count accuracy为82.33；相较LongLive，New-ID和Existing-ID分别提高12.87和30.89分，数量准确率提高8.43个百分点。美学质量为57.29，略低于VACE的57.57；运动平滑度最高的是HOMIE（99.53），故不能概括成所有画质指标均领先。",
+        "limitations": "作者指出视频质量结果混合；消融使用单个共同InShot集合和seed 0，且新主体相似度与既有主体保留存在权衡。自动主体评测仍需进一步验证，跨种子和更广泛设置的评测有待补充。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "提出生成中途到达参考的任务及已输出帧不可更改的要求"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "Joint Latent把参考特征放入场景目标区域；采用矩形潜变量区域而非前景分割"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "缓存槽位先备份、暂时注入，块提交后恢复全局缓存并保留新历史"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px1",
+            "claim": "主体相似、旧主体保留、计数与视频质量的主要结果及指标差异"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "两个组件消融及保留与新主体相似度的权衡"
+          },
+          {
+            "section": "S5",
+            "claim": "作者结论与自动指标、跨种子评测边界"
+          }
+        ],
+        "fulltext_hash": "6e686cebfda72d5319f9ae4b853a7233d193453e016cd729625d3e5285c80d00",
+        "analysed_at": "2026-10-30T01:28:10.637Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 104,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "提出生成中途到达参考的任务及已输出帧不可更改的要求",
+          "url": "https://arxiv.org/html/2610.37566v1#S1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "Joint Latent把参考特征放入场景目标区域；采用矩形潜变量区域而非前景分割",
+          "url": "https://arxiv.org/html/2610.37566v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "缓存槽位先备份、暂时注入，块提交后恢复全局缓存并保留新历史",
+          "url": "https://arxiv.org/html/2610.37566v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px1",
+          "claim": "主体相似、旧主体保留、计数与视频质量的主要结果及指标差异",
+          "url": "https://arxiv.org/html/2610.37566v1#S4.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "两个组件消融及保留与新主体相似度的权衡",
+          "url": "https://arxiv.org/html/2610.37566v1#S4.SS4"
+        },
+        {
+          "section": "S5",
+          "claim": "作者结论与自动指标、跨种子评测边界",
+          "url": "https://arxiv.org/html/2610.37566v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of ReferStream, illustrated for an InShot event. Top: reference B arrives after subject A is established and conditions the next chunk. Middle: (A) Joint Latent composes the reference with the latest scene latent; a clean DiT pass extracts RjR_{j}. (B) Cache Restoration saves global K/V, injects RjR_{j}, denoises and commits the event chunk, then restores the saved entries. Generated local history L′L^{\\prime} remains. S′S^{\\prime} denotes the shot sink after the update; S′=SS^{\\prime}=S when no refresh is scheduled for this chunk. Bottom: schematic cache access, not measured attention weights. The photographs illustrate a benchmark example; subsequent generation is schematic.",
+          "url": "https://arxiv.org/html/2610.37566v1/method_final.png",
+          "source_url": "https://arxiv.org/html/2610.37566v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.36624",
+      "arxiv_id": "2610.36624",
+      "doi": "",
+      "title": "Adapting Video Models for Robot Control via Motion-guided Asymmetric Prediction",
+      "abstract": "World Action Models (WAMs) leverage pretrained video generative models for robotic control by jointly predicting future visual observations and actions. The visual prediction objective plays a key role in adapting pretrained video representations to the target robot domain. Yet standard visual prediction inherited from video pretraining treats all visual regions uniformly, despite their differing relevance to robotic control. We therefore investigate the spatial allocation of visual supervision in WAMs and show that focusing supervision on dynamic regions can substantially improve policy performance. Building on this finding, we introduce Motion-Guided Asymmetric Prediction (MoGAP), which augments WAM training with motion-focused visual prediction. MoGAP allocates noise asymmetrically across regions, training the model to reconstruct more heavily corrupted dynamic regions using less corrupted static regions as context. MoGAP is trained alongside standard video-action prediction through a training-only auxiliary prediction path within the shared video diffusion backbone. It uses motion cues derived directly from training videos, requiring neither an external teacher nor additional modalities. Across robot manipulation benchmarks and WAM architectures, MoGAP consistently improves policy performance, increasing success rates on the GR-1 tabletop benchmark from 38.8% to 47.5% for Fast-WAM (Wan2.2-5B) and from 52.3% to 62.3% for Cosmos3-Nano.",
+      "authors": [
+        "Taeyoung Kim",
+        "Junyoung Sung",
+        "Heeseung Kwon",
+        "Minseop Kim",
+        "Jinwoo Shin"
+      ],
+      "url": "https://arxiv.org/abs/2610.36624",
+      "published": "2026-10-27T04:27:20Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.36624v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 93,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "用运动引导的不对称预测适配机器人控制视频模型",
+        "abstract_zh": "世界动作模型通过预训练视频生成模型联合预测未来视觉与动作，但常规视觉预测对所有空间区域一视同仁，未考虑哪些区域对机器人控制更重要。作者分析视觉监督的空间分配后发现，聚焦动态区域可明显改善策略表现。提出MoGAP，通过运动引导的不对称预测，让静态区域保留更多信息作为上下文，同时对动态区域施加更强噪声，训练模型从较干净的静态背景恢复更严重受扰的动态内容。该辅助预测路径与标准视频—动作预测共享视频扩散主干，仅用于训练；运动信号直接来自训练视频，不需要外部教师或额外模态。作者报告多个操作基准及WAM架构均有改进，Fast-WAM在GR-1桌面任务从38.8%提高到47.5%，Cosmos3-Nano从52.3%提高到62.3%。",
+        "reason": "不是泛泛提高视频画质，而是把视频预测监督集中到手、物体等控制相关动态区域，并在仿真与实机操作中验证策略收益，运动控制贡献明确。",
+        "introduction_zh": "WAM把视频生成模型接到机器人控制上，但通常训练它均匀预测整幅未来画面。桌面背景和机器人手部运动对策略的重要性不同：抓取时手指或目标物的细微位移可能很关键，静态背景则更多是上下文。论文先分析视觉监督如何影响动作，再提出让动态区域更难、静态区域相对更清晰的预测任务，使主干必须借助背景线索恢复操作相关变化。",
+        "method_takeaway": "把视频扩散的训练噪声按运动区域重新分配：让手和操作物体受到更强遮蔽、静态背景保持较清晰，逼模型把预测能力集中在控制真正依赖的动态上。",
+        "framework_zh": "普通视频预测的损失会把背景每个像素与手部、目标物的细小动作一并计算，但“看对桌面纹理”和“看准夹爪何时碰到杯子”对机器人并不等价。MoGAP先用相邻视频潜变量的变化估计运动分数，再把它阈值化为动态区域掩码；这个信号来自正在训练的视频，不需要外部光流教师。\n\n随后作者把扩散噪声视作逐步遮掉输入信息：静态区域沿原有噪声强度加噪，动态区域则在同一基础上增加噪声。模型要从相对完整的静态环境中推断更难恢复的动态区域。这样，“桌面和背景提供上下文，手与物体的动作是主要预测对象”就写进了训练任务本身，而不是仅在损失里把动态像素权重调大。MoGAP作为训练期辅助路径与标准视频—动作预测共享主干；推理时辅助预测token不再额外保留。\n\n在GR-1桌面抓放中，Cosmos3-Nano平均成功率由52.3%升至62.3%，提升在需要精细定位的抓放任务上更明显；作者也在OpenArm人形机器人上报告三类任务整体改善。论文的证据说明视觉监督分配能影响动作策略，但改进依赖所用运动分数与训练数据场景，不能据此断言所有视频模型或所有运动任务都会同样受益。",
+        "pipeline": "训练视频 → 潜变量差分生成运动掩码 → 动态区域加更强噪声、静态区作上下文 → 辅助训练控制型视频表征",
+        "results": "RoboCasa GR-1 Tabletop上Cosmos3基线平均成功率52.3%，加入MoGAP后62.3%；抓放子任务48.3%升至60.8%。另一Fast-WAM配置从38.8%升至47.5%。OpenArm实机任务组也报告相对基线持续改善；推理设置下16B Cosmos3-Nano单RTX 5090延迟48毫秒。",
+        "limitations": "对照支持的是指定WAM、数据和任务上的监督重分配；实机每种方法各训练一套策略，评估任务范围有限。运动掩码从潜变量差分获得，复杂相机运动或弱运动场景仍需检查定位可靠性。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "均匀视觉预测监督与机器人控制相关区域不匹配的问题"
+          },
+          {
+            "section": "S2.SS3",
+            "claim": "由视频时间步和潜变量运动掩码形成不对称噪声任务"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "GR-1任务基准与抓放结果"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "OpenArm实机任务组与低延迟设置"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "运动分数定位、AUROC与背景抑制分析"
+          },
+          {
+            "section": "S5",
+            "claim": "作者对运动引导预测的总结"
+          }
+        ],
+        "fulltext_hash": "0e455a302e5786c52178a9461680cec4d5a89f4a26eb5700ffc89f650a14599c",
+        "analysed_at": "2026-10-30T01:28:10.644Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 103,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "均匀视觉预测监督与机器人控制相关区域不匹配的问题",
+          "url": "https://arxiv.org/html/2610.36624v1#S1"
+        },
+        {
+          "section": "S2.SS3",
+          "claim": "由视频时间步和潜变量运动掩码形成不对称噪声任务",
+          "url": "https://arxiv.org/html/2610.36624v1#S2.SS3"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "GR-1任务基准与抓放结果",
+          "url": "https://arxiv.org/html/2610.36624v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "OpenArm实机任务组与低延迟设置",
+          "url": "https://arxiv.org/html/2610.36624v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "运动分数定位、AUROC与背景抑制分析",
+          "url": "https://arxiv.org/html/2610.36624v1#S3.SS4"
+        },
+        {
+          "section": "S5",
+          "claim": "作者对运动引导预测的总结",
+          "url": "https://arxiv.org/html/2610.36624v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview. (a) We spatially reallocate visual supervision in World Action Models (WAMs) toward dynamic regions. This reallocation emphasizes robot motion and object interactions while downweighting static, task-irrelevant visual details, such as complex tabletop textures. (b) Our method, Motion-Guided Asymmetric Prediction (MoGAP), substantially improves policy performance across different WAM setups on GR-1 Tabletop, a challenging humanoid manipulation benchmark.",
+          "url": "https://arxiv.org/html/2610.36624v1/motivation_figure.png",
+          "source_url": "https://arxiv.org/html/2610.36624v1#S1.F1"
+        },
+        {
+          "id": "S3.T3",
+          "caption": "Table 3: Ablation studies on MoGAP. We study (a) the effectiveness of its key components through ablations and (b) the generalization of MoGAP across WAM architectures. Results report average success rates (%) on GR-1 Tabletop. Best results within each comparison are highlighted in bold. (a) Component analysis.(b) Generalization across WAMs.",
+          "url": "https://arxiv.org/html/2610.36624v1#S3.T3",
+          "source_url": "https://arxiv.org/html/2610.36624v1#S3.T3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.37666",
+      "arxiv_id": "2610.37666",
+      "doi": "",
+      "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
+      "abstract": "Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations. Human videos provide much broader behavioral and environmental experience, while learning from them faces a fundamental trade-off between scalable data and explicit action grounding. We introduce ThinkWorld, a VLA learning framework that grounds action reasoning in world dynamics and strengthens it through reinforcement learning with world imagination. ThinkWorld represents each action thought as a Chain-of-Dynamics (CoD), a sequence of discrete motion tokens that captures the intermediate dynamics connecting the current world to a future state and serves as a common action representation across embodiments. We first initialize CoD with action-labeled demonstrations, then predict the future induced by each CoD and reinforce those whose predictions better match the observed outcome. This enables videos without action annotations to provide direct supervision from observed state transitions, allowing human and robot experience to refine the same reasoning space. Experiments in simulation and on real robots demonstrate effective human-to-robot transfer and strong generalization to unseen tasks and environments.",
+      "authors": [
+        "Chaehyun Kim",
+        "Chi-Pin Huang",
+        "Jisoo Kim",
+        "Min-Hung Chen",
+        "Yu-Chiang Frank Wang",
+        "Seungryong Kim",
+        "Fu-En Yang"
+      ],
+      "url": "https://arxiv.org/abs/2610.37666",
+      "published": "2026-10-27T17:59:52Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-29"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.37666v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 92,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "ThinkWorld：用世界想象强化动作动力学链推理",
+        "abstract_zh": "视觉—语言—动作模型的泛化受限于带动作标签机器人示范的多样性。人类视频更丰富，但通常没有可直接执行的机器人动作标签。ThinkWorld以离散运动词元序列构成动作的Chain-of-Dynamics（CoD），用作跨人类与机器人动作的共享表示；先用带动作标签示范初始化CoD，再预测每条CoD会造成的未来视觉状态，并依据想象结果与观察到的真实未来是否吻合来强化CoD。由此，无动作标注的视频也能通过观察到的状态转移监督动作推理，而无需执行候选动作。作者在仿真和实机实验中报告人到机器人迁移及对未见任务、环境的泛化。",
+        "reason": "把动作表示与其造成的世界变化绑定，再从无动作标注的人类视频中通过未来预测一致性提供强化信号；实机OOD与组合技能实验支撑其动作控制贡献。",
+        "introduction_zh": "机器人动作常用关节角或末端位姿描述，容易绑定具体机器人；人类视频虽多，却没有机器人控制标签。ThinkWorld把短动作转换成离散的CoD词元序列，让人类手部运动和机器人动作共用一种动作语言。更关键的是，模型不仅要说出动作词元，还要预测它会带来怎样的未来画面，再用真实视频中的后续变化校正动作推理，从而利用无动作标签视频。",
+        "method_takeaway": "把“动作”写成共享的离散运动词元链，再奖励那些能在世界模型中预测出接近真实未来变化的动作链，让无动作标注的人类视频也能训练机器人动作推理。",
+        "framework_zh": "直接学习关节角会让一个机器人的动作标签很难迁移给另一个机器人，更难从人类视频中借用动作经验。ThinkWorld先把人类手部轨迹和机器人末端动作映射到归一化的位移表示，再用运动词元器编码成CoD序列。于是模型面对“拿起杯子”时，生成的不只是最终目标位姿，而是一串描述中间运动变化的离散动作片段。\n\n有了动作链还不够：模型可能生成看似合理、实际不会造成目标变化的词元。作者让模型在给定CoD后预测未来视觉特征，然后比较预测与视频中真实发生的未来；运动区域在相似度奖励里权重更高，背景也保留一部分以维持整场景一致。强化学习从模型采样的候选CoD中提高与真实未来吻合的序列。由于只需要视频前后状态，不必给人类视频补机器人控制标签，也不用真的执行每个候选动作。\n\n这使“动作词元”同时成为跨身体的动作语言和可用未来结果检验的计划。论文报告LIBERO 97.3%、LIBERO-PRO 55.6%，并用人类展示的开门、放入物体、关门顺序组合机器人已有原子技能，实机任务在外观和轨迹变化下更稳。需要留意训练使用单个随机种子，实机试验次数有限；结果说明这条跨模态监督路径有潜力，不等于人类视频可无条件直接转成可执行动作。",
+        "pipeline": "人类/机器人轨迹 → 统一CoD动作词元 → 预测动作导致的未来视觉 → 以真实未来吻合度强化动作链",
+        "results": "标准LIBERO平均成功率97.3%，LIBERO-PRO为55.6%；在LIBERO-PRO的任务与环境变化轴上分别为31.9%和60.9%，较VLA-JEPA高11.1与19.9个百分点。实机评测含三类任务与ID/OOD设置；另展示只给原子机器人技能、由人类视频提供组合顺序后完成复合任务。",
+        "limitations": "附录说明训练结果仅一个训练随机种子，置信区间反映评测episode波动而非独立训练检查点差异；实机实验试验数有限，推理延迟也依赖硬件与输入配置。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "归一化人类与机器人运动并编码为共享CoD词元"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "用CoD条件未来视觉与观察未来的吻合度构造强化奖励"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "实机ID/OOD任务及分布变化结果"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "利用人类示范组合已分开训练的机器人原子技能"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "LIBERO与LIBERO-PRO结果"
+          },
+          {
+            "section": "A4",
+            "claim": "单训练种子及评测范围限制"
+          }
+        ],
+        "fulltext_hash": "3958d99b0a7d95485cf3fdb3f1e289a425d94f974a16b6f302361004330d8a05",
+        "analysed_at": "2026-10-30T01:28:10.645Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 102,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "归一化人类与机器人运动并编码为共享CoD词元",
+          "url": "https://arxiv.org/html/2610.37666v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "用CoD条件未来视觉与观察未来的吻合度构造强化奖励",
+          "url": "https://arxiv.org/html/2610.37666v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "实机ID/OOD任务及分布变化结果",
+          "url": "https://arxiv.org/html/2610.37666v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "利用人类示范组合已分开训练的机器人原子技能",
+          "url": "https://arxiv.org/html/2610.37666v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "LIBERO与LIBERO-PRO结果",
+          "url": "https://arxiv.org/html/2610.37666v1#S4.SS4"
+        },
+        {
+          "section": "A4",
+          "claim": "单训练种子及评测范围限制",
+          "url": "https://arxiv.org/html/2610.37666v1#A4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: We introduce ThinkWorld, a vision-language-action framework that learns transferable Chain-of-Dynamics (CoD) reasoning from diverse human and robot experiences. CoD captures action-induced dynamics across embodiments and is reinforced through future imagination, enabling robust generalization in the real world and skill composition guided by human videos.",
+          "url": "https://arxiv.org/html/2610.37666v1/thinkworld_teaser_blue_v2_final.png",
+          "source_url": "https://arxiv.org/html/2610.37666v1#S0.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: ThinkWorld architecture and training stages. In stage (a), supervised fine-tuning (SFT) tokenizes robot actions and annotated human hand motions into a unified discrete motion space to ground Chain-of-Dynamics (CoD) reasoning, while CoD-conditioned imagination predicts the future visual feature. In stage (b), reinforcement learning (RL) uses the alignment between imagined and observed futures as a scalable reward for CoD reasoning over human and robot videos, strengthening action reasoning without motion annotations and improving guidance for continuous control.",
+          "url": "https://arxiv.org/html/2610.37666v1/thinkworld_main_arch_full_blue.png",
+          "source_url": "https://arxiv.org/html/2610.37666v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.37215",
+      "arxiv_id": "2610.37215",
+      "doi": "",
+      "title": "Retrieve to Act: Motion Primitive Graph Retrieval for Robust VLA Execution",
+      "abstract": "Vision-Language-Action (VLA) policies demonstrate remarkable semantic generalization, yet remain highly vulnerable to out-of-distribution (OOD) visual shifts during execution. While existing test-time methods attempt to suppress spurious visual cues, they fundamentally overlook the rich, uncorrupted kinematic priors embedded in the policy's own training experience. We introduce Retrieve to Act (R2A), a test-time scaling framework that formulates OOD robustness purely as a geometric motion primitive retrieval problem. R2A bypasses fragile visual features by structuring successful training demonstrations into an offline spatiotemporal motion primitive graph. During inference, a query-dependent Graph Neural Network dynamically localizes the robot's ongoing execution within this graph, retrieving structurally compatible future motion primitives. These retrieved geometric priors are then seamlessly harmonized with the frozen VLA's predicted actions via a learned, dimension-wise gating mechanism, adaptively rectifying erroneous spatial trajectories while preserving the policy's local reactivity. Extensive experiments across three state-of-the-art VLA architectures, GR00T N1.7, $π_{0.5}$, and StableVLA, demonstrate that R2A consistently and significantly enhances robustness against diverse contextual perturbations. R2A achieves absolute success rate improvements of up to +12% in simulation benchmarks (LIBERO-Plus, RoboTwin2.0-Plus) and +40% in real-world deployments, without requiring any finetuning of the base policies. Project page: https://retrieve2act.github.io/r2a/",
+      "authors": [
+        "Pham Tri Quang",
+        "Bao-Ngoc Dao",
+        "Minh Duc Nguyen",
+        "Duc-Duy Nguyen",
+        "Hung T. Ho",
+        "Linh Dang Le",
+        "Trong-Bao Ho",
+        "Thien-Loc Ha",
+        "Tan Q. Nguyen",
+        "Tuan Dam",
+        "Vu N. Duong",
+        "Daniel Sonntag",
+        "Ngan Le",
+        "Khoa D. Doan",
+        "Jan Peters",
+        "An Thai Le",
+        "Duy M. H. Nguyen",
+        "Vien Anh Ngo"
+      ],
+      "url": "https://arxiv.org/abs/2610.37215",
+      "published": "2026-10-27T13:28:33Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.37215v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 91,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "Retrieve to Act：通过运动原语图检索提升VLA执行鲁棒性",
+        "abstract_zh": "视觉—语言—动作策略在训练外扰动下容易失效。Retrieve to Act（R2A）把成功示范整理为纯运动学的运动原语图，并在测试时执行三步：先用扩散模型把训练分布外初始机器人状态投回训练流形；再依据策略当前预测与最近执行状态形成查询，从图中检索几何相关动作原语；最后用学习到的逐维门控将检索动作与策略预测融合，以纠正轨迹偏差并保留局部反应能力。图中舍弃视觉特征，目的是降低视觉分布偏移造成的检索错误。作者报告其在LIBERO-Plus等扰动设置显著提高冻结VLA成功率。",
+        "reason": "该方法直接在推理时利用历史运动原语纠正VLA动作，具有清晰的状态校正—查询检索—动作融合链路，实验证明组件不可互相替代。",
+        "introduction_zh": "VLA在训练外相机、机器人姿态或背景变化下可能把动作带偏；单靠视觉相似检索也会被这些外观变化误导。R2A把成功示范按关节状态和时序关系组织成运动图，并在测试时根据策略预测、机器人最近状态构造查询。它先把异常初始姿态拉回训练分布，再找相近运动原语，最后按维度决定应在多大程度上修正当前策略。",
+        "method_takeaway": "把成功示范建成不看外观、只看运动几何的图；遇到偏离训练分布的机器人状态时，先校正起点，再检索相似动作，并按维度谨慎融合进策略动作。",
+        "framework_zh": "R2A的目标不是再训练一个更大的VLA，而是在执行时给原策略一个几何经验库。离线阶段把成功示范切成运动片段，节点记录关节姿态、位移、夹爪状态和示范进度；边同时表达片段先后关系与不同示范间的空间相似。图索引不存图像外观，因而不容易因为灯光、背景等变化把视觉相似错当成动作相似。\n\n执行开始时，若机器人初始关节姿态偏离训练数据，条件扩散模型先从指令条件下采样一个训练分布内起点，再规划到这个姿态。每个控制时刻，系统将VLA预测的位姿和最近机器人状态、已执行动作编码为查询；查询依赖GNN沿图的时空关系传播，输出相关的运动参考，而不是简单找最相似的一段。最后一个逐维门控比较当前策略动作与检索参考：偏差大时多采用参考，接近时保留策略原预测；夹爪离散动作不被直接覆盖。\n\n这条链路的重点是“检索提供几何稳健先验，策略保留局部反应”。消融中去掉图检索，成功率从77.1%降到63.8%；直接回放检索动作则降至1.2%，说明检索结果必须适配当前策略和状态。初始状态校正对起点扰动也有帮助。不过图没有显式场景几何，新障碍物依赖策略输入感知；方法尚未解决自动识别失败并恢复的任务。",
+        "pipeline": "成功示范 → 运动学时空图 → 起点扩散校正与查询相关检索 → 门控融合参考动作和VLA动作",
+        "results": "LIBERO-Plus七类扰动上，GR00T N1.7基线平均成功率77.1%，加R2A后整体提高（表中不同扰动项改善幅度不同）。移除GNN检索后成功率降到63.8%；直接回放检索动作、不做Action Harmonization时仅1.2%；机器人初始姿态扰动下，初始状态校正使成功率由49.9%升至87.5%。",
+        "limitations": "图索引没有显式场景几何，新障碍等变化仍依赖原VLA动作提供线索；作者称扩展到显式失败识别与恢复仍待研究。论文分析给出位姿—动作改进的条件，不保证任务成功。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "起点校正、查询图检索和动作协调的整体链路"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "节点、时序边和空间边仅基于运动几何构建"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "条件扩散将OOD起点投回训练姿态分布"
+          },
+          {
+            "section": "S3.SS5",
+            "claim": "用策略预测和执行历史形成查询，并通过query-dependent GNN检索"
+          },
+          {
+            "section": "S4",
+            "claim": "逐维门控融合参考轨迹和策略动作，夹爪命令保持策略输出"
+          },
+          {
+            "section": "S5.SS0.SSS0.Px2",
+            "claim": "检索、动作协调与初始校正消融"
+          },
+          {
+            "section": "S6",
+            "claim": "场景几何及失败恢复方面的限制"
+          }
+        ],
+        "fulltext_hash": "4e15db33fb1457714fdf800fce020d018e3eecdcf9e1484639adb7fd0a441769",
+        "analysed_at": "2026-10-30T01:28:10.650Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 101,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "起点校正、查询图检索和动作协调的整体链路",
+          "url": "https://arxiv.org/html/2610.37215v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "节点、时序边和空间边仅基于运动几何构建",
+          "url": "https://arxiv.org/html/2610.37215v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "条件扩散将OOD起点投回训练姿态分布",
+          "url": "https://arxiv.org/html/2610.37215v1#S3.SS4"
+        },
+        {
+          "section": "S3.SS5",
+          "claim": "用策略预测和执行历史形成查询，并通过query-dependent GNN检索",
+          "url": "https://arxiv.org/html/2610.37215v1#S3.SS5"
+        },
+        {
+          "section": "S4",
+          "claim": "逐维门控融合参考轨迹和策略动作，夹爪命令保持策略输出",
+          "url": "https://arxiv.org/html/2610.37215v1#S4"
+        },
+        {
+          "section": "S5.SS0.SSS0.Px2",
+          "claim": "检索、动作协调与初始校正消融",
+          "url": "https://arxiv.org/html/2610.37215v1#S5.SS0.SSS0.Px2"
+        },
+        {
+          "section": "S6",
+          "claim": "场景几何及失败恢复方面的限制",
+          "url": "https://arxiv.org/html/2610.37215v1#S6"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2610.36694",
+      "arxiv_id": "2610.36694",
+      "doi": "",
+      "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+      "abstract": "Flow-based policies for language-conditioned multi-task manipulation commonly share a single $\\textit{Gaussian}$ source prior and a common linear transport path across tasks. However, reliably executing multiple tasks with distinct motion requirements remains challenging for a shared policy. We introduce $\\textbf{TOPS}$ ($\\textbf{T}$ask-$\\textbf{O}$riented $\\textbf{P}$riors and $\\textbf{S}$chedules), which adapts the flow source prior and interpolation schedule to each task without modifying the network architecture. TOPS first constructs multimodal task sources from reverse-mapped expert action sequences, allowing language instructions to select where generation begins. Guided by source-target covariance mismatch, it then slows the transition toward expert actions early in denoising and accelerates it later along directions requiring expansion. Under a $\\textit{Gaussian}$ endpoint model, our analysis shows that this schedule adjustment can lower an upper bound on velocity-prediction risk. Experiments on LIBERO, LIBERO-Plus, and CALVIN demonstrate improved performance across in-distribution, perturbation and cross-environment settings, alongside better data efficiency. Using one integration step, TOPS raises LIBERO-10 success from $53.44\\%$ to $69.67\\%$ compared with ten-step Standard Flow Matching (FM), while reducing inference time to approximately one-sixth of the baseline. TOPS also yields consistent gains when transferred to the large-scale flow-based $π_{0.5}$ policy across all four evaluated settings. Real-world experiments further demonstrate improved task success, including an increase from $20\\%$ with standard FM to $80\\%$ with TOPS on the upper-drawer opening task.",
+      "authors": [
+        "Tuo An",
+        "Chuhao Zhou",
+        "Jiahua Dong",
+        "Jingliang Li",
+        "Jiaqi Bai",
+        "Jindou Jia",
+        "Jianfei Yang"
+      ],
+      "url": "https://arxiv.org/abs/2610.36694",
+      "published": "2026-10-27T06:11:55Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.36694v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 90,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "TOPS：为多任务机器人操作重塑流匹配先验与传输路径",
+        "abstract_zh": "流策略通常让所有任务共享一个高斯噪声源和相同线性传输路径，但不同操作任务的动作分布及运动需求差异很大。TOPS不改策略网络结构，而是先将专家动作反向映射到源空间，为每项任务拟合多模态低秩高斯源，让语言指令选择合适起点；随后通过源与目标动作协方差差异识别扩张方向，并沿这些方向采用前慢后快的插值路径，其他方向保持线性。作者在高斯端点假设下证明该调度可降低速度预测风险上界。在LIBERO、LIBERO-Plus和CALVIN上报告多任务、扰动和跨环境收益；单步推理时LIBERO-10成功率由标准十步流匹配的53.44%升至69.67%，延迟约降至六分之一。实机上，上层抽屉任务由20%升至80%。",
+        "reason": "核心创新直接调整机器人动作流匹配的任务先验和去噪时间路径，既提高成功率又减少采样步数，是运动策略生成的实质改进。",
+        "introduction_zh": "多任务策略需要用同一网络生成不同动作，但统一高斯噪声和统一线性去噪路径未必适合每项任务。作者先把专家动作沿已有流策略逆向追到噪声源，发现各任务在源空间形成不同簇；再比较每个任务源分布与专家动作分布，识别哪些动作组合需要明显扩张。TOPS据此改造起点和插值速度，不动策略骨干。",
+        "method_takeaway": "先把每项任务的专家动作反推回流模型的噪声空间，为任务拟合专属起点；再只在动作方差需要扩张的方向上采用前慢后快的传输路径。",
+        "framework_zh": "流匹配策略把高斯噪声逐渐变成机器人动作。常见做法是所有任务都从同一个高斯分布出发，并沿相同线性路径去噪；TOPS指出，多任务动作在源空间并非混在一起，而是保留了抓取、推拉等任务结构。作者先用已预热的流策略把成功示范动作反向映射到噪声端，再为每项任务拟合低秩多模态高斯混合。推理时语言选择任务源，网络仍是原来的动作生成器。\n\n第二个改动解决“源和目标之间有些方向变化特别大”的问题。作者比较任务源协方差与专家动作协方差，通过高斯最优传输得到一组方向；其中少数扩张方向代表动作序列中跨时间、跨维度协同变化且专家波动明显更大的模式。若一开始就快速靠近专家端，模型在信息尚不足时会面对多个可能速度目标。TOPS因此在这些方向起初慢一些、后段快一些，其他方向维持线性插值；基和强度离线算好，训练与推理固定使用。\n\n论文在指定假设下给出速度预测风险上界，并用一积分步生成动作。LIBERO-10成功率达到69.67%，高于十步标准流匹配的53.44%，推理延迟降到约六分之一；实机抽屉开启也有改善。但任务源和调度都离线固定，未测未见任务类别，固定动作块长也限制时域灵活性。",
+        "pipeline": "预热策略反向映射示范 → 每任务拟合动作源 → 协方差OT识别扩张方向并制定时序 → 语言选源、少步积分生成动作",
+        "results": "TOPS单步下LIBERO-10成功率69.67%，对比十步Standard FM的53.44%；延迟从49.4毫秒降至8.2毫秒（LIBERO测量）。LIBERO-Plus OOD成功率35.29%，对比Standard FM 27.11%；CALVIN ABC→D平均完成链长1.05，对比0.70。真实抽屉开启任务成功率80%，Standard FM为20%。",
+        "limitations": "离线拟合的任务源和插值调度在训练与部署中固定；依赖预定义任务选择，未评估未见任务身份泛化；动作块长度固定，增量更新和可变时域留作未来工作。理论风险结论依赖高斯端点等假设。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "反向流映射揭示不同任务源样本结构"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "每任务低秩多模态概率主成分高斯源"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px1",
+            "claim": "高斯OT协方差方向识别扩张方向"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px2",
+            "claim": "扩张方向采用前慢后快插值的理论动机"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px3",
+            "claim": "离线固定调度和速度目标构造"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "语言选任务源并使用调度感知求解器"
+          },
+          {
+            "section": "S5.SS1.SSS1.Px1",
+            "claim": "单步成功率与延迟结果"
+          },
+          {
+            "section": "S6.SS0.SSS0.Px1",
+            "claim": "离线开销、固定任务和固定动作块长度限制"
+          }
+        ],
+        "fulltext_hash": "c679702e18264fede140d7fd5df99bcb6cbc77bbd203a12dabf2776cf32c4060",
+        "analysed_at": "2026-10-30T01:28:10.652Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "反向流映射揭示不同任务源样本结构",
+          "url": "https://arxiv.org/html/2610.36694v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "每任务低秩多模态概率主成分高斯源",
+          "url": "https://arxiv.org/html/2610.36694v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px1",
+          "claim": "高斯OT协方差方向识别扩张方向",
+          "url": "https://arxiv.org/html/2610.36694v1#S4.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px2",
+          "claim": "扩张方向采用前慢后快插值的理论动机",
+          "url": "https://arxiv.org/html/2610.36694v1#S4.SS3.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px3",
+          "claim": "离线固定调度和速度目标构造",
+          "url": "https://arxiv.org/html/2610.36694v1#S4.SS3.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "语言选任务源并使用调度感知求解器",
+          "url": "https://arxiv.org/html/2610.36694v1#S4.SS4"
+        },
+        {
+          "section": "S5.SS1.SSS1.Px1",
+          "claim": "单步成功率与延迟结果",
+          "url": "https://arxiv.org/html/2610.36694v1#S5.SS1.SSS1.Px1"
+        },
+        {
+          "section": "S6.SS0.SSS0.Px1",
+          "claim": "离线开销、固定任务和固定动作块长度限制",
+          "url": "https://arxiv.org/html/2610.36694v1#S6.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of TOPS. (a) We construct task-specific sources by fitting MPPCA models to reverse-mapped expert actions. An instruction selector maps the input language to an index τ^\\hat{\\tau}, identifying the source qτ^q_{\\hat{\\tau}} and its associated schedule. (b) In the selected task’s Gaussian OT eigenbasis, we apply slow-then-fast interpolation along expansion directions and linear interpolation elsewhere, then map the interpolated states and velocity targets back to action space.",
+          "url": "https://arxiv.org/html/2610.36694v1/main_method_v4.png",
+          "source_url": "https://arxiv.org/html/2610.36694v1#S3.F2"
+        },
+        {
+          "id": "alg1",
+          "caption": "Algorithm 1 TOPS Training and Inference Pipeline",
+          "url": "https://arxiv.org/html/2610.36694v1#alg1",
+          "source_url": "https://arxiv.org/html/2610.36694v1#alg1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.37381",
+      "arxiv_id": "2610.37381",
+      "doi": "",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "abstract": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
+      "authors": [
+        "Hanqing Wang",
+        "Zhaotian Cai",
+        "Ruichuan An",
+        "Bohan Zeng",
+        "Tao Zhang",
+        "Yilin Chen",
+        "Xu Jiang",
+        "Kaiquan Chen",
+        "Chongyang Wu",
+        "Haoran Li",
+        "Fan Yang",
+        "Mingan Lin",
+        "Wentao Zhang",
+        "Zenan Zhou",
+        "Youzheng Wu"
+      ],
+      "url": "https://arxiv.org/abs/2610.37381",
+      "published": "2026-10-27T15:09:10Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "多模态",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-29"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.37381v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "PDRVLA：以物理动力学表征增强视觉—语言—动作模型",
+        "abstract_zh": "视觉—语言—动作模型能够根据图像和指令生成机器人动作，但对物理动力学的理解仍有限；视频世界模型虽能建模动态，却可能因在线生成未来视频而增加控制延迟。PDRVLA使用轻量物理动力学模块，从视觉语言特征中提取物理词元来条件化动作生成，而不在控制时在线生成视频。该模块通过直接预测未来RGB、深度和光流特征训练，并接受冻结视频世界模型的辅助监督。训练仅使用公开数据，并通过人到机器人数据合成、子任务标注和具身思维链标注扩充。作者报告其在四个仿真基准上的成功率分别为LIBERO 99.3%、LIBERO-Plus 89.9%、RoboTwin 2.0 93.6%和SimplerEnv 81.5%。消融显示世界模型辅助监督改善未来预测，并分析子任务、未来物体位姿和ECoT对动作成功率的影响。",
+        "reason": "物理动力学词元作为动作生成的核心条件，训练中使用未来视频监督、部署时移除视频生成器，直接针对机器人动作控制的时延与动态理解问题。",
+        "introduction_zh": "VLA常能识别当前物体和指令，却未必知道抓取或移动后场景会怎样变化。视频世界模型能提供未来动态，但若每次控制都要生成未来视频，闭环时延可能过高。本文把未来预测改为训练期监督：从VLM中间层提取少量物理词元，令其概括未来外观、几何和运动，再交给动作专家；部署时不再运行视频模型。论文同时整理跨平台公开机器人数据并补入人类第一视角轨迹。",
+        "method_takeaway": "让一个小型物理模块在训练时学会预测未来视觉、深度和光流，并把压缩出的物理词元交给动作专家；部署控制时不运行视频世界模型。",
+        "framework_zh": "PDRVLA要解决的是“知道当前是什么”与“知道动作会造成什么变化”之间的差距。它从视觉语言主干的中间层取特征，用50个可学习查询汇总成固定数量的物理词元；这些词元与主干最后层的语义特征并行送入动作专家，预测一个动作片段。中间层被选作动态摘要的来源，是因为作者认为更深层可能已经压低了对视觉细节有用的信息。\n\n物理词元如何学会表达变化？训练时，一条直接监督路径要求它们预测未来RGB、深度和光流潜特征；另一条路径把词元送进冻结的视频世界模型，让模型在当前帧干净、未来帧加噪的条件下预测未来变化。世界模型及其预测头只用于训练监督，策略联合训练时仍保留直接未来预测，但上线控制仅需VLM、物理词元模块和动作专家，不生成未来视频，因此避免把高成本视频采样放进闭环。\n\n数据侧把真实机器人、UMI和仿真轨迹与通用及具身视觉语言数据结合，并做人类第一视角到机器人轨迹转换、子任务阶段标注和具身思维链标注。四个仿真基准结果较强，不过LIBERO长时程分项仍未超过一项基线，且本文评测集中在仿真。它的核心贡献更适合记成“未来视频只当老师，不当控制时的负担”，而不是部署一个完整世界模型。",
+        "pipeline": "当前视觉与指令 → 中间层提取物理词元并以未来RGB/深度/光流监督 → 词元辅助动作专家 → 仅策略在线执行",
+        "results": "四项仿真成功率：LIBERO 99.3%（平均最高，但Long分项97.6%，低于LingBot-VA的98.5%）；LIBERO-Plus 89.9%；RoboTwin 2.0 93.6%；SimplerEnv 81.5%。论文还报告冻结世界模型辅助监督改善未来预测误差。",
+        "limitations": "论文结论提到后续将探索物体中心几何、接触状态和材料属性等预测目标；当前主要结果来自仿真，部署泛化与更丰富物理状态预测尚未验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "说明在线未来视频生成的延迟问题及物理词元方案"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "50个可学习查询从VLM中间层抽取物理词元"
+          },
+          {
+            "section": "S4.SS1.SSS0.Px3",
+            "claim": "冻结视频模型辅助未来RGB、深度、光流预测的训练路径"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "物理词元和末层特征输入动作专家，分块生成动作"
+          },
+          {
+            "section": "S5.SS2.SSS0.Px1",
+            "claim": "LIBERO均值最佳但长时程子集并非最佳"
+          },
+          {
+            "section": "S6",
+            "claim": "部署省去视频模型及作者提出的后续预测目标"
+          }
+        ],
+        "fulltext_hash": "25e625a7948295f6c1424f6a8c095e90d3a30267e1d629d9c16353a251caa82e",
+        "analysed_at": "2026-10-30T01:28:10.641Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "说明在线未来视频生成的延迟问题及物理词元方案",
+          "url": "https://arxiv.org/html/2610.37381v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "50个可学习查询从VLM中间层抽取物理词元",
+          "url": "https://arxiv.org/html/2610.37381v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS1.SSS0.Px3",
+          "claim": "冻结视频模型辅助未来RGB、深度、光流预测的训练路径",
+          "url": "https://arxiv.org/html/2610.37381v1#S4.SS1.SSS0.Px3"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "物理词元和末层特征输入动作专家，分块生成动作",
+          "url": "https://arxiv.org/html/2610.37381v1#S3.SS3"
+        },
+        {
+          "section": "S5.SS2.SSS0.Px1",
+          "claim": "LIBERO均值最佳但长时程子集并非最佳",
+          "url": "https://arxiv.org/html/2610.37381v1#S5.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S6",
+          "claim": "部署省去视频模型及作者提出的后续预测目标",
+          "url": "https://arxiv.org/html/2610.37381v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: PDRVLA overview. (a) Simplified architecture. (b) Success rates on four simulation benchmarks.",
+          "url": "https://arxiv.org/html/2610.37381v1/intro_overview_v3.png",
+          "source_url": "https://arxiv.org/html/2610.37381v1#S0.F1"
+        },
+        {
+          "id": "S2.T4",
+          "caption": "Table 4: ECoT keyframes annotated by our pipeline.",
+          "url": "https://arxiv.org/html/2610.37381v1#S2.T4",
+          "source_url": "https://arxiv.org/html/2610.37381v1#S2.T4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.37330",
+      "arxiv_id": "2610.37330",
+      "doi": "",
+      "title": "Tokens of Motion: Primitive Motion Learning for Human-Humanoid Skill Transfer",
+      "abstract": "Vision-language-action (VLA) models provide a promising paradigm for scalable robotic manipulation, yet their reliance on success-only behavioral cloning leaves them brittle; lacking corrective training signals, minor execution errors rapidly compound into unrecoverable, out-of-distribution failures. To address this limitation, we propose Adaptive Failure-Informed Learning (AFIL), an end-to-end framework that leverages failure trajectories as adaptive negative guidance for diffusion- and flow-based VLA policies. AFIL uses a pretrained VLA to generate failure rollouts online, avoiding the need for handcrafted failure-mode design or human-in-the-loop recovery. It then jointly trains Dual Action Generators (DAGs) for successful and failed behaviors while sharing a common vision-language backbone, enabling efficient failure-aware policy learning with limited parameter overhead. During sampling, the failure generator adaptively steers action generation away from failure-prone regions and toward more reliable success modes, with guidance strength determined by the per-diffusion-step distance between success and failure distributions. Experiments across in-domain and out-of-domain robotic manipulation tasks, covering both short- and long-horizon settings, show that AFIL consistently improves task success rates and robustness over existing VLA baselines, demonstrating its effectiveness, efficiency, and generality.",
+      "authors": [
+        "Hanwen Ren",
+        "Meng Zheng",
+        "Wenzhe Cui",
+        "Benjamin Planche",
+        "Zhongpai Gao",
+        "Anwesa Choudhuri",
+        "Terrence Chen",
+        "Ziyan Wu"
+      ],
+      "url": "https://arxiv.org/abs/2610.37330",
+      "published": "2026-10-27T14:37:30Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.37330v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "Tokens of Motion：用于人类—人形机器人技能迁移的原语运动学习",
+        "abstract_zh": "本文提出M-PACT，通过共享的原语运动表示连接人类示范与人形机器人操作。人类和机器人的手部轨迹先映射到统一坐标约定；自监督SkillSeg切分局部动作阶段，EPMT以平移、旋转和手指开合等因子化词元表示常见运动，再用具身专属解码器从当前身体状态恢复具体运动。上下文条件CC-EPMT预测下一原语，机器人执行后重新观察并闭环组合多步技能。作者在不同人类和机器人数据集上评估重建与迁移，并在真实人形机器人上展示闭环和上下文条件操作。",
+        "reason": "以离散因子化运动原语作为人类动作迁移到人形机器人的共享接口，贡献直接落在运动表示、技能迁移和实机闭环控制。",
+        "introduction_zh": "直接把人类手部轨迹复制给人形机器人会遇到身体尺度、坐标和可达性差异；而把整段轨迹一次重定向也不利于机器人根据执行后状态调整。M-PACT把动作拆成可复用的局部原语：先在共同坐标中描述手的运动，再自动发现片段、离散编码各运动因子，最后为目标机器人解码并逐步预测下一动作。",
+        "method_takeaway": "把长动作拆成共享的局部运动原语，并将“运动词元”与“如何由当前机器人身体实现它”分开学习，使人类示范能迁移且机器人每步可重新观察。",
+        "framework_zh": "作者先把人类与机器人手部状态映射到统一约定：手腕位置、朝向和手指开合度。这个映射只让动作可以比较，并不保证人的动作一定能被机器人执行。随后SkillSeg从连续运动特征中学习软边界，把长示范切成局部动作阶段，不需要人工标注每个技能从何时开始。\n\n每个局部片段再由EPMT转成因子化离散原语：平移、旋转和开合分别有可寻址的编码通道，解码器再把这些共享运动结构与目标机器人的当前状态结合，恢复机器人自己的运动目标。如此，数据中可复用的是“动作结构”，而具体关节/手部实现仍留给具身专属解码器。对于从人类视频迁移的原语，作者可继续适配机器人解码器，但保持原语词表固定。\n\n在执行时，CC-EPMT根据当前状态、视觉和任务上下文预测下一个原语，解码后交给机器人执行；随后重新观察已到达状态，再预测下一步。这比一次性复制完整轨迹更能根据实际进展调整。实机实验覆盖原语重建、人到机器人迁移、仅状态闭环和全上下文控制；但预测误差仍是下游主要误差来源，尤其旋转预测远差于记录的真实因子，所以共享词表本身并未解决动作预测准确性。",
+        "pipeline": "人类/机器人手部轨迹统一表示 → SkillSeg自动切段并编码因子化原语 → 具身解码器恢复动作 → 执行、观察、再预测下一原语",
+        "results": "EPMT词表在EgoDex训练后可迁移到HoloAssist；在HumanoidEveryday只重拟合目标解码器仍能使用完整词表。EgoDex held-out预测中加入上下文后平移准确率从36.37%到40.42%，误差从5.307厘米降至4.952厘米；但旋转准确率仍明显较弱。实机评测包括重建、人到机器人迁移、状态闭环及完整上下文操控。",
+        "limitations": "跨身体坐标对齐不保证动作可达；预测原语的旋转误差显著，说明运动词元预测仍是下游瓶颈。文中部分预测对比为单个训练seed，证据主要覆盖特定人形机器人和操作任务。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "人类和机器人手状态映射至共享坐标，但不保证可达"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "SkillSeg通过运动特征与软分配学习动作片段"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "平移、旋转、开合因子化编码与共享解码"
+          },
+          {
+            "section": "S3.SS5.SSS0.Px2",
+            "claim": "仅适配机器人解码器的人类运动grounding"
+          },
+          {
+            "section": "S3.SS7",
+            "claim": "预测—实现—观察闭环动作原语组合"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "上下文改善平移预测但旋转预测较弱"
+          }
+        ],
+        "fulltext_hash": "710999c8931d3f60e678a67c88f66276d6cd1278836d24b86d846b79e1ff8578",
+        "analysed_at": "2026-10-30T01:28:10.648Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "人类和机器人手状态映射至共享坐标，但不保证可达",
+          "url": "https://arxiv.org/html/2610.37330v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "SkillSeg通过运动特征与软分配学习动作片段",
+          "url": "https://arxiv.org/html/2610.37330v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "平移、旋转、开合因子化编码与共享解码",
+          "url": "https://arxiv.org/html/2610.37330v1#S3.SS4"
+        },
+        {
+          "section": "S3.SS5.SSS0.Px2",
+          "claim": "仅适配机器人解码器的人类运动grounding",
+          "url": "https://arxiv.org/html/2610.37330v1#S3.SS5.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS7",
+          "claim": "预测—实现—观察闭环动作原语组合",
+          "url": "https://arxiv.org/html/2610.37330v1#S3.SS7"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "上下文改善平移预测但旋转预测较弱",
+          "url": "https://arxiv.org/html/2610.37330v1#S4.SS2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Proposed Motion Primitives for Action Composition and Transfer (M-PACT) pipeline.",
+          "url": "https://arxiv.org/html/2610.37330v1/teaser_cropped.png",
+          "source_url": "https://arxiv.org/html/2610.37330v1#S1.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of Motion Primitives for Action Composition and Transfer (M-PACT) pipeline.",
+          "url": "https://arxiv.org/html/2610.37330v1/Pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.37330v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.36791",
+      "arxiv_id": "2610.36791",
+      "doi": "",
+      "title": "RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions",
+      "abstract": "Learning controllable world dynamics from heterogeneous interaction videos is challenging because robot embodiments use incompatible action spaces, while human videos lack native control labels. We present RynnWorld-Latent, a cross-embodiment video world model that uses the 3D-grounded latent actions introduced by RynnLAM as a shared conditioning interface. This representation enables joint pretraining on human interaction videos, robot demonstrations, and simulation rollouts without requiring a common native action space. Built on a pretrained video transformer, RynnWorld-Latent combines global action tokens with an identity-initialized local pathway that aligns actions with future video latents. We pretrain on 23 datasets comprising approximately 553.5M frames and adapt the model to target robots through post-training. The framework supports two data-generation routes: digital teleoperation uses target robot commands to generate action-video demonstrations, while latent-action synthesis transfers source motion to an edited initial frame and pairs the resulting rollout with retargeted pseudo robot actions. Experiments show improved video prediction metrics on public benchmarks and two real-robot platforms, alongside qualitative action following when different action sequences share the same initial observation. Synthetic mid-training improves policy success rates on LIBERO and LIBERO-Plus, and both generation routes improve real-world policy success rates over real-demonstration-only training in the evaluated settings. These results support universal latent actions as a scalable interface for learning controllable visual dynamics across heterogeneous embodiments.",
+      "authors": [
+        "Haoyu Zhao",
+        "Yinzhou Tang",
+        "Zixuan Wang",
+        "Minghao Zhu",
+        "Dongchi Huang",
+        "Xingyue Zhao",
+        "Qin Zhao",
+        "Kehan Li",
+        "Siteng Huang",
+        "Xin Li",
+        "Zhenyu Zeng",
+        "Mingxiu Chen",
+        "Deli Zhao",
+        "Zhongyu Li"
+      ],
+      "url": "https://arxiv.org/abs/2610.36791",
+      "published": "2026-10-27T07:54:16Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-29"
+      ],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.36791v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "RynnWorld-Latent：以通用潜在动作条件化的跨具身世界模型",
+        "abstract_zh": "不同机器人有不兼容的原生动作空间，人类视频又没有原生控制标签，使异构交互视频难以共同学习可控世界动力学。RynnWorld-Latent以3D接地的潜在动作作为共享条件接口，联合预训练人类交互视频、机器人示范和仿真轨迹。该模型基于视频Transformer，以全局动作词元和对齐未来视频潜变量的局部路径共同注入动作条件；先跨具身预训练，再适配目标机器人，并提供数字遥操作及潜在动作驱动的数据合成两种数据生成方式。作者报告在公开基准和两种实机平台上改善视频预测指标，合成中训练数据可提高机器人策略成功率。",
+        "reason": "核心贡献是把异构身体的动作转成可统一条件化视频世界模型的潜在动作，并将其用于跨具身数据合成和策略训练，运动/动作控制是方法主线。",
+        "introduction_zh": "人类、机械臂和移动操作机器人没有共用的控制接口；如果先把所有轨迹转换成某一种关节命令，很多视频便无法利用。RynnWorld-Latent从相邻视频帧提取连续潜在动作，把它作为统一条件，让视频世界模型预测动作造成的未来画面。模型再适配目标机器人，使操作员可在虚拟视频世界里遥操作采集数据，也可把人类视频转换为机器人视角的合成演示。",
+        "method_takeaway": "不强行把每种身体的控制命令变成同一种机器人动作，而是从视频变化提取统一潜在动作，用它驱动未来视频预测并生成目标机器人的训练数据。",
+        "framework_zh": "跨具身数据的障碍不是视频数量不够，而是“动作”定义不一致。RynnWorld-Latent用冻结的RynnLAM从相隔一段时间的帧对中提取608维连续潜在动作，其中分出运动、操作和相机成分；这不是机器人关节命令，而是视频中观察到的变化接口。模型以首帧和潜在动作预测未来视频，因此人类、机器人和仿真视频可以在不共享原生控制空间的前提下一起预训练。\n\n为让潜在动作真正作用于生成，视频Transformer同时接收全局动作词元，并把动作对齐到相应未来帧的视觉词元上作局部调制。训练时动作条件保持干净，只对未来视频潜变量去噪。整体分成跨具身预训练、目标机器人后训练和数据生成：目标机器人命令可直接做数字遥操作；另一条路线从人类视频提取动作、编辑首帧中的人体/场景为目标机器人，再生成机器人化视频并经重定向得到伪动作标签。\n\n这种设计把大量无控制标签人类视频接进机器人学习，但“潜在动作跟随”主要由视频相似度和定性结果支持，潜在量也可能混入相机移动或外观信息。作者说明伪动作和生成观察来自不同流程，时间对齐不保证物理一致；实机成功率每任务35次试验，且合成数据与额外训练算力贡献尚未拆开。因此它是可扩展数据接口的尝试，不是已经证明潜在动作具备严格因果含义。",
+        "pipeline": "多具身视频 → RynnLAM提取潜在动作 → 条件化未来视频预测并适配目标机器人 → 数字遥操作/人类视频合成策略数据",
+        "results": "预训练覆盖23个数据集、约5.535亿帧。作者报告公开DreamDojo及两种实机平台的视频预测指标改善，潜在动作改变时同一初始画面会产生相应不同运动；数字遥操作和大规模合成数据加入后，LIBERO/LIBERO-Plus策略成功率提高。实机任务每项35次试验。",
+        "limitations": "作者指出潜在动作可能同时编码相机运动和外观，图像预测不能证明物理因果或真实性；伪机器人动作与合成观察分别生成，无法保证严格一致；实机次数有限，合成样本与额外优化计算的贡献尚未分离。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "跨具身预训练、机器人后训练和数据生成三阶段"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "608维潜在动作含运动、操作和相机分量"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "动作词元与逐未来帧局部调制两条条件路径"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "固定初始画面改变潜在动作后的定性动作跟随测试"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "数字遥操作训练数据构造"
+          },
+          {
+            "section": "S5.SS0.SSS0.Px1",
+            "claim": "潜在动作因果性、合成物理一致性及实机次数限制"
+          }
+        ],
+        "fulltext_hash": "079949581b2d2b8f7ea6e11e239a14d05d090ed4e2de36352685d8fa8e9539ce",
+        "analysed_at": "2026-10-30T01:28:10.646Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 97,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "跨具身预训练、机器人后训练和数据生成三阶段",
+          "url": "https://arxiv.org/html/2610.36791v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "608维潜在动作含运动、操作和相机分量",
+          "url": "https://arxiv.org/html/2610.36791v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "动作词元与逐未来帧局部调制两条条件路径",
+          "url": "https://arxiv.org/html/2610.36791v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "固定初始画面改变潜在动作后的定性动作跟随测试",
+          "url": "https://arxiv.org/html/2610.36791v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "数字遥操作训练数据构造",
+          "url": "https://arxiv.org/html/2610.36791v1#S4.SS4"
+        },
+        {
+          "section": "S5.SS0.SSS0.Px1",
+          "claim": "潜在动作因果性、合成物理一致性及实机次数限制",
+          "url": "https://arxiv.org/html/2610.36791v1#S5.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F1",
+          "caption": "Figure 1: Pretraining corpus overview. The corpus contains 23 datasets, approximately 6,190 hours, and 2.57M episodes. The figure summarizes the distribution of human, real-robot, and simulation video, dataset contributions by duration, and object and action vocabulary.",
+          "url": "https://arxiv.org/html/2610.36791v1/world_datasets.png",
+          "source_url": "https://arxiv.org/html/2610.36791v1#S3.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of the world-model data engine. Top: Scalable data editing. RynnLAM extracts latent actions from a source human video, while its first frame is edited to depict the target robot. Conditioned on the edited frame and the original latent actions, RynnWorld-Latent generates robot video rollouts. The generated observations are paired with pseudo-actions obtained through motion retargeting and inverse kinematics. Bottom: Digital teleoperation. Human control signals are retargeted to robot actions, which condition RynnWorld-Latent together with a reference scene. Generated frames provide visual feedback to the operator, while the recorded actions and generated observations form synthetic demonstrations without physical robot execution.",
+          "url": "https://arxiv.org/html/2610.36791v1/data_engine.png",
+          "source_url": "https://arxiv.org/html/2610.36791v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.36853",
+      "arxiv_id": "2610.36853",
+      "doi": "",
+      "title": "LingGS: Decoupling Feed-Forward Geometry Prediction from Camera Tracking for High-Fidelity Gaussian SLAM",
+      "abstract": "Achieving high-quality reconstruction and responsive camera tracking remains challenging for monocular RGB Gaussian splatting SLAM under a limited optimization budget. We present an online system that addresses this challenge by combining learned geometric priors with explicit geometric camera tracking, which can substantially outperform learned camera prediction in terms of tracking accuracy. A frozen streaming 3D foundation model serves as a virtual RGB-D sensor, providing depth estimation from monocular video. An explicit geometric solver then estimates camera motion through feature reprojection, and a streaming Gaussian mapper integrates the resulting observations into a dense scene representation. We further show that geometric tracking improves camera pose accuracy across representative streaming geometry backbones, demonstrating the broader applicability of our approach. Extensive experiments on indoor and outdoor datasets show that our method significantly improves reconstruction quality over existing approaches, achieving about 7 FPS on a single RTX 4090 and delivering 2-3 times the throughput of the evaluated prior SLAM systems.",
+      "authors": [
+        "Da Li",
+        "Yihan Zang",
+        "Ivan Viola",
+        "Zeyu Wang",
+        "Dominik Engel"
+      ],
+      "url": "https://arxiv.org/abs/2610.36853",
+      "published": "2026-10-27T08:51:00Z",
+      "topics": [
+        "运动与运动控制",
+        "相机控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.36853v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 78,
+        "priority_topics": [],
+        "title_zh": "LingGS：解耦前馈几何预测与相机跟踪的高保真高斯SLAM",
+        "abstract_zh": "单目RGB高斯泼溅SLAM在有限优化预算下难以同时实现高质量重建与快速相机跟踪。LingGS把学习得到的几何先验与显式几何跟踪结合：冻结的流式3D基础模型从单目视频估计深度，作为虚拟RGB-D传感器；几何求解器通过特征重投影与深度残差估计相机运动；流式高斯建图器再融合观测形成稠密场景。作者还验证几何跟踪可搭配不同流式几何骨干。室内外实验显示重建质量提升，单张RTX 4090约7 FPS，吞吐为评测既有SLAM系统的2至3倍。",
+        "reason": "与相机控制主题不同，本文研究单目动态相机下的在线相机位姿跟踪与3D高斯重建；几何深度先验和显式位姿求解组成清晰可复用方案。",
+        "introduction_zh": "在线高斯重建要把连续帧准确放进同一世界坐标，但单目RGB既缺深度又会在有限优化时间内累积相机位姿误差。LingGS不让学习模型同时承担几何预测和相机运动估计，而是用冻结的流式3D模型预测深度，再以显式几何优化求位姿，最后增量更新高斯场景。这样把“看出场景几何”和“跟踪相机”拆给合适的部件。",
+        "method_takeaway": "用冻结流式3D模型给单目视频补一个虚拟深度传感器，再用几何重投影和深度误差显式估计相机位姿，最后按帧增量更新高斯地图。",
+        "framework_zh": "单目视频没有真实深度，如果直接让一个学习模型同时预测场景、相机姿态和3D结构，误差会混在一起。LingGS将工作拆开：冻结的流式几何基础模型先对当前图像给出深度，把普通RGB视频变成近似RGB-D观测；这份深度不是最终重建结果，而是给后面的跟踪优化提供尺度和几何约束。\n\n跟踪阶段保留ORB-SLAM3式稀疏特征匹配，用已有地图点与当前帧特征建立2D—3D对应，同时最小化图像重投影误差和预测深度残差来更新相机位姿。位姿定下来后，映射器把当前观测并入3D高斯地图，在细节欠拟合的位置优先插入高斯，并通过关键帧回放联合优化外观与深度。也就是说，学习模型提供深度先验，几何求解器负责相机轨迹，显式地图负责累积场景。\n\n该组合在多个室内外数据集上提升新视角渲染质量，轨迹误差则保持有竞争力而非每项都第一，默认设置约7 FPS。论文没有处理回环闭合和动态场景，弱纹理或重复纹理下ORB匹配仍可能不稳。因此它更适合作为有限算力下把前馈深度先验接入显式SLAM的方案，不应将“camera tracking”误读成生成视频的相机控制。",
+        "pipeline": "单目RGB帧 → 冻结流式基础模型预测深度 → 重投影+深度残差跟踪位姿 → 增量高斯插入与关键帧优化",
+        "results": "多个室内和室外数据集的新视角合成指标为各方法最佳；轨迹精度在Oxford Spires和TUM-D取得最佳ATE，在7-Scenes和RE10K为第二。单RTX 4090约7帧/秒，并报告相较评测先前SLAM系统2—3倍吞吐。",
+        "limitations": "作者明确未处理回环闭合和动态场景；ORB特征在重复纹理或弱纹理区域可能产生歧义或缺少可靠匹配。约7 FPS依赖所述硬件及设置。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "学习几何先验与显式相机跟踪解耦的动机"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px1",
+            "claim": "通过2D—3D对应联合优化图像重投影和直接深度残差"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "3D高斯地图增量构建与优化"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "新视角重建提升而跟踪精度并非所有数据集最佳"
+          },
+          {
+            "section": "S5",
+            "claim": "无回环闭合、动态场景及弱纹理跟踪限制"
+          }
+        ],
+        "fulltext_hash": "d11eaca8d95e373a07c7ffeba49492c2c8f6b0d400868082c30c69138a6084e1",
+        "analysed_at": "2026-10-30T01:28:10.654Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 78,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "学习几何先验与显式相机跟踪解耦的动机",
+          "url": "https://arxiv.org/html/2610.36853v1#S1"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px1",
+          "claim": "通过2D—3D对应联合优化图像重投影和直接深度残差",
+          "url": "https://arxiv.org/html/2610.36853v1#S3.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "3D高斯地图增量构建与优化",
+          "url": "https://arxiv.org/html/2610.36853v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "新视角重建提升而跟踪精度并非所有数据集最佳",
+          "url": "https://arxiv.org/html/2610.36853v1#S4.SS2"
+        },
+        {
+          "section": "S5",
+          "claim": "无回环闭合、动态场景及弱纹理跟踪限制",
+          "url": "https://arxiv.org/html/2610.36853v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F1",
+          "caption": "Figure 1: Overview of our online Gaussian splatting SLAM system. (a) A frozen streaming foundation model estimates camera intrinsics from the initial RGB frames. (b) Predicted depth and image features support geometric camera tracking through correspondence matching and reprojection error minimization. (c) The Gaussian mapper integrates RGB frames, predicted depth, and estimated poses through keyframe selection, Laplacian-guided Gaussian insertion, and 30-step refinement using RGB and depth losses with keyframe replay.",
+          "url": "https://arxiv.org/html/2610.36853v1/overview.png",
+          "source_url": "https://arxiv.org/html/2610.36853v1#S3.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.36610",
+      "arxiv_id": "2610.36610",
+      "doi": "",
+      "title": "4D Reconstruction with Events & RGB",
+      "abstract": "Reconstructing dynamic 3D scenes over time (4D reconstruction) from a single moving camera is central to robotics and AR/VR applications, yet state-of the-art feed-forward methods rely solely on RGB frames and therefore inherit the failure modes of conventional cameras, including motion blur and temporal aliasing under fast or non-uniform camera and object motion. Event cameras report per-pixel brightness changes asynchronously at microsecond resolution, offering a complementary signal that is largely immune to these artifacts, but whether this modality can be incorporated into existing RGB based 4D reconstruction pipelines without a full architectural redesign remains an open question. In this preliminary study, we investigate a minimal extension: we augment Monst3R, an existing RGB-only 4D reconstruction model, with an additional event-camera input branch, leaving the rest of the architecture unchanged. Across 3 benchmark datasets, this simple RGB-event fusion reduces Abs Rel by 3.4% on average relative to the RGB-only Monst3R baseline, and a sensitivity analysis shows that the improvement grows with the magnitude of camera and object motion, with the largest gains observed under high object motion conditions where RGB-only reconstruction degrades most. These early results suggest that even a lightweight, non-invasive fusion of event data can meaningfully improve 4D reconstruction robustness, motivating a more thorough architectural investigation in future work.",
+      "authors": [
+        "Dulanga Weerakoon",
+        "Darshana Rathnayake",
+        "Van Minh Do",
+        "Hemanth Sabbella",
+        "Kaichen Zhou",
+        "Fangneng Zhan",
+        "Alok Prakash",
+        "Sanjay E. Sarma",
+        "Archan Misra",
+        "Paul Pu Liang"
+      ],
+      "url": "https://arxiv.org/abs/2610.36610",
+      "published": "2026-10-27T04:11:39Z",
+      "topics": [
+        "运动与运动控制",
+        "3D 重建"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2610.36610v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 74,
+        "priority_topics": [],
+        "title_zh": "结合事件相机与RGB的4D重建",
+        "abstract_zh": "从移动单目相机重建动态3D场景会受到运动模糊和时间混叠影响。事件相机以微秒级异步方式报告亮度变化，可补充传统RGB帧的运动信息。本文做初步研究：在MonST3R输入端加入事件相机分支，其余架构保持不变；把3通道RGB与5通道事件体素拼接，再用单层卷积适配原有3通道视觉编码器。由于基准只有RGB序列，作者用V2E模拟器从插值帧生成事件流。三个基准上，相较RGB-only MonST3R，RGB—事件融合平均将Abs Rel降低3.4%；运动敏感性分析显示相机或物体运动越剧烈时收益越大。",
+        "reason": "直接探索事件流补足RGB动态重建运动信息，方法简单且报告跨数据集收益；但作者自己将其定位为初步研究，需谨慎看待合成事件数据和旧基线。",
+        "introduction_zh": "高速或不均匀运动会令普通相机出现模糊、时间采样不足，进而影响动态场景的相机位姿、深度和4D重建。事件相机记录像素亮度变化，可能补充RGB缺失的快速运动线索。本文没有另造大型网络，而是在MonST3R输入增加事件体素通道，检验轻量融合是否足以改善重建。",
+        "method_takeaway": "在原有MonST3R前端把RGB与事件体素拼接，只增加一层通道适配卷积，利用事件流补上RGB帧对快速运动变化的感知盲区。",
+        "framework_zh": "这篇工作刻意把问题控制得很简单：如果事件相机能提供RGB帧之间更细的亮度变化，那么在现有4D重建模型输入处加入事件信号，是否就能改善运动场景？作者把每个视角的三通道RGB和五通道事件体素拼成八通道张量，再用单层卷积投影回预训练ViT要求的三通道表示；后续共享Siamese编码器、MonST3R解码器和预测头都不改。\n\n事件数据通过V2E从RGB帧序列模拟：先插值出更密集的中间帧，再根据亮度变化生成异步事件，最后累积为体素网格。模型因此得到RGB提供的空间纹理和事件体素提供的运动变化线索。评估覆盖相机位姿和视频深度；RGB+事件在三项相机误差及三个数据集的深度指标上最好，运动敏感性分析中，物体运动越大时融合收益也越明显。\n\n但这是一项初步研究：事件流不是实机事件相机记录，而是模拟生成；事件数据使用与RGB相同的骨干处理，未针对稀疏异步结构设计编码器；融合也只是简单拼接。作者建议用真实事件数据、事件专用编码器和自适应融合，并在更近期的4D模型上重测。因此当前结果只支持“模拟事件信号可补充MonST3R”的初步证据。",
+        "pipeline": "RGB帧序列模拟异步事件 → RGB/事件体素拼接 → 单层适配后输入原MonST3R → 预测位姿、深度与4D点图",
+        "results": "在Sintel上RGB+事件体素的ATE均值0.106、平移RPE 0.038、旋转RPE 0.476，低于RGB输入的0.108、0.042、0.732。深度Abs Rel在Sintel/Bonn/KITTI分别为0.331/0.064/0.101，相比RGB的0.345/0.065/0.106均较低。整体摘要报告三基准平均Abs Rel相对RGB-only降低3.4%。",
+        "limitations": "作者称这是初步研究；事件数据由V2E模拟而非真实事件相机采集，基座MonST3R已非最新4D模型。RGB与事件简单拼接，未做事件专用编码或自适应融合，泛化到其他基座尚未验证。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "RGB和事件体素拼接后以单层卷积适配原MonST3R编码器"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "V2E从RGB插值序列合成事件流并生成体素表示"
+          },
+          {
+            "section": "S4.SS0.SSSx3",
+            "claim": "RGB+事件在Sintel相机位姿指标优于其他输入组合"
+          },
+          {
+            "section": "S4.SS0.SSSx4",
+            "claim": "三个数据集视频深度指标及RGB/事件互补性"
+          },
+          {
+            "section": "S4.SS0.SSSx6",
+            "claim": "高物体运动下融合收益更显著"
+          },
+          {
+            "section": "S5",
+            "claim": "合成事件、旧基座、拼接融合及未来方向限制"
+          }
+        ],
+        "fulltext_hash": "355d578d52c39c709534c4e8ec76d5d12cd8de6a7d855b5c44d1613093577334",
+        "analysed_at": "2026-10-30T01:28:10.655Z",
+        "method_style": "core-idea-v1"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 74,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "RGB和事件体素拼接后以单层卷积适配原MonST3R编码器",
+          "url": "https://arxiv.org/html/2610.36610v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "V2E从RGB插值序列合成事件流并生成体素表示",
+          "url": "https://arxiv.org/html/2610.36610v1#S3.SS2"
+        },
+        {
+          "section": "S4.SS0.SSSx3",
+          "claim": "RGB+事件在Sintel相机位姿指标优于其他输入组合",
+          "url": "https://arxiv.org/html/2610.36610v1#S4.SS0.SSSx3"
+        },
+        {
+          "section": "S4.SS0.SSSx4",
+          "claim": "三个数据集视频深度指标及RGB/事件互补性",
+          "url": "https://arxiv.org/html/2610.36610v1#S4.SS0.SSSx4"
+        },
+        {
+          "section": "S4.SS0.SSSx6",
+          "claim": "高物体运动下融合收益更显著",
+          "url": "https://arxiv.org/html/2610.36610v1#S4.SS0.SSSx6"
+        },
+        {
+          "section": "S5",
+          "claim": "合成事件、旧基座、拼接融合及未来方向限制",
+          "url": "https://arxiv.org/html/2610.36610v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of our event-augmented 4D reconstruction pipeline. Pairs of RGB frames and their corresponding event voxel grids are processed within a sliding window and passed through MonST3R to predict per-window pointmaps. Camera intrinsics and extrinsics estimated from overlapping windows align consecutive pointmaps into a single coordinate system, yielding a dynamic point cloud that captures scene geometry and motion over time.",
+          "url": "https://arxiv.org/html/2610.36610v1/images/Event4D_teaser.png",
+          "source_url": "https://arxiv.org/html/2610.36610v1#S0.F1"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.37381",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "decision": "include",
+      "reason": "物理动力学词元作为动作生成的核心条件，训练中使用未来视频监督、部署时移除视频生成器，直接针对机器人动作控制的时延与动态理解问题。"
+    },
+    {
+      "key": "arxiv:2610.37666",
+      "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
+      "decision": "include",
+      "reason": "把动作表示与其造成的世界变化绑定，再从无动作标注的人类视频中通过未来预测一致性提供强化信号；实机OOD与组合技能实验支撑其动作控制贡献。"
+    },
+    {
+      "key": "arxiv:2610.37330",
+      "title": "Tokens of Motion: Primitive Motion Learning for Human-Humanoid Skill Transfer",
+      "decision": "include",
+      "reason": "以离散因子化运动原语作为人类动作迁移到人形机器人的共享接口，贡献直接落在运动表示、技能迁移和实机闭环控制。"
+    },
+    {
+      "key": "arxiv:2610.37215",
+      "title": "Retrieve to Act: Motion Primitive Graph Retrieval for Robust VLA Execution",
+      "decision": "include",
+      "reason": "该方法直接在推理时利用历史运动原语纠正VLA动作，具有清晰的状态校正—查询检索—动作融合链路，实验证明组件不可互相替代。"
+    },
+    {
+      "key": "arxiv:2610.36791",
+      "title": "RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions",
+      "decision": "include",
+      "reason": "核心贡献是把异构身体的动作转成可统一条件化视频世界模型的潜在动作，并将其用于跨具身数据合成和策略训练，运动/动作控制是方法主线。"
+    },
+    {
+      "key": "arxiv:2610.36694",
+      "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+      "decision": "include",
+      "reason": "核心创新直接调整机器人动作流匹配的任务先验和去噪时间路径，既提高成功率又减少采样步数，是运动策略生成的实质改进。"
+    },
+    {
+      "key": "arxiv:2610.36624",
+      "title": "Adapting Video Models for Robot Control via Motion-guided Asymmetric Prediction",
+      "decision": "include",
+      "reason": "不是泛泛提高视频画质，而是把视频预测监督集中到手、物体等控制相关动态区域，并在仿真与实机操作中验证策略收益，运动控制贡献明确。"
+    },
+    {
+      "key": "arxiv:2610.37566",
+      "title": "ReferStream: Interactive Subject Injection for Streaming Video Generation",
+      "decision": "include",
+      "reason": "直接研究生成已经开始后才到达的视觉参考如何进入流式视频，并同时处理新主体引入与旧主体保留；核心机制和基准均对应流式生成、主体控制偏好。"
+    },
+    {
+      "key": "arxiv:2610.36853",
+      "title": "LingGS: Decoupling Feed-Forward Geometry Prediction from Camera Tracking for High-Fidelity Gaussian SLAM",
+      "decision": "include",
+      "reason": "与相机控制主题不同，本文研究单目动态相机下的在线相机位姿跟踪与3D高斯重建；几何深度先验和显式位姿求解组成清晰可复用方案。"
+    },
+    {
+      "key": "arxiv:2610.36610",
+      "title": "4D Reconstruction with Events & RGB",
+      "decision": "include",
+      "reason": "直接探索事件流补足RGB动态重建运动信息，方法简单且报告跨数据集收益；但作者自己将其定位为初步研究，需谨慎看待合成事件数据和旧基线。"
+    }
+  ],
+  "digest_id": "0495dcad9fb83104f879"
+}
