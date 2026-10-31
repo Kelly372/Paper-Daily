@@ -1,0 +1,1362 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-10-31",
+  "target_date": "2026-10-30",
+  "window": {
+    "from": "2026-10-28",
+    "to": "2026-10-30",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-10-31T03:18:43.976Z",
+  "retrieved_at": "2026-10-31T02:45:59.175Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "count": 826,
+      "total": 826,
+      "error": null,
+      "coverage": "2026-10-28 至 2026-10-30（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-30",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-30"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-29",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-29"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-10-28",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-10-28"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 9,
+      "url": "https://huggingface.co/papers/date/2026-10-30",
+      "date": "2026-10-30",
+      "retrieved_at": "2026-10-31T03:03:17.552Z",
+      "coverage": "已检查 2026-10-30 日期页（页面显示42篇），并逐一打开核对9个与当前方向相关的卡片 ID，再与 arXiv 元数据对应。HF 日期 API 多次连接超时，页面浏览覆盖为部分发现；页面另有旧论文 Holo4D（arXiv提交日2026-10-18），超出72小时窗口，不纳入候选。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-10-30",
+      "retrieved_at": "2026-10-31T03:05:58.017Z",
+      "coverage": "检查公开文章库，并查看 2026-10-30 产业资讯列表及按日期/机器人、视频生成、世界模型方向检索。该日期可见资讯以产品和产业新闻为主，未确认能追溯到本期 arXiv 原文的独立论文报道；文章库页面展示内容并非该日全量归档，且部分内容需登录，故不能视为完整公众号覆盖。"
+    }
+  ],
+  "candidates_count": 826,
+  "analysed_count": 10,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2610.39478",
+      "arxiv_id": "2610.39478",
+      "doi": "",
+      "title": "Regional Anchor Routing for Multi-Object Motion Transfer",
+      "abstract": "Compositional motion transfer requires a model to extract motions from multiple reference videos, and apply each motion to a user-specified object in one target scene. Existing methods normally struggle to reliably assign different reference motions to the correct target objects, thus a motion intended for one object may affect another. Meanwhile, some motion-specific tuning approaches are still facing another issue: they must run a new optimization whenever the reference video changes, making repeated transfers inefficient. To address these limitations, we propose RART, a framework that unifies object-wise motion extraction, target-region anchoring, and frame-aligned injection into a frozen video Diffusion Transformer for multi-object motion transfer. For each reference motion, RART extracts temporally ordered features from the masked reference video, and then conditions them on the target first-frame mask to form mask-anchored motion tokens. Frame-aligned motion cross-attention allows each generated frame to read only the motion tokens at the corresponding time slots, composing all object motions in one denoising process. During training, a motion-attention routing loss encourages each target region to attend to its corresponding motion tokens and reduces interference between objects. Therefore, RART can handle novel reference-target combinations without per-video optimization. Experiments show that RART achieves accurate motion preservation, efficient inference, and strong compositional generalization.",
+      "authors": [
+        "Yuze Li",
+        "Fuchen Long",
+        "Xinlong Sun",
+        "Cheng Yan",
+        "Xinyu Zhang",
+        "Xi Chen"
+      ],
+      "url": "https://arxiv.org/abs/2610.39478",
+      "published": "2026-10-29T06:46:24Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.39478v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 95,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "RART：区域锚定路由实现多对象运动迁移",
+        "abstract_zh": "组合式运动迁移需要从多个参考视频提取不同对象的动作，并分别施加到目标场景中指定对象。本文提出 RART，将对象级运动提取、目标区域锚定和逐帧运动注入统一到冻结的视频扩散 Transformer 中。每个参考视频经对象掩码后转成按时间排序的运动特征，并与目标首帧中的对应对象区域建立锚定；生成每一帧时，只允许该区域关注时间上对应的运动特征。训练时增加运动注意力路由损失，约束目标区域与指定运动源的对应关系，避免多个动作互相串扰，也无需每次更换参考视频都单独优化。",
+        "reason": "这是运动控制/迁移的直接贡献，核心问题是“哪段动作给哪个对象、在哪些帧注入”；全文机制与消融数据都围绕对象区域的时空路由展开。",
+        "introduction_zh": "当目标视频里有多个对象，而用户分别给出不同参考动作时，模型不仅要学会动作，还必须把每段动作稳定分配给正确对象。已有方法容易发生跨对象串扰；有些方案又要针对每次新参考视频重新优化，成本高。RART 的出发点是把“动作属于谁”和“动作发生在何时”显式编码进生成过程：先对参考视频对象分区，再把运动特征锚定到目标首帧的对象掩码，最后在生成时按帧注入对应特征。",
+        "method_takeaway": "RART 把每个参考动作绑定到目标首帧中的指定对象区域，并在每一生成帧只路由到时间对齐的动作特征，减少多对象动作互相串扰。",
+        "framework_zh": "想象目标画面里有两个人，用户分别给出“左边挥手”和“右边转身”的参考视频。难点不是把两个动作都塞进生成器，而是确保动作身份不串：挥手不能跑到右边的人身上，动作节奏也不能错帧。RART 因此先用对象掩码把每段参考视频拆成对象级输入，再由运动编码器提取有时间顺序的特征；同时用目标首帧的对象掩码作为“地址”，把每种动作锚定到用户指定的目标对象。\n\n生成时，系统不让目标对象全局地读取所有参考动作，而是按目标帧与参考时间位置的对应关系做交叉注意力：某个对象区域在当前帧只能读取分配给它的那组、且时间上匹配的运动 token。训练中的路由损失进一步惩罚区域注意力跑错来源。这样关键创新不只是“加了运动条件”，而是把对象归属和时间对齐一起落实在注意力路由上。由于视频生成器被冻结，训练好的路由模块可用于新的参考视频，不必为每次输入重新微调。\n\n可以把整条方法记成“参考动作先分人，目标区域再认领，生成每一帧按地址取动作”。作者消融显示去掉路由约束会降低运动保真度；但冻结的视觉先验和运动编码器仍限制画质与细微关节动作表达，复杂动作或少见目标外形容易产生伪影。",
+        "pipeline": "多段参考视频＋目标首帧掩码 → 对象级分割并提取时序运动 token → 将每个 token 组锚定到指定目标区域 → 逐帧时空路由生成并用路由损失约束",
+        "results": "作者在组合式多对象迁移评测中报告完整模型运动保真度 0.480；移除路由损失后为 0.448。注意完整模型的帧保真度并非所有消融项中最高，因此本文证据主要支持动作对应关系的改善，不能笼统说所有画质指标均提升。",
+        "limitations": "输出受冻结视频生成器和预训练运动编码器能力限制；困难动作或少见目标几何会产生形状不稳定和伪影；运动表示可能遗漏细微或高度关节化动态。",
+        "evidence": [
+          {
+            "section": "Sx3.SSx2",
+            "claim": "对象级运动提取、目标锚定与逐帧注入的总体框架。"
+          },
+          {
+            "section": "Sx3.SSx3.SSS0.Px2",
+            "claim": "逐帧区域交叉注意力实现时间对齐的运动注入。"
+          },
+          {
+            "section": "Sx3.SSx4.SSS0.Px2",
+            "claim": "运动注意力路由损失及其训练作用。"
+          },
+          {
+            "section": "Sx4.SSx3.SSSx3",
+            "claim": "移除路由损失的消融比较。"
+          },
+          {
+            "section": "A5",
+            "claim": "作者列出的视觉先验与运动表征限制。"
+          }
+        ],
+        "fulltext_hash": "b3ae7ef498661d142500c4f6ff398de813fdb65a5646e45acde38cc7b2482a1a",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "Sx2.F2",
+          "kind": "方法框架图",
+          "reading_tip": "先辨认不同参考视频的对象掩码，再看目标首帧的彩色区域如何认领动作，最后追踪逐帧注意力如何阻止动作串线。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 105,
+      "evidence": [
+        {
+          "section": "Sx3.SSx2",
+          "claim": "对象级运动提取、目标锚定与逐帧注入的总体框架。",
+          "url": "https://arxiv.org/html/2610.39478v1#Sx3.SSx2"
+        },
+        {
+          "section": "Sx3.SSx3.SSS0.Px2",
+          "claim": "逐帧区域交叉注意力实现时间对齐的运动注入。",
+          "url": "https://arxiv.org/html/2610.39478v1#Sx3.SSx3.SSS0.Px2"
+        },
+        {
+          "section": "Sx3.SSx4.SSS0.Px2",
+          "claim": "运动注意力路由损失及其训练作用。",
+          "url": "https://arxiv.org/html/2610.39478v1#Sx3.SSx4.SSS0.Px2"
+        },
+        {
+          "section": "Sx4.SSx3.SSSx3",
+          "claim": "移除路由损失的消融比较。",
+          "url": "https://arxiv.org/html/2610.39478v1#Sx4.SSx3.SSSx3"
+        },
+        {
+          "section": "A5",
+          "claim": "作者列出的视觉先验与运动表征限制。",
+          "url": "https://arxiv.org/html/2610.39478v1#A5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "Sx2.F2",
+          "caption": "Figure 2: Overview of RART. (a) The motion encoder extracts temporally ordered features from each masked reference video and injects the corresponding target-mask anchor to produce object-wise motion tokens. (b) Frame-aligned motion cross-attention injects the motion tokens of each latent frame into the frozen DiT.",
+          "url": "https://arxiv.org/html/2610.39478v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.39478v1#Sx2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.40339",
+      "arxiv_id": "2610.40339",
+      "doi": "",
+      "title": "Wizard: Manipulate Any World in Real Time via Agentic Control",
+      "abstract": "Recent advances in video world models have enabled the generation of increasingly realistic and interactive virtual environments, opening new possibilities for player-customizable gameplay. Agentic frameworks further advance this direction by decoupling explicit game logic and controllable world representations from visual generation. However, existing approaches support only simple game settings and predefined motion patterns, generalize poorly to unseen environments and characters, and offer limited real-time interactivity. In this paper, we introduce Wizard, an agentic game world model that enables real-time, precise control over character motions while generalizing zero-shot across novel scenes, characters, and actions. To achieve this, we construct a diverse dataset spanning 750 scenes and 178 characters, incorporating skeleton and geometry information as structured representations. We leverage these representations as intermediate proxies to condition a video generation model, together with an adaptive masking mechanism that improves alignment between the conditioning signals and generated video rollouts. Furthermore, we introduce an agentic framework that explicitly maintains and updates game states, allowing players to freely configure their virtual worlds and exercise fine-grained control over character motions while preserving visual quality and gameplay consistency. By combining agentic control with structured proxy-based generation, our framework unlocks new possibilities for player-driven game creation with real-time, generalizable, and mechanically consistent world simulation.",
+      "authors": [
+        "Yuzhe Wu",
+        "Zijun Lin",
+        "Yeying Jin"
+      ],
+      "url": "https://arxiv.org/abs/2610.40339",
+      "published": "2026-10-29T16:03:19Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "大模型",
+        "世界模型",
+        "流式生成"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.40339v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 94,
+        "priority_topics": [
+          "流式生成",
+          "运动与运动控制"
+        ],
+        "title_zh": "Wizard：通过智能体控制实时操纵任意世界",
+        "abstract_zh": "本文提出 Wizard，一种可实时互动并精细控制角色动作与场景的游戏世界模型。作者构建覆盖 750 个场景、178 个角色的 50.3 小时对齐数据，以骨架和几何代理表示可控世界状态；智能体根据用户指令更新游戏状态，视频生成器再把代理状态渲染为画面。角色动作从动作库检索并重定向，角色感知的自适应掩码把参考注意力限制在骨架所对应的图像区域。经过因果适配和少步蒸馏，模型可自回归实时生成，并在未见场景、角色和动作组合上展示零样本泛化。",
+        "reason": "同时实质覆盖实时自回归视频生成与骨架驱动的角色运动控制；可控代理把游戏状态与外观生成分开，核心机制和评测均直接支持两个高权重方向。",
+        "introduction_zh": "现有视频世界模型能生成逼真画面，却常只适用于简单场景或预设动作，难以在实时互动中精细控制角色和世界状态；直接让生成模型承担游戏逻辑又不易保证动作和场景一致。Wizard 的思路是把显式可控的角色骨架、场景几何代理交给智能体操作，再由视频生成器负责把代理转成视觉结果。为让这种控制能迁移到新角色和场景，作者构建大规模对齐数据并训练骨架区域感知的生成模型。",
+        "method_takeaway": "Wizard 让智能体先操纵骨架与场景几何代理，再用区域感知的因果视频生成把这些明确状态实时呈现出来。",
+        "framework_zh": "把 Wizard 想成“游戏规则由智能体改，画面由视频模型画”。玩家给出动作或场景指令后，智能体更新显式世界状态：场景代理保存空间结构，角色代理保存骨架姿态；角色运动从动作库检索并重定向到目标骨架。这样“角色应该怎么动”先在结构化状态里确定，而不是寄希望于文本提示让生成模型自行猜测。\n\n接着，视频生成器把这些代理状态变成画面。它把骨架投影到图像区域，并用角色感知的自适应掩码让参考注意力重点落在对应角色上，减少动作条件影响背景或其他角色。训练数据由游戏画面、动作与代理状态对齐而成；因果适配和少步蒸馏使模型能够按时间块自回归生成，后续片段承接已生成内容，从而支持实时互动。\n\n所以整条方法可记为“智能体改状态、动作库给骨架、掩码锁定角色、因果生成出画面”。论文报告对新场景、角色和动作的零样本组合能力。局限在于动作库对罕见体型或动作的覆盖有限，且生成代理与真实画面之间仍需保持一致；实验也主要处于游戏世界设置。",
+        "pipeline": "玩家指令 → 智能体更新场景/骨架代理并检索重定向动作 → 骨架区域掩码条件化因果视频生成器 → 自回归实时生成互动画面",
+        "results": "作者以 50.3 小时、750 个场景、178 个角色数据训练，并报告模型可在未见场景、角色和动作上零样本组合控制；推理采用因果适配和少步蒸馏支持实时交互。",
+        "limitations": "结论讨论指出动作库对不常见身体结构和动作仍有不足；对代理状态与生成画面的持续一致性仍是开放问题，结果主要来自游戏场景而非一般现实环境。",
+        "evidence": [
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "骨架区域自适应掩码把角色参考限制在相应区域。"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "因果适配和少步蒸馏用于实时自回归生成。"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "未见场景、角色、动作上的零样本组合评测。"
+          },
+          {
+            "section": "S6",
+            "claim": "作者对动作覆盖和世界模型边界的讨论。"
+          }
+        ],
+        "fulltext_hash": "a1b2ccf11b7b3f339ae9292298b5162bd21eb2d2703f4f8d24e09d222c3fe8b3",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S4.F3",
+          "kind": "方法框架图",
+          "reading_tip": "沿推理图从代理状态开始：看骨架/几何如何控制动作和场景，再看掩码如何把角色条件送入视频生成。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 104,
+      "evidence": [
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "骨架区域自适应掩码把角色参考限制在相应区域。",
+          "url": "https://arxiv.org/html/2610.40339v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "因果适配和少步蒸馏用于实时自回归生成。",
+          "url": "https://arxiv.org/html/2610.40339v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "未见场景、角色、动作上的零样本组合评测。",
+          "url": "https://arxiv.org/html/2610.40339v1#S5.SS2"
+        },
+        {
+          "section": "S6",
+          "claim": "作者对动作覆盖和世界模型边界的讨论。",
+          "url": "https://arxiv.org/html/2610.40339v1#S6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview of Wizard. Our method supports diverse gameplay experiences, including world exploration, character summoning, character transformation, and scene manipulation. By combining agentic control with geometric scene proxies and articulated character skeletons, Wizard achieves fine-grained control, zero-shot generalization, and mechanics-consistent gameplay with real-time interaction at 24 FPS.",
+          "url": "https://arxiv.org/html/2610.40339v1/teaser.png",
+          "source_url": "https://arxiv.org/html/2610.40339v1#S1.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Dataset Overview and Processing Pipeline. We construct 50.3 hours of data spanning 750 scenes and 178 characters from four complementary sources. Scene geometry and character skeletons are jointly encoded into unified visual proxies, followed by filtering and captioning to produce aligned proxy–video training pairs.",
+          "url": "https://arxiv.org/html/2610.40339v1/data.png",
+          "source_url": "https://arxiv.org/html/2610.40339v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.40614",
+      "arxiv_id": "2610.40614",
+      "doi": "",
+      "title": "L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory",
+      "abstract": "Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging. Existing approaches rely on either temporal context or explicit 3D memory, both of which scale poorly because memory grows with the length of the generated stream. Moreover, explicit 3D memories condition latent video generators by re-encoding RGB renderings, which precludes real-time generation. In this paper, we introduce a Latent 3D Gaussian Memory (L3G) that combines the efficiency of feed-forward reconstruction with a compact, rapidly renderable scene representation. Building on this memory, we propose L3G-World, in which a memory updater and a video diffusion transformer (DiT) alternate autoregressively to generate spatially consistent worlds. The memory updater spawns Gaussians in newly observed regions and refines existing ones, so that the memory grows with scene extent rather than stream length. Each Gaussian further stores a VAE latent feature, allowing the memory to be rendered directly into the DiT's latent space without VAE re-encoding. Experiments show that L3G-World achieves state-of-the-art generation quality and long-horizon spatial consistency, with up to $38.6\\times$ fewer 3D primitives, $3.2\\times$ faster memory updates, and $359\\times$ faster memory rendering relative to the most efficient prior 3D-memory baseline for each metric, enabling real-time world generation at 9 FPS.",
+      "authors": [
+        "Jinhyeok Choi",
+        "JoungBin Lee",
+        "Jongmin Lee",
+        "Minkyeong Jeon",
+        "Jiyoung Kim",
+        "Kaeun Han",
+        "Yoonjin Yoon",
+        "Seungryong Kim"
+      ],
+      "url": "https://arxiv.org/abs/2610.40614",
+      "published": "2026-10-29T17:54:42Z",
+      "topics": [
+        "视频生成",
+        "流式生成"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-30"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.40614v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 94,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "L3G-World：以潜在 3D 高斯记忆实时生成无限世界",
+        "abstract_zh": "交互式世界模型需要根据用户动作生成视觉内容，同时在长时间探索中保持空间一致性。本文提出潜在 3D 高斯记忆 L3G，并据此构建 L3G-World：记忆更新器与视频扩散 Transformer 按视频片段自回归交替运行，逐步扩展场景并生成后续画面。高斯基元保存 VAE 空间特征，可直接参与视频生成条件，避免把 3D 渲染结果重新编码为图像。作者报告系统可实时运行，并在内存规模、更新速度和渲染吞吐上优于比较方法。",
+        "reason": "核心贡献直接针对长时交互世界生成的空间记忆与实时性瓶颈；全文给出可复述的“按需补记忆、在潜空间直接渲染、分块生成再回写”闭环，并报告运行效率和场景一致性指标。",
+        "introduction_zh": "交互式世界模型要一边持续生成后续视频，一边记住已经探索过的空间。只靠短时上下文容易忘记远处场景；显式 3D 重建虽能保留几何，却会随视频长度积累大量基元，而且常需把渲染图重新编码后才能喂给视频模型，拖慢生成。论文的出发点是让持久记忆足够紧凑、更新足够快，并直接处在视频生成器能使用的潜空间。作者把贡献概括为潜在 3D 高斯记忆、按场景覆盖情况增量更新，以及与视频扩散模型组成分块自回归闭环。",
+        "method_takeaway": "它让世界模型只在新画面暴露出记忆空缺时增加或修正 3D 高斯，并把每个高斯的 VAE 特征直接渲染给视频生成器，从而用紧凑持久记忆支撑实时分块生成。",
+        "framework_zh": "可以把 L3G-World 想成一个边走边更新的三维场景笔记本。输入是当前视频片段、已有场景记忆和下一段相机轨迹；如果每段都把所有像素重新建成一份稠密点云，记忆会随视频越积越大。论文的关键改变是“看覆盖、按需补”：记忆更新器先把当前观察与已有高斯记忆对齐，只在覆盖不足的位置生成新的高斯，对已被观察过的区域则细化原有高斯。这样记忆增长主要由探索到的新空间决定，而不是简单与生成帧数成正比。\n\n第二个关键是每个高斯不只保存几何和透明度，还保存视频 VAE 潜空间中的特征。生成下一段视频时，系统把这些高斯投影到目标相机视角，直接得到可与噪声视频潜变量拼接的条件，再交给视频 DiT 去噪。省掉“先渲染 RGB、再用 VAE 编码”的往返步骤，正是记忆能够进入实时生成环节的原因。\n\n因此系统以片段为单位循环：根据当前观察更新记忆，用记忆和用户相机轨迹条件生成新片段，再把新片段交回更新器。读者可把它记成“缺哪里补哪里，潜空间直接看，生成一段再回写”。论文展示的速度和存储收益支持了这一设计，但它当前把持久 3D 记忆主要用于静态场景，尚未显式分离独立运动物体；极大范围探索仍会让记忆变大。",
+        "pipeline": "当前片段＋旧记忆＋相机轨迹 → 覆盖检测并增量更新潜在 3D 高斯 → 将高斯潜特征投影到目标视角并条件化视频 DiT → 自回归生成下一片段并回写记忆",
+        "results": "作者报告在 DL3DV/RealEstate10K 质量与效率评测中保持可用生成质量；相对 NeoVerse，基元数减少约 266–417 倍、内存减少约 42–67 倍、VAE 渲染吞吐提高约 349–359 倍。与高效点云方案比较，记忆更新约快 8.9–9.5 倍，内存低约 7.8–10.4 倍。",
+        "limitations": "作者指出记忆主要面向静态场景，未显式建模独立运动物体；记忆仍随探索空间范围增长；超长时序下的错误可能逐段传播。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "记忆更新器依据覆盖情况新增或细化高斯。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "潜在高斯直接投影为视频生成器可用的条件。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "记忆更新与分块视频生成形成自回归闭环。"
+          },
+          {
+            "section": "A5",
+            "claim": "作者列出的静态场景假设和可扩展性限制。"
+          }
+        ],
+        "fulltext_hash": "c9c688a2b48bed0a432f5290e2eba3213af7daa6d6f0e6a327b652b2b5ef1bb5",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S3.F4",
+          "kind": "方法框架图",
+          "reading_tip": "沿图中的分块循环看：旧记忆投影到当前视角，视频 DiT 生成下一段，新观察再触发记忆的增量更新。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 104,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "记忆更新器依据覆盖情况新增或细化高斯。",
+          "url": "https://arxiv.org/html/2610.40614v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "潜在高斯直接投影为视频生成器可用的条件。",
+          "url": "https://arxiv.org/html/2610.40614v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "记忆更新与分块视频生成形成自回归闭环。",
+          "url": "https://arxiv.org/html/2610.40614v1#S3.SS4"
+        },
+        {
+          "section": "A5",
+          "claim": "作者列出的静态场景假设和可扩展性限制。",
+          "url": "https://arxiv.org/html/2610.40614v1#A5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F4",
+          "caption": "Figure 4: L3G-World Pipeline. L3G-World couples video generation and memory updating in a chunk-wise loop, where each generated chunk updates the persistent 3D memory, which in turn conditions subsequent chunk generation.",
+          "url": "https://arxiv.org/html/2610.40614v1/archi_pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.40614v1#S3.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.39543",
+      "arxiv_id": "2610.39543",
+      "doi": "",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "abstract": "Reasoning informs decision-making by connecting intended actions with their expected consequences. Recent vision-language-action (VLA) models incorporate embodied chains of thought (ECoTs) to guide action generation. However, such guidance remains implicit, as actions are conditioned on ECoTs rather than explicitly optimized to align with them. We introduce CoRAct, a consequence-grounded reasoning-to-action alignment framework that explicitly aligns reasoning and action through reward-guided optimization in action noise space. CoRAct formulates two physically grounded ECoT components as verifiable signals: movement specifies intended motion, while waypoints encode expected spatial consequences. A unified Mixture-of-Transformers jointly models ECoT reasoning, action generation, and action-conditioned future prediction. For candidate actions generated from sampled noise, CoRAct computes alignment rewards based on movement consistency and agreement between predicted outcomes and specified waypoints. These rewards guide group-relative optimization of the initial noise distribution, steering action generation toward consistency with intended actions and expected consequences. Experiments across RoboCasa, VLABench, and real-world manipulation tasks demonstrate improvements in task success, generalization, and reasoning-execution alignment over strong ECoT-based VLA baselines. CoRAct also grounds externally provided ECoTs in executable behavior, enabling zero-shot adaptation to novel scenarios by leveraging knowledge from powerful vision-language models. Project page and dataset: https://onlyxingxingzyx.github.io/CoRAct/",
+      "authors": [
+        "Yixue Zhang",
+        "Wenke Xia",
+        "Kun Wu",
+        "Wenbo Yu",
+        "Pei Ren",
+        "Junnan Nie",
+        "Di Hu",
+        "Zhengping Che",
+        "Chang Liu"
+      ],
+      "url": "https://arxiv.org/abs/2610.39543",
+      "published": "2026-10-29T07:44:54Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.39543v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 93,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "从推理到行动：面向视觉-语言-动作模型的后果对齐",
+        "abstract_zh": "现有视觉-语言-动作模型把具身思维链作为动作生成条件，却没有显式优化推理内容与实际执行之间是否一致。本文提出 CoRAct，将动作意图中的运动描述和预期空间后果中的 waypoint 作为可验证信号，并由 Mixture-of-Transformers 联合建模推理、动作及动作条件下的未来预测。训练分为两阶段：先进行动作条件的流匹配和未来图像预测，再冻结骨干，在动作噪声空间通过可验证奖励优化策略，使生成动作与运动意图及预测后果相符。",
+        "reason": "运动意图和 waypoint 作为可验证控制信号被直接用于优化动作生成，是真正的具身运动控制贡献；评测含仿真、泛化和真实机器人。",
+        "introduction_zh": "把自然语言推理附在动作前面，并不保证机器人真的按推理所说的方式运动，也不保证动作造成预期结果。CoRAct 把这种“说了但没做到”的隐性问题改写成可检查的对齐目标：运动描述说明动作意图，waypoint 表示预期空间后果，未来图像预测提供动作后果线索。作者再用奖励在动作噪声空间优化执行策略，使语言推理和物理行动之间形成可验证联系。",
+        "method_takeaway": "CoRAct 不只把思维链当作动作条件，而是用“运动意图＋目标 waypoint＋动作后果预测”形成可验证奖励，直接优化动作噪声使执行与推理相符。",
+        "framework_zh": "比如机器人要把水果放进指定容器，推理可以描述“向左移动夹爪并接近目标”，waypoint 则给出夹爪应到达的位置。如果只把这些文字作为提示，模型仍可能生成与意图不符的动作。CoRAct 把具身思维拆成两类可核验信号：movement 表示期望运动，waypoint 表示该运动应造成的空间位置变化；模型还预测执行动作后会看到的未来画面。\n\n训练第一阶段让 Mixture-of-Transformers 联合学习推理、动作和未来预测，使三者共享表示。第二阶段冻结主体模型，在动作噪声空间更新策略：从候选动作采样，检查运动分量是否符合意图、waypoint 是否与预期后果对齐，并将这些可验证奖励用于 group-relative 优化。这样优化对象是“动作是否兑现推理”，而非仅让动作模仿标注。推理时模型根据当前观察和任务一次生成动作，不需要额外搜索多条候选。\n\n核心可以记为“先预测动作会造成什么，再用意图与后果校正动作”。作者报告多个仿真平台及真实操作任务上的成功率改善。边界是后训练依赖专家轨迹，失败状态下的自主恢复有限；论文展示的智能体纠错能改善失败案例，但不是策略已经具备普遍恢复能力的证据。",
+        "pipeline": "观察＋任务 → 联合生成具身推理/动作/未来预测 → 以运动与 waypoint 后果构造验证奖励 → 在动作噪声空间优化并输出控制动作",
+        "results": "作者在 RoboCasa、VLABench 和真实机器人任务报告相对基线的持续提升；真实机器人设置含桌面整理、按图拼字和水果选择等 30 次试验。论文还分别消融 movement、waypoint 和对齐目标。",
+        "limitations": "训练后优化仅使用专家轨迹，失败恢复能力有限；失败状态下 ECoT 质量下降，作者展示的外部智能体纠错可帮助个别案例，但不等于模型本身已有通用恢复机制。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "推理、动作与未来后果的联合建模。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "运动对齐奖励的定义。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px3",
+            "claim": "后果对齐奖励及动作噪声优化。"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "闭环自我纠正实验及其外部纠错设置。"
+          },
+          {
+            "section": "S4.SS6",
+            "claim": "真实机器人评测任务和试验设置。"
+          },
+          {
+            "section": "S5",
+            "claim": "作者对后果对齐贡献的总结。"
+          }
+        ],
+        "fulltext_hash": "3dbd32be3f9ed9350b91cd792d26f2f891c013f157f4017ca275ded303393120",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S2.F2",
+          "kind": "方法框架图",
+          "reading_tip": "沿图中三条输出读：movement 说清想怎么动，waypoint 表示预期到哪，未来预测提供后果，再看它们如何组成动作奖励。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 103,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "推理、动作与未来后果的联合建模。",
+          "url": "https://arxiv.org/html/2610.39543v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "运动对齐奖励的定义。",
+          "url": "https://arxiv.org/html/2610.39543v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px3",
+          "claim": "后果对齐奖励及动作噪声优化。",
+          "url": "https://arxiv.org/html/2610.39543v1#S3.SS2.SSS0.Px3"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "闭环自我纠正实验及其外部纠错设置。",
+          "url": "https://arxiv.org/html/2610.39543v1#S4.SS5"
+        },
+        {
+          "section": "S4.SS6",
+          "claim": "真实机器人评测任务和试验设置。",
+          "url": "https://arxiv.org/html/2610.39543v1#S4.SS6"
+        },
+        {
+          "section": "S5",
+          "claim": "作者对后果对齐贡献的总结。",
+          "url": "https://arxiv.org/html/2610.39543v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Fig. 2: Framework of CoRAct. (a) CoRAct jointly models ECoT reasoning, action generation, and action-conditioned future prediction in a unified Mixture-of-Transformers, coupling actions with intent and consequence. (b) It then freezes the backbone and optimizes a conditional noise policy with movement and consequence rewards, steering action sampling toward better reasoning–execution alignment.",
+          "url": "https://arxiv.org/html/2610.39543v1/better_pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.39543v1#S2.F2"
+        },
+        {
+          "id": "S4.F4",
+          "caption": "Fig. 4: Illustration of our agent-guided correction pipeline, where GPT-5.6 Sol corrects the CoT generated by the VLM.",
+          "url": "https://arxiv.org/html/2610.39543v1/agent_guide.png",
+          "source_url": "https://arxiv.org/html/2610.39543v1#S4.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.39287",
+      "arxiv_id": "2610.39287",
+      "doi": "",
+      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+      "abstract": "Human cognition flexibly draws on a shared perceptual foundation to understand environments, attend to referenced entities, reason about spatial relationships, and act. Endowing aerial robots with an analogous functional organization remains challenging, as existing systems are often specialized for individual capabilities, dependent on offboard computation, or unable to sustain closed-loop operation on resource-constrained platforms. We present OpenFlyV2, a unified onboard vision-language-action architecture that uses a shared vision-language representation to support semantic understanding, language-grounded perception, spatial reasoning, and continuous aerial control within a single model. A compact action expert converts the shared multimodal context into short-horizon flight waypoints, while motion-aware temporal memory and action priors reduce the computational cost of closed-loop execution. We construct \\dataset{}, a simulation-based dataset comprising approximately 70,000 navigation trajectories and 60,000 vision-language instruction--response pairs. OpenFlyV2 generates action chunks, each comprising 12 waypoints, entirely onboard at 10 Hz using an NVIDIA Jetson Orin NX. It transfers zero-shot from simulation to physical quadrotor flight, achieving a 48\\% navigation success rate across four real-world environments without real-world aerial training data. Extensive results demonstrate that broad vision-language competence and continuous closed-loop flight can coexist within a single model on a resource-constrained aerial platform. Code will be made publicly available at https://github.com/Ideal-ljl/AeroBrain.",
+      "authors": [
+        "Junli Liu",
+        "Zhongrui You",
+        "Chenhui Li",
+        "Zhen Li",
+        "Yuyang Tian",
+        "Qizhen Chen",
+        "Delin Qu",
+        "Haoming Song",
+        "Dong Wang",
+        "Xuelong Li",
+        "Zhigang Wang",
+        "Bin Zhao"
+      ],
+      "url": "https://arxiv.org/abs/2610.39287",
+      "published": "2026-10-29T03:35:30Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-10-30"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.39287v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 92,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "OpenFlyV2：面向空中感知与导航的机载视觉-语言-动作模型",
+        "abstract_zh": "本文提出 OpenFlyV2，将语义理解、语言指代感知、空间推理和连续空中控制整合在单一机载视觉-语言-动作架构中。共享视觉语言骨干编码当前图像、指令和记忆 token，紧凑动作专家预测短时程飞行航点及停止信号；运动自适应记忆压缩近期历史，运动结构化动作生成则建模航点分布。系统在 Jetson Orin NX 上运行，支持异步动作片段执行：生成下一片段时当前片段继续飞行。作者报告 10Hz 机载推理，并在四个真实环境进行导航测试。",
+        "reason": "实时机载控制、航点动作专家、历史运动记忆和异步片段执行都是论文核心，不是只在文字中提及动作；具备真实无人机闭环实验。",
+        "introduction_zh": "空中机器人需要把图像理解、语言指令和连续飞行动作连成闭环，但许多模型依赖地面站算力，或只完成离线识别，不能在资源受限机载平台持续控制。OpenFlyV2 通过共享视觉语言表示支持感知与空间推理，再用轻量动作专家输出短时程航点。它还针对无人机快速运动压缩近期历史，并在下一段动作生成期间继续执行当前指令，以降低推理延迟造成的控制空档。",
+        "method_takeaway": "OpenFlyV2 用共享视觉语言骨干理解环境，以运动事件压缩历史、以结构化航点专家生成飞行动作，并通过“边飞当前段、边算下一段”保持机载闭环。",
+        "framework_zh": "无人机看到当前画面和自然语言目标后，共享 VLM 提供语义、目标指代和空间关系表示；近期飞行历史不整段堆入上下文，而由 motion-adaptive memory 压缩成重要运动事件，使机载模型能记住前方障碍和已走路径。动作专家读取共享上下文，预测一组短时程 XYZ 航点增量和停止信号，而不是直接输出低层电机指令。\n\n连续控制的关键是动作分块与异步执行。飞控接口执行当前航点段时，模型已开始生成下一段；训练时给策略提供已提交的动作前缀，教它在推理延迟存在时接续当前轨迹。新动作段生成后再交由低层控制器跟踪。这样“看懂目标、记住关键运动、输出航点、异步接续”构成真正的机载闭环，模型可在 Jetson Orin NX 上运行。\n\n作者报告 10Hz 机载推理和四个真实环境中的导航成功率。读者应注意该系统在四个环境的真实成功率约 48%，说明轻量统一架构并不意味着已经稳健泛化；真实评测规模有限，仍需更广场景验证。",
+        "pipeline": "机载图像＋语言目标＋运动记忆 → 共享 VLM 编码并压缩历史 → 动作专家预测 XYZ 航点片段和停止信号 → 当前片段执行时异步生成下一片段",
+        "results": "系统在 Jetson Orin NX 上达到约 10Hz；作者报告四个真实环境综合导航成功率 48%，并展示不经真实飞行训练的仿真到现实迁移。训练数据包含约 70k 导航轨迹和 60k VQA 样本。",
+        "limitations": "真实导航只覆盖四个环境，48% 成功率表明仍有明显失败空间；论文的飞行结果不能代表对更多天气、平台和复杂动态场景的稳健性。",
+        "evidence": [
+          {
+            "section": "S4.SS1",
+            "claim": "OpenFlyV2 的统一机载架构。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "运动自适应记忆压缩导航历史。"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "航点动作专家与动作片段生成。"
+          },
+          {
+            "section": "S4.SS7",
+            "claim": "机载异步执行和硬件评估。"
+          },
+          {
+            "section": "S2.SS6",
+            "claim": "真实无人机导航试验展示。"
+          }
+        ],
+        "fulltext_hash": "0230246e303d604c8e6156f6319fda9c13df01749dfc3fca811eafe9edd8f93e",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S0.F1",
+          "kind": "方法框架图",
+          "reading_tip": "从共享 VLM 和运动记忆追到航点动作专家，再看当前动作执行期间如何并行准备下一动作段。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 102,
+      "evidence": [
+        {
+          "section": "S4.SS1",
+          "claim": "OpenFlyV2 的统一机载架构。",
+          "url": "https://arxiv.org/html/2610.39287v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "运动自适应记忆压缩导航历史。",
+          "url": "https://arxiv.org/html/2610.39287v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "航点动作专家与动作片段生成。",
+          "url": "https://arxiv.org/html/2610.39287v1#S4.SS4"
+        },
+        {
+          "section": "S4.SS7",
+          "claim": "机载异步执行和硬件评估。",
+          "url": "https://arxiv.org/html/2610.39287v1#S4.SS7"
+        },
+        {
+          "section": "S2.SS6",
+          "claim": "真实无人机导航试验展示。",
+          "url": "https://arxiv.org/html/2610.39287v1#S2.SS6"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Overview of OpenFlyV2, a unified onboard vision-language-action model for aerial robots. (A) A shared vision-language backbone integrates visual observations and language instructions with motion-aware temporal memory; an action expert with action priors generates short-horizon waypoints for closed-loop flight. (B) A single model supports semantic understanding, visual grounding, spatial reasoning, and navigation. (C) OpenFlyV2-130K comprises approximately 70,000 navigation trajectories and 60,000 vision-language pairs from 13 environments spanning 254.81 km2. These counts describe the full dataset; VLN training uses a subset of the navigation trajectories. (D) The 1-billion-parameter model generates 12-waypoint action chunks at 10 Hz entirely onboard a DJI M30T equipped with an NVIDIA Jetson Orin NX, achieving a 48% success rate in zero-shot real-world navigation.",
+          "url": "https://arxiv.org/html/2610.39287v1#S0.F1",
+          "source_url": "https://arxiv.org/html/2610.39287v1#S0.F1"
+        },
+        {
+          "id": "S4.F6",
+          "caption": "Figure 6: Architecture of OpenFlyV2. (A) A shared vision-language backbone encodes the current image, instruction, and memory tokens to condition action generation. (B) Motion-Adaptive Memory (MAM) compresses historical action segments and their visual anchors into compact event-level tokens. (C) The Motion-Structured Prior (MSP) selects and adjusts a data-derived motion prototype to construct the action source distribution. The action expert transforms a sample from this distribution into the final action chunk through conditional flow matching.",
+          "url": "https://arxiv.org/html/2610.39287v1/OpenFlyV2_model_architecture_MSP_wide.png",
+          "source_url": "https://arxiv.org/html/2610.39287v1#S4.F6"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.40210",
+      "arxiv_id": "2610.40210",
+      "doi": "",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "abstract": "Bimanual dexterous manipulation requires continuous coordination of wrist motion, finger contact, and object motion. Human videos provide rich manipulation experience. Using this experience for robot control requires aligning human poses with robot commands and accounting for embodiment-specific kinematics and contact dynamics. We present AcrossDEX 1.0, a learning system that connects human motion pretraining, simulation-based expert learning, robot demonstration collection, and visual closed-loop execution. Pretraining on HOT3D Aria predicts one second of bimanual motion from five images and thirty annotated hand states over the preceding second. Robot adaptation preserves the visual encoder, temporal backbone, and wrist parameters. Shared wrist representations, separate finger fields, and validity masks support both six-channel Inspire hands and sixteen-joint Allegro hands. The robot policy predicts sixty control targets from frontal images, command history, and task conditions. It executes a prefix and replans from updated observations. We compare direct regression, diffusion, and flow matching on lid opening and return and closed-lid object reorientation. Direct regression achieves success rates of 40.6\\% for opening and return, 100.0\\% for Inspire reorientation, and 93.3\\% for Allegro reorientation. Flow matching achieves 90.0\\% on Allegro reorientation. Paired comparisons further show that constraining replanning with the previous plan improves the continuous execution of generative policies. These results demonstrate a common adaptation pipeline for two hand embodiments and highlight the roles of contact coordination and action-chunk continuity.",
+      "authors": [
+        "Xiaoyu Yang",
+        "Nan Wu"
+      ],
+      "url": "https://arxiv.org/abs/2610.40210",
+      "published": "2026-10-29T14:56:30Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.40210v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "AcrossDEX 1.0：从人类动作预训练到跨手型双手机巧操作",
+        "abstract_zh": "双手机巧操作要求腕部运动、手指接触和物体运动持续协调。AcrossDEX 1.0 将人类动作预训练、仿真专家、机器人示范采集和视觉闭环执行连接起来：先从人类视频及手部状态学习双手运动，再在仿真中学习接触专家，并通过机器人演示适配到不同手部形态。方法使用共享腕部表示、分开的手指控制字段和有效性掩码传递人类与机器人表征，并以 receding-horizon 执行保持动作片段衔接。作者在 Inspire 与 Allegro 两种手型上验证开合盒盖和物体重定向任务。",
+        "reason": "真实双手机器人运动控制研究，关键贡献是在人类运动先验、仿真接触专家和不同机器人手控制空间之间建立显式转换，并评测连续执行。",
+        "introduction_zh": "人类视频提供丰富操作经验，却不能直接转成机器人命令：人的手与机器人手指数量、关节结构和接触动力学不同。AcrossDEX 试图跨越这一差距，同时处理双手协调和连续动作执行。作者先从人类视频预训练，再用仿真专家学习可执行接触动作，最后采集机器人演示做适配；腕部共享参数、手指分域和有效性掩码分别承担可迁移运动和具身差异。",
+        "method_takeaway": "AcrossDEX 用共享腕部动作字段迁移人类双手经验，以独立手指字段和有效性掩码容纳不同机器人手型，再用闭环重规划保证动作片段连续。",
+        "framework_zh": "这套系统不是把人类骨骼动作直接映射成机器人关节，而是把跨具身的部分和具身特有的部分分开。人类视频阶段学习双手相对运动和视觉先验；仿真阶段由专家策略产生带接触物理的可执行目标；真实机器人阶段再用示范适配。对于共享部分，腕部位置放在固定相机坐标系中，跨人类和机器人保持一致；手指部分则使用各自字段，因为 Inspire 六维控制和 Allegro 十六关节动作不能硬塞进同一向量。有效性掩码告诉网络当前样本哪些动作维度有意义。\n\n执行时策略预测一段未来动作，但每次新观察到来都会重规划。新动作段与上一段尚未执行部分保持重叠一致，避免生成式策略连续控制时命令跳变。可以记为“腕部迁移、手指分开、接触用仿真补、执行靠重规划接续”。在开盒和重定向任务中，行为克隆在所测设置通常成功率最高；RTC 对 Flow/Diffusion 类生成策略的连续执行有帮助。该系统包含多阶段数据与训练流程，硬件/任务覆盖仍有限，不能据少数动作任务概括为普遍灵巧操作能力。",
+        "pipeline": "人类视频运动预训练 → 仿真接触专家生成可执行目标 → 机器人示范适配共享腕部/专属手指字段 → 视觉闭环重规划并连续执行动作段",
+        "results": "开盒回收任务中 BC 成功率 40.6%，Flow 18.8%，Diffusion 9.4%；物体重定向任务中 Inspire 的 BC/Flow/Diffusion 为 100%/79.3%/70%，Allegro 为 93.3%/90%/80%。RTC 在开盒任务把 Flow 成功率由 0% 提至 18.8%，在另一组 Inspire 重定向比较中由 51.7% 提至 79.3%。",
+        "limitations": "作者总结系统依赖明确的人体/机器人字段转换、仿真专家和真实示范，当前实验集中于少数双手任务和两种手型；生成式策略的动作连续性需要额外重规划设计。",
+        "evidence": [
+          {
+            "section": "S2.SS1",
+            "claim": "系统从人类视频预训练连接到机器人任务适配的总览。"
+          },
+          {
+            "section": "S2.SS5",
+            "claim": "共享腕部表示与具身特定手指字段。"
+          },
+          {
+            "section": "S2.SS6",
+            "claim": "receding-horizon 动作片段连续执行。"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "双手开盒任务及成功率。"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "两种手型上的物体重定向结果。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "RTC 对动作片段连续性的消融。"
+          }
+        ],
+        "fulltext_hash": "7792372e774c1b6e4c5ca978cc130aa9ffbce1e3cd097b56dbf5255a638f500d",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S2.F1",
+          "kind": "方法框架图",
+          "reading_tip": "先看人类与机器人数据如何沿共享腕部字段汇合，再对照两种手型各自的手指字段和末端动作执行。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S2.SS1",
+          "claim": "系统从人类视频预训练连接到机器人任务适配的总览。",
+          "url": "https://arxiv.org/html/2610.40210v1#S2.SS1"
+        },
+        {
+          "section": "S2.SS5",
+          "claim": "共享腕部表示与具身特定手指字段。",
+          "url": "https://arxiv.org/html/2610.40210v1#S2.SS5"
+        },
+        {
+          "section": "S2.SS6",
+          "claim": "receding-horizon 动作片段连续执行。",
+          "url": "https://arxiv.org/html/2610.40210v1#S2.SS6"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "双手开盒任务及成功率。",
+          "url": "https://arxiv.org/html/2610.40210v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "两种手型上的物体重定向结果。",
+          "url": "https://arxiv.org/html/2610.40210v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "RTC 对动作片段连续性的消融。",
+          "url": "https://arxiv.org/html/2610.40210v1#S4.SS3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F1",
+          "caption": "Fig. 1: Overview of AcrossDEX 1.0. (a) Human pretraining and robot expert data support adaptation with human replay. (b) A shared Transformer processes images and motion history. Masks select human or robot finger fields. Each method, task, and hand uses a separately trained policy. (c) The robot policy predicts 60 commands, executes the first KK steps, and updates its history. Blue, green, and orange denote shared, human, and robot components. Gray fields are masked.",
+          "url": "https://arxiv.org/html/2610.40210v1/architecture.png",
+          "source_url": "https://arxiv.org/html/2610.40210v1#S2.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.40276",
+      "arxiv_id": "2610.40276",
+      "doi": "",
+      "title": "TaskFrame: Connecting Task-Level Planning with Frame-Level Control for Game Agents",
+      "abstract": "Building general game agents requires both high-level task reasoning and low-latency action control in rapidly changing visual environments. These capabilities favor models with substantially different computational profiles, making them difficult to realize within a single model. In this work, we present TaskFrame, a hierarchical planner-controller framework that connects task-level planning with frame-level keyboard-and-mouse control. A vision-language task planner decomposes a high-level goal into an ordered sequence of atomic instructions and is optimized through supervised learning and dependency-aware GRPO. The hidden states of special goal tokens that terminate each atomic instruction provide continuous goal embeddings that are cached and reused across control steps. A causal Transformer controller combines the embedding of the active goal with recent observations to predict discrete keyboard and mouse-button actions and continuous camera motion at every game step. We train the system in three stages: planner training, controller pretraining, and joint alignment. Experiments in Minecraft show that TaskFrame is competitive with general-purpose vision-language models on instruction decomposition, and that in closed-loop evaluation the agent achieves a higher combat success rate than the evaluated baselines.",
+      "authors": [
+        "Guangzhi Wang",
+        "Junfu Pu",
+        "Yiran Wang",
+        "Xingyilang Yin",
+        "Honghao Chen",
+        "Cheng Cheng",
+        "Lingen Li",
+        "Yinan Zhou",
+        "Jiarui Wu",
+        "Yinuo Jiang",
+        "Hongbo Jin",
+        "Xiaodong Cun",
+        "Ying Shan"
+      ],
+      "url": "https://arxiv.org/abs/2610.40276",
+      "published": "2026-10-29T15:31:37Z",
+      "topics": [
+        "运动与运动控制",
+        "相机控制",
+        "多模态"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.40276v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "TaskFrame：连接任务级规划与帧级控制的游戏智能体",
+        "abstract_zh": "通用游戏智能体既需高层任务推理，也需在动态视觉环境中低延迟执行。TaskFrame 使用分层规划-控制架构：视觉语言任务规划器把目标拆解为有序原子指令，并通过监督学习和依赖感知 GRPO 优化；每条指令终止时特殊目标 token 的隐藏状态成为可缓存的目标嵌入。因果 Transformer 控制器在每帧读取当前目标嵌入、最新画面及短期历史，输出键盘和鼠标混合动作。这样高成本规划只在任务级运行，快速控制器则逐帧响应。",
+        "reason": "核心贡献是明确分离任务规划频率与逐帧控制频率，并通过目标 token 隐状态形成稳定接口；具备真实闭环控制实验，但目前限于 Minecraft。",
+        "introduction_zh": "让大模型每一帧都重新理解任务既昂贵又延迟高，而只用轻量反应策略又难以把复杂指令拆成可执行步骤。TaskFrame 试图把两种计算节奏接起来：高层视觉语言模型先把任务拆成有先后关系的原子目标，底层小型控制器持续根据新画面操作键鼠。特殊目标 token 的隐藏状态被缓存为目标嵌入，让同一目标能在多个控制帧间复用。",
+        "method_takeaway": "TaskFrame 把慢速任务规划和快速逐帧操作拆开，并把每个原子目标结束 token 的隐藏状态缓存成控制器可连续复用的目标向量。",
+        "framework_zh": "用户说“采矿并打败敌人”时，规划器先依据画面和指令生成一串原子目标，例如找到矿石、靠近、采集，再转向敌人。它不只模仿示例顺序，还通过依赖感知 GRPO 重点保持必须先完成的步骤关系。每个目标用专门 token 结束，该 token 的隐藏状态作为连续目标嵌入保存下来。\n\n帧级控制器不必每次再跑大模型重读整条指令；它读取当前激活目标嵌入、最近画面和短历史，通过因果 Transformer 与混合动作头输出键盘按键和鼠标移动。目标完成后执行协议切换到下一嵌入。这样的接口把“该做什么”与“这一帧怎么做”分频处理：规划器保障语义和顺序，控制器保障响应速度。\n\n实验显示它在 Minecraft 若干闭环任务上优于比较的游戏智能体，但论文也明确控制器不能自主判断原子目标何时完成、失败后不重规划，且历史窗口短。因此读者应把它理解为有效的层级控制接口，而非已解决长程自主游戏。",
+        "pipeline": "画面＋自然语言目标 → 规划器拆成依赖有序原子目标并缓存目标嵌入 → 帧级控制器结合新画面生成键鼠动作 → 外部执行协议切换目标",
+        "results": "在 Minecraft 闭环原子任务中，击杀实体平均成功率 51%（JARVIS-VLA-7B 为 31%）；采矿平均 96%（JARVIS-VLA 为 100%）。规划器依赖感知分解也单独评估；闭环结果来自 3 个种子、每种子每类任务有限回合。",
+        "limitations": "控制器不自行决定原子目标完成时机，依赖外部执行协议切换；失败后不会重新规划；只使用约一秒历史；全部实验在 Minecraft，跨游戏泛化未验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "任务级推理与逐帧控制计算频率不同的问题定义。"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px2",
+            "claim": "用依赖关系奖励优化原子目标排序。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "帧级控制器从当前目标嵌入和视觉历史输出动作。"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "Minecraft 闭环成功率对比。"
+          },
+          {
+            "section": "S5.SS0.SSS0.Px1",
+            "claim": "作者明确的目标切换、重规划和领域限制。"
+          }
+        ],
+        "fulltext_hash": "95d104b19d40a06b6156d632861baf61fb1b3033b90d3a42a4aa502c5cda6a5d",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S3.F2",
+          "kind": "方法框架图",
+          "reading_tip": "图中上方看规划器怎样拆任务、生成可缓存的目标向量；下方看控制器如何逐帧把向量转成键鼠动作。"
+        }
+      },
+      "preference_bonus": 10,
+      "ranking_score": 97,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "任务级推理与逐帧控制计算频率不同的问题定义。",
+          "url": "https://arxiv.org/html/2610.40276v1#S1"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px2",
+          "claim": "用依赖关系奖励优化原子目标排序。",
+          "url": "https://arxiv.org/html/2610.40276v1#S3.SS1.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "帧级控制器从当前目标嵌入和视觉历史输出动作。",
+          "url": "https://arxiv.org/html/2610.40276v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "Minecraft 闭环成功率对比。",
+          "url": "https://arxiv.org/html/2610.40276v1#S4.SS2"
+        },
+        {
+          "section": "S5.SS0.SSS0.Px1",
+          "claim": "作者明确的目标切换、重规划和领域限制。",
+          "url": "https://arxiv.org/html/2610.40276v1#S5.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Overview of TaskFrame. Once per task, the task planner decomposes a high-level instruction into ordered atomic goals, each terminated by a special goal token whose hidden state is cached as a goal embedding. At every frame, the frame controller takes the embedding of the active goal and the latest visual input and emits native keyboard-and-mouse actions.",
+          "url": "https://arxiv.org/html/2610.40276v1/teaser.png",
+          "source_url": "https://arxiv.org/html/2610.40276v1#S1.F1"
+        },
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of TaskFrame, a hierarchical planner–controller agent that separates task-level planning from frame-level control. (A) Task Planner. A vision–language model decomposes a high-level goal (e.g., “collect oak logs across the river”) into an ordered sequence of atomic goals, each terminated by a special goal token. The hidden states at these tokens are cached as goal embeddings z1,…,zkz_{1},\\ldots,z_{k}. (B) Frame Controller. A per-frame autoregressive policy. Each frame consumes the active goal embedding zjz_{j}, an action-query token aina_{\\mathrm{in}}, a SigLIP image token oto_{t}, and the action ata_{t}, which only later frames attend to. A causal Transformer aggregates them into the action-output token aouta_{\\mathrm{out}}, which is decoded into discrete keyboard and mouse-button presses and continuous camera motion. The planner runs once per high-level goal, while the controller acts at every game step.",
+          "url": "https://arxiv.org/html/2610.40276v1/figures/TaskFrame_method_refined.png",
+          "source_url": "https://arxiv.org/html/2610.40276v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.39278",
+      "arxiv_id": "2610.39278",
+      "doi": "",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "abstract": "Predicting future physical states stands as a central challenge in embodied intelligence. Existing video world models leave 3D dynamics implicit, action-based formulations remain tied to specific robot configurations, and 3D motion prediction models use flow-only supervision, providing a limited learning signal for physical dynamics. To circumvent these limitations, we introduce \\method{}, a generative world model that jointly predicts future video and query-based 3D trajectories. By parameterizing 3D motion as continuous displacement tokens aligned with the video grid, a unified Mixture-of-Transformers (MoT) backbone jointly denoises both modalities under a rectified-flow objective. This formulation couples explicit geometric dynamics with visual evolution, effectively unlocking the physical commonsense embedded within pretrained video models. To empirically scale and validate this unified architecture, we train \\method{} on a heterogeneous mixture of 1.44 million object-level samples spanning simulated and real-world domains. We further introduce WorldFlowBench, comprising 1,678 evaluation samples from 11 data sources across simulated and real-world interactions, including spatial reasoning tasks. Across all three evaluation sets, WorldFlow achieves the lowest average displacement error (ADE) and final displacement error (FDE) among the evaluated learning-based methods. Notably, on the challenging SpatialCog set, WorldFlow achieves an ADE of 0.060 m, a 54.2\\% reduction compared with the strongest external baseline. It also reduces ADE and FDE by 55.9\\% and 68.5\\%, respectively, compared with its flow-only variant. Project page: https://worldflow-rbs.github.io/.",
+      "authors": [
+        "Yuhao Lu",
+        "Jiongxu Chen",
+        "Hexiang Wei",
+        "Jiajin Wu",
+        "Juelin Li",
+        "Mingjian Liang",
+        "Fan Yang",
+        "Zhuowei Liang",
+        "Zihao Liu",
+        "Zhennan Wang",
+        "Sheng Wang",
+        "Lin Shao"
+      ],
+      "url": "https://arxiv.org/abs/2610.39278",
+      "published": "2026-10-29T03:30:27Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.39278v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [],
+        "title_zh": "WorldFlow：通过大规模预训练联合预测视频与 3D 运动",
+        "abstract_zh": "现有视频世界模型把三维动力学隐含在像素中，动作模型又常绑定特定机器人配置，而只预测三维运动的模型监督信号有限。WorldFlow 联合预测未来视频和由查询点定义的三维轨迹：把连续三维位移编码为与视频网格对齐的 token，用共享 Mixture-of-Transformers 在 rectified-flow 目标下联合去噪。该方法以单帧观察、语言指令和三维查询点为条件，在多种具身数据上训练，并在运动预测和操控评测中与直接流预测及视频后跟踪方法比较。",
+        "reason": "将视觉未来与显式度量 3D 轨迹放在同一生成过程中建模，适合作为世界模型/3D 动态预测论文；没有将预测轨迹包装成自主控制贡献。",
+        "introduction_zh": "仅凭未来 RGB 视频，机器人难以读出物体在三维空间中的真实位移；而直接预测机器人动作又受具体机械结构限制。WorldFlow 的研究问题是能否同时预测“未来看起来怎样”和“空间中的点将移动到哪里”。作者把查询点轨迹改写为与视频空间对齐的连续位移 token，让两类未来共享同一生成骨干，借助大规模预训练学习视觉变化与几何动力学之间的联系。",
+        "method_takeaway": "WorldFlow 将查询点的 3D 位移变成视频网格中的连续运动 token，与未来 RGB 视频一起由共享生成模型去噪，从而让视觉未来显式带有度量几何动态。",
+        "framework_zh": "输入包括当前图像、语言指令和用户指定的三维查询点。模型先把当前观察编码为视频潜变量，并把每个查询点相对自身初始位置的未来位移表示成连续 flow token；这些 token 与视频潜变量在空间位置上对齐，因此同一位置的视觉变化和三维运动可以互相提供学习信号。\n\n接下来，共享 Mixture-of-Transformers 在同一个 rectified-flow 过程里联合预测未来画面与点轨迹，而非先生成视频再调用跟踪器，也不是只用一组稀疏机器人动作监督。联合训练使模型可以在大规模、异构的具身数据中学习跨形态的动态线索。实际使用时，预测轨迹可提供给下游执行系统，但模型本身依赖预先给定查询点，并未包含完整动作规划与闭环控制。\n\n这篇论文可以记成“问一组 3D 点未来去哪，同时让视频生成回答它们周围发生什么”。其结果支持联合建模比单独流预测更准确，但自动生成的轨迹标签存在噪声，查询点的选择也仍由外部提供。",
+        "pipeline": "单帧观察＋语言指令＋3D 查询点 → 编码视频潜变量与坐标对齐的位移 token → 共享 MoT 联合 rectified-flow 去噪 → 输出未来视频和查询点轨迹",
+        "results": "作者在 SpatialCog 评测报告 ADE 0.060 m，较最强外部基线低约 54.2%；相对仅使用 flow 的变体，ADE/FDE 分别降低约 55.9%/68.5%。另有小规模执行评估，预测器条件下成功率 97.2%，对照 25%，该结果为 12 项任务、36 次试验。",
+        "limitations": "需要外部预先指定查询点；自动生成的轨迹监督带噪；未来动作建模未纳入当前方法，因此它是运动预测器而不是完整控制策略。",
+        "evidence": [
+          {
+            "section": "S3.SS2",
+            "claim": "未来视频和查询点轨迹的共享 MoT 架构。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "坐标对齐的 3D flow token 构造。"
+          },
+          {
+            "section": "S3.SS4.SSS1",
+            "claim": "联合 flow matching 目标。"
+          },
+          {
+            "section": "S4.SS3.SSS2",
+            "claim": "三维运动预测基准比较。"
+          },
+          {
+            "section": "S4.SS4.SSS0.Px2",
+            "claim": "有限的下游执行评估。"
+          },
+          {
+            "section": "S5",
+            "claim": "作者说明查询点、轨迹标签和动作建模限制。"
+          }
+        ],
+        "fulltext_hash": "37351f6e330796407f522b78f11c5a99b94dc3c26dfbd2b47e43eac619eea43f",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S3.F2",
+          "kind": "方法框架图",
+          "reading_tip": "先看 3D 查询点如何与视频网格对齐，再看共享去噪器如何同时输出画面和点轨迹。"
+        }
+      },
+      "preference_bonus": 0,
+      "ranking_score": 89,
+      "evidence": [
+        {
+          "section": "S3.SS2",
+          "claim": "未来视频和查询点轨迹的共享 MoT 架构。",
+          "url": "https://arxiv.org/html/2610.39278v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "坐标对齐的 3D flow token 构造。",
+          "url": "https://arxiv.org/html/2610.39278v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4.SSS1",
+          "claim": "联合 flow matching 目标。",
+          "url": "https://arxiv.org/html/2610.39278v1#S3.SS4.SSS1"
+        },
+        {
+          "section": "S4.SS3.SSS2",
+          "claim": "三维运动预测基准比较。",
+          "url": "https://arxiv.org/html/2610.39278v1#S4.SS3.SSS2"
+        },
+        {
+          "section": "S4.SS4.SSS0.Px2",
+          "claim": "有限的下游执行评估。",
+          "url": "https://arxiv.org/html/2610.39278v1#S4.SS4.SSS0.Px2"
+        },
+        {
+          "section": "S5",
+          "claim": "作者说明查询点、轨迹标签和动作建模限制。",
+          "url": "https://arxiv.org/html/2610.39278v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of WorldFlow. Conditioned on text tokens tjt_{j} through the pretrained reasoner, clean observed-frame latents v0v_{0}, and query-point geometry, the generator jointly denoises video and flow from noise ϵj\\epsilon_{j} and δk\\delta_{k} through shared multimodal attention. Generated video latents vjv_{j} are decoded by the VAE, while generated 3D flow ftf_{t} is rescaled and accumulated from the initial query positions to recover metric trajectories. The 2D flow overlay shows generated 3D trajectories projected onto generated video frames. The 3D flow overlay shows generated 3D trajectories overlaid on a scene point cloud reconstructed from the initial frame’s ground-truth depth.",
+          "url": "https://arxiv.org/html/2610.39278v1/architecture.png",
+          "source_url": "https://arxiv.org/html/2610.39278v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.39232",
+      "arxiv_id": "2610.39232",
+      "doi": "",
+      "title": "Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling",
+      "abstract": "Embodied world models should not only imagine plausible futures, but also perceive the geometric, semantic, and motion structure of the evolving world. We present GenSight, a unified embodied world model that brings future video generation and dense perception into a single pretrained video diffusion transformer. GenSight uses a unified spatiotemporal representation for video, depth, embodiment segmentation, and first-frame-relative 2D flow. Built on a shared DiT backbone, GenSight uses lightweight task modulation to predict all modalities within the same architecture. All tasks are jointly optimized within a unified velocity prediction space. At inference, GenSight supports two complementary modes: multi-step future video generation with aligned dense predictions and single-step dense perception from an observed video. By unifying modality representation, model architecture, and prediction space, GenSight avoids separate modality-specific pipelines and couples appearance, geometry, semantics, and motion in a shared representation. It promotes cross-modal consistency and allows dense perception to benefit from the spatiotemporal priors learned through video generation. Trained on embodied manipulation data spanning multiple robot embodiments and human-hand interactions, GenSight demonstrates strong performance in both video generation and dense 4D perception, highlighting the effectiveness of unifying seeing and imagining for embodied world modeling.",
+      "authors": [
+        "Haitang Feng",
+        "Zhuoman Liu",
+        "Zhennan Wang",
+        "Sheng Wang",
+        "Juelin Li",
+        "Chengzhi Zhao",
+        "Hexiang Wei",
+        "Lin Shao"
+      ],
+      "url": "https://arxiv.org/abs/2610.39232",
+      "published": "2026-10-29T02:50:17Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.39232v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [],
+        "title_zh": "Seeing and Imagining as One：面向具身世界建模的统一视频生成与 4D 感知",
+        "abstract_zh": "具身世界模型不仅要想象可能的未来，还需感知世界的几何、语义和运动结构。本文提出 GenSight，将未来视频生成与稠密感知任务统一到预训练视频扩散 Transformer 中。模型使用统一时空表示处理 RGB 视频、深度、具身分割以及相对首帧的二维光流，通过轻量任务调制和共享速度预测目标联合训练。推理时支持两种模式：多步生成未来视频并输出对齐的稠密预测，或从观测视频单步执行稠密感知。",
+        "reason": "将世界模型的视频想象与稠密几何/运动感知统一在同一生成骨干和目标函数中，贡献及任务边界在全文中有明确实验证据；不把光流预测误标为运动控制。",
+        "introduction_zh": "具身智能系统若只生成未来视频，画面可能合理却缺少可供规划使用的几何与运动信息；若另接独立感知模型，又增加系统复杂度并可能造成表征不一致。GenSight 试图让同一视频扩散模型同时承担“想象”和“看懂”：把 RGB、深度、分割和光流整理到统一时空表示，并在共享生成骨干中联合优化，再通过不同推理模式分别支持未来生成和观测感知。",
+        "method_takeaway": "GenSight 把视频、深度、分割和光流映射到统一时空表示，用同一个 Video DiT 与速度预测目标训练，使模型既能生成未来，也能从当前画面读取稠密状态。",
+        "framework_zh": "这篇工作的关键不是再接一个感知头，而是让生成器本身学习多种对世界有用的描述。输入视频先由冻结 VAE 转成时空潜变量；深度、具身区域分割和相对首帧光流也被转换为与视频时间和空间对齐的表示。共享 Video DiT 接收带噪的这些表示，通过轻量任务调制区分当前要处理的任务，却仍在同一骨干和统一速度预测空间中学习。\n\n训练时，模型联合去噪 RGB 和稠密任务表示，让几何、语义与运动预测共享视频上下文。推理时则可切换两种使用方式：从初始画面和文本条件出发，多步生成未来视频并同步输出深度/分割/光流；或只给观测视频，通过单步读出完成稠密感知。读者可记住“统一表示、共享去噪、两种读法”。这使感知与想象的输出更容易对齐，但论文没有把它做成完整闭环控制器；监督仍依赖传感器补全和现成稠密标签，实际行动规划还需其他系统。",
+        "pipeline": "观测视频及稠密标签 → 统一时空潜表示与任务调制 → 共享 Video DiT 联合速度预测 → 多步未来生成＋稠密读出，或单步感知",
+        "results": "作者在 RoboMIND 任务外分布设置报告生成模式 FVD 14.55，比较方法 RynnWorld4D 为 73.45；并分别评估感知模式的深度、分割和光流质量。",
+        "limitations": "训练使用传感器补全和现成稠密监督；论文尚未把预测闭合为动作控制回路，因此稠密运动感知不能等同于可执行运动控制。",
+        "evidence": [
+          {
+            "section": "S3.SS1",
+            "claim": "RGB 与深度/分割/光流的统一表示。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "共享 Video DiT 的任务调制结构。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "多步生成和单步感知两种推理方式。"
+          },
+          {
+            "section": "S4.SS2.SSS1",
+            "claim": "生成模式的任务外分布评测。"
+          },
+          {
+            "section": "S4.SS2.SSS2",
+            "claim": "单步感知模式的稠密任务结果。"
+          },
+          {
+            "section": "S5",
+            "claim": "统一表示与双推理模式总结。"
+          }
+        ],
+        "fulltext_hash": "53df6820d93dfa1ed42d2e5393ef28eb58c2076adefba8ab08853d4ebe32d187",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S3.F2",
+          "kind": "方法框架图",
+          "reading_tip": "上半部分对照 RGB 与深度/分割/光流的共同去噪，下半部分区分多步生成模式和单步感知模式。"
+        }
+      },
+      "preference_bonus": 0,
+      "ranking_score": 88,
+      "evidence": [
+        {
+          "section": "S3.SS1",
+          "claim": "RGB 与深度/分割/光流的统一表示。",
+          "url": "https://arxiv.org/html/2610.39232v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "共享 Video DiT 的任务调制结构。",
+          "url": "https://arxiv.org/html/2610.39232v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "多步生成和单步感知两种推理方式。",
+          "url": "https://arxiv.org/html/2610.39232v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2.SSS1",
+          "claim": "生成模式的任务外分布评测。",
+          "url": "https://arxiv.org/html/2610.39232v1#S4.SS2.SSS1"
+        },
+        {
+          "section": "S4.SS2.SSS2",
+          "claim": "单步感知模式的稠密任务结果。",
+          "url": "https://arxiv.org/html/2610.39232v1#S4.SS2.SSS2"
+        },
+        {
+          "section": "S5",
+          "claim": "统一表示与双推理模式总结。",
+          "url": "https://arxiv.org/html/2610.39232v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of GenSight. Top: A shared Video DiT processes noisy video latents and predicts velocities for RGB video (VV), embodiment segmentation (SS), depth (DD), and first-frame-relative 2D flow (FF) in a unified prediction space. The first kk blocks compute task-agnostic features, while the remaining blocks apply task-adaptive RMSNorm with shared Transformer weights. The frozen video autoencoder is shared across modalities. Bottom left: Given an initial image and text prompt, video generation follows a multi-step denoising trajectory, with dense predictions read at modality-specific noise levels. Bottom right: Given an observed video, each dense modality is predicted in one step from a noisy state at its selected noise level. Both regimes share the dense readout and decoding procedure, without independent denoising trajectories for dense modalities.",
+          "url": "https://arxiv.org/html/2610.39232v1/pipeline.png",
+          "source_url": "https://arxiv.org/html/2610.39232v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2610.40539",
+      "arxiv_id": "2610.40539",
+      "doi": "",
+      "title": "PhysVLMM: Interaction-Conditioned Physical Belief Maps for Articulated Objects in Robot Scene Maps",
+      "abstract": "Mobile robots must open doors and drawers, yet their scene maps record what each object is and whether it has moved, not how it will respond to a pull. This paper proposes PhysVLMM, a method that maintains a physical belief for every articulated part of a Vision-Language-Motion Map and answers a planner's queries about it, with two algorithms: a map update and a query. Watching a part move provably cannot identify its dynamics, and a measured pull identifies only the pulled part, up to one direction. PhysVLMM therefore (i) keeps that direction as a posterior instead of a point estimate, (ii) passes the evidence of each pull in closed form to the untouched look-alike parts of the map, and (iii) answers whether an action will succeed at a stated risk, or abstains. On real doors and drawers in 18 homes, it identifies the joint type in 86% of held-out pulls (48% for a learned single-view method) and predicts the response to a pull with 41% lower error than differentiable simulation (CRPS 0.323 vs. 0.544), four orders of magnitude faster (13 ms vs. 230 s per case). The posterior lowers the final-position error from 0.460 to 0.270, sharing lowers the force error of untouched parts from 56% to 42%, and at every stated risk from 0.02 to 0.30 the false-safe answers stay within it. Pooling all measured parts of a home does as well as the look-alike groups, and simpler variants predict where a pulled part stops at least as well.",
+      "authors": [
+        "Dibyendu Ghosh"
+      ],
+      "url": "https://arxiv.org/abs/2610.40539",
+      "published": "2026-10-29T17:35:40Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2610.40539v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 83,
+        "priority_topics": [],
+        "title_zh": "PhysVLMM：面向关节物体机器人场景图的交互条件物理信念图",
+        "abstract_zh": "机器人地图通常记录物体类别和位置，却不记录门或抽屉被拉动后会如何响应。PhysVLMM 为场景地图中的每个可动部件维护物理信念，并提供地图更新和查询算法。由于一次单向拉动无法辨识完整动力学，系统保留不确定方向的后验；观测到的拉动证据以闭式形式传递给地图中外观相似但尚未操作的部件；规划器可查询给定风险下动作是否成功，或在不确定性过高时拒绝回答。作者在 18 个真实家庭门和抽屉及仿真场景评估。",
+        "reason": "方法贡献是把交互后果与不确定性纳入场景地图，帮助规划器判断可动部件的物理响应；属于具身物理建模，非动作控制器，因此不标运动控制。",
+        "introduction_zh": "场景地图知道“这是抽屉”并不代表机器人知道“向哪边拉、要用多大力、会移动多远”。一次拉动也不足以确定完整动力学，且观测只覆盖被操作的那一个部件。PhysVLMM 的目标是在地图中逐部件维护物理信念，把一次交互留下的证据谨慎传播到相似部件，并允许规划器在明确风险下查询是否值得执行。",
+        "method_takeaway": "PhysVLMM 把单次拉动后仍不确定的物理响应保留为后验，再把证据传播给相似部件，最后按指定风险回答能否执行或选择弃答。",
+        "framework_zh": "机器人拉开一个抽屉后，至少知道该抽屉的一部分性质，但仍可能不知道另一方向的响应；地图里其他外观相似的抽屉则完全没被拉过。PhysVLMM 不把有限观察压成一个确定参数，而是为每个可动部件保存物理后验，例如转轴、运动方向和所需力的不确定范围。这样系统会区分“没观察到”与“确定不会动”。\n\n每次交互先更新被拉动部件的地图条目，然后根据外观与类别相似度，把观测证据按闭式更新规则传给尚未操作的相似部件；传递的是证据及其不确定性，而不是复制一个确定答案。规划器查询时指定风险水平，系统估计动作成功概率；若概率不足或不确定性过大，就明确 abstain，而不是给出虚假的确定判断。\n\n作者用 18 个家庭中的真实门抽屉和仿真物体验证关节类型、轴线、响应和力估计。这个方法改进的是“机器人行动前对物理后果的信念”，不是直接生成轨迹或控制力。论文也发现一些设置中，相似部件间共享的收益有限，某些简单版本对终点预测同样有竞争力。",
+        "pipeline": "场景地图＋一次交互观测 → 更新被操作部件的物理后验 → 将带不确定性的证据传播到相似未操作部件 → 风险约束查询并在必要时弃答",
+        "results": "作者在 18 个家庭的真实门和抽屉中评估；报告关节类型识别约 99%、轴线误差约 0.5–0.6，仿真力误差约 0.062。比较方法 FlowBot3D 的关节类型准确率约 66%，轴线误差更高。",
+        "limitations": "相似部件传播依赖地图中的外观分组；作者指出在部分真实家庭中把所有部件统一池化与外观分组效果相近；对终点位置，简单预测器有时也能达到相近表现。",
+        "evidence": [
+          {
+            "section": "S2.SS2",
+            "claim": "单次观测可辨识性分析与物理后验设计动机。"
+          },
+          {
+            "section": "S2.SS3.SSS0.Px3",
+            "claim": "证据在相似未操作部件间传播。"
+          },
+          {
+            "section": "S2.SS3.SSS0.Px4",
+            "claim": "风险约束查询和拒答策略。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "真实/仿真物理属性结果比较。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "相似传播及查询消融。"
+          },
+          {
+            "section": "S4",
+            "claim": "作者总结物理信念的用途与边界。"
+          }
+        ],
+        "fulltext_hash": "3ed76e660d103471159f98abd7a4b6438bffbe8fe1c532c7fc721050bfa1aeb6",
+        "analysed_at": "2026-10-31T03:12:11.591Z",
+        "figure": {
+          "id": "S1.F1",
+          "kind": "方法框架图",
+          "reading_tip": "沿图中橙色已操作抽屉追踪一次拉动怎样更新后验，再看证据如何传到蓝色相似抽屉及规划查询端。"
+        }
+      },
+      "preference_bonus": 0,
+      "ranking_score": 83,
+      "evidence": [
+        {
+          "section": "S2.SS2",
+          "claim": "单次观测可辨识性分析与物理后验设计动机。",
+          "url": "https://arxiv.org/html/2610.40539v1#S2.SS2"
+        },
+        {
+          "section": "S2.SS3.SSS0.Px3",
+          "claim": "证据在相似未操作部件间传播。",
+          "url": "https://arxiv.org/html/2610.40539v1#S2.SS3.SSS0.Px3"
+        },
+        {
+          "section": "S2.SS3.SSS0.Px4",
+          "claim": "风险约束查询和拒答策略。",
+          "url": "https://arxiv.org/html/2610.40539v1#S2.SS3.SSS0.Px4"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "真实/仿真物理属性结果比较。",
+          "url": "https://arxiv.org/html/2610.40539v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "相似传播及查询消融。",
+          "url": "https://arxiv.org/html/2610.40539v1#S3.SS3"
+        },
+        {
+          "section": "S4",
+          "claim": "作者总结物理信念的用途与边界。",
+          "url": "https://arxiv.org/html/2610.40539v1#S4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Architecture of PhysVLMM on one Hoi! scene: four look-alike drawers (blue), one pulled (orange). (a) Modules M1–M6, from sensors to the answer. (b) Look-alike prior of M4: a pull updates the group effort, and every untouched member receives the predictive effort (11).",
+          "url": "https://arxiv.org/html/2610.40539v1/figs/arch/frame.jpg",
+          "source_url": "https://arxiv.org/html/2610.40539v1#S1.F1"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2610.40339",
+      "title": "Wizard: Manipulate Any World in Real Time via Agentic Control",
+      "decision": "include",
+      "reason": "同时实质覆盖实时自回归视频生成与骨架驱动的角色运动控制；可控代理把游戏状态与外观生成分开，核心机制和评测均直接支持两个高权重方向。"
+    },
+    {
+      "key": "arxiv:2610.39232",
+      "title": "Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling",
+      "decision": "include",
+      "reason": "将世界模型的视频想象与稠密几何/运动感知统一在同一生成骨干和目标函数中，贡献及任务边界在全文中有明确实验证据；不把光流预测误标为运动控制。"
+    },
+    {
+      "key": "arxiv:2610.38993",
+      "title": "Open-World Object Motion Anticipation via Meta-Learned Semantic Adaptation",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.40539",
+      "title": "PhysVLMM: Interaction-Conditioned Physical Belief Maps for Articulated Objects in Robot Scene Maps",
+      "decision": "include",
+      "reason": "方法贡献是把交互后果与不确定性纳入场景地图，帮助规划器判断可动部件的物理响应；属于具身物理建模，非动作控制器，因此不标运动控制。"
+    },
+    {
+      "key": "arxiv:2610.40276",
+      "title": "TaskFrame: Connecting Task-Level Planning with Frame-Level Control for Game Agents",
+      "decision": "include",
+      "reason": "核心贡献是明确分离任务规划频率与逐帧控制频率，并通过目标 token 隐状态形成稳定接口；具备真实闭环控制实验，但目前限于 Minecraft。"
+    },
+    {
+      "key": "arxiv:2610.39721",
+      "title": "WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.39543",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "decision": "include",
+      "reason": "运动意图和 waypoint 作为可验证控制信号被直接用于优化动作生成，是真正的具身运动控制贡献；评测含仿真、泛化和真实机器人。"
+    },
+    {
+      "key": "arxiv:2610.39451",
+      "title": "Smooth Action Chunking Via Movement-Primitive Representations for Imitation Learning",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.39287",
+      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+      "decision": "include",
+      "reason": "实时机载控制、航点动作专家、历史运动记忆和异步片段执行都是论文核心，不是只在文字中提及动作；具备真实无人机闭环实验。"
+    },
+    {
+      "key": "arxiv:2610.39278",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "decision": "include",
+      "reason": "将视觉未来与显式度量 3D 轨迹放在同一生成过程中建模，适合作为世界模型/3D 动态预测论文；没有将预测轨迹包装成自主控制贡献。"
+    },
+    {
+      "key": "arxiv:2610.40636",
+      "title": "Probing Spatial State Representations in Visual Foundation Models",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.40210",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "decision": "include",
+      "reason": "真实双手机器人运动控制研究，关键贡献是在人类运动先验、仿真接触专家和不同机器人手控制空间之间建立显式转换，并评测连续执行。"
+    },
+    {
+      "key": "arxiv:2610.40153",
+      "title": "Hierarchical Step Decomposition for Training-free Online Video Step Grounding",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.40050",
+      "title": "Don't Risk It!: Trajectory-Conditioned Distributional Risk for LiDAR-Only Crowd Navigation",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.39478",
+      "title": "Regional Anchor Routing for Multi-Object Motion Transfer",
+      "decision": "include",
+      "reason": "这是运动控制/迁移的直接贡献，核心问题是“哪段动作给哪个对象、在哪些帧注入”；全文机制与消融数据都围绕对象区域的时空路由展开。"
+    },
+    {
+      "key": "arxiv:2610.39327",
+      "title": "SONIC-K1: Porting a Universal Humanoid Motion Tracker to a Small Humanoid on a Single GPU",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.39322",
+      "title": "MemoryFusion: Cross-Temporal Memory Learning for Multimodal Video Fusion",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.39001",
+      "title": "AlbumVSR: Identity-Preserving Face Video Super-Resolution from a Personal Photo Album",
+      "decision": "pending",
+      "reason": "尚未分析"
+    },
+    {
+      "key": "arxiv:2610.40614",
+      "title": "L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory",
+      "decision": "include",
+      "reason": "核心贡献直接针对长时交互世界生成的空间记忆与实时性瓶颈；全文给出可复述的“按需补记忆、在潜空间直接渲染、分块生成再回写”闭环，并报告运行效率和场景一致性指标。"
+    }
+  ],
+  "digest_id": "8c00434784e9138f2221"
+}
