@@ -3804,7 +3804,63 @@
       "fulltext_hash": "c9c688a2b48bed0a432f5290e2eba3213af7daa6d6f0e6a327b652b2b5ef1bb5",
       "extraction": "original-figure",
       "figure_id": "S3.F4"
+    },
+    "arxiv:2610.39322": {
+      "asset": "assets/figures/2610.39322-6d688439ef7d.webp",
+      "sha256": "6d688439ef7d4e4a7d97e57c862cecf96ad6dd5ad339e5885efec1aa440516a3",
+      "width": 1429,
+      "height": 368,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "从双时距记忆得到稳定融合先验，再沿第二阶段 3D 时序细化模块追踪去闪烁过程。",
+      "source_url": "https://arxiv.org/html/2610.39322v1#S1.F2",
+      "source_hash": "009c75ce512be4bbd4cbbebc9574a8c052dbe4d9cef4b6825dd7320a042552a5",
+      "fulltext_hash": "a5d88762923d82450893189880e5ebf9d551d299f33419040b640d80b0c468ee",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2"
+    },
+    "arxiv:2610.40050": {
+      "asset": "assets/figures/2610.40050-a7f153d1eccc.webp",
+      "sha256": "a7f153d1ecccf3d700dc42a864291fc7f1175ddf7e6947378259ec1317045bf2",
+      "width": 2028,
+      "height": 1045,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿未来占据预测追踪候选轨迹的最小间距分布，再看风险如何参与控制序列选择。",
+      "source_url": "https://arxiv.org/html/2610.40050v1#S2.F2",
+      "source_hash": "33374a25e654fc28b3eed459ffc3ac8396a234167164e17b054a37342d8eb392",
+      "fulltext_hash": "88d544fe76820fc9d1b6d957d591a1d5a89c6ad886292b70ab8496d8336da6e2",
+      "extraction": "original-figure",
+      "figure_id": "S2.F2"
+    },
+    "arxiv:2610.40153": {
+      "asset": "assets/figures/2610.40153-48262abc6973.webp",
+      "sha256": "48262abc697382c7c7bfe316e5b933646020881d3fce874ea0d7bc8dec988326",
+      "width": 1654,
+      "height": 478,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "从连续视频片段看语义事件如何增量形成，再看步骤匹配与不确定时的层级细化。",
+      "source_url": "https://arxiv.org/html/2610.40153v1#S3.F2",
+      "source_hash": "7ed30bd0757acec4b4e7b03fc55b0236c2be278ebc0aa556ddb0b085793fcca1",
+      "fulltext_hash": "a454e26b11b6147172ff9ff0dec3744f97f3e7257cf8a6ff48e6caa2636616d6",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.40636": {
+      "asset": "assets/figures/2610.40636-7d0ee5a9fef9.webp",
+      "sha256": "7d0ee5a9fef99dfb013d9555ab805a40ed340882dadbf39adaf06b56d6fa8eed",
+      "width": 2044,
+      "height": 992,
+      "label": "Figure 3",
+      "kind": "探测框架图",
+      "reading_tip": "沿空间结构、物体持续、预测更新和行动四级探针阅读，注意每级有各自输入和目标。",
+      "source_url": "https://arxiv.org/html/2610.40636v1#S2.F3",
+      "source_hash": "c377095eccf1d0c669539604fa3e8d9c45d6be55cc0d34565b1ab1c850be9c70",
+      "fulltext_hash": "59a86fbf8a497abc89aa799694b325a4d15190e2763473c6e03b5d171683b697",
+      "extraction": "original-figure",
+      "figure_id": "S2.F3"
     }
   },
-  "revision": "46617d1a3ec7de2b9a89"
+  "revision": "fa5732d026617c137988"
 }
