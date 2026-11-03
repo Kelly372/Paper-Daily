@@ -3860,7 +3860,77 @@
       "fulltext_hash": "59a86fbf8a497abc89aa799694b325a4d15190e2763473c6e03b5d171683b697",
       "extraction": "original-figure",
       "figure_id": "S2.F3"
+    },
+    "arxiv:2610.40748": {
+      "asset": "assets/figures/2610.40748-80fec4f97605.webp",
+      "sha256": "80fec4f97605e932fb350a7d51e7de0bd7bef8b6699278836d3a6bc139d8b30c",
+      "width": 1689,
+      "height": 807,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "看视频和动作两分支如何交换注意力，并留意记忆与action forcing如何把视觉上下文接到动作。",
+      "source_url": "https://arxiv.org/html/2610.40748#S1.F3",
+      "source_hash": "c67e6e3cb635aac1020ce97761bd4432c4b895ece150fb27184562f9dcbb60f6",
+      "fulltext_hash": "859ffdb7c1197f26c5ede6e4b26a9db611e49432ba51203444e06c680a56ea11",
+      "extraction": "original-figure",
+      "figure_id": "S1.F3"
+    },
+    "arxiv:2610.40754": {
+      "asset": "assets/figures/2610.40754-ab5d3670c8c3.webp",
+      "sha256": "ab5d3670c8c3f88ca09bfada9cf52125efa47d103b196d0bd854b714ffb10e31",
+      "width": 660,
+      "height": 318,
+      "label": "Figure 3",
+      "kind": "方法框架图",
+      "reading_tip": "跟踪分镜验证通过后才生成连续运动，渲染和验证失败再反馈给智能体修复。",
+      "source_url": "https://arxiv.org/html/2610.40754#S3.F3",
+      "source_hash": "77dfccf53def25cc09eb1fb613d6453fd7c9a63f3b96a12017001715a70d2ede",
+      "fulltext_hash": "ee8c79edf859436822e4ec9d3f87c0a807125cbf53676f32c13802706ae799be",
+      "extraction": "original-figure",
+      "figure_id": "S3.F3"
+    },
+    "arxiv:2610.41330": {
+      "asset": "assets/figures/2610.41330-03f87403a2e2.webp",
+      "sha256": "03f87403a2e29f8f002dcbcae00b04fb63088b85092a4cfcda1e5acafdbae42d",
+      "width": 1593,
+      "height": 443,
+      "label": "Fig. 2",
+      "kind": "方法框架图",
+      "reading_tip": "先看身体无关的世界模型如何维护环境，再看动力学如何把命令变成机体轨迹；要点是分开建模、规划时耦合。",
+      "source_url": "https://arxiv.org/html/2610.41330#S1.F2",
+      "source_hash": "88496d8334cf817e657e7d6f9a092bee3282e9612886f83a2ab993c747a8ade7",
+      "fulltext_hash": "432c1ac4a2c1d7b45ca0bb4ef54ec3f6d36ef9c4ef9c15a607f3497c1acd697d",
+      "extraction": "original-figure",
+      "figure_id": "S1.F2"
+    },
+    "arxiv:2610.41334": {
+      "asset": "assets/figures/2610.41334-a41f903e8de7.webp",
+      "sha256": "a41f903e8de744d37530d400aba7863f8fb68d1c0b611c447faa0c5ef7d32f50",
+      "width": 1530,
+      "height": 650,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "看实测偏差如何回灌整段历史，再看异步控制如何补偿新动作到达延迟。",
+      "source_url": "https://arxiv.org/html/2610.41334#S3.F2",
+      "source_hash": "eb4acb82a28e26429c150e708808643a7014d45abb2b8a941310c5de8aaf0404",
+      "fulltext_hash": "7b97ba370313818528f6364f4b4b7206eb6566e93fc9d0ebd14623badb1c6d71",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
+    },
+    "arxiv:2610.41354": {
+      "asset": "assets/figures/2610.41354-72f9af97f406.webp",
+      "sha256": "72f9af97f406dc290c818127a1eef55a94349ca7ad5ad05a143b683d0ca5ec64",
+      "width": 2000,
+      "height": 1000,
+      "label": "Figure 2",
+      "kind": "方法框架图",
+      "reading_tip": "沿50Hz周期看参考和状态如何进入生成器，成本梯度如何回到潜变量，最后由动作头执行。",
+      "source_url": "https://arxiv.org/html/2610.41354#S3.F2",
+      "source_hash": "96f3ba6ba233b94a211942d10c42e718b1c4a1b81ef3fab6515f1c60d23a3176",
+      "fulltext_hash": "ca1aed263a9f03a69a883f2a70149dc128b0bf236d815f81cc7c4aec50d6bd3c",
+      "extraction": "original-figure",
+      "figure_id": "S3.F2"
     }
   },
-  "revision": "fa5732d026617c137988"
+  "revision": "f430f857d09de251ef15"
 }

@@ -2,6 +2,960 @@
   "reports": [
     {
       "schema_version": 1,
+      "report_date": "2026-11-03",
+      "target_date": "2026-11-02",
+      "window": {
+        "from": "2026-10-31",
+        "to": "2026-11-02",
+        "timezone": "Asia/Shanghai"
+      },
+      "generated_at": "2026-11-03T02:10:05.111Z",
+      "retrieved_at": "2026-11-03T01:38:36.060Z",
+      "sources": [
+        {
+          "source": "arXiv",
+          "status": "ok",
+          "count": 0,
+          "total": 0,
+          "error": null,
+          "coverage": "2026-10-31 至 2026-11-02（API 提交日期回查；不等同于公告日）"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-02",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-02"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-01",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-01"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-10-31",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-10-31"
+        },
+        {
+          "source": "arXiv",
+          "status": "browser_assisted",
+          "count": 12,
+          "url": "https://arxiv.org/list/cs.RO/new",
+          "date": "2026-11-02",
+          "retrieved_at": "2026-11-03T01:43:35.445Z",
+          "coverage": "官方类别新列表显示日期 2026-11-02；按 72 小时补录，本批为列表中与运动、具身、世界模型和3D动画相关的已核验条目，属于人工筛选子集，不代表完整的 297 条跨类别列表。"
+        },
+        {
+          "source": "Hugging Face Daily Papers",
+          "date": "2026-11-02",
+          "status": "browser_assisted",
+          "count": 8,
+          "url": "https://huggingface.co/papers",
+          "coverage": "检查页面 Nov 2 列表并核对与机器人/世界模型/3D相关条目：REA、HiFOR、OSWAM、ReLift、CaPtain、WorldBridge、RoboArchitect、SOMA；该平台为社区排序列表而非完整学术数据库。CLI API端点仍 ECONNRESET，因此手工浏览记录补足覆盖。WorldBridge 与已检索论文去重。"
+        },
+        {
+          "source": "机器之心公开文章库",
+          "date": "2026-11-03",
+          "status": "checked_no_candidate",
+          "count": 0,
+          "url": "https://www.jiqizhixin.com/articles/2026-11-01-5",
+          "coverage": "检索公开文章库近期条目；可访问列表显示具身/世界模型/机器人产业报道，但未找到与本批 2026-11-02 arXiv 论文直接对应且有独立论文解读的条目。机器之心 Pro 页面需登录，不能计入可读内容。此次不以产品资讯替代论文。"
+        }
+      ],
+      "candidates_count": 12,
+      "analysed_count": 8,
+      "quality_threshold": 70,
+      "papers": [
+        {
+          "key": "arxiv:2610.41334",
+          "arxiv_id": "2610.41334",
+          "doi": "",
+          "title": "HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure",
+          "abstract": "Recent generative models provide whole-body motion for humanoid tracking, but open-loop combinations of motion generators and controllers accumulate tracking error and cannot adapt to physical disturbances. Directly feeding realized states back can cause discontinuities because those states are out of distribution during training. We propose HIPC, a real-time framework that couples generative motion planning with motion tracking. It uses a canonical motion representation to avoid gimbal-lock singularities under extreme orientations and support diverse geometric and semantic conditions, then uses deviation-decayed recovery and history re-anchoring to mitigate distribution shift from realized-state feedback. An asynchronous planning-and-control system with latency compensation handles inference delay. Experiments report state-of-the-art goal-reaching accuracy, robustness to perturbations, and fall recovery.",
+          "authors": [
+            "Yi Han",
+            "Xingyu Chen",
+            "Zixuan Lang",
+            "Qianyang Wu",
+            "Yuhang Lin",
+            "Ji Ma",
+            "Liang Li",
+            "Dongting Li",
+            "Xinpeng Liu",
+            "Ruoli Dai",
+            "Hesheng Wang",
+            "Renjing Xu",
+            "Lei Han"
+          ],
+          "url": "https://arxiv.org/abs/2610.41334",
+          "published": "2026-10-30",
+          "topics": [
+            "运动与运动控制"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.41334",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 92,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "HIPC：通过目标条件运动闭合实现人形机器人迭代规划与控制",
+            "abstract_zh": "Recent generative models provide whole-body motion for humanoid tracking, but open-loop combinations of motion generators and controllers accumulate tracking error and cannot adapt to physical disturbances. Directly feeding realized states back can cause discontinuities because those states are out of distribution during training. We propose HIPC, a real-time framework that couples generative motion planning with motion tracking. It uses a canonical motion representation to avoid gimbal-lock singularities under extreme orientations and support diverse geometric and semantic conditions, then uses deviation-decayed recovery and history re-anchoring to mitigate distribution shift from realized-state feedback. An asynchronous planning-and-control system with latency compensation handles inference delay. Experiments report state-of-the-art goal-reaching accuracy, robustness to perturbations, and fall recovery.",
+            "reason": "针对规划—控制误差累积和异步交接延迟设计闭环机制，有目标切换、扰动恢复评测。",
+            "introduction_zh": "生成式规划器可产生多样动作，但实际跟踪会偏离参考；若规划器仍按自身预测续写，误差便会累积。较慢的规划推理还会让新动作到达时与机器人状态错位。HIPC 让规划器重新看见执行结果，并把异步交接延迟纳入历史状态。",
+            "method_takeaway": "HIPC 将实测跟踪偏差重新锚定到整段规划历史，并按推理延迟前移历史窗口，让新动作从真实状态而非旧预测继续。",
+            "framework_zh": "把规划器看成不断续写未来动作的编舞者。普通方法只把最新测量状态送回去，历史却保留编舞者预测值；若机器人某步没跟上，后续计划就建立在错误历史上。HIPC 计算实测状态与预测状态的差，并把差一致地施加到历史，使最新时刻与真实机器人对齐。训练时也加入偏差，并让偏差逐步衰减，教模型从偏离轨迹中恢复。\n\n目标可指定位置、朝向、速度、关节或末端执行器，也可带语义条件。规范化运动表示用相邻根坐标变化描述动作，避免身体倾斜或跌倒时角度表示跳变。运行中，底层控制器高频执行旧计划，慢规划器异步生成新片段；HIPC 根据近期推理时间估计等待步数，把历史窗口平移到预计交接时刻，再生成接续动作。\n\n记忆点是把执行偏差和计算延迟都写进规划历史，而不只是另加动作生成器。评测报告运动平滑、目标跟踪、扰动和跌倒恢复改善；能力仍受运动数据、跟踪器和测试平台范围约束。",
+            "pipeline": "动作目标 → 规范化表示生成未来片段 → 实测偏差重锚历史并按延迟平移交接窗口 → 高频执行、异步重规划",
+            "results": "作者报告运动质量、目标跟踪和扰动恢复改善，并评估静态/动态目标及跌倒恢复。",
+            "limitations": "评测依赖指定全身跟踪器、动作数据和平台；延迟补偿使用近期推理时长估计，不应外推为所有机器人上的保证。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "跟踪偏差和生成延迟导致的闭环缺口。"
+              },
+              {
+                "section": "S3.SS1.SSS0.Px1",
+                "claim": "规范化表示覆盖大幅倾斜姿态。"
+              },
+              {
+                "section": "S3.SS1.SSS0.Px2",
+                "claim": "几何与语义目标条件生成。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px2",
+                "claim": "实测偏差重新锚定规划历史。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px3",
+                "claim": "训练时注入并衰减偏差以学习恢复。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "按推理延迟平移历史窗口。"
+              },
+              {
+                "section": "S4.SS2.SSS0.Px1",
+                "claim": "运动质量比较。"
+              },
+              {
+                "section": "S4.SS3.SSS0.Px2",
+                "claim": "动态目标跟踪。"
+              },
+              {
+                "section": "S4.SS4.SSS0.Px2",
+                "claim": "扰动与跌倒恢复。"
+              },
+              {
+                "section": "S5.SS0.SSS0.Px2",
+                "claim": "作者限制。"
+              }
+            ],
+            "fulltext_hash": "7b97ba370313818528f6364f4b4b7206eb6566e93fc9d0ebd14623badb1c6d71",
+            "analysed_at": "2026-11-03T02:00:32.363Z",
+            "figure": {
+              "id": "S3.F2",
+              "kind": "方法框架图",
+              "reading_tip": "看实测偏差如何回灌整段历史，再看异步控制如何补偿新动作到达延迟。"
+            }
+          },
+          "preference_bonus": 10,
+          "ranking_score": 102,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "跟踪偏差和生成延迟导致的闭环缺口。",
+              "url": "https://arxiv.org/html/2610.41334#S1"
+            },
+            {
+              "section": "S3.SS1.SSS0.Px1",
+              "claim": "规范化表示覆盖大幅倾斜姿态。",
+              "url": "https://arxiv.org/html/2610.41334#S3.SS1.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS1.SSS0.Px2",
+              "claim": "几何与语义目标条件生成。",
+              "url": "https://arxiv.org/html/2610.41334#S3.SS1.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px2",
+              "claim": "实测偏差重新锚定规划历史。",
+              "url": "https://arxiv.org/html/2610.41334#S3.SS2.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px3",
+              "claim": "训练时注入并衰减偏差以学习恢复。",
+              "url": "https://arxiv.org/html/2610.41334#S3.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "按推理延迟平移历史窗口。",
+              "url": "https://arxiv.org/html/2610.41334#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S4.SS2.SSS0.Px1",
+              "claim": "运动质量比较。",
+              "url": "https://arxiv.org/html/2610.41334#S4.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS3.SSS0.Px2",
+              "claim": "动态目标跟踪。",
+              "url": "https://arxiv.org/html/2610.41334#S4.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S4.SS4.SSS0.Px2",
+              "claim": "扰动与跌倒恢复。",
+              "url": "https://arxiv.org/html/2610.41334#S4.SS4.SSS0.Px2"
+            },
+            {
+              "section": "S5.SS0.SSS0.Px2",
+              "claim": "作者限制。",
+              "url": "https://arxiv.org/html/2610.41334#S5.SS0.SSS0.Px2"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S0.F1",
+              "caption": "Figure 1: We propose Humanoid Interactive Planning and Control (HIPC), a real-time asynchronous closed-loop framework for goal-reaching task. HIPC feeds back realized robot states into the planner, enabling the system to interpret and execute multimodal conditions, including root pose, joint angle, end-effector, natural-language instructions, and their combinations, and continuously correct accumulated spatial drift.",
+              "url": "https://arxiv.org/html/2610.41334v1/teaser.png",
+              "source_url": "https://arxiv.org/html/2610.41334#S0.F1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.41354",
+          "arxiv_id": "2610.41354",
+          "doi": "",
+          "title": "DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control",
+          "abstract": "General humanoid motion trackers rely on deterministic policies that cannot adapt online without brittle reference editing or costly retraining. We present DiffWBC, shifting whole-body control to a generative paradigm via a one-step diffusion model. Modeling distributions over future trajectories unifies general tracking, test-time steering, and simulation-free failure discovery in one controller. It uses one forward pass per 50 Hz control step, can be distilled from an RL teacher or trained from scratch with model-based RL, and achieves 20.1 mm local tracking error on BONES and deployment on a physical Unitree G1. Differentiable cost gradients and body-group masks steer the frozen controller online, outperforming kinematic reference editing on an overhead-clearance task and generalizing across hurdles, reaching, actuator faults, and tray balancing. Dispersion across generated plans identifies tracking failures with 91% precision in the top 2%; targeted fine-tuning resolves half of flagged failures.",
+          "authors": [
+            "Yifei Huang",
+            "Yazhao Yang",
+            "Weijia Li",
+            "Zhiheng Ma",
+            "Dian Shen"
+          ],
+          "url": "https://arxiv.org/abs/2610.41354",
+          "published": "2026-10-30",
+          "topics": [
+            "运动与运动控制"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.41354",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 91,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "DiffWBC：以一步扩散解锁可操控的人形全身运动跟踪",
+            "abstract_zh": "General humanoid motion trackers rely on deterministic policies that cannot adapt online without brittle reference editing or costly retraining. We present DiffWBC, shifting whole-body control to a generative paradigm via a one-step diffusion model. Modeling distributions over future trajectories unifies general tracking, test-time steering, and simulation-free failure discovery in one controller. It uses one forward pass per 50 Hz control step, can be distilled from an RL teacher or trained from scratch with model-based RL, and achieves 20.1 mm local tracking error on BONES and deployment on a physical Unitree G1. Differentiable cost gradients and body-group masks steer the frozen controller online, outperforming kinematic reference editing on an overhead-clearance task and generalizing across hurdles, reaching, actuator faults, and tray balancing. Dispersion across generated plans identifies tracking failures with 91% precision in the top 2%; targeted fine-tuning resolves half of flagged failures.",
+            "reason": "生成控制器内部测试时可操控，直接针对运动控制，有与参考轨迹编辑的对照实验。",
+            "introduction_zh": "确定性跟踪器擅长复现参考，却难以临时绕障、补偿执行器故障或稳定负载；直接修改参考轨迹又可能导致动作不可执行。DiffWBC 将控制器改为预测未来轨迹的生成模型，尝试在生成空间内调整计划并保持协调性。",
+            "method_takeaway": "DiffWBC 将可微任务代价梯度直接施加到单步扩散生成器输入噪声，让同一冻结控制器在推理时改变未来全身动作，而不是改写参考动作。",
+            "framework_zh": "每个 50Hz 控制周期，DiffWBC 读取本体感觉和滑动参考窗口，一次生成未来身体状态与动作，再由逆动力学头执行当前一步。模型学习的是未来动作分布，而非唯一确定答案，因此保留了可调整的生成输入。\n\n若任务临时要求跨栏、低净空通行或伸手触物，系统对当前计划计算可微成本，再沿成本梯度调整生成器潜变量。它改的是“如何生成轨迹”的内部，而不是输出后硬掰关节参考。身体分组掩码允许一部分身体响应新任务成本，其他部位继续负责平衡和参考跟踪；可选的学习型动力学投影再修复引导后不一致的状态—动作轨迹。\n\n因此冻结跟踪器能够面向新目标在线改动作。论文用相同成本比较生成器内引导和参考编辑，并评估负载稳定、执行器故障及实机部署。限制是持续接触力和突变接触需要显式力学模型，额外推理也接近50Hz控制预算。",
+            "pipeline": "本体感觉与参考 → 单步生成计划 → 潜变量成本引导及身体组约束 → 可行性投影、逆动力学执行",
+            "results": "在79条步行轨迹的障碍测试中，生成器内引导在不同低净空条件优于未引导及确定性参考编辑；作者报告 BONES 局部跟踪误差20.1mm，并展示 Unitree G1 部署。",
+            "limitations": "作者指出静态姿态继承教师轻微漂移；持续接触或不连续接触需显式力建模；双步引导约20ms，更深搜索会降低控制频率。",
+            "evidence": [
+              {
+                "section": "S3",
+                "claim": "50Hz闭环与单步生成计划。"
+              },
+              {
+                "section": "S3.SS5",
+                "claim": "在生成器潜变量应用可微成本梯度。"
+              },
+              {
+                "section": "S3.SS6",
+                "claim": "身体分组掩码释放任务控制权。"
+              },
+              {
+                "section": "S3.SS7",
+                "claim": "动力学投影恢复计划可行性。"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "与运动学参考编辑直接对照。"
+              },
+              {
+                "section": "S4.SS4.SSS0.Px1",
+                "claim": "多目标零样本引导任务。"
+              },
+              {
+                "section": "S5.SS0.SSS0.Px1",
+                "claim": "作者所述控制与实时限制。"
+              }
+            ],
+            "fulltext_hash": "ca1aed263a9f03a69a883f2a70149dc128b0bf236d815f81cc7c4aec50d6bd3c",
+            "analysed_at": "2026-11-03T02:00:32.364Z",
+            "figure": {
+              "id": "S3.F2",
+              "kind": "方法框架图",
+              "reading_tip": "沿50Hz周期看参考和状态如何进入生成器，成本梯度如何回到潜变量，最后由动作头执行。"
+            }
+          },
+          "preference_bonus": 10,
+          "ranking_score": 101,
+          "evidence": [
+            {
+              "section": "S3",
+              "claim": "50Hz闭环与单步生成计划。",
+              "url": "https://arxiv.org/html/2610.41354#S3"
+            },
+            {
+              "section": "S3.SS5",
+              "claim": "在生成器潜变量应用可微成本梯度。",
+              "url": "https://arxiv.org/html/2610.41354#S3.SS5"
+            },
+            {
+              "section": "S3.SS6",
+              "claim": "身体分组掩码释放任务控制权。",
+              "url": "https://arxiv.org/html/2610.41354#S3.SS6"
+            },
+            {
+              "section": "S3.SS7",
+              "claim": "动力学投影恢复计划可行性。",
+              "url": "https://arxiv.org/html/2610.41354#S3.SS7"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "与运动学参考编辑直接对照。",
+              "url": "https://arxiv.org/html/2610.41354#S4.SS3"
+            },
+            {
+              "section": "S4.SS4.SSS0.Px1",
+              "claim": "多目标零样本引导任务。",
+              "url": "https://arxiv.org/html/2610.41354#S4.SS4.SSS0.Px1"
+            },
+            {
+              "section": "S5.SS0.SSS0.Px1",
+              "claim": "作者所述控制与实时限制。",
+              "url": "https://arxiv.org/html/2610.41354#S5.SS0.SSS0.Px1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Overview of DiffWBC. Top: at each 50 Hz control step, a future reference window is encoded across decoupled anatomical body groups (any group can be masked) and, alongside proprioception, conditions a one-step generator that maps input noise to an executable plan of future states and actions (0.96 s horizon); an inverse-dynamics head executes the initial action, and the plan is replanned from state feedback at the next step. Test-time costs steer the plan via analytic gradient descent on the generator input noise while weights remain strictly frozen; the renders depict nominal vs. steered plans under a 1.25 m ceiling (simulation). Bottom left: dual training paradigms (online DAgger distillation from an RL tracker or from scratch via model-based RL). Bottom right: body-group masking allows designated body groups to yield control authority to cost objectives.",
+              "url": "https://arxiv.org/html/2610.41354v1/method.png",
+              "source_url": "https://arxiv.org/html/2610.41354#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.41330",
+          "arxiv_id": "2610.41330",
+          "doi": "",
+          "title": "Cross-Embodiment Motion Planning by Coupling Body-Agnostic World Model with Differentiable Ego-Dynamics",
+          "abstract": "Motion planning in clutter is embodiment-specific: feasible free space and reachable commands depend on each robot’s geometry and dynamics. Existing cross-embodiment policies ignore these differences or require per-robot training. World models can pool data across embodiments, but command-conditioned models bind dynamics to one action space while pose-conditioned models omit the mapping from commands to body-specific motion. We propose Hourglass, which factors cross-embodiment motion planning into a body-agnostic world model and each robot’s differentiable ego-dynamics, coupled through camera ego-motion. The world model pools data across embodiments and camera mounts; each robot uses a reduced-order template with identified physical parameters. A generalist parameter-conditioned policy is learned at this interface, rolling out the robot template and then the world model. On seven simulated robots spanning five locomotion types, it exceeds imitation and diffusion-policy baselines by 3.8–10.6 percentage points and matches per-robot specialists without dedicated training. After three minutes of teleoperated identification, it transfers zero-shot to an unseen real skid-steer robot in unseen indoor scenes.",
+          "authors": [
+            "Zhidong Wang",
+            "Zirui Li",
+            "Haoran Xu",
+            "Yujie Yan",
+            "Zitong Shan",
+            "Jingsong Liang",
+            "Han Yu",
+            "Chen Lv"
+          ],
+          "url": "https://arxiv.org/abs/2610.41330",
+          "published": "2026-10-30",
+          "topics": [
+            "运动与运动控制",
+            "具身智能",
+            "世界模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.41330",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 88,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "通过耦合无身体模型与可微自运动学实现跨形态运动规划",
+            "abstract_zh": "Motion planning in clutter is embodiment-specific: feasible free space and reachable commands depend on each robot’s geometry and dynamics. Existing cross-embodiment policies ignore these differences or require per-robot training. World models can pool data across embodiments, but command-conditioned models bind dynamics to one action space while pose-conditioned models omit the mapping from commands to body-specific motion. We propose Hourglass, which factors cross-embodiment motion planning into a body-agnostic world model and each robot’s differentiable ego-dynamics, coupled through camera ego-motion. The world model pools data across embodiments and camera mounts; each robot uses a reduced-order template with identified physical parameters. A generalist parameter-conditioned policy is learned at this interface, rolling out the robot template and then the world model. On seven simulated robots spanning five locomotion types, it exceeds imitation and diffusion-policy baselines by 3.8–10.6 percentage points and matches per-robot specialists without dedicated training. After three minutes of teleoperated identification, it transfers zero-shot to an unseen real skid-steer robot in unseen indoor scenes.",
+            "reason": "将环境预测与机体几何/动力学解耦，并在规划阶段耦合，直接解决跨形态局部避障迁移。",
+            "introduction_zh": "跨形态导航难在避障同时受环境空隙、机身尺寸和运动响应影响。逐台训练成本高；若把机体特性混入视觉世界模型，环境规律与身体差异又会纠缠。Hourglass 把环境预测做成通用模块，把身体几何和动力学留给可测量、可替换的机器人模型。",
+            "method_takeaway": "Hourglass 让世界模型只学习相机视角下环境如何随自运动变化，再用独立的可微机器人动力学把命令换算成各形态可执行的运动。",
+            "framework_zh": "记住“环境告诉我哪里通，机器人模型告诉我怎么走”。机器人根据深度图和相机自运动，更新以相机为中心的空间记忆；这部分只描述障碍和可通行区域，不绑定某种底盘或腿型。论文还显式处理相机安装位置，避免把相机偏置运动误当作身体中心运动。\n\n另一模块是可微自运动学，描述机器人收到速度命令后如何加速、转弯以及占据空间。规划器对候选命令同时预测环境后果和机体真实轨迹，再选择通向局部目标且不碰撞的命令。训练时，多种机器人参数共享同一个世界模型，在耦合想象中学习通用策略。\n\n所以新机器人不必重新学习墙和走廊，只需识别尺寸、响应参数，且其身体范围仍须落在训练覆盖内。作者在七种形态及未训练的 Scout Mini 实机上展示迁移；更长机身超出模板范围时仍会碰撞，模拟场景也较单一。",
+            "pipeline": "深度图与相机自运动 → 更新身体无关空间记忆 → 动力学把候选命令变为各机体轨迹 → 共同评估通行与目标进度并输出速度命令",
+            "results": "在七种机器人上进行跨形态规划，并展示用约三分钟遥操作数据辨识参数后在未训练 Scout Mini 实机部署，无需重训策略。",
+            "limitations": "作者指出障碍近场净空精度、训练覆盖的身体尺寸和单一模拟建筑仍限制泛化；超出模板范围时显式几何规划可能更可靠。",
+            "evidence": [
+              {
+                "section": "S3.SS1.SSS1",
+                "claim": "状态与空间记忆由相机自运动更新，世界模型不输入机器人身份。"
+              },
+              {
+                "section": "S3.SS1.SSS2",
+                "claim": "相机中心空间记忆融合深度并随运动刚性变换。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "跨多种机器人参数耦合训练通用策略。"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "七种机器人规划表现。"
+              },
+              {
+                "section": "S4.SS5",
+                "claim": "未见机器人迁移边界。"
+              },
+              {
+                "section": "S4.SS6",
+                "claim": "Scout Mini真实部署。"
+              },
+              {
+                "section": "S5",
+                "claim": "作者总结与限制。"
+              }
+            ],
+            "fulltext_hash": "432c1ac4a2c1d7b45ca0bb4ef54ec3f6d36ef9c4ef9c15a607f3497c1acd697d",
+            "analysed_at": "2026-11-03T02:00:32.359Z",
+            "figure": {
+              "id": "S1.F2",
+              "kind": "方法框架图",
+              "reading_tip": "先看身体无关的世界模型如何维护环境，再看动力学如何把命令变成机体轨迹；要点是分开建模、规划时耦合。"
+            }
+          },
+          "preference_bonus": 10,
+          "ranking_score": 98,
+          "evidence": [
+            {
+              "section": "S3.SS1.SSS1",
+              "claim": "状态与空间记忆由相机自运动更新，世界模型不输入机器人身份。",
+              "url": "https://arxiv.org/html/2610.41330#S3.SS1.SSS1"
+            },
+            {
+              "section": "S3.SS1.SSS2",
+              "claim": "相机中心空间记忆融合深度并随运动刚性变换。",
+              "url": "https://arxiv.org/html/2610.41330#S3.SS1.SSS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "跨多种机器人参数耦合训练通用策略。",
+              "url": "https://arxiv.org/html/2610.41330#S3.SS3"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "七种机器人规划表现。",
+              "url": "https://arxiv.org/html/2610.41330#S4.SS2"
+            },
+            {
+              "section": "S4.SS5",
+              "claim": "未见机器人迁移边界。",
+              "url": "https://arxiv.org/html/2610.41330#S4.SS5"
+            },
+            {
+              "section": "S4.SS6",
+              "claim": "Scout Mini真实部署。",
+              "url": "https://arxiv.org/html/2610.41330#S4.SS6"
+            },
+            {
+              "section": "S5",
+              "claim": "作者总结与限制。",
+              "url": "https://arxiv.org/html/2610.41330#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F2",
+              "caption": "Fig. 2: Overview of Hourglass. Left: the body-agnostic world model pψp_{\\psi}, and the differentiable ego-dynamics f𝜽f_{\\boldsymbol{\\theta}} with physical parameters 𝜽\\boldsymbol{\\theta}. Middle: in coupled latent imagination, the two modules interact through the ego-motion Δ​ξk\\Delta\\xi_{k}, and a single 𝜽\\boldsymbol{\\theta}-conditioned policy is trained by the analytic gradient of J=∑ℓkJ=\\sum\\ell_{k}. Right: deployment with the identified 𝜽\\boldsymbol{\\theta}.",
+              "url": "https://arxiv.org/html/2610.41330v1/fig_framework.png",
+              "source_url": "https://arxiv.org/html/2610.41330#S1.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.40748",
+          "arxiv_id": "2610.40748",
+          "doi": "",
+          "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
+          "abstract": "Achieving the broad task generalization of embodied models in physical environments remains a central challenge in robot learning. We study this challenge in World Action Models (WAMs) through two complementary capabilities: video generalization, which predicts the visual evolution of new tasks, and action generalization, which translates these predictions into executable behavior through a video-to-action bridge. By varying video and action supervision for tasks outside an initial training set, we examine their respective contributions to task transfer. On RoboTwin 2.0, using only in-distribution video-action supervision yields a 25.07% success rate on out-of-distribution tasks. Introducing videos of these tasks without their action labels raises success to 55.90%, while adding just one action-labeled demonstration per task further improves it to 70.70%. These findings suggest that broader video coverage enables task transfer by leveraging existing inverse-dynamics capabilities, while even sparse action supervision further strengthens those capabilities. Guided by this perspective, we introduce WorldBridge, a WAM with separate video and action experts connected through structured attention and trained with joint flow matching. WorldBridge incorporates visual memory at two temporal scales and action forcing, alongside a unified data processing pipeline that standardizes and filters heterogeneous robot trajectories and egocentric hand-derived supervision. Across multiple manipulation benchmarks, WorldBridge achieves state-of-the-art performance among the compared methods, including 96.23% on RoboTwin 2.0 full data setting and 80.9% on clean to random setting, 82.8% on RoboCasa GR1 TableTop, and 57.6% on DOMINO Level-1. Our study highlights the complementary roles of video prediction and action grounding in developing robots that generalize across tasks.",
+          "authors": [
+            "Jun Cen",
+            "Yubo Guo",
+            "Hao Li",
+            "Liangkai Li",
+            "Yaoxu Lyu",
+            "Meng Wei",
+            "Zeqi Xiao",
+            "Sizhe Yang",
+            "Yuqiang Yang",
+            "Yifan Ye",
+            "Shanghang Zhang",
+            "Duo Zheng"
+          ],
+          "url": "https://arxiv.org/abs/2610.40748",
+          "published": "2026-10-29",
+          "topics": [
+            "具身智能",
+            "世界模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.40748",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 90,
+            "priority_topics": [],
+            "title_zh": "WorldBridge：在世界动作模型中连接视频与动作以实现任务泛化",
+            "abstract_zh": "Achieving the broad task generalization of embodied models in physical environments remains a central challenge in robot learning. We study this challenge in World Action Models (WAMs) through two complementary capabilities: video generalization, which predicts the visual evolution of new tasks, and action generalization, which translates these predictions into executable behavior through a video-to-action bridge. By varying video and action supervision for tasks outside an initial training set, we examine their respective contributions to task transfer. On RoboTwin 2.0, using only in-distribution video-action supervision yields a 25.07% success rate on out-of-distribution tasks. Introducing videos of these tasks without their action labels raises success to 55.90%, while adding just one action-labeled demonstration per task further improves it to 70.70%. These findings suggest that broader video coverage enables task transfer by leveraging existing inverse-dynamics capabilities, while even sparse action supervision further strengthens those capabilities. Guided by this perspective, we introduce WorldBridge, a WAM with separate video and action experts connected through structured attention and trained with joint flow matching. WorldBridge incorporates visual memory at two temporal scales and action forcing, alongside a unified data processing pipeline that standardizes and filters heterogeneous robot trajectories and egocentric hand-derived supervision. Across multiple manipulation benchmarks, WorldBridge achieves state-of-the-art performance among the compared methods, including 96.23% on RoboTwin 2.0 full data setting and 80.9% on clean to random setting, 82.8% on RoboCasa GR1 TableTop, and 57.6% on DOMINO Level-1. Our study highlights the complementary roles of video prediction and action grounding in developing robots that generalize across tasks.",
+            "reason": "视频预测到动作执行的连接是实质贡献，包含新任务监督消融和真实机器人评测；不是实时视频生成。",
+            "introduction_zh": "机器人模型既要预测任务会产生怎样的视觉变化，也要把预测转成可执行动作。只用已有任务的配对视频—动作，遇到新任务会失败；更多未标注视频能否迁移、少量动作标签是否补上执行缺口，是论文拆解的核心问题。",
+            "method_takeaway": "WorldBridge 将视频专家和动作专家分开建模、用结构化注意力连接，并以“新任务视频扩覆盖、少量动作示范落地执行”的监督阶梯桥接视觉预测与机器人控制。",
+            "framework_zh": "把模型理解成两个合作专家：视频专家预测做动作后画面如何变化，动作专家决定如何控制机器人。两者保留各自模态参数，通过联合注意力交换信息，并用联合流匹配学习未来画面与动作片段。短期视觉记忆追踪局部运动，长期记忆保留任务进度；action forcing 让动作片段不同位置处于不同噪声程度，促使动作预测利用视觉上下文。\n\n论文把泛化拆成监督阶梯：先只用已有任务的配对视频—动作，再增加新任务视频但不给动作标签，观察视频覆盖能否借既有逆动力学能力迁移；随后每个新任务仅补一个动作示范，测量动作监督能否把视觉变化接地到平台执行。这样可区分“知道新任务长什么样”和“知道机器人如何完成它”。\n\n真实机器人通过统一动作槽位与维度掩码共享模型，同时需微调平台接口。结果显示视频和动作监督互补，但视频覆盖不能完全取代动作接地，能力也受数据、记忆和操作场景范围约束。",
+            "pipeline": "异构视频/机器人数据 → 视频与动作专家联合学习 → 用新任务视频和少量动作监督逐步扩展 → 输出机器人操作",
+            "results": "RoboTwin 2.0 OOD成功率：仅ID视频—动作监督25.07%；补充OOD视频55.90%；每任务再加一个动作示范70.70%。完整数据设置报告96.23%。",
+            "limitations": "真实机器人仍需按平台微调输入输出接口；任务泛化依赖异构数据，视频覆盖本身不能完全替代动作标注。",
+            "evidence": [
+              {
+                "section": "S2.SS1.SSS1",
+                "claim": "双专家架构与联合注意力。"
+              },
+              {
+                "section": "S2.SS1.SSS2",
+                "claim": "短长期视觉记忆。"
+              },
+              {
+                "section": "S2.SS1.SSS3",
+                "claim": "不同噪声级动作片段的action forcing。"
+              },
+              {
+                "section": "S2.SS1.SSS4",
+                "claim": "预训练/后训练信息访问掩码。"
+              },
+              {
+                "section": "S3.SS1",
+                "claim": "监督递增下任务泛化。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px3",
+                "claim": "跨机器人动作槽位适配。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px4",
+                "claim": "联合预训练消融。"
+              },
+              {
+                "section": "S5",
+                "claim": "视频覆盖与动作接地的互补结论。"
+              }
+            ],
+            "fulltext_hash": "859ffdb7c1197f26c5ede6e4b26a9db611e49432ba51203444e06c680a56ea11",
+            "analysed_at": "2026-11-03T02:00:32.366Z",
+            "figure": {
+              "id": "S1.F3",
+              "kind": "方法框架图",
+              "reading_tip": "看视频和动作两分支如何交换注意力，并留意记忆与action forcing如何把视觉上下文接到动作。"
+            }
+          },
+          "preference_bonus": 0,
+          "ranking_score": 90,
+          "evidence": [
+            {
+              "section": "S2.SS1.SSS1",
+              "claim": "双专家架构与联合注意力。",
+              "url": "https://arxiv.org/html/2610.40748#S2.SS1.SSS1"
+            },
+            {
+              "section": "S2.SS1.SSS2",
+              "claim": "短长期视觉记忆。",
+              "url": "https://arxiv.org/html/2610.40748#S2.SS1.SSS2"
+            },
+            {
+              "section": "S2.SS1.SSS3",
+              "claim": "不同噪声级动作片段的action forcing。",
+              "url": "https://arxiv.org/html/2610.40748#S2.SS1.SSS3"
+            },
+            {
+              "section": "S2.SS1.SSS4",
+              "claim": "预训练/后训练信息访问掩码。",
+              "url": "https://arxiv.org/html/2610.40748#S2.SS1.SSS4"
+            },
+            {
+              "section": "S3.SS1",
+              "claim": "监督递增下任务泛化。",
+              "url": "https://arxiv.org/html/2610.40748#S3.SS1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px3",
+              "claim": "跨机器人动作槽位适配。",
+              "url": "https://arxiv.org/html/2610.40748#S3.SS3.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px4",
+              "claim": "联合预训练消融。",
+              "url": "https://arxiv.org/html/2610.40748#S3.SS3.SSS0.Px4"
+            },
+            {
+              "section": "S5",
+              "claim": "视频覆盖与动作接地的互补结论。",
+              "url": "https://arxiv.org/html/2610.40748#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F1",
+              "caption": "Figure 1: Overview of our WorldBridge, a foundational WAM for task generalization. WorldBridge utilizes heterogeneous data sources and is trained with a simple but effective model architecture in two stages. The bottom panels report task-generalization results under different video and action supervision settings, benchmark performance, and real-world deployment results.",
+              "url": "https://arxiv.org/html/2610.40748v1/teaser.png",
+              "source_url": "https://arxiv.org/html/2610.40748#S1.F1"
+            },
+            {
+              "id": "S1.F3",
+              "caption": "Figure 3: Overview of the WorldBridge model architecture.",
+              "url": "https://arxiv.org/html/2610.40748v1/model.png",
+              "source_url": "https://arxiv.org/html/2610.40748#S1.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.42097",
+          "arxiv_id": "2610.42097",
+          "doi": "",
+          "title": "ROOF: Learning Humanoid Fall Recovery under Overhead Constraints",
+          "abstract": "A fallen humanoid beneath an overhead obstacle must create clearance while organizing support for a stable rise. We introduce reinforcement learning with contact-supported geometric escape guidance, rewarding incremental reduction of robot-obstacle overlap without prescribing an escape path. A learned motion prior, posture-dependent support, and joint-stall costs shape one policy that learns when to clear the obstacle, establish support, and complete the rise using proprioception alone. In simulation, it recovers in 88.5% of trials beneath plates that can only be lifted, compared with 18.9% without geometric guidance, and in 98.6% beneath free plates with randomized properties. On Unitree G1, it recovered in 95 of 150 attempts across seven real-world obstacle scenes.",
+          "authors": [
+            "Yidan Lu",
+            "Jiayuan Yu",
+            "Zongrui Cai",
+            "Jingwen Sun",
+            "Jinrui Han",
+            "Jing Wang",
+            "Ping Luo",
+            "Peng Lu"
+          ],
+          "url": "https://arxiv.org/abs/2610.42097",
+          "published": "2026-10-30",
+          "topics": [
+            "运动与运动控制",
+            "具身智能"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.42097",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 76,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "ROOF：学习人形机器人在头顶障碍约束下的跌倒恢复",
+            "abstract_zh": "A fallen humanoid beneath an overhead obstacle must create clearance while organizing support for a stable rise. We introduce reinforcement learning with contact-supported geometric escape guidance, rewarding incremental reduction of robot-obstacle overlap without prescribing an escape path. A learned motion prior, posture-dependent support, and joint-stall costs shape one policy that learns when to clear the obstacle, establish support, and complete the rise using proprioception alone. In simulation, it recovers in 88.5% of trials beneath plates that can only be lifted, compared with 18.9% without geometric guidance, and in 98.6% beneath free plates with randomized properties. On Unitree G1, it recovered in 95 of 150 attempts across seven real-world obstacle scenes.",
+            "reason": "针对头顶受限环境中的起身与空间腾挪，有分阶段奖励和真实机器人验证；结果数值仅按官方摘要报告。",
+            "introduction_zh": "跌倒恢复不只是把机器人从地面抬起：桌板等头顶障碍会阻断直接起身动作。机器人必须先创造净空、找到支撑，再在受限空间内站稳。ROOF 用人体起身先验保持动作合理，并让策略按姿态阶段学习障碍下的恢复。",
+            "method_takeaway": "ROOF 用固定的人体起身先验规定动作风格，再按姿态阶段逐步加入净空、接触和稳定奖励，让机器人先腾挪创造空间、接近站立时再收紧约束。",
+            "framework_zh": "想象机器人仰卧在低桌板下：若一开始就要求站直，头和躯干会撞上障碍。ROOF 把恢复过程分为低、中、高姿态阶段。低姿态时允许更大的身体移动、寻找支撑或推开可动障碍；随着身体升高，逐步加强平滑、脚部运动和受力限制，并在接近站立时降低继续上冲的速度。\n\n策略以本体感觉为输入，输出关节目标。训练先从平地起身开始，再逐步加入障碍情形；固定的人体起身扩散先验提供自然动作偏好，但机器人不必逐帧跟随一条指定轨迹。这样核心就从“模仿起身动作”变成“在受限空间里规划净空和支撑”。\n\n官方摘要报告150次真实尝试中95次成功，并给出仿真自由板条件98.6%对比无几何引导18.9%。当前抓取的HTML只保留方法章节，实验表和完整限制未能核验，因此这些结果明确标为摘要数字，不能据此扩展解读。",
+            "pipeline": "本体状态 → 固定动作先验和按姿态分阶段奖励 → 在障碍下腾挪/推开障碍并恢复 → 关节目标交由PD控制",
+            "results": "官方摘要：真实7种场景共150次尝试成功95次；仿真自由板条件起身率98.6%，无几何引导时18.9%。抓取全文没有解析到结果章节，故只引摘要。",
+            "limitations": "网页解析只得到方法相关章节，未能核验完整实验协议、统计表和作者限制；解读范围因此限于摘要及可得方法。",
+            "evidence": [
+              {
+                "section": "S3",
+                "claim": "头顶固定或可移动障碍下的跌倒恢复任务定义。"
+              },
+              {
+                "section": "S4",
+                "claim": "低/中/高姿态阶段训练奖励总览。"
+              },
+              {
+                "section": "S4.SS1",
+                "claim": "POMDP、策略输入输出及分阶段学习。"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "固定起身先验及姿态相关动作、接触成本。"
+              }
+            ],
+            "fulltext_hash": "e4e036f7e0a8af8bd3660f44c362ce0741081985981e7be05d1bf38355abc147",
+            "analysed_at": "2026-11-03T02:04:57.057Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 86,
+          "evidence": [
+            {
+              "section": "S3",
+              "claim": "头顶固定或可移动障碍下的跌倒恢复任务定义。",
+              "url": "https://arxiv.org/html/2610.42097#S3"
+            },
+            {
+              "section": "S4",
+              "claim": "低/中/高姿态阶段训练奖励总览。",
+              "url": "https://arxiv.org/html/2610.42097#S4"
+            },
+            {
+              "section": "S4.SS1",
+              "claim": "POMDP、策略输入输出及分阶段学习。",
+              "url": "https://arxiv.org/html/2610.42097#S4.SS1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "固定起身先验及姿态相关动作、接触成本。",
+              "url": "https://arxiv.org/html/2610.42097#S4.SS2"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S4.F2",
+              "caption": "Fig. 2: Training overview. Top: example initial states from each ℒ/ℳ/ℋ\\mathcal{L}/\\mathcal{M}/\\mathcal{H} group and fallen-posture family. Bottom: reward groups active in each training stage, in the order and colors of Table IV-B; dashes mark absent groups. The actor and its observation normalization carry over between stages, and a single actor is deployed.",
+              "url": "https://arxiv.org/html/2610.42097v1/figures/method_sources/natural_low.png",
+              "source_url": "https://arxiv.org/html/2610.42097#S4.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2610.40754",
+          "arxiv_id": "2610.40754",
+          "doi": "",
+          "title": "DyCraft: An Agentic System for Long-Horizon 4D Scene Generation",
+          "abstract": "Coding agents can generate high-quality 3D scenes and articulated assets but struggle with coherent long-horizon animations and physically plausible motion. DyCraft breaks animation into verified steps: it expands the prompt into a plan and builds a static scene, creates a 3D storyboard of key poses, then authors local motion between verified start and end states using motion tools. This decomposition makes errors easier to inspect and repair. Evaluated on 24 long-horizon multi-shot tasks spanning humanoid robots, humans, animals, and mechanisms, DyCraft reduces physical violations and produces higher-quality scenes preferred by human raters compared with native and agentic baselines.",
+          "authors": [
+            "Jeff Tan",
+            "Hang Dai",
+            "Zeqian Long",
+            "Yanzhe Lyu",
+            "R. Kenny Jones",
+            "Shangzhe Wu",
+            "Chen Geng",
+            "Jiajun Wu"
+          ],
+          "url": "https://arxiv.org/abs/2610.40754",
+          "published": "2026-10-29",
+          "topics": [
+            "运动与运动控制",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [
+            "2026-11-02"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2610.40754",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 82,
+            "priority_topics": [],
+            "title_zh": "DyCraft：用于长时程4D场景生成的智能体系统",
+            "abstract_zh": "Coding agents can generate high-quality 3D scenes and articulated assets but struggle with coherent long-horizon animations and physically plausible motion. DyCraft breaks animation into verified steps: it expands the prompt into a plan and builds a static scene, creates a 3D storyboard of key poses, then authors local motion between verified start and end states using motion tools. This decomposition makes errors easier to inspect and repair. Evaluated on 24 long-horizon multi-shot tasks spanning humanoid robots, humans, animals, and mechanisms, DyCraft reduces physical violations and produces higher-quality scenes preferred by human raters compared with native and agentic baselines.",
+            "reason": "核心是长时程3D场景与运动生成的可验证闭环，有系统消融和人类偏好评测。",
+            "introduction_zh": "通用代码智能体能写 Blender 脚本，却常生成穿模、漂浮、抓取失败或跨镜头不连贯的长动画；一次性写完运动会让错误很晚才暴露。DyCraft 把流程拆成场景构造、关键状态验证、连续运动生成和逐段修复。",
+            "method_takeaway": "DyCraft 先让三维分镜通过相机渲染与几何验证，再生成连续运动，并用物理验证器逐段修复，避免长动画一次写完才暴露结构错误。",
+            "framework_zh": "记住“先把关键帧在三维里拍对，再让运动从锚点之间长出来”。智能体收到文字任务后，用CAD工具建可编辑场景，接着规划镜头并制作关键时刻的三维分镜。分镜通过电影相机渲染检查构图和对象关系，并由几何验证器检查；未通过就先修关键状态，不进入整段运动。\n\n分镜通过后，领域运动工具帮助角色和物体生成连续动作。智能体可渲染任意视角检查动画；外部验证器逐帧检查网格穿透、支撑关系和关节限位等视觉上容易漏掉的问题。失败时，系统把具体错误反馈给智能体修改场景或代码，再渲染复核。\n\n长时程生成因此从一次性“写出完美动画”转为检查中间状态、逐步缩小错误。作者在24个任务上进行偏好、物理合理性及消融评测。自动验证仍依赖设计好的规则、Blender工具链和代码智能体，不能推出对所有物理现象都能准确模拟。",
+            "pipeline": "文字任务 → CAD构场景和规划镜头 → 验证3D分镜 → 生成连续运动并渲染/物理检查迭代",
+            "results": "24个任务、109名参与者；偏好 DyCraft 而非 VIGA 的判断占89.7%，而非裸智能体占72.3%；另评估穿透、漂浮和组件消融。",
+            "limitations": "验证器受预设几何与物理规则覆盖范围限制；实验依赖特定代码智能体和Blender流程，非通用视频生成模型能力。",
+            "evidence": [
+              {
+                "section": "S3.SS1",
+                "claim": "智能体系统及检查工具。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "CAD场景几何。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "连续动画前验证三维分镜。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px2",
+                "claim": "领域运动工具使动画经过锚点。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px3",
+                "claim": "多视角视觉检查。"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "穿透、支撑、关节限制验证器。"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "人类偏好评测。"
+              },
+              {
+                "section": "S4.SS4",
+                "claim": "物理合理性指标。"
+              },
+              {
+                "section": "S4.SS5",
+                "claim": "系统组件消融。"
+              }
+            ],
+            "fulltext_hash": "ee8c79edf859436822e4ec9d3f87c0a807125cbf53676f32c13802706ae799be",
+            "analysed_at": "2026-11-03T02:00:32.368Z",
+            "figure": {
+              "id": "S3.F3",
+              "kind": "方法框架图",
+              "reading_tip": "跟踪分镜验证通过后才生成连续运动，渲染和验证失败再反馈给智能体修复。"
+            }
+          },
+          "preference_bonus": 0,
+          "ranking_score": 82,
+          "evidence": [
+            {
+              "section": "S3.SS1",
+              "claim": "智能体系统及检查工具。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "CAD场景几何。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "连续动画前验证三维分镜。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px2",
+              "claim": "领域运动工具使动画经过锚点。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px3",
+              "claim": "多视角视觉检查。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS3.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "穿透、支撑、关节限制验证器。",
+              "url": "https://arxiv.org/html/2610.40754#S3.SS4"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "人类偏好评测。",
+              "url": "https://arxiv.org/html/2610.40754#S4.SS3"
+            },
+            {
+              "section": "S4.SS4",
+              "claim": "物理合理性指标。",
+              "url": "https://arxiv.org/html/2610.40754#S4.SS4"
+            },
+            {
+              "section": "S4.SS5",
+              "claim": "系统组件消融。",
+              "url": "https://arxiv.org/html/2610.40754#S4.SS5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Overview of DyCraft on an example. A humanoid robot carries a wide panel through a narrow doorway. Following pose-to-pose animation, DyCraft breaks authoring into steps that the agent can check individually. The sparse user prompt (1) is first expanded into detailed scene and motion briefs (2), which the agent uses to build the scene in CAD (3). The agent then plans key poses and object states as a 3D storyboard (4). After inspecting and verifying these states, the agent authors motion connecting them with domain-specific tools (5). Verifiers check every frame (6), catching errors in the storyboard states and motions: here, the arm passes through the torso (orange). The agent repeatedly revises the scene and motion before rendering the final film (7).",
+              "url": "https://arxiv.org/html/2610.40754v1/overview.png",
+              "source_url": "https://arxiv.org/html/2610.40754#S3.F3"
+            },
+            {
+              "id": "A3.F2",
+              "caption": "Figure S2: Overview of DyBench. The 24 DyBench scenes generated by DyCraft, arranged on a 5×55\\times 5 board. Colored curves show the trajectories of key moving objects in each scene.",
+              "url": "https://arxiv.org/html/2610.40754v1/board_5x5_v01.png",
+              "source_url": "https://arxiv.org/html/2610.40754#A3.F2"
+            }
+          ]
+        }
+      ],
+      "screening": [
+        {
+          "key": "arxiv:2610.41127",
+          "title": "MotorSense: A Video-EMG Dataset of Motoric Representations for Action Understanding",
+          "decision": "exclude",
+          "reason": "已取得元数据与摘要，但全文抓取失败（arxiv.org: The operation was aborted due to timeout），无法按要求核实方法与实验；为避免仅凭摘要写方法总结，不纳入今日推荐。"
+        },
+        {
+          "key": "arxiv:2610.41330",
+          "title": "Cross-Embodiment Motion Planning by Coupling Body-Agnostic World Model with Differentiable Ego-Dynamics",
+          "decision": "include",
+          "reason": "将环境预测与机体几何/动力学解耦，并在规划阶段耦合，直接解决跨形态局部避障迁移。"
+        },
+        {
+          "key": "arxiv:2610.41877",
+          "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+          "decision": "exclude",
+          "reason": "已取得元数据与摘要，但全文抓取失败（arxiv.org: The operation was aborted due to timeout），无法按要求核实方法与实验；为避免仅凭摘要写方法总结，不纳入今日推荐。"
+        },
+        {
+          "key": "arxiv:2610.42097",
+          "title": "ROOF: Learning Humanoid Fall Recovery under Overhead Constraints",
+          "decision": "include",
+          "reason": "针对头顶受限环境中的起身与空间腾挪，有分阶段奖励和真实机器人验证；结果数值仅按官方摘要报告。"
+        },
+        {
+          "key": "arxiv:2610.40754",
+          "title": "DyCraft: An Agentic System for Long-Horizon 4D Scene Generation",
+          "decision": "include",
+          "reason": "核心是长时程3D场景与运动生成的可验证闭环，有系统消融和人类偏好评测。"
+        },
+        {
+          "key": "arxiv:2610.41334",
+          "title": "HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure",
+          "decision": "include",
+          "reason": "针对规划—控制误差累积和异步交接延迟设计闭环机制，有目标切换、扰动恢复评测。"
+        },
+        {
+          "key": "arxiv:2610.41354",
+          "title": "DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control",
+          "decision": "include",
+          "reason": "生成控制器内部测试时可操控，直接针对运动控制，有与参考轨迹编辑的对照实验。"
+        },
+        {
+          "key": "arxiv:2610.40748",
+          "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
+          "decision": "include",
+          "reason": "视频预测到动作执行的连接是实质贡献，包含新任务监督消融和真实机器人评测；不是实时视频生成。"
+        }
+      ],
+      "digest_id": "00cc83959fd212d95903"
+    },
+    {
+      "schema_version": 1,
       "report_date": "2026-11-01",
       "target_date": "2026-10-31",
       "window": {
@@ -41391,7 +42345,7 @@
         "submitted_at": "2026-09-21T01:31:20Z"
       }
     ],
-    "last_sync": "2026-11-01T02:26:08.119Z",
-    "revision": "28007254792c30d30644"
+    "last_sync": "2026-11-03T01:38:23.056Z",
+    "revision": "de2aa786178ce4165fbd"
   }
 }
