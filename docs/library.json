@@ -2,6 +2,409 @@
   "reports": [
     {
       "schema_version": 1,
+      "report_date": "2026-11-04",
+      "target_date": "2026-11-03",
+      "window": {
+        "from": "2026-11-01",
+        "to": "2026-11-03",
+        "timezone": "Asia/Shanghai"
+      },
+      "generated_at": "2026-11-04T08:07:09.977Z",
+      "retrieved_at": "2026-11-04T07:33:14.699Z",
+      "sources": [
+        {
+          "source": "arXiv",
+          "status": "partial",
+          "count": 450,
+          "total": 1482,
+          "error": "export.arxiv.org: The operation was aborted due to timeout",
+          "coverage": "2026-11-01 至 2026-11-03（API 提交日期回查；不等同于公告日）"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-03",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-03"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-02",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-02"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-01",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-01"
+        },
+        {
+          "source": "arXiv",
+          "status": "browser_assisted",
+          "count": 1,
+          "url": "https://arxiv.org/abs/2611.00859",
+          "date": "2026-11-03",
+          "retrieved_at": "2026-11-04T07:35:08.636Z",
+          "coverage": "Browser-assisted recovery after the arXiv API returned a partial 450/1482 records; selected the newly published streaming-video paper from the official arXiv abstract. This is not complete coverage of the missing records."
+        },
+        {
+          "source": "Hugging Face",
+          "status": "browser_assisted",
+          "count": 2,
+          "url": "https://huggingface.co/papers",
+          "date": "2026-11-03",
+          "retrieved_at": "2026-11-04T07:35:08.636Z",
+          "coverage": "Inspected the Nov 3 community Daily Papers listing. Verified Wave Forcing as a high-priority streaming-generation item and WorldFlow as a related video/3D-motion item submitted Nov 3; the listing is community-ranked and does not represent a complete paper index."
+        },
+        {
+          "source": "机器之心",
+          "status": "checked_no_candidate",
+          "count": 0,
+          "coverage": "检查机器之心公开网页文章列表，并按 2026-11-03 与 AI 论文、视频生成、具身智能、运动控制等关键词搜索；未找到可核验且直接对应目标日期论文的公开文章。Pro/登录内容不在覆盖范围内。",
+          "url": "https://www.jiqizhixin.com/articles"
+        }
+      ],
+      "candidates_count": 452,
+      "analysed_count": 30,
+      "quality_threshold": 70,
+      "papers": [
+        {
+          "key": "arxiv:2611.05062",
+          "arxiv_id": "2611.05062",
+          "doi": "",
+          "title": "FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video",
+          "abstract": "Pretrained video generation models distill internet-scale motion priors into robot policies, but full video is a redundant signal for action prediction. We argue that dense 3D motion is the medium through which video pretraining best transfers to robot actions, and that predicting motion rather than video affords better sample-efficiency for action prediction. FloMo is a 5B video-generation model fine-tuned to predict 3D scene-flow and action tokens. Rendering scene flow as RGB and encoding it into the same latent space as video enables a pretrained video generation backbone to efficiently adapt to predict 3D scene flow. Co-trained on action-free human video and action-labeled robot teleoperation data, our model benefits from human-video pretraining and generalizes to unseen objects, motion primitives, and tasks. Replacing motion prediction with a video prediction objective degrades out-of-distribution generalization, while adding a video prediction target alongside motion lowers policy success rather than improving it. When motion, video, and action are predicted jointly, action tokens attend far more to motion than to video, suggesting that predicting video wastes model capacity. Together, these results indicate that motion effectively mediates the transfer from video pretraining to action. More information can be found at flomo-wam.github.io.",
+          "authors": [
+            "Jeremy Collins",
+            "Namra Patel",
+            "Ayush Agarwal",
+            "Shitij Govil",
+            "Animesh Garg"
+          ],
+          "url": "https://arxiv.org/abs/2611.05062",
+          "published": "2026-11-03T15:25:35Z",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "具身智能",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.05062v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 84,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "FloMo：以三维场景流作为从人类视频学习的世界动作模型中间表示",
+            "abstract_zh": "预训练视频生成模型可将大规模视频中的运动先验迁移到机器人策略，但直接预测完整视频会让动作模型处理与动作无关的纹理、光照和背景。FloMo提出改为预测三维场景流与机器人动作：把场景点的三维位移渲染成RGB视频，并编码到预训练视频模型的潜空间中。模型使用5B视频生成骨干，在无动作标签的人类视频和带动作标签的机器人遥操作数据上联合训练。作者报告，该运动表示有助于对未见物体、运动原语和任务泛化；将视频像素预测作为目标会降低分布外表现，额外加入视频预测目标也未带来收益。",
+            "reason": "核心贡献是把视频预训练迁移到机器人控制的预测目标，从高熵像素改为相机运动不变的三维场景位移，并与动作联合预测。全篇方法与真实机器人分布外实验都围绕这一表示展开；它是对具身动作学习的实质性运动建模贡献，值得优先阅读。",
+            "introduction_zh": "机器人动作标注昂贵，而人类操作视频丰富。已有世界动作模型常把未来RGB帧作为预测目标，再由动作头从像素变化中恢复控制信号；但同一动作可以对应不同背景、材质和光照，模型因此花费容量学习控制并不需要的外观。作者追问：视频预训练中真正有助于动作的究竟是未来画面，还是画面背后的运动？FloMo选择三维场景流作为中间目标，让模型直接预测物体与手如何移动，再生成相应动作。关键是复用视频生成模型已有的VAE潜空间，而不是另训一个运动编码器。",
+            "method_takeaway": "FloMo把未来视频换成相机运动不变的三维场景位移，再将位移编码进预训练视频潜空间，让视频模型把容量用于动作相关的运动结构。",
+            "framework_zh": "作者的出发点是：如果机器人最终要决定“手和物体接下来怎样移动”，那么逐像素复原未来画面会学进许多控制无关的细节。同一段开柜动作可以发生在不同颜色、纹理和光照的厨房里，像素差异很大，实际需要的动作却相近。FloMo因此把核心预测对象改成三维场景流，也就是每个场景点随时间发生的三维位移。\n\n具体来说，模型先从视频里追踪一组场景点，并把它们都表示在当前观察时刻的相机坐标系中。这样可以尽量去掉相机自身运动，只留下手和物体之间的任务相关变化。作者预测从片段起点累积到各时刻的位移，而不是每一帧抖动较大的瞬时速度；随后把三个方向的位移映射成RGB视频，交给预训练Wan视频模型原有的VAE编码。这样场景流和普通视频拥有相近的潜变量格式，模型可沿用原有视频骨干和表示空间，无需另建一套运动分词器。\n\n在这个共享骨干里，当前图像和语言指令提供条件，场景流潜变量与机器人动作作为联合预测目标。训练分两步：先用大量无动作标签的人类操作视频建立广泛运动先验，同时用机器人数据学习动作对应关系；再仅用机器人数据微调，使动作预测更贴近真实控制。需要留意，人类视频只监督场景流，不会凭空提供机器人动作标签。部署时模型根据当前图像和指令一次生成16步动作块，机器人执行后重新观察并规划。\n\n因此，FloMo的关键不是再增加一种视频辅助目标，而是改变视频预训练通向动作的“中间语言”：从像素改为几何运动。作者的分布外实验显示，这种表示比未来视频更容易支持动作解码；但它依赖预处理得到的三维点轨迹，且预测运动和实际执行动作并未被硬性绑定。",
+            "pipeline": "人类视频与机器人演示 → 追踪三维点并计算当前相机坐标系下的累积场景流 → 将位移场渲染为RGB并用Wan VAE编码 → 共享DiT联合预测场景流与动作 → 执行16步动作后重新观察规划。",
+            "results": "在真实机器人分布外评测中，FloMo跨未见运动原语、任务和物体平均成功率为60%，平均任务进度68%；同表中的AMPlIFY、DreamZero成功率分别为20%、20%，VMA和VA为7%。移除人类视频后平均成功率从60%降到7%，说明这组实验中的迁移收益依赖人类视频运动先验。受控逆动力学探针在仅用1%动作数据时，场景流条件的动作误差为0.058，视频条件为0.074，约低22%；数据量增大后差距缩小。",
+            "limitations": "作者明确指出：三维场景流需对每段视频离线提取；模型联合预测运动和动作，但二者有时不一致，合理的预测运动不保证动作头会执行相同运动；仅使用前置相机，物体被遮挡时运动估计会变差；陌生物体名称或相似干扰物会削弱指令落地；遮挡严重时追踪器产生的噪声会污染训练目标。以上结果来自特定真实机器人操作任务和设置，不能据此推断所有具身控制任务都适用。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "引言提出像素视频含有外观冗余，并把三维运动作为更直接的视频到动作中间表示。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "使用当前相机坐标系下的三维点轨迹，计算从片段起点累积的场景流，以弱化相机运动并降低瞬时追踪噪声。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "把场景流渲染为RGB视频并复用冻结的Wan VAE编码，使运动潜变量进入预训练视频表示空间。"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "共享Wan 2.2 5B DiT骨干联合预测场景流和动作；视频预测仅用于对照消融。"
+              },
+              {
+                "section": "S3.SS6",
+                "claim": "先用人类视频与机器人交互数据中训，再仅用机器人数据微调；人类视频仅施加场景流监督。"
+              },
+              {
+                "section": "S3.SS7",
+                "claim": "推理时联合去噪并一次执行16步动作，然后根据新观察重新规划。"
+              },
+              {
+                "section": "S4.SS2.SSS2",
+                "claim": "作者报告真实机器人分布外任务平均成功率60%、任务进度68%，并与视频预测类模型比较。"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "去掉人类视频后平均成功率从60%降至7%，用于检验大规模人类视频先验的贡献。"
+              },
+              {
+                "section": "S4.SS4.SSS1",
+                "claim": "受控逆动力学探针在1%动作数据下场景流条件误差0.058，视频条件0.074；高数据比例时差距缩小。"
+              },
+              {
+                "section": "S5",
+                "claim": "讨论列出离线场景流提取、运动与动作预测不完全一致、单前视角遮挡、指令落地和追踪噪声等局限。"
+              }
+            ],
+            "fulltext_hash": "731effbfe09f3273ebe7a2495c3511311c60c5d100ac9ad09844ea37a71fda00",
+            "analysed_at": "2026-11-04T08:06:08.042Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 94,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "引言提出像素视频含有外观冗余，并把三维运动作为更直接的视频到动作中间表示。",
+              "url": "https://arxiv.org/html/2611.05062v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "使用当前相机坐标系下的三维点轨迹，计算从片段起点累积的场景流，以弱化相机运动并降低瞬时追踪噪声。",
+              "url": "https://arxiv.org/html/2611.05062v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "把场景流渲染为RGB视频并复用冻结的Wan VAE编码，使运动潜变量进入预训练视频表示空间。",
+              "url": "https://arxiv.org/html/2611.05062v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "共享Wan 2.2 5B DiT骨干联合预测场景流和动作；视频预测仅用于对照消融。",
+              "url": "https://arxiv.org/html/2611.05062v1#S3.SS4"
+            },
+            {
+              "section": "S3.SS6",
+              "claim": "先用人类视频与机器人交互数据中训，再仅用机器人数据微调；人类视频仅施加场景流监督。",
+              "url": "https://arxiv.org/html/2611.05062v1#S3.SS6"
+            },
+            {
+              "section": "S3.SS7",
+              "claim": "推理时联合去噪并一次执行16步动作，然后根据新观察重新规划。",
+              "url": "https://arxiv.org/html/2611.05062v1#S3.SS7"
+            },
+            {
+              "section": "S4.SS2.SSS2",
+              "claim": "作者报告真实机器人分布外任务平均成功率60%、任务进度68%，并与视频预测类模型比较。",
+              "url": "https://arxiv.org/html/2611.05062v1#S4.SS2.SSS2"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "去掉人类视频后平均成功率从60%降至7%，用于检验大规模人类视频先验的贡献。",
+              "url": "https://arxiv.org/html/2611.05062v1#S4.SS3"
+            },
+            {
+              "section": "S4.SS4.SSS1",
+              "claim": "受控逆动力学探针在1%动作数据下场景流条件误差0.058，视频条件0.074；高数据比例时差距缩小。",
+              "url": "https://arxiv.org/html/2611.05062v1#S4.SS4.SSS1"
+            },
+            {
+              "section": "S5",
+              "claim": "讨论列出离线场景流提取、运动与动作预测不完全一致、单前视角遮挡、指令落地和追踪噪声等局限。",
+              "url": "https://arxiv.org/html/2611.05062v1#S5"
+            }
+          ],
+          "figures": []
+        }
+      ],
+      "screening": [
+        {
+          "key": "arxiv:2611.00859",
+          "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+          "decision": "exclude",
+          "reason": "主题与用户最关注的流式视频生成高度相关，但本轮arXiv网页与PDF获取均超时/连接重置，无法核实方法章节、实验条件与局限；为避免仅凭摘要编造解读，本日报暂不推荐，保留待补读。"
+        },
+        {
+          "key": "arxiv:2611.05062",
+          "title": "FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video",
+          "decision": "include",
+          "reason": "核心贡献是把视频预训练迁移到机器人控制的预测目标，从高熵像素改为相机运动不变的三维场景位移，并与动作联合预测。全篇方法与真实机器人分布外实验都围绕这一表示展开；它是对具身动作学习的实质性运动建模贡献，值得优先阅读。"
+        },
+        {
+          "key": "arxiv:2611.05129",
+          "title": "WayTrace: A Map-to-Language-to-Trace Hierarchy for Embodied Urban Navigation",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05372",
+          "title": "PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05279",
+          "title": "Möbius: A Unified Motion-Language Model Bridging Understanding and Generation",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05244",
+          "title": "Reality and Perceptual Gaps in Expressive Swarm Robotics",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04392",
+          "title": "Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04164",
+          "title": "What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2610.39278",
+          "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05361",
+          "title": "Visibility-Aware Reference Generation for Benchmarking Visual 3D Reconstruction in Vegetation-Rich Environments",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05163",
+          "title": "RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05113",
+          "title": "HLO-AMP: Hierarchical Loco-Manipulation from Object-Aware Motion Priors",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05074",
+          "title": "Nested Field-of-View Barriers for Teleoperated Multi-Robot Relay Chains",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04839",
+          "title": "Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04755",
+          "title": "iMED: A Multi-Endoscope Dataset for Surgical 3D Perception",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04666",
+          "title": "Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04358",
+          "title": "EndoS3:Endoscopic Semantic Splatting SLAM",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04321",
+          "title": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04244",
+          "title": "CounterSketch: Physics-Grounded Counterfactual Reasoning for Sketch-to-Video Generation",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05172",
+          "title": "PadLoc: Training-Free Floor-Plan Localization by Sparse Geometric Matching",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05084",
+          "title": "Sparse Anchors for Visual Multi-Session Registration in Changing Environments",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.05004",
+          "title": "ScoreDial: Precise Control of Visual Attributes in Image Generation via Regressor Guidance from Limited Human Ratings",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04946",
+          "title": "How Well Does Webcam Eye Tracking Work \"in the Wild\"? A Large-Scale Validation of Chiasm and a Comparison with WebGazer",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04633",
+          "title": "ReXMo: End-to-End Video Character Replacement with Expression and Motion Preservation",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04626",
+          "title": "MambaHand: Local Identity and Behavioral Sequence Learning with Mamba for Dynamic Hand Gesture Authentication",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04452",
+          "title": "DynOSeg: Dynamic Object Segmentation via Motion-Geometry Fusion",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04424",
+          "title": "ReflexArc: Bottom-Up Integration of Instantaneous Tactile Reflexes into Whole-Body Humanoid Control",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04349",
+          "title": "Sparse Internal Control of Language Models",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04325",
+          "title": "Computing Invariant Reachable Sets through Sum-of-Squares Programming",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        },
+        {
+          "key": "arxiv:2611.04309",
+          "title": "What Is the Influence of Task Order in Continual Learning? An Empirical Study and Order-Aware Evaluation for Motion Forecasting",
+          "decision": "exclude",
+          "reason": "本轮候选初筛未能取得可核验的论文全文与方法/实验章节，无法确认摘要中的相关性是否对应实质贡献或达到质量门槛，故暂不推荐，保留候选记录。"
+        }
+      ],
+      "digest_id": "15e8887b454d70a367cd"
+    },
+    {
+      "schema_version": 1,
       "report_date": "2026-11-03",
       "target_date": "2026-11-02",
       "window": {
@@ -42345,7 +42748,7 @@
         "submitted_at": "2026-09-21T01:31:20Z"
       }
     ],
-    "last_sync": "2026-11-03T02:10:22.547Z",
-    "revision": "f3e9c5b56d6be9405204"
+    "last_sync": "2026-11-04T07:27:29.267Z",
+    "revision": "e3108f5e8ef1a1d4c0ac"
   }
 }
