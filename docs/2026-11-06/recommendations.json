@@ -1,0 +1,1809 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-06",
+  "target_date": "2026-11-05",
+  "window": {
+    "from": "2026-11-03",
+    "to": "2026-11-05",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-11-06T02:02:33.929Z",
+  "retrieved_at": "2026-11-06T01:23:19.367Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "count": 993,
+      "total": 993,
+      "error": null,
+      "coverage": "2026-11-03 至 2026-11-05（API 提交日期回查；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-05",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-05"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-04",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-04"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-03",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-03"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 7,
+      "url": "https://huggingface.co/papers/date/2026-11-05",
+      "date": "2026-11-05",
+      "retrieved_at": "2026-11-06T01:28:06.470Z",
+      "coverage": "公开日榜有限条目人工核对；非完整覆盖。收录与主题匹配的 arXiv 论文；部分论文最初公开日期早于检索窗口，仅因 HF 当日收录，保留其原始日期。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-11-05",
+      "retrieved_at": "2026-11-06T01:59:55.914Z",
+      "coverage": "检查机器之心公开文章索引及按 2026-11-05 日期的站内论文主题检索；本次未发现可核验且匹配方向的新增论文报道。此检查不覆盖公众号私域、登录墙文章或完整历史。"
+    }
+  ],
+  "candidates_count": 996,
+  "analysed_count": 30,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2611.06748",
+      "arxiv_id": "2611.06748",
+      "doi": "",
+      "title": "EvoWorld: Towards Out-of-Sight World Evolution in Generative Video Models",
+      "abstract": "Generative video models are increasingly used as visual world simulators, yet their primary strength lies in rendering plausible pixels rather than reasoning about how a world should evolve. Coherent world evolution requires more than visual fidelity: when an event occurs, a model must infer its consequences for the entities in the world and then render the resulting state. For example, after a wild beast appears, the model should not only depict the wild beast, but also infer whether a nearby person should flee, take cover, or fight back based on the realized scene. Existing diffusion-based video models lack an explicit mechanism for maintaining world state and reasoning over such event-conditioned consequences, often producing visually plausible but behaviorally static or causally inconsistent outputs. To make this reasoning gap concrete and measurable, we propose a new problem, Out-of-Sight Causal Evolution, which requires a model to render an event, reason about its consequences for the evolving world state, and reveal a causally plausible outcome as the world continues to evolve, even out of sight. As a baseline reference solution, we introduce EvoWorld, a brain-renderer collaboration framework in which a vision-language model serves as the world brain: it observes generated segments, maintains an evolving account of the world, and reasons about plausible state transitions, while a segment-autoregressive video renderer realizes them visually. We further introduce EvoWorld-Data and EvoWorld-Bench for training and evaluating event realization, causal reactions, and revisit consistency. Experiments show that EvoWorld substantially improves event-conditioned causal evolution over recent models while preserving visual quality and consistency, establishing a reference point for reasoning-guided, autonomous world evolution beyond the current field of view.",
+      "authors": [
+        "Yequan Bie",
+        "Dengyang Jiang",
+        "Zhixuan Chen",
+        "Xiaozhuan Liang",
+        "Haoxuan Che",
+        "Quande Liu",
+        "Xi Chen",
+        "Hao Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.06748",
+      "published": "2026-11-04T16:26:45Z",
+      "topics": [
+        "流式生成",
+        "多模态",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06748v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 92,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "EvoWorld：生成式视频模型中的视野外世界演化",
+        "abstract_zh": "本文提出“视野外因果演化”任务，要求交互式视频世界模型在镜头离开主体期间，推断新事件对其行为与状态的影响，并在镜头回访时生成因果合理的后续。作者构建 EvoWorld-Data 与 EvoWorld-Bench，并采用视觉语言模型作为世界“大脑”、分段自回归视频渲染器作为“画师”，通过实体锚点、时间锚点、身份锚定注意力和两阶段训练维持身份并学习事件反应。实验显示，EvoWorld 在该基准上显著改善事件后果推理、反应质量和回访一致性。",
+        "reason": "它把长视频世界模型的核心难题从“把镜头外的人物记住”推进到“推断镜头外事件发生后人物应如何改变”，并用明确任务与消融检验这种因果演化能力。",
+        "introduction_zh": "生成式视频模型能够画出逼真的片段，却常把世界演化简化成局部外观延续：事件发生后，镜头外人物的状态不会因事件而合理变化。单纯保存或检索旧帧只能解决“记得长什么样”，不能回答“发生了什么、应作何反应”。论文因此定义视野外因果演化任务，让模型经历事件、推断后果，再在回访时呈现改变后的世界状态。",
+        "method_takeaway": "EvoWorld让视觉语言模型持续记录已发生的事件并推理镜头外主体的后果，再用主体外观锚点和时间锚点约束分段视频生成，解决“镜头离开后世界仍在变化”的问题。",
+        "framework_zh": "想象镜头拍到街边摊主，随后转向别处；这时街道上发生了突发事件。普通视频模型可以把镜头切回来时的摊主画得很像，却未必知道他刚刚经历了什么。EvoWorld把这件事拆成两个相互配合的角色：视觉语言模型充当“世界记录员”，每生成完一段，就观察其中实际出现的内容，更新人物、物件、事件和关系；视频渲染器则负责把记录转成下一段画面。这样，推理依据是模型真正生成出来的事件，而不只是用户预先写下的提示。\n\n为了让回访时仍认得同一个主体，系统保存两类不同的参照。实体锚点是主体清楚可见时的外观线索；时间锚点是刚刚生成的连续上下文。训练时把这两个参照和目标片段一起输入，只有目标片段参与去噪学习。作者还设计身份锚定注意力，让回访片段的查询能更直接读取实体锚点，避免它被大量历史帧“淹没”。\n\n关键之处是训练和实际生成并不相同：训练阶段可以用干净的真实上下文，部署时却必须把模型自己生成的片段接回去，误差会逐段累积。作者因此先用干净锚点学会事件后果和反应，再做一阶段在线自回归适配，让渲染器练习处理自己产生的历史。到镜头重新看到摊主时，大脑先依据中间生成的事件更新世界记录，渲染器再结合“这个人原来是谁”和“刚才世界发生了什么”生成新状态。",
+        "pipeline": "事件指令与初始场景 → 分段生成并由 VLM 更新世界记录 → 读取实体/时间锚点生成后续片段 → 镜头回访时核验因果反应与身份一致性",
+        "results": "在 120 个视野外因果演化案例上，作者报告核心任务成功率为 90.8%，比第二名高 69.1 个百分点。消融中，身份锚定注意力将核心成功率从 82.5% 提高到 84.2%；加入第二阶段在线 rollout 训练后达到 90.8%，因果合理性为 94.2%。这些结果说明，身份保持与自生成历史适配分别提供增益。",
+        "limitations": "作者说明当前基准主要覆盖单个事件及其后续主体反应，尚未覆盖多个交织事件的长期演化。基准含受控合成场景和视觉语言模型裁判，结果还需在更开放、真实的交互环境中验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "指出视觉保存不足以推断新事件对视野外主体的影响，并定义任务。"
+          },
+          {
+            "section": "S3.SS3.SSS1",
+            "claim": "世界大脑持续观察分段输出并维护实体和事件状态。"
+          },
+          {
+            "section": "S3.SS3.SSS2",
+            "claim": "区分实体锚点与时间锚点。"
+          },
+          {
+            "section": "S3.SS3.SSS3",
+            "claim": "身份锚定注意力强化回访主体对实体锚点的读取。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "报告基准核心成功率及对比结果。"
+          },
+          {
+            "section": "S4.SS4.SSS0.Px1",
+            "claim": "消融分别验证 IAA 与自回归适配。"
+          },
+          {
+            "section": "A7",
+            "claim": "作者列出当前单事件/单反应范围。"
+          }
+        ],
+        "fulltext_hash": "037edba58791165142e8ea5aad181a790974e340021f499bc5b34c23a02e1ffc",
+        "analysed_at": "2026-11-06T01:59:55.891Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 102,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "指出视觉保存不足以推断新事件对视野外主体的影响，并定义任务。",
+          "url": "https://arxiv.org/html/2611.06748v1#S1"
+        },
+        {
+          "section": "S3.SS3.SSS1",
+          "claim": "世界大脑持续观察分段输出并维护实体和事件状态。",
+          "url": "https://arxiv.org/html/2611.06748v1#S3.SS3.SSS1"
+        },
+        {
+          "section": "S3.SS3.SSS2",
+          "claim": "区分实体锚点与时间锚点。",
+          "url": "https://arxiv.org/html/2611.06748v1#S3.SS3.SSS2"
+        },
+        {
+          "section": "S3.SS3.SSS3",
+          "claim": "身份锚定注意力强化回访主体对实体锚点的读取。",
+          "url": "https://arxiv.org/html/2611.06748v1#S3.SS3.SSS3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "报告基准核心成功率及对比结果。",
+          "url": "https://arxiv.org/html/2611.06748v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4.SSS0.Px1",
+          "claim": "消融分别验证 IAA 与自回归适配。",
+          "url": "https://arxiv.org/html/2611.06748v1#S4.SS4.SSS0.Px1"
+        },
+        {
+          "section": "A7",
+          "claim": "作者列出当前单事件/单反应范围。",
+          "url": "https://arxiv.org/html/2611.06748v1#A7"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: Overview of the data engine for EvoWorld. Structured scenarios are rendered into single-take out-of-sight interactions, verified against visual evidence, temporally annotated, and converted into a training supervision dataset and evaluation benchmark.",
+          "url": "https://arxiv.org/html/2611.06748v1/data_engine.png",
+          "source_url": "https://arxiv.org/html/2611.06748v1#S2.F2"
+        },
+        {
+          "id": "S3.F4",
+          "caption": "Figure 4: Overview of the EvoWorld framework. (a) Stage 1 learns out-of-sight reactive rendering. (b) Stage 2 refines the renderer through online autoregressive adaptation. (c) Inference uses brain–renderer collaboration for Out-of-Sight Causal Evolution.",
+          "url": "https://arxiv.org/html/2611.06748v1/pipeline_1021.png",
+          "source_url": "https://arxiv.org/html/2611.06748v1#S3.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.06377",
+      "arxiv_id": "2611.06377",
+      "doi": "",
+      "title": "NanoKV: High-Ratio KV Cache Compression for Autoregressive Video Generation",
+      "abstract": "Autoregressive video models rely on historical key-value (KV) caches to preserve scene consistency over extended rollouts, making KV storage and repeated attention over history a growing memory and computational bottleneck. Aggressive compression can degrade generation quality, while reconstructing full-dimensional KV leaves attention computation largely unchanged. We introduce NanoKV, a frozen-backbone framework for generation-aware high-ratio KV compression. NanoKV exploits redundancy across tokens and attention heads by storing shared content in cluster centers and encoding joint head-channel residuals into low-bit coefficients. Crucially, NanoKV uses different fitting objectives for Keys and Values according to their distinct roles in attention: Key decoders are optimized to preserve downstream block outputs, whereas Value encoders and decoders are fitted for faithful reconstruction through the deployed quantization path. Building on the same compressed representation, the optional NanoKV-Fast variant reuses the stored coefficients for mixed-dimensional attention, reducing computation without modifying the video backbone. Across three autoregressive video backbones, NanoKV consistently improves the quality-storage trade-off. On HY-WorldPlay, NanoKV achieves $26.09\\times$ effective KV compression, nearly twice that of KVTC, while improving PSNR by 1.0 dB. NanoKV-Fast retains $20.53\\times$ effective compression and achieves an approximately $1.15\\times$ end-to-end speedup over KVTC.",
+      "authors": [
+        "Jiacheng Lu",
+        "Haoyi Zhu",
+        "Sipei Yi",
+        "Enze Xie",
+        "Cheng Zhuo",
+        "Yu Li"
+      ],
+      "url": "https://arxiv.org/abs/2611.06377",
+      "published": "2026-11-04T11:40:45Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06377v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 91,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "NanoKV：自回归视频生成的高压缩率键值缓存",
+        "abstract_zh": "本文针对长视频自回归生成中历史键值（KV）缓存不断增长、直接压缩又损害画质的问题，提出生成感知压缩方案。NanoKV 联合建模注意力头与通道结构，以共享中心和残差表示压缩历史 KV；对 Key 与 Value 采用不同优化目标：Key 解码器对齐注意力块输出，Value 编解码器做量化感知拟合；NanoKV-Fast 则允许注意力直接读取低维压缩特征，并保护敏感历史片段。作者在多个自回归视频骨干上比较质量、缓存占用与运行开销。",
+        "reason": "它直接解决长时间视频生成的历史状态存储与访问瓶颈，并将压缩目标从张量重建转为生成结果保真。",
+        "introduction_zh": "自回归视频模型每生成一段都要保留此前的注意力键值，长序列使内存快速增长。传统低秩或量化压缩往往追求张量近似误差，却未必保留模型生成下一帧真正需要的信息。作者发现注意力头和通道结构应联合压缩，且 Key 与 Value 对输出的作用不同，因此为两者分别设计训练目标，并测试直接在压缩空间注意的快速路径。",
+        "method_takeaway": "NanoKV不再把KV压缩当作单纯降维重建，而是利用共享中心压缩跨注意力头和通道的历史状态，并分别按注意力输出与量化误差校准Key、Value。",
+        "framework_zh": "长视频生成可以看作模型一段段续写。每段要读取过去的注意力键值，历史越长，缓存占用越大；若把所有 KV 等比例压缩，模型可能保住数值近似，却丢掉决定下一段画面的关键历史。NanoKV 的出发点是：压缩要与生成过程对齐，而不是只追求重建压缩前张量。\n\n第一步把注意力头和通道一起处理，用共享中心加残差系数表示历史 KV，从而减少重复信息。第二步区分 Key 和 Value：Key 影响注意力“读哪里”，所以优化时让压缩后产生的注意力块输出尽量接近原始模型；Value 影响“读到什么”，则采用量化感知拟合来减少解码误差。这样两个部分不再被强迫使用同一种压缩目标。\n\n若进一步追求推理速度，NanoKV-Fast 可以直接在低维压缩特征上计算注意力，避免每次先完整解压；同时为敏感历史保留更高精度，减少关键上下文丢失。作者在多个自回归视频骨干上报告压缩、画质和延迟的折中。要注意，表现随骨干和压缩率而变；压缩比提高通常伴随质量与计算的权衡，不能把一个基准上的收益理解成所有长视频系统都同样加速。",
+        "pipeline": "历史注意力 KV → 联合头/通道压缩并存储共享中心与残差 → Key/Value 分别校准或低维直接注意 → 以生成画质、缓存和速度联合评估",
+        "results": "在 HY-WorldPlay 标称 32×压缩下，NanoKV 相较 KVTC 接近翻倍有效压缩率，同时 PSNR 高约 1.0 dB；在 LingBot-World 2.0 和 Matrix-Game 3.5 上，作者报告缓存占用/运行开销改善且画质保持具有骨干差异。",
+        "limitations": "作者指出压缩效果依赖模型骨干、层和压缩率；低维直接注意力的收益需要在支持相应内核的部署环境中兑现。高压缩仍存在生成保真与内存、延迟之间的折中。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "提出长视频历史 KV 缓存随长度增长的问题。"
+          },
+          {
+            "section": "S4",
+            "claim": "概述生成感知 KV 压缩总体设计。"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "联合头—通道压缩与共享中心残差。"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "Key 与 Value 使用角色专属的优化方式。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "NanoKV-Fast 直接从压缩表征读取注意力。"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "比较多个模型上的压缩、画质和速度结果。"
+          },
+          {
+            "section": "S6.SS0.SSS0.Px1",
+            "claim": "作者讨论适用边界。"
+          }
+        ],
+        "fulltext_hash": "bd0f4549a6b6a15402194d7d3968ce1dadfd92731a8f6d6e25139ca065f04606",
+        "analysed_at": "2026-11-06T01:59:55.901Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 101,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "提出长视频历史 KV 缓存随长度增长的问题。",
+          "url": "https://arxiv.org/html/2611.06377v1#S1"
+        },
+        {
+          "section": "S4",
+          "claim": "概述生成感知 KV 压缩总体设计。",
+          "url": "https://arxiv.org/html/2611.06377v1#S4"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "联合头—通道压缩与共享中心残差。",
+          "url": "https://arxiv.org/html/2611.06377v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "Key 与 Value 使用角色专属的优化方式。",
+          "url": "https://arxiv.org/html/2611.06377v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "NanoKV-Fast 直接从压缩表征读取注意力。",
+          "url": "https://arxiv.org/html/2611.06377v1#S4.SS3"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "比较多个模型上的压缩、画质和速度结果。",
+          "url": "https://arxiv.org/html/2611.06377v1#S5.SS2"
+        },
+        {
+          "section": "S6.SS0.SSS0.Px1",
+          "claim": "作者讨论适用边界。",
+          "url": "https://arxiv.org/html/2611.06377v1#S6.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S4.F4",
+          "caption": "Figure 4: Overview of NanoKV for generation-aware high-ratio KV compression. (a) Joint head–channel encoding stores historical KV as coefficients and shared centers, read through full-dimensional (NanoKV) or mixed-dimensional (NanoKV-Fast) decoding and attention. (b) The encoder compresses residuals into INT4 coefficients; the decoder reconstructs them and adds back centers. (c) Key decoders use block-output alignment; Value encoders and decoders use quantization-aware fitting. (d) A fixed policy routes history to full- or low-dimensional attention. The latter reduces Queries and restores output dimensions before LSE merging.",
+          "url": "https://arxiv.org/html/2611.06377v1/method_overview.png",
+          "source_url": "https://arxiv.org/html/2611.06377v1#S4.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.04164",
+      "arxiv_id": "2611.04164",
+      "doi": "",
+      "title": "What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting",
+      "abstract": "Long-horizon video generation is increasingly moving toward autoregressive rollout, where each newly generated segment becomes part of the evidence used for future prediction. Recent causal decoders, long-context training, and KV-cache mechanisms have extended feasible duration, but most inference pipelines still decide the visible past implicitly through recent windows, compressed caches, or external memory. This raises a direct question: \\textbf{can the choice of which past frames or segments to show to the decoder be treated as an explicit test-time decision?} We answer this question with \\textsc{ReCR}, a training-free method that formulates autoregressive video decoding as representation-guided context rewriting. At each step, \\textsc{ReCR} builds a selected visible context from the generated history by using internal decoder representations to favor context units that match the global rollout state, avoid redundancy with the recent continuation, preserve temporal boundary coverage, and widen the range of spatial layouts in view. The selected units are then mapped onto a compact causal axis before decoding the next block. Across long-horizon text-to-video benchmarks, \\textsc{ReCR} consistently improves multiple autoregressive backbones under matched visible-token budgets. Empirical analyses such as representation-space diagnostics and transition-count prompt switching further show that improving what remains visible is an effective path toward more stable long-video decoding.",
+      "authors": [
+        "Lixuan He",
+        "Jihyeon Je",
+        "Yang You",
+        "Leonidas Guibas"
+      ],
+      "url": "https://arxiv.org/abs/2611.04164",
+      "published": "2026-11-03T01:54:23Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.04164v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 90,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "视野中留下什么？用表征引导的上下文重写进行自回归视频解码",
+        "abstract_zh": "本文把长视频自回归解码中的关键问题表述为：在固定上下文预算内，下一段生成时应让模型重新看到历史中的哪些内容。训练时需要当前目标片段，推理时 ReCR 将生成历史切成上下文单元，按单元对下一段的表征效用评分，选择紧凑的可见上下文，并结合边界覆盖、冗余惩罚和空间范围交换进行稳定选择。该方法无需训练新生成器，可叠加到已有因果视频骨干。作者在 128 条提示和 30/60 秒生成中比较画质及沿时间的漂移指标。",
+        "reason": "它给长视频解码加的是“每一步重选重要历史”的推理策略，直击固定最近窗口会遗忘较早关键场景的问题，且无需重训生成模型。",
+        "introduction_zh": "因果视频模型通常只把最近一段连续历史交给下一步解码，较早但仍重要的对象、场景或指令可能被挤出窗口。保留整段历史又超出上下文预算。作者提出 ReCR，以生成表征衡量历史片段对下一段的作用，再从全历史选出紧凑可见上下文，目标是在固定预算内保持长期一致性与对当前提示的响应。",
+        "method_takeaway": "ReCR每生成一段就从全部历史中挑选“下一段真正需要看到”的上下文单元，用效用评分、边界覆盖和冗余控制代替固定最近窗口。",
+        "framework_zh": "如果模型只看最近几秒，早先出现、后面还要回来的主角可能被忘记；如果把整段视频历史都放进上下文，计算与内存又会超预算。ReCR 将历史切成语义/空间上下文单元，并用当前生成模型的表征估计每个单元对下一块预测的效用。它不是简单挑最高分片段，还要求选择结果覆盖必要边界、避免多个相似单元重复，并保留一定空间范围。\n\n每一步解码时，ReCR 根据固定可见预算形成当前可见集合，再把这些历史单元交给原本的因果生成骨干。随着视频向前生成，可见集合不断重写：有些旧片段即使不在最近窗口中仍会留下，有些近片段若高度冗余则不必一直占位。训练过程不需要更新生成模型参数，因此可以作为推理时模块叠加到不同自回归骨干。\n\n这种方法要解决的不是视频像素压缩，而是“有限注意力预算该分给哪些历史”。作者在 MovieGen 提示集的 128 条提示上做 30 秒和 60 秒 rollout，并统计文本对齐、外观/颜色/清晰度和特征漂移等变化。实验支持动态选上下文对长时一致性的帮助；但上下文重要性由模型表征近似，选错片段仍可能造成后续遗漏，且收益依赖共享上下文预算与骨干兼容。",
+        "pipeline": "自回归生成历史 → 切分上下文单元并估计表征效用 → 在固定预算下做覆盖/去冗余选择 → 用重写后的可见上下文生成下一段",
+        "results": "作者在 128 条 MovieGen 提示上评估 30 秒及 60 秒生成，并与训练式和推理时长视频方法在相同因果骨干、条件与可见 token 预算下比较；报告质量和漂移指标改善，并分析提示切换次数变化。",
+        "limitations": "作者在讨论中指出效用基于表征代理，可能与人类对长期叙事重要性的判断不同；方法也依赖上下文单元划分及固定预算，无法突破骨干本身的生成错误。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "说明固定最近上下文与长视频历史需求之间的矛盾。"
+          },
+          {
+            "section": "S3",
+            "claim": "定义按表征效用选择可见历史的推理框架。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px1",
+            "claim": "上下文单元表示与效用评分。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px4",
+            "claim": "固定预算的上下文选择机制。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px5",
+            "claim": "空间范围交换。"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "说明 30/60 秒长视频实验。"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "与长视频基线比较。"
+          },
+          {
+            "section": "A4",
+            "claim": "作者讨论方法限制。"
+          }
+        ],
+        "fulltext_hash": "5bcd15fc36f16223736796f148f7dbd10a0119b20dbd59847bf4ef0e850aed29",
+        "analysed_at": "2026-11-06T01:59:55.902Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 100,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "说明固定最近上下文与长视频历史需求之间的矛盾。",
+          "url": "https://arxiv.org/html/2611.04164v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "定义按表征效用选择可见历史的推理框架。",
+          "url": "https://arxiv.org/html/2611.04164v1#S3"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px1",
+          "claim": "上下文单元表示与效用评分。",
+          "url": "https://arxiv.org/html/2611.04164v1#S3.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px4",
+          "claim": "固定预算的上下文选择机制。",
+          "url": "https://arxiv.org/html/2611.04164v1#S3.SS2.SSS0.Px4"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px5",
+          "claim": "空间范围交换。",
+          "url": "https://arxiv.org/html/2611.04164v1#S3.SS2.SSS0.Px5"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "说明 30/60 秒长视频实验。",
+          "url": "https://arxiv.org/html/2611.04164v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "与长视频基线比较。",
+          "url": "https://arxiv.org/html/2611.04164v1#S4.SS2"
+        },
+        {
+          "section": "A4",
+          "claim": "作者讨论方法限制。",
+          "url": "https://arxiv.org/html/2611.04164v1#A4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F1",
+          "caption": "Figure 1: Qualitative overview of ReCR across backbones. ReCR is applied as a training-free context rewriting module on top of different autoregressive video backbones. On 6060-second rollouts, ReCR reduces common long-horizon failures such as scene drift, visual artifacts, and oversaturation. On 300300-second ultra-long rollouts, ReCR further extends backbones with stable visual continuity.",
+          "url": "https://arxiv.org/html/2611.04164v1/fig/latest_teaser.png",
+          "source_url": "https://arxiv.org/html/2611.04164v1#S1.F1"
+        },
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: Overview of the ReCR framework. Instead of exposing the full generated history or a fixed recent window, ReCR scores context units with unit-level representations and selects a compact visible context. The selection objective favors high representation utility, preserves boundary coverage over early and recent context, and discourages redundant selected units. At most one spatial-range exchange, not drawn here, then refines the selection (Sec. 3.2). The selected context is then temporally reindexed onto a compact causal axis before being passed to the causal video decoder.",
+          "url": "https://arxiv.org/html/2611.04164v1/teaser_latest.png",
+          "source_url": "https://arxiv.org/html/2611.04164v1#S2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.06120",
+      "arxiv_id": "2611.06120",
+      "doi": "",
+      "title": "ReactWorld: Structuring Interaction Responses for Embodied Video Generation",
+      "abstract": "Embodied video world models predict scene changes caused by robot actions, yet generated object responses may remain inconsistent with task intent and contact dynamics. Critical responses in embodied scenes often concentrate in local regions and specific time intervals. Inspired by chain-of-thought reasoning, we introduce ReactWorld, an embodied video generation model guided by structured interaction anticipation. In the generation backbone's feature space, an interaction response field predictor anticipates how the interaction will unfold, explicitly describing participant roles, future motion response intensity, and local motion changes. A response feedback adapter forms increments to object features from the difference between the object branch's outputs with predicted and zeroed local dynamics inputs. It also converts predicted displacements into positional biases for temporal attention. These two mechanisms guide object feature updates and information retrieval across frames, respectively. Through interaction anticipation and generative feedback, ReactWorld achieves an average score of 77.51 on RBench, outperforming PhysisForcing by 3.29 points with improvements in all nine categories. On EZS-Bench, it achieves a Domain score of 86.98 and an average score of 81.87.",
+      "authors": [
+        "Hanwei Liu",
+        "Huijia Zhang",
+        "Hanzhang Wang",
+        "Guangyu Liu",
+        "Hanbei Zhan",
+        "Linjie Hu",
+        "Bin Xiao",
+        "Xuan Zhou",
+        "Dong Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.06120",
+      "published": "2026-11-04T08:06:52Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06120v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "ReactWorld：为具身视频生成结构化交互响应",
+        "abstract_zh": "本文指出，交互视频模型常能生成局部逼真的画面，却难以说明哪些物体参与交互、各部位将如何响应以及运动如何随时间展开。ReactWorld 预测结构化交互响应场，包含参与角色、未来运动响应强度、空间支持和时间区间运动，再将其反馈到视频生成骨干：一条路径更新对象特征，另一条利用位移线索引导跨帧信息读取。作者在 RBench、EZS-Bench 和人评上比较任务完成、交互合理性及视觉质量，并通过消融分析结构化预测的作用。",
+        "reason": "核心贡献是把“物体之间怎样相互作用”显式变成可预测、可反馈的运动结构，适合关注物理交互驱动的视频生成。",
+        "introduction_zh": "提示词能说明“把杯子放上桌”，但常不足以决定杯子哪一部分开始移动、接触后如何响应以及物体运动在空间与时间上的范围。既有生成指导多用粗粒度轨迹或运动特征。作者提出结构化响应表征，把参与对象、局部运动强度、支持区域和时间区间拆开预测，并将其反馈到去噪生成过程。",
+        "method_takeaway": "ReactWorld先预测“谁参与、哪里会动、动多强、持续多久”的交互响应场，再把响应作为特征更新与跨帧读取偏置反馈给生成模型，让动作条件真正影响物体状态变化。",
+        "framework_zh": "把“把果酱挤进杯子”作为直观例子：仅写下动作名称，模型可能让瓶子、杯子和液体各自看起来合理，却没有形成连贯的因果接触。ReactWorld先把交互描述成一个响应场：标出参与者及其角色，预测物体不同位置未来会有多强的运动响应，并描述运动支持区域和时间区间。这样，模型获得的不是一个模糊的动作标签，而是“谁在何处、何时、以何种程度变化”的结构化预期。\n\n随后响应场通过两条路径进入生成。特征反馈路径根据动态条件更新对象特征，使生成器知道瓶口、杯口或被操作物体应如何变化；位移引导路径则利用预测的运动位移，调整跨帧注意力读取位置，帮助模型把前后帧中的同一对象对齐。训练时，作者同时监督响应结构，并用视频生成损失约束最终画面，让结构预测和视频结果互相配合。\n\n它的关键在于把交互运动显式化，再以内部反馈方式影响生成，而非在外部加一条仅供观察的轨迹。RBench、EZS-Bench、人评和消融从任务完成、交互合理性与视觉质量检验该设计。阅读时要区分“预测响应结构”与真实物理仿真：它提高生成画面的交互一致性，但仍是数据驱动的视频模型，不等同于保证正确的物理引擎。",
+        "pipeline": "交互指令与首帧 → 预测角色/局部响应/位移时间场 → 特征更新与位移引导注意力 → 生成交互后视频并以结构和视频损失训练",
+        "results": "作者在 RBench 与 EZS-Bench 上比较交互任务、视觉质量和物理合理性，另含人评及响应监督/生成反馈消融。定性案例展示杯子堆叠、倾倒液体、装袋等任务的物体关系更清楚；结论来自基准和人工评分，并非真实物理定律保证。",
+        "limitations": "作者指出交互响应依赖标注和当前任务覆盖；生成器仍会受视频训练数据与视觉评价限制。响应场的结构化并不等于刚体动力学仿真，复杂接触和多物体连锁作用仍是边界。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "提出生成模型难表达对象级交互因果的问题。"
+          },
+          {
+            "section": "S3",
+            "claim": "概述结构化响应预测并反馈生成。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "定义参与角色与未来响应场。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "描述特征更新和位移引导注意力两条反馈路径。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "给出响应监督与视频生成联合目标。"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "RBench 评测设置与对照。"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px3",
+            "claim": "EZS-Bench 评测。"
+          },
+          {
+            "section": "S5.SS0.SSS0.Px1",
+            "claim": "作者列出局限与未来工作。"
+          }
+        ],
+        "fulltext_hash": "642dfc5ccc4507622a62ebad047b0be8b715f36156fc6914cc627d101736282f",
+        "analysed_at": "2026-11-06T01:59:55.899Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "提出生成模型难表达对象级交互因果的问题。",
+          "url": "https://arxiv.org/html/2611.06120v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "概述结构化响应预测并反馈生成。",
+          "url": "https://arxiv.org/html/2611.06120v1#S3"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "定义参与角色与未来响应场。",
+          "url": "https://arxiv.org/html/2611.06120v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "描述特征更新和位移引导注意力两条反馈路径。",
+          "url": "https://arxiv.org/html/2611.06120v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "给出响应监督与视频生成联合目标。",
+          "url": "https://arxiv.org/html/2611.06120v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "RBench 评测设置与对照。",
+          "url": "https://arxiv.org/html/2611.06120v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px3",
+          "claim": "EZS-Bench 评测。",
+          "url": "https://arxiv.org/html/2611.06120v1#S4.SS2.SSS0.Px3"
+        },
+        {
+          "section": "S5.SS0.SSS0.Px1",
+          "claim": "作者列出局限与未来工作。",
+          "url": "https://arxiv.org/html/2611.06120v1#S5.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F2",
+          "caption": "Figure 2: Overview of ReactWorld. Top: response prediction and generative feedback within each denoising forward pass. Bottom: (a) predicting roles, future responses, and interval dynamics to construct interaction context and local dynamic conditions; (b) extracting object-response increments relative to a zero-dynamics reference and updating features by role; and (c) converting gated, clipped displacements into positional biases within a fixed candidate window. Biases are added to query–key logits before softmax and feature aggregation, followed by bounded residual feedback. Scene and response visualizations illustrate the mechanism.",
+          "url": "https://arxiv.org/html/2611.06120v1/figures/fig2_pipeline.png",
+          "source_url": "https://arxiv.org/html/2611.06120v1#S1.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.03394",
+      "arxiv_id": "2611.03394",
+      "doi": "10.48550/arxiv.2611.03394",
+      "title": "TaoMate-HD: Progressive-Resolution Autoregressive Audio-Video Generation",
+      "abstract": "Streaming digital humans produce detailed video while continuing speech as new text arrives. High-resolution denoising is costly, and text updates can cause repeated or interrupted speech. We present TaoMate-HD, an autoregressive model for high-resolution audio-video streaming. For each short segment, or chunk, two denoising steps establish coarse video structure at low resolution. A final step refines the video to high resolution, with audio generated throughout the same trajectory. Each stage passes its audiovisual predictions to the same stage of the next chunk as history. Across text updates, the model retains this history to infer what has already been spoken. Continuation training utilizes asymmetric text conditioning, with separate text windows for generation and distillation. Experiments show a 1.6x speedup over direct high-resolution generation with the same model and hardware. Optimized stage-parallel deployment provides a further 1.9x overall speedup over serial progressive generation. Our continuation training reduces character error rate by 11.18 percentage points relative to the baseline. The model also supports hour-long audiovisual generation.",
+      "authors": [
+        "Qijun Gan",
+        "Chenwei Zhang",
+        "Xinyang Li",
+        "Meiguang Jin",
+        "Junfeng Ma",
+        "Shen Qiu"
+      ],
+      "url": "https://arxiv.org/abs/2611.03394",
+      "published": "2026-11-02T16:29:27Z",
+      "topics": [
+        "视频生成",
+        "大模型",
+        "流式生成"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-11-05"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.03394v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "TaoMate-HD：渐进分辨率的自回归音视频生成",
+        "abstract_zh": "本文提出面向流式数字人的高分辨率自回归音视频模型。每个片段先在低分辨率网格执行结构性去噪，最后一步再升至目标分辨率细化；每个阶段的音视频预测作为相同阶段下一片段的历史。文本更新时模型保留先前已说内容，并采用生成与蒸馏窗口不对称的续写训练。作者在相同模型硬件下报告相对直接高分辨率生成 1.6 倍加速，阶段并行部署再获得 1.9 倍整体加速，续写训练使字符错误率降低 11.18 个百分点，并可生成长达一小时的音视频。",
+        "reason": "通过“先粗后细”的分辨率计算与阶段内历史传递减少长流生成成本，同时保留文本更新时的语音续接状态，是直接面向流式音视频生成的方案。",
+        "introduction_zh": "流式数字人需要边接收新文本边继续说话和生成高分辨率画面。每一步都全分辨率去噪计算昂贵，文本不断更新还会导致语音重复或中断。作者把高分辨率细节留到最后阶段，并让音视频预测以阶段对应方式跨 chunk 传递；另外通过不对称续写蒸馏缓解模型训练与在线持续输入之间的差异。",
+        "method_takeaway": "TaoMate-HD让每个音视频片段先用低分辨率建立结构、最后一步才补高分辨率细节，并把同阶段结果作为下个片段历史以持续接话。",
+        "framework_zh": "高分辨率视频的每一步去噪都很贵，但片段最早几步主要决定场景布局和大尺度动作，未必需要一开始就用满像素。TaoMate-HD把一个片段拆成逐步细化轨迹：前几次去噪在低分辨率网格建立人物、场景和动作结构，最后一次再切到高分辨率补充纹理细节；音频沿同一生成轨迹同步产生。\n\n每个片段还把各阶段的预测保存在对应阶段的历史中，下一片段从相同阶段读取，而不是只把最终结果一股脑拼回去。这样既复用过去的信息，又避免不同去噪尺度的状态互相错位。文本若在生成中途更新，模型需要知道哪些内容已经说过，作者用续写训练让其在模型自己的 rollout 上学习继续生成，并采用生成窗口和蒸馏窗口不对称的文本条件来处理更新边界。\n\n这套方法把计算节省、跨片段记忆和文本续接放在同一条流式路径上。作者报告低分辨率渐进生成较直接全分辨率生成快 1.6 倍，阶段并行再提升整体速度；续写训练降低 CER，支持小时级生成。阅读这些数字时要注意并行加速来自特定多 GPU 部署配置，不能等同于单卡端到端倍速。",
+        "pipeline": "文本/场景条件 → 低分辨率结构去噪 → 高分辨率终步细化并生成音频 → 阶段局部 KV 作为下一片段历史并响应文本更新",
+        "results": "作者报告相对同模型直接高分辨率生成 1.6×速度提升；阶段并行部署相较串行渐进生成进一步获得 1.9×整体加速。续写训练相较基线降低字符错误率 11.18 个百分点，支持小时级音视频生成。",
+        "limitations": "阶段并行加速依赖八张 H20 GPU 的具体配置；流式质量评测主要在论文设定的 100 输入基准和现有生成器比较。音视频长时一致性与文本快速反复改写仍需更多真实交互验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "界定高分辨率计算和文本更新中断问题。"
+          },
+          {
+            "section": "S3",
+            "claim": "概述渐进分辨率、阶段历史和续写训练。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "低分辨率结构生成后进行高分辨率细化。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "阶段局部 KV 历史传递。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "不对称蒸馏用于文本续写。"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "流式音视频质量、CER 与速度结果。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "分辨率效率与部署吞吐评测。"
+          }
+        ],
+        "fulltext_hash": "16ddcd9fe8b49912facbd7c021ac5f72c60236b6e97267aa04f7662a230669d2",
+        "analysed_at": "2026-11-06T01:59:55.906Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "界定高分辨率计算和文本更新中断问题。",
+          "url": "https://arxiv.org/html/2611.03394v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "概述渐进分辨率、阶段历史和续写训练。",
+          "url": "https://arxiv.org/html/2611.03394v1#S3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "低分辨率结构生成后进行高分辨率细化。",
+          "url": "https://arxiv.org/html/2611.03394v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "阶段局部 KV 历史传递。",
+          "url": "https://arxiv.org/html/2611.03394v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "不对称蒸馏用于文本续写。",
+          "url": "https://arxiv.org/html/2611.03394v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "流式音视频质量、CER 与速度结果。",
+          "url": "https://arxiv.org/html/2611.03394v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "分辨率效率与部署吞吐评测。",
+          "url": "https://arxiv.org/html/2611.03394v1#S4.SS3"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2611.06908",
+      "arxiv_id": "2611.06908",
+      "doi": "",
+      "title": "Perceptive Humanoid Motion from Simulation",
+      "abstract": "Humanoid robots have the potential to automate a wide range of physical tasks. Progress toward generalist humanoid autonomy, however, remains constrained by a data bottleneck: mapping pixels and free-form language to low-level joint commands requires paired supervision, and no corpus of such data exists at sufficiently large scale. Some approaches rely on human teleoperation and wearable capture devices, which require at least an hour of human time to produce an hour of data. We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. The corpus scales with compute rather than human labor. HALO acquires a repertoire of physical skills, including sitting on chairs, navigating to named objects, stepping sideways through half-open doors, crouching and crawling beneath tables, and pushing boxes. It orchestrates these skills to solve composite, long-horizon tasks. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments. See https://apple-aiml-research.github.io/ml-halo/ for code and videos.",
+      "authors": [
+        "Siyuan Hu",
+        "Abulikemu Abuduweili",
+        "Yue Meng",
+        "Shipeng Liu",
+        "Quentin Leboutet",
+        "Chen Chen",
+        "Matthias Müller",
+        "Vladlen Koltun"
+      ],
+      "url": "https://arxiv.org/abs/2611.06908",
+      "published": "2026-11-04T18:55:33Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06908v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "从仿真中学习具身人形机器人的感知与运动",
+        "abstract_zh": "本文提出 HALO，一套完全板载、面向未见环境的人形机器人自主系统，不依赖部署前场景重建、外部动捕或特权物体状态。系统把自然语言与第一视角视觉转为分层全身控制：上层视觉语言模型拆解长任务，中层运动生成器产生全身动作，下层感知控制器根据视觉反馈执行。作者利用程序化合成场景生成任务与运动数据，通过特权专家、多教师蒸馏和多评论器微调训练跟踪器，再进行仿真到现实迁移，评估多种新环境下的单任务与长时序行为。",
+        "reason": "从数据生成到分层全身控制和现实部署都围绕“没见过的房间里仍能按语言任务行动”，不是只在固定场景复现动作。",
+        "introduction_zh": "许多机器人系统依赖部署前扫描房间，或把高层规划和低层感知运动控制拆成狭窄技能。真实自主性需要机器人到陌生环境中理解语言、避开障碍并完成连续任务。作者采用仿真合成多样训练环境，并让全身动作生成与视觉反馈控制分层协作，目标是在无需预扫描和动捕的条件下迁移到现实。",
+        "method_takeaway": "HALO把长任务拆分、全身动作生成和视觉反馈跟踪分成三层，再以合成仿真数据训练从特权专家到感知控制器的迁移链条，使机器人能在陌生环境中执行语言任务。",
+        "framework_zh": "HALO 的核心不是让一个大模型直接吐出所有关节角，而是给高层语义和低层身体控制之间安排清楚的接口。视觉语言模型以较低频率观察第一视角画面，把“坐到椅子上”分成走到椅子前、转身、坐下等子任务；中层运动生成器据此产生连续全身动作；最底层控制器用视觉和本体感觉闭环跟踪，处理障碍、接触和动作误差。\n\n训练也沿着这条层级展开。作者用程序化场景合成房间、物体和任务，并把每项任务拆成动作片段，提供路径点和终止关键姿态。训练初期可以利用仿真中的特权状态训练专家，再通过多教师蒸馏把专家行为转给感知策略，最后用多个评论器微调，使策略兼顾动作完成和视觉环境下的鲁棒性。部署时则不要求输入特权状态或场景扫描，只依靠板载感知。\n\n这个设计把“会规划”和“能走、能蹲、能推物体”分开训练但保持闭环。作者在未见模拟环境及真实环境中评估，并展示多任务链行为；长链成功率低于独立单任务成功率相乘的估计，说明子任务错误会累积。因而亮点是数据和控制架构的可迁移性，尚不能据此认为任意长的开放式家务任务都已解决。",
+        "pipeline": "程序化仿真场景与任务 → 特权专家生成全身运动 → 多教师蒸馏并以视觉反馈微调 → 上层 VLM 分解任务、板载控制器在现实执行",
+        "results": "论文分别在 6 类任务、未见模拟环境和 6 个现实环境评估，并报告现实部署无需预扫描与外部动捕。多任务链测试显示，2–3 个子任务能串联执行，但部分链成功率低于独立任务成功率的乘积，提示误差会沿序列累积。",
+        "limitations": "作者列出当前任务集和现实环境数量有限；长链任务的子任务耦合导致累积失败。方法使用仿真合成训练，迁移到更复杂的开放环境仍需进一步验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "介绍陌生环境下具身人形系统的目标。"
+          },
+          {
+            "section": "S3",
+            "claim": "概括板载三层自主栈与方法结构。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "程序化合成任务和场景数据。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "描述运动跟踪器训练的阶段链条。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "报告未见环境单任务测试设计。"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "报告多任务链结果及误差累积现象。"
+          },
+          {
+            "section": "S5.SS0.SSS1",
+            "claim": "作者说明限制和未来工作。"
+          }
+        ],
+        "fulltext_hash": "4d40339b1d7ce620963ceff388b9eef8e5fe7ccffe863c3255a3e05540320c20",
+        "analysed_at": "2026-11-06T01:59:55.897Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "介绍陌生环境下具身人形系统的目标。",
+          "url": "https://arxiv.org/html/2611.06908v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "概括板载三层自主栈与方法结构。",
+          "url": "https://arxiv.org/html/2611.06908v1#S3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "程序化合成任务和场景数据。",
+          "url": "https://arxiv.org/html/2611.06908v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "描述运动跟踪器训练的阶段链条。",
+          "url": "https://arxiv.org/html/2611.06908v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "报告未见环境单任务测试设计。",
+          "url": "https://arxiv.org/html/2611.06908v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "报告多任务链结果及误差累积现象。",
+          "url": "https://arxiv.org/html/2611.06908v1#S4.SS4"
+        },
+        {
+          "section": "S5.SS0.SSS1",
+          "claim": "作者说明限制和未来工作。",
+          "url": "https://arxiv.org/html/2611.06908v1#S5.SS0.SSS1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Fig. 3: Synthetic data generation and training pipeline. (A) Each task is decomposed into segments defined by text prompts and keyframe poses. After sampling target asset locations and routing navigation waypoints, a conditional diffusion model synthesizes motion segments from these constraints, stitching them into a continuous whole-body trajectory. (B) This generated trajectory and its associated assets are embedded into procedurally generated scenes, ensuring collision-free placement. (C) A simulator replays the kinematic motion to render egocentric vision from the robot’s head-mounted cameras. Visual domain randomization is applied to maximize appearance diversity. (D) The resulting corpus is used for training the autonomy stack, via imitation learning for the motion generator and via reinforcement learning for the motion tracker.",
+          "url": "https://arxiv.org/html/2611.06908v1/data_pipeline.png",
+          "source_url": "https://arxiv.org/html/2611.06908v1#S3.F3"
+        },
+        {
+          "id": "A0.F6",
+          "caption": "Fig. 6: Motion tracker onboard inference architecture. On the Jetson Orin NX, the tracker runs at 5050\\,Hz and fuses three onboard streams: (top left) raw stereo IR frames from the RealSense D435i (emitter off) are mapped by LiteAnyStereo [45] (TensorRT FP16) to a clean 48×8448\\mathbin{\\!\\times\\!}84 egocentric depth image and encoded by a 2D CNN; (bottom left) a 3030-step proprioceptive history together with the next 3030 plan frames is encoded by a 1D temporal CNN; and (center) both feature vectors are concatenated with the current proprioceptive state and 55-frame motion plan lookahead and passed through a SimBa residual MLP [49] to output 2929 target joint positions for the low-level PD controller.",
+          "url": "https://arxiv.org/html/2611.06908v1/tracker_architecture.png",
+          "source_url": "https://arxiv.org/html/2611.06908v1#A0.F6"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.06061",
+      "arxiv_id": "2611.06061",
+      "doi": "",
+      "title": "TouchéWorld tech report : Towards Online Unified Camera--Hand Exploration in Generative Worlds",
+      "abstract": "Recent video world models allow users to explore generated environments through camera navigation. Continuous hand motion provides a fine-grained action channel for interacting with the people and objects encountered during exploration. We present TouchéWorld, a framework that integrates gesture-driven interaction into a camera-controlled video world model. Given an initial image and a scene-description prompt, the model generates video conditioned on temporally aligned camera and hand controls. We construct joint camera--hand training data from heterogeneous egocentric videos through annotation completion, consistency-based filtering, and temporal alignment. Building on a pretrained camera-controlled world model, we combine spatial hand-skeleton conditioning with numerical hand-motion features through parameter-efficient adaptation. Causal adaptation and few-step distillation support chunk-level online generation, allowing users to update their controls based on generated visual feedback. We further introduce TouchéBench to evaluate hand-motion following, camera--hand coordination, online interaction, and object response. Together, these components establish a framework for studying continuous exploration and hand-driven interaction within generative worlds.",
+      "authors": [
+        "Jiaao Yu",
+        "Yanjian Zhang",
+        "Haoyang Jiang",
+        "Guillaume Wisniewski",
+        "Nadi Tomeh",
+        "Shijie Jia"
+      ],
+      "url": "https://arxiv.org/abs/2611.06061",
+      "published": "2026-11-04T07:06:54Z",
+      "topics": [
+        "运动与运动控制",
+        "大模型",
+        "世界模型",
+        "相机控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06061v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "相机控制",
+          "运动与运动控制"
+        ],
+        "title_zh": "TouchéWorld：生成式世界中的在线相机—手部协同探索",
+        "abstract_zh": "本文把交互式生成世界中的控制扩展到相机视角与手部动作联合输入。TouchéWorld 构建同步相机和手部动作数据，通过联合条件、因果适配及少步蒸馏生成可在线交互的视频世界，并提出 TouchéBench 评估手部动作跟随、相机—手部协同、在线交互和对象响应。方法允许用户一边转动相机探索，一边以手部动作操作场景；原文为技术报告，实验范围应按其基准设置理解。",
+        "reason": "相机轨迹不是背景摄像机运动，而是与手部动作共同控制生成世界的交互信号，直接对应用户关注的相机控制与运动控制。",
+        "introduction_zh": "视频世界模型已有相机控制或手部条件生成方向，但二者分开会限制用户同时“看向哪里”和“如何与物体交互”。论文将相机运动与手部动作同步输入，并构造从标注补全、时序对齐到一致性过滤的数据流程，目标是低延迟地实现连续在线探索和操作。",
+        "method_takeaway": "TouchéWorld把相机轨迹与手部动作放入同一因果生成条件中，使用户可以边改变视角边操作物体，并通过少步蒸馏把这种联合控制用于在线交互。",
+        "framework_zh": "把生成世界想成一个可以边看边摸的虚拟场景。相机控制决定用户从哪里观察，手部动作决定对场景做什么；若二者分开建模，镜头转动和手部操作可能互不知情，结果就是手伸向物体时画面视角没有相应变化，或视角改变后交互动作断裂。TouchéWorld 因此把同步的相机轨迹和手部动作作为同一段视频的联合控制信号。\n\n数据构建先把原始视频中的相机和手部运动补齐、对齐时间，并过滤不一致样本；训练时在生成模型内部联合注入两种条件，再通过因果适配让模型按历史逐段生成，通过少步蒸馏减少在线生成计算。在线推理时，新一轮相机和手部控制接在已生成历史之后，模型据此延续场景，而不是每次从头生成。\n\n作者进一步设计 TouchéBench，将手部动作跟随、相机—手部协同、在线交互和对象响应分开测量，避免只看视频观感。它的核心贡献是将视角控制和对象操作统一成可交互世界模型接口；当前报告属于技术报告，评测基准和场景覆盖有限，且生成的交互合理性仍需要更广泛现实任务验证。",
+        "pipeline": "同步相机/手部动作 → 构建对齐并过滤的联合控制数据 → 因果适配与少步蒸馏 → 在线连续生成并评估视角/操作协同",
+        "results": "作者在 TouchéBench 分别评估手部跟随、相机—手部协同、在线交互与对象响应，并报告生成质量比较和案例。当前可据报告确认任务类型与方法流程；完整的广泛真实用户评测尚未建立。",
+        "limitations": "论文为技术报告，基准覆盖和外部验证有限；当前摄像机与手部控制需要稳定的输入轨迹与同步标注。视频生成视觉连贯性仍不能替代物理交互正确性。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "介绍单独相机控制与手部交互难以联合的问题。"
+          },
+          {
+            "section": "S3",
+            "claim": "概述联合条件、因果适配和在线交互。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "说明相机与手部同步数据构建。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "联合相机—手部条件注入。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "因果适配与不对称蒸馏。"
+          },
+          {
+            "section": "S3.SS5",
+            "claim": "构造四类交互评测任务。"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "TouchéBench 主评测结果。"
+          }
+        ],
+        "fulltext_hash": "06ce2cb06e8b2ebec91ec44c38cdeadcafe452da14067d58256584247562b83e",
+        "analysed_at": "2026-11-06T01:59:55.900Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "介绍单独相机控制与手部交互难以联合的问题。",
+          "url": "https://arxiv.org/html/2611.06061v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "概述联合条件、因果适配和在线交互。",
+          "url": "https://arxiv.org/html/2611.06061v1#S3"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "说明相机与手部同步数据构建。",
+          "url": "https://arxiv.org/html/2611.06061v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "联合相机—手部条件注入。",
+          "url": "https://arxiv.org/html/2611.06061v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "因果适配与不对称蒸馏。",
+          "url": "https://arxiv.org/html/2611.06061v1#S3.SS4"
+        },
+        {
+          "section": "S3.SS5",
+          "claim": "构造四类交互评测任务。",
+          "url": "https://arxiv.org/html/2611.06061v1#S3.SS5"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "TouchéBench 主评测结果。",
+          "url": "https://arxiv.org/html/2611.06061v1#S4.SS3"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F3",
+          "caption": "Figure 3: Overview of TouchéWorld: joint camera–hand conditioning, causal adaptation, few-step distillation, and online interaction with updated controls.",
+          "url": "https://arxiv.org/html/2611.06061v1/sec/img/Main.png",
+          "source_url": "https://arxiv.org/html/2611.06061v1#S1.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.05988",
+      "arxiv_id": "2611.05988",
+      "doi": "10.48550/arxiv.2611.05988",
+      "title": "LiveFoley: Dynamic Real-Time Video-to-Audio Generation for Immersive Interactive Worlds",
+      "abstract": "Streaming video-to-audio (V2A) generation is essential for immersive interactive applications. However, real-time constraints leave existing streaming V2A methods far behind offline models: (1) visual frontends shrink their receptive fields to cut look-ahead latency, severely degrading audio-visual alignment; (2) causal autoregressive diffusion backends denoise each audio patch in isolation, impairing audio quality. To this end, we present LiveFoley, a streaming causal autoregressive diffusion architecture that addresses both bottlenecks with imperceptible latency. For the visual frontend, we introduce a Trailing Sliding Window that converts non-causal segment-level encoders into streaming modules without retraining. By simply realigning the window, it preserves precise audio-visual alignment, while a configurable hop size reduces the frontend look-ahead well below the human perceptual threshold. Building on this tunable hop size, we propose the Unified Varhop Framework to accommodate scenarios with diverse latency and computation budgets. For the audio backend, we explore widening the denoising window of the local diffusion transformer (LocDiT) head in two temporal directions. History LocDiT adds past context to improve quality at no latency cost and serves as our default. Alternatively, Future-Warmup LocDiT breaks the autoregressive deadlock with an approximate future condition, further improving generation quality at the cost of an acceptable backend look-ahead. Extensive experiments demonstrate that LiveFoley matches offline models in temporal alignment and leads streaming systems in generation quality.",
+      "authors": [
+        "Yusheng Dai",
+        "Vladimir Iashin",
+        "Kangdi Wang",
+        "Yuxuan Jiang",
+        "Ilpo Viertola",
+        "Weiqiang Wang",
+        "Qiuhong Ke",
+        "Min Zhao",
+        "Jianfei Cai"
+      ],
+      "url": "https://arxiv.org/abs/2611.05988",
+      "published": "2026-11-04T05:35:42Z",
+      "topics": [
+        "流式生成"
+      ],
+      "sources": [
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-11-05"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.05988v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "LiveFoley：面向沉浸式交互世界的动态实时视频转音频生成",
+        "abstract_zh": "本文解决实时视频转音频的两类瓶颈：视觉编码若缩短未来视野会损害视听对齐，自回归扩散若逐音频片段独立去噪则损害音质。LiveFoley 用 Trailing Sliding Window 将非因果片段编码器改造成流式前端，并用可调 hop 的 Unified Varhop 适配不同延迟预算；后端 Local Diffusion Transformer 可扩展历史去噪窗口，或以近似未来预热换取质量。作者报告其流式视听对齐达到离线模型水平，并在在线生成系统中取得较高主观音质与对齐评分。",
+        "reason": "它是明确的实时流式视频转音频方案，围绕延迟—对齐—音质三者做系统设计，且比较了不同前视与历史上下文代价。",
+        "introduction_zh": "在线互动环境不能等待完整视频后再生成声音，但缩短视觉前视会使声音跟不上动作，逐片段独立去噪又使音质变差。LiveFoley分别改造视频编码前端和音频扩散后端，并把前端窗口步长作为延迟预算旋钮，同时评估在线系统的客观分布指标与人类感知。",
+        "method_takeaway": "LiveFoley用尾随滑窗把非因果视觉编码器改成低延迟流式输入，再让音频去噪看到过去片段，必要时用可控未来预热换取音质。",
+        "framework_zh": "实时视频转音频要同时回答两个问题：当前画面对应什么声音，以及声音要多快出现。传统视觉编码器看一整段未来画面，等待时间长；若直接截短未来视野，音频可能和动作对不上。LiveFoley 通过 Trailing Sliding Window 把窗口相对视频片段尾部滑动对齐，不重训原编码器也能逐步接收画面，并用 hop 大小调节“等多少未来画面再输出”，统一处理不同延迟预算。\n\n音频侧采用自回归因果模型逐片生成，但每个音频片段若独立去噪会缺少上下文。History LocDiT 在去噪时加入过去已生成的干净音频片段，不增加前视延迟；若允许少量额外等待，Future-Warmup LocDiT 则用近似未来条件解除因果去噪限制，获得更高质量。系统因此把前端延迟与后端音质分开调节，而不是只追求最低延迟。\n\n实验在标准视频声音集和主观评价中比较前端、hop 与不同去噪窗口；在线系统主观音质 MOS-Q 为 3.23、对齐 MOS-A 为 3.58，高于所比在线基线。需要记住这是视频驱动音频合成，不能把它误写成视频画面的流式生成模型；未来预热方案也明确以增加后端前视为代价。",
+        "pipeline": "实时视频帧 → 尾随滑窗逐步编码并调节前视 → 因果音频模型结合历史/可选未来预热生成声音 → 以对齐、音质和延迟评估",
+        "results": "作者报告流式视听对齐达到离线模型水平；在线主观评测中 LiveFoley MOS-Q 为 3.23、MOS-A 为 3.58，高于 MMAudio online、V-AURA 与 WorldSonus 的相应评分。使用 Future-Warmup 时质量与后端前视延迟存在权衡。",
+        "limitations": "该任务生成的是与视频同步的音频，非视频画面本身；未来预热路径增加后端前视，应用必须在延迟与声音质量之间选择。评测主要是短片段生成与有限用户评价。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "说明实时 V2A 视觉前视与音频质量问题。"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "尾随滑窗设计。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "统一不同延迟预算的 Varhop。"
+          },
+          {
+            "section": "S3.SS5",
+            "claim": "历史窗口和未来预热两种去噪策略。"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "公开训练数据与指标设置。"
+          },
+          {
+            "section": "A6.SS0.SSS0.Px2",
+            "claim": "报告在线系统的主观音质及对齐结果。"
+          }
+        ],
+        "fulltext_hash": "19f3ae97afe3ce2207db5a0b5b957ff2d4b6126055a38ce59fa31a0ad187091e",
+        "analysed_at": "2026-11-06T01:59:55.905Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "说明实时 V2A 视觉前视与音频质量问题。",
+          "url": "https://arxiv.org/html/2611.05988v1#S1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "尾随滑窗设计。",
+          "url": "https://arxiv.org/html/2611.05988v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "统一不同延迟预算的 Varhop。",
+          "url": "https://arxiv.org/html/2611.05988v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS5",
+          "claim": "历史窗口和未来预热两种去噪策略。",
+          "url": "https://arxiv.org/html/2611.05988v1#S3.SS5"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "公开训练数据与指标设置。",
+          "url": "https://arxiv.org/html/2611.05988v1#S4.SS1"
+        },
+        {
+          "section": "A6.SS0.SSS0.Px2",
+          "claim": "报告在线系统的主观音质及对齐结果。",
+          "url": "https://arxiv.org/html/2611.05988v1#A6.SS0.SSS0.Px2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2: Streaming visual frontend. Each dot denotes the token at one window position. (a) Chunked window: shrinking the window ww lowers latency but also narrows the receptive field, which degrades audio-visual alignment. (b) Trailing sliding window: anchoring the window tail to the latest frame reduces look-ahead to one hop while preserving the full receptive field ww and hence the alignment. Black dots are emitted tokens at newly arrived frames. Gray and dashed dots correspond to earlier frames and first-frame padding, respectively; these frames provide context only within the encoder, and their tokens are discarded. (c) Unified Varhop Framework: a Synchronizer maps tokens from different hop sizes into a shared latent space, allowing a single backend to switch among hop sizes.",
+          "url": "https://arxiv.org/html/2611.05988v1#S2.F2",
+          "source_url": "https://arxiv.org/html/2611.05988v1#S2.F2"
+        },
+        {
+          "id": "S4.T3",
+          "caption": "Table 3: Ablation of the Unified Varhop Framework on VGGSound-Curated. At each hop size ss, our unified model is compared with a single-hop expert and with a unified variant trained without the Synchronizer. τ\\tau is the frontend look-ahead.",
+          "url": "https://arxiv.org/html/2611.05988v1#S4.T3",
+          "source_url": "https://arxiv.org/html/2611.05988v1#S4.T3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.05279",
+      "arxiv_id": "2611.05279",
+      "doi": "",
+      "title": "Möbius: A Unified Motion-Language Model Bridging Understanding and Generation",
+      "abstract": "We aim to build a truly unified motion model that can understand, generate, and edit human motion within a single framework. Existing motion UMMs remain only partially unified: motion understanding is handled by a language model, while generation is often delegated to a separate diffusion module operating over learned motion latents. We introduce Möbius, which brings the entire diffusion process into the same multimodal representation space used for motion understanding. Clean motion, noisy motion, and text jointly participate in shared attention, while role-specific parameters process understanding and generation streams. Importantly, Möbius operates directly on continuous frame-level raw motion, requiring neither discrete tokenization nor a pretrained motion VAE. This simple formulation naturally supports motion captioning, text-to-motion generation, temporal completion, and instruction-guided editing within a single model. On HumanML3D, Möbius achieves state-of-the-art performance among unified motion models. Scaling to 1.7B parameters and 1,700 hours of motion data further demonstrates that our framework is both effective and scalable.",
+      "authors": [
+        "Jiazhi Shu",
+        "Chengfeng Zhao",
+        "Jinyi Wang",
+        "Yubo Zhao",
+        "Zhiyang Dou",
+        "Ronghui Li",
+        "Yu Lu",
+        "Xinwei Jiang",
+        "Zijiao Zeng",
+        "Yuan Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.05279",
+      "published": "2026-11-03T17:59:16Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.05279v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "Möbius：统一理解与生成的动作—语言模型",
+        "abstract_zh": "本文提出连续动作与语言共享表征的 Möbius，统一动作描述理解、文本到动作生成、编辑和补全。模型将原始逐帧动作编码为连续 token，采用混合专家 Transformer 路由干净动作、噪声动作与文本，再由共享注意力交换信息。训练使用先理解、后生成的课程：先保护预训练语言模型的动作理解能力，再冻结理解路径并学习动作去噪生成，以减少多任务联合训练不稳定。作者在 HumanML3D、MotionFix 等任务比较理解、生成和编辑能力。",
+        "reason": "以同一连续动作表征打通动作理解与生成，同时处理统一训练易损害语言理解的问题，是动作基础模型方向的代表性方法。",
+        "introduction_zh": "动作理解和动作生成常由不同模型处理，离散动作 token 又会引入量化误差。将二者直接联合训练时，随机初始化的生成路径可能扰乱已经预训练好的语言能力。Möbius采用连续逐帧动作表示与共享注意力，并按“先学会理解、再接入生成”的课程逐步训练，使模型支持文字动作生成、动作描述和编辑补全。",
+        "method_takeaway": "Möbius先用连续动作表征和共享注意力把动作理解接入语言模型，再冻结已建立的理解能力训练动作去噪生成，避免生成分支一开始破坏语言理解。",
+        "framework_zh": "可以把 Möbius 看成让模型先学会读动作，再学会写动作。动作以逐帧连续特征表示，不先压成离散码本；文本、干净动作和带噪动作通过混合专家路由到对应参数，再在共享注意力中交换信息。这样文本可以描述动作，动作也可以作为理解对象，生成时则从噪声动作逐步恢复符合文本条件的连续动作序列。\n\n训练若一开始把理解和生成目标同时压在模型上，生成分支随机初始化，可能把预训练语言表示拉偏。作者因此采用理解优先课程：第一阶段先训练动作理解路径，让语言模型建立稳定的动作语义；第二阶段从理解参数初始化生成分支，冻结理解参数，专注学习动作去噪。编辑和补全任务则利用已有表征，在输入动作基础上局部改变或延续序列。\n\n这种安排把“统一”落在共享表征和注意力上，而不是强迫所有任务同一时刻学习。实验覆盖 HumanML3D 文本动作生成与动作描述、MotionFix 编辑补全等任务，0.6B 和 1.7B 两个规模提供不同数据设定。论文的优势是多任务统一和理解保留；大规模模型用到内部动作语料，外部复现和跨数据集泛化需要结合数据来源判断。",
+        "pipeline": "逐帧连续动作与文本 → 专家路由并在共享注意力中交互 → 先训练动作理解再冻结理解路径 → 学习去噪生成、编辑和补全",
+        "results": "作者报告 Möbius-0.6B 在 HumanML3D 上超过生成专用和统一基线；1.7B 在比较模型中取得较优 R-Precision、FID 和 MMDist。动作理解指标亦超过所比较的统一模型；MotionFix 编辑与补全实验及消融验证课程和路由设计。",
+        "limitations": "作者的 1.7B 规模使用额外内部动作语料，数据不可完全公开复现；生成、理解和编辑共享表示可能仍存在任务权衡，附录中的多任务继续训练显示文本到动作指标有小幅下降。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "介绍动作理解/生成分离和统一训练不稳定问题。"
+          },
+          {
+            "section": "S3",
+            "claim": "概括连续动作表征、路由与课程训练。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "逐帧原始动作表征。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "共享特征空间注意力与路由。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "理解优先课程策略。"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px1",
+            "claim": "汇报主要文本动作生成和理解结果。"
+          },
+          {
+            "section": "A3.SS4.SSS0.Px1",
+            "claim": "量化多任务继续训练对生成指标的权衡。"
+          }
+        ],
+        "fulltext_hash": "a8b95cfb82444b681e3fc97532b8f9c099ffde90d69f1bf6e28d886ab2113f30",
+        "analysed_at": "2026-11-06T01:59:55.903Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 97,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "介绍动作理解/生成分离和统一训练不稳定问题。",
+          "url": "https://arxiv.org/html/2611.05279v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "概括连续动作表征、路由与课程训练。",
+          "url": "https://arxiv.org/html/2611.05279v1#S3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "逐帧原始动作表征。",
+          "url": "https://arxiv.org/html/2611.05279v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "共享特征空间注意力与路由。",
+          "url": "https://arxiv.org/html/2611.05279v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "理解优先课程策略。",
+          "url": "https://arxiv.org/html/2611.05279v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px1",
+          "claim": "汇报主要文本动作生成和理解结果。",
+          "url": "https://arxiv.org/html/2611.05279v1#S4.SS2.SSS0.Px1"
+        },
+        {
+          "section": "A3.SS4.SSS0.Px1",
+          "claim": "量化多任务继续训练对生成指标的权衡。",
+          "url": "https://arxiv.org/html/2611.05279v1#A3.SS4.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Overview of Möbius. Motion understanding and generation share a unified multimodal backbone. Text tokens, clean motion frames, and noisy target frames with flow time tt participate in shared attention at every layer, while role-specific parameters handle normalization, projections, and feed-forward transformations. The text head autoregressively predicts captions, and the motion head recovers target frames in parallel for generation, temporal completion, and editing. The central matrices illustrate attention visibility for motion understanding and generation.",
+          "url": "https://arxiv.org/html/2611.05279v1/pipeline1.png",
+          "source_url": "https://arxiv.org/html/2611.05279v1#S3.F3"
+        },
+        {
+          "id": "A1.T1",
+          "caption": "Table S1: Architecture specification of Möbius.",
+          "url": "https://arxiv.org/html/2611.05279v1#A1.T1",
+          "source_url": "https://arxiv.org/html/2611.05279v1#A1.T1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.05893",
+      "arxiv_id": "2611.05893",
+      "doi": "",
+      "title": "Chronos: Sequential Identity-Preserving Video Generation by Temporal Anchoring",
+      "abstract": "Identity-preserving video generation aims to synthesize high-quality and visually realistic videos from textual and visual conditions while faithfully maintaining the subject's identity across diverse motions. Prior methods have extensively introduced reference-guided control signals and identity-aware conditioning to improve facial alignment from reference images. However, improving static identity alignment alone creates a fundamental tension between identity fidelity and temporal controllability, which frequently causes identity drift or motion suppression under large pose variations and multi-segment sequential actions. To address this, we propose Chronos, a framework that unifies single-segment facial identity preservation and multi-segment sequential action generation under a common temporal formulation. Specifically, Chronos integrates Semantic Prompt Anchoring to adaptively refine the user prompt, Visual Frame Anchoring to transform conditions into visually grounded keyframe anchors for visual guidance, and Metric-Guided Candidate Routing to select the highest-quality videos from heterogeneous generators via multi-dimensional evaluation. Extensive evaluations demonstrate the superiority of our approach, which achieved first place in both Track 1 and Track 2 of the ACM MM 2026 Identity-Preserving Video Generation Challenge, demonstrating its effectiveness across both facial identity preservation and sequential action generation settings.",
+      "authors": [
+        "Mengqi Huang",
+        "Wenchuan Wang",
+        "Zhendong Mao",
+        "Yijing Tu",
+        "Zhike Liu",
+        "Luoni Wang",
+        "Ning Tong",
+        "Xiaoxiao Sheng",
+        "Tianyu Huang",
+        "Xuecheng Qi",
+        "Yongdong Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.05893",
+      "published": "2026-11-04T03:31:06Z",
+      "topics": [
+        "运动与运动控制",
+        "主体控制",
+        "视频生成"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.05893v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [
+          "主体控制"
+        ],
+        "title_zh": "Chronos：基于时间锚定的序列式主体身份保持视频生成",
+        "abstract_zh": "本文研究长提示词与多段动作生成中，人物身份保持和时间可控性相互牵制的问题。Chronos 把单段人脸身份保持与多段动作身份保持统一到时间建模框架中：先用语义提示锚定强化与参考身份有关的描述，再把参考图像扩展为符合目标姿态/视角的视觉关键帧锚点，最后通过多指标候选路由从不同生成器输出中选择视频。作者报告该方法在 ACM MM 2026 身份保持视频生成挑战的两个赛道均排名第一。",
+        "reason": "论文不是只提高参考人脸相似度，而是把主体身份约束延伸到跨片段动作序列，并显式处理“像本人”和“按要求运动”之间的冲突。",
+        "introduction_zh": "参考图像条件视频生成既要维持人物身份，也要服从动作、场景与时间顺序。大幅转头、远景、遮挡和多段动作会使身份漂移；过强的身份条件又可能压制动作幅度。作者将单段人脸保持和多段连续动作视作同一时间生成问题，并以语义与视觉锚点分别补充身份描述和可见外观。",
+        "method_takeaway": "Chronos先把身份线索写进提示词，再把参考人物转成贴合目标动作与视角的关键帧锚点，最后按身份、文本和视频质量挑选候选，使身份约束贯穿连续动作而不只锁定静态人脸。",
+        "framework_zh": "可以把 Chronos 理解成拍一段“同一个人连续完成多件事”的短片。单靠参考人脸，模型在人物转身、走远或被遮挡时容易换脸；若一味强化相似度，人物又可能不肯做提示词要求的动作。作者把身份约束分成文字和画面两条线：先从参考图提取稳定的身份线索，改写用户提示，但尽量不动场景和动作语义；再用参考身份生成适合目标姿态、镜头角度的视觉关键帧，作为视频生成时更直接的外观锚点。\n\n两类锚点各解决一半问题。语义锚点告诉模型“这个人物是谁”，视觉帧锚点让身份信息能落在具体目标姿态和镜头构图上。对于多段动作，方法把动作描述按时间展开，使每一段不仅有动作指令，也有相应的身份参照。最后并不假设单个生成器总能兼顾所有要求，而是让多维评估器比较候选的身份一致性、文本匹配和视觉质量，选出整体较平衡的结果。\n\n因此它的重点不是一个新的端到端视频骨干，而是一套围绕身份时间锚定与候选筛选的生成流程。论文在身份保持挑战两个赛道取得第一，支持其在该评测设定中的有效性；阅读时也要记住，候选路由依赖可用生成器和评估信号，不能把排行榜结果直接外推为任何提示、任何人物都能稳定保持身份。",
+        "pipeline": "参考图与分段动作提示 → 生成身份语义锚点和姿态适配关键帧 → 多种生成器产生候选视频 → 多指标路由选择整体最优结果",
+        "results": "作者报告在 ACM Multimedia 2026 身份保持视频生成挑战 Track 1 和 Track 2 均获第一；Track 1 总分比第二名高约 9%。消融表逐项比较语义锚点、视觉锚点和候选路由。",
+        "limitations": "论文主要以挑战赛两类身份保持设定和候选视频质量指标验证；候选路由依赖生成器集合及评估指标，结果不等价于单模型对任意人物、任意长动作均可稳定生成。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "说明身份保持和时序动作控制之间的矛盾。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "统一单段与多段身份保持生成设定。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "语义提示锚定如何强化身份约束。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "视觉帧锚点补足姿态与视角变化下的图像条件。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "多指标候选路由从异构生成器中选结果。"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "报告挑战赛排名与量化比较。"
+          }
+        ],
+        "fulltext_hash": "8422002ce5cffdf5b74fd8583e58e490052b37bfee2dd988d70845fe541761d3",
+        "analysed_at": "2026-11-06T01:59:55.896Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 91.5,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "说明身份保持和时序动作控制之间的矛盾。",
+          "url": "https://arxiv.org/html/2611.05893v1#S1"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "统一单段与多段身份保持生成设定。",
+          "url": "https://arxiv.org/html/2611.05893v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "语义提示锚定如何强化身份约束。",
+          "url": "https://arxiv.org/html/2611.05893v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "视觉帧锚点补足姿态与视角变化下的图像条件。",
+          "url": "https://arxiv.org/html/2611.05893v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "多指标候选路由从异构生成器中选结果。",
+          "url": "https://arxiv.org/html/2611.05893v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "报告挑战赛排名与量化比较。",
+          "url": "https://arxiv.org/html/2611.05893v1#S4.SS2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.F2",
+          "caption": "Figure 2. Our framework of Chronos. Given reference images, a raw prompt, and optional temporal captions, the pipeline first performs Semantic Prompt Anchoring, then generates frame anchors through Visual Frame Anchoring, where Track 1 uses a single anchor A1A_{1}, and Track 2 may use additional segment-level anchors {At}t=2T\\{A_{t}\\}_{t=2}^{T}. The enhanced prompt and anchors are passed to track-specific video generators, followed by metric-guided evaluation and automatic routing to obtain the final video.A left-to-right four-stage flowchart. Reference images, a raw prompt, and optional temporal captions enter Semantic Prompt Anchoring, which extracts identity cues and applies one of three levels of risk-aware prompt adaptation. Visual Frame Anchoring then uses the enhanced prompt and temporal captions to create one or more ordered frame anchors. Multiple video generators produce candidate videos, which are scored for text consistency, subject preservation, video quality, and an LLM-based assessment before exception-aware review selects the final video.",
+          "url": "https://arxiv.org/html/2611.05893v1/img/method_pipeline.png",
+          "source_url": "https://arxiv.org/html/2611.05893v1#S2.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.04358",
+      "arxiv_id": "2611.04358",
+      "doi": "",
+      "title": "EndoS3:Endoscopic Semantic Splatting SLAM",
+      "abstract": "Purpose: Despite advances in 3D surgical scene understanding, semantic simultaneous localisation and mapping (SLAM) remains under-explored for two key reasons. First, it requires solving three challenging tasks in parallel: camera pose tracking, high-fidelity deformable reconstruction, and semantic mapping, making progress particularly demanding. Second, the scarcity of datasets providing the necessary ground truth to evaluate all three tasks comprehensively under conditions that closely reflect real surgical procedures environments. Method: We propose EndoS3, a Gaussian Splatting-based semantic SLAM framework that uses instance masks to guide all three tasks. An instance-level motion decomposition module separates static and dynamic instances by evaluating residual flow after compensating for camera motion, accounting for flow noise and comparing motion across neighbouring instances. The camera is tracked against the static Gaussians, while an instance-aware warp field gives each dynamic instance its own control nodes and deformation network. A semantic node allocation module redistributes a fixed node budget across instances according to their size and non-rigidity. We also introduce CRCD++, an ex-vivo Cholecystectomy dataset with RGB-D frames, camera pose and instance annotations for full semantic SLAM evaluation. Results: EndoS3 surpasses all state-of-the-art general-purpose and surgical semantic SLAM methods in tracking, reconstruction and semantic mapping on the CRCD++ and SemSup datasets. Conclusion: Semantic-aware motion and deformation modelling is vital to surgical semantic SLAM. EndoS3 and CRCD++ offer a method and benchmark for improved geometric and semantic understanding in endoscopy.",
+      "authors": [
+        "Mona Sheikh Zeinoddin",
+        "Benjamin Wright",
+        "Zafer Tandogdu",
+        "Greg Shaw",
+        "Evangelos Mazomenos",
+        "Danail Stoyanov"
+      ],
+      "url": "https://arxiv.org/abs/2611.04358",
+      "published": "2026-11-03T05:41:06Z",
+      "topics": [
+        "运动与运动控制",
+        "相机控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.04358v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [],
+        "title_zh": "EndoS3：内窥镜语义高斯溅射 SLAM",
+        "abstract_zh": "本文针对内窥镜场景中相机跟踪、可变形组织重建与语义映射难以同时完成、且缺少完整评测数据的问题，提出 EndoS3 和 CRCD++。方法用实例分割掩码与残余光流将静态/动态实例分解；相机位姿对静态高斯地图跟踪，动态实例则由实例级 warp field 独立形变，并按物体大小与非刚性程度分配有限控制节点。新数据集提供 RGB-D、位姿和实例标注。作者报告在 CRCD++ 和 SemSup 上超过通用及手术 SLAM 基线。",
+        "reason": "这是直接针对动态内窥镜场景的语义 SLAM 与可变形 3D 重建工作，方法将相机估计和实例级动态重建分开建模，并配套完整数据评测。",
+        "introduction_zh": "内窥镜语义 SLAM 需同时估计相机轨迹、重建形变组织并把语义贴到地图上；手术画面里器械、组织和镜头都会移动，若把运动混成一类，相机轨迹容易抖动，动态形变也难恢复。论文以实例掩码区分运动主体，并新增含 RGB-D、相机位姿和实例标注的术中数据集，支持联合评测。",
+        "method_takeaway": "EndoS3先用实例掩码和补偿相机运动后的残余光流区分静态背景与动态组织，再让相机只对静态高斯地图定位、每个动态实例独立形变。",
+        "framework_zh": "把内窥镜视频想成镜头在移动、器械在移动、组织也在被牵拉。如果把所有像素的运动都归结为相机移动，位姿会被器械或形变组织带偏；若把全部运动当作组织变形，静态结构又会被扭曲。EndoS3先用实例分割把画面划成对象，再比较相邻帧的光流与相机运动补偿后的剩余量，判断哪些对象相对环境仍在移动。\n\n这项分解决定后续两条不同路径：相机轨迹只在静态高斯地图上优化，避免动态组织扰动定位；动态组织则为每个实例分配独立的稀疏控制节点和 warp field，使各自的局部形变能够不同。节点预算有限时，语义节点分配模块按实例大小和非刚性程度分配资源，减少把计算平均浪费在刚性或小区域。\n\n作者进一步构建 CRCD++，补足真实手术数据中 RGB-D、相机位姿和实例语义难以同时获取的缺口，并在该数据集及 SemSup 上评估跟踪、重建、语义映射。论文的价值是面向动态内窥镜的联合几何/语义理解；系统依赖实例分割和训练数据质量，离临床导航可靠性仍有距离。",
+        "pipeline": "RGB-D与实例掩码 → 光流/相机补偿分解静态与动态实例 → 静态高斯定位、动态实例独立 warp → CRCD++ 上联合评测跟踪/重建/语义",
+        "results": "作者报告 EndoS3 在 CRCD++ 与 SemSup 的相机跟踪、重建和语义映射指标上超过所比较通用及手术语义 SLAM 方法。消融分别检验实例运动分解、实例 warp field 和语义节点分配。",
+        "limitations": "系统依赖实例分割掩码及相机补偿后光流质量；数据以离体胆囊切除术为主，场景和组织形变分布有限。论文结果不直接代表临床实时可用性或手术安全提升。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "提出内窥镜相机跟踪、形变重建与语义映射联合难题。"
+          },
+          {
+            "section": "S3",
+            "claim": "框架使用实例掩码同时支持跟踪与映射。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "实例级运动分解的残余光流方法。"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "相机位姿在静态地图上的跟踪。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "动态实例独立 warp 与控制节点分配。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "CRCD++ 数据集构成。"
+          },
+          {
+            "section": "S5",
+            "claim": "汇报主要重建、跟踪和语义结果。"
+          },
+          {
+            "section": "S5",
+            "claim": "作者在结果章节报告整体效果，并分析组件消融。"
+          }
+        ],
+        "fulltext_hash": "2e0b7a0706ad7466bb4f4072c85b0b6ff88c4599ffdb2483b93e5e017035111b",
+        "analysed_at": "2026-11-06T01:59:55.907Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 87,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "提出内窥镜相机跟踪、形变重建与语义映射联合难题。",
+          "url": "https://arxiv.org/html/2611.04358v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "框架使用实例掩码同时支持跟踪与映射。",
+          "url": "https://arxiv.org/html/2611.04358v1#S3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "实例级运动分解的残余光流方法。",
+          "url": "https://arxiv.org/html/2611.04358v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "相机位姿在静态地图上的跟踪。",
+          "url": "https://arxiv.org/html/2611.04358v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "动态实例独立 warp 与控制节点分配。",
+          "url": "https://arxiv.org/html/2611.04358v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "CRCD++ 数据集构成。",
+          "url": "https://arxiv.org/html/2611.04358v1#S3.SS4"
+        },
+        {
+          "section": "S5",
+          "claim": "汇报主要重建、跟踪和语义结果。",
+          "url": "https://arxiv.org/html/2611.04358v1#S5"
+        },
+        {
+          "section": "S5",
+          "claim": "作者在结果章节报告整体效果，并分析组件消融。",
+          "url": "https://arxiv.org/html/2611.04358v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S2.T1",
+          "caption": "Table 1: Overview of Semantic datasets. Sem.: semantic classes (ssparse; ttools only; ntno tools); Seq. len.: sequence length (frames); GT/Pseudo-GT: measured/stereo-estimated depth. Green: met; red: not met.",
+          "url": "https://arxiv.org/html/2611.04358v1#S2.T1",
+          "source_url": "https://arxiv.org/html/2611.04358v1#S2.T1"
+        },
+        {
+          "id": "S3.F1",
+          "caption": "Figure 1: Overview of our framework - EndoS3 uses semantics in both tracking and mapping.",
+          "url": "https://arxiv.org/html/2611.04358v1/endos3_method_figure.png",
+          "source_url": "https://arxiv.org/html/2611.04358v1#S3.F1"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.06918",
+      "arxiv_id": "2611.06918",
+      "doi": "",
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "abstract": "Vision-language-action models are typically built on a simple premise: perception is first compressed by visual encoders, and action reasoning begins only afterwards. Yet manipulation often hinges on precisely the visual signals most vulnerable to this abstraction, e.g., local geometry, boundaries, depth, and subtle state changes. This raises a fundamental question: should action policies inherit a fixed visual endpoint, or directly access evolving visual computation? We introduce NEO-VLA, a structurally encoder-free vision-language-action framework. Images are tokenized by lightweight patch convolutional layers and evolve jointly with language throughout the backbone, allowing a flow-matching action expert to draw from instruction-conditioned visual representations at different depths. This simple change reveals a consistent pattern. Native architectures outperform encoder-based counterparts under controlled comparisons; full fine-tuning reduces but does not erase the gap, and additional scale alone cannot recover it. More strikingly, layer-wise probing shows that the action-critical signals often peak well before the final visual representation. Across diverse manipulation settings and distribution shifts, NEO-VLA consequently achieves stronger and more robust control. Together, these results suggest that embodied control benefits from access to visual representations across the computational hierarchy, rather than a fixed encoder output.",
+      "authors": [
+        "Weichen Fan",
+        "Haiwen Diao",
+        "Penghao Wu",
+        "Siyuan Hu",
+        "Ziqi Huang",
+        "Tianqi Liu",
+        "Mingze Sun",
+        "Ziyi Wang",
+        "Zhongang Cai",
+        "Hanming Deng",
+        "Quan Wang",
+        "Lei Yang",
+        "Lewei Lu",
+        "Fangzhou Hong",
+        "Zhaoxi Chen",
+        "Dahua Lin",
+        "Ziwei Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.06918",
+      "published": "2026-11-04T18:59:58Z",
+      "topics": [
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv",
+        "Hugging Face"
+      ],
+      "discovery_dates": [
+        "2026-11-05"
+      ],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.06918v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 86,
+        "priority_topics": [],
+        "title_zh": "从像素到动作：面向原生视觉—语言—动作策略",
+        "abstract_zh": "本文质疑 VLA 必须先通过固定视觉编码器压缩图像的设计。NEO-VLA 以轻量 patch 卷积直接把图像转为 token，让视觉表示与语言在主干网络多层共同演化；连续动作专家从不同深度读取受指令条件化的视觉表示，并以流匹配建模动作。作者在受控架构比较中发现，原生视觉输入优于编码器式基线，动作关键视觉信号可能出现在主干中间层；在 LIBERO、RoboTwin 和真实操作任务中报告更稳健表现。",
+        "reason": "它的创新点是让机器人动作策略读取视觉计算过程中的中间表征，而非只依赖视觉编码器给出的固定终点，直接连接感知结构与控制结果。",
+        "introduction_zh": "传统 VLA 将图像先压缩成视觉编码器输出，再进行语言和动作推理；局部几何、边界、深度及细微状态变化可能在压缩中丢失。作者提出原生输入结构，让像素 patch 在语言主干内继续演化，并让动作专家跨层读取表征。实验通过匹配比较区分“移除编码器”与“改变信息读取深度”的作用。",
+        "method_takeaway": "NEO-VLA把图像 patch 直接并入语言主干，并让连续动作专家从多个视觉深度取用指令相关特征，避免动作决策被固定视觉编码器的单一输出截断。",
+        "framework_zh": "可以把传统 VLA 想成先把照片交给一个视觉摘要器，再让语言模型根据摘要决定动作。若任务要找很细的边缘、深度或物体状态变化，摘要阶段可能已经丢掉动作真正需要的信息。NEO-VLA取消固定视觉编码器终点：用轻量卷积把图像切成 patch token，与文本一起送进主干，让视觉信息在多个网络层持续更新。\n\n动作专家不只读取最后一层，而是从多个深度读取与当前指令相关的视觉表示。不同层包含不同粒度的信息，实验中的逐层探测表明动作关键线索常在主干中途更强，而非最后视觉表示。连续动作由流匹配专家建模，因此输出保留连续控制而非先量化成离散动作码。\n\n作者用架构匹配对照来分辨原因：原生输入与编码器式骨干相比是否更好；直接开放编码器中间层是否足够；动作专家具体连接哪些层更有效。结果支持“视觉信息如何形成和在哪层读取”比单纯增加规模更关键。预训练数据规模和训练计算量很大，真实部署还需任务微调；因此阅读性能表时要注意骨干、数据和后训练设置的对照条件。",
+        "pipeline": "多视角像素 → patch token 与语言在主干中共同演化 → 动作专家跨层读取指令相关视觉特征 → 流匹配输出连续动作并在机器人任务中评测",
+        "results": "作者报告在 LIBERO-Pro、RoboTwin 2.0 和真实操作任务上有较强成功表现；受控比较显示编码器自由原生骨干优于编码器式对应模型，开放编码器中间层不能完全复现收益。层连接干预支持动作相关视觉信息常在中间深度达到峰值。",
+        "limitations": "预训练使用超过 220 万条 episode 的大规模多源机器人数据，训练资源与数据质量可能影响复现；当前真实任务评估仍有限，论文承认空间配置与目标变化下仍有挑战。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "提出固定视觉编码器可能丢失动作关键视觉细节。"
+          },
+          {
+            "section": "S3",
+            "claim": "总结原生视觉输入与跨层动作读取的模型设计。"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "视觉输入以轻量 patch 卷积原生进入主干。"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "动作专家跨视觉深度读取特征。"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "连续动作策略建模。"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "受控比较原生骨干与编码器式骨干。"
+          },
+          {
+            "section": "S5.SS2",
+            "claim": "分析动作专家读取层位。"
+          },
+          {
+            "section": "S5.SS5.SSS2",
+            "claim": "真实世界对照任务结果。"
+          }
+        ],
+        "fulltext_hash": "6f84952031d8c85056d363beceaec33190117cc9cdbfd68ba089639b03e0ab66",
+        "analysed_at": "2026-11-06T01:59:55.904Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 86,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "提出固定视觉编码器可能丢失动作关键视觉细节。",
+          "url": "https://arxiv.org/html/2611.06918v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "总结原生视觉输入与跨层动作读取的模型设计。",
+          "url": "https://arxiv.org/html/2611.06918v1#S3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "视觉输入以轻量 patch 卷积原生进入主干。",
+          "url": "https://arxiv.org/html/2611.06918v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "动作专家跨视觉深度读取特征。",
+          "url": "https://arxiv.org/html/2611.06918v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "连续动作策略建模。",
+          "url": "https://arxiv.org/html/2611.06918v1#S3.SS4"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "受控比较原生骨干与编码器式骨干。",
+          "url": "https://arxiv.org/html/2611.06918v1#S5.SS1"
+        },
+        {
+          "section": "S5.SS2",
+          "claim": "分析动作专家读取层位。",
+          "url": "https://arxiv.org/html/2611.06918v1#S5.SS2"
+        },
+        {
+          "section": "S5.SS5.SSS2",
+          "claim": "真实世界对照任务结果。",
+          "url": "https://arxiv.org/html/2611.06918v1#S5.SS5.SSS2"
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2611.06748",
+      "title": "EvoWorld: Towards Out-of-Sight World Evolution in Generative Video Models",
+      "decision": "include",
+      "reason": "它把长视频世界模型的核心难题从“把镜头外的人物记住”推进到“推断镜头外事件发生后人物应如何改变”，并用明确任务与消融检验这种因果演化能力。"
+    },
+    {
+      "key": "arxiv:2611.04358",
+      "title": "EndoS3:Endoscopic Semantic Splatting SLAM",
+      "decision": "include",
+      "reason": "这是直接针对动态内窥镜场景的语义 SLAM 与可变形 3D 重建工作，方法将相机估计和实例级动态重建分开建模，并配套完整数据评测。"
+    },
+    {
+      "key": "arxiv:2611.05893",
+      "title": "Chronos: Sequential Identity-Preserving Video Generation by Temporal Anchoring",
+      "decision": "include",
+      "reason": "论文不是只提高参考人脸相似度，而是把主体身份约束延伸到跨片段动作序列，并显式处理“像本人”和“按要求运动”之间的冲突。"
+    },
+    {
+      "key": "arxiv:2611.06908",
+      "title": "Perceptive Humanoid Motion from Simulation",
+      "decision": "include",
+      "reason": "从数据生成到分层全身控制和现实部署都围绕“没见过的房间里仍能按语言任务行动”，不是只在固定场景复现动作。"
+    },
+    {
+      "key": "arxiv:2611.06120",
+      "title": "ReactWorld: Structuring Interaction Responses for Embodied Video Generation",
+      "decision": "include",
+      "reason": "核心贡献是把“物体之间怎样相互作用”显式变成可预测、可反馈的运动结构，适合关注物理交互驱动的视频生成。"
+    },
+    {
+      "key": "arxiv:2611.06061",
+      "title": "TouchéWorld tech report : Towards Online Unified Camera--Hand Exploration in Generative Worlds",
+      "decision": "include",
+      "reason": "相机轨迹不是背景摄像机运动，而是与手部动作共同控制生成世界的交互信号，直接对应用户关注的相机控制与运动控制。"
+    },
+    {
+      "key": "arxiv:2611.06377",
+      "title": "NanoKV: High-Ratio KV Cache Compression for Autoregressive Video Generation",
+      "decision": "include",
+      "reason": "它直接解决长时间视频生成的历史状态存储与访问瓶颈，并将压缩目标从张量重建转为生成结果保真。"
+    },
+    {
+      "key": "arxiv:2611.04164",
+      "title": "What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting",
+      "decision": "include",
+      "reason": "它给长视频解码加的是“每一步重选重要历史”的推理策略，直击固定最近窗口会遗忘较早关键场景的问题，且无需重训生成模型。"
+    },
+    {
+      "key": "arxiv:2611.05279",
+      "title": "Möbius: A Unified Motion-Language Model Bridging Understanding and Generation",
+      "decision": "include",
+      "reason": "以同一连续动作表征打通动作理解与生成，同时处理统一训练易损害语言理解的问题，是动作基础模型方向的代表性方法。"
+    },
+    {
+      "key": "arxiv:2611.06918",
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "decision": "include",
+      "reason": "它的创新点是让机器人动作策略读取视觉计算过程中的中间表征，而非只依赖视觉编码器给出的固定终点，直接连接感知结构与控制结果。"
+    },
+    {
+      "key": "arxiv:2611.05988",
+      "title": "LiveFoley: Dynamic Real-Time Video-to-Audio Generation for Immersive Interactive Worlds",
+      "decision": "include",
+      "reason": "它是明确的实时流式视频转音频方案，围绕延迟—对齐—音质三者做系统设计，且比较了不同前视与历史上下文代价。"
+    },
+    {
+      "key": "arxiv:2611.03394",
+      "title": "TaoMate-HD: Progressive-Resolution Autoregressive Audio-Video Generation",
+      "decision": "include",
+      "reason": "通过“先粗后细”的分辨率计算与阶段内历史传递减少长流生成成本，同时保留文本更新时的语音续接状态，是直接面向流式音视频生成的方案。"
+    },
+    {
+      "key": "arxiv:2611.06518",
+      "title": "EmoReward: Self-Evolving Reward Calibration for Emotional Video Generation RL",
+      "decision": "exclude",
+      "reason": "情绪奖励校准方法有价值，但在本批候选中，核心优先更倾向流式视频生成、运动控制、主体/相机控制及具身世界模型；达到每日上限时不纳入。保留其全文筛查记录。"
+    },
+    {
+      "key": "arxiv:2611.04391",
+      "title": "Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs",
+      "decision": "exclude",
+      "reason": "H2RB 通过几何对齐和解耦动作潜变量桥接人类示范与机器人 VLA，研究质量较好；本日报更优先直接视频世界模型、流式生成和运动生成/控制，且每日上限有限。"
+    },
+    {
+      "key": "arxiv:2611.05320",
+      "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+      "decision": "exclude",
+      "reason": "PyRUA-DataFarm 以代码智能体构建仿真任务和合成机器人数据，属于相关具身方向，但本批筛选优先具体视频生成/交互控制与原生 VLA 方法；不因 HF 排名单独加分。"
+    },
+    {
+      "key": "arxiv:2610.37257",
+      "title": "GameVerse: A Minute-Scale Gameplay Dataset for Long-Horizon Interactive World Modeling",
+      "decision": "exclude",
+      "reason": "GameVerse 是长时游戏世界模型数据集，但 arXiv 原始提交日期为 2026-10-27，超出本次 72 小时回溯窗口；HF 于 11 月 5 日被用户提交不改变论文公开日期，因此不作为今日新论文推荐。"
+    },
+    {
+      "key": "arxiv:2611.05129",
+      "title": "WayTrace: A Map-to-Language-to-Trace Hierarchy for Embodied Urban Navigation",
+      "decision": "exclude",
+      "reason": "WayTrace 的长程城市机器人导航具有真实部署价值，但工作聚焦导航系统而非本日报高优先的生成式视频、可控世界模型或动作生成。正文 HTML 下载失败，故不做全文评价。"
+    },
+    {
+      "key": "arxiv:2611.06501",
+      "title": "CRESiST: Self-Enhancing Explorative Policy Learning for Simultaneous Speech Translation",
+      "decision": "exclude",
+      "reason": "CRESiST 研究实时语音翻译策略学习，虽涉及流式语音任务，但不是流式视频/音视频生成，主题与本日报重点距离较远。"
+    },
+    {
+      "key": "arxiv:2611.05361",
+      "title": "Visibility-Aware Reference Generation for Benchmarking Visual 3D Reconstruction in Vegetation-Rich Environments",
+      "decision": "exclude",
+      "reason": "Visibility-Aware Reference Generation 研究植被场景的 3D 重建评测基准；本期已选 EndoS3 作为方法与数据均齐全的 3D 重建代表，按上限控制不重复占位。"
+    },
+    {
+      "key": "arxiv:2611.06007",
+      "title": "MotoVerse: A Benchmark for Predictive Perception of Motorized Two-Wheelers in Dense Unstructured Traffic",
+      "decision": "exclude",
+      "reason": "MotoVerse 是密集交通中的两轮车辆预测感知基准，偏向专用交通感知，与生成和通用具身方法主题较远。"
+    },
+    {
+      "key": "arxiv:2611.05667",
+      "title": "Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning",
+      "decision": "exclude",
+      "reason": "Proactive Human-in-the-Loop Intervention 关注机器人错误前的人机干预和偏好学习，属于相邻机器人控制方向；本期优先真实全身控制和视频世界交互研究。"
+    },
+    {
+      "key": "arxiv:2611.05372",
+      "title": "PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning",
+      "decision": "exclude",
+      "reason": "PolicyIK 聚焦机械臂逆运动学的专用高精度解法，属于较窄的机器人优化问题，未达到本期跨任务方向优先级。"
+    },
+    {
+      "key": "arxiv:2611.05244",
+      "title": "Reality and Perceptual Gaps in Expressive Swarm Robotics",
+      "decision": "exclude",
+      "reason": "Reality and Perceptual Gaps in Expressive Swarm Robotics 聚焦群体机器人感知差异，并非视频生成、动作基础模型或交互世界模型。"
+    },
+    {
+      "key": "arxiv:2611.04392",
+      "title": "Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware",
+      "decision": "exclude",
+      "reason": "Aero-VPA 是边缘设备上的敏捷飞行控制方案，虽然与运动控制相关，但本期优先具身全身控制及视频/世界模型中的动作生成；全文未能获取，故不作强结论。"
+    },
+    {
+      "key": "arxiv:2611.06913",
+      "title": "cuRoboV2-Fast: Fast Torque-Limited Collision-Free Motion Planning",
+      "decision": "exclude",
+      "reason": "cuRoboV2-Fast 是机器人运动规划工程系统，主题较窄；在每日名额中优先具有方法性视频生成/交互和通用动作建模贡献的论文。"
+    },
+    {
+      "key": "arxiv:2611.06901",
+      "title": "Motion-guided Contrastive Regularization For Latent World Models",
+      "decision": "exclude",
+      "reason": "Motion-guided Contrastive Regularization 与潜在世界模型有关，但未能在本次时限内读取原文，且同类世界模型论文已有全文核验的 EvoWorld 和 ReactWorld。"
+    },
+    {
+      "key": "arxiv:2611.06817",
+      "title": "Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+      "decision": "exclude",
+      "reason": "Open-HumanScale 是扩展具身基础模型数据的开放配方，属于数据资源型研究；本期优先数据之外具有清晰模型机制与实验验证的代表。"
+    },
+    {
+      "key": "arxiv:2611.06734",
+      "title": "Smartphone-Aided VR Exergames for HIIT: Gamifying Fitness with Real-Time Pose Estimation",
+      "decision": "exclude",
+      "reason": "Smartphone-Aided VR Exergames 以 HIIT 游戏及实时姿态估计为应用系统，方法与本文重点方向关联较弱。"
+    },
+    {
+      "key": "arxiv:2611.06564",
+      "title": "Playing Soccer Like Humans Do: Learning Versatile and Agile Humanoid Soccer via Latent Motion Priors",
+      "decision": "exclude",
+      "reason": "Playing Soccer Like Humans Do 研究人形足球运动策略，属于专项运动控制；本期已纳入 HALO 通用全身控制和 Möbius 通用动作语言模型，且未能在本次时限内读取全文。"
+    },
+    {
+      "key": "arxiv:2611.06523",
+      "title": "H^2MARL: Hierarchical Heterogeneous Multi-agent Reinforcement Learning for Humanoid Robot Control",
+      "decision": "exclude",
+      "reason": "H^2MARL 针对人形机器人层级多智能体控制，属于专项控制任务；本期优先已核验全文的通用感知运动控制、动作语言模型与视频交互模型。"
+    }
+  ],
+  "digest_id": "f58cc67ebe01cb41de6f"
+}
