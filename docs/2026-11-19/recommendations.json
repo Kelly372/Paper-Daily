@@ -1,0 +1,1550 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-19",
+  "target_date": "2026-11-18",
+  "window": {
+    "from": "2026-11-16",
+    "to": "2026-11-18",
+    "timezone": "Asia/Shanghai"
+  },
+  "generated_at": "2026-11-19T03:52:04.681Z",
+  "retrieved_at": "2026-11-19T03:02:22.956Z",
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "partial",
+      "count": 900,
+      "total": 1341,
+      "error": "export.arxiv.org: The operation was aborted due to timeout",
+      "coverage": "2026-11-16 至 2026-11-18（Asia/Shanghai；API UTC 提交时间窗口 202611151600–202611191559；不等同于公告日）"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-18",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-18"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-17",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-17"
+    },
+    {
+      "source": "Hugging Face",
+      "date": "2026-11-16",
+      "status": "failed",
+      "count": 0,
+      "error": "huggingface.co: fetch failed (ECONNRESET)",
+      "url": "https://huggingface.co/api/daily_papers?date=2026-11-16"
+    },
+    {
+      "source": "本地缓存",
+      "status": "cached_fallback",
+      "count": 353,
+      "cached_at": "2026-11-18T03:04:16.070Z",
+      "coverage": "接口失败或部分返回；仅补回窗口内缺失记录，缓存时间 2026-11-18T03:04:16.070Z"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "browser_assisted",
+      "count": 1,
+      "url": "https://huggingface.co/papers/date/2026-11-18",
+      "date": "2026-11-18",
+      "retrieved_at": "2026-11-19T03:24:00.000Z",
+      "coverage": "浏览器核对 Nov 18 Daily Papers 页面（页面显示 34 篇）；HF API 当日请求失败，故仅人工核验并导入 1 篇未在 arXiv 初筛池中的流式视频理解候选，不代表完整覆盖。该论文 arXiv 首发日为 Nov 15，超出本日报 72 小时补漏窗，保留为来源记录，不进入本期推荐。"
+    },
+    {
+      "source": "机器之心",
+      "status": "browser_assisted",
+      "count": 0,
+      "url": "https://www.jiqizhixin.com/articles",
+      "date": "2026-11-18",
+      "retrieved_at": "2026-11-19T03:24:00.000Z",
+      "coverage": "检查机器之心公开文章库、行业资讯页及 2026-11-17 至 2026-11-18 定向检索；搜索结果未发现可核实且适合本期的新增原论文解读。公开内容抓取/索引不完整，不能据此声称覆盖全部公开文章或公众号内容。"
+    }
+  ],
+  "candidates_count": 1254,
+  "analysed_count": 22,
+  "quality_threshold": 70,
+  "papers": [
+    {
+      "key": "arxiv:2611.23226",
+      "arxiv_id": "2611.23226",
+      "doi": "",
+      "title": "FastFrames: Video Generation at Interactive Latency",
+      "abstract": "Autoregressive video diffusion models generate frames based on new observations and inputs, making them a promising medium for interactive visual experiences. However, existing models are orders of magnitude too slow for fluid interaction. This paper introduces FastFrames, a family of fast autoregressive video diffusion models that achieves interactive latency without compromising quality. We profile the inference pipeline of state-of-the-art models and find that operations often treated as fixed implementation details, such as VAE decoding and KV cache updates, in fact account for over half of end-to-end inference latency. We challenge the assumption that these components are indispensable and replace them with lightweight alternatives. Our 1.3B variant runs at 36 ms per frame, or 28 responses per second (RPS), on a single B200 GPU while matching the generation quality of a state-of-the-art model that is nearly 8x slower. Our 14B variant runs at 45 ms per frame, or 22 RPS, on an 8x B200 GPU node and yields significantly better visual quality and realism. We show that FastFrames enables real-time interaction in applications such as camera-conditioned and physics-conditioned video generation.",
+      "authors": [
+        "Gene Chou",
+        "Guandao Yang",
+        "Fujun Luan",
+        "Lars Mescheder",
+        "Wei Dong",
+        "Stephan Richter",
+        "Vladlen Koltun"
+      ],
+      "url": "https://arxiv.org/abs/2611.23226",
+      "published": "2026-11-17T18:59:13Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.23226v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 91,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "FastFrames：以交互延迟生成视频",
+        "abstract_zh": "自回归视频扩散能够逐帧响应新观察和输入，适合交互式视觉应用，但现有模型速度远不足以流畅交互。作者分析推理流程后发现，VAE 解码和 KV 缓存更新等常被视作固定实现细节的操作，占据了超过一半端到端延迟。FastFrames 用轻量组件替换这些开销：1.3B 版本在单张 B200 上达到每帧 36 毫秒、每秒 28 次响应，生成质量接近慢近 8 倍的先进模型；14B 版本在 8 张 B200 上达到每帧 45 毫秒、每秒 22 次响应，并取得更高视觉质量。作者展示了相机条件和物理条件视频生成等实时交互应用。",
+        "reason": "论文直接优化自回归视频生成端到端延迟，并用相机及物理条件交互展示用途；关键判断是解码与缓存并非不可替代的固定成本。",
+        "introduction_zh": "自回归视频模型可以逐段生成，并在新观察或控制到来时继续响应，因此适合交互式世界模拟、游戏和机器人预测。但少步采样提速后，VAE 解码、KV 缓存回写等外围操作仍可能占掉大部分时间。作者因此把优化目标从单看 DiT 计算扩展到完整推理路径，重新设计像素解码和缓存更新。",
+        "method_takeaway": "FastFrames 的核心是把高成本 VAE 解码和完整 DiT 缓存回写改成轻量像素解码器与 KV 校正网络，让自回归视频生成真正达到交互延迟。",
+        "framework_zh": "论文先做端到端剖析，发现瓶颈并不只在生成主干：VAE 解码虽然参数较少，却要反复对高分辨率时空特征做稠密卷积；而缓存更新还要额外运行一次 DiT，把当前噪声块变成干净块对应的键值。只继续压缩去噪步数，无法消除这两项成本。\n\n针对解码，作者让主干特征通过轻量像素解码器直接生成 RGB；这个解码器面向清晰度训练，而不是保留传统 VAE 的复杂时空上采样。针对缓存，模型以小型 KV refinement network 预测主干在干净潜变量下的键值，避免丢弃预测结果的完整 DiT 计算。两部分都冻结或少量调整主干，主要训练轻量替代模块。\n\n因此，方法的主线是“先找系统里真正花时间的旁路，再逐个用针对性小模块替换”，并非提出新的生成目标。1.3B 版本在单 B200 上每帧 36 毫秒，14B 版本在八卡 B200 上每帧 45 毫秒；这些结果是高端硬件、480p 和特定并行配置下的测量，不能直接外推到消费级设备。",
+        "pipeline": "自回归视频 DiT → 轻量 RGB 像素解码 → 小型网络校正 KV 缓存 → 逐帧交互输出",
+        "results": "作者报告 FastFrames-S（1.3B）单张 B200 上 36 ms/帧、28 RPS，质量匹配约慢 8 倍的先进模型；FastFrames-L（14B）在 8 张 B200 上 45 ms/帧、22 RPS，视觉质量更高。",
+        "limitations": "论文主要在 480p、高端 B200 上评测；720p 延迟明显上升，端侧推理仍需优化。作者也指出需要进一步改善长程一致性和物理合理性，并把更低延迟的动作条件训练留作未来方向。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "自回归视频的交互价值与外围延迟问题"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "轻量像素解码器替代 VAE 解码"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "轻量 KV refinement 替代完整 DiT 缓存回写"
+          },
+          {
+            "section": "S4",
+            "claim": "模型规模、推理设置及延迟比较"
+          },
+          {
+            "section": "A1",
+            "claim": "分辨率、硬件与动作条件方面的限制"
+          }
+        ],
+        "fulltext_hash": "8a50ef9ae20a18f726eba9e076b3e27810cd974319c2fc3cc66861546ff73f37",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 101,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "自回归视频的交互价值与外围延迟问题",
+          "url": "https://arxiv.org/html/2611.23226v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "轻量像素解码器替代 VAE 解码",
+          "url": "https://arxiv.org/html/2611.23226v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "轻量 KV refinement 替代完整 DiT 缓存回写",
+          "url": "https://arxiv.org/html/2611.23226v1#S3.SS3"
+        },
+        {
+          "section": "S4",
+          "claim": "模型规模、推理设置及延迟比较",
+          "url": "https://arxiv.org/html/2611.23226v1#S4"
+        },
+        {
+          "section": "A1",
+          "claim": "分辨率、硬件与动作条件方面的限制",
+          "url": "https://arxiv.org/html/2611.23226v1#A1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F2",
+          "caption": "Figure 2: Inference pipeline and latency profiling for one autoregressive generation. State-of-the-art few-step autoregressive video diffusion models generate each new frame by first updating the KV cache using the previous frame’s denoised latent (𝒛0i−1{\\bm{z}}^{i-1}_{0}) through a DiT evaluation, then performing multiple denoising steps followed by VAE decoding. The color gradient of the model components denotes speed: from white (fastest operations) to red (slowest). (a) The fastest baseline, Causal Forcing++ (Zhao et al., 2026a), takes 271 ms to generate a frame at 480p but only 30% of wall time is spent on diffusion sampling. (b) FastFrames reduces latency nearly 8× by replacing the non-denoising “accessories” with lightweight alternatives and performing systems-level optimizations to speed up each DiT evaluation.",
+          "url": "https://arxiv.org/html/2611.23226v1/fig_fastframes_pipeline_v400.png",
+          "source_url": "https://arxiv.org/html/2611.23226v1#S1.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.22584",
+      "arxiv_id": "2611.22584",
+      "doi": "",
+      "title": "InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation",
+      "abstract": "Existing agentic manipulation systems treat pretrained vision-language-action (VLA) policies as opaque, language-only primitives: when a policy call fails under unfamiliar instructions or scene perturbations, the agent cannot steer its behavior and is forced into futile retries or costly manual takeover. We present InteractVLA, a framework that turns pretrained flow-based VLAs into geometrically steerable and inspectable tools through a bidirectional geometric interface with vision-language agents. In the forward direction, test-time geometric guidance translates an agent-specified end-effector target into input gradients through the action expert via a differentiable command-to-pose mapping, while soft-time target alignment treats arrival time as a latent execution index to match the target pose without distorting the policy's approach motion. In the reverse direction, action-informed agentic refinement exposes generated action chunks and calibrated camera reprojections back to the agent, allowing it to diagnose spatial discrepancies, revise targets for subsequent VLA calls, or locally adjust motion segments on top of the guided trajectory. Making the VLA controllable not only boosts online agentic tool use, but also unlocks effective recursive self-improvement (RSI), achieving state-of-the-art performance of 99.4\\% on LIBERO-Plus, 48.62\\% on RoboDojo, and 89.4\\% on RoboCasa365. Project page: https://lingwupro.github.io/InteractVLA/.",
+      "authors": [
+        "Chen Zhao",
+        "Zipeng Ye",
+        "Shifeng Bao",
+        "Yihan Lin",
+        "Haitao Shen",
+        "Yining Luo",
+        "Yuchen Xie",
+        "Jing Zhang"
+      ],
+      "url": "https://arxiv.org/abs/2611.22584",
+      "published": "2026-11-17T11:07:45Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "大模型",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.22584v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 89,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "InteractVLA：把视觉-语言-动作模型变成可交互操控工具",
+        "abstract_zh": "现有智能体操控系统把预训练 VLA 当作只接受语言的黑箱；遇到陌生指令或场景扰动时，智能体无法精确调整动作，只能重复失败或人工接管。InteractVLA 通过双向几何接口让流模型 VLA 可被引导和检查：前向将智能体指定的末端执行器目标通过可微命令到位姿映射转为动作梯度，并把到达时间作为潜在执行索引对齐目标，避免扭曲接近轨迹；反向把动作段和校准相机重投影提供给智能体，让它诊断空间偏差并迭代修正。作者报告 LIBERO-Plus 99.4%、RoboDojo 48.62%、RoboCasa365 89.4% 的表现，并在真实任务中提高成功率、减少调用和执行时间。",
+        "reason": "将语言黑箱 VLA 变为可几何引导、可检查和可迭代纠错的动作接口，核心贡献直接作用于机器人动作控制。",
+        "introduction_zh": "长任务智能体通常负责分解任务，VLA 负责连贯的短程动作；但一旦 VLA 失败，语言改写可能令策略偏离训练分布，盲目重试又重复相同轨迹。InteractVLA 让智能体直接指定末端位姿目标，同时把 VLA 生成动作及其相机投影反馈回来，使其能够发现并修正几何误差，而不必重新训练基础策略。",
+        "method_takeaway": "InteractVLA 用可微末端位姿目标把 VLA 动作朝指定位置引导，再把动作块投影回图像交给智能体诊断和修正。",
+        "framework_zh": "InteractVLA 把 VLA 和视觉语言智能体之间原本单向的“下指令—出动作”改成闭环几何接口。智能体给出末端执行器目标位姿和夹爪状态；方法通过可微的命令到位姿映射，把目标误差反向传到 flow-based action expert，在测试时改变动作生成方向。\n\n如果目标位姿出现在动作块某个时刻，硬性规定它必须是最后一步会扭曲原本自然的接近动作。Soft-Time Target Alignment 把到达时刻当作隐变量，允许策略在动作段里选择较合适的索引匹配目标。生成后，Action-Informed Agentic Refinement 再将动作轨迹、相机重投影和空间误差交给智能体；智能体据此更新后续目标或局部修正动作段。\n\n因此，VLA 不再只接受高层文字，而能被定位到精确交互位姿，并说明自己准备怎么动。真实倒水任务中，这种接口相较语言盲重试明显提升成功率。方法属于测试时引导和智能体闭环，提升受基础 VLA 短程能力、几何映射校准与环境观测准确度约束。",
+        "pipeline": "智能体给出末端目标 → 可微几何引导 VLA 生成动作块 → 软时间对齐目标 → 相机重投影反馈并迭代修正",
+        "results": "作者报告 LIBERO-Plus 99.4%、RoboDojo 48.62%、RoboCasa365 89.4%。真实四任务中，倒水成功率从 38.5 提至 79.2；Move Cube 得分 97.6，执行时间由 165.2 秒降至 67.5 秒，API 调用由 14.4 降至 4.7。",
+        "limitations": "方法依赖可微命令到位姿映射和相机几何校准；效果仍受基础 VLA 的短程操控能力制约。智能体使用视觉反馈纠错，无法保证对不可逆失败或感知误差可靠恢复。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "语言黑箱 VLA 导致盲目重试和接管"
+          },
+          {
+            "section": "S2.SS1",
+            "claim": "测试时几何引导与末端目标映射"
+          },
+          {
+            "section": "S2.SS2",
+            "claim": "潜在到达时间的软目标对齐"
+          },
+          {
+            "section": "S2.SS3",
+            "claim": "动作反馈和智能体迭代精炼"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px2",
+            "claim": "真实任务成功率与调用/执行效率"
+          }
+        ],
+        "fulltext_hash": "6e7d9e24a5d4c15fd30574696f8f863907e9fdae43323472bbb278c0899d8bbe",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 99,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "语言黑箱 VLA 导致盲目重试和接管",
+          "url": "https://arxiv.org/html/2611.22584v1#S1"
+        },
+        {
+          "section": "S2.SS1",
+          "claim": "测试时几何引导与末端目标映射",
+          "url": "https://arxiv.org/html/2611.22584v1#S2.SS1"
+        },
+        {
+          "section": "S2.SS2",
+          "claim": "潜在到达时间的软目标对齐",
+          "url": "https://arxiv.org/html/2611.22584v1#S2.SS2"
+        },
+        {
+          "section": "S2.SS3",
+          "claim": "动作反馈和智能体迭代精炼",
+          "url": "https://arxiv.org/html/2611.22584v1#S2.SS3"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px2",
+          "claim": "真实任务成功率与调用/执行效率",
+          "url": "https://arxiv.org/html/2611.22584v1#S3.SS3.SSS0.Px2"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2611.23499",
+      "arxiv_id": "2611.23499",
+      "doi": "",
+      "title": "BiCAT: Bimanual Coordination Action Tokenization",
+      "abstract": "Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, generating the left arm first and the right arm conditioned on it. Across ten RoboTwin 2.0 tasks and six real-world tasks on three embodiments, BiCAT achieves the highest success among the compared tokenizers. In simulation, it improves mean success by 17.6 percentage points over the strongest of eight baselines, with the largest gains on tasks that require close coordination between the arms, while requiring only 40.5 ms per action chunk. These results suggest that the action tokenizer is a natural place to model bimanual coordination.",
+      "authors": [
+        "Xuanwei Liu",
+        "Guipu Cao",
+        "Zhongyi Luo",
+        "Jiafei Duan"
+      ],
+      "url": "https://arxiv.org/abs/2611.23499",
+      "published": "2026-11-17T20:50:13Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.23499v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "BiCAT：面向双臂协作的动作分词",
+        "abstract_zh": "自回归 VLA 用动作 tokenizer 将连续动作块离散化，tokenizer 因而决定策略如何表示和预测机器人运动。现有方式常把双臂动作拼为一个向量，使两臂共享的运动模式和互补角色纠缠在同一编码中。BiCAT 为两臂共享运动表示，同时用对称跨臂注意力和联合解码器让一臂编码条件化于另一臂；策略分块预测，先左臂、再条件化生成右臂。在 RoboTwin 2.0 的十项任务和三种本体的六项真实任务中，BiCAT 在所比 tokenizer 中成功率最高；仿真平均成功率较八种基线中最强者高 17.6 个百分点，每个动作块耗时 40.5 毫秒。",
+        "reason": "把双臂协同结构放入动作 tokenization，而不是期待策略从拼接向量自行学到协作，是直接面向运动控制的表示改进。",
+        "introduction_zh": "VLA 常用下一个 token 目标预测离散动作，动作 tokenizer 因此塑造策略能够学到的运动单元。对双臂而言，两只手既有可复用的共同动作模式，又要在角色和时序上相互配合。把两臂拼成单个向量会让共享运动表示与跨臂依赖纠缠。BiCAT 将共享编码和伙伴条件化拆开，并让策略按臂分块预测。",
+        "method_takeaway": "BiCAT 让双臂共享同一运动词汇、各自保留 token 流，并在离散化时显式读取另一只手的动作上下文。",
+        "framework_zh": "BiCAT 把动作序列先变换到统一的 canonical arm space：左右臂通过镜像映射共享一套运动表示，降低同类动作因左右侧不同而重复学习。共享编码器之后，两臂 token 通过对称跨臂注意力交换信息，再由联合解码器重建连续动作块。\n\n训练好的 tokenizer 接到自回归 VLA 后，策略不再一次性预测混在一起的双臂 token，而是先生成一臂，再在其条件下生成另一臂。这样把“通用抓取/抬升/移动动作”作为可共享单元，把两手如何配合保留为明确依赖。实验中双臂紧密耦合任务获得更大提升，说明协作信息确实进入了动作接口。\n\n该表示仍在关节空间工作，左右手镜像映射依赖固定的关节符号对应；复杂工具接触和非对称本体可能需要重新设计表示。真实机器人实验覆盖六项任务和三种本体，仍不是开放场景下的泛化保证。",
+        "pipeline": "左右臂镜像标准化 → 共享编码并跨臂注意力 → 量化为分臂 token → 先预测左臂再条件生成右臂",
+        "results": "十项 RoboTwin 2.0 仿真任务平均成功率较八种基线中最强者高 17.6 个百分点；真实实验在三种本体的六项任务中成功 113/150 次，优于 OAT 单臂式比较 74/150 和 FAST 25/150；每动作块 40.5 ms。",
+        "limitations": "当前在关节空间使用固定逐关节符号映射，向不同机械臂结构迁移可能需要重新定义 canonicalization。论文也报告某些任务和词表/两阶段解码的代价，不能把双臂结构收益假定为所有操控任务都会出现。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "动作 tokenizer 决定 VLA 控制表示"
+          },
+          {
+            "section": "S3.SS1.SSS0.Px1",
+            "claim": "双臂动作 tokenization 流程"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "canonical 化、共享编码与跨臂量化"
+          },
+          {
+            "section": "S3.SS3.SSS0.Px1",
+            "claim": "策略按左右臂分块生成"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "仿真成功率与消融"
+          },
+          {
+            "section": "S4.SS3.SSS0.Px4",
+            "claim": "真实机器人结果"
+          },
+          {
+            "section": "S5",
+            "claim": "方法总结和关节空间局限"
+          }
+        ],
+        "fulltext_hash": "25c14e92bdae6b5afa5f6059998fbee520265c4242238a84433bba216c90d647",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "动作 tokenizer 决定 VLA 控制表示",
+          "url": "https://arxiv.org/html/2611.23499v1#S1"
+        },
+        {
+          "section": "S3.SS1.SSS0.Px1",
+          "claim": "双臂动作 tokenization 流程",
+          "url": "https://arxiv.org/html/2611.23499v1#S3.SS1.SSS0.Px1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "canonical 化、共享编码与跨臂量化",
+          "url": "https://arxiv.org/html/2611.23499v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S3.SS3.SSS0.Px1",
+          "claim": "策略按左右臂分块生成",
+          "url": "https://arxiv.org/html/2611.23499v1#S3.SS3.SSS0.Px1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "仿真成功率与消融",
+          "url": "https://arxiv.org/html/2611.23499v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3.SSS0.Px4",
+          "claim": "真实机器人结果",
+          "url": "https://arxiv.org/html/2611.23499v1#S4.SS3.SSS0.Px4"
+        },
+        {
+          "section": "S5",
+          "claim": "方法总结和关节空间局限",
+          "url": "https://arxiv.org/html/2611.23499v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of BiCAT. Top: mirror canonicalization 𝒞\\mathcal{C} flips the signed joints of the right arm (q1,…,q7q_{1},\\ldots,q_{7}, with q7q_{7} the gripper) and applies shared normalization; the shared encoder EϕE_{\\phi} and causal cross-attention give each arm its partner’s context before FSQ; and the joint decoder DθD_{\\theta} reconstructs the canonical chunk under ℒrec\\mathcal{L}_{\\mathrm{rec}}, which 𝒞−1\\mathcal{C}^{-1} maps back to 𝐀^\\widehat{\\mathbf{A}}. Bottom: a VLM predicts 𝐲L\\mathbf{y}^{L}, then 𝐲R\\mathbf{y}^{R}; the frozen decoder returns actions, executed on Bimanual SO-101, Unitree G1, and Bimanual YAM. Teal: left arm; orange: right arm.",
+          "url": "https://arxiv.org/html/2611.23499v1/assets/method.png",
+          "source_url": "https://arxiv.org/html/2611.23499v1#S3.F2"
+        },
+        {
+          "id": "S5.F5",
+          "caption": "Figure 5: Overview of the ten RoboTwin evaluation tasks. Task names and instructions are listed in Table 6.",
+          "url": "https://arxiv.org/html/2611.23499v1/Robotwin.png",
+          "source_url": "https://arxiv.org/html/2611.23499v1#S5.F5"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.20888",
+      "arxiv_id": "2611.20888",
+      "doi": "",
+      "title": "Driving the Style: Velocity-Conditioned Whole-Body Control from Motion Demonstrations",
+      "abstract": "Achieving human-like behavior on humanoid robots has advanced rapidly by leveraging motion-capture demonstrations rather than hand-crafted cost functions. Adversarial imitation supplies a style signal that lets a policy fulfill a task while adhering to a desired style, but is difficult to transfer to hardware. Whole-body tracking through reinforcement learning instead deploys reliably and imitates demonstrations faithfully, but the resulting policies are conditioned on the future reference, so they require a reference trajectory at runtime and can fail when the motion differs from the training data. We train a humanoid policy directly with whole-body tracking rewards while restricting its actor to compact locomotion commands and robot observations. Reference motion supervises the reward and privileged critic, without supplying reference joint trajectories to the actor or requiring teacher distillation. The demonstrated style is thereby encoded in the policy through the tracking reward, so the robot reproduces the whole-body style under commanded velocities. Trained on a single random-walk motion and commanded with velocity profiles from held-out motions, our policy reaches at least 98\\% success in simulation and completes every trial on the Unitree G1. On held-out slow walking, whole-body tracking drops to 2\\% success and command-conditioned distillation to 56\\%, and both fail on the real robot. On the trained motions, the joint position error of our policy stays within 8\\% of whole-body tracking, and it has a higher style coverage than adversarial motion priors (AMP), which fell on the real robot without a safety crane.",
+      "authors": [
+        "Murad Dawood",
+        "Oezge Drama Berkenkamp",
+        "Antonio Gonzales Marin",
+        "Nutan Chen"
+      ],
+      "url": "https://arxiv.org/abs/2611.20888",
+      "published": "2026-11-16T10:57:42Z",
+      "topics": [
+        "运动与运动控制",
+        "大模型",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2611.20888v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "驾驶风格：从动作示范学习速度条件下的全身控制",
+        "abstract_zh": "人形机器人可从动作捕捉示范学习风格，但对抗模仿难迁移到硬件；全身跟踪较可靠，却要求运行时提供未来参考轨迹，遇到训练分布外动作也会失败。作者训练全身跟踪奖励的强化学习策略，同时限制 actor 只接收紧凑速度命令和机器人可部署观测。示范动作只用于奖励和 privileged critic，不给 actor 提供参考关节轨迹，也不需要教师蒸馏，从而把风格编码进策略。只用一段随机行走训练，在留出动作的速度曲线指令下，仿真成功率至少 98%，Unitree G1 上每次实验均完成；但对留出慢走，跟踪基线仅 2%、命令条件蒸馏 56%，两者真机失败。",
+        "reason": "将示范动作保留在训练奖励和特权 critic 中，却从部署 actor 输入中移除未来参考轨迹，直接解决人形风格控制的运行时依赖。",
+        "introduction_zh": "直接模仿未来参考动作会要求部署时提供整段目标轨迹，限制实际交互；而对抗式风格奖励难以稳健迁移硬件。该工作用全身跟踪构造训练奖励，让特权 critic 能看完整参考，但 actor 只观察本体信息并接受速度指令，因此部署时可用速度曲线驱动风格化运动。",
+        "method_takeaway": "示范动作只参与全身跟踪奖励和特权 critic，部署 actor 仅看机器人自身状态与速度命令，从而学到可被速度控制的示范风格。",
+        "framework_zh": "本文改变的核心不是把示范动作直接送给机器人，而是把它放到训练侧当监督信号。训练时全身跟踪误差提供奖励，特权 critic 可以查看完整参考动作；真正执行的 actor 受到输入约束，只能用本体观测、锚定姿态误差和当前平面速度命令做决策。\n\n这使参考动作的风格通过强化学习奖励进入策略参数，而不是成为部署时必须提供的未来关节序列。速度命令仍由操作者在线给出，因此机器人可在命令的速度下复现训练动作呈现的全身风格。论文用只包含一段随机行走的训练集，再测试来自未见动作的速度曲线，检验命令控制能否超出原始单条轨迹。\n\n结果在训练相近动作上很强，且真机完成所有实验；但对留出慢走明显失败，说明“风格可以被命令迁移”仍受动作分布和速度范围限制。不能把单一随机行走训练外推成通用人形动作控制。",
+        "pipeline": "动作捕捉并重定向示范 → 跟踪奖励/特权 critic 强化学习 → actor 只用可部署观测与速度命令 → 人形机器人输出全身风格化运动",
+        "results": "单随机行走训练后，留出动作的速度曲线在仿真至少 98% 成功，Unitree G1 完成所有试验；训练动作上关节位置误差约比全身跟踪高 8%。留出慢走时，全身跟踪仅 2% 成功、命令条件蒸馏 56%，两者真机失败。",
+        "limitations": "强结果依赖有限的训练动作和速度指令分布；留出慢走显示明显泛化断层。对称数据、平滑示范等条件会影响结果，论文未证明可覆盖一般复杂技能或任意人体动作。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "对抗风格迁移与运行时参考轨迹依赖的矛盾"
+          },
+          {
+            "section": "S3",
+            "claim": "动作重定向、actor-critic 和部署速度控制"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px2",
+            "claim": "训练/部署的 actor 与 critic 观测差异"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "仿真内分布和留出动作比较"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "Unitree G1 真机结果"
+          },
+          {
+            "section": "S5",
+            "claim": "训练动作与泛化边界总结"
+          }
+        ],
+        "fulltext_hash": "33f473e2df6cf8c5a4a739651ac720937a6ef4b1ca7f51455a811fc9d16a7a48",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 98,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "对抗风格迁移与运行时参考轨迹依赖的矛盾",
+          "url": "https://arxiv.org/html/2611.20888v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "动作重定向、actor-critic 和部署速度控制",
+          "url": "https://arxiv.org/html/2611.20888v1#S3"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px2",
+          "claim": "训练/部署的 actor 与 critic 观测差异",
+          "url": "https://arxiv.org/html/2611.20888v1#S3.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "仿真内分布和留出动作比较",
+          "url": "https://arxiv.org/html/2611.20888v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "Unitree G1 真机结果",
+          "url": "https://arxiv.org/html/2611.20888v1#S4.SS3"
+        },
+        {
+          "section": "S5",
+          "claim": "训练动作与泛化边界总结",
+          "url": "https://arxiv.org/html/2611.20888v1#S5"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2611.21038",
+      "arxiv_id": "2611.21038",
+      "doi": "",
+      "title": "ScoutCache: Efficient Few-Step Autoregressive Video Diffusion via Conditional Readout and Selective Caching",
+      "abstract": "Few-step autoregressive video diffusion enables efficient long video generation, but inference still incurs substantial computational costs from repeated denoising and KV cache operations. Existing acceleration methods reduce parts of this overhead, while historical KV reading and cache construction remain costly across video chunks. To address these challenges, we propose ScoutCache, a training-free framework that jointly optimizes denoising, historical KV reading, and cache construction. We observe that shallow feature changes provide useful information for estimating clean latent updates, while historical KV dependence varies across Transformer layers and attention heads but remains relatively stable across video chunks. Based on these observations, we develop Conditional Denoising Readout (CDR) to estimate intermediate denoising updates from shallow feature changes and known noise variations. We further introduce Output Risk Guided Historical KV Reading (ORHR) to allocate historical reading budgets based on attention output perturbations, and Content and Coverage Guided Sparse Cache Construction (CCSC) to reduce cache construction costs by selecting informative spatial tokens while maintaining spatial coverage. Extensive experiments on Self-Forcing and LongLive using VBench and MovieGen demonstrate that ScoutCache achieves up to 2.28$\\times$ and 1.86$\\times$ speedups, respectively, while consistently improving generation quality without modifying pretrained model parameters.",
+      "authors": [
+        "Hao Tan",
+        "Jinghui Qin",
+        "Xuming Hu"
+      ],
+      "url": "https://arxiv.org/abs/2611.21038",
+      "published": "2026-11-16T12:57:16Z",
+      "topics": [
+        "流式生成",
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2611.21038v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 87,
+        "priority_topics": [
+          "流式生成"
+        ],
+        "title_zh": "ScoutCache：用条件读出与选择性缓存加速少步自回归视频扩散",
+        "abstract_zh": "少步自回归视频扩散可生成长视频，但逐块推理仍要重复去噪、读取历史 KV 并构造新缓存。ScoutCache 是无需重新训练主干的加速框架，联合优化这三项成本：用浅层特征变化估计中间去噪更新；按注意力输出扰动分配历史读取预算；依据内容变化和空间覆盖选择稀疏缓存 token。在 Self-Forcing 和 LongLive 上，作者报告最高分别 2.28 倍和 1.86 倍加速，并在不同视频时长下保持或改善生成质量。",
+        "reason": "针对长视频逐块推理中的三类重复开销联合设计，并跨两个自回归视频骨干验证；适合关注不改主干的流式视频推理加速。",
+        "introduction_zh": "少步扩散减少了每个视频块的去噪迭代，但长视频仍需反复读取历史 KV，并为后续块额外构造缓存。既有工作通常只削减其中一项，历史读取和缓存生成仍随序列增长。ScoutCache 从输出扰动、浅层特征变化和空间覆盖三个角度重新分配计算，目标是在不微调预训练模型的条件下联合压低开销。",
+        "method_takeaway": "ScoutCache 根据浅层特征估计去噪、按注意力输出风险选择要读的历史，并只缓存兼具信息量和空间覆盖的 token。",
+        "framework_zh": "作者观察到少步自回归推理的浪费分散在三处：中间去噪步骤仍重复计算、每层每头读取全部历史 KV、每个块又为后续生成构造密集缓存。ScoutCache 不改变预训练主干，而是针对三处分别做近似和筛选。\n\nConditional Denoising Readout 利用浅层特征变化与已知噪声变化，读出后续去噪更新的近似值，减少完整 Transformer 前向。Output Risk Guided Historical KV Reading 估算略去某段历史对注意力输出会造成多大扰动，把有限读取预算优先给风险较高的历史位置。Content and Coverage Guided Sparse Cache Construction 则依据内容变化挑选代表 token，同时约束空间覆盖，避免缓存只保留局部显著区域。\n\n这三步分别减少“算多少次、看多少历史、留下多少历史”，所以论文的主要贡献是系统性地管理自回归每个块周围的计算。实验显示 30 秒和 120 秒生成都有加速，但速度数字受单卡 A100、分辨率、块长和具体骨干影响；稀疏历史仍可能在更长序列或不同运动分布下丢失信息。",
+        "pipeline": "逐块自回归去噪 → 浅层读出估计更新 → 风险分配历史 KV 读取 → 内容与覆盖约束稀疏缓存",
+        "results": "在 Self-Forcing 上，30 秒生成延迟由 65.59 秒降至 29.99 秒（2.19×）；120 秒设置最高 2.28×。在 LongLive 上 30 秒设置达到 1.83×；实验使用单张 A100 40GB、832×480、16 FPS、每块 3 个潜帧和 4 步去噪。",
+        "limitations": "作者称方法无需训练主干，但读出映射仍需校准。缓存筛选依赖跨块相对稳定的注意力与内容统计；结果集中在两个已发布骨干、单卡 A100 和固定分辨率，跨架构与极长上下文泛化仍需验证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "长视频生成的历史读取与缓存开销"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "Conditional Denoising Readout 机制"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "按输出扰动分配历史读取预算"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "内容和空间覆盖引导的稀疏缓存构造"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "不同时长和骨干上的延迟与质量比较"
+          },
+          {
+            "section": "S5",
+            "claim": "训练自由的联合加速总结"
+          }
+        ],
+        "fulltext_hash": "9c2d485fa313ab43b00cd54609c1631cd41c4efb919418e567bb1f7afd9d7e08",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 97,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "长视频生成的历史读取与缓存开销",
+          "url": "https://arxiv.org/html/2611.21038v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "Conditional Denoising Readout 机制",
+          "url": "https://arxiv.org/html/2611.21038v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "按输出扰动分配历史读取预算",
+          "url": "https://arxiv.org/html/2611.21038v1#S3.SS3"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "内容和空间覆盖引导的稀疏缓存构造",
+          "url": "https://arxiv.org/html/2611.21038v1#S3.SS4"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "不同时长和骨干上的延迟与质量比较",
+          "url": "https://arxiv.org/html/2611.21038v1#S4.SS2"
+        },
+        {
+          "section": "S5",
+          "claim": "训练自由的联合加速总结",
+          "url": "https://arxiv.org/html/2611.21038v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: The top shows the overall inference pipeline, integrating denoising acceleration and KV cache optimization. The bottom illustrates three components. (a) CDR estimates clean latent updates from noise variations and shallow feature changes. (b) ORHR allocates historical KV reading budgets based on attention output perturbations. (c) CCSC reduces cache construction costs through content and coverage guided spatial token selection.",
+          "url": "https://arxiv.org/html/2611.21038v1/model.png",
+          "source_url": "https://arxiv.org/html/2611.21038v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.22880",
+      "arxiv_id": "2611.22880",
+      "doi": "",
+      "title": "Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving",
+      "abstract": "Recent progress in integrating vision-language-action (VLA) models with world modeling has significantly advanced end-to-end autonomous driving by allowing systems to reason about imagined futures instead of merely reacting to current observations. However, most world VLA models generate future frames at the pixel level with plenty of dense visual tokens. Although such generated futures can be visually plausible, they preserve many driving-irrelevant appearance details, i.e., only a small portion of the tokens directly encode critical planning-relevant factors, such as agent geometry, motion dynamics, and interactions. This introduces a significant performance bottleneck. An important question thus arises: what world state should a world VLA model reason over to support planning beyond pixel-level prediction? We argue that planning-oriented world modeling should focus on a compact and structured agent-centric latent state that captures the interactions between objects in the driving scene over time. As such, we introduce AgentWorld, an agent-centric VLA world model that uses discrete agent tokens jointly for reasoning and trajectory planning. Each token is dynamically grounded to a surrounding agent associated with its object's state, such as semantic identity, 3D geometry, motion, and interaction context. AgentWorld learns these tokens through three key processes: explicit geometric grounding, reasoning-oriented supervised fine-tuning, and agent-oriented reinforcement learning. Extensive open-loop and closed-loop experiments under diverse driving scenarios show that AgentWorld enhances planning capabilities, fully exploits visual evidence and agent dynamics, and yields interpretable agent-centric world states.",
+      "authors": [
+        "Guoqing Wang",
+        "Pin Tang",
+        "Xiangxuan Ren",
+        "Chao Ma"
+      ],
+      "url": "https://arxiv.org/abs/2611.22880",
+      "published": "2026-11-17T14:53:49Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.22880v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 86,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "面向自动驾驶的以智能体为中心的视觉-语言-动作世界模型",
+        "abstract_zh": "现有 VLA 世界模型常预测密集像素未来，视觉上逼真却保留了许多对驾驶规划无关的细节。AgentWorld 主张以紧凑、结构化的智能体状态表达规划所需信息，并使用离散 agent token 表示周边对象的语义身份、三维几何、运动和交互。模型通过几何显式锚定、面向推理的监督微调及面向 agent 的强化学习训练 token，再用于场景推理和轨迹规划。nuScenes 开环及闭环实验显示其规划能力增强，状态更可解释；在 nuScenes 感知检测上 mAP/NDS 为 0.318/0.416，动作预测多个转向、车道保持和速度控制类别取得较好成绩。",
+        "reason": "用带几何锚定的对象状态替代像素级未来作为驾驶规划中间状态，连接世界模型表示、轨迹规划和动作决策。",
+        "introduction_zh": "VLA 能把视觉、指令和动作统一起来，世界模型则允许策略先推演未来再行动；但预测一帧逼真的画面，并不保证规划需要的参与者位置、运动和相互作用被突出。AgentWorld 将世界状态重定义为周边交通参与者的离散 token，显式绑定其三维几何和动态，再用这些状态进行轨迹与动作推理。",
+        "method_takeaway": "AgentWorld 让每个离散 agent token 对应一个真实交通参与者，并以三维几何和运动状态锚定它，使规划直接围绕交互对象而非密集像素展开。",
+        "framework_zh": "像素级未来预测会把道路纹理、光照等大量细节也交给规划模型处理，而真正决定驾驶的是周围车辆和行人的位置、速度、意图及彼此关系。AgentWorld 把这些参与者变成紧凑的离散 token：先从多视角图像和车辆状态中初始化候选 agent，再用路由锚定融合二维视觉、语言语义和四维几何线索，使 token 不只是抽象编号，而有对应的物理对象。\n\n训练分为几何 grounding、面向推理的监督微调和 agent-oriented RL。前两者教模型识别并描述交通参与者及交互，强化学习再围绕规划结果优化行为。推理时策略基于这些 agent token 预测未来轨迹和动作。比如准备并线时，模型关注目标车道的车辆相对位置与运动，而不是要求完整像素未来每处都正确。\n\n论文在 nuScenes 上做开环规划、闭环驾驶、感知和动作预测比较，报告多个动作类别更平衡，并显示中间状态可解释。需要注意，传感器、数据和闭环仿真条件仍限定了结论；离散 token 表示也可能压缩掉对极端驾驶场景有用的细节。",
+        "pipeline": "多视角图像与车辆状态 → agent token 几何/语义锚定 → SFT 与 agent-RL 学习状态推理 → 轨迹和驾驶动作规划",
+        "results": "在 nuScenes 感知结果中 mAP=0.318、NDS=0.416；动作 F1 多数类别优于所列比较方法，转向、加减速和停车提升较明显。论文另报告开环及闭环规划改进。",
+        "limitations": "证据集中于 nuScenes 及论文所用 VLA/训练策略；像素细节压缩为离散 agent 状态可能丢掉未建模因素。自动驾驶闭环评估与真实道路安全之间仍有明显差距，不能把仿真结果视为道路部署保证。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "像素未来与规划相关状态之间的错位"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "agent token 初始化、路由锚定和物理 grounding"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "SFT 与 agent-oriented RL 训练策略"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "开环规划、感知和动作预测结果"
+          },
+          {
+            "section": "S4.SS4.SSS0.Px1",
+            "claim": "表示对比与 agent-token 干预分析"
+          }
+        ],
+        "fulltext_hash": "af012dc9eabf67634dac123c71d23adcd0a6dc07e5ea05ebe1b5c079e7ff1155",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 96,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "像素未来与规划相关状态之间的错位",
+          "url": "https://arxiv.org/html/2611.22880v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "agent token 初始化、路由锚定和物理 grounding",
+          "url": "https://arxiv.org/html/2611.22880v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "SFT 与 agent-oriented RL 训练策略",
+          "url": "https://arxiv.org/html/2611.22880v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "开环规划、感知和动作预测结果",
+          "url": "https://arxiv.org/html/2611.22880v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS4.SSS0.Px1",
+          "claim": "表示对比与 agent-token 干预分析",
+          "url": "https://arxiv.org/html/2611.22880v1#S4.SS4.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Overview of AgentWorld. Given multi-view observations, ego-status, navigation goals, and language prompts, AgentWorld constructs an agent-centric world state by grounding discrete agent tokens with 4D geometry and 2D visual features through multimodal routed anchoring. The grounded agent tokens are then used by the policy model for reasoning, action, and planning through grounding, supervised fine-tuning, and reinforcement learning stages.",
+          "url": "https://arxiv.org/html/2611.22880v1/method.png",
+          "source_url": "https://arxiv.org/html/2611.22880v1#S3.F3"
+        },
+        {
+          "id": "S3.F4",
+          "caption": "Figure 4: The pipeline of the multimodal routed anchoring. Agent queries are routed to geometry and vision branches, and fused through cross-attention to produce grounded agent tokens.",
+          "url": "https://arxiv.org/html/2611.22880v1#S3.F4",
+          "source_url": "https://arxiv.org/html/2611.22880v1#S3.F4"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.20452",
+      "arxiv_id": "2611.20452",
+      "doi": "",
+      "title": "XMimic and XSoma: Learning Humanoid Motion Tracking and Locomotion in Under a Minute",
+      "abstract": "We present XMimic and XSoma, which learn humanoid motion tracking and locomotion on rough terrain in under a minute of training. Both follow SuperMimic, which learns a world model of the robot and optimizes the policy with analytic gradients through short rollouts imagined in this model. Existing implementations of this method do not make use of larger GPUs, as every training iteration is a long chain of small GPU operations that run one after another. XMimic and XSoma therefore shorten this chain and run the steps of every iteration at the same time on up to four GPUs. We compile the complete training loop with JAX, including the MuJoCo Warp simulator. For locomotion, XSoma leaves only the dynamics of the robot to the world model and computes everything else exactly, including the terrain height under the feet. It learns with a horizon of one second and without a critic. On four H100 GPUs, XMimic learns to track all 40 LAFAN1 clips with the Unitree G1 in 0.86 minutes, 3.7 times faster than BlinkMimic on one GPU. XSoma reaches the tracking target that Holosoma's tests set for FastSAC in 0.77 minutes, 12.3 times faster than FastSAC on one GPU, while needing only an eighth of its environment steps.",
+      "authors": [
+        "Nico Bohlinger",
+        "Jan Peters"
+      ],
+      "url": "https://arxiv.org/abs/2611.20452",
+      "published": "2026-11-16T03:22:51Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能",
+        "世界模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2611.20452v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 85,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "XMimic 与 XSoma：不到一分钟学习人形运动跟踪与行走",
+        "abstract_zh": "XMimic 和 XSoma 基于 SuperMimic 的机器人世界模型，在不到一分钟内学习人形运动跟踪和崎岖地形行走。既有训练迭代由许多小型 GPU 操作串行组成，无法有效利用大 GPU。作者用 JAX 编译包含 MuJoCo Warp 的完整训练环路，并将每次迭代的步骤拆到最多四张 GPU 并行执行。对行走任务，XSoma 只让世界模型处理机器人动力学，其余量（包括脚下地形高度）精确计算；使用一秒时域且无需 critic。在四张 H100 上，XMimic 跟踪 Unitree G1 的 40 段 LAFAN1 动作耗时 0.86 分钟，比单卡 BlinkMimic 快 3.7 倍；XSoma 达到 FastSAC 的跟踪目标耗时 0.77 分钟，比单卡 FastSAC 快 12.3 倍，环境步数为其八分之一。",
+        "reason": "方法贡献聚焦世界模型人形控制训练的计算流水线并行化，给出可复现的训练时长和硬件条件。",
+        "introduction_zh": "世界模型能以短时想象轨迹提供低方差策略梯度，降低人形运动学习所需交互量；但每次训练迭代是一串串行的小 GPU 操作，大显卡和多卡资源没有被充分使用。XMimic/XSoma 从系统实现入手，将整个模拟、世界模型和策略更新编译并拆分并行，同时针对行走把可精确计算的地形信息从学习模型中剥离。",
+        "method_takeaway": "XMimic/XSoma 把世界模型控制训练中的串行小操作整体编译并跨 GPU 并行，同时只学习真正难以精确计算的机器人动力学。",
+        "framework_zh": "SuperMimic 的思路是让策略在学习到的机器人世界模型里进行短时想象，再沿可微预测回报更新策略，比从真实采样估计梯度更省交互。但若仿真、预测、梯度和策略更新一个接一个排队，多卡资源无法消除训练延迟。XMimic 用 JAX 编译完整循环（包含 MuJoCo Warp），把一次迭代切成能在最多四张 GPU 上同时运行的部分。\n\n行走版 XSoma 进一步缩小模型职责：机器人动力学仍需学习，但脚下地形高度等可由模拟器精确给出，于是模型只预测难以解析的部分。它采用一秒想象时域，不使用 critic。最终把“少交互的模型学习”与“减少单步串行依赖的系统并行”结合起来。\n\n四卡 H100 上的跟踪与行走分别不到一分钟，但作者明确这些实验仍在仿真中，启动和 JIT 编译时间也需区分；所以它展示了训练吞吐潜力，而不是已经完成真机部署的运动控制系统。",
+        "pipeline": "JAX 编译模拟与学习循环 → 将串行操作分到最多四卡并行 → 世界模型短时想象优化策略 → 输出运动跟踪/行走策略",
+        "results": "四张 H100 上，XMimic 在 0.86 分钟跟踪 40 段 LAFAN1 动作，较单卡 BlinkMimic 快 3.7×；XSoma 0.77 分钟达到 FastSAC 目标，较单卡 FastSAC 快 12.3×，环境步数约为八分之一。启动/JIT 编译另需约 20–40 秒，未计入主训练数字。",
+        "limitations": "作者仅在仿真中训练评估，真机 G1 部署留作未来工作；更复杂地形和更长时域也待验证。多卡加速依赖编译缓存和硬件配置，报告的亚分钟时长不含启动/编译。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "世界模型短时梯度与串行训练实现瓶颈"
+          },
+          {
+            "section": "S2.SS1",
+            "claim": "编译训练迭代"
+          },
+          {
+            "section": "S2.SS2",
+            "claim": "跨 GPU 拆分训练迭代"
+          },
+          {
+            "section": "S2.SS3",
+            "claim": "XSoma 的精确地形计算与无参考行走"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "40 段动作跟踪时长对比"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "崎岖地形行走对比"
+          },
+          {
+            "section": "S4",
+            "claim": "仿真范围、瓶颈和后续部署限制"
+          }
+        ],
+        "fulltext_hash": "0fcf904c12668b181cdae6aaf0320f913cbf9576a04d5e9bc4441894c7d96dce",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 95,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "世界模型短时梯度与串行训练实现瓶颈",
+          "url": "https://arxiv.org/html/2611.20452v1#S1"
+        },
+        {
+          "section": "S2.SS1",
+          "claim": "编译训练迭代",
+          "url": "https://arxiv.org/html/2611.20452v1#S2.SS1"
+        },
+        {
+          "section": "S2.SS2",
+          "claim": "跨 GPU 拆分训练迭代",
+          "url": "https://arxiv.org/html/2611.20452v1#S2.SS2"
+        },
+        {
+          "section": "S2.SS3",
+          "claim": "XSoma 的精确地形计算与无参考行走",
+          "url": "https://arxiv.org/html/2611.20452v1#S2.SS3"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "40 段动作跟踪时长对比",
+          "url": "https://arxiv.org/html/2611.20452v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "崎岖地形行走对比",
+          "url": "https://arxiv.org/html/2611.20452v1#S3.SS2"
+        },
+        {
+          "section": "S4",
+          "claim": "仿真范围、瓶颈和后续部署限制",
+          "url": "https://arxiv.org/html/2611.20452v1#S4"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2611.23843",
+      "arxiv_id": "2611.23843",
+      "doi": "",
+      "title": "RePlan-VLA: Progress-Aware Replanning for Long-Horizon Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a promising paradigm for general-purpose robotic manipulation, yet their performance often degrades on long-horizon tasks that require multiple interdependent manipulations. Instead of burdening the VLA policies with long-horizon reasoning, memory, action generation, progress tracking, and error recovery, we argue for leveraging their short-horizon manipulation capabilities within an execution-aware framework. To this end, we introduce \\textnormal{\\textbf{RePlan-VLA}}, a VLA-agnostic framework that translates a VLA's short-horizon capabilities into reliable long-horizon execution. RePlan-VLA explicitly monitors the robot's motion for progress evaluation, and adaptively revises the future plan based on observed outcomes. We preserve the underlying VLA policy entirely, requiring no additional fine-tuning. Experiments on RoboCasa365 and CALVIN benchmarks show an improvement of 21.9% and 10.4% in success rate over the next strongest baseline. We also validate our approach for real-world deployment on a Franka Research 3 robot.",
+      "authors": [
+        "Apoorva Vashisth",
+        "Manav Kulshrestha",
+        "Damon Conover",
+        "Zachary Kingston",
+        "Aniket Bera"
+      ],
+      "url": "https://arxiv.org/abs/2611.23843",
+      "published": "2026-11-18T04:49:41Z",
+      "topics": [
+        "运动与运动控制",
+        "多模态",
+        "具身智能"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.23843v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 82,
+        "priority_topics": [
+          "运动与运动控制"
+        ],
+        "title_zh": "RePlan-VLA：面向长时域视觉-语言-动作模型的进度感知重规划",
+        "abstract_zh": "VLA 在需要多个相互依赖操作的长时域任务中容易性能下降。RePlan-VLA 不要求策略同时承担长程推理、记忆、动作生成、进度跟踪和错误恢复，而是让其保留可靠的短程操控能力，并用外部执行框架监视动作进度、依据观测结果自适应修改后续计划。该框架与底层 VLA 无关，无需额外微调。在 RoboCasa365 和 CALVIN 上，相比次强基线成功率分别提高 21.9% 和 10.4%，并在 Franka Research 3 上进行了真实部署验证。",
+        "reason": "通过运行时视觉进度监控和失败反馈组织短程 VLA 动作，直接改善长程机器人动作执行与重规划。",
+        "introduction_zh": "长任务由多个依赖步骤组成，小的执行偏差会继续传递；单一 VLA 又难同时做好长期记忆、子任务进度判断、动作生成和错误恢复。RePlan-VLA 将这些职责拆给少样本规划器、视觉进度估计器和冻结 VLA，让每次执行结果决定是否推进或修改计划。",
+        "method_takeaway": "RePlan-VLA 让规划器按执行观测动态修订子任务，并用独立进度估计器判断机器人是否真的完成当前动作。",
+        "framework_zh": "框架包含一个少样本规划 VLM、一个经监督微调的进度估计 VLM 和一个保持冻结的短程 VLA。规划器先把长指令拆成符合 VLA 训练习惯的子任务；VLA 执行当前子任务时，进度估计器定期结合连续视觉观测、任务上下文和历史完成记录判断进度。\n\n若目标已完成，框架切换到下一步；若环境反馈显示未达成或出现失败，就调整剩余计划，而不是把原指令重复送给同一个策略。这里的关键是基于“动作的实际后果”而非时间步或语言假设来推进计划。由于底层 VLA 不需改动，框架可以适配不同短程控制器。\n\nRoboCasa365、CALVIN 和 Franka 真机结果说明执行意识有价值，但系统依赖视觉进度判断可靠、底层策略能完成短程技能；若操作已经不可逆地失败，重新规划也未必能恢复。",
+        "pipeline": "长指令 → 规划器拆分子任务 → 冻结 VLA 执行 → 视觉进度/失败评估 → 推进或修订计划",
+        "results": "RoboCasa365 成功率较次强基线提高 21.9%，CALVIN ABCD→hard 提高 10.4%；作者还报告 Franka Research 3 真实机器人部署。",
+        "limitations": "效果依赖视觉 grounding 与基础 VLA 的短程能力；如果错误操作不可逆，执行后重规划可能无能为力。当前计划修订和进度估计仍主要依赖视觉信号，触觉等其他模态留作未来工作。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "长程任务偏差累积和单策略多职责问题"
+          },
+          {
+            "section": "S3",
+            "claim": "规划器、进度估计器和冻结 VLA 组成"
+          },
+          {
+            "section": "S4.SS3",
+            "claim": "组件与设计消融"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "失败恢复定性分析"
+          },
+          {
+            "section": "S4.SS5",
+            "claim": "Franka 真机部署"
+          },
+          {
+            "section": "S5",
+            "claim": "视觉依赖与不可逆错误限制"
+          }
+        ],
+        "fulltext_hash": "7b98168fd7ea989c497c07e7074e309e3c1a345bee2676fd50e5fbf3624c48c6",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 10,
+      "ranking_score": 92,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "长程任务偏差累积和单策略多职责问题",
+          "url": "https://arxiv.org/html/2611.23843v1#S1"
+        },
+        {
+          "section": "S3",
+          "claim": "规划器、进度估计器和冻结 VLA 组成",
+          "url": "https://arxiv.org/html/2611.23843v1#S3"
+        },
+        {
+          "section": "S4.SS3",
+          "claim": "组件与设计消融",
+          "url": "https://arxiv.org/html/2611.23843v1#S4.SS3"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "失败恢复定性分析",
+          "url": "https://arxiv.org/html/2611.23843v1#S4.SS4"
+        },
+        {
+          "section": "S4.SS5",
+          "claim": "Franka 真机部署",
+          "url": "https://arxiv.org/html/2611.23843v1#S4.SS5"
+        },
+        {
+          "section": "S5",
+          "claim": "视觉依赖与不可逆错误限制",
+          "url": "https://arxiv.org/html/2611.23843v1#S5"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S1.F2",
+          "caption": "Figure 2: Overview of RePlan-VLA. Given a long-horizon language instruction and visually grounded scene observations, the planner decomposes the task into executable short-horizon subtasks, which are sequentially executed by a frozen VLA policy. A separate progress estimator monitors execution at the manipulation-primitive level, detects deviations from the intended subtask, and generates natural-language failure feedback. Upon failure, the planner uses the updated scene observations and diagnostic feedback to revise the remaining subtask sequence. The bottom panel illustrates this closed-loop process: after successfully placing a croissant on the cutting board, the robot approaches an incorrect object while retrieving a jam jar. RePlan-VLA detects the mismatch and replans, enabling the robot to recover and complete the remaining manipulation.",
+          "url": "https://arxiv.org/html/2611.23843v1/method.png",
+          "source_url": "https://arxiv.org/html/2611.23843v1#S1.F2"
+        },
+        {
+          "id": "S4.T3",
+          "caption": "Table 3: Component ablations of RePlan-VLA on RoboCasa365 composite tasks. SR is the task success rate (%). Each ablation modifies only one component of the framework. Higher is better.",
+          "url": "https://arxiv.org/html/2611.23843v1#S4.T3",
+          "source_url": "https://arxiv.org/html/2611.23843v1#S4.T3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.21559",
+      "arxiv_id": "2611.21559",
+      "doi": "",
+      "title": "Reference Forcing: Long Video Generation with Region-Guided Drift Correction",
+      "abstract": "Long video generation should keep the subject and background consistent while supporting rich, natural motion. However, autoregressive models are often distilled with distribution matching distillation (DMD) over short windows, which does not train them to keep this consistency over long ranges. As a result, the subject and background can drift over time. Methods that manage the key-value (KV) cache retain or retrieve history to reduce drift. Yet this history may itself have drifted. We propose Reference Forcing, which uses the initial frames as an appearance reference. We first build a teacher that uses attention masks to force each region of a new frame to attend to the same region in the initial frames. The teacher finds these regions with off-the-shelf segmentation models. We then distill this behavior into a separate attention path of the student, which needs no external models at inference. We further introduce value correction, which corrects drifted values in the KV cache toward the matching values of drift-free initial frames. Experiments show that Reference Forcing achieves state-of-the-art subject and background consistency among long-video methods on different base models, and its advantage grows with video length. Ablations show both components are needed to gain consistency without losing motion. More visualizations and code are available at https://zhaosheng-thu.github.io/reference-force/",
+      "authors": [
+        "Sheng Zhao",
+        "Haitian Zheng",
+        "Weikai Lin",
+        "Junjie Zhao",
+        "Yuhao Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.21559",
+      "published": "2026-11-16T18:39:47Z",
+      "topics": [
+        "运动与运动控制",
+        "视频生成",
+        "大模型",
+        "主体控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.21559v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 88,
+        "priority_topics": [
+          "主体控制"
+        ],
+        "title_zh": "Reference Forcing：用区域引导纠正长视频生成漂移",
+        "abstract_zh": "长视频自回归生成常因短窗口分布匹配训练而逐渐改变主体和背景外观；缓存中的历史本身也可能已漂移。Reference Forcing 以最初视频块作为外观参照：教师模型借助现成分割器找出区域对应，并让新帧各区域注意到初始帧同一区域，再把该行为蒸馏进学生模型的一条独立注意力路径，使推理不再依赖外部模型。方法还将缓存键值向初始参考校正。作者报告该方法在不同底座上取得领先的长视频主体与背景一致性，且时长越长优势越明显；消融显示两个组件都重要，且可保留运动。",
+        "reason": "围绕长视频主体/背景身份保持提出明确机制，并检验一致性与运动之间的权衡，直接对应主体一致性关注。",
+        "introduction_zh": "自回归模型把长视频切成短块训练，蒸馏目标能保证局部生成质量，却没有要求几十秒后的人物外观仍与开头一致。依赖 KV 缓存也不稳，因为缓存历史会随生成逐渐漂移。作者因此把开头帧设为不漂移的外观锚点，并用区域级对应同时保住局部运动上下文和初始外观。",
+        "method_takeaway": "Reference Forcing 为当前块增加一条独立的初始帧注意力路径，并把漂移缓存值拉回初始区域的参考特征。",
+        "framework_zh": "若简单提高当前块对第一帧的注意力，第一帧和近邻帧会共享同一组 softmax 权重，外观更稳定却会挤掉承载运动的近期上下文。Reference Forcing 把这两种信息分开：原缓存路径继续读取近期历史来保持运动，新增 anchor 路径独立读取初始块，再用门控权重融合。\n\n训练阶段的教师用现成分割模型找到主体和背景区域，给新帧的每个区域施加掩码，让它只对齐初始块的对应区域；学生通过蒸馏学习这条区域锚定路径，因此推理时不必再调用分割模型。另一个 value correction 步骤把 KV 缓存中已漂移的值向同区域初始参考拉回。\n\n直观地说，视频中人物戴着深色面罩移动时，近期帧负责告诉模型如何继续动作，第一帧则负责面罩仍应是深色。实验显示一致性提高而运动未被简单牺牲，但第一块是唯一参照：后来才进入场景的新物体没有锚点，相似主体也容易被教师分割混淆。",
+        "pipeline": "首块区域作为参考 → 教师生成区域对应监督 → 学生学习独立 anchor 注意力路径 → 校正 KV 值并继续生成",
+        "results": "在 VBench-Long 的 30 秒和 60 秒设置中，作者报告主体一致性、背景一致性、运动平滑度和美学质量领先；用户研究及 VLM 比较也偏好该方法的整体、一致性和运动表现。消融支持 anchor path 与 value correction 均有作用。",
+        "limitations": "方法只把第一视频块作为参照，后来出现的物体无对应锚点；多个相似主体仍有困难，教师依赖首块主体检测。区域平均可能平滑细纹理，图像质量略低于 LongLive。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "短窗口训练造成长程主体和背景漂移"
+          },
+          {
+            "section": "S3.SS2",
+            "claim": "分离近期缓存路径与首块 anchor 路径"
+          },
+          {
+            "section": "S3.SS4",
+            "claim": "修正漂移 KV 值的机制"
+          },
+          {
+            "section": "S5.SS1",
+            "claim": "主体、背景与运动质量比较"
+          },
+          {
+            "section": "S6.SS0.SSS0.Px1",
+            "claim": "首块锚定、相似主体和纹理限制"
+          }
+        ],
+        "fulltext_hash": "300d39ba5225232a70b1daf580fa89ff588e2bb5922907fa261eafc202bf85c0",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 90.5,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "短窗口训练造成长程主体和背景漂移",
+          "url": "https://arxiv.org/html/2611.21559v1#S1"
+        },
+        {
+          "section": "S3.SS2",
+          "claim": "分离近期缓存路径与首块 anchor 路径",
+          "url": "https://arxiv.org/html/2611.21559v1#S3.SS2"
+        },
+        {
+          "section": "S3.SS4",
+          "claim": "修正漂移 KV 值的机制",
+          "url": "https://arxiv.org/html/2611.21559v1#S3.SS4"
+        },
+        {
+          "section": "S5.SS1",
+          "claim": "主体、背景与运动质量比较",
+          "url": "https://arxiv.org/html/2611.21559v1#S5.SS1"
+        },
+        {
+          "section": "S6.SS0.SSS0.Px1",
+          "claim": "首块锚定、相似主体和纹理限制",
+          "url": "https://arxiv.org/html/2611.21559v1#S6.SS0.SSS0.Px1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F2",
+          "caption": "Figure 2: Overview of Reference Forcing. (a) Each chunk XnX_{n} is generated from the first chunk X0X_{0}, the recent window, and noisy tokens, with the anchor path of (b) and the value correction of (c). (b) In every layer, the student adds an anchor path (LoRA on the query and keys, and the anchor gate ww) to the frozen native attention and learns to match the prediction of a teacher whose anchor path is masked by the subject mask and the background flow. (c) Value correction moves the values of the drifted chunk Xn−2X_{n-2} toward their key-matched values in X0X_{0}, with the anchor gate ww learned in (b) as strength.",
+          "url": "https://arxiv.org/html/2611.21559v1/reference_forcing_overview.png",
+          "source_url": "https://arxiv.org/html/2611.21559v1#S3.F2"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.21782",
+      "arxiv_id": "2611.21782",
+      "doi": "",
+      "title": "Every Camera Grows Up: Camera-Height Regression in Interactive Video World Models",
+      "abstract": "Interactive video world models serve as simulators for embodied agents: from a starting image and an action trajectory, they generate the views the agent would see. The starting image fixes how high the camera is, for example 0.15 m for a floor robot or 2.2 m for an overhead camera, and a faithful simulator must keep this height as the camera moves. We show that six recent open-weight models fail to do so: as motion replaces the starting view with generated content, they move the camera toward human eye level, a failure we call camera-height regression. Our benchmark, EyeHeight, pairs six rendered elevations (0.15 m to 2.2 m) and four calibrated real-world rig heights with scale-free multi-view height estimation. All six models lose their initial height during a $180^\\circ$ turn-and-walk rollout: initialized at 0.15 m, only 0-20% of clips end within $1.3\\times$ of the starting height as inferred viewpoints converge to human heights of 1.1 m to 1.5 m, whereas ground-truth renders remain within a few percent. In Matrix-Game models, homography-tracked floor motion stays consistent with constant elevation during rotation even as newly outpainted room geometry yields a higher reconstructed viewpoint. Regression grows with rotation angle, begins while the start frame remains in context, and largely reverses in SANA-WM when a $360^\\circ$ turn restores the initial view. We trace this pull to human-centric video priors in which floor-level views are nearly absent: in SANA-WM, textual height cues and dense floor-disparity maps do not prevent it, whereas classifier-free text guidance during the first half of denoising strengthens it. Combining unguided sampling with height-balanced fine-tuning recovers more retention but costs 5 MUSIQ points, a loss fixed during those same early steps. Viewpoint drift alone shifts the paths predicted by visual navigation policies.",
+      "authors": [
+        "Sheng Lu",
+        "Guangpin Tao",
+        "Tong Lu",
+        "Ying Tai"
+      ],
+      "url": "https://arxiv.org/abs/2611.21782",
+      "published": "2026-11-16T19:07:01Z",
+      "topics": [
+        "运动与运动控制",
+        "具身智能",
+        "3D 重建",
+        "相机控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.21782v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 83,
+        "priority_topics": [
+          "相机控制"
+        ],
+        "title_zh": "每台相机都会长高：交互式视频世界模型中的相机高度回归",
+        "abstract_zh": "交互式视频世界模型从起始图像和相机轨迹合成后续视角；起始图像决定相机离地高度，仿真器应在运动中保持该高度。论文发现六种近期开放权重模型都会向人眼高度回归。EyeHeight 基准包含六种渲染高度和四种真实相机高度。180 度转向并行走后，起点为 0.15 米的样例中只有 0—20% 保持在起始高度的 1.3 倍范围内，而真实渲染误差仅数个百分点。作者发现偏差随转角累积；起始画面仍在上下文中也会发生，并追溯到训练视频中的人眼高度先验。仅靠文本高度或稠密几何提示不能消除问题，早期文本引导反而加剧偏差；相机漂移还会改变视觉导航策略预测的轨迹。",
+        "reason": "这项工作不是提出新的运镜生成器，而是证明世界模型的相机高度控制会系统性失真，并量化其对具身导航的影响。",
+        "introduction_zh": "动作条件视频世界模型常被当作具身智能体的视觉仿真器，但生成视角不仅由运动轨迹决定，也由相机起始高度和俯仰角决定。若低位机器人视角在生成中逐渐升至人眼高度，智能体即使执行了正确轨迹也会观察到错误几何。作者构造多高度基准，测量这种视角漂移并测试文本、几何和训练干预。",
+        "method_takeaway": "EyeHeight 用校准多视角几何追踪相机高度，揭示交互式视频世界模型把低位或高位视角拉回人眼高度的系统偏差。",
+        "framework_zh": "作者把相机高度从生成视频的外观细节转成一个可测的仿真状态：如果世界模型真能模拟具身动作，那么起始图像的相机高度应在转向、行走和画面外扩时保持。EyeHeight 为多个渲染高度和真实相机架设生成轨迹，再通过尺度无关的多视角高度估计比较生成视角与真实几何。\n\n随后论文把不同模型放在同类转向与行走任务中，逐渐增加转角，并检查相机起始画面是否仍留在上下文、文字高度提示、地面视差图和分类器自由引导能否防止偏移。结果显示六个模型都趋向 1.1–1.5 米的人眼高度；在 Matrix-Game 中，地面运动看起来仍像恒定高度，但外扩房间几何却重建出更高视角，说明单看局部运动会漏掉世界几何失配。\n\n这不是新的相机控制方法，而是指出相机轨迹条件并不保证视点状态被保留。对使用视频世界模型训练导航策略的人来说，这类偏差会直接改变预测路径。限制是导航影响只做了开环预测分析，且补救实验集中于一个模型；高度估计也依赖可见地面。",
+        "pipeline": "多高度校准起点与相机轨迹 → 生成转向/行走序列 → 多视角重建高度变化 → 分析策略轨迹偏差与缓解办法",
+        "results": "180° 转向行走后，低位起点样本仅 0–20% 落在起始高度 1.3 倍范围内；六种模型均向人眼高度回归。引导和微调改善高度保留但存在质量代价，组合方案带来约 5 MUSIQ 点损失。",
+        "limitations": "主要高度指标需要可见地面；导航策略影响仅开环测量，闭环效果未测试。训练/引导干预集中于 SANA-WM，因果流式模型的补救留待未来工作；质量与高度控制存在权衡。",
+        "evidence": [
+          {
+            "claim": "公共视频的相机高度集中于人眼高度附近，形成训练数据先验。",
+            "section": "S5.SS0.SSS0.Px1"
+          },
+          {
+            "claim": "仅靠上下文保留不能稳定锚定相机高度。",
+            "section": "S5.SS0.SSS0.Px2"
+          },
+          {
+            "claim": "文本与几何高度线索在模型中被弱化。",
+            "section": "S5.SS0.SSS0.Px3"
+          },
+          {
+            "claim": "早期文本引导会强化相机向先验高度漂移。",
+            "section": "S5.SS0.SSS0.Px4"
+          }
+        ],
+        "fulltext_hash": "e9b277e6bec7d096449dc5aeade7c9a7664ad8023da7e00fa766f9590454af76",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 85.5,
+      "evidence": [
+        {
+          "claim": "公共视频的相机高度集中于人眼高度附近，形成训练数据先验。",
+          "section": "S5.SS0.SSS0.Px1",
+          "url": "https://arxiv.org/html/2611.21782v1#S5.SS0.SSS0.Px1"
+        },
+        {
+          "claim": "仅靠上下文保留不能稳定锚定相机高度。",
+          "section": "S5.SS0.SSS0.Px2",
+          "url": "https://arxiv.org/html/2611.21782v1#S5.SS0.SSS0.Px2"
+        },
+        {
+          "claim": "文本与几何高度线索在模型中被弱化。",
+          "section": "S5.SS0.SSS0.Px3",
+          "url": "https://arxiv.org/html/2611.21782v1#S5.SS0.SSS0.Px3"
+        },
+        {
+          "claim": "早期文本引导会强化相机向先验高度漂移。",
+          "section": "S5.SS0.SSS0.Px4",
+          "url": "https://arxiv.org/html/2611.21782v1#S5.SS0.SSS0.Px4"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "key": "arxiv:2611.22464",
+      "arxiv_id": "2611.22464",
+      "doi": "",
+      "title": "MAVE: Reconstructing Editable 3D Blockouts from Film Shots",
+      "abstract": "Animated 3D blockouts support previsualization and provide structural conditions for video generation, but manually reconstructing them from reference videos is costly. This limits both their use by creators and the production of paired training data. We introduce MAVEBench, a benchmark of 50 film shots and 416 keyframes for evaluating camera motion, spatial layout, and character blocking. We propose MAVE, a video-to-blockout framework combining Metric observation, Agentic modeling, and evidence-based VErification. It first recovers cameras, human motion, and geometric evidence in a shared metric coordinate system. An agent then constructs an editable environment under constraints from these observations, while programmatic checks report inconsistencies to guide refinement. The outputs are editable Blender scenes and frame-aligned blockout videos. On MAVEBench, MAVE improves overall scores by 27.5-41.1 points across three agents over their corresponding vanilla baselines. With DeepSeek-1017, it achieves a score of 73.2 at an average API cost of only USD 0.054 per shot, outperforming the strongest vanilla baseline while reducing total reconstruction time by 53%. We also construct MAVEData-3K, a dataset of 3,000 blockout-video pairs for model training, and will release it publicly. Creators can change viewpoints and character paths, then render the edited scenes to condition video generation. Code is available at https://github.com/yfChang-cv/MAVE.",
+      "authors": [
+        "Yifan Chang",
+        "Jian Yang",
+        "Jiangnan Shao",
+        "Xiaofeng Wang",
+        "Zhaoxin Fan",
+        "Renjing Xu",
+        "Ming Lu",
+        "Xingang Wang",
+        "Zheng Zhu"
+      ],
+      "url": "https://arxiv.org/abs/2611.22464",
+      "published": "2026-11-17T09:25:47Z",
+      "topics": [
+        "运动与运动控制",
+        "相机控制",
+        "视频生成",
+        "大模型"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": false,
+      "fulltext_url": "https://arxiv.org/html/2611.22464v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 84,
+        "priority_topics": [],
+        "title_zh": "MAVE：从电影镜头重建可编辑的三维预演场景",
+        "abstract_zh": "动画三维 blockout 可用于预演并为视频生成提供结构条件，但从参考视频手工重建成本很高。作者提出含 50 个电影镜头、416 个关键帧的 MAVEBench，评估相机运动、空间布局和角色调度；并提出 MAVE：先在统一度量坐标系恢复相机、人物运动和几何证据，再由智能体在这些观测约束下构建可编辑环境，程序检查不一致并引导修正。输出是可编辑 Blender 场景和逐帧对齐的 blockout 视频。MAVE 在三个智能体上较对应原始基线提高 27.5—41.1 分；使用 DeepSeek-1017 时得分 73.2，平均每个镜头 API 成本 0.054 美元，重建耗时减少 53%。作者还构建 3000 对 blockout-视频数据。",
+        "reason": "把从视频恢复相机、角色运动和场景几何转成可编辑场景，兼顾三维重建、电影预演和可控视频生成数据构建。",
+        "introduction_zh": "三维 blockout 能以简化几何、替身角色和相机来表示一个镜头，便于导演改布局、运镜和人物调度，也可为视频生成提供结构条件。但人工复原需要三维制作经验，成对训练数据也难以扩展。MAVE 将可测的相机/人体/几何证据先恢复出来，再让智能体在约束和程序校验下搭建场景。",
+        "method_takeaway": "MAVE 先把视频中的相机、人物运动和几何放进统一度量坐标，再用证据约束智能体搭建并程序化校验可编辑三维场景。",
+        "framework_zh": "从一段电影镜头直接让大模型搭 Blender 场景，容易出现相机没跟上原镜头、人物穿进几何或空间布局不合理。MAVE 的关键是先把可验证的观测证据摆在智能体面前：恢复每帧相机与人体运动、对齐度量场景，并从图像中提取几何线索。\n\n之后智能体不是自由发挥，而是在初始化、场景构建和人物/环境对齐过程中依据这些证据编辑场景。系统把重建结果重新渲染，与输入视频逐帧比较，再用视频一致性、证据覆盖、人物环境一致性和完整性等程序检查报告错误，推动智能体闭环修正。最终生成可继续编辑的 Blender blockout 和帧对齐视频。\n\n基准包含 50 个镜头和 416 个关键帧，面向电影镜头的相机运动、布局和角色调度评测。与只凭视频和共享任务描述的 vanilla agent 相比，MAVE在三种大模型智能体上提升 27.5–41.1 分并减少时间。注意这验证的是场景重建与编辑工作流，不等于下游视频模型已经学会完全遵循任意场景控制。",
+        "pipeline": "视频观测 → 度量相机/人体/几何恢复 → 证据约束智能体构建 Blender blockout → 渲染核验与闭环修正",
+        "results": "MAVEBench 上三个智能体较各自 vanilla 设置提高 27.5–41.1 分；DeepSeek-1017 设置得分 73.2，平均 API 成本 $0.054/镜头，总重建时间减少 53%。",
+        "limitations": "基准仅 50 个电影镜头，且 agent 结果受所用大模型及 15 分钟目标/30 分钟上限影响。作者将降低计算成本、训练视频生成模型遵循 blockout 指定的运镜与布局列为后续工作。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "blockout 对预演和结构化视频生成的作用与人工成本"
+          },
+          {
+            "section": "S3.SS1",
+            "claim": "从度量观测恢复相机、人体和几何"
+          },
+          {
+            "section": "S3.SS2.SSS0.Px4",
+            "claim": "场景构建和闭环建模"
+          },
+          {
+            "section": "S3.SS3",
+            "claim": "证据覆盖与视频一致性程序化核验"
+          },
+          {
+            "section": "S4.SS1",
+            "claim": "MAVEBench 对比条件和时间预算"
+          },
+          {
+            "section": "S4.SS2.SSS0.Px2",
+            "claim": "重建效率结果"
+          },
+          {
+            "section": "S7",
+            "claim": "数据集、下游训练和成本方向"
+          }
+        ],
+        "fulltext_hash": "81ae6e49f65e421d3d165604c2b5ecfda92b394f37462c84e287880f8a20d1af",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 0,
+      "ranking_score": 84,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "blockout 对预演和结构化视频生成的作用与人工成本",
+          "url": "https://arxiv.org/html/2611.22464v1#S1"
+        },
+        {
+          "section": "S3.SS1",
+          "claim": "从度量观测恢复相机、人体和几何",
+          "url": "https://arxiv.org/html/2611.22464v1#S3.SS1"
+        },
+        {
+          "section": "S3.SS2.SSS0.Px4",
+          "claim": "场景构建和闭环建模",
+          "url": "https://arxiv.org/html/2611.22464v1#S3.SS2.SSS0.Px4"
+        },
+        {
+          "section": "S3.SS3",
+          "claim": "证据覆盖与视频一致性程序化核验",
+          "url": "https://arxiv.org/html/2611.22464v1#S3.SS3"
+        },
+        {
+          "section": "S4.SS1",
+          "claim": "MAVEBench 对比条件和时间预算",
+          "url": "https://arxiv.org/html/2611.22464v1#S4.SS1"
+        },
+        {
+          "section": "S4.SS2.SSS0.Px2",
+          "claim": "重建效率结果",
+          "url": "https://arxiv.org/html/2611.22464v1#S4.SS2.SSS0.Px2"
+        },
+        {
+          "section": "S7",
+          "claim": "数据集、下游训练和成本方向",
+          "url": "https://arxiv.org/html/2611.22464v1#S7"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S3.F3",
+          "caption": "Figure 3: Overview of MAVE. Metric Observation recovers cameras and human motion in a shared metric coordinate system and extracts geometric evidence. Agentic Modeling constructs an editable environment through iterative queries and scene edits. Evidence-Based Verification checks video consistency, evidence coverage, human–environment consistency, and scene completeness, providing feedback for refinement. The reconstructed scene is rendered into a blockout video aligned with the input.",
+          "url": "https://arxiv.org/html/2611.22464v1/pipeline_final.png",
+          "source_url": "https://arxiv.org/html/2611.22464v1#S3.F3"
+        }
+      ]
+    },
+    {
+      "key": "arxiv:2611.20381",
+      "arxiv_id": "2611.20381",
+      "doi": "10.18653/2026.emnlp-main.362",
+      "title": "Trait Collapse in Text-to-Image Generation: Evaluating and Mitigating Personality Inconsistency in Visual Storytelling",
+      "abstract": "In visual storytelling, a believable character must not only look consistent across scenes but also \\textit{behave} in ways that reflect their personality. Current text-to-image (T2I) models preserve visual appearance effectively, yet consistently fail to maintain personality-relevant behavior---a failure we term \\textit{trait collapse}. We show that conventional metrics (CLIP Score, DINO similarity) are blind to this failure, and that abstract personality descriptors and scene-level emotion labels do not produce consistent improvements over neutral prompts across models. To systematically diagnose trait collapse, we introduce \\textbf{ViStoryBench-Personality}, a story-level benchmark combining an expert-validated Visual Cues Lexicon (Fleiss' $κ= 0.757$) with a six-dimensional metric suite covering personality alignment, cross-scene stability, and behavioral coherence. Evaluating seven T2I systems, we confirm a persistent semantic gap between abstract trait labels and visual evidence, and find that visual identity consistency does not imply personality consistency. To bridge this gap, we propose \\textbf{Trait-Behavior-Visual (TBV)}, a training-free prompting framework that decomposes personality traits into renderable visual constraints. TBV improves Personality Alignment Score by up to $+22.1\\%$, with larger gains in models with stronger language-conditioning capacity.",
+      "authors": [
+        "Yuanbo Tong",
+        "Haoyuan Li",
+        "Jibiao Jiang",
+        "Zirui Wang",
+        "Yuchen Li",
+        "Jiamou Liu"
+      ],
+      "url": "https://arxiv.org/abs/2611.20381",
+      "published": "2026-11-16T01:16:15Z",
+      "topics": [
+        "主体控制"
+      ],
+      "sources": [
+        "arXiv"
+      ],
+      "discovery_dates": [],
+      "from_cache": true,
+      "fulltext_url": "https://arxiv.org/html/2611.20381v1",
+      "fulltext_format": "html",
+      "analysis": {
+        "decision": "include",
+        "score": 78,
+        "priority_topics": [
+          "主体控制"
+        ],
+        "title_zh": "文本到图像生成中的特质坍塌：评测并缓解视觉叙事中的人格不一致",
+        "abstract_zh": "视觉叙事中的角色不仅要外观一致，还应表现出符合人格的行为。作者发现现有 T2I 模型虽能保持外观，却会出现人格相关行为失真，称为 trait collapse；CLIP、DINO 等常用指标无法检测这一问题，抽象人格描述和场景情绪标签也未能在多个模型上稳定改善结果。论文提出 ViStoryBench-Personality，以经专家验证的视觉线索词典和六维指标衡量人格对齐、跨场景稳定性及行为连贯性；并提出无需训练的 TBV 提示框架，把人格特质拆成可渲染视觉约束。七种 T2I 模型实验中，TBV 的人格对齐分最高提升 22.1%，语言条件能力更强的模型收益更大。",
+        "reason": "重点不是角色外观复现，而是跨场景人格行为一致性；适合作为主体一致性评测和可控提示设计的补充阅读。",
+        "introduction_zh": "视觉叙事模型常把角色身份等同于外观相似，但同一人物可能每幅图都长得像，却在行为上不再像同一个性格。传统 CLIP/DINO 相似度难发现这种语义偏差。作者构造人格线索和跨场景行为指标，再把抽象特质转成画面中可见的动作、姿态和环境约束。",
+        "method_takeaway": "TBV 把“谨慎、外向”等人格词拆成可画出来的行为与场景线索，再用这些约束组织逐场景生成提示。",
+        "framework_zh": "论文先指出一个评测盲区：角色外观相似不等于人格行为一致。作者构建 ViStoryBench-Personality，并由专家验证视觉线索词典，再用人格对齐、跨场景稳定、行为连贯等维度测量生成结果；这让“性格变了”不再只靠主观观感。\n\nTBV 提示框架按 Trait、Behavior、Visual 三步工作。先将人格特质固定为明确描述，再推导在当前情境下哪些行为符合该特质，最后把行为转成图像模型能表现的姿势、动作、表情或场景线索。比如“谨慎”不是在每张图重复放入一个抽象词，而是根据场景转成观察环境、保持距离等可见线索。\n\n作者在七种 T2I 系统上比较常规指标与人格指标，发现抽象特质标签未必带来一致收益，TBV 的收益在语言理解能力较强模型上更明显。它讨论的是人格语义跨图一致性，而不是新的视频身份锁定技术；提示质量、人格词典和自动评测模型仍可能带来偏差。",
+        "pipeline": "人格特质 → 情境化行为推导 → 可见视觉线索 → 多场景提示生成与人格一致性评测",
+        "results": "ViStoryBench-Personality 视觉线索词典 Fleiss' κ=0.757；七种 T2I 系统评测中，TBV 的 Personality Alignment Score 最高提升 22.1%，语言条件较强的模型增益更大。",
+        "limitations": "该工作聚焦文本到图像故事场景，不等同于视频中的时序主体控制。人格行为指标依赖视觉线索词典与 VLM 评判；论文也观察到抽象人格词和场景情绪标签并非总能稳定提升结果。",
+        "evidence": [
+          {
+            "section": "S1",
+            "claim": "外观一致与人格行为一致之间的差异"
+          },
+          {
+            "section": "S4.SS2",
+            "claim": "视觉人格线索词典与专家验证"
+          },
+          {
+            "section": "S4.SS4",
+            "claim": "人格、角色和故事一致性指标"
+          },
+          {
+            "section": "S5",
+            "claim": "TBV 的 Trait-Behavior-Visual 提示流程"
+          },
+          {
+            "section": "S6.SS3",
+            "claim": "七种模型上的主要结果"
+          },
+          {
+            "section": "Sx1",
+            "claim": "论文作者列出的限制"
+          }
+        ],
+        "fulltext_hash": "ed7849f8973cd192b92594252f12f500dc10a3d54d22446baf27747402beeba0",
+        "analysed_at": "2026-11-19T03:20:00Z"
+      },
+      "preference_bonus": 2.5,
+      "ranking_score": 80.5,
+      "evidence": [
+        {
+          "section": "S1",
+          "claim": "外观一致与人格行为一致之间的差异",
+          "url": "https://arxiv.org/html/2611.20381v1#S1"
+        },
+        {
+          "section": "S4.SS2",
+          "claim": "视觉人格线索词典与专家验证",
+          "url": "https://arxiv.org/html/2611.20381v1#S4.SS2"
+        },
+        {
+          "section": "S4.SS4",
+          "claim": "人格、角色和故事一致性指标",
+          "url": "https://arxiv.org/html/2611.20381v1#S4.SS4"
+        },
+        {
+          "section": "S5",
+          "claim": "TBV 的 Trait-Behavior-Visual 提示流程",
+          "url": "https://arxiv.org/html/2611.20381v1#S5"
+        },
+        {
+          "section": "S6.SS3",
+          "claim": "七种模型上的主要结果",
+          "url": "https://arxiv.org/html/2611.20381v1#S6.SS3"
+        },
+        {
+          "section": "Sx1",
+          "claim": "论文作者列出的限制",
+          "url": "https://arxiv.org/html/2611.20381v1#Sx1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "S0.F1",
+          "caption": "Figure 1: Trait collapse vs. trait expression. Given the same narrative scene, baseline prompts (C1, left) produce generic or emotionally dominated behavior, while TBV prompts (C4, right) translate the OCEAN profile into concrete visual constraints, maintaining personality-consistent expression. Bottom: the TBV framework decomposes abstract personality traits into behavioral tendencies and then into renderable visual cues via an expert-validated lexicon.",
+          "url": "https://arxiv.org/html/2611.20381v1/figures/teaser.png",
+          "source_url": "https://arxiv.org/html/2611.20381v1#S0.F1"
+        },
+        {
+          "id": "S5.F2",
+          "caption": "Figure 2: Overview of the Trait-Behavior-Visual (TBV) framework. Phase T anchors the character’s OCEAN personality profile; Phase B derives context-sensitive behavioral tendencies via a self-correcting loop; Phase V maps behaviors into concrete visual constraints through the expert-validated Visual Cues Lexicon.",
+          "url": "https://arxiv.org/html/2611.20381v1/figures/tbv.png",
+          "source_url": "https://arxiv.org/html/2611.20381v1#S5.F2"
+        }
+      ]
+    }
+  ],
+  "screening": [
+    {
+      "key": "arxiv:2611.22880",
+      "title": "Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving",
+      "decision": "include",
+      "reason": "用带几何锚定的对象状态替代像素级未来作为驾驶规划中间状态，连接世界模型表示、轨迹规划和动作决策。"
+    },
+    {
+      "key": "arxiv:2611.22584",
+      "title": "InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation",
+      "decision": "include",
+      "reason": "将语言黑箱 VLA 变为可几何引导、可检查和可迭代纠错的动作接口，核心贡献直接作用于机器人动作控制。"
+    },
+    {
+      "key": "arxiv:2611.22464",
+      "title": "MAVE: Reconstructing Editable 3D Blockouts from Film Shots",
+      "decision": "include",
+      "reason": "把从视频恢复相机、角色运动和场景几何转成可编辑场景，兼顾三维重建、电影预演和可控视频生成数据构建。"
+    },
+    {
+      "key": "arxiv:2611.22356",
+      "title": "SR-VLA: Stall-Reduced VLA Execution via Predicted-Input Lookahead and Selective KV Cache Repair",
+      "decision": "exclude",
+      "reason": "全文已读；主题是 VLA 执行延迟和缓存修复，具有工程价值，但相较本期已选的直接控制方法与更明确贡献，推荐优先级不足。"
+    },
+    {
+      "key": "arxiv:2611.21339",
+      "title": "MovieRoll: A Systematic Framework for Rolling Out Long-Form Videos",
+      "decision": "exclude",
+      "reason": "全文抓取未成功，当前只有摘要，按流程不编造章节分析；保留候选，待下一次重试后再判断。"
+    },
+    {
+      "key": "arxiv:2611.23843",
+      "title": "RePlan-VLA: Progress-Aware Replanning for Long-Horizon Vision-Language-Action Models",
+      "decision": "include",
+      "reason": "通过运行时视觉进度监控和失败反馈组织短程 VLA 动作，直接改善长程机器人动作执行与重规划。"
+    },
+    {
+      "key": "arxiv:2611.23499",
+      "title": "BiCAT: Bimanual Coordination Action Tokenization",
+      "decision": "include",
+      "reason": "把双臂协同结构放入动作 tokenization，而不是期待策略从拼接向量自行学到协作，是直接面向运动控制的表示改进。"
+    },
+    {
+      "key": "arxiv:2611.23226",
+      "title": "FastFrames: Video Generation at Interactive Latency",
+      "decision": "include",
+      "reason": "论文直接优化自回归视频生成端到端延迟，并用相机及物理条件交互展示用途；关键判断是解码与缓存并非不可替代的固定成本。"
+    },
+    {
+      "key": "arxiv:2611.23051",
+      "title": "Refin3R: Geometry-Guided Refinement for Feed-Forward 3D Reconstruction",
+      "decision": "exclude",
+      "reason": "全文已读；是前馈式三维重建方法，符合大类但与 MAVE 的视频到可编辑三维场景贡献相比，本期主题相关度和新意较弱。"
+    },
+    {
+      "key": "arxiv:2611.22925",
+      "title": "Code World Model 2.0: Towards Infinite Controllable Video Generation",
+      "decision": "exclude",
+      "reason": "提取到的全文内容标题为 Invoker-Render，与候选记录 Code World Model 2.0 不一致；无法确认论文身份，需重新抓取后再分析。"
+    },
+    {
+      "key": "arxiv:2611.22883",
+      "title": "Fly as Instructed: Refining World-Action Policies for UAV Vision-Language Navigation",
+      "decision": "exclude",
+      "reason": "全文已读；无人机导航和语言指令执行具有现实价值，但与本期已选的通用长时域操控和运动控制工作主题重叠，篇幅有限暂不纳入。"
+    },
+    {
+      "key": "arxiv:2611.22543",
+      "title": "JointGV: Structure-Aware Correction of Visual World Models with Parallel Graph Dynamics for Long-Horizon Modeling",
+      "decision": "exclude",
+      "reason": "全文已读；面向世界模型长时域校正，方向相关但本期与更直接的相机控制、VLA 规划及运动控制工作相比优先级较低。"
+    },
+    {
+      "key": "arxiv:2611.22367",
+      "title": "FailureGen: Scalable Robot Failure Data Generation with World Models",
+      "decision": "exclude",
+      "reason": "全文已读；主要贡献是用世界模型扩增机器人失败数据，适合数据合成方向，但本期优先级留给长视频生成和闭环动作控制。"
+    },
+    {
+      "key": "arxiv:2611.22314",
+      "title": "Inertial Video World Models",
+      "decision": "exclude",
+      "reason": "全文已读，但本期更优先直接的视频生成效率、长视频一致性和明确运动控制论文；该工作偏机器人世界模型的惯性记忆机制，暂不占每日篇幅。"
+    },
+    {
+      "key": "arxiv:2611.21782",
+      "title": "Every Camera Grows Up: Camera-Height Regression in Interactive Video World Models",
+      "decision": "include",
+      "reason": "这项工作不是提出新的运镜生成器，而是证明世界模型的相机高度控制会系统性失真，并量化其对具身导航的影响。"
+    },
+    {
+      "key": "arxiv:2611.21559",
+      "title": "Reference Forcing: Long Video Generation with Region-Guided Drift Correction",
+      "decision": "include",
+      "reason": "围绕长视频主体/背景身份保持提出明确机制，并检验一致性与运动之间的权衡，直接对应主体一致性关注。"
+    },
+    {
+      "key": "arxiv:2611.21038",
+      "title": "ScoutCache: Efficient Few-Step Autoregressive Video Diffusion via Conditional Readout and Selective Caching",
+      "decision": "include",
+      "reason": "针对长视频逐块推理中的三类重复开销联合设计，并跨两个自回归视频骨干验证；适合关注不改主干的流式视频推理加速。"
+    },
+    {
+      "key": "arxiv:2611.20888",
+      "title": "Driving the Style: Velocity-Conditioned Whole-Body Control from Motion Demonstrations",
+      "decision": "include",
+      "reason": "将示范动作保留在训练奖励和特权 critic 中，却从部署 actor 输入中移除未来参考轨迹，直接解决人形风格控制的运行时依赖。"
+    },
+    {
+      "key": "arxiv:2611.20452",
+      "title": "XMimic and XSoma: Learning Humanoid Motion Tracking and Locomotion in Under a Minute",
+      "decision": "include",
+      "reason": "方法贡献聚焦世界模型人形控制训练的计算流水线并行化，给出可复现的训练时长和硬件条件。"
+    },
+    {
+      "key": "arxiv:2611.23804",
+      "title": "TacPilot: Does Touch Need to Be Everywhere?",
+      "decision": "exclude",
+      "reason": "全文已读；触觉残差操控和选择性编码值得关注，但日常推荐篇数有限，本期优先纳入更明确的VLA动作控制、长程规划与人形运动工作。"
+    },
+    {
+      "key": "arxiv:2611.23578",
+      "title": "DOCK: Dual-Stream-Inspired Self-Supervised Object-Centric Representations Grounded in Robot Kinematics",
+      "decision": "exclude",
+      "reason": "全文已读；以运动学监督学习对象中心表示并用于规划，科学问题明确，但本期篇幅优先给直接运动控制和交互式视频生成。"
+    },
+    {
+      "key": "arxiv:2611.20381",
+      "title": "Trait Collapse in Text-to-Image Generation: Evaluating and Mitigating Personality Inconsistency in Visual Storytelling",
+      "decision": "include",
+      "reason": "重点不是角色外观复现，而是跨场景人格行为一致性；适合作为主体一致性评测和可控提示设计的补充阅读。"
+    }
+  ],
+  "digest_id": "20f4f968d7c98c7ed731"
+}
