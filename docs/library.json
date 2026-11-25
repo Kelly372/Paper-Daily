@@ -2,6 +2,1303 @@
   "reports": [
     {
       "schema_version": 1,
+      "report_date": "2026-11-25",
+      "target_date": "2026-11-24",
+      "window": {
+        "from": "2026-11-22",
+        "to": "2026-11-24",
+        "timezone": "Asia/Shanghai"
+      },
+      "generated_at": "2026-11-25T03:52:15.221Z",
+      "retrieved_at": "2026-11-25T03:12:56.336Z",
+      "sources": [
+        {
+          "source": "arXiv",
+          "status": "ok",
+          "count": 1386,
+          "total": 1386,
+          "error": null,
+          "coverage": "2026-11-22 至 2026-11-24（Asia/Shanghai；API UTC 提交时间窗口 202611211600–202611251559；不等同于公告日）"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-24",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-24"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-23",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-23"
+        },
+        {
+          "source": "Hugging Face",
+          "date": "2026-11-22",
+          "status": "failed",
+          "count": 0,
+          "error": "huggingface.co: fetch failed (ECONNRESET)",
+          "url": "https://huggingface.co/api/daily_papers?date=2026-11-22"
+        },
+        {
+          "source": "Hugging Face",
+          "status": "browser_assisted",
+          "count": 2,
+          "url": "https://huggingface.co/papers/date/2026-11-24",
+          "date": "2026-11-24",
+          "retrieved_at": "2026-11-25T03:18:00Z",
+          "coverage": "Nov 24 Daily Papers 网页补录；按 arXiv 原始发布日期筛入 72 小时窗口的 Motion Mamba 2.0 与 3AGameFactory-Motion。HF API 三日请求 ECONNRESET，网页可见条目并非完整覆盖。"
+        }
+      ],
+      "candidates_count": 1386,
+      "analysed_count": 30,
+      "quality_threshold": 70,
+      "papers": [
+        {
+          "key": "arxiv:2611.31892",
+          "arxiv_id": "2611.31892",
+          "doi": "",
+          "title": "Cheap Memory Costs Future Compute: Co-Designing Persistent KV and GPU Execution for Efficient Streaming Video Diffusion",
+          "abstract": "Block-causal video diffusion generates long videos block by block, conditioned on a persistent key-value (KV) cache. After each block is denoised, an extra noise-free ($t=0$) forward pass writes its clean KV into the cache; once distillation and speculative early exit make denoising cheap, this clean KV update dominates the runtime. Reusing stale KV shortens the update, but stale memory corrupts the conditioning of later blocks and inflates their denoising steps, so the saved compute reappears downstream. We present SAMR (Step-Aware Memory Reconstruction), a training-free method for frozen causal video DiTs that refreshes only part of the cache and reconstructs the rest without DiT forwards. Our key observation is that, once rotary position phases are removed, motion-aligned historical KV and the in-flight KV a token holds at its exit step are complementary estimates of its clean KV. SAMR debiases in-flight KV with offline-calibrated per-head affine maps in Pre-RoPE space, fuses the two estimates, and reserves true $t=0$ refreshes for tokens flagged by an attention-readout error proxy, all executed by tile-aligned, synchronization-free Triton kernels. On 48-second LongLive-1.3B videos, SAMR reduces DiT latency by 20.9% and principal FLOPs by 30.7% relative to dense KV updates, lowers downstream denoising steps, and improves final-quarter PSNR over token reuse by 1.61 dB (1.14 dB on held-out VidProM-16). The reconstruction also transfers to frozen Self-Forcing-DMD-1.3B: zero-shot, it reduces reuse-induced step inflation ($2.47 \\to 2.30$ steps/token) and improves late PSNR by $+0.33$ dB, and a one-time training-free calibration recovers the diagnostic score that zero-shot transfer lowers ($89.62 \\to 91.10$).",
+          "authors": [
+            "Jian Yang",
+            "Zhizhuo Kou",
+            "Qiyuan Zhu",
+            "Han Chen",
+            "Sirui Han",
+            "Yike Guo"
+          ],
+          "url": "https://arxiv.org/abs/2611.31892",
+          "published": "2026-11-24T03:49:36Z",
+          "topics": [
+            "流式生成",
+            "运动与运动控制",
+            "视频生成",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.31892v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 90,
+            "priority_topics": [
+              "流式生成"
+            ],
+            "title_zh": "便宜的记忆会转移未来算力：面向高效流式视频扩散的持久 KV 与 GPU 执行协同设计",
+            "abstract_zh": "块因果视频扩散逐块生成长视频，每块去噪后还需额外进行无噪声前向传播，把干净的键值（KV）写入持久缓存；当蒸馏与提前退出已降低去噪成本时，这一步反而成为瓶颈。复用旧 KV 可以缩短更新，却会污染后续块的条件信息，使省下的计算在后续去噪中重新付出。作者提出免训练的 SAMR，用部分真实刷新和对其余缓存的重建，服务于冻结的因果视频 DiT。核心观察是：去掉旋转位置编码后，运动对齐的历史 KV 与当前生成 token 在退出步的 KV 可互为补充估计。SAMR 用离线逐头仿射映射校正后融合两者，再依据注意力读出误差代理，只对高风险 token 做真实刷新，并用对齐 GPU tile 的 Triton 内核执行。在 48 秒 LongLive-1.3B 视频上，相对密集 KV 更新，DiT 延迟降低 20.9%、主要 FLOPs 降低 30.7%；相对 token 复用，末段 PSNR 提升 1.61 dB。在冻结的 Self-Forcing-DMD-1.3B 上也观察到迁移收益，但校准后诊断分数才恢复。",
+            "reason": "直接处理流式视频模型的缓存更新闭环；方法不改模型权重，全文给出重建、读出风险、执行融合和长视频验证，且性能收益与画质、后续去噪步数同时报告。",
+            "introduction_zh": "自回归视频扩散把长片段分块生成，生成历史又作为后续块的持久条件。蒸馏和提前退出降低每块去噪成本后，完整刷新干净 KV 的额外前向传播开始占据主要耗时。简单复制旧缓存会把误差留给未来块，令后续去噪反而更贵。作者将问题定位为“缓存写入—后续读取”的闭环成本，尝试在冻结模型上重建大部分 KV，仅刷新对后续注意力真正关键的 token。",
+            "method_takeaway": "SAMR 把历史运动对齐 KV 与当前块中间步 KV 当作两份互补的干净记忆估计，校正融合后只为注意力高风险 token 花费真实刷新计算。",
+            "framework_zh": "块状视频生成器完成当前块时，GPU 已经留下两种近乎免费的线索：上一块中相似位置 patch 的 KV，和当前 token 在提前退出时留下的中间步 KV。前者不带当前扩散噪声偏差，却可能随历史变化而过时；后者更新鲜，却仍含退出步相关偏差。SAMR 先把键从 RoPE 旋转坐标还原到 Pre-RoPE 空间，避免把位置相位差误当内容差异，再用离线按层、步数和注意力头拟合的仿射变换校正当前估计。它根据离线误差统计计算融合权重，并以注意力读出变化估计缓存误差会不会影响未来查询；收益最大的 token 才执行昂贵的 t=0 刷新，其余用融合估计写回。最后，tile 对齐的计划选择和融合 Triton 内核减少路由同步，并让刷新行与下一块首步去噪共享 GPU 矩阵计算。可以把它理解成：先用两份不完美的旧账与新账估算真实状态，再把贵重的人工复核留给最可能改变后续结论的条目。模型权重保持冻结，离线表可复用；但风险代理只是近似，不是误差保证。",
+            "pipeline": "当前块去噪并留下历史/中间 KV → 还原位置相位并校正当前估计 → 依据估计误差与注意力读出风险融合、选择刷新 token → tile 对齐 Triton 更新缓存并启动下一块",
+            "results": "LongLive-1.3B、48 秒视频主实验中，SAMR 相对密集 KV 更新把 DiT 延迟从 34.71 s 降至 27.47 s（20.9%），主要 FLOPs 降低 30.7%；相对同刷新预算的 Eventful 复用，末 12 秒 Q4 PSNR 提升，VidProM-16 留出集末段 PSNR 高 1.14 dB，15/16 提示词胜出。Self-Forcing-DMD-1.3B 零样本迁移减少每 token 去噪步数 2.47→2.30、末段 PSNR 增加 0.33 dB；一次免训练校准后诊断分数由 89.62 回升至 91.10。",
+            "limitations": "作者说明读出风险是离线一阶近似而非误差上界；迁移到不同骨干时，一次校准可恢复诊断量。主实验只覆盖 1.3B DiT 与 AMD GPU，且未报告标准 LPIPS、FVD、VBench-Long 或用户研究。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "蒸馏与提前退出把完整干净 KV 更新变成运行瓶颈；复用旧 KV 将成本转移为后续去噪步数和质量损失。"
+              },
+              {
+                "section": "S3.SS1.SSS0.Px1",
+                "claim": "总览图和流式循环说明当前块写入的缓存直接成为下一块条件，SAMR 的校准、融合和风险刷新构成同一闭环。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px1",
+                "claim": "历史运动对齐 KV 与当前退出步 KV 是互补估计，方法先在 Pre-RoPE 空间处理位置相位。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px3",
+                "claim": "对当前中间步估计使用按层、退出步和注意力头离线拟合的仿射去偏。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px1",
+                "claim": "误差代理评估 KV 对未来注意力读出的影响，而不只比较缓存张量误差。"
+              },
+              {
+                "section": "S5.SS2.SSS0.Px3",
+                "claim": "读出风险计划与 Triton 执行减少路由时间；SAMR 取得更低去噪步数、延迟和更高末段画质。"
+              },
+              {
+                "section": "S6.SS0.SSS0.Px1",
+                "claim": "作者列明风险代理非误差界、跨骨干校准要求及评测规模边界。"
+              }
+            ],
+            "fulltext_hash": "7c8fc77799508de0c8b32b7df75b52303375a925106026406047f7aeee1e432f",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 100,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "蒸馏与提前退出把完整干净 KV 更新变成运行瓶颈；复用旧 KV 将成本转移为后续去噪步数和质量损失。",
+              "url": "https://arxiv.org/html/2611.31892v1#S1"
+            },
+            {
+              "section": "S3.SS1.SSS0.Px1",
+              "claim": "总览图和流式循环说明当前块写入的缓存直接成为下一块条件，SAMR 的校准、融合和风险刷新构成同一闭环。",
+              "url": "https://arxiv.org/html/2611.31892v1#S3.SS1.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px1",
+              "claim": "历史运动对齐 KV 与当前退出步 KV 是互补估计，方法先在 Pre-RoPE 空间处理位置相位。",
+              "url": "https://arxiv.org/html/2611.31892v1#S3.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px3",
+              "claim": "对当前中间步估计使用按层、退出步和注意力头离线拟合的仿射去偏。",
+              "url": "https://arxiv.org/html/2611.31892v1#S3.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px1",
+              "claim": "误差代理评估 KV 对未来注意力读出的影响，而不只比较缓存张量误差。",
+              "url": "https://arxiv.org/html/2611.31892v1#S3.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S5.SS2.SSS0.Px3",
+              "claim": "读出风险计划与 Triton 执行减少路由时间；SAMR 取得更低去噪步数、延迟和更高末段画质。",
+              "url": "https://arxiv.org/html/2611.31892v1#S5.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S6.SS0.SSS0.Px1",
+              "claim": "作者列明风险代理非误差界、跨骨干校准要求及评测规模边界。",
+              "url": "https://arxiv.org/html/2611.31892v1#S6.SS0.SSS0.Px1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S2.F3",
+              "caption": "Figure 3: Overview of SAMR. (a) Streaming loop: denoising block bb yields latents, in-flight KV, and exit steps ss; SAMR then writes the cache MbM_{b} read by block b+1b{+}1, so memory fidelity sets future early exits and closes the loop of Eq. (1). (b) One-time offline calibration fits the exit-step-conditioned Pre-RoPE affine maps (Wℓ​s​h,bℓ​s​h)(W_{\\ell sh},b_{\\ell sh}), the readout-risk table ρ\\rho, and the KV-update + Step-1 latency model T^\\widehat{T}; nothing is fitted at test time. Per block, online control runs register-resident local patch matching (π⁡(i)\\pi(i), did_{i}), a readout-risk lookup by exit step, distance, and action aa with staleness, and single-wave scoring of the 21 tile-aligned plans 𝒫b\\mathcal{P}_{b} (kernels 27.6×\\times and 11.7×\\times faster than PyTorch). The KV update applies phase-aligned reuse on 𝒰b\\mathcal{U}_{b}, t=0t=0 refresh on ℛb\\mathcal{R}_{b}, and Pre-RoPE reconstruction on 𝒢b\\mathcal{G}_{b}; refresh rows share one tile-aligned pass with Step 1 of block b+1b{+}1. Token colors are schematic; thumbnails are SAMR frames (LongLive).",
+              "url": "https://arxiv.org/html/2611.31892v1/fig2_overview.png",
+              "source_url": "https://arxiv.org/html/2611.31892v1#S2.F3"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.29897",
+          "arxiv_id": "2611.29897",
+          "doi": "",
+          "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+          "abstract": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138$\\times$ while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+          "authors": [
+            "Yue Huang",
+            "Tianshan Zhang",
+            "Zeyu Zhang",
+            "Jayeon Kang",
+            "Akide Liu",
+            "Sungjoon Choi",
+            "Dacheng Tao",
+            "Hao Tang"
+          ],
+          "url": "https://arxiv.org/abs/2611.29897",
+          "published": "2026-11-23T01:51:57Z",
+          "topics": [
+            "运动与运动控制"
+          ],
+          "sources": [
+            "arXiv",
+            "Hugging Face"
+          ],
+          "discovery_dates": [
+            "2026-11-24"
+          ],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.29897v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 89,
+            "priority_topics": [
+              "运动与运动控制"
+            ],
+            "title_zh": "Motion Mamba 2.0：面向长时程人形机器人控制的自回归扩散 Mamba",
+            "abstract_zh": "交互动画和人形机器人需要在运动过程中响应变化的指令与空间目标。已有自回归扩散能逐段生成动作，但有限注意力缓存难访问远期历史，重复去噪也增加推理开销。Motion Mamba 2.0 将局部注意力、可续接的 Mamba 循环状态和持久内容记忆（PCM）结合到根部—身体扩散架构中。PCM 把压缩动作历史、Mamba 状态变化和文本条件转成动态内容槽，供局部注意力读取。作者还针对该架构优化执行，包括 CUDA Graph 重放、融合内核及执行流程简化，同时保留规范的历史状态更新。在 HiPHI 重定向数据上，模型支持最长 39.52 秒 rollout 并实现末端控制；在 BONES Seed 与 HumanML3D 上评测短时空间控制和文本动作匹配。RTX 4090 上，优化将完整窗口中位延迟从 1685.35 ms 降至 276.14 ms，配对加速 6.138 倍且测试 rollout 输出与状态一致；另在 Unitree G1 上展示连续文本指令组合和交互运动。",
+            "reason": "全文核心确为长时程、实时、可指令控制的人形动作生成；长时程精度、架构消融和真机 G1 展示使其契合运动控制重点。",
+            "introduction_zh": "交互式人形动作不能只生成一段自然的短视频式动作，还要在长时间运动中接收新指令、满足空间约束并记住已生成历史。有限注意力缓存截断远期信息，而逐步扩散推理又拖慢交互。作者以根部—身体动作表征为基础，尝试把可压缩的循环记忆与可精确检索的局部注意力结合，让长期状态持续存在，同时把动作生成做成可继续运行的流。",
+            "method_takeaway": "Mamba 状态负责压缩保留久远动作，PCM 把这些状态和文本/状态变化整理成局部注意力可读取的记忆槽，从而在有限局部窗口中仍能响应长历史。",
+            "framework_zh": "输入是文本指令、空间控制量和已接受的动作历史，系统逐窗口生成后续根部与身体运动。局部注意力处理最近动作细节；Mamba-3 的循环状态则以固定状态递推远期历史，不必把所有旧帧塞进不断变长的注意力上下文。作者进一步指出，单有压缩状态不容易被局部注意力直接利用，因此 PCM 将 Mamba 状态、状态差分和文本特征写成动态内容槽；局部注意力在需要时读这些槽，弥补近邻窗口看不到远程事件的缺口。动作生成保持自回归状态更新，避免优化推理路径改变模型“记住了什么”。工程上，CUDA Graph 重放和融合内核把多次小操作合并，执行流也减少 Python 调度。由此，长时程能力来自“递归压缩 + 可寻址记忆”，速度来自与其严格对齐的推理执行优化，而非牺牲历史更新。论文主要验证人形动作，不处理物体操作；这个边界很重要，不能把其表述成通用机器人操控。",
+            "pipeline": "指令/空间约束与已生成动作 → Mamba 递推长期状态、局部注意力读取近期动作 → PCM 汇总状态变化为可寻址内容槽并生成下一动作窗口 → 保持状态提交的 CUDA Graph/融合执行",
+            "results": "在 HiPHI 2.08–39.52 秒评测中，39.52 秒 Root/End CE 为 7.55/13.64 cm，Root CE 比 MotionStreamer 的 7.78 cm 低 3.0%；18.72 秒为 2.87/8.45 cm。RTX 4090 执行优化把窗口中位延迟由 1685.35 降至 276.14 ms，约 6.138× 配对加速，并在所测 rollout 保持相同输出和状态。论文报告了 Unitree G1 真机连续文本指令与键鼠交互展示。",
+            "limitations": "作者明确当前聚焦可控人形运动生成，尚不支持物体操作或完整的全身移动操作；长时程数值来自重定向 HiPHI，真机证据主要为有限场景演示。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "长时程指令变化、空间目标与历史保持共同构成任务需求，既有缓存和重复去噪分别限制上下文和交互速度。"
+              },
+              {
+                "section": "S4",
+                "claim": "方法将根部—身体自回归扩散、局部注意力、可续接 Mamba 状态和 PCM 组合。"
+              },
+              {
+                "section": "S5.SS2",
+                "claim": "HiPHI 长时程终端控制精度在多个预测时长上与方法比较，报告 39.52 秒指标。"
+              },
+              {
+                "section": "S5.SS3",
+                "claim": "架构消融分别移除 Mamba 分支、PCM、文本条件和状态差分，检验长期记忆设计。"
+              },
+              {
+                "section": "S7",
+                "claim": "论文自述对象操控尚未覆盖，并将移动操作作为未来方向。"
+              }
+            ],
+            "fulltext_hash": "98105d47f3af889f09d920440296c8d33336349a1590b21ea4793727a293389c",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 99,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "长时程指令变化、空间目标与历史保持共同构成任务需求，既有缓存和重复去噪分别限制上下文和交互速度。",
+              "url": "https://arxiv.org/html/2611.29897v1#S1"
+            },
+            {
+              "section": "S4",
+              "claim": "方法将根部—身体自回归扩散、局部注意力、可续接 Mamba 状态和 PCM 组合。",
+              "url": "https://arxiv.org/html/2611.29897v1#S4"
+            },
+            {
+              "section": "S5.SS2",
+              "claim": "HiPHI 长时程终端控制精度在多个预测时长上与方法比较，报告 39.52 秒指标。",
+              "url": "https://arxiv.org/html/2611.29897v1#S5.SS2"
+            },
+            {
+              "section": "S5.SS3",
+              "claim": "架构消融分别移除 Mamba 分支、PCM、文本条件和状态差分，检验长期记忆设计。",
+              "url": "https://arxiv.org/html/2611.29897v1#S5.SS3"
+            },
+            {
+              "section": "S7",
+              "claim": "论文自述对象操控尚未覆盖，并将移动操作作为未来方向。",
+              "url": "https://arxiv.org/html/2611.29897v1#S7"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S4.F4",
+              "caption": "Fig. 4: Overview of Motion Mamba 2.0. Conditioned on text, spatial controls, and accepted motion history, the framework generates motion autoregressively through a two-stage diffusion denoiser. At each denoising step, the root network predicts the global trajectory, whose local features condition body prediction. Both networks combine attention and Mamba-3 through a hybrid sequence mixer. After each clean motion window is accepted, the history states are updated for subsequent generation.",
+              "url": "https://arxiv.org/html/2611.29897v1/overview.png",
+              "source_url": "https://arxiv.org/html/2611.29897v1#S4.F4"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.31164",
+          "arxiv_id": "2611.31164",
+          "doi": "",
+          "title": "Analyzing and Improving FlowMap Distillation of Autoregressive Video Models",
+          "abstract": "FlowMap distillation offers a natural route to few-step generative modeling by directly learning a teacher's denoising trajectories. Yet for autoregressive (AR) video generation, existing few-step models still rely on distribution matching distillation (DMD) to remain competitive, sacrificing sample diversity and requiring a large bidirectional teacher. In this work, we analyze what limits standalone AR FlowMap distillation and introduce two complementary guidance mechanisms to close this gap: (1) anti-drifting guidance, which helps the AR teacher correct drifted student rollouts by training an auxiliary model to mimic student drift and using it as a negative guidance branch; and (2) motion-aware guidance, which makes motion easier for a FlowMap student to learn by locating motion patches and selectively applying skip-layer guidance. Empirically, our approach applies to $π$-Flow, MeanFlow, and consistency distillation with 1.3B AR teachers, improving generation quality and reducing drift over 30 s rollouts. Notably, our 4-step $π$-Flow students match DMD students distilled from 14B teachers on VBench while preserving the sample diversity of their AR teachers, demonstrating that pure FlowMap distillation is effective for few-step autoregressive video generation.",
+          "authors": [
+            "Yong-Hyun Park",
+            "Guande He",
+            "Joon Hyeok Kim",
+            "Hansheng Chen",
+            "Kaifan Yu",
+            "Chaoqi Luo",
+            "Xun Huang",
+            "Jiatao Gu"
+          ],
+          "url": "https://arxiv.org/abs/2611.31164",
+          "published": "2026-11-23T18:24:33Z",
+          "topics": [
+            "流式生成",
+            "运动与运动控制",
+            "视频生成",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.31164v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 87,
+            "priority_topics": [
+              "流式生成"
+            ],
+            "title_zh": "自回归视频模型 FlowMap 蒸馏的分析与改进",
+            "abstract_zh": "FlowMap 蒸馏通过学习教师去噪轨迹，为少步生成提供直接路径，但自回归（AR）视频的独立 FlowMap 蒸馏仍依赖分布匹配蒸馏（DMD）才能保持竞争力，可能损失多样性且需大型双向教师。作者分析其局限后提出两种互补引导：反漂移引导训练辅助漂移模型模拟学生 rollout 偏差，再将其作为负向引导分支，帮助 AR 教师纠正学生轨迹；运动感知引导定位运动 patch，并选择性使用跳层引导，使教师速度场更平滑、少步学生更易学习。方法可用于 π-Flow、MeanFlow 和一致性蒸馏，使用 1.3B 自回归教师。作者报告 4 步 π-Flow 学生在 VBench 上匹配由 14B 教师蒸馏的 DMD 学生，同时保留自回归教师的样本多样性，并改善 30 秒 rollout 漂移。",
+            "reason": "论文贡献聚焦自回归视频的少步流式蒸馏：分别解决闭环漂移与运动难学，给出跨蒸馏目标和 30 秒评测。",
+            "introduction_zh": "双向视频扩散一次生成整段视频，难以实时交互；自回归模型按片段续写，适合流式生成，却会把自身输出不断写回历史，误差逐步累积。FlowMap 可以直接蒸馏教师轨迹，但单独用于 AR 视频时质量不够，常需 DMD 补救并牺牲多样性。作者将问题拆成两件事：教师要能纠正学生已漂移的历史，学生也要学得会教师的运动速度场。",
+            "method_takeaway": "一条引导专门教教师识别并反向修正学生 rollout 的漂移，另一条只在运动区域平滑教师速度场，让少步学生更容易学会动态变化。",
+            "framework_zh": "训练从自回归教师和学生的闭环 rollout 出发，而不是只比较干净视频上的离线分布。反漂移引导先用教师初始化辅助漂移模型，让它在线拟合学生自己产生的偏移；当教师预测时，将“学生会往哪里偏”的方向作为负分支，提醒教师把目标速度推回合理轨迹。它无需 DMD 对学生输出做反向 KL 优化，因此作者观察到多样性没有像 DMD 那样收缩。第二条引导针对运动区域：利用教师预测的不确定度定位当前片段中真正变化的 patch，对这些位置使用跳层引导、静态背景则减少额外指导，降低学生拟合复杂运动的难度。两种引导合成两阶段蒸馏，仍沿教师轨迹训练。直观地说，前者纠正“越写越偏”，后者简化“运动如何学”；二者分工不同，也可单独做消融。它并未消除教师长期 rollout 的固有漂移，且在线漂移模型需要额外更新。",
+            "pipeline": "自回归教师/学生闭环生成 → 漂移模型拟合学生偏移并作反向引导 → 不确定度定位运动 patch、选择性平滑速度场 → 两阶段 FlowMap 蒸馏少步学生",
+            "results": "作者报告 4 步 π-Flow 学生在 VBench 达到与 14B 教师 DMD 学生相当的总体表现，同时保留自回归教师多样性；对 1.3B AR 教师、π-Flow、MeanFlow 与一致性蒸馏均作验证。30 秒视频比较显示长时程质量和漂移有所改善。",
+            "limitations": "作者指出学生仍继承 AR 教师的长 rollout 漂移，反漂移只能缓解；学生还继承 1.3B 教师的语义短板与较低动态幅度。在线 drift model 需要额外更新，尚待更强教师或更长时域监督。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "双向扩散无法流式交互，AR 视频逐块生成但历史误差会随 rollout 累积。"
+              },
+              {
+                "section": "S4.SS2",
+                "claim": "漂移辅助模型拟合学生偏离，并作为负向分支推动教师修正闭环轨迹。"
+              },
+              {
+                "section": "S4.SS3",
+                "claim": "不确定度定位运动 patch，跳层引导针对动态区域而减少静态区域冗余引导。"
+              },
+              {
+                "section": "S5.SS2.SSS0.Px1",
+                "claim": "短视频少步生成质量比较，验证纯 FlowMap 学生的质量收益。"
+              },
+              {
+                "section": "S5.SS2.SSS0.Px3",
+                "claim": "30 秒生成评测检验长时程漂移和生成质量。"
+              },
+              {
+                "section": "S6.SS0.SSS0.Px1",
+                "claim": "作者明确残余漂移与语义/动态度继承的局限。"
+              }
+            ],
+            "fulltext_hash": "32cf5c6e695f73e1c1b00ad3c1aeaea2e1a821df3a3d73e5971ee58bd4eb0893",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 97,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "双向扩散无法流式交互，AR 视频逐块生成但历史误差会随 rollout 累积。",
+              "url": "https://arxiv.org/html/2611.31164v1#S1"
+            },
+            {
+              "section": "S4.SS2",
+              "claim": "漂移辅助模型拟合学生偏离，并作为负向分支推动教师修正闭环轨迹。",
+              "url": "https://arxiv.org/html/2611.31164v1#S4.SS2"
+            },
+            {
+              "section": "S4.SS3",
+              "claim": "不确定度定位运动 patch，跳层引导针对动态区域而减少静态区域冗余引导。",
+              "url": "https://arxiv.org/html/2611.31164v1#S4.SS3"
+            },
+            {
+              "section": "S5.SS2.SSS0.Px1",
+              "claim": "短视频少步生成质量比较，验证纯 FlowMap 学生的质量收益。",
+              "url": "https://arxiv.org/html/2611.31164v1#S5.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S5.SS2.SSS0.Px3",
+              "claim": "30 秒生成评测检验长时程漂移和生成质量。",
+              "url": "https://arxiv.org/html/2611.31164v1#S5.SS2.SSS0.Px3"
+            },
+            {
+              "section": "S6.SS0.SSS0.Px1",
+              "claim": "作者明确残余漂移与语义/动态度继承的局限。",
+              "url": "https://arxiv.org/html/2611.31164v1#S6.SS0.SSS0.Px1"
+            }
+          ],
+          "figures": []
+        },
+        {
+          "key": "arxiv:2611.29839",
+          "arxiv_id": "2611.29839",
+          "doi": "",
+          "title": "Dynamics Forcing: Mitigating Error Accumulation in Causal Video World Models",
+          "abstract": "Causal video world models generate block by block from their own previous outputs. Small errors in early blocks are fed back as history and grow until the scene and the robot fall apart. Teacher forcing trains on clean ground-truth history, so the model never sees the history it will actually condition on, and it also finds a shortcut: copying the previous frame instead of predicting how the scene changes. We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented. History is perturbed in three ways: random noising, self-resampling by the model itself, and joint denoising, in which the most recent blocks are still partly noisy when the next block is predicted. On top of this we move history guidance and first-frame anchor guidance from inference into training, so that the model is pushed to use its history and its reference frame rather than ignore them. Dynamics Forcing needs no teacher model, no distillation, and no additional model at inference. Applied to a 5B video model with LoRA on 77 hours of manipulation video on a single GPU, it better matches unseen real continuations and reduces error accumulation.",
+          "authors": [
+            "Xin Zhou",
+            "Cong Miao"
+          ],
+          "url": "https://arxiv.org/abs/2611.29839",
+          "published": "2026-11-22T23:43:56Z",
+          "topics": [
+            "流式生成",
+            "视频生成",
+            "大模型",
+            "具身智能"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.29839v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 85,
+            "priority_topics": [
+              "流式生成"
+            ],
+            "title_zh": "Dynamics Forcing：缓解因果视频世界模型中的误差累积",
+            "abstract_zh": "机器人因果世界模型需要把自身生成的视频继续作为历史滚动预测，早期小误差会不断反馈并扩大。教师强制只用干净真实历史训练，模型因此没见过推理时自己的误差，还可能走捷径复制上一帧。Dynamics Forcing 只用真实视频监督，通过三种方式扰动历史块：随机加噪、用模型自采样历史替换、以及让最近块仍处于联合去噪状态；目标块保持真实。此外，它把历史引导与首帧锚定引导从推理迁移到训练，鼓励模型使用历史和参考帧。该方法无需教师模型、蒸馏或推理期新增模型。作者在单 GPU 上以 77 小时操作视频对 5B 模型做 LoRA，报告与未见真实延续更一致并降低误差累积。",
+            "reason": "直接针对因果视频世界模型逐块自回归的闭环退化设计训练法，且在真实机器人操作视频上对长时 rollout 及动作结果作验证。",
+            "introduction_zh": "因果视频世界模型逐块生成，后续块只能依赖已经生成的历史；前面的一点偏差会进入条件并越滚越大。教师强制在训练时始终喂干净真实历史，造成训练—推理差异，同时允许模型通过复制最近帧来降低损失，忽略真实状态变化。作者将解决重点放在训练时如何呈现历史、迫使模型使用历史和首帧锚点，而不是依赖推理时额外校正。",
+            "method_takeaway": "训练时把真实历史改造成模型真正会遇到的噪声与自生成历史，并通过弱化历史/首帧的对照引导，让模型既不能照抄干净历史，也不能忽视状态锚点。",
+            "framework_zh": "模型仍以块因果方式逐块去噪，但训练样本不再只提供完全干净的过去。第一种扰动随机给历史加噪，使上一帧无法作为可直接复制的答案；第二种从模型自己的生成轨迹采样历史，让训练出现推理期反馈误差；第三种让最近历史块与当前目标一起去噪，匹配实际多步生成中尚未完全干净的上下文。目标块仍以真实视频监督，因而没有合成标签。随后，历史引导比较完整历史预测和被统一重新加噪的弱历史预测，训练方向鼓励模型保留有用历史差异；首帧锚定引导也在训练时强化参考帧约束。不同扰动针对复制捷径、自反馈偏移与当前块去噪状态不匹配，组合起来替代推理端额外模型。其代价是训练构造更复杂，且测试发现语义相似度仍会随 12 秒 rollout 下降。",
+            "pipeline": "因果块预测 → 用随机噪声/模型自采样/联合去噪构造非理想历史 → 历史与首帧对照引导进行训练 → 标准自回归 KV 缓存推理",
+            "results": "作者在 5B WAN2.2 模型上使用 77 小时手术视频 LoRA 训练。摘要报告未见真实延续的拟合改善；正文还在 VBench-I2V、长时程操作视频和质量/轨迹任务上比较。方法不增加推理期模型，也不需要教师蒸馏。",
+            "limitations": "训练视频总量为 77 小时，作者认为不足以覆盖长时程操控的多样性与精确度；12 秒 rollout 的语义相似度仍下降。模型能力也受基础模型和有限操作场景限制。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "自回归世界模型必须将自身预测反馈为历史，干净历史训练造成暴露偏差与复制捷径。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "方法图展示因果注意力、三种历史扰动和训练期引导路径。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "弱历史预测构造训练期 history guidance，鼓励利用完整历史。"
+              },
+              {
+                "section": "S3.SS6",
+                "claim": "三类历史扰动互补，各自针对不同 teacher-forcing 失败模式。"
+              },
+              {
+                "section": "S4.SS5",
+                "claim": "定性 rollout 检查场景身份、布料操作和长期状态是否持续。"
+              },
+              {
+                "section": "S4.SS6",
+                "claim": "有限训练数据与残余 12 秒退化是作者列明的边界。"
+              }
+            ],
+            "fulltext_hash": "4510b855e1e0eed22406464dccb8baca6a486aa38aac6d803f27c57435ae0b39",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 10,
+          "ranking_score": 95,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "自回归世界模型必须将自身预测反馈为历史，干净历史训练造成暴露偏差与复制捷径。",
+              "url": "https://arxiv.org/html/2611.29839v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "方法图展示因果注意力、三种历史扰动和训练期引导路径。",
+              "url": "https://arxiv.org/html/2611.29839v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "弱历史预测构造训练期 history guidance，鼓励利用完整历史。",
+              "url": "https://arxiv.org/html/2611.29839v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS6",
+              "claim": "三类历史扰动互补，各自针对不同 teacher-forcing 失败模式。",
+              "url": "https://arxiv.org/html/2611.29839v1#S3.SS6"
+            },
+            {
+              "section": "S4.SS5",
+              "claim": "定性 rollout 检查场景身份、布料操作和长期状态是否持续。",
+              "url": "https://arxiv.org/html/2611.29839v1#S4.SS5"
+            },
+            {
+              "section": "S4.SS6",
+              "claim": "有限训练数据与残余 12 秒退化是作者列明的边界。",
+              "url": "https://arxiv.org/html/2611.29839v1#S4.SS6"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F1",
+              "caption": "Figure 1: Overview of Dynamics Forcing. Top: the block-causal attention pattern over latent blocks, where each block attends to the reference frame, all earlier blocks and itself, and future blocks are masked. Middle: the three history perturbations (random noising, self-resampling, joint denoising) applied to the history blocks while the target block stays real. Bottom: the training-time history guidance (σh=0.5\\sigma_{h}{=}0.5) and first-frame anchor guidance (σa=0.8\\sigma_{a}{=}0.8), which add no forward pass beyond the model’s standard classifier-free-guidance inference.",
+              "url": "https://arxiv.org/html/2611.29839v1/fig_pipeline.png",
+              "source_url": "https://arxiv.org/html/2611.29839v1#S3.F1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.30372",
+          "arxiv_id": "2611.30372",
+          "doi": "",
+          "title": "ColonoWorld: Camera-Controlled Full-Procedure Colonoscopy Video Generation",
+          "abstract": "Navigation systems in colonoscopy are advancing from guiding the endoscopist to steering the scope autonomously. Since an incorrect motion can injure the patient, developing and evaluating these systems calls for a world model of colonoscopy. Such a model must follow a commanded scope motion, keep the colon anatomy consistent, and show lesions and procedural events. Yet camera-controlled generators trained on general scenes lose the colon's structure under motion, and endoscopic generators offer no camera control. We present ColonoWorld, a colonoscopy world model conditioned on a camera trajectory and a coarse 3D tube of the colon, trained on in vivo videos. From a whole-colon tube, it generates a full cecum-to-rectum procedure, even for unseen colon shapes. It also places polyps, instruments, and irrigation at specified locations and times. ColonoWorld outperforms state-of-the-art video generators, reducing camera trajectory error by 32% and FVD by 29%. Our code and annotations will be released at https://aidaslab.github.io/ColonoWorld.",
+          "authors": [
+            "Jihwan Hong",
+            "Sunghwan Steve Cho",
+            "Ping Shu Ho",
+            "Joo Seong Kim",
+            "Bokyung Kim",
+            "Nam-Joon Kim",
+            "Simon See",
+            "Ji Won Kim",
+            "Jaeyoung Do"
+          ],
+          "url": "https://arxiv.org/abs/2611.30372",
+          "published": "2026-11-23T09:40:32Z",
+          "topics": [
+            "运动与运动控制",
+            "相机控制",
+            "视频生成",
+            "世界模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.30372v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 87,
+            "priority_topics": [
+              "相机控制"
+            ],
+            "title_zh": "ColonoWorld：相机控制的完整结肠镜检查视频生成",
+            "abstract_zh": "结肠镜自主导航要求模型遵循镜头运动、保持结肠解剖结构，并呈现息肉等程序事件；通用相机控制生成器在内镜运动下容易失去结构，内镜生成器又不支持相机控制。作者提出 ColonoWorld，以相机轨迹和粗略 3D 结肠管结构为条件，在真实体内视频上训练。给定整个结肠的管状表示，模型可从盲肠生成到直肠的完整程序视频，并支持在指定位置/时刻添加息肉、器械、冲洗等事件。在其评测中，相对强基线相机误差最高降低 32%，FVD 降低 29%。",
+            "reason": "全文贡献核心是把解剖结构与可控相机轨迹结合，生成完整程序级内镜视频；论文用留出患者、多个结肠形状和轨迹遵循指标验证，不是摘要中偶然提及运镜。",
+            "introduction_zh": "结肠镜需要在狭窄、弯曲且会变形的管腔中操纵镜头，错误运动有临床风险，因此需要可控的模拟视频来发展和评估导航系统。通用场景视频模型虽然支持相机路径控制，却难保持内镜解剖；领域生成器能合成内镜图像，却不响应相机指令。作者把缺口明确为解剖结构、长程序连贯性和相机路径控制三者的共同建模。",
+            "method_takeaway": "给视频扩散模型同时提供可编辑的结肠管形状与相机轨迹，使相机移动既服从指令，又沿同一解剖结构连续推进。",
+            "framework_zh": "训练时，研究者从内镜视频恢复相机姿态，再为每段轨迹拟合粗略结肠管；这根管不是精细病人数字孪生，而是给几何路径和壁面位置的可编辑结构条件。推理时，模型以真实首帧、相机轨迹和管状结构为条件生成后续视频，分段标签提供位置语义，掩码视频则可指定息肉、器械、冲洗或窄带成像在何时何处出现。这样，镜头不再只按像素运动提示漂移，而要沿几何管道推进并维持腔体形状；同一条件接口也允许把命令轨迹延伸成盲肠到直肠的完整过程。论文对生成视频评估相机位姿误差与视觉质量，并在六种结肠管形状上检查整段程序。其用途是训练/测试导航研究的可控数据引擎，不是已经验证可替代临床操作；因为真实肠道形变难以从视频估计，建模中对管体形状稳定作了假设。",
+            "pipeline": "体内内镜视频恢复相机姿态并拟合结肠管 → 输入首帧/相机路径/分段与事件条件 → 条件视频扩散生成各段并拼接完整程序 → 位姿跟踪与视觉指标评估",
+            "results": "相机控制测试中，相对最强微调基线 UCPE，RotErr、TransErr、CamMC 分别降低 32%、28%、32%。全程序评测覆盖六种整肠形状与 183 个片段；摘要报告相机轨迹误差降低 32%、FVD 降低 29%。测试患者与训练患者分离。",
+            "limitations": "作者指出体内视频不足以直接测量结肠真实变形，假设单个生成窗口内整体管形稳定，未建模蠕动波。完整程序没有真实对应视频可作逐帧真值比较，结果主要依赖轨迹和视频分布指标。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "通用相机控制和内镜专用生成模型分别缺少解剖一致性与相机控制。"
+              },
+              {
+                "section": "S4.SS1.SSS0.Px2",
+                "claim": "总览图展示首帧、命令轨迹和全结肠几何条件共同控制生成。"
+              },
+              {
+                "section": "S4.SS1.SSS0.Px2",
+                "claim": "相机轨迹、解剖管和事件条件进入模型生成过程。"
+              },
+              {
+                "section": "S5.SS2",
+                "claim": "比较不同镜头条件下的相机跟随误差与视频质量。"
+              },
+              {
+                "section": "S5.SS3",
+                "claim": "对六种结肠形状和 183 个片段进行整程序生成评测。"
+              },
+              {
+                "section": "S6",
+                "claim": "作者说明无真实肠道运动测量、稳定管形假设及未建模蠕动形变。"
+              }
+            ],
+            "fulltext_hash": "47895d9a0e117e00559f5e7032976b32b808bdfd424865aa2bed824a2bc8f6b1",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 2.5,
+          "ranking_score": 89.5,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "通用相机控制和内镜专用生成模型分别缺少解剖一致性与相机控制。",
+              "url": "https://arxiv.org/html/2611.30372v1#S1"
+            },
+            {
+              "section": "S4.SS1.SSS0.Px2",
+              "claim": "总览图展示首帧、命令轨迹和全结肠几何条件共同控制生成。",
+              "url": "https://arxiv.org/html/2611.30372v1#S4.SS1.SSS0.Px2"
+            },
+            {
+              "section": "S4.SS1.SSS0.Px2",
+              "claim": "相机轨迹、解剖管和事件条件进入模型生成过程。",
+              "url": "https://arxiv.org/html/2611.30372v1#S4.SS1.SSS0.Px2"
+            },
+            {
+              "section": "S5.SS2",
+              "claim": "比较不同镜头条件下的相机跟随误差与视频质量。",
+              "url": "https://arxiv.org/html/2611.30372v1#S5.SS2"
+            },
+            {
+              "section": "S5.SS3",
+              "claim": "对六种结肠形状和 183 个片段进行整程序生成评测。",
+              "url": "https://arxiv.org/html/2611.30372v1#S5.SS3"
+            },
+            {
+              "section": "S6",
+              "claim": "作者说明无真实肠道运动测量、稳定管形假设及未建模蠕动形变。",
+              "url": "https://arxiv.org/html/2611.30372v1#S6"
+            }
+          ],
+          "figures": []
+        },
+        {
+          "key": "arxiv:2611.31689",
+          "arxiv_id": "2611.31689",
+          "doi": "",
+          "title": "GeoMVGen: Joint Appearance-Geometry Modeling for Multi-View Video Generation in Robotic Manipulation",
+          "abstract": "Robotic manipulation requires predicting how robot-object interactions evolve over time, encompassing both visual appearance and scene geometry. In multi-camera settings, such predictions need to capture the evolving 3D scene consistently across viewpoints, while supporting controllable generation under different robot actions and camera configurations. Existing video generation models provide strong priors for visual appearance and motion but typically lack explicit geometric modeling. Meanwhile, recent advances in geometry-aware and multi-view generation have explored joint appearance-geometry modeling and cross-view consistency, yet generating temporally coherent appearance and geometry across multiple viewpoints under robotic manipulation conditions remains challenging. In this work, we propose GeoMVGen, a framework for joint multi-view RGB and pointmap video generation in robotic manipulation. Built on a video diffusion transformer, our framework employs modality-specific adaptation modules to capture the distinct characteristics of appearance and geometry, while using cross-modal residual connections to facilitate information exchange between the two modalities. To establish geometric correspondences across viewpoints, we further introduce a cross-view projection mechanism with complementary geometric supervisions, combining pointmap consistency with geometry foundation model-guided feature alignment. These designs enable controllable generation of temporally evolving multi-view observations with coherent appearance and geometrically consistent scene structures. Extensive experiments on 4D video generation dataset comprising simulated and real-world robotic manipulation scenarios demonstrate that GeoMVGen outperforms state-of-the-art methods in video quality, geometric accuracy, and cross-view consistency.",
+          "authors": [
+            "Qiaoqiao Jia",
+            "Guile Wu",
+            "Dongfeng Bai"
+          ],
+          "url": "https://arxiv.org/abs/2611.31689",
+          "published": "2026-11-23T23:23:51Z",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "具身智能",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.31689v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 83,
+            "priority_topics": [],
+            "title_zh": "GeoMVGen：机器人操作中的多视角视频与几何联合建模",
+            "abstract_zh": "机器人操作的未来观测需同时预测画面外观和三维场景几何；多相机任务还要求各视角时间连贯、跨视角几何一致，并能按机器人动作和相机设置控制生成。GeoMVGen 在视频扩散 Transformer 上联合生成多视角 RGB 视频和 pointmap。它以模态专属适配器和双向跨模态残差连接交换外观与几何信息，再以跨视角投影建立对应关系，并用 pointmap 一致性和几何基础模型特征对齐作互补监督。4DGen 模拟机器人操作任务中，作者报告在视频质量、深度精度和跨视角一致性指标上优于比较方法。",
+            "reason": "多视角机器人视频同时生成 RGB 与几何状态，核心是外观—几何融合和跨视角监督；属于视频生成、具身与三维交叉方向，全文证据充足。",
+            "introduction_zh": "机器人操作的未来视频必须既看起来合理，也保持可供空间推理使用的几何结构；多摄像头又让每个视角之间必须对应同一三维世界。普通视频生成缺少显式几何，已有多视角生成也少有同时覆盖机器人动作、相机设置和长时变化的方案。GeoMVGen 因此联合预测图像与 pointmap，并把跨视角约束融入训练。",
+            "method_takeaway": "让 RGB 外观流与 3D pointmap 几何流在同一扩散模型里互相提供残差信息，再用跨视角投影监督两路输出对应同一个操作场景。",
+            "framework_zh": "输入是两个同步相机的初始 RGB/pointmap、语言任务，以及可选机器人动作和相机参数；模型预测未来每个视角的 RGB 与几何序列。两种表示特性不同，作者用各自的 LoRA 保留模态能力，再在选定 DiT 层加入双向残差连接，使图像流可以借几何修正空间关系，几何流也从外观获得语义信息。跨视角阶段将一台相机预测的三维点投影到另一台相机，监督 pointmap 坐标一致；同时用冻结 VGGT 几何特征对齐视觉表示，补足纯坐标损失无法覆盖的语义结构。动作经 cross-attention 提供全局运动条件，相机射线/Plücker 几何编码则按像素注入，支持灵活切换条件。实验比较视频质量、深度精度和跨视角一致性，模拟数据中留出相机视角检验泛化，真实任务则样本较小且同集训练/测试，结论需按该设置理解。",
+            "pipeline": "双视角 RGB/pointmap 与动作/相机条件 → RGB/几何双流扩散并双向交换特征 → 跨视角点投影与几何特征对齐 → 联合生成未来多视角视频和 pointmap",
+            "results": "4DGen 三个模拟机器人操作任务中，GeoMVGen 报告最低 FVD 480.2/486.5、深度 Abs Rel 0.051/0.049、δ1 0.957/0.960；相对 4DGen 的 gripper 轨迹 ADE/FDE 分别改善 0.97%/0.61%。真实操作任务亦报告视觉和几何质量改善。",
+            "limitations": "作者实验说明真实世界只用两台固定相机、40 个 episode 训练并在同一批 episode 评估，属于域内生成，不能据此主张真实场景泛化。消融受算力约束，只在 PlaceAppleFromBowlIntoBin 任务以 1,000 步训练。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "多视角下外观、几何、时间和跨相机一致性需联合预测。"
+              },
+              {
+                "section": "S3.SS1",
+                "claim": "总体框架图展示双路 RGB/点图生成与输入条件。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "模态专属适配和跨模态残差构成联合外观—几何表示。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "点图坐标一致性和几何特征对齐是互补的跨视角监督。"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "机器人动作和像素对齐相机几何分别进入条件路径。"
+              },
+              {
+                "section": "S4.SS2.SSS0.Px1",
+                "claim": "模拟操作任务报告 FVD、深度误差和 δ1 结果。"
+              },
+              {
+                "section": "S4.SS4.SSS0.Px1",
+                "claim": "gripper 轨迹 ADE/FDE 改善幅度较小，避免夸大控制能力。"
+              }
+            ],
+            "fulltext_hash": "853206e0031887d17f1651681aff57cbf471ffe0a86d170fc98e69d95516419c",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 83,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "多视角下外观、几何、时间和跨相机一致性需联合预测。",
+              "url": "https://arxiv.org/html/2611.31689v1#S1"
+            },
+            {
+              "section": "S3.SS1",
+              "claim": "总体框架图展示双路 RGB/点图生成与输入条件。",
+              "url": "https://arxiv.org/html/2611.31689v1#S3.SS1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "模态专属适配和跨模态残差构成联合外观—几何表示。",
+              "url": "https://arxiv.org/html/2611.31689v1#S3.SS2"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "点图坐标一致性和几何特征对齐是互补的跨视角监督。",
+              "url": "https://arxiv.org/html/2611.31689v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "机器人动作和像素对齐相机几何分别进入条件路径。",
+              "url": "https://arxiv.org/html/2611.31689v1#S3.SS4"
+            },
+            {
+              "section": "S4.SS2.SSS0.Px1",
+              "claim": "模拟操作任务报告 FVD、深度误差和 δ1 结果。",
+              "url": "https://arxiv.org/html/2611.31689v1#S4.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS4.SSS0.Px1",
+              "claim": "gripper 轨迹 ADE/FDE 改善幅度较小，避免夸大控制能力。",
+              "url": "https://arxiv.org/html/2611.31689v1#S4.SS4.SSS0.Px1"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S0.F1",
+              "caption": "Figure 1: GeoMVGen overview. Given input conditions, GeoMVGen jointly generates future multi-view RGB videos and corresponding pointmap sequences, achieving realistic appearance and geometric consistency across viewpoints.",
+              "url": "https://arxiv.org/html/2611.31689v1#S0.F1",
+              "source_url": "https://arxiv.org/html/2611.31689v1#S0.F1"
+            },
+            {
+              "id": "S1.F2",
+              "caption": "Figure 2: Overall framework of GeoMVGen. Given input conditions, GeoMVGen generates future multi-view RGB videos and pointmaps in a controllable and geometrically consistent manner. GeoMVGen is built on a video diffusion transformer with modality-specific adaptation, bidirectional cross-modal residual connections, and a cross-view consistency mechanism with complementary geometric supervision.",
+              "url": "https://arxiv.org/html/2611.31689v1/framework.png",
+              "source_url": "https://arxiv.org/html/2611.31689v1#S1.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.31184",
+          "arxiv_id": "2611.31184",
+          "doi": "",
+          "title": "On-Policy Codec Distillation for Efficient All-in-One Video Generation",
+          "abstract": "Modern visual generative models operate on tokens, and every visual asset they receive, whether an identity, a scribble, a depth map, or a motion video, is tokenized and appended to the input token sequence. Consequently, conditioning quickly dominates the computation cost. Yet most of these tokens carry redundant spatiotemporal information. Our key insight is that identifying what is genuinely new is exactly the problem that classical video codecs have long solved. Thus, we first introduce a codec-based token pruning method that discards redundant tokens. Then, we propose an on-policy self-distillation (OPSD) strategy to train a DiT adapter capable of learning the codec pruning pattern well without quality degradation. Together, they form On-Policy Codec Distillation (CodecOPSD). We scale CodecOPSD to 16 condition modalities on our own video diffusion model, where it prunes 66% of the condition tokens on average with almost no quality drop. Therefore, denoising becomes 2x faster, and the cache memory shrinks by up to 73% in KV cache mode. CodecOPSD also extends to other state-of-the-art pretrained image and video generative models, where its benefit grows further with more conditions, longer frames, and higher resolution.",
+          "authors": [
+            "Boyang Wang",
+            "Kevin Blackburn-Matzen",
+            "Oindrila Saha",
+            "Matheus Gadelha",
+            "Zezhou Cheng"
+          ],
+          "url": "https://arxiv.org/abs/2611.31184",
+          "published": "2026-11-23T18:38:20Z",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "大模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.31184v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 82,
+            "priority_topics": [],
+            "title_zh": "面向高效全能视频生成的在线编解码器蒸馏",
+            "abstract_zh": "现代视觉生成模型将身份图、涂鸦、深度图、运动视频等条件都编码成 token 并拼接输入，条件越多，计算越容易被冗余时空信息占据。作者观察到，判断信息是否“新”正是传统视频编解码器的长项，因此先用 codec 信号剪除重复条件 token，再提出在线策略蒸馏（OPSD），训练 DiT 适应保留下来的 token，而不损失生成质量。CodecOPSD 在自有视频扩散模型上扩展到 16 种条件模态，平均剪掉 66% 条件 token，质量几乎不变，去噪速度约提升 2 倍，KV 缓存模式下缓存内存最多减少 73%；也扩展到其他预训练图像和视频生成模型，且条件更多、帧更长、分辨率更高时收益更大。",
+            "reason": "研究面向多条件视频生成的实际算力瓶颈，方法把标准视频编码中的运动/残差线索转为 token 选择，再以 on-policy 蒸馏适配模型，实验覆盖多模态与多个底座。",
+            "introduction_zh": "视频生成越来越常同时接收身份、布局、深度、运动轨迹等条件；这些条件被逐个编码后拼成长 token 序列，很多位置只是重复背景或已有信息，仍要参与 DiT 注意力与 KV 缓存。作者借用视频 codec 的帧间预测和残差表达，把“新增信息在哪里”作为剪枝依据，并进一步让学生模型在真实自回归生成轨迹上适应稀疏条件。",
+            "method_takeaway": "以 codec 的预测块、运动向量和残差识别条件视频中真正新增的信息，再在模型自己的生成轨迹上蒸馏，让稀疏条件输入不导致质量退化。",
+            "framework_zh": "每种条件先被表示成图像或视频并编码为 token。与此同时，标准 codec 把画面划分成块：I 帧提供块自身编码，P 帧为当前块寻找前帧最匹配块并记录运动向量，不能由运动预测解释的部分成为残差。方法把覆盖这些块的 token 标成“可由历史预测”或“包含新内容”，再按运动/残差信号保留重要 token。单纯剪枝会造成教师看到完整条件、学生只看到稀疏条件的输入落差，因此第二步 OPSD 让教师在学生自己的 rollout 状态上提供监督：学生先按剪枝后的条件生成，教师根据同一轨迹的状态指导其去噪更新，adapter 学会在删掉冗余条件后仍跟上教师结果。这样剪枝规则来自编解码的时空冗余，蒸馏阶段则解决条件分布变化。它不是流式视频生成方法；它降低多条件视频生成成本。静态点轨迹和细粒度局部条件的 token 可能被误判，因此不能简单把大比例剪枝当作所有模态的无损保证。",
+            "pipeline": "多模态条件编码为视频 token → codec 预测/运动向量/残差评估新信息 → 保留关键 token 并由学生进行自身 rollout → on-policy 教师监督训练 adapter",
+            "results": "在 16 种条件模态、平均约 66% 条件 token 剪除时，作者报告约 2× 去噪加速，KV 缓存可减少最多 73% 内存，生成质量接近稠密教师；实验还扩展到 MiniMax-H3 Ref2VA、MiniMax-H3-Image 和 Cosmos3。",
+            "limitations": "作者报告 motion tracks 中某点静止后会被 codec 删除，可能把静止与遮挡/掩码混淆；bounding boxes、motion tracks、blur 等局部细节模态在强剪枝下仍有边界。自有主模型为内部模型，跨模型迁移展示较多，但该条件数据和算力设置不是统一开放基准。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "多条件 token 过长令条件输入成为计算瓶颈，作者提出利用 codec 的新增信息检测。"
+              },
+              {
+                "section": "S3.SS2",
+                "claim": "方法总览展示剪枝与 VAE 编码并行、token 保留和 OPSD 适配流程。"
+              },
+              {
+                "section": "S3",
+                "claim": "条件编码后，codec pruning 生成保留掩码，学生按稀疏条件去噪。"
+              },
+              {
+                "section": "S4.SS3.SSS0.Px1",
+                "claim": "等预算 pruning 方法比较，codec 方法在多个指标与模态上领先。"
+              },
+              {
+                "section": "S4.SS3.SSS0.Px2",
+                "claim": "对去噪速度、质量和 KV 缓存的量化比较。"
+              },
+              {
+                "section": "S10",
+                "claim": "作者说明静态点与细节模态的 token 剪除存在局限。"
+              }
+            ],
+            "fulltext_hash": "653c63f2fbbfc8952d95644a056f4448bfb830707f5479dd1905fb55d988203e",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 82,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "多条件 token 过长令条件输入成为计算瓶颈，作者提出利用 codec 的新增信息检测。",
+              "url": "https://arxiv.org/html/2611.31184v1#S1"
+            },
+            {
+              "section": "S3.SS2",
+              "claim": "方法总览展示剪枝与 VAE 编码并行、token 保留和 OPSD 适配流程。",
+              "url": "https://arxiv.org/html/2611.31184v1#S3.SS2"
+            },
+            {
+              "section": "S3",
+              "claim": "条件编码后，codec pruning 生成保留掩码，学生按稀疏条件去噪。",
+              "url": "https://arxiv.org/html/2611.31184v1#S3"
+            },
+            {
+              "section": "S4.SS3.SSS0.Px1",
+              "claim": "等预算 pruning 方法比较，codec 方法在多个指标与模态上领先。",
+              "url": "https://arxiv.org/html/2611.31184v1#S4.SS3.SSS0.Px1"
+            },
+            {
+              "section": "S4.SS3.SSS0.Px2",
+              "claim": "对去噪速度、质量和 KV 缓存的量化比较。",
+              "url": "https://arxiv.org/html/2611.31184v1#S4.SS3.SSS0.Px2"
+            },
+            {
+              "section": "S10",
+              "claim": "作者说明静态点与细节模态的 token 剪除存在局限。",
+              "url": "https://arxiv.org/html/2611.31184v1#S10"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S3.F3",
+              "caption": "Figure 3: Pipeline of CodecOPSD. Left: Codec pruning runs in parallel with the VAE encoder and drops condition tokens at a dynamic rate per condition, and the kept tokens concatenate with the noisy latent as the DiT input. It optionally drops the vision tokens of a VLM, which enter the DiT by cross-attention or joint attention depending on the model. Right: On-Policy Codec Distillation provides the tokens removed by codec pruning to the frozen teacher as privileged information and compares the student’s prediction with the teacher’s.",
+              "url": "https://arxiv.org/html/2611.31184v1/pipeline.png",
+              "source_url": "https://arxiv.org/html/2611.31184v1#S3.F3"
+            },
+            {
+              "id": "S1.F1",
+              "caption": "Figure S1: Architecture of our multi-condition model. (a) Noise tokens attend to all tokens, while each clean condition attends to its own tokens. (b) Therefore, the keys and values of the conditions are computed once with our LoRA at step 1 and reused in all later steps, where the noise tokens alone enter the DiT.",
+              "url": "https://arxiv.org/html/2611.31184v1#S1.F1",
+              "source_url": "https://arxiv.org/html/2611.31184v1#S1.F1"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.32218",
+          "arxiv_id": "2611.32218",
+          "doi": "",
+          "title": "PoseVLN: Learning Geometric State Evolution for Vision-Language Navigation",
+          "abstract": "Vision-Language Navigation (VLN) requires an embodied agent to relate past experience, current spatial state, and future motion while following natural-language instructions. Recent approaches improve these capabilities through long-horizon memory, state-aware reasoning, and future prediction, yet these components are often modeled separately, leaving navigation state evolution insufficiently connected across time. We argue that camera pose provides a natural geometric representation for bridging past, present, and future states. Based on this insight, we propose PoseVLN, a pose-aware VLN framework that jointly learns navigation decisions and geometric state evolution. PoseVLN organizes visual memory and the current observation in an episode-relative coordinate frame, and jointly predicts the next K navigation actions together with a local $Δ$Pose over the same horizon. The predicted $Δ$Pose is composed with the current trajectory-level pose to obtain the future pose state, which is recursively propagated throughout navigation, forming a continuous geometric state evolution from past memory to future motion. Experiments on the R2R-CE and RxR-CE Val-Unseen splits demonstrate the effectiveness of explicitly modeling geometric state evolution, with PoseVLN outperforming the strongest compared baselines by 2.6 and 2.9 percentage points in success rate, respectively, using only single RGB observations.",
+          "authors": [
+            "Pengyu Hou",
+            "Mingfei Han",
+            "Haihong Hao",
+            "Xiaolong Wu",
+            "Bo Dong",
+            "Xiaojun Chang",
+            "Salman Khan",
+            "Bin Shi"
+          ],
+          "url": "https://arxiv.org/abs/2611.32218",
+          "published": "2026-11-24T09:03:39Z",
+          "topics": [
+            "运动与运动控制",
+            "相机控制",
+            "多模态",
+            "具身智能",
+            "世界模型"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.32218v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 81,
+            "priority_topics": [],
+            "title_zh": "PoseVLN：学习视觉语言导航中的几何状态演化",
+            "abstract_zh": "视觉语言导航需要智能体结合过去经验、当前空间状态和未来运动执行指令，但以往记忆、状态推理和未来预测通常分开建模。PoseVLN 使用相机位姿作为连接过去、当前与未来的几何表征：把观察与位姿组织在 episode 相对坐标系中，并在同一预测跨度内联合预测接下来 K 个导航动作和局部 ΔPose。将预测的 ΔPose 与当前轨迹级位姿合成后，未来状态递归传播到后续导航。在 R2R-CE 与 RxR-CE Val-Unseen 上，只用单 RGB 观察，相比最强比较基线 SR 分别提高 2.6 和 2.9 个百分点。",
+            "reason": "位姿不是这里的相机控制信号，而是将历史记忆与导航决策连接的显式几何状态。纳入是因其为具身视觉语言导航提供清晰的递归状态建模，并有两个标准基准与真机小规模验证。",
+            "introduction_zh": "视觉语言导航系统常把历史记忆、空间定位和未来动作预测拆成独立模块，导致跨时间的状态变化连接不紧。作者提出把相机轨迹位姿作为共同坐标，让记忆中的观察、当前图像和未来动作共享一致的几何状态；因此，论文重点是导航中的位姿演化建模，不是控制摄像机运动。",
+            "method_takeaway": "把预测的短期动作块与同一跨度的相对位姿变化联合输出，并将位姿递归合成回导航记忆，使“走过哪里”持续约束之后的动作。",
+            "framework_zh": "每一步接收自然语言指令、当前 RGB 观察以及带 episode 相对相机位姿的历史视觉记忆。视觉语言模型在共享表示上输出一段 K 步离散导航动作，并由 CameraHead 回归同一跨度的局部 ΔPose；局部位姿与当前轨迹级位姿做刚体变换合成，再与新观察一起写回记忆，进入下一个预测周期。训练用动作交叉熵、位姿回归和方向进度损失，后者避免递归位移逐渐收缩。训练使用模拟器记录的相机位姿作监督和 rollout 收集信息；正常推理并不把未来真实位姿作为逐步输入，而是递归使用模型自己预测的状态。这样，位姿是内部空间记忆接口，不代表相机控制或在线里程计传感器。优点是仅单 RGB 输入也能形成几何状态，但递归估计误差会累积，且 real-world 结果仅在 Unitree Go2 两个环境、18 次试验中评测。",
+            "pipeline": "单 RGB、指令与带位姿历史 → 联合预测 K 步动作和局部 ΔPose → 与当前位姿合成未来状态 → 将新观察及预测位姿递归写回记忆",
+            "results": "R2R-CE Val-Unseen 上 SR 64.6%、SPL 59.4，相对 StreamVLN SR 从 56.9% 提升到 64.6%；RxR-CE SR 62.0%，比 StreamVLN 高 9.1 个百分点。作者报告单 RGB 且无深度/逐步里程计。Go2 两个场景 18 次实机试验中 11 次成功（61.1%），但两项指定停止/进房任务均未成功。",
+            "limitations": "递归位姿组合会累积漂移；几何监督和递归位姿输入的相互作用仍需厘清。官方 R2R-CE 测试服务器已退役，主要用 Val-Unseen 比较；实机评测样本少且若干任务失败。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "作者将记忆、空间状态和未来预测的分离视为 VLN 的核心缺口。"
+              },
+              {
+                "section": "S3.SS0.SSS0.Px1",
+                "claim": "总览图展示 pose-aware memory、动作块和局部位姿共同预测。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px1",
+                "claim": "共享模型预测 K 步动作与局部位姿变化。"
+              },
+              {
+                "section": "S3.SS2.SSS0.Px2",
+                "claim": "局部变换与当前 episode 位姿组合，再反馈为递归状态。"
+              },
+              {
+                "section": "S3.SS3.SSS0.Px4",
+                "claim": "训练/推理使用信息区分；推理递归用预测位姿而非真实逐步相机输入。"
+              },
+              {
+                "section": "S4.SS2.SSS0.Px1",
+                "claim": "R2R-CE 验证 SR、SPL 等导航指标改善。"
+              },
+              {
+                "section": "S5",
+                "claim": "作者列明长时位姿漂移及几何监督交互仍不明确。"
+              }
+            ],
+            "fulltext_hash": "2751709cf31ecc6bf34850cee59ea80d16d8d2e53aae4266b5d492799f5e2722",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 81,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "作者将记忆、空间状态和未来预测的分离视为 VLN 的核心缺口。",
+              "url": "https://arxiv.org/html/2611.32218v1#S1"
+            },
+            {
+              "section": "S3.SS0.SSS0.Px1",
+              "claim": "总览图展示 pose-aware memory、动作块和局部位姿共同预测。",
+              "url": "https://arxiv.org/html/2611.32218v1#S3.SS0.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px1",
+              "claim": "共享模型预测 K 步动作与局部位姿变化。",
+              "url": "https://arxiv.org/html/2611.32218v1#S3.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S3.SS2.SSS0.Px2",
+              "claim": "局部变换与当前 episode 位姿组合，再反馈为递归状态。",
+              "url": "https://arxiv.org/html/2611.32218v1#S3.SS2.SSS0.Px2"
+            },
+            {
+              "section": "S3.SS3.SSS0.Px4",
+              "claim": "训练/推理使用信息区分；推理递归用预测位姿而非真实逐步相机输入。",
+              "url": "https://arxiv.org/html/2611.32218v1#S3.SS3.SSS0.Px4"
+            },
+            {
+              "section": "S4.SS2.SSS0.Px1",
+              "claim": "R2R-CE 验证 SR、SPL 等导航指标改善。",
+              "url": "https://arxiv.org/html/2611.32218v1#S4.SS2.SSS0.Px1"
+            },
+            {
+              "section": "S5",
+              "claim": "作者列明长时位姿漂移及几何监督交互仍不明确。",
+              "url": "https://arxiv.org/html/2611.32218v1#S5"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F1",
+              "caption": "Figure 1: The PoseVLN framework and comparison with prior methods. Left: pose-aware memory and geometric state evolution. Right: comparison with prior VLN methods by navigation performance and temporal focus.",
+              "url": "https://arxiv.org/html/2611.32218v1/intro_v0.png",
+              "source_url": "https://arxiv.org/html/2611.32218v1#S1.F1"
+            },
+            {
+              "id": "S3.F2",
+              "caption": "Figure 2: Overview of PoseVLN. Pose-aware memory associates observations with trajectory-level poses. A shared multimodal representation jointly predicts KK-step actions and a local Δ\\DeltaPose, which is recursively propagated to update the geometric state.",
+              "url": "https://arxiv.org/html/2611.32218v1/method_v0.png",
+              "source_url": "https://arxiv.org/html/2611.32218v1#S3.F2"
+            }
+          ]
+        },
+        {
+          "key": "arxiv:2611.32054",
+          "arxiv_id": "2611.32054",
+          "doi": "",
+          "title": "SurgGenesis: A Generative Surgical World Model for Future-Aware Surgical Understanding",
+          "abstract": "Surgical scene understanding is constrained by data scarcity and long-tail class imbalance, as annotating surgical videos demands scarce clinical expertise while rare procedural events remain underrepresented. We tackle this through data generation and propose SurgGenesis, a generative surgical world model that learns future surgical state transitions in a latent space from visual observations and textual procedural descriptions, serving as a scalable surgical data engine. To adapt a large-scale video diffusion model to the data-scarce surgical domain without catastrophic forgetting, we introduce a three-stage progressive LoRA strategy that incrementally injects endoscopic visual priors, procedural semantics, and spatial motion cues. Rather than judging generation by visual fidelity alone, we validate SurgGenesis along two axes that separate a world model from a generic generator: (i) future-awareness, by comparing predicted futures against the real future through a GT-latent prediction gap and temporal-horizon analysis, and (ii) action-faithful usefulness, by checking that generated clips contain the commanded surgical triplet and that using them to rebalance long-tail events and drive downstream understanding (segmentation, triplet recognition, 3D reconstruction) yields action-specific gains. Conditioned futures therefore complement conventional long-tail sampling. Code: https://zh-qr.github.io/SurgGenesis",
+          "authors": [
+            "Qirui Zhong",
+            "Quande Liu",
+            "Yang Chen",
+            "Cheng Xue"
+          ],
+          "url": "https://arxiv.org/abs/2611.32054",
+          "published": "2026-11-24T06:36:42Z",
+          "topics": [
+            "运动与运动控制",
+            "视频生成",
+            "世界模型",
+            "3D 重建"
+          ],
+          "sources": [
+            "arXiv"
+          ],
+          "discovery_dates": [],
+          "from_cache": false,
+          "fulltext_url": "https://arxiv.org/html/2611.32054v1",
+          "fulltext_format": "html",
+          "analysis": {
+            "decision": "include",
+            "score": 79,
+            "priority_topics": [],
+            "title_zh": "SurgGenesis：面向未来感知手术理解的生成式手术世界模型",
+            "abstract_zh": "手术场景理解受限于标注稀缺和长尾类别不平衡。SurgGenesis 从视觉观察与结构化手术文本中学习潜空间未来状态转移，作为可扩展的数据引擎。为使大型视频扩散模型适应数据有限的手术域而不过度遗忘，作者以三阶段渐进 LoRA 逐步注入内镜视觉先验、手术语义和空间运动线索。评测不仅看生成逼真度，还以真实未来与预测未来之间的潜变量差距和时间跨度衡量未来感知；检查生成片段是否包含指定手术三元组衡量动作遵循；并评估生成数据用于长尾再平衡后对分割、三元组识别和 3D 重建的下游效果。",
+            "reason": "研究贡献是以未来状态建模为手术领域数据引擎，并通过预测一致性与下游效用而非单一画质证明世界模型价值；适合关注专业域视频世界模型者。",
+            "introduction_zh": "手术视频标注需要临床专家，稀有步骤和器械交互又难收集，令监督数据长尾且不足。静态理解模型只能分析已经发生的画面，通用生成器即使画面逼真也未必能从当前手术状态推出合理未来。作者希望把未来手术状态生成用于数据补充，并专门检验它是否理解过程状态、服从指定操作且对实际识别任务有用。",
+            "method_takeaway": "通过渐进 LoRA 把内镜外观、程序语义和空间动作线索依次注入视频扩散模型，再用未来一致性、动作遵循与下游任务检验其是否真的像世界模型。",
+            "framework_zh": "模型接收过去的内镜帧和结构化程序描述，在共享潜空间预测未来状态，再解码为未来视频。结构化提示把术式、阶段、器械、动作和目标分开描述，减少一句自然语言混合所有变化的歧义。训练采用三阶段渐进 LoRA：先适配内镜视觉域，再加程序语义，最后引入空间运动线索；阶段式注入旨在兼顾专业先验和基础视频模型能力。作者把验证分两层：预测未来与真实未来的误差、时间跨度曲线用来检查模型是否基于观察做状态预测；动作三元组识别与条件事件检查用来判断是否按提示执行；最后将生成数据用于长尾增强，测分割、手术动作识别和重建任务有没有具体增益。这个验证链条比只报 FVD 更能区分“会生成”与“能预测有用状态”，但涉及多个下游数据集/指标，表格中的外部基线不是严格同条件头对头。",
+            "pipeline": "过去内镜视频 + 结构化手术状态 → 三阶段 LoRA 注入视觉/程序/空间知识 → 潜状态预测并解码未来视频 → 未来误差、动作遵循及下游长尾任务验证",
+            "results": "论文在 Cholec80、CholecT50、CholecTrack20 等手术数据及分割/重建基准上评估。正文报告渐进阶段改善生成保真度，预测时间跨度误差用于验证未来一致性；生成样本用于长尾增强后，下游分割、动作三元组识别及 3D 重建表现改善。外部方法的参考表由于条件/协议不同仅作背景比较。",
+            "limitations": "研究限于特定腹腔镜术式和 77? 不；摘要未说明总小时。报告/摘要未给统一临床前瞻验证或真实部署评估，论文明确外部基准表并非同条件头对头排名。其生成世界模型不能等同临床决策系统。",
+            "evidence": [
+              {
+                "section": "S1",
+                "claim": "领域标注稀缺、长尾事件和视觉逼真与未来状态建模之间的差别。"
+              },
+              {
+                "section": "S2.SS2",
+                "claim": "渐进式训练逐步融入专业视觉、程序语义和空间动态。"
+              },
+              {
+                "section": "S2.SS3",
+                "claim": "分层评测将未来预测、动作遵循和下游效用区分开。"
+              },
+              {
+                "section": "S3.SS3",
+                "claim": "阶段消融检验生成保真度和 1–5 秒未来一致性。"
+              },
+              {
+                "section": "S3.SS4",
+                "claim": "下游分割、动作识别、数据增强和 3D 重建用于评估生成数据效用。"
+              }
+            ],
+            "fulltext_hash": "b05200b2c43a0f090ea4158777e46c54d822cb724396b264c455052a67d373a2",
+            "analysed_at": "2026-11-25T03:50:00Z"
+          },
+          "preference_bonus": 0,
+          "ranking_score": 79,
+          "evidence": [
+            {
+              "section": "S1",
+              "claim": "领域标注稀缺、长尾事件和视觉逼真与未来状态建模之间的差别。",
+              "url": "https://arxiv.org/html/2611.32054v1#S1"
+            },
+            {
+              "section": "S2.SS2",
+              "claim": "渐进式训练逐步融入专业视觉、程序语义和空间动态。",
+              "url": "https://arxiv.org/html/2611.32054v1#S2.SS2"
+            },
+            {
+              "section": "S2.SS3",
+              "claim": "分层评测将未来预测、动作遵循和下游效用区分开。",
+              "url": "https://arxiv.org/html/2611.32054v1#S2.SS3"
+            },
+            {
+              "section": "S3.SS3",
+              "claim": "阶段消融检验生成保真度和 1–5 秒未来一致性。",
+              "url": "https://arxiv.org/html/2611.32054v1#S3.SS3"
+            },
+            {
+              "section": "S3.SS4",
+              "claim": "下游分割、动作识别、数据增强和 3D 重建用于评估生成数据效用。",
+              "url": "https://arxiv.org/html/2611.32054v1#S3.SS4"
+            }
+          ],
+          "figures": [
+            {
+              "id": "S1.F1",
+              "caption": "Figure 1: Overview of SurgGenesis. (1) Visual observations and structured procedural text condition the model. (2) A three-stage strategy fine-tunes the foundational video world model. (3) Predicted latent states are decoded into future observations.",
+              "url": "https://arxiv.org/html/2611.32054v1/Overview.png",
+              "source_url": "https://arxiv.org/html/2611.32054v1#S1.F1"
+            },
+            {
+              "id": "S3.T2",
+              "caption": "Table 2: Stagewise validation. The baseline is native WAN except for A​PI​V​TAP_{IVT}, which uses the real-only classifier. Native WAN failed under the 3D reconstruction pipeline, so its LPIPS is unavailable.",
+              "url": "https://arxiv.org/html/2611.32054v1#S3.T2",
+              "source_url": "https://arxiv.org/html/2611.32054v1#S3.T2"
+            }
+          ]
+        }
+      ],
+      "screening": [
+        {
+          "key": "arxiv:2611.31892",
+          "title": "Cheap Memory Costs Future Compute: Co-Designing Persistent KV and GPU Execution for Efficient Streaming Video Diffusion",
+          "decision": "include",
+          "reason": "直接处理流式视频模型的缓存更新闭环；方法不改模型权重，全文给出重建、读出风险、执行融合和长视频验证，且性能收益与画质、后续去噪步数同时报告。"
+        },
+        {
+          "key": "arxiv:2611.32218",
+          "title": "PoseVLN: Learning Geometric State Evolution for Vision-Language Navigation",
+          "decision": "include",
+          "reason": "位姿不是这里的相机控制信号，而是将历史记忆与导航决策连接的显式几何状态。纳入是因其为具身视觉语言导航提供清晰的递归状态建模，并有两个标准基准与真机小规模验证。"
+        },
+        {
+          "key": "arxiv:2611.30372",
+          "title": "ColonoWorld: Camera-Controlled Full-Procedure Colonoscopy Video Generation",
+          "decision": "include",
+          "reason": "全文贡献核心是把解剖结构与可控相机轨迹结合，生成完整程序级内镜视频；论文用留出患者、多个结肠形状和轨迹遵循指标验证，不是摘要中偶然提及运镜。"
+        },
+        {
+          "key": "arxiv:2611.32383",
+          "title": "Improving Character Identity Consistency in Diffusion-Based Visual Story Generation through Identity Memory and Automatic Reranking",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.32054",
+          "title": "SurgGenesis: A Generative Surgical World Model for Future-Aware Surgical Understanding",
+          "decision": "include",
+          "reason": "研究贡献是以未来状态建模为手术领域数据引擎，并通过预测一致性与下游效用而非单一画质证明世界模型价值；适合关注专业域视频世界模型者。"
+        },
+        {
+          "key": "arxiv:2611.31715",
+          "title": "Sparks of Weight-Space Programming for Robot Foundation Models",
+          "decision": "exclude",
+          "reason": "已读可获取章节，但贡献相对本期入选论文不够突出；该工作集中于小规模/单一设定，作为次优先候选暂不纳入。"
+        },
+        {
+          "key": "arxiv:2611.31164",
+          "title": "Analyzing and Improving FlowMap Distillation of Autoregressive Video Models",
+          "decision": "include",
+          "reason": "论文贡献聚焦自回归视频的少步流式蒸馏：分别解决闭环漂移与运动难学，给出跨蒸馏目标和 30 秒评测。"
+        },
+        {
+          "key": "arxiv:2611.31689",
+          "title": "GeoMVGen: Joint Appearance-Geometry Modeling for Multi-View Video Generation in Robotic Manipulation",
+          "decision": "include",
+          "reason": "多视角机器人视频同时生成 RGB 与几何状态，核心是外观—几何融合和跨视角监督；属于视频生成、具身与三维交叉方向，全文证据充足。"
+        },
+        {
+          "key": "arxiv:2611.30898",
+          "title": "World Models as Native Latent Action Models",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.32198",
+          "title": "MoGe-4D: Efficient, Flexible, and Unified Dense 4D Reconstruction and Tracking",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30572",
+          "title": "VeriTouch: Verified Visuo-Tactile World Models that Improve Robot Policy Learning",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30550",
+          "title": "Body and Soul: Decoupling Robotic Brain and Policy with RoboHarness-Zero",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30449",
+          "title": "CHAMP: Coordinated Humanoid Loco-Manipulation with Whole-Body Motion Priors",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.29839",
+          "title": "Dynamics Forcing: Mitigating Error Accumulation in Causal Video World Models",
+          "decision": "include",
+          "reason": "直接针对因果视频世界模型逐块自回归的闭环退化设计训练法，且在真实机器人操作视频上对长时 rollout 及动作结果作验证。"
+        },
+        {
+          "key": "arxiv:2611.29693",
+          "title": "HandiVid: A High-Quality Dataset for Hand-Driven Interactive Video Generation",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.29369",
+          "title": "ClothCast: Generative Cloth World Modeling under Partial Observability",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.32260",
+          "title": "EgoLoAF: Learning Humanoid Loco-Manipulation from Egocentric Demonstrations with Hand-Object Affordances",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.31901",
+          "title": "PreWAM: Exploring the Design of Latent Future Prediction for World-Action Modeling",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.31765",
+          "title": "Dreamcatcher: Remembering What Surprises a World Model in Video Streams",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.31452",
+          "title": "Ground, Guide, Act: Improving VLA Spatial Generalization with Multimodal Foundation Models",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.31184",
+          "title": "On-Policy Codec Distillation for Efficient All-in-One Video Generation",
+          "decision": "include",
+          "reason": "研究面向多条件视频生成的实际算力瓶颈，方法把标准视频编码中的运动/残差线索转为 token 选择，再以 on-policy 蒸馏适配模型，实验覆盖多模态与多个底座。"
+        },
+        {
+          "key": "arxiv:2611.31079",
+          "title": "Wrist-Camera Video Diffusion as Generalizable Robot Policies",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.31021",
+          "title": "Parsing Visual Latents for Multimodal Spatial Reasoning",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30907",
+          "title": "DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30659",
+          "title": "ActField: Learning Action Effects as Continuous-Time Latent Dynamics",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30613",
+          "title": "CineAct: Interaction-State Agents for Playable, Branching Film Generation",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30597",
+          "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30438",
+          "title": "ROSE-Drive: Runtime Orchestration and System Evolution for Autonomous Driving",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.30209",
+          "title": "RoboAda: Adapting Frozen Robot Policies at Test Time to Physics They Cannot See",
+          "decision": "exclude",
+          "reason": "原文检索失败（arxiv.org: fetch failed (ENOTFOUND)），仅凭摘要无法核实方法细节、章节证据和实验边界，暂不推荐；候选保留供后续补充。"
+        },
+        {
+          "key": "arxiv:2611.29897",
+          "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+          "decision": "include",
+          "reason": "全文核心确为长时程、实时、可指令控制的人形动作生成；长时程精度、架构消融和真机 G1 展示使其契合运动控制重点。"
+        }
+      ],
+      "digest_id": "67dcde18a1fa9dd8864c"
+    },
+    {
+      "schema_version": 1,
       "report_date": "2026-11-22",
       "target_date": "2026-11-21",
       "window": {
@@ -50781,7 +52078,7 @@
         "submitted_at": "2026-09-21T01:31:20Z"
       }
     ],
-    "last_sync": "2026-11-22T03:01:24.685Z",
-    "revision": "e22710fa3df231c07fe7"
+    "last_sync": "2026-11-25T03:07:56.552Z",
+    "revision": "e6916e7a778434cc9984"
   }
 }
